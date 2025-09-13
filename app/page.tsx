@@ -1,4 +1,6 @@
-import Image from 'next/image'
+// app/page.tsx
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Producción Audiovisual Estratégica | Dekaelo Media',
@@ -15,7 +17,7 @@ export const metadata = {
     images: ['https://www.dekaelomedia.com/og-cover.jpg'],
   },
   twitter: { card: 'summary_large_image' },
-}
+};
 
 export default function Landing() {
   return (
@@ -39,11 +41,13 @@ export default function Landing() {
             <Image src="/2.Logo_White.png" alt="Dekaelo Media" width={120} height={48} priority />
           </a>
 
-          {/* Botón hamburguesa */}
+        {/* Botón hamburguesa */}
           <label
             htmlFor="menu"
             className="md:hidden cursor-pointer p-2 rounded-lg hover:bg-gray-800"
             aria-label="Abrir menú"
+            aria-controls="menu-movil"
+            aria-expanded={false}
           >
             ☰
           </label>
@@ -51,7 +55,8 @@ export default function Landing() {
           {/* Menú desktop */}
           <ul className="hidden md:flex space-x-8 text-gray-400 text-sm">
             <li><a href="#inicio" className="hover:text-yellow-400">Inicio</a></li>
-            <li><a href="#plan" className="hover:text-yellow-400">Planes</a></li>
+            <li><a href="#plan" className="hover:text-yellow-400">Plan</a></li>
+            <li><a href="#planes" className="hover:text-yellow-400">Planes</a></li>
             <li><a href="#beneficios" className="hover:text-yellow-400">Beneficios</a></li>
             <li><a href="#clientes" className="hover:text-yellow-400">Clientes</a></li>
             <li><a href="#galeria" className="hover:text-yellow-400">Galería</a></li>
@@ -62,9 +67,12 @@ export default function Landing() {
         </nav>
 
         {/* 2) Menú móvil: aparece con peer-checked */}
-        <div className="hidden peer-checked:block md:hidden absolute left-0 right-0 top-full z-50 border-t border-gray-800 bg-gray-950/95 max-h-[calc(100vh-64px)] overflow-y-auto">
+        <div
+          id="menu-movil"
+          className="hidden peer-checked:block md:hidden absolute left-0 right-0 top-full z-50 border-t border-gray-800 bg-gray-950/95 max-h-[calc(100vh-64px)] overflow-y-auto"
+        >
           <ul className="px-6 py-4 space-y-3 text-gray-300">
-            {['inicio','plan','beneficios','clientes','galeria','quienes','extras','contacto'].map((id) => (
+            {['inicio','plan','planes','beneficios','clientes','galeria','quienes','extras','contacto'].map((id) => (
               <li key={id}>
                 <a href={`#${id}`} className="block py-2 hover:text-yellow-400">
                   {id === 'inicio' ? 'Inicio' : id.charAt(0).toUpperCase()+id.slice(1)}
@@ -367,67 +375,67 @@ export default function Landing() {
         </section>
       </main>
 
-      import Link from 'next/link';
+      {/* Footer */}
+      <footer className="bg-black text-gray-500 border-t border-gray-800 w-full">
+        <div className="container mx-auto px-4 py-8">
+          <p className="text-center">© {new Date().getFullYear()} Dekaelo Media. Todos los derechos reservados.</p>
+          <p className="mt-2 text-gray-400 text-sm text-center">Historias que inspiran en cada frame.</p>
 
-{/* Footer */}
-<footer className="bg-black text-gray-500 border-t border-gray-800 w-full">
-  <div className="container mx-auto px-4 py-8">
-    <p className="text-center">© {new Date().getFullYear()} Dekaelo Media. Todos los derechos reservados.</p>
-    <p className="mt-2 text-gray-400 text-sm text-center">Historias que inspiran en cada frame.</p>
+          {/* Contacto + RRSS */}
+          <div className="mt-3 flex flex-col items-center gap-2 text-sm md:flex-row md:flex-wrap md:justify-center">
+            <a
+              href="mailto:info@dekaelomedia.com"
+              className="hover:text-yellow-400 break-all max-w-full"
+            >
+              info@dekaelomedia.com
+            </a>
 
-    {/* Contacto + RRSS */}
-    <div className="mt-3 flex flex-col items-center gap-2 text-sm md:flex-row md:flex-wrap md:justify-center">
-      <a
-        href="mailto:info@dekaelomedia.com"
-        className="hover:text-yellow-400 break-all max-w-full"
-      >
-        info@dekaelomedia.com
-      </a>
+            <span className="hidden md:inline text-gray-700">|</span>
 
-      <span className="hidden md:inline text-gray-700">|</span>
+            <a
+              href="https://wa.me/56920080031"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-400"
+            >
+              WhatsApp +56 9 2008 0031
+            </a>
 
-      <a
-        href="https://wa.me/56920080031"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-green-400"
-      >
-        WhatsApp +56 9 2008 0031
-      </a>
+            <span className="hidden md:inline text-gray-700">|</span>
 
-      <span className="hidden md:inline text-gray-700">|</span>
+            <a
+              href="https://www.instagram.com/dekaelo_media/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white"
+            >
+              Instagram
+            </a>
 
-      <a
-        href="https://www.instagram.com/dekaelo_media/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-white"
-      >
-        Instagram
-      </a>
+            <span className="hidden md:inline text-gray-700">|</span>
 
-      <span className="hidden md:inline text-gray-700">|</span>
+            <a
+              href="https://www.linkedin.com/company/dekaelo-media/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 break-all max-w-full"
+            >
+              LinkedIn
+            </a>
+          </div>
 
-      <a
-        href="https://www.linkedin.com/company/dekaelo-media/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-blue-400 break-all max-w-full"
-      >
-        LinkedIn
-      </a>
+          {/* Legal */}
+          <nav className="mt-4 flex items-center justify-center gap-3 text-xs text-gray-400">
+            <Link href="/privacidad" className="hover:text-gray-200 underline underline-offset-4">
+              Privacidad
+            </Link>
+            <span className="text-gray-700">/</span>
+            <Link href="/condiciones" className="hover:text-gray-200 underline underline-offset-4">
+              Condiciones
+            </Link>
+          </nav>
+        </div>
+      </footer>
     </div>
-
-    {/* Legal */}
-    <nav className="mt-4 flex items-center justify-center gap-3 text-xs text-gray-400">
-      <Link href="/privacidad" className="hover:text-gray-200 underline underline-offset-4">
-        Privacidad
-      </Link>
-      <span className="text-gray-700">/</span>
-      <Link href="/condiciones" className="hover:text-gray-200 underline underline-offset-4">
-        Condiciones
-      </Link>
-    </nav>
-  </div>
-</footer>
-
+  );
+}
