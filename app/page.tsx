@@ -18,12 +18,21 @@ export const metadata = {
   twitter: { card: 'summary_large_image' },
 };
 
+// ✅ fuentes reales en /public
+const gallery = [
+  { src: '/proyecto_1.jpg', alt: 'Proyecto 1' },
+  { src: '/proyecto_2.jpg', alt: 'Proyecto 2' },
+];
+
 export default function Landing() {
   return (
     <div className="flex flex-col">
-      {/* Hero */}
-      <section id="inicio" className="scroll-mt-20 text-center py-24 px-6 bg-gradient-to-b from-gray-950 to-black">
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-yellow-500">
+      {/* Hero (más cerca del menú) */}
+      <section
+        id="inicio"
+        className="scroll-mt-20 text-center pt-8 md:pt-10 pb-16 px-6 bg-gradient-to-b from-gray-950 to-black"
+      >
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-4 text-yellow-500">
           Producción Audiovisual Estratégica
         </h1>
         <p className="text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed text-gray-300">
@@ -31,7 +40,7 @@ export default function Landing() {
           guion, rodaje y entrega; tu equipo se enfoca en crecer.
         </p>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="mt-10 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="aspect-video bg-gray-800 rounded-3xl overflow-hidden shadow-xl">
             <iframe
               className="w-full h-full"
@@ -56,7 +65,7 @@ export default function Landing() {
 
         <a
           href="#contacto"
-          className="mt-12 inline-block px-8 py-4 bg-gradient-to-r from-yellow-600 to-blue-700 hover:opacity-90 text-white rounded-full shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+          className="mt-10 inline-block px-8 py-4 bg-gradient-to-r from-yellow-600 to-blue-700 hover:opacity-90 text-white rounded-full shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
         >
           Reserva tu cupo
         </a>
@@ -129,30 +138,28 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Galería */}
-<section id="galeria" className="scroll-mt-20 py-20 px-6 mx-auto max-w-7xl">
-  <h2 className="text-4xl font-extrabold text-center mb-12 text-blue-400">
-    Galería de proyectos
-  </h2>
+      {/* Galería (ahora grande) */}
+      <section id="galeria" className="scroll-mt-20 py-20 px-6 mx-auto max-w-7xl">
+        <h2 className="text-4xl font-extrabold text-center mb-12 text-blue-400">Galería de proyectos</h2>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-    {gallery.map(({ src, alt }, i) => (
-      <figure
-        key={src}
-        className="relative w-full h-[260px] sm:h-[320px] md:h-[380px] lg:h-[440px] rounded-3xl overflow-hidden shadow-xl"
-      >
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 900px"
-          priority={i === 0}
-        />
-      </figure>
-    ))}
-  </div>
-</section>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {gallery.map(({ src, alt }, i) => (
+            <figure
+              key={src}
+              className="relative w-full h-[280px] sm:h-[340px] md:h-[420px] lg:h-[480px] rounded-3xl overflow-hidden shadow-xl"
+            >
+              <Image
+                src={src}
+                alt={alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 900px"
+                priority={i === 0}
+              />
+            </figure>
+          ))}
+        </div>
+      </section>
 
       {/* Quiénes Somos */}
       <section id="quienes" className="scroll-mt-20 py-20 px-6 bg-gray-900 text-center">
@@ -270,7 +277,7 @@ export default function Landing() {
               info@dekaelomedia.com
             </a>
           </p>
-        <p data-testid="contact-whatsapp">💬 WhatsApp: +56 9 2008 0031</p>
+          <p data-testid="contact-whatsapp">💬 WhatsApp: +56 9 2008 0031</p>
         </div>
 
         <form action="https://formspree.io/f/mjkepdaj" method="POST" className="max-w-3xl mx-auto bg-gray-900 p-10 rounded-3xl shadow-xl space-y-6 border border-gray-800">
