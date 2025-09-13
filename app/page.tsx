@@ -138,25 +138,20 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Galería (ahora grande) */}
-      <section id="galeria" className="scroll-mt-20 py-20 px-6 mx-auto max-w-7xl">
+      {/* Galería */}
+      <section id="galeria" className="scroll-mt-20 py-20 px-6 max-w-6xl mx-auto">
         <h2 className="text-4xl font-extrabold text-center mb-12 text-blue-400">Galería de proyectos</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {gallery.map(({ src, alt }, i) => (
-            <figure
-              key={src}
-              className="relative w-full h-[280px] sm:h-[340px] md:h-[420px] lg:h-[480px] rounded-3xl overflow-hidden shadow-xl"
-            >
+        <div className="grid md:grid-cols-2 gap-8">
+          {[1, 2].map((id) => (
+            <div key={id} className="bg-gray-800 rounded-3xl aspect-video overflow-hidden shadow-md relative">
               <Image
-                src={src}
-                alt={alt}
+                src={`/proyecto_${id}.jpg`}
+                alt={`Proyecto ${id}`}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 900px"
-                priority={i === 0}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
-            </figure>
+            </div>
           ))}
         </div>
       </section>
