@@ -1,6 +1,10 @@
 import { VideoEmbed } from './components/VideoEmbed';
 import { ClientLogos } from './components/ClientLogos';
 import { Gallery } from './components/Gallery';
+import { TrustStrip } from './components/TrustStrip';
+import { Testimonials } from './components/Testimonials';
+import { CaseCards } from './components/CaseCards';
+import { FAQ } from './components/FAQ';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -29,6 +33,8 @@ export default function Page() {
 
       <ClientLogos />
 
+      <TrustStrip />
+
       {/* DESTACADO */}
       <div className="container section">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
@@ -51,6 +57,9 @@ export default function Page() {
         </div>
       </div>
 
+      <CaseCards />
+      <Testimonials />
+      <FAQ />
       <Gallery />
     </section>
   );

@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { StickyCTA } from './components/StickyCTA';
 
 export const metadata: Metadata = {
   title: 'Dekaelo Media — Producción Audiovisual Estratégica',
@@ -22,8 +23,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es">
       <body className="text-white selection:bg-brand-red/60 selection:text-white">
         <Navbar />
+        <StickyCTA />
         <main>{children}</main>
         <Footer />
+      
+        <script type="application/ld+json" suppressHydrationWarning>{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Dekaelo Media',
+          url: 'https://www.dekaelomedia.com',
+          description: 'Estudio audiovisual en Chile. Plan mensual, corporativos, comerciales y documentales.',
+        })}</script>
       </body>
     </html>
   );
