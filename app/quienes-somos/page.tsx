@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const metadata = {
   title: 'Quiénes somos | Dekaelo Media',
   description:
@@ -7,33 +9,79 @@ export const metadata = {
 export default function Page() {
   return (
     <section className="section">
-      <div className="container max-w-3xl">
+      <div className="container max-w-4xl">
         <h1 className="h2">Quiénes somos</h1>
 
-        <p className="p mt-4">
+        {/* Origen */}
+        <p className="p mt-6">
           Somos un estudio audiovisual con enfoque estratégico. Combinamos narrativa, dirección y
           técnica cinematográfica para que cada pieza no solo se vea bien, sino que genere un impacto
           real en tu marca y negocio.
         </p>
 
-        <p className="p mt-4">
+        <div className="my-10">
+          <Image
+            src="/foto_origen.jpg"
+            alt="Primera etapa Dekaelo Media"
+            width={1200}
+            height={700}
+            className="rounded-3xl border border-white/10 object-cover"
+          />
+          <p className="text-sm text-white/50 mt-2">Nuestros inicios en el cine independiente.</p>
+        </div>
+
+        {/* Cine */}
+        <p className="p mt-6">
           Nacimos en el cine, con nuestra primera película <strong>“Yokai”</strong>, seleccionada
           oficialmente en el Festival de Sitges y en Buenos Aires Rojo Sangre el 2014. Desde entonces
           hemos creado spots para televisión, tutoriales con más de <strong>3 millones de
           visualizaciones</strong>, documentales, producciones corporativas, comerciales y series.
         </p>
 
-        <p className="p mt-4">
-          Hoy acumulamos más de <strong>4.000.000 de visualizaciones</strong> en proyectos propios y
-          de clientes. Nuestra experiencia abarca sectores como banca, retail, educación,
+        <div className="my-10 grid md:grid-cols-2 gap-6">
+          <Image
+            src="/foto_yokai.jpg"
+            alt="Rodaje de Yokai"
+            width={600}
+            height={400}
+            className="rounded-2xl border border-white/10 object-cover"
+          />
+          <Image
+            src="/foto_tv.jpg"
+            alt="Spot para televisión"
+            width={600}
+            height={400}
+            className="rounded-2xl border border-white/10 object-cover"
+          />
+        </div>
+
+        {/* 10 años */}
+        <p className="p mt-6">
+          A lo largo de más de <strong>10 años de trabajo</strong> junto a distintas marcas,
+          acumulamos más de <strong>4.000.000 de visualizaciones</strong> en proyectos propios y de
+          clientes. Nuestra experiencia se ha extendido a sectores como banca, retail, educación,
           tecnología y pymes.
         </p>
 
-        <p className="p mt-4">
-          Con esa trayectoria, decidimos dar un paso más: ofrecer un servicio mensual único que va
-          más allá de hacer un video aislado. Queremos ser aliados de tu empresa, poniendo
-          <em>cabeza y alma</em> en cada estrategia audiovisual para potenciar tu comunicación mes a
-          mes.
+        <div className="my-10">
+          <Image
+            src="/foto_docu.jpg"
+            alt="Producción documental"
+            width={1200}
+            height={700}
+            className="rounded-3xl border border-white/10 object-cover"
+          />
+          <p className="text-sm text-white/50 mt-2">Rodajes documentales en distintas ciudades.</p>
+        </div>
+
+        {/* Fundación Dekaelo */}
+        <p className="p mt-6">
+          El <strong>2023</strong>, una década después de nuestros primeros pasos en la producción,
+          fundamos <strong>Dekaelo Media</strong> para consolidar todo ese recorrido y proyectarlo
+          hacia el futuro. Con esta nueva etapa ofrecemos un servicio mensual único que va más allá
+          de producir un video esporádico: queremos ser aliados de tu empresa, poniendo
+          <em> cabeza y alma </em> en cada estrategia audiovisual para potenciar tu comunicación mes
+          a mes.
         </p>
       </div>
     </section>
