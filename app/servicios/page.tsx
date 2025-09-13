@@ -5,14 +5,14 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section className="section">
+    <section className="section bg-black">
       <div className="container">
         <h1 className="h2">Servicios</h1>
 
         {/* Planes mensuales */}
         <section
           id="planes"
-          className="scroll-mt-20 py-24 px-0 bg-gray-950 rounded-3xl mt-8"
+          className="scroll-mt-20 py-24 px-0 bg-black rounded-3xl mt-8"
           data-testid="section-planes"
         >
           <h2 className="text-4xl font-extrabold text-center mb-4 text-yellow-500">
@@ -24,7 +24,7 @@ export default function Page() {
 
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
             {/* Básico */}
-            <div className="relative p-1 rounded-3xl bg-gradient-to-b from-gray-700 to-gray-800">
+            <div className="relative p-1 rounded-3xl">
               <div
                 className="h-full w-full rounded-3xl bg-gray-900 border border-gray-800 p-8 flex flex-col"
                 data-testid="card-basico"
@@ -54,7 +54,7 @@ export default function Page() {
             </div>
 
             {/* Estándar */}
-            <div className="relative p-1 rounded-3xl bg-gradient-to-b from-yellow-600 to-blue-700 shadow-2xl">
+            <div className="relative p-1 rounded-3xl shadow-2xl">
               <div
                 className="h-full w-full rounded-3xl bg-gray-900 border border-gray-800 p-8 flex flex-col"
                 data-testid="card-estandar"
@@ -81,7 +81,7 @@ export default function Page() {
                 </ul>
                 <a
                   href="#contacto"
-                  className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-gradient-to-r from-yellow-600 to-blue-700 hover:opacity-90 transition"
+                  className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-yellow-500 text-black font-semibold hover:opacity-90 transition"
                 >
                   Quiero este plan
                 </a>
@@ -89,7 +89,7 @@ export default function Page() {
             </div>
 
             {/* Premium */}
-            <div className="relative p-1 rounded-3xl bg-gradient-to-b from-gray-700 to-gray-800">
+            <div className="relative p-1 rounded-3xl">
               <div
                 className="h-full w-full rounded-3xl bg-gray-900 border border-gray-800 p-8 flex flex-col"
                 data-testid="card-premium"
@@ -129,9 +129,9 @@ export default function Page() {
         {/* Extras */}
         <section
           id="extras"
-          className="scroll-mt-20 py-20 px-0 bg-gray-900 text-center rounded-3xl mt-8"
+          className="scroll-mt-20 py-20 px-0 bg-black text-center rounded-3xl mt-8"
         >
-          <h2 className="text-4xl font-extrabold mb-8 text-blue-400">
+          <h2 className="text-4xl font-extrabold mb-8 text-yellow-500">
             Servicios Adicionales
           </h2>
           <p className="max-w-4xl mx-auto text-lg text-gray-400 leading-relaxed mb-10">
@@ -158,7 +158,7 @@ export default function Page() {
             ].map((s, i) => (
               <div
                 key={i}
-                className="p-8 bg-gray-800 rounded-3xl shadow-md border border-gray-700 text-left"
+                className="p-8 bg-gray-900 rounded-3xl shadow-md border border-gray-800 text-left"
               >
                 <h3 className="font-bold mb-3 text-yellow-400">{s.title}</h3>
                 <p className="text-gray-300">{s.text}</p>
