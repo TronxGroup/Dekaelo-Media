@@ -1,8 +1,8 @@
 // app/layout.tsx
 import type { Metadata } from 'next';
 import './globals.css';
-import SiteHeader from '../components/siteheader';
-import SiteFooter from '../components/sitefooter';
+import SiteHeader from '../components/SiteHeader'; // 👈 usa el mismo case que el archivo real
+import SiteFooter from '../components/SiteFooter'; // 👈 idem
 
 export const metadata: Metadata = {
   title: 'Dekaelo Media',
