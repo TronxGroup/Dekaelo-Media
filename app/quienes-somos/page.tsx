@@ -21,7 +21,7 @@ export default function Page() {
 
         {/* Origen */}
         <p className="p mt-6">
-          Somos un estudio audiovisual con enfoque estratégico. Combinamos narrativa, dirección y técnica cinematográfica para que cada pieza no solo se vea bien, sino que genere un impacto real en tu marca y negocio.
+          Somos un estudio audiovisual con enfoque estratégico. Unimos narrativa, dirección y técnica cinematográfica para que cada producción no solo se vea impecable, sino que genere impacto real en tu marca y en tu negocio.
         </p>
 
         <div className="my-10">
