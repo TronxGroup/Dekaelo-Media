@@ -41,7 +41,7 @@ export default function Landing() {
             <Image src="/2.Logo_White.png" alt="Dekaelo Media" width={120} height={48} priority />
           </a>
 
-        {/* Botón hamburguesa */}
+          {/* Botón hamburguesa */}
           <label
             htmlFor="menu"
             className="md:hidden cursor-pointer p-2 rounded-lg hover:bg-gray-800"
@@ -361,6 +361,33 @@ export default function Landing() {
               required
               className="w-full px-4 py-3 rounded-xl bg-gray-800 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
             />
+
+            {/* Consentimiento */}
+            <div className="flex items-start gap-3 text-sm text-gray-300">
+              <input
+                id="terms"
+                name="terms"
+                type="checkbox"
+                value="accepted"
+                required
+                className="mt-1 h-4 w-4 rounded border-gray-600 bg-gray-800"
+                aria-describedby="terms-help"
+              />
+              <label htmlFor="terms" className="select-none">
+                He leído y acepto las{' '}
+                <Link href="/condiciones" className="underline underline-offset-4 hover:text-yellow-400">
+                  Condiciones de Servicio
+                </Link>{' '}
+                y la{' '}
+                <Link href="/privacidad" className="underline underline-offset-4 hover:text-yellow-400">
+                  Política de Privacidad
+                </Link>
+                .
+              </label>
+            </div>
+            <p id="terms-help" className="text-xs text-gray-500 -mt-2">
+              Puedes solicitar baja o ejercer tus derechos en cualquier momento.
+            </p>
 
             {/* honeypot anti-spam */}
             <input type="text" name="_gotcha" className="hidden" aria-hidden={true} tabIndex={-1} />
