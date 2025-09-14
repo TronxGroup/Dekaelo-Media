@@ -55,7 +55,7 @@ const projects: Project[] = [
     youtube: 'https://www.youtube.com/embed/byTylGKp-uI?rel=0',
     logo: '/logo_6.png',
     year: '2023–2025',
-    desc: 'Podcast de video de la Cámara de Comercio Asia Pacífico. 20+ episodios con empresarios y referentes, pensados para YouTube, LinkedIn y clipping corto.',
+    desc: 'Podcast de video de la Cámara de Comercio Asia Pacífico. Más de 20 episodios con empresarios y referentes de alto nivel, diseñados para distribución en LinkedIn, newsletters internos y en clippings cortos para redes sociales.',
   },
   {
     title: 'Cine y Series — Yokai / La Horrible / Danny Wang',
