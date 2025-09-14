@@ -1,8 +1,6 @@
 import { VideoEmbed } from './components/VideoEmbed';
 import { ClientLogos } from './components/ClientLogos';
 import { Gallery } from './components/Gallery';
-import { Testimonials } from './components/Testimonials';
-import { CaseCards } from './components/CaseCards';
 import { FAQ } from './components/FAQ';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -33,7 +31,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* UNA sola franja de logos (sin duplicados) */}
+      {/* UNA sola franja de logos */}
       <section className="border-y border-white/10 bg-black/60">
         <div className="container py-10">
           <p className="text-center text-white/50 text-sm mb-6">Confían en nosotros</p>
@@ -66,8 +64,66 @@ export default function Page() {
         </div>
       </div>
 
-      <CaseCards />
-      <Testimonials />
+      {/* Casos breves */}
+      <section className="bg-black/40 border-t border-b border-white/10">
+        <div className="container py-16">
+          <h2 className="h2 text-center mb-12">Casos destacados</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="card p-6">
+              <h3 className="font-semibold text-lg">Innova Talks — Banco BICE</h3>
+              <p className="text-white/70 mt-2">
+                Podcast corporativo en video con entrevistas a colaboradores clave.
+                Un formato estratégico para posicionar la cultura y generar networking de alto nivel.
+              </p>
+            </div>
+            <div className="card p-6">
+              <h3 className="font-semibold text-lg">Creando Líderes para Asia — APCC</h3>
+              <p className="text-white/70 mt-2">
+                Más de 20 episodios con referentes empresariales.
+                Contenido diseñado para YouTube, LinkedIn y newsletters, además de clips cortos para redes.
+              </p>
+            </div>
+            <div className="card p-6">
+              <h3 className="font-semibold text-lg">Documental 80 Años — Trewhela’s School</h3>
+              <p className="text-white/70 mt-2">
+                Pieza institucional que recorre origen, presente y futuro del colegio.
+                Versión principal y cortes breves para marketing digital y RRSS.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonios */}
+      <section className="bg-black/60 border-t border-b border-white/10">
+        <div className="container py-16">
+          <h2 className="h2 text-center mb-12">Testimonios</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
+              <p className="text-white/80 italic">
+                “Muy profesionales y puntuales en cada jornada. El podcast no solo nos dio visibilidad, también se convirtió en una herramienta clave para generar nuevos negocios con nuestros invitados.”
+              </p>
+              <p className="mt-4 font-semibold">Víctor Ruz</p>
+              <p className="text-sm text-white/60">CEO, IGROMI</p>
+            </div>
+            <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
+              <p className="text-white/80 italic">
+                “El video institucional que nos produjeron ha sido genial. A lo largo de los años lo seguimos utilizando porque un buen video es una inversión de largo plazo y de credibilidad.”
+              </p>
+              <p className="mt-4 font-semibold">William Barhoma</p>
+              <p className="text-sm text-white/60">CEO, Exploflex</p>
+            </div>
+            <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
+              <p className="text-white/80 italic">
+                “Nos ayudaron a crear videos explicativos claros y profesionales para clientes y proveedores. Nuestro video principal estuvo 5 años en la portada oficial de la empresa.”
+              </p>
+              <p className="mt-4 font-semibold">Rodrigo González</p>
+              <p className="text-sm text-white/60">Gerente Comercial, Acmanet</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <FAQ />
       <Gallery />
     </section>
