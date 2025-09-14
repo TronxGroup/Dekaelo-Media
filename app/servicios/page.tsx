@@ -9,6 +9,81 @@ export default function Page() {
       <div className="container">
         <h1 className="h2">Servicios</h1>
 
+        {/* BENEFICIOS PARA EMPRESAS */}
+        <section className="mt-8 bg-black">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center">
+            Beneficios para tu empresa
+          </h2>
+          <p className="text-center text-white/70 mt-3 max-w-3xl mx-auto">
+            Más que producir videos: creamos un sistema mensual de contenido que mantiene tu comunicación
+            activa, coherente y medible.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
+            {[
+              {
+                t: 'Consistencia que posiciona',
+                d: 'Presencia sostenida mes a mes: tu marca deja de “aparecer y desaparecer”.',
+              },
+              {
+                t: 'Velocidad & planificación',
+                d: 'Calendario editorial, guion y rodaje programados. Menos urgencias, más calidad.',
+              },
+              {
+                t: 'Eficiencia de costos',
+                d: 'Aprovechamos cada jornada para múltiples entregas (video largo + clips).',
+              },
+              {
+                t: 'Coherencia de marca',
+                d: 'Mismo tono visual y narrativo en todas las piezas y plataformas.',
+              },
+              {
+                t: 'Medición y mejora',
+                d: 'Informe básico mensual para iterar según desempeño real.',
+              },
+              {
+                t: 'Escalable',
+                d: 'Sumamos jornadas, formatos o motion graphics según tus objetivos.',
+              },
+            ].map((b) => (
+              <div key={b.t} className="p-6 rounded-2xl bg-gray-900 border border-white/10">
+                <h3 className="font-semibold text-white">{b.t}</h3>
+                <p className="text-white/70 mt-2">{b.d}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* COMPARATIVA: MENSUAL VS VIDEO SUELTO */}
+        <section className="mt-12 bg-black">
+          <h2 className="text-2xl font-bold text-white text-center">¿Por qué un plan mensual?</h2>
+          <div className="mt-6 grid md:grid-cols-2 gap-6">
+            <div className="rounded-2xl bg-gray-900 border border-white/10 p-6">
+              <h3 className="font-semibold text-white">Plan mensual</h3>
+              <ul className="mt-3 space-y-2 text-white/80 text-sm leading-relaxed">
+                <li>• Pipeline de producción estable (brief → guion → rodaje → entregas).</li>
+                <li>• Mayor rendimiento por jornada: 1 video largo + 4–5 clips.</li>
+                <li>• Consistencia en tono, look y mensajes clave.</li>
+                <li>• Ajustes mensuales basados en datos reales.</li>
+                <li>• Mejor costo/resultado en el tiempo.</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl bg-gray-950 border border-white/10 p-6">
+              <h3 className="font-semibold text-white/90">Videos sueltos</h3>
+              <ul className="mt-3 space-y-2 text-white/60 text-sm leading-relaxed">
+                <li>• Comunicación intermitente y poco predecible.</li>
+                <li>• Briefs urgentes, mayor fricción y tiempos irregulares.</li>
+                <li>• Inconsistencias visuales y narrativas entre piezas.</li>
+                <li>• Difícil medir, aprender y escalar.</li>
+                <li>• Mayor costo por impacto aislado.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="text-center mt-6">
+            <a href="/contacto#form" className="btn">Evaluar mi plan</a>
+          </div>
+        </section>
+
         {/* Planes mensuales */}
         <section
           id="planes"
@@ -43,7 +118,7 @@ export default function Page() {
                   <li>1 revisión</li>
                 </ul>
                 <a
-                  href="#contacto"
+                  href="/contacto#form"
                   className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 transition border border-white/15"
                 >
                   Quiero este plan
@@ -76,7 +151,7 @@ export default function Page() {
                   <li>Informe mensual estratégico básico</li>
                 </ul>
                 <a
-                  href="#contacto"
+                  href="/contacto#form"
                   className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90 transition"
                 >
                   Quiero este plan
@@ -106,7 +181,7 @@ export default function Page() {
                   <li>Informe mensual con métricas y recomendaciones de pauta</li>
                 </ul>
                 <a
-                  href="#contacto"
+                  href="/contacto#form"
                   className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 transition border border-white/15"
                 >
                   Quiero este plan
