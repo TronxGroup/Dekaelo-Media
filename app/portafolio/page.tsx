@@ -58,7 +58,7 @@ const projects: Project[] = [
   },
   {
     title: 'Creando Líderes para Asia — APCC',
-    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
+    youtube: 'https://www.youtube.com/embed/byTylGKp-uI?rel=0', // REEMPLAZAR
     logo: '/logo_6.png', // REEMPLAZAR (ej: /apcc.png)
     year: '2023–2025',
     desc: 'Podcast de video de la Cámara de Comercio Asia Pacífico. 20+ episodios con empresarios y referentes, pensados para YouTube, LinkedIn y clipping corto.',
