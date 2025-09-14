@@ -41,7 +41,7 @@ const projects: Project[] = [
     youtube: 'https://www.youtube.com/embed/_L1MKLIp9yw?rel=0',
     logo: '/logo_5.png',
     year: '2018',
-    desc: 'Documental institucional que recorre origen, presente y futuro del colegio. Pieza principal + cortes breves para marketing y RRSS.',
+    desc: 'Documenta institucional que recorre origen, presente y futuro del colegio. Pieza principal + cortes breves para marketing y RRSS.',
   },
   {
     title: 'Tutorial — Better Life (A/C)',
