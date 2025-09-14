@@ -16,41 +16,51 @@ export default function Page() {
           </h2>
           <p className="text-center text-white/70 mt-3 max-w-3xl mx-auto">
             Más que producir videos: creamos un sistema mensual de contenido que mantiene tu comunicación
-            activa, coherente y medible.
+            activa, coherente y medible — tanto externa (marketing, ventas, marca) como <span className="text-white">interna</span>:
+            inducción de personal, podcasts internos y contenido para salas de espera o señalética digital.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-10">
             {[
-              {
-                t: 'Consistencia que posiciona',
-                d: 'Presencia sostenida mes a mes: tu marca deja de “aparecer y desaparecer”.',
-              },
-              {
-                t: 'Velocidad & planificación',
-                d: 'Calendario editorial, guion y rodaje programados. Menos urgencias, más calidad.',
-              },
-              {
-                t: 'Eficiencia de costos',
-                d: 'Aprovechamos cada jornada para múltiples entregas (video largo + clips).',
-              },
-              {
-                t: 'Coherencia de marca',
-                d: 'Mismo tono visual y narrativo en todas las piezas y plataformas.',
-              },
-              {
-                t: 'Medición y mejora',
-                d: 'Informe básico mensual para iterar según desempeño real.',
-              },
-              {
-                t: 'Escalable',
-                d: 'Sumamos jornadas, formatos o motion graphics según tus objetivos.',
-              },
+              { t: 'Consistencia que posiciona', d: 'Presencia sostenida mes a mes: tu marca deja de “aparecer y desaparecer”.' },
+              { t: 'Velocidad & planificación', d: 'Calendario editorial, guion y rodaje programados. Menos urgencias, más calidad.' },
+              { t: 'Eficiencia de costos', d: 'Aprovechamos cada jornada para múltiples entregas (video largo + clips).' },
+              { t: 'Coherencia de marca', d: 'Mismo tono visual y narrativo en todas las piezas y plataformas.' },
+              { t: 'Medición y mejora', d: 'Informe básico mensual para iterar según desempeño real.' },
+              { t: 'Escalable', d: 'Sumamos jornadas, formatos o motion graphics según tus objetivos.' },
+              { t: 'Comunicación interna', d: 'Inducción, onboarding, cultura y seguridad. Podcasts internos y contenidos para salas de espera, intranet y pantallas.' },
             ].map((b) => (
               <div key={b.t} className="p-6 rounded-2xl bg-gray-900 border border-white/10">
                 <h3 className="font-semibold text-white">{b.t}</h3>
                 <p className="text-white/70 mt-2">{b.d}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* EJEMPLOS COMUNICACIÓN INTERNA */}
+        <section className="mt-10">
+          <h3 className="text-2xl font-bold text-white text-center">Ejemplos de comunicación interna</h3>
+          <p className="text-center text-white/70 mt-2 max-w-3xl mx-auto">
+            Piezas pensadas para onboarding, cultura y operaciones. Duraciones sugeridas y formatos listos para intranet, pantallas y correo interno.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 mt-8">
+            {[
+              { t: 'Onboarding / Inducción', d: '3–5 min · Bienvenida + procesos clave.' },
+              { t: 'Cápsulas de Cultura', d: '30–60 s · Valores, beneficios, clima.' },
+              { t: 'Seguridad y Prevención', d: '45–90 s · Protocolos críticos y recordatorios.' },
+              { t: 'Mensaje de Gerencia', d: '60–90 s · Objetivos, hitos, reconocimientos.' },
+              { t: 'Podcast Interno', d: '20–40 min · Conversaciones con líderes y equipos.' },
+              { t: 'Salas de Espera / Señalética', d: '10–15 s en loop · Info útil y tips.' },
+            ].map((e) => (
+              <div key={e.t} className="p-6 rounded-2xl bg-gray-900 border border-white/10">
+                <h4 className="font-semibold text-white">{e.t}</h4>
+                <p className="text-white/70 mt-1">{e.d}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-6">
+            <a href="/contacto#form" className="btn-outline">Planificar piezas internas</a>
           </div>
         </section>
 
@@ -66,6 +76,7 @@ export default function Page() {
                 <li>• Consistencia en tono, look y mensajes clave.</li>
                 <li>• Ajustes mensuales basados en datos reales.</li>
                 <li>• Mejor costo/resultado en el tiempo.</li>
+                <li>• Incluye piezas para <span className="text-white">comunicación interna</span>: inducción, cultura, seguridad, señalética digital.</li>
               </ul>
             </div>
             <div className="rounded-2xl bg-gray-950 border border-white/10 p-6">
@@ -76,6 +87,7 @@ export default function Page() {
                 <li>• Inconsistencias visuales y narrativas entre piezas.</li>
                 <li>• Difícil medir, aprender y escalar.</li>
                 <li>• Mayor costo por impacto aislado.</li>
+                <li>• Suele ignorar la dimensión interna (inducción, cultura, señalética).</li>
               </ul>
             </div>
           </div>
@@ -90,9 +102,7 @@ export default function Page() {
           className="scroll-mt-20 py-24 px-0 bg-black rounded-3xl mt-8"
           data-testid="section-planes"
         >
-          <h2 className="text-4xl font-extrabold text-center mb-4 text-white">
-            Planes mensuales
-          </h2>
+          <h2 className="text-4xl font-extrabold text-center mb-4 text-white">Planes mensuales</h2>
           <p className="text-center text-white/60 mb-12">
             Valores IVA incluido. Contrato mínimo sugerido: 3 meses.
           </p>
@@ -100,10 +110,7 @@ export default function Page() {
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
             {/* Básico */}
             <div className="relative p-1 rounded-3xl">
-              <div
-                className="h-full w-full rounded-3xl bg-gray-900 border border-white/10 p-8 flex flex-col"
-                data-testid="card-basico"
-              >
+              <div className="h-full w-full rounded-3xl bg-gray-900 border border-white/10 p-8 flex flex-col" data-testid="card-basico">
                 <h3 className="text-xl font-bold text-white">Básico</h3>
                 <p className="mt-1 text-sm text-white/60">Para iniciar con presencia mensual</p>
                 <div className="mt-6">
@@ -117,10 +124,7 @@ export default function Page() {
                   <li>Exportación para 1 plataforma</li>
                   <li>1 revisión</li>
                 </ul>
-                <a
-                  href="/contacto#form"
-                  className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 transition border border-white/15"
-                >
+                <a href="/contacto#form" className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 transition border border-white/15">
                   Quiero este plan
                 </a>
               </div>
@@ -128,10 +132,7 @@ export default function Page() {
 
             {/* Estándar */}
             <div className="relative p-1 rounded-3xl">
-              <div
-                className="h-full w-full rounded-3xl bg-gray-900 border border-white/10 p-8 flex flex-col"
-                data-testid="card-estandar"
-              >
+              <div className="h-full w-full rounded-3xl bg-gray-900 border border-white/10 p-8 flex flex-col" data-testid="card-estandar">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full border border-white/15">
                   Recomendado
                 </div>
@@ -150,10 +151,7 @@ export default function Page() {
                   <li>1 revisión</li>
                   <li>Informe mensual estratégico básico</li>
                 </ul>
-                <a
-                  href="/contacto#form"
-                  className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90 transition"
-                >
+                <a href="/contacto#form" className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90 transition">
                   Quiero este plan
                 </a>
               </div>
@@ -161,10 +159,7 @@ export default function Page() {
 
             {/* Premium */}
             <div className="relative p-1 rounded-3xl">
-              <div
-                className="h-full w-full rounded-3xl bg-gray-900 border border-white/10 p-8 flex flex-col"
-                data-testid="card-premium"
-              >
+              <div className="h-full w-full rounded-3xl bg-gray-900 border border-white/10 p-8 flex flex-col" data-testid="card-premium">
                 <h3 className="text-xl font-bold text-white">Premium</h3>
                 <p className="mt-1 text-sm text-white/60">Para campañas y mayor cobertura</p>
                 <div className="mt-6">
@@ -180,10 +175,7 @@ export default function Page() {
                   <li>Entregas personalizadas + material adicional</li>
                   <li>Informe mensual con métricas y recomendaciones de pauta</li>
                 </ul>
-                <a
-                  href="/contacto#form"
-                  className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 transition border border-white/15"
-                >
+                <a href="/contacto#form" className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 transition border border-white/15">
                   Quiero este plan
                 </a>
               </div>
@@ -196,10 +188,7 @@ export default function Page() {
         </section>
 
         {/* Extras */}
-        <section
-          id="extras"
-          className="scroll-mt-20 py-20 px-0 bg-black text-center rounded-3xl mt-8"
-        >
+        <section id="extras" className="scroll-mt-20 py-20 px-0 bg-black text-center rounded-3xl mt-8">
           <h2 className="text-4xl font-extrabold mb-8 text-white">Servicios Adicionales</h2>
           <p className="max-w-4xl mx-auto text-lg text-white/70 leading-relaxed mb-10">
             Potencia tu plan con opciones extra a valores preferentes.
@@ -211,10 +200,7 @@ export default function Page() {
               { title: '✨ Animación gráfica', text: 'Motion graphics para reforzar tu mensaje (logos, datos, transiciones).' },
               { title: '📦 Entregas extra', text: 'Reels adicionales o versiones extendidas según tus objetivos.' },
             ].map((s, i) => (
-              <div
-                key={i}
-                className="p-8 bg-gray-900 rounded-3xl shadow-md border border-white/10 text-left"
-              >
+              <div key={i} className="p-8 bg-gray-900 rounded-3xl shadow-md border border-white/10 text-left">
                 <h3 className="font-bold mb-3 text-white">{s.title}</h3>
                 <p className="text-white/80">{s.text}</p>
               </div>
