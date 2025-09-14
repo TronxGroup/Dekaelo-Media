@@ -26,7 +26,7 @@ const projects: Project[] = [
   },
   {
     title: 'Break Industrial — IGROMI (CORFO)',
-    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
+    youtube: 'https://www.youtube.com/embed/hAyZFw0-55o?rel=0', // REEMPLAZAR
     logo: '/logo_1.png', // REEMPLAZAR (ej: /igromi.png)
     year: '2024',
     desc: 'Podcast de video financiado por CORFO y auspiciado por U. Andrés Bello y Coderhouse. Conversaciones con referentes de tecnología/industria en Chile. Producción integral y delivery multiplataforma.',
