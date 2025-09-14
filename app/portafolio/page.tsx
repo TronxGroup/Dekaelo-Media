@@ -19,7 +19,7 @@ const projects: Project[] = [
   {
     title: 'Innova Talks — Banco BICE',
     youtube: 'https://www.youtube.com/embed/lyt5wWzPCg8?rel=0', // REEMPLAZAR
-    logo: '/logo_1.png', // REEMPLAZAR (ej: /bice.png)
+    logo: '/logo_2.png', // REEMPLAZAR (ej: /bice.png)
     year: '2025',
     desc: 'Podcast en video con entrevistas a colaboradores clave del banco. Concepto, dirección y producción técnica para un formato corporativo cercano y de alto estándar.',
     link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
@@ -27,7 +27,7 @@ const projects: Project[] = [
   {
     title: 'Break Industrial — IGROMI (CORFO)',
     youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
-    logo: '/logo_2.png', // REEMPLAZAR (ej: /igromi.png)
+    logo: '/logo_1.png', // REEMPLAZAR (ej: /igromi.png)
     year: '2024',
     desc: 'Podcast de video financiado por CORFO y auspiciado por U. Andrés Bello y Coderhouse. Conversaciones con referentes de tecnología/industria en Chile. Producción integral y delivery multiplataforma.',
     link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
@@ -43,7 +43,7 @@ const projects: Project[] = [
   {
     title: "Documental 80 Años — Trewhela's School",
     youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
-    logo: '/logo_4.png', // REEMPLAZAR (ej: /trewhela.png)
+    logo: '/logo_5.png', // REEMPLAZAR (ej: /trewhela.png)
     year: '2023',
     desc: 'Documental institucional que recorre origen, presente y futuro del colegio. Pieza principal + cortes breves para marketing y RRSS.',
     link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
@@ -51,7 +51,7 @@ const projects: Project[] = [
   {
     title: 'Tutorial — Better Life (A/C)',
     youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
-    logo: '/logo_5.png', // REEMPLAZAR
+    logo: '/logo_4.png', // REEMPLAZAR
     year: '2015',
     desc: 'Tutorial de instalación de aire acondicionado que sigue vigente en YouTube. +3.000.000 de vistas y comentarios orgánicos hasta hoy.',
     link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
