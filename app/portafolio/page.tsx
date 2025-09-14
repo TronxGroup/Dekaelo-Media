@@ -66,7 +66,7 @@ const projects: Project[] = [
   },
   {
     title: 'Cine y Series — Yokai / La Horrible / Danny Wang',
-    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR (trailer)
+    youtube: 'https://www.youtube.com/embed/550zTI8nEvY?rel=0', // REEMPLAZAR (trailer)
     logo: '/logo_cine.png', // SUBE un logo genérico de cine, ej: /logo_cine.png
     year: '2014–2022',
     desc: 'Largometraje “Yokai” (Selección Oficial Sitges y BARS). Serie “La Horrible” (con Sigrid Alegría y Liliana Ross QEPD). Proyecto premiado en Corea: “Danny Wang”.',
