@@ -74,7 +74,7 @@ const projects: Project[] = [
   },
   {
     title: 'Motion Graphics — KGHM, Inducom, TAPP',
-    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR (reel MG)
+    youtube: 'https://www.youtube.com/embed/ilvi2u_c_a0?rel=0', // REEMPLAZAR (reel MG)
     logo: '/logo_motion.png', // SUBE un ícono/iso de motion, ej: /logo_motion.png
     year: '2023–2025',
     desc: 'Animaciones gráficas para marcas B2B y corporativas: lower thirds, key visuals, data-visual y brand animations para campañas y piezas institucionales.',
