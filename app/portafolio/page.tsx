@@ -8,52 +8,76 @@ export const metadata = {
 
 type Project = {
   title: string;
-  youtube: string;       // URL embebida de YouTube (usa el formato /embed/)
-  logo: string;          // ruta en /public
+  youtube: string; // URL embebida de YouTube (formato /embed/)
+  logo: string;    // ruta en /public (cámbialo por tu logo real)
   year: string;
   desc: string;
-  link?: string;         // link a YouTube normal (opcional)
+  link?: string;   // link público de YouTube (opcional)
 };
 
 const projects: Project[] = [
   {
-    title: 'Reel Dekaelo Media',
-    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZA si quieres
-    logo: '/logo_1.png',
+    title: 'Innova Talks — Banco BICE',
+    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
+    logo: '/logo_1.png', // REEMPLAZAR (ej: /bice.png)
     year: '2025',
-    desc: 'Selección de tomas, piezas corporativas y comerciales recientes. Dirección, cámara y edición.',
+    desc: 'Podcast en video con entrevistas a colaboradores clave del banco. Concepto, dirección y producción técnica para un formato corporativo cercano y de alto estándar.',
     link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
   },
   {
-    title: 'Campaña Corporativa',
-    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZA
-    logo: '/logo_2.png',
+    title: 'Break Industrial — IGROMI (CORFO)',
+    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
+    logo: '/logo_2.png', // REEMPLAZAR (ej: /igromi.png)
     year: '2024',
-    desc: 'Spot de campaña con testimoniales y B-roll de operaciones. Entregas para RRSS y web.',
+    desc: 'Podcast de video financiado por CORFO y auspiciado por U. Andrés Bello y Coderhouse. Conversaciones con referentes de tecnología/industria en Chile. Producción integral y delivery multiplataforma.',
     link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
   },
   {
-    title: 'Serie de Reels · Employer Branding',
-    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZA
-    logo: '/logo_3.png',
+    title: 'Fútbol y Parrilla — Independiente',
+    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
+    logo: '/logo_3.png', // REEMPLAZAR
     year: '2024',
-    desc: '4–5 cápsulas mensuales para atracción de talento. Guion, rodaje y edición optimizada vertical.',
+    desc: 'Producción de los 4 primeros episodios de este formato editorial. +300.000 vistas acumuladas en YouTube. Diseño de dinámica, registro multicámara y edición ágil.',
     link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
   },
   {
-    title: 'Documental Corto de Marca',
-    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZA
-    logo: '/logo_4.png',
+    title: "Documental 80 Años — Trewhela's School",
+    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
+    logo: '/logo_4.png', // REEMPLAZAR (ej: /trewhela.png)
     year: '2023',
-    desc: 'Historia de clientes y procesos internos. Pieza de 6 min + versiones de 60–90s.',
+    desc: 'Documental institucional que recorre origen, presente y futuro del colegio. Pieza principal + cortes breves para marketing y RRSS.',
     link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
   },
   {
-    title: 'Lanzamiento Producto · Spot 30s',
-    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZA
-    logo: '/logo_5.png',
-    year: '2023',
-    desc: 'Spot principal 30s + adaptaciones para Instagram y YouTube. Animación de títulos y supers.',
+    title: 'Tutorial — Better Life (A/C)',
+    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
+    logo: '/logo_5.png', // REEMPLAZAR
+    year: '2015',
+    desc: 'Tutorial de instalación de aire acondicionado que sigue vigente en YouTube. +3.000.000 de vistas y comentarios orgánicos hasta hoy.',
+    link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
+  },
+  {
+    title: 'Creando Líderes para Asia — APCC',
+    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
+    logo: '/logo_6.png', // REEMPLAZAR (ej: /apcc.png)
+    year: '2023–2025',
+    desc: 'Podcast de video de la Cámara de Comercio Asia Pacífico. 20+ episodios con empresarios y referentes, pensados para YouTube, LinkedIn y clipping corto.',
+    link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
+  },
+  {
+    title: 'Cine y Series — Yokai / La Horrible / Danny Wang',
+    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR (trailer)
+    logo: '/logo_cine.png', // SUBE un logo genérico de cine, ej: /logo_cine.png
+    year: '2014–2022',
+    desc: 'Largometraje “Yokai” (Selección Oficial Sitges y BARS). Serie “La Horrible” (con Sigrid Alegría y Liliana Ross QEPD). Proyecto premiado en Corea: “Danny Wang”.',
+    link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
+  },
+  {
+    title: 'Motion Graphics — KGHM, Inducom, TAPP',
+    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR (reel MG)
+    logo: '/logo_motion.png', // SUBE un ícono/iso de motion, ej: /logo_motion.png
+    year: '2023–2025',
+    desc: 'Animaciones gráficas para marcas B2B y corporativas: lower thirds, key visuals, data-visual y brand animations para campañas y piezas institucionales.',
     link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
   },
 ];
