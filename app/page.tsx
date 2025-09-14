@@ -44,7 +44,7 @@ export default function Page() {
       {/* DESTACADO */}
       <div className="container section">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <VideoEmbed src="https://www.youtube.com/embed/550zTI8nEvY?rel=0" title="Video destacado" />
+          <VideoEmbed src="https://www.youtube.com/embed/LAaLA-spVH0?rel=0" title="Video destacado" />
           <div>
             <h2 className="h2">Plan Audiovisual Mensual</h2>
             <p className="text-white/70 mt-2">
