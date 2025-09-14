@@ -91,6 +91,9 @@ export function Footer() {
           <p className="text-white/60 mt-2">
             © {new Date().getFullYear()} Dekaelo Media. Todos los derechos reservados.
           </p>
+          <p className="text-xs text-white/40">
+            Dekaelo Media es parte de <span className="font-semibold">Tronx Group</span>.
+          </p>
         </div>
       </div>
     </footer>
