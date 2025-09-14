@@ -26,7 +26,7 @@ export default function Page() {
 
         <div className="my-10">
           <Image
-            src="/foto_origen.jpg"
+            src="/qs_dekaelo_3.png"
             alt="Primera etapa Dekaelo Media"
             width={1200}
             height={700}
@@ -42,14 +42,14 @@ export default function Page() {
 
         <div className="my-10 grid md:grid-cols-2 gap-6">
           <Image
-            src="/foto_yokai.jpg"
+            src="/qs_dekaelo_4.png"
             alt="Rodaje de Yokai"
             width={600}
             height={400}
             className="rounded-2xl border border-white/10 object-cover"
           />
           <Image
-            src="/foto_tv.jpg"
+            src="/qs_dekaelo_1.png"
             alt="Spot para televisión"
             width={600}
             height={400}
@@ -64,7 +64,7 @@ export default function Page() {
 
         <div className="my-10">
           <Image
-            src="/foto_docu.jpg"
+            src="/qs_dekaelo_2.png"
             alt="Producción documental"
             width={1200}
             height={700}
