@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <Link href="/">
             <Image
-              src="/logo.png"
+              src="/logo_text_white.png"
               alt="Dekaelo Media"
               width={140}
               height={40}
