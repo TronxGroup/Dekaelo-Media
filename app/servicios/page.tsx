@@ -207,6 +207,22 @@ export default function Page() {
             ))}
           </div>
         </section>
+
+        {/* CTA FINAL */}
+        <section className="py-20 text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white">
+            ¿Listo para potenciar tu comunicación audiovisual?
+          </h2>
+          <p className="mt-3 text-white/70 max-w-2xl mx-auto">
+            Cotiza tu plan hoy y asegura un aliado creativo que transforma ideas en impacto real.
+          </p>
+          <a
+            href="/contacto"
+            className="mt-8 inline-block px-10 py-4 bg-white text-black font-semibold rounded-2xl hover:opacity-90 transition"
+          >
+            Cotiza tu proyecto →
+          </a>
+        </section>
       </div>
     </section>
   );
