@@ -69,7 +69,7 @@ const projects: Project[] = [
     youtube: 'https://www.youtube.com/embed/ilvi2u_c_a0?rel=0',
     logo: '/logo_motion.png',
     year: '2023–2025',
-    desc: 'Animaciones gráficas para marcas B2B y corporativas: lower thirds, key visuals, data-visual y brand animations para campañas y piezas institucionales.',
+    desc: 'Animaciones gráficas para marcas B2B y corporativas: lower thirds, key visuals, data-visual y brand animations para campañas, comunicación interna y videos explicativos. Entregas optimizadas para RRSS, web y presentaciones.',
   },
 ];
 
