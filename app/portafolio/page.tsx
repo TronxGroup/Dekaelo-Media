@@ -18,7 +18,7 @@ type Project = {
 const projects: Project[] = [
   {
     title: 'Innova Talks — Banco BICE',
-    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
+    youtube: 'https://www.youtube.com/embed/lyt5wWzPCg8?rel=0', // REEMPLAZAR
     logo: '/logo_1.png', // REEMPLAZAR (ej: /bice.png)
     year: '2025',
     desc: 'Podcast en video con entrevistas a colaboradores clave del banco. Concepto, dirección y producción técnica para un formato corporativo cercano y de alto estándar.',
