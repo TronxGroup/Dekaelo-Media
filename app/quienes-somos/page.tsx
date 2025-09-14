@@ -59,7 +59,7 @@ export default function Page() {
 
         {/* 10 años */}
         <p className="p mt-6">
-          A lo largo de más de <strong>10 años de trabajo</strong> junto a distintas marcas, acumulamos más de <strong>4.000.000 de visualizaciones</strong> en proyectos propios y de clientes. Nuestra experiencia se ha extendido a sectores como banca, retail, educación, tecnología y pymes.
+          A lo largo de más de <strong>10 años de trabajo</strong> junto a distintas marcas, acumulamos más de <strong>5.000.000 de visualizaciones</strong> en proyectos propios y de clientes. Nuestra experiencia se ha extendido a sectores como banca, retail, educación, tecnología y pymes.
         </p>
 
         <div className="my-10">
