@@ -42,7 +42,7 @@ const projects: Project[] = [
   },
   {
     title: "Documental 80 Años — Trewhela's School",
-    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
+    youtube: 'https://www.youtube.com/embed/_L1MKLIp9yw?rel=0', // REEMPLAZAR
     logo: '/logo_5.png', // REEMPLAZAR (ej: /trewhela.png)
     year: '2023',
     desc: 'Documental institucional que recorre origen, presente y futuro del colegio. Pieza principal + cortes breves para marketing y RRSS.',
