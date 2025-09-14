@@ -50,10 +50,10 @@ const projects: Project[] = [
   },
   {
     title: 'Tutorial — Better Life (A/C)',
-    youtube: 'https://www.youtube.com/embed/uul8LNP6BbQ?rel=0', // REEMPLAZAR
+    youtube: 'https://www.youtube.com/embed/f7BpYpTSPLk?rel=0', // REEMPLAZAR
     logo: '/logo_4.png', // REEMPLAZAR
     year: '2015',
-    desc: 'Tutorial de instalación de aire acondicionado que sigue vigente en YouTube. +3.000.000 de vistas y comentarios orgánicos hasta hoy.',
+    desc: 'Tutorial de instalación de aire acondicionado que sigue vigente en YouTube. +3.000.000 de vistas, +18k me gusta y comentarios orgánicos hasta hoy.',
     link: 'https://www.youtube.com/watch?v=uul8LNP6BbQ',
   },
   {
