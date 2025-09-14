@@ -40,7 +40,7 @@ const projects: Project[] = [
     title: "Documental 80 Años — Trewhela's School",
     youtube: 'https://www.youtube.com/embed/_L1MKLIp9yw?rel=0',
     logo: '/logo_5.png',
-    year: '2023',
+    year: '2018',
     desc: 'Documental institucional que recorre origen, presente y futuro del colegio. Pieza principal + cortes breves para marketing y RRSS.',
   },
   {
@@ -61,14 +61,14 @@ const projects: Project[] = [
     title: 'Cine y Series — Yokai / La Horrible / Danny Wang',
     youtube: 'https://www.youtube.com/embed/550zTI8nEvY?rel=0',
     logo: '/logo_cine.png',
-    year: '2014–2022',
+    year: '2014–2020',
     desc: 'Largometraje “Yokai” (Selección Oficial Sitges y BARS). Serie “La Horrible” (con Sigrid Alegría y Liliana Ross QEPD). Proyecto premiado en Corea: “Danny Wang”.',
   },
   {
     title: 'Motion Graphics — KGHM, Inducom, TAPP',
     youtube: 'https://www.youtube.com/embed/ilvi2u_c_a0?rel=0',
     logo: '/logo_motion.png',
-    year: '2023–2025',
+    year: '2018–2020',
     desc: 'Animaciones gráficas para marcas B2B y corporativas: lower thirds, key visuals, data-visual y brand animations para campañas, comunicación interna y videos explicativos. Entregas optimizadas para RRSS, web y presentaciones.',
   },
 ];
