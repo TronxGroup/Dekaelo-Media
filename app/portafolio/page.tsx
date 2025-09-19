@@ -73,7 +73,7 @@ const projects: Project[] = [
   {
     title: 'Fútbol y Parrilla — Independiente',
     youtube: toEmbed('https://www.youtube.com/watch?v=PLSfbZU_asQ'),
-    logo: '/logo_11.jpg',
+    logo: '/logo_11.png',
     year: '2024',
     desc: 'Producción de los 4 primeros episodios. +300.000 vistas en YouTube. Diseño de dinámica, registro multicámara y edición ágil.',
   },
