@@ -1,6 +1,6 @@
 import { VideoEmbed } from './components/VideoEmbed';
 import { ClientLogos } from './components/ClientLogos';
-import { Gallery } from './components/Gallery';
+// import { Gallery } from './components/Gallery'; // ← removido
 import { FAQ } from './components/FAQ';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -98,7 +98,7 @@ export default function Page() {
       <section className="bg-black/60 border-t border-b border-white/10">
         <div className="container py-16">
           <h2 className="h2 text-center mb-12">Testimonios</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
             <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
               <p className="text-white/80 italic">
                 “Muy profesionales y puntuales en cada jornada. El podcast no solo nos dio visibilidad, también se convirtió en una herramienta clave para generar nuevos negocios con nuestros invitados.”
@@ -125,7 +125,17 @@ export default function Page() {
       </section>
 
       <FAQ />
-      <Gallery />
+
+      {/* Portafolio (reemplazo de Gallery) */}
+      <section className="container py-16">
+        <div className="text-center">
+          <h2 className="h2 mb-4">Portafolio</h2>
+          <p className="text-white/70 mb-6">
+            Mira una selección de piezas recientes y casos completos.
+          </p>
+          <Link href="/portafolio" className="btn">Ver portafolio completo →</Link>
+        </div>
+      </section>
     </section>
   );
 }
