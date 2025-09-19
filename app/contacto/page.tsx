@@ -1,5 +1,5 @@
 // app/contacto/page.tsx
-import ZohoLeadForm from "@/components/ZohoLeadForm";
+import ZohoLeadForm from "../components/ZohoLeadForm";
 
 export const metadata = {
   title: "Contacto | Dekaelo Media",
