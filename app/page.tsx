@@ -18,16 +18,31 @@ export default function Page() {
               Contenido con calidad cinematográfica para tu marca, todos los meses.
               Nos encargamos de ideas, guion, rodaje y entrega; tu equipo se enfoca en crecer.
             </p>
+
             <div className="mt-6 flex gap-3">
               <Link href="/servicios" className="btn">Ver servicios</Link>
               <Link href="/contacto#form" className="btn-outline">Agenda una llamada</Link>
             </div>
+
+            {/* Nota / beneficio */}
             <div className="mt-6 flex items-center gap-4 text-white/70 text-sm">
               <Image src="/logo.png" alt="Dekaelo Media" width={28} height={28} className="rounded-lg" />
               <p>Plan mensual · 1 jornada · 1 video largo · 4–5 reels · Dirección y asesoría creativa</p>
             </div>
+
+            {/* Enlace rápido a portafolio (sutil) */}
+            <div className="mt-4">
+              <Link href="/portafolio" className="text-white/70 underline underline-offset-4 hover:text-white">
+                Ver trabajos recientes →
+              </Link>
+            </div>
           </div>
-          <VideoEmbed src="https://www.youtube.com/embed/uul8LNP6BbQ?rel=0" title="Reel Dekaelo Media" />
+
+          {/* Reel principal (lo mejor) */}
+          <VideoEmbed
+            src="https://www.youtube.com/embed/uul8LNP6BbQ?rel=0&start=0&modestbranding=1&playsinline=1"
+            title="Reel Dekaelo Media — Lo mejor"
+          />
         </div>
       </div>
 
@@ -42,7 +57,12 @@ export default function Page() {
       {/* DESTACADO */}
       <div className="container section">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <VideoEmbed src="https://www.youtube.com/embed/LAaLA-spVH0?rel=0" title="Video destacado" />
+          {/* Reel secundario (otras marcas) */}
+          <VideoEmbed
+            src="https://www.youtube.com/embed/LAaLA-spVH0?rel=0&start=0&modestbranding=1&playsinline=1"
+            title="Reel Dekaelo Media — Otras marcas"
+          />
+
           <div>
             <h2 className="h2">Plan Audiovisual Mensual</h2>
             <p className="text-white/70 mt-2">
@@ -98,7 +118,7 @@ export default function Page() {
       <section className="bg-black/60 border-t border-b border-white/10">
         <div className="container py-16">
           <h2 className="h2 text-center mb-12">Testimonios</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
               <p className="text-white/80 italic">
                 “Muy profesionales y puntuales en cada jornada. El podcast no solo nos dio visibilidad, también se convirtió en una herramienta clave para generar nuevos negocios con nuestros invitados.”
