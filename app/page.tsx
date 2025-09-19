@@ -146,13 +146,14 @@ export default function Page() {
 
       <FAQ />
 
-      {/* Portafolio (reemplazo de Gallery) */}
+      {/* Reemplazo orientado a conversión */}
       <section className="container py-16">
-  <div className="text-center">
-    <h2 className="h2 mb-3">¿Listo para empezar?</h2>
-    <p className="text-white/70 mb-6">Cuéntanos tu proyecto y coordinamos una llamada.</p>
-    <Link href="/contacto#form" className="btn">Cotizar / Agenda una llamada →</Link>
-  </div>
-</section>
+        <div className="text-center">
+          <h2 className="h2 mb-3">¿Listo para empezar?</h2>
+          <p className="text-white/70 mb-6">Cuéntanos tu proyecto y coordinamos una llamada.</p>
+          <Link href="/contacto#form" className="btn">Cotizar / Agenda una llamada →</Link>
+        </div>
+      </section>
+    </section>
   );
 }
