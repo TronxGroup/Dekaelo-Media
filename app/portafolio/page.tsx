@@ -6,6 +6,8 @@ export const metadata = {
   description: 'Selección de trabajos y proyectos.',
 };
 
+// Opción 1: sin loop automático, replay manual
+// Los videos empiezan siempre desde 0 (start=0) y muestran solo relacionados del mismo canal (rel=0)
 const toEmbed = (url: string) => {
   const match = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
   const id = match ? match[1] : url.split('/').pop()?.split('?')[0] || '';
