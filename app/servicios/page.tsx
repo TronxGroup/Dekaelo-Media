@@ -1,13 +1,40 @@
+// app/servicios/page.tsx
 export const metadata = {
-  title: 'Servicios | Dekaelo Media',
-  description: 'Producción integral, plan mensual, piezas corporativas, reels y cobertura de eventos.',
+  title: 'Servicios de Producción Audiovisual | Dekaelo Media',
+  description:
+    'Plan Audiovisual Mensual, videos corporativos, comunicación interna, reels y motion graphics. Producción estratégica en Chile.',
+  alternates: {
+    canonical: 'https://www.dekaelomedia.com/servicios',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.dekaelomedia.com/servicios',
+    title: 'Servicios de Producción Audiovisual | Dekaelo Media',
+    description:
+      'Plan mensual, institucional, comunicación interna y reels para marcas en Chile.',
+    images: ['/og-cover.jpg'],
+  },
+  twitter: { card: 'summary_large_image' },
+  robots: {
+    index: true,
+    follow: true,
+    maxSnippet: -1,
+    maxImagePreview: 'large',
+    maxVideoPreview: -1,
+  },
 };
 
 export default function Page() {
   return (
     <section className="section bg-black">
       <div className="container">
+        {/* H1 + accesos rápidos */}
         <h1 className="h2">Servicios</h1>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <a href="#planes" className="btn-outline" aria-label="Ver planes mensuales">Ver planes</a>
+          <a href="#extras" className="btn-outline" aria-label="Ver servicios adicionales">Servicios adicionales</a>
+          <a href="/portafolio" className="btn-outline" aria-label="Ver portafolio de videos">Portafolio</a>
+        </div>
 
         {/* BENEFICIOS PARA EMPRESAS */}
         <section className="mt-8 bg-black">
@@ -40,7 +67,7 @@ export default function Page() {
 
         {/* EJEMPLOS COMUNICACIÓN INTERNA */}
         <section className="mt-10">
-          <h3 className="text-2xl font-bold text-white text-center">Ejemplos de comunicación interna</h3>
+          <h2 className="text-2xl font-bold text-white text-center">Ejemplos de comunicación interna</h2>
           <p className="text-center text-white/70 mt-2 max-w-3xl mx-auto">
             Piezas pensadas para onboarding, cultura y operaciones. Duraciones sugeridas y formatos listos para intranet, pantallas y correo interno.
           </p>
@@ -54,13 +81,13 @@ export default function Page() {
               { t: 'Salas de Espera / Señalética', d: '10–15 s en loop · Info útil y tips.' },
             ].map((e) => (
               <div key={e.t} className="p-6 rounded-2xl bg-gray-900 border border-white/10">
-                <h4 className="font-semibold text-white">{e.t}</h4>
+                <h3 className="font-semibold text-white">{e.t}</h3>
                 <p className="text-white/70 mt-1">{e.d}</p>
               </div>
             ))}
           </div>
           <div className="text-center mt-6">
-            <a href="/contacto#form" className="btn-outline">Planificar piezas internas</a>
+            <a href="/contacto#form" className="btn-outline" aria-label="Planificar piezas internas">Planificar piezas internas</a>
           </div>
         </section>
 
@@ -77,6 +104,7 @@ export default function Page() {
                 <li>• Ajustes mensuales basados en datos reales.</li>
                 <li>• Mejor costo/resultado en el tiempo.</li>
                 <li>• Incluye piezas para <span className="text-white">comunicación interna</span>: inducción, cultura, seguridad, señalética digital.</li>
+                <li>• Menos fricción en aprobaciones: pautas claras y stakeholders alineados.</li>
               </ul>
             </div>
             <div className="rounded-2xl bg-gray-950 border border-white/10 p-6">
@@ -92,7 +120,7 @@ export default function Page() {
             </div>
           </div>
           <div className="text-center mt-6">
-            <a href="/contacto#form" className="btn">Evaluar mi plan</a>
+            <a href="/contacto#form" className="btn" aria-label="Evaluar mi plan audiovisual">Evaluar mi plan</a>
           </div>
         </section>
 
@@ -112,7 +140,7 @@ export default function Page() {
             <div className="relative p-1 rounded-3xl">
               <div className="h-full w-full rounded-3xl bg-gray-900 border border-white/10 p-8 flex flex-col" data-testid="card-basico">
                 <h3 className="text-xl font-bold text-white">Básico</h3>
-                <p className="mt-1 text-sm text-white/60">Para iniciar con presencia mensual</p>
+                <p className="mt-1 text-sm text-white/60">Para marcas que inician presencia mensual</p>
                 <div className="mt-6">
                   <div className="text-3xl font-extrabold text-white">$595.000</div>
                   <div className="text-sm text-white/50">CLP / mes / IVA inc.</div>
@@ -124,7 +152,7 @@ export default function Page() {
                   <li>Exportación para 1 plataforma</li>
                   <li>1 revisión</li>
                 </ul>
-                <a href="/contacto#form" className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 transition border border-white/15">
+                <a href="/contacto#form" className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 transition border border-white/15" aria-label="Quiero plan Básico">
                   Quiero este plan
                 </a>
               </div>
@@ -137,7 +165,7 @@ export default function Page() {
                   Recomendado
                 </div>
                 <h3 className="text-xl font-bold text-white">Estándar</h3>
-                <p className="mt-1 text-sm text-white/70">Equilibrio perfecto para crecer</p>
+                <p className="mt-1 text-sm text-white/70">Para equipos con calendario activo de marketing</p>
                 <div className="mt-6">
                   <div className="text-4xl font-extrabold text-white">$952.000</div>
                   <div className="text-sm text-white/50">CLP / mes / IVA inc.</div>
@@ -151,7 +179,7 @@ export default function Page() {
                   <li>1 revisión</li>
                   <li>Informe mensual estratégico básico</li>
                 </ul>
-                <a href="/contacto#form" className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90 transition">
+                <a href="/contacto#form" className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90 transition" aria-label="Quiero plan Estándar">
                   Quiero este plan
                 </a>
               </div>
@@ -175,7 +203,7 @@ export default function Page() {
                   <li>Entregas personalizadas + material adicional</li>
                   <li>Informe mensual con métricas y recomendaciones de pauta</li>
                 </ul>
-                <a href="/contacto#form" className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 transition border border-white/15">
+                <a href="/contacto#form" className="mt-auto inline-block w-full text-center px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 transition border border-white/15" aria-label="Quiero plan Premium">
                   Quiero este plan
                 </a>
               </div>
@@ -217,13 +245,78 @@ export default function Page() {
             Cotiza tu plan hoy y asegura un aliado creativo que transforma ideas en impacto real.
           </p>
           <a
-            href="/contacto"
+            href="/contacto#form"
             className="mt-8 inline-block px-10 py-4 bg-white text-black font-semibold rounded-2xl hover:opacity-90 transition"
+            aria-label="Ir a contacto para cotizar"
           >
             Cotiza tu proyecto →
           </a>
         </section>
       </div>
+
+      {/* JSON-LD: Service + Offers + Breadcrumbs */}
+      <script
+        type="application/ld+json"
+        // @ts-ignore
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Servicios de Producción Audiovisual",
+            provider: {
+              "@type": "Organization",
+              name: "Dekaelo Media",
+              url: "https://www.dekaelomedia.com"
+            },
+            areaServed: { "@type": "Country", name: "Chile" },
+            serviceType: "Plan Audiovisual Mensual, Video Corporativo, Comunicación Interna, Reels",
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Planes mensuales",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  name: "Básico",
+                  priceCurrency: "CLP",
+                  price: "595000",
+                  availability: "https://schema.org/InStock",
+                  url: "https://www.dekaelomedia.com/servicios#planes"
+                },
+                {
+                  "@type": "Offer",
+                  name: "Estándar",
+                  priceCurrency: "CLP",
+                  price: "952000",
+                  availability: "https://schema.org/InStock",
+                  url: "https://www.dekaelomedia.com/servicios#planes"
+                },
+                {
+                  "@type": "Offer",
+                  name: "Premium",
+                  priceCurrency: "CLP",
+                  price: "1450000",
+                  availability: "https://schema.org/InStock",
+                  url: "https://www.dekaelomedia.com/servicios#planes"
+                }
+              ]
+            }
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        // @ts-ignore
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.dekaelomedia.com/" },
+              { "@type": "ListItem", position: 2, name: "Servicios", item: "https://www.dekaelomedia.com/servicios" }
+            ]
+          }),
+        }}
+      />
     </section>
   );
 }
