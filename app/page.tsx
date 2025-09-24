@@ -1,7 +1,7 @@
+// app/page.tsx
 import { VideoEmbed } from './components/VideoEmbed';
 import { ClientLogos } from './components/ClientLogos';
 // import { Gallery } from './components/Gallery'; // ← removido
-import { FAQ } from './components/FAQ';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -144,7 +144,58 @@ export default function Page() {
         </div>
       </section>
 
-      <FAQ />
+      {/* --- NUEVA SECCIÓN (reemplaza FAQ) --- */}
+      <section id="video-first" className="bg-black/40 border-t border-b border-white/10">
+        <div className="container py-16">
+          <h2 className="h2 text-center">El futuro es video: claves 2025</h2>
+          <p className="text-center text-white/70 max-w-3xl mx-auto mt-3">
+            Síntesis del estudio Google/Kantar “Future of Video” (EE. UU., 2025). El consumo cambió:
+            el video ahora informa, educa e impulsa la compra a lo largo de todo el viaje del cliente.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
+            {[
+              { n: '69%', d: 'prefiere aprender una habilidad con video antes que con texto o audio.' },
+              { n: '70%', d: 'elige video para “cómo construir/hacer algo”; 63% para cocinar o seguir procesos.' },
+              { n: 'Top', d: 'YouTube lidera en streaming, scroll/browsing y búsqueda de video entre Gen Z y adultos.' },
+            ].map((k) => (
+              <div key={k.n} className="p-6 rounded-2xl bg-gray-900 border border-white/10 text-center">
+                <div className="text-3xl font-extrabold text-white">{k.n}</div>
+                <div className="text-white/70 mt-2 text-sm">{k.d}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mt-6">
+            {[
+              { n: '83% Gen Z', d: 'prefiere a sus creadores favoritos por sobre shows o películas de estudio.' },
+              { n: '82%', d: 'percibe a YouTube como la plataforma con creadores más confiables.' },
+              { n: '81%', d: 'usa contenido de creadores en YouTube para investigar y descubrir productos al comprar.' },
+            ].map((k) => (
+              <div key={k.n} className="p-6 rounded-2xl bg-gray-900 border border-white/10 text-center">
+                <div className="text-xl font-extrabold text-white">{k.n}</div>
+                <div className="text-white/70 mt-2 text-sm">{k.d}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 p-6 rounded-2xl bg-gray-900 border border-white/10 text-center">
+            <p className="text-white/80">
+              <strong>Dividendo de confianza:</strong> la influencia de YouTube acorta el ciclo de compra del
+              comprador online de video en EE. UU. en <strong>~6 días</strong>. Para las marcas, pensar “video-first”
+              y colaborar con creadores significa decisiones más rápidas y seguras.
+            </p>
+          </div>
+
+          <p className="text-center text-white/50 text-xs mt-6">
+            Fuente: Google/Kantar, <em>Future of Video</em>, EE. UU., 2025. Cifras resumidas para uso informativo.
+          </p>
+
+          <div className="text-center mt-10">
+            <Link href="/contacto#form" className="btn">Diseñar mi estrategia video-first →</Link>
+          </div>
+        </div>
+      </section>
 
       {/* Reemplazo orientado a conversión */}
       <section className="container py-16">
