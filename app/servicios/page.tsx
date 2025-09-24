@@ -169,7 +169,7 @@ export default function Page() {
               <iframe
                 width="100%"
                 height="315"
-                src="https://www.youtube.com/embed/uul8LNP6BbQ&loop=1"
+                src="https://www.youtube.com/embed/uul8LNP6BbQ?playlist=uul8LNP6BbQ&loop=1"
                 title="Video Dekaelo Media"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
