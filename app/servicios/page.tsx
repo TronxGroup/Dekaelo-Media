@@ -111,6 +111,69 @@ export default function Page() {
     },
   ];
 
+  const extras = [
+    {
+      t: 'Cobertura de eventos',
+      d: 'Registro de charlas, lanzamientos y conferencias. Entrega de video highlight + clips.',
+      p: 'desde $480.000',
+    },
+    {
+      t: 'Segunda cámara / Dron',
+      d: 'Refuerza narrativa y dinamismo con multicámara o tomas aéreas certificadas.',
+      p: 'desde $180.000',
+    },
+    {
+      t: 'Motion Graphics',
+      d: 'Animación de gráficos, lower thirds, bumpers y explicativos para reforzar mensajes.',
+      p: 'desde $220.000',
+    },
+    {
+      t: 'Locución profesional',
+      d: 'Voces ES/EN con dirección y edición. Entrega master limpio y mezclado.',
+      p: 'desde $160.000',
+    },
+    {
+      t: 'Subtítulos y accesibilidad',
+      d: 'Subtítulos “burned-in” o SRT, caption para redes y versiones vertical/cuadrado.',
+      p: 'desde $90.000',
+    },
+    {
+      t: 'Traducción ES/EN/PT',
+      d: 'Traducción técnica y adaptación para guion, subtítulos y piezas sociales.',
+      p: 'desde $120.000',
+    },
+    {
+      t: 'Fotografía corporativa',
+      d: 'Retratos ejecutivos, lifestyle de oficina y cobertura de eventos.',
+      p: 'desde $240.000',
+    },
+    {
+      t: 'Streaming / Webinar',
+      d: 'Producción técnica para YouTube/LinkedIn/Zoom con gráficas y Q&A.',
+      p: 'desde $420.000',
+    },
+    {
+      t: 'Podcast / Vodcast interno',
+      d: 'Formato conversacional para cultura, onboarding y liderazgo.',
+      p: 'desde $380.000',
+    },
+    {
+      t: 'Taller de cámaras y portavocía',
+      d: 'Coaching breve para voceros y equipos: guion, presencia y delivery.',
+      p: 'desde $190.000',
+    },
+    {
+      t: 'Animación de logo / Ident',
+      d: 'Animación breve del isotipo para apertura y cierre de piezas.',
+      p: 'desde $110.000',
+    },
+    {
+      t: 'Kit de marca para video',
+      d: 'Plantillas, lower thirds, paletas y tipografías para consistencia cross-plataforma.',
+      p: 'desde $260.000',
+    },
+  ] as const;
+
   return (
     <section className="section bg-black">
       <div className="container">
@@ -225,6 +288,34 @@ export default function Page() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* SERVICIOS ADICIONALES */}
+        <section id="extras" className="scroll-mt-20 py-24 bg-black rounded-3xl mt-12">
+          <h2 className="text-4xl font-extrabold text-center mb-4 text-white">Servicios adicionales</h2>
+          <p className="text-center text-white/60 mb-12">
+            Complementa tus planes mensuales o contrata por proyecto. Integración total con tu identidad de marca.
+          </p>
+
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+            {extras.map((x) => (
+              <div key={x.t} className="p-6 rounded-2xl bg-gray-900 border border-white/10 flex flex-col">
+                <h3 className="font-semibold text-white">{x.t}</h3>
+                <p className="text-white/70 mt-2">{x.d}</p>
+                <div className="mt-4 text-sm text-white/60">{x.p}</div>
+                <a
+                  href="/contacto#form"
+                  className="mt-6 inline-block w-full text-center px-6 py-3 rounded-xl transition bg-white/10 hover:bg-white/15 border border-white/15 text-white"
+                >
+                  Solicitar cotización →
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10 text-white/60 text-sm">
+            ¿Necesitas algo específico? Escríbenos y armamos un paquete a medida.
           </div>
         </section>
 
