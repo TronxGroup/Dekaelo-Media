@@ -67,7 +67,7 @@ const projects: Project[] = [
     title: 'Fútbol y Parrilla — Independiente',
     youtube: toEmbed('https://www.youtube.com/watch?v=PLSfbZU_asQ'),
     logo: '/logo_11.png',
-    desc: '+300.000 vistas. Producción de 4 episodios, registro multicámara y edición para crecimiento orgánico.',
+    desc: '+310.000 vistas. Producción de 4 episodios, registro multicámara y edición para crecimiento orgánico.',
   },
   {
     title: "Trewhela's School — Documental 80 Años",
@@ -82,13 +82,13 @@ const projects: Project[] = [
     desc: 'Animaciones B2B: lower thirds, key visuals, data-visual y brand animations para campañas y presentaciones.',
   },
   {
-    title: 'Reel Cine y Series — Yokai / La Horrible / Danny Wang',
+    title: 'Reel Cine y Series — Yokai / Las Horribles / Danny Wang',
     youtube: toEmbed('https://www.youtube.com/watch?v=550zTI8nEvY'),
     logo: '/logo_cine.png',
-    desc: 'Largometraje “Yokai” (Sitges, BARS), serie “La Horrible” y proyecto premiado “Danny Wang”.',
+    desc: 'Largometraje “Yokai” (Sitges, BARS), “Las Horribles” y proyecto premiado “Danny Wang”.',
   },
   {
-    title: 'ACManet — Tutorial Better Life',
+    title: 'OXIMIXO — Tutorial Better Life',
     youtube: toEmbed('https://www.youtube.com/watch?v=f7BpYpTSPLk'),
     logo: '/logo_12.png',
     desc: 'Tutorial con más de 3.000.000 de visualizaciones. Alto posicionamiento orgánico y autoridad en el rubro.',
