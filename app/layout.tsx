@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
   icons: {
     icon: '/favicon.png',
-    apple: '/apple-touch-icon.png', // opcional si lo colocas en /public
+    apple: '/apple-touch-icon.png',
     shortcut: '/favicon.png',
   },
   openGraph: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         alt: 'Dekaelo Media — Producción Audiovisual Estratégica',
       },
     ],
-    locale: 'es_CL', // ajusta si usas otro mercado
+    locale: 'es_CL',
   },
   twitter: {
     card: 'summary_large_image',
@@ -42,8 +42,6 @@ export const metadata: Metadata = {
     description:
       'Videos corporativos, podcasts en video y contenido para redes. Plan mensual o proyectos puntuales.',
     images: [siteUrl + '/og-cover.jpg'],
-    // site: '@tu_cuenta', // TODO: si tienes Twitter/X
-    // creator: '@tu_cuenta', // TODO
   },
   robots: {
     index: true,
@@ -60,7 +58,6 @@ export const metadata: Metadata = {
     { media: '(prefers-color-scheme: light)', color: '#000000' },
     { media: '(prefers-color-scheme: dark)', color: '#000000' },
   ],
-  // verification: { google: '...' }, // TODO: añade Search Console si lo tienes
 };
 
 export const viewport: Viewport = {
@@ -70,49 +67,41 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const gtmId = 'GTM-NNP2LJJ2'; // tu ID real
-
   return (
     <html lang="es">
       <head>
-        {/* Preconnect para iframes YouTube (mejora LCP) */}
+        {/* Preconnect para videos YouTube */}
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
         <link rel="preconnect" href="https://img.youtube.com" />
         <link rel="preconnect" href="https://www.google.com" />
 
-        {/* --- Google Tag Manager (HEAD) --- */}
-        <Script id="gtm-head" strategy="afterInteractive">
+        {/* --- Google Analytics (gtag.js) --- */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-96HZDP5PVP"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
           {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','${gtmId}');
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-96HZDP5PVP');
           `}
         </Script>
-        {/* --- End GTM HEAD --- */}
+        {/* --- End GA --- */}
       </head>
 
       <body className="text-white selection:bg-brand-red/60 selection:text-white">
-        {/* --- Google Tag Manager (noscript) --- */}
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        {/* --- End GTM noscript --- */}
-
         <Navbar />
         <StickyCTA />
+
         <main>{children}</main>
+
         <Footer />
 
-        {/* Schema.org (Organization) enriquecido */}
+        {/* Schema.org */}
         <script
           type="application/ld+json"
           suppressHydrationWarning
@@ -122,13 +111,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'Organization',
               name: 'Dekaelo Media',
               url: siteUrl,
-              logo: siteUrl + '/logo.png', // asegúrate de que exista
+              logo: siteUrl + '/logo.png',
               description:
                 'Estudio audiovisual en Chile. Plan mensual, corporativos, comerciales y documentales.',
               sameAs: [
                 'https://www.instagram.com/dekaelo_media',
                 'https://www.youtube.com/@dekaelo_media',
-                'https://www.linkedin.com/company/dekaelo-media', // TODO: confirma/ajusta
+                'https://www.linkedin.com/company/dekaelo-media',
               ],
               contactPoint: [
                 {
@@ -139,12 +128,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   availableLanguage: ['es'],
                 },
               ],
-              // Opcional si quieres enfatizar alcance local
-              // address: {
-              //   '@type': 'PostalAddress',
-              //   addressCountry: 'CL',
-              //   addressLocality: 'Santiago',
-              // },
             }),
           }}
         />
