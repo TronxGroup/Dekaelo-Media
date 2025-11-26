@@ -77,34 +77,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://img.youtube.com" />
         <link rel="preconnect" href="https://www.google.com" />
 
-        {/* --- GA4 --- */}
+        {/* Google tag (gtag.js) — GA4 + Google Ads */}
         <Script
-          async
           src="https://www.googletagmanager.com/gtag/js?id=G-96HZDP5PVP"
+          strategy="afterInteractive"
         />
-        <Script id="ga4-init" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-96HZDP5PVP');
-          `}
-        </Script>
 
-        {/* --- GOOGLE ADS (AW-17760996045) --- */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17760996045"
-        />
-        <Script id="ads-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+            // GA4
+            gtag('config', 'G-96HZDP5PVP');
+
+            // Google Ads (AW-17760996045)
             gtag('config', 'AW-17760996045');
           `}
         </Script>
-        {/* --- END ADS --- */}
+        {/* Fin Google tag */}
       </head>
 
       <body className="text-white selection:bg-brand-red/60 selection:text-white">
