@@ -77,9 +77,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://img.youtube.com" />
         <link rel="preconnect" href="https://www.google.com" />
 
-        {/* Google tag (gtag.js) — GA4 + Google Ads */}
+        {/* Google tag (gtag.js) — cargado con el ID de Google Ads */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-96HZDP5PVP"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17760996045"
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
