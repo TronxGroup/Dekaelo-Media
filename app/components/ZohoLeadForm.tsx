@@ -6,7 +6,10 @@ import Script from "next/script";
 export default function ZohoLeadForm() {
   return (
     <>
+      {/* reCAPTCHA */}
       <Script src="https://www.google.com/recaptcha/api.js" async defer />
+
+      {/* Lógica de validación Zoho */}
       <Script id="zoho-form-logic" strategy="afterInteractive">
         {`
           // === funciones zoho ===
@@ -18,6 +21,7 @@ export default function ZohoLeadForm() {
         `}
       </Script>
 
+      {/* Formulario Zoho incrustado */}
       <div
         dangerouslySetInnerHTML={{
           __html: `
@@ -44,6 +48,11 @@ export default function ZohoLeadForm() {
         padding:10px;
         border-radius:8px;
         font-size:14px;
+      }
+      /* 🔽 Fuerza el dropdown dark en la mayoría de navegadores */
+      .zcwf_lblLeft select option{
+        background:#050505;
+        color:#f9fafb;
       }
       .zcwf_lblLeft textarea{min-height:120px;}
       .zcwf_lblLeft .formsubmit.zcwf_button{
