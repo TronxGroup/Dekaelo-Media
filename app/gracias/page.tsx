@@ -1,5 +1,6 @@
+// app/gracias/page.tsx
 export const metadata = {
-  title: 'Gracias | Dekaelo Media',
+  title: "Gracias | Dekaelo Media",
 };
 
 export default function Page() {
@@ -10,7 +11,9 @@ export default function Page() {
         <p className="mt-3 text-white/80">
           Hemos recibido tu solicitud. Nuestro equipo te contactará en breve para coordinar los siguientes pasos.
         </p>
-        <a href="/" className="btn mt-6">Volver al inicio</a>
+        <a href="/" className="btn mt-6">
+          Volver al inicio
+        </a>
       </div>
     </section>
   );
