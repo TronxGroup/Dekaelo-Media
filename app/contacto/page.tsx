@@ -15,7 +15,8 @@ export default function Page() {
         <h1 className="h2">Contacto · Cotiza tu proyecto</h1>
         <p className="p mt-2 text-white/80">
           Cuéntanos brevemente qué necesitas y coordinamos una llamada para revisar tu proyecto.
-          Respondemos dentro de <span className="font-semibold text-white">24–48 horas hábiles</span>.
+          Respondemos dentro de{" "}
+          <span className="font-semibold text-white">24–48 horas hábiles</span>.
         </p>
 
         {/* ATALLOS RÁPIDOS */}
@@ -42,8 +43,9 @@ export default function Page() {
             <p className="font-semibold text-white">¿Qué tipo de proyectos atendemos?</p>
             <p className="mt-1">
               Planes audiovisuales mensuales para equipos de marketing, comunicaciones internas,
-              bancos, cámaras, colegios y empresas de servicios. También proyectos puntuales
-              (videos institucionales, vodcasts, cápsulas formativas).
+              bancos, cámaras, colegios y empresas de servicios. También proyectos puntuales:
+              videos institucionales, vodcasts, cápsulas formativas y piezas para campañas
+              específicas.
             </p>
           </div>
           <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
@@ -51,7 +53,9 @@ export default function Page() {
             <ol className="mt-1 list-decimal list-inside space-y-1">
               <li>Revisamos tu mensaje y, si es necesario, pedimos 1–2 datos adicionales.</li>
               <li>Coordinamos una llamada breve (20–30 minutos) para entender el alcance.</li>
-              <li>Te enviamos una propuesta clara con plan sugerido, plazos y valores.</li>
+              <li>
+                Te enviamos una propuesta clara con plan sugerido, plazos y valores para avanzar.
+              </li>
             </ol>
           </div>
         </div>
@@ -62,16 +66,11 @@ export default function Page() {
             Formulario de contacto
           </h2>
           <p className="text-sm text-white/70 mb-4">
-            Mientras más contexto nos des (tipo de proyecto, plazos, si es plan mensual o
-            campaña específica), mejor podremos orientarte en la primera respuesta.
+            Mientras más contexto nos des (tipo de proyecto, plazos, si es plan mensual o campaña
+            específica), mejor podremos orientarte en la primera respuesta.
           </p>
 
           <ZohoLeadForm />
-
-          <p className="mt-3 text-xs text-white/50">
-            Usamos tus datos solo para responder tu consulta y coordinar el proyecto. No
-            enviamos correos masivos ni compartimos tu información con terceros.
-          </p>
         </div>
 
         {/* REDES SOCIALES */}
