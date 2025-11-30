@@ -127,69 +127,40 @@ export default function Page() {
     },
     {
       q: '¿Pueden incluir más reels o un evento?',
-      a: 'Claro. El plan es escalable: podemos sumar jornadas, segunda cámara/dron, motion extra o cobertura de eventos específicos.',
+      a: 'Claro. El plan es escalable: podemos sumar jornadas, multicámara/dron, motion extra o cobertura de eventos específicos.',
     },
   ];
 
+  // 🔻 Menos servicios adicionales, solo los más estratégicos
   const extras = [
     {
       t: 'Cobertura de eventos',
-      d: 'Registro de charlas, lanzamientos y conferencias. Entrega de video highlight + clips para redes.',
+      d: 'Registro de charlas, lanzamientos y conferencias. Entrega de video highlight + clips para redes y comunicación interna.',
       p: 'desde $480.000',
     },
     {
-      t: 'Segunda cámara / Dron',
-      d: 'Refuerza narrativa y dinamismo con multicámara o tomas aéreas certificadas, ideal para eventos y campañas.',
+      t: 'Multicámara / Dron',
+      d: 'Segunda cámara y/o tomas aéreas certificadas para dar más dinamismo y contexto a tus videos corporativos y eventos.',
       p: 'desde $180.000',
     },
     {
       t: 'Motion Graphics',
-      d: 'Animación de gráficos, lower thirds, bumpers y explicativos para reforzar mensajes clave y datos técnicos.',
+      d: 'Gráficos animados, lower thirds e inserción de datos clave para presentaciones, videos institucionales y campañas.',
       p: 'desde $220.000',
     },
     {
-      t: 'Locución profesional',
-      d: 'Voces ES/EN con dirección y edición. Entrega master limpio y mezclado, listo para emisión.',
-      p: 'desde $160.000',
-    },
-    {
-      t: 'Subtítulos y accesibilidad',
-      d: 'Subtítulos “burned-in” o SRT, caption para redes y versiones vertical/cuadrado para distintas pantallas.',
-      p: 'desde $90.000',
-    },
-    {
-      t: 'Traducción ES/EN/PT',
-      d: 'Traducción técnica y adaptación para guion, subtítulos y piezas sociales.',
-      p: 'desde $120.000',
-    },
-    {
-      t: 'Fotografía corporativa',
-      d: 'Retratos ejecutivos, lifestyle de oficina y registro de actividades clave para tu comunicación.',
-      p: 'desde $240.000',
-    },
-    {
-      t: 'Streaming / Webinar',
-      d: 'Producción técnica para YouTube / LinkedIn / Zoom con gráficas, overlays y soporte de Q&A.',
+      t: 'Streaming & Webinars',
+      d: 'Producción técnica para transmisiones en YouTube, LinkedIn o Zoom, con gráficas, overlays y soporte de Q&A.',
       p: 'desde $420.000',
     },
     {
-      t: 'Podcast / Vodcast interno',
-      d: 'Formato conversacional para cultura, onboarding, liderazgo y comunicación con equipos.',
+      t: 'Podcast / Vodcast corporativo',
+      d: 'Formato conversacional para liderazgo, cultura interna, onboarding y comunicación con equipos distribuidos.',
       p: 'desde $380.000',
     },
     {
-      t: 'Taller de cámaras y portavocía',
-      d: 'Coaching breve para voceros y equipos: guion, presencia frente a cámara y delivery de mensajes.',
-      p: 'desde $190.000',
-    },
-    {
-      t: 'Animación de logo / Ident',
-      d: 'Animación breve del isotipo para apertura y cierre de piezas audiovisuales.',
-      p: 'desde $110.000',
-    },
-    {
       t: 'Kit de marca para video',
-      d: 'Plantillas, lower thirds, paletas y tipografías para consistencia cross-plataforma.',
+      d: 'Plantillas, lower thirds, paletas y tipografías para que todo tu contenido audiovisual mantenga la misma identidad.',
       p: 'desde $260.000',
     },
   ] as const;
@@ -200,12 +171,13 @@ export default function Page() {
         {/* H1 + accesos rápidos */}
         <h1 className="h2">Servicios audiovisuales</h1>
         <p className="mt-2 text-white/70 max-w-2xl">
-          Planes mensuales y servicios adicionales para que tu marca tenga contenido constante,
-          profesional y alineado con tus objetivos de comunicación interna, institucional y comercial.
+          Planes mensuales y servicios adicionales seleccionados para que tu marca tenga contenido
+          constante, profesional y alineado con tus objetivos de comunicación interna, institucional
+          y comercial.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link href="#planes" className="btn-outline">
-            Ver planes
+            Ver planes mensuales
           </Link>
           <Link href="#extras" className="btn-outline">
             Servicios adicionales
@@ -350,8 +322,9 @@ export default function Page() {
             Servicios adicionales
           </h2>
           <p className="text-center text-white/60 mb-12 max-w-3xl mx-auto">
-            Complementa tus planes mensuales o contrata por proyecto. Todos los servicios pueden
-            integrarse a tu identidad de marca y a tu calendario de comunicación.
+            Complementa tus planes mensuales con servicios clave para eventos, campañas y
+            comunicación interna. Todos se integran a tu identidad de marca y a tu calendario de
+            comunicación.
           </p>
 
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
@@ -374,7 +347,8 @@ export default function Page() {
           </div>
 
           <div className="text-center mt-10 text-white/60 text-sm">
-            ¿Necesitas algo muy específico? Escríbenos y armamos un paquete a medida para tu equipo.
+            Si necesitas algo más específico (por ejemplo, fotografía corporativa o traducciones),
+            podemos incorporarlo en una propuesta a medida.
           </div>
         </section>
 
