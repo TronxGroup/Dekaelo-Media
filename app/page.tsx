@@ -11,11 +11,12 @@ export default function Page() {
       <div className="container pt-16 md:pt-24 pb-12 md:pb-16">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <span className="badge">Estudio audiovisual</span>
+            <span className="badge">Estudio audiovisual estratégico</span>
             <h1 className="h1 mt-3">Producción Audiovisual Estratégica</h1>
             <p className="p mt-4">
               Contenido con calidad cinematográfica para tu marca, todos los meses.
-              Nos encargamos de ideas, guion, rodaje y entrega; tu equipo se enfoca en crecer.
+              Diseñamos el concepto, guion, rodaje y entrega; tu equipo se concentra en
+              marketing, clientes y crecimiento.
             </p>
 
             {/* Franja de precio y modelo mensual */}
@@ -23,8 +24,9 @@ export default function Page() {
               <span className="font-semibold text-white">
                 Planes mensuales desde $595.000 CLP / mes, IVA incluido.
               </span>{' '}
-              Contrato mínimo sugerido: 3 meses. Pensado para equipos de marketing, comunicaciones
-              internas y directorios que necesitan contenido constante.
+              Modelo tipo suscripción, contrato mínimo sugerido de 3 meses. Pensado para equipos de
+              marketing, comunicaciones internas y directorios que necesitan un flujo constante de
+              contenido profesional sin ampliar su staff.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -32,7 +34,7 @@ export default function Page() {
                 Ver planes mensuales
               </Link>
               <Link href="/contacto#form" className="btn-outline">
-                Cotizar / Agenda una llamada
+                Cotizar / Agendar una llamada
               </Link>
             </div>
 
@@ -47,7 +49,7 @@ export default function Page() {
               />
               <p>
                 Plan mensual tipo: 1 jornada de grabación · 1 video largo · 4–5 reels · Dirección y
-                asesoría creativa.
+                asesoría creativa enfocada en tus objetivos de comunicación.
               </p>
             </div>
 
@@ -95,15 +97,16 @@ export default function Page() {
             <h2 className="h2">Plan Audiovisual Mensual</h2>
             <p className="text-white/70 mt-2">
               Consistencia, calidad y estrategia: un partner creativo que produce y mide resultados
-              para tu equipo. Ideal para marcas que necesitan contenido constante sin armar un
-              departamento interno.
+              para tu equipo. Ideal para marcas que necesitan contenido constante sin montar un
+              departamento in-house ni coordinar una productora distinta cada vez.
             </p>
 
             <p className="mt-3 text-sm text-white/70">
               <span className="font-semibold text-white">
                 Plan Estándar recomendado: $952.000 CLP / mes, IVA incluido.
               </span>{' '}
-              Incluye jornada completa de grabación y piezas suficientes para el mes.
+              Incluye una jornada completa de grabación y piezas suficientes para mantener tus
+              canales activos durante el mes.
             </p>
 
             <ul className="mt-4 space-y-2 text-white/80">
@@ -133,9 +136,9 @@ export default function Page() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="h2">Planes audiovisuales mensuales</h2>
             <p className="text-white/70 mt-2">
-              Valores IVA incluido. Contrato mínimo sugerido: 3 meses. Pensados para equipos de
+              Valores IVA incluido. Contrato mínimo sugerido: 3 meses. Diseñados para equipos de
               marketing, comunicaciones internas, bancos, cámaras y empresas que necesitan contenido
-              constante y profesional.
+              constante, profesional y alineado con sus objetivos de negocio.
             </p>
           </div>
 
@@ -145,7 +148,7 @@ export default function Page() {
               <div>
                 <h3 className="font-semibold text-lg">Básico</h3>
                 <p className="text-white/60 text-sm mt-1">
-                  Para marcas que inician presencia mensual.
+                  Para marcas que dan sus primeros pasos en contenido mensual en video.
                 </p>
                 <p className="mt-4 text-2xl font-bold">
                   $595.000
@@ -178,7 +181,7 @@ export default function Page() {
                 </p>
                 <h3 className="font-semibold text-lg">Estándar</h3>
                 <p className="text-white/60 text-sm mt-1">
-                  Para equipos con calendario activo de marketing.
+                  Para equipos con calendario de marketing activo y múltiples canales.
                 </p>
                 <p className="mt-4 text-2xl font-bold">
                   $952.000
@@ -208,7 +211,7 @@ export default function Page() {
               <div>
                 <h3 className="font-semibold text-lg">Premium</h3>
                 <p className="text-white/60 text-sm mt-1">
-                  Para campañas y mayor cobertura de marca.
+                  Para campañas, lanzamientos y mayor cobertura de marca durante el mes.
                 </p>
                 <p className="mt-4 text-2xl font-bold">
                   $1.450.000
@@ -249,22 +252,22 @@ export default function Page() {
               <h3 className="font-semibold text-lg">Innova Talks — Banco BICE</h3>
               <p className="text-white/70 mt-2">
                 Podcast corporativo en video con entrevistas a colaboradores clave.
-                Un formato estratégico para posicionar la cultura y generar networking de alto nivel.
+                Un formato estratégico para posicionar la cultura, visibilizar iniciativas y generar
+                networking de alto nivel.
               </p>
             </div>
             <div className="card p-6">
               <h3 className="font-semibold text-lg">Creando Líderes para Asia — APCC</h3>
               <p className="text-white/70 mt-2">
-                Más de 20 episodios con referentes empresariales.
-                Contenido diseñado para YouTube, LinkedIn y newsletters, además de clips cortos para
-                redes.
+                Más de 20 episodios con referentes empresariales. Contenido diseñado para YouTube,
+                LinkedIn y newsletters, además de clips cortos reutilizables para redes y eventos.
               </p>
             </div>
             <div className="card p-6">
               <h3 className="font-semibold text-lg">Documental 80 Años — Trewhela’s School</h3>
               <p className="text-white/70 mt-2">
                 Pieza institucional que recorre origen, presente y futuro del colegio.
-                Versión principal y cortes breves para marketing digital y RRSS.
+                Versión principal y cortes breves para marketing digital, admisión y redes sociales.
               </p>
             </div>
           </div>
@@ -314,6 +317,7 @@ export default function Page() {
           <p className="text-center text-white/70 max-w-3xl mx-auto mt-3">
             Síntesis del estudio Google/Kantar “Future of Video” (EE. UU., 2025). El consumo cambió:
             el video ahora informa, educa e impulsa la compra a lo largo de todo el viaje del cliente.
+            Las marcas que piensan “video-first” construyen más confianza y deciden más rápido.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-10">
@@ -341,7 +345,7 @@ export default function Page() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mt-6">
+          <div className="grid md-grid-cols-3 md:grid-cols-3 gap-6 mt-6">
             {[
               {
                 n: '83% Gen Z',
@@ -370,8 +374,8 @@ export default function Page() {
             <p className="text-white/80">
               <strong>Dividendo de confianza:</strong> la influencia de YouTube acorta el ciclo de
               compra del comprador online de video en EE. UU. en <strong>~6 días</strong>. Para las
-              marcas, pensar “video-first” y colaborar con creadores significa decisiones más rápidas y
-              seguras.
+              marcas, adoptar una estrategia “video-first” y colaborar con estudios especializados
+              significa decisiones más rápidas, más seguras y mejor uso del presupuesto.
             </p>
           </div>
 
@@ -394,7 +398,7 @@ export default function Page() {
           <h2 className="h2 mb-3">¿Listo para empezar?</h2>
           <p className="text-white/70 mb-6">
             Cuéntanos tu proyecto y coordinamos una llamada. En menos de 24 horas tendrás una
-            propuesta clara con plan mensual y próximos pasos.
+            propuesta clara con plan mensual, cronograma y próximos pasos para tu contenido en video.
           </p>
           <Link href="/contacto#form" className="btn">
             Cotizar / Agendar llamada →
