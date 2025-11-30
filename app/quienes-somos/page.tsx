@@ -3,7 +3,7 @@ import Image from 'next/image';
 export const metadata = {
   title: 'Quiénes somos | Dekaelo Media',
   description:
-    'Estudio audiovisual con más de una década de experiencia: cine, documentales y producciones para marcas, bancos, cámaras y empresas del Chile Central.',
+    'Estudio audiovisual estratégico con más de una década de experiencia: cine, documentales y producciones para marcas, bancos, cámaras y empresas del Chile Central.',
 };
 
 export default function Page() {
@@ -35,8 +35,8 @@ export default function Page() {
             className="rounded-3xl border border-white/10 object-cover"
           />
           <p className="text-sm text-white/50 mt-2">
-            Nuestros inicios en el cine independiente: aprendizaje intenso en narrativa, rodaje y
-            dirección de actores.
+            Nuestros inicios en el cine independiente: años de aprendizaje intenso en narrativa,
+            rodaje y dirección de actores.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export default function Page() {
           servicios y pymes que necesitaban elevar su comunicación en video.
         </p>
         <p className="p mt-4">
-          Entendemos el lenguaje del mundo corporativo: directorios, gerencias, equipos de
+          Entendemos el lenguaje del mundo corporativo: directorios, gerencias y equipos de
           comunicaciones y marketing que requieren producción seria, plazos claros y material que
           pueda convivir tanto en YouTube y LinkedIn como en intranets, presentaciones o eventos.
         </p>
