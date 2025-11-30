@@ -3,14 +3,14 @@
 
 import { useEffect, useState } from "react";
 
-// URL del formulario Zoho (la que acabas de pegar)
+// URL del formulario Zoho (la que pegaste)
 const ZOHO_IFRAME_SRC =
   "https://crm.zoho.com/crm/WebFormServeServlet?rid=dea476081908e17572424d261151002bc55f9556c10ac64e497c6206ce35a78d50b3de7a0f1d450df2b7f30212812b9dgid0f68003ad98dc4e2e75f15f6088fb0caa50948821ddc9a966459ad1a3aad0edb";
 
 export default function ZohoLeadForm() {
   const [loaded, setLoaded] = useState(false);
 
-  // Equivalente React del <script> que entrega Zoho
+  // Script de postMessage que pide Zoho
   useEffect(() => {
     function wfa_pstMesgFrmFom(evt: MessageEvent) {
       if (
@@ -64,9 +64,10 @@ export default function ZohoLeadForm() {
         </div>
       )}
 
-      <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
-        {/* Mantengo una altura mínima similar a los 800px del snippet */}
-        <div className="relative w-full" style={{ minHeight: 800 }}>
+      {/* Contenedor más estrecho y centrado */}
+      <div className="mx-auto max-w-[720px] overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+        {/* Igualamos la altura al valor del iframe de Zoho (800px) */}
+        <div className="relative w-full h-[800px]">
           <iframe
             src={ZOHO_IFRAME_SRC}
             title="Formulario de contacto Dekaelo Media"
