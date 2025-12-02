@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Servicios de Producción Audiovisual | Dekaelo Media',
+  title: 'Servicios de Producción Audiovisual y Videos Corporativos | Dekaelo Media',
   description:
     'Plan audiovisual mensual, videos corporativos, comunicación interna, reels y motion graphics para bancos, cámaras, colegios y empresas del Chile Central.',
   alternates: {
@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.dekaelomedia.com/servicios',
-    title: 'Servicios de Producción Audiovisual | Dekaelo Media',
+    title: 'Servicios de Producción Audiovisual y Videos Corporativos | Dekaelo Media',
     description:
-      'Planes mensuales y servicios audiovisuales para comunicación interna, institucional y campañas en Chile.',
+      'Planes mensuales, videos corporativos y servicios audiovisuales para comunicación interna, institucional y campañas en Chile.',
     images: ['/og-cover.jpg'],
   },
   twitter: { card: 'summary_large_image' },
@@ -43,7 +43,7 @@ export default function Page() {
     },
     {
       t: 'Eficiencia de costos',
-      d: 'Aprovechamos cada jornada al máximo: un video largo, varios clips y versiones para distintos canales.',
+      d: 'Aprovechamos cada jornada al máximo: un video corporativo largo, varios clips y versiones para distintos canales.',
     },
     {
       t: 'Coherencia de marca',
@@ -189,13 +189,16 @@ export default function Page() {
 
         {/* H1 + accesos rápidos */}
         <header>
-          <h1 className="h2">Servicios de producción audiovisual</h1>
+          <h1 className="h2">Servicios de producción audiovisual y videos corporativos</h1>
           <p className="mt-2 text-white/70 max-w-2xl">
-            Planes mensuales y servicios adicionales para que tu marca tenga contenido constante,
-            profesional y alineado con tus objetivos de comunicación interna, institucional y
-            comercial.
+            Planes mensuales, videos corporativos y servicios adicionales para que tu marca tenga
+            contenido constante, profesional y alineado con tus objetivos de comunicación interna,
+            institucional y comercial.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
+            <Link href="#videos-corporativos" className="btn-outline">
+              Videos corporativos
+            </Link>
             <Link href="#planes" className="btn-outline">
               Ver planes mensuales
             </Link>
@@ -208,13 +211,61 @@ export default function Page() {
           </div>
         </header>
 
+        {/* BLOQUE: VIDEOS CORPORATIVOS & PROYECTOS PUNTUALES */}
+        <section
+          id="videos-corporativos"
+          className="mt-10 bg-black border-y border-white/10 py-12 rounded-3xl"
+        >
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                Videos corporativos y proyectos puntuales
+              </h2>
+              <p className="text-white/70 mt-3">
+                Producción de <span className="text-white">videos corporativos e institucionales</span>{' '}
+                para empresas que necesitan comunicar con claridad a clientes, colaboradores o
+                inversionistas. Desde una sola pieza estratégica hasta un plan recurrente de
+                contenido.
+              </p>
+              <ul className="mt-4 space-y-2 text-white/80 text-sm">
+                <li>• Videos institucionales para web, presentaciones y admisión.</li>
+                <li>• Videos corporativos para comunicación con clientes y proveedores.</li>
+                <li>• Cápsulas de comunicación interna, cultura y seguridad.</li>
+                <li>• Vodcasts corporativos y piezas para LinkedIn y YouTube.</li>
+                <li>• Videos explicativos de procesos, productos o servicios B2B.</li>
+              </ul>
+              <p className="text-white/70 mt-4 text-sm">
+                Puedes contratar un <span className="text-white">proyecto puntual de video
+                corporativo</span> o integrarlo dentro de un plan mensual, según tus necesidades y
+                calendario de comunicación.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link href="/contacto#form" className="btn">
+                  Cotizar video corporativo →
+                </Link>
+                <Link href="/portafolio" className="btn-outline">
+                  Ver ejemplos de videos →
+                </Link>
+              </div>
+            </div>
+            <div className="relative w-full h-80 md:h-full">
+              <Image
+                src="/images/videos-corporativos.jpg"
+                alt="Rodaje de video corporativo Dekaelo Media"
+                fill
+                className="rounded-2xl shadow-lg object-cover border border-white/10"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* BENEFICIOS */}
         <section className="mt-10 bg-black">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center">
             Beneficios para tu empresa
           </h2>
           <p className="text-center text-white/70 mt-3 max-w-3xl mx-auto">
-            Más que producir videos: creamos un sistema mensual de contenido que mantiene tu
+            Más que producir videos sueltos: creamos un sistema mensual de contenido que mantiene tu
             comunicación activa, coherente y medible, sin sobrecargar a tu equipo interno.
           </p>
 
@@ -292,7 +343,8 @@ export default function Page() {
           </h2>
           <p className="text-center text-white/60 mb-12 max-w-3xl mx-auto">
             Valores IVA incluido. Contrato mínimo sugerido: 3 meses. Pensado para equipos que
-            necesitan contenido constante y un partner estable en producción audiovisual.
+            necesitan contenido constante y un partner estable en producción audiovisual, además de
+            proyectos puntuales de video corporativo cuando se requiera.
           </p>
 
           <div className="mb-12 flex justify-center">
@@ -342,8 +394,9 @@ export default function Page() {
           </div>
 
           <p className="mt-6 text-center text-xs text-white/60 max-w-3xl mx-auto">
-            ¿Tienes una necesidad particular (más jornadas, más piezas, integración con campañas
-            específicas)? Podemos ajustar cualquiera de los planes en la propuesta.
+            ¿Tienes una necesidad particular (más jornadas, más piezas, un video corporativo
+            específico o integración con campañas)? Podemos ajustar cualquiera de los planes en la
+            propuesta.
           </p>
         </section>
 
@@ -353,9 +406,9 @@ export default function Page() {
             Servicios adicionales
           </h2>
           <p className="text-center text-white/60 mb-12 max-w-3xl mx-auto">
-            Complementa tus planes mensuales con servicios clave para eventos, campañas y
-            comunicación interna. Todo se integra a tu identidad de marca y a tu calendario de
-            comunicación.
+            Complementa tus planes mensuales o tus videos corporativos con servicios clave para
+            eventos, campañas y comunicación interna. Todo se integra a tu identidad de marca y a tu
+            calendario de comunicación.
           </p>
 
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
@@ -404,11 +457,12 @@ export default function Page() {
         {/* CTA FINAL */}
         <section className="py-20 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-            ¿Listo para potenciar tu comunicación audiovisual?
+            ¿Listo para tu próximo video corporativo?
           </h2>
           <p className="mt-3 text-white/70 max-w-2xl mx-auto">
-            En 30 días puedes tener un sistema audiovisual constante que informa, vende y comunica
-            mejor hacia dentro y hacia fuera de tu organización.
+            En 30 días puedes tener un video corporativo bien producido —o un sistema audiovisual
+            constante— que informe, venda y comunique mejor hacia dentro y hacia fuera de tu
+            organización.
           </p>
           <Link
             href="/contacto#form"
