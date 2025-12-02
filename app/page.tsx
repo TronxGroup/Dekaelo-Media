@@ -64,7 +64,7 @@ export default function Page() {
               </Link>
               <span className="hidden md:inline text-white/40">·</span>
               <span className="text-white/60">
-                Proyectos para bancos, cámaras, colegios y empresas del Chile Central.
+                Proyectos para bancos, cámaras, colegios y empresas de Chile.
               </span>
             </div>
           </div>
