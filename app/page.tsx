@@ -1,4 +1,3 @@
-// app/page.tsx
 import { VideoEmbed } from './components/VideoEmbed';
 import { ClientLogos } from './components/ClientLogos';
 import Link from 'next/link';
@@ -11,30 +10,31 @@ export default function Page() {
       <div className="container pt-16 md:pt-24 pb-12 md:pb-16">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <span className="badge">Estudio audiovisual estratégico</span>
-            <h1 className="h1 mt-3">Producción Audiovisual Estratégica</h1>
+            <span className="badge">Productora audiovisual para empresas</span>
+            <h1 className="h1 mt-3">
+              Videos corporativos y contenido audiovisual estratégico
+            </h1>
             <p className="p mt-4">
-              Contenido con calidad cinematográfica para tu marca, todos los meses.
-              Diseñamos el concepto, guion, rodaje y entrega; tu equipo se concentra en
-              marketing, clientes y crecimiento.
+              Producimos videos corporativos, institucionales y vodcasts en video para empresas en
+              Chile, con calidad cinematográfica y una mirada estratégica en tus objetivos de
+              comunicación, marketing y negocio.
             </p>
 
-            {/* Franja de precio y modelo mensual */}
+            {/* Franja de precio y modelo */}
             <p className="mt-4 text-sm text-white/70">
               <span className="font-semibold text-white">
-                Planes mensuales desde $595.000 CLP / mes, IVA incluido.
+                Proyectos puntuales y planes mensuales desde $595.000 CLP, IVA incluido.
               </span>{' '}
-              Modelo tipo suscripción, contrato mínimo sugerido de 3 meses. Pensado para equipos de
-              marketing, comunicaciones internas y directorios que necesitan un flujo constante de
-              contenido profesional sin ampliar su staff.
+              Ideal para equipos de marketing, comunicaciones internas y directorios que necesitan
+              videos profesionales para clientes, colaboradores o inversionistas.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="#planes" className="btn">
-                Ver planes mensuales
+              <Link href="/contacto#form" className="btn">
+                Cotizar video corporativo
               </Link>
-              <Link href="/contacto#form" className="btn-outline">
-                Cotizar / Agendar una llamada
+              <Link href="#planes" className="btn-outline">
+                Ver planes mensuales
               </Link>
             </div>
 
@@ -48,8 +48,9 @@ export default function Page() {
                 className="rounded-lg"
               />
               <p>
-                Plan mensual tipo: 1 jornada de grabación · 1 video largo · 4–5 reels · Dirección y
-                asesoría creativa enfocada en tus objetivos de comunicación.
+                Acompañamos a tu equipo desde el concepto y guion, hasta el rodaje y entrega final:
+                institucional, cápsulas para campañas, vodcasts corporativos y contenido para
+                comunicación interna.
               </p>
             </div>
 
@@ -129,6 +130,32 @@ export default function Page() {
           </div>
         </div>
       </div>
+
+      {/* BLOQUE: Proyectos puntuales */}
+      <section className="bg-black/40 border-t border-b border-white/10">
+        <div className="container py-16">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="h2">¿Necesitas un solo video corporativo?</h2>
+            <p className="text-white/70 mt-2">
+              También realizamos proyectos puntuales: videos institucionales, cápsulas para campañas,
+              vodcasts corporativos o piezas explicativas para clientes y proveedores. Te ayudamos a
+              definir el formato y la duración según tu objetivo.
+            </p>
+            <p className="mt-3 text-sm text-white/70">
+              Cuéntanos qué necesitas y en menos de 24 horas te enviamos una propuesta con valor
+              estimado, tiempos y enfoque recomendado.
+            </p>
+            <div className="mt-6 flex justify-center gap-3 flex-wrap">
+              <Link href="/contacto#form" className="btn">
+                Cotizar proyecto puntual
+              </Link>
+              <Link href="/portafolio" className="btn-outline">
+                Ver ejemplos de videos →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* PLANES MENSUALES */}
       <section id="planes" className="bg-black/40 border-t border-b border-white/10">
@@ -345,7 +372,7 @@ export default function Page() {
             ))}
           </div>
 
-          <div className="grid md-grid-cols-3 md:grid-cols-3 gap-6 mt-6">
+          <div className="grid md:grid-cols-3 gap-6 mt-6">
             {[
               {
                 n: '83% Gen Z',
@@ -395,10 +422,11 @@ export default function Page() {
       {/* CIERRE / CTA FINAL */}
       <section className="container py-16">
         <div className="text-center">
-          <h2 className="h2 mb-3">¿Listo para empezar?</h2>
+          <h2 className="h2 mb-3">¿Listo para grabar tu próximo video?</h2>
           <p className="text-white/70 mb-6">
             Cuéntanos tu proyecto y coordinamos una llamada. En menos de 24 horas tendrás una
-            propuesta clara con plan mensual, cronograma y próximos pasos para tu contenido en video.
+            propuesta clara con valor estimado, cronograma y próximos pasos para tu video
+            corporativo o plan audiovisual mensual.
           </p>
           <Link href="/contacto#form" className="btn">
             Cotizar / Agendar llamada →
