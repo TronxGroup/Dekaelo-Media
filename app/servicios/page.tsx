@@ -1,7 +1,8 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Servicios de Producción Audiovisual | Dekaelo Media',
   description:
     'Plan audiovisual mensual, videos corporativos, comunicación interna, reels y motion graphics para bancos, cámaras, colegios y empresas del Chile Central.',
@@ -33,7 +34,7 @@ export default function Page() {
       d: 'Presencia sostenida mes a mes: tu marca deja de “aparecer y desaparecer” según la urgencia del momento.',
     },
     {
-      t: 'Velocidad & planificación',
+      t: 'Velocidad y planificación',
       d: 'Calendario editorial, guion y rodaje programados. Menos incendios de última hora, más calidad y foco.',
     },
     {
@@ -42,7 +43,7 @@ export default function Page() {
     },
     {
       t: 'Coherencia de marca',
-      d: 'Mismo tono visual y narrativo en todas las piezas y plataformas: YouTube, LinkedIn, RRSS e intranet.',
+      d: 'Mismo tono visual y narrativo en todas las piezas: YouTube, LinkedIn, redes sociales e intranet.',
     },
     {
       t: 'Medición y mejora',
@@ -66,10 +67,10 @@ export default function Page() {
         'Grabación simple (1 cámara, hasta 3 horas)',
         'Exportación para 1 plataforma',
         '1 revisión incluida',
-        'Publicación lista para: YouTube / LinkedIn / Instagram / Intranet',
+        'Publicación lista para YouTube / LinkedIn / Instagram / Intranet',
         'Dekaelo gestiona guion, rodaje y post. Tu equipo solo aprueba.',
       ],
-      ctaLabel: 'Quiero este plan',
+      ctaLabel: 'Cotizar plan Básico',
       destacado: false,
     },
     {
@@ -85,10 +86,10 @@ export default function Page() {
         'Entrega optimizada por plataforma',
         '1 revisión incluida',
         'Informe mensual estratégico básico',
-        'Publicación lista para: YouTube / LinkedIn / Instagram / Intranet',
+        'Publicación lista para YouTube / LinkedIn / Instagram / Intranet',
         'Dekaelo gestiona guion, rodaje y post. Tu equipo solo aprueba.',
       ],
-      ctaLabel: 'Quiero este plan',
+      ctaLabel: 'Cotizar plan Estándar',
       destacado: true,
     },
     {
@@ -104,10 +105,10 @@ export default function Page() {
         '2 rondas de revisión',
         'Entregas personalizadas + material adicional',
         'Informe mensual con métricas y recomendaciones de pauta',
-        'Publicación lista para: YouTube / LinkedIn / Instagram / Intranet',
+        'Publicación lista para YouTube / LinkedIn / Instagram / Intranet',
         'Dekaelo gestiona guion, rodaje y post. Tu equipo solo aprueba.',
       ],
-      ctaLabel: 'Quiero este plan',
+      ctaLabel: 'Cotizar plan Premium',
       destacado: false,
     },
   ] as const;
@@ -131,7 +132,6 @@ export default function Page() {
     },
   ];
 
-  // 🔻 Menos servicios adicionales, solo los más estratégicos
   const extras = [
     {
       t: 'Cobertura de eventos',
@@ -149,7 +149,7 @@ export default function Page() {
       p: 'desde $220.000',
     },
     {
-      t: 'Streaming & Webinars',
+      t: 'Streaming y webinars',
       d: 'Producción técnica para transmisiones en YouTube, LinkedIn o Zoom, con gráficas, overlays y soporte de Q&A.',
       p: 'desde $420.000',
     },
@@ -166,29 +166,46 @@ export default function Page() {
   ] as const;
 
   return (
-    <section className="section bg-black">
+    <main className="section bg-black">
       <div className="container">
+        {/* Breadcrumb / contexto */}
+        <nav className="text-xs text-white/50 mb-4" aria-label="Breadcrumb">
+          <ol className="flex flex-wrap items-center gap-1">
+            <li>
+              <Link href="/" className="hover:text-white">
+                Inicio
+              </Link>
+            </li>
+            <li className="text-white/40">/</li>
+            <li>
+              <span className="text-white">Servicios audiovisuales</span>
+            </li>
+          </ol>
+        </nav>
+
         {/* H1 + accesos rápidos */}
-        <h1 className="h2">Servicios audiovisuales</h1>
-        <p className="mt-2 text-white/70 max-w-2xl">
-          Planes mensuales y servicios adicionales seleccionados para que tu marca tenga contenido
-          constante, profesional y alineado con tus objetivos de comunicación interna, institucional
-          y comercial.
-        </p>
-        <div className="mt-4 flex flex-wrap gap-3">
-          <Link href="#planes" className="btn-outline">
-            Ver planes mensuales
-          </Link>
-          <Link href="#extras" className="btn-outline">
-            Servicios adicionales
-          </Link>
-          <Link href="/portafolio" className="btn-outline">
-            Ver portafolio
-          </Link>
-        </div>
+        <header>
+          <h1 className="h2">Servicios de producción audiovisual</h1>
+          <p className="mt-2 text-white/70 max-w-2xl">
+            Planes mensuales y servicios adicionales para que tu marca tenga contenido constante,
+            profesional y alineado con tus objetivos de comunicación interna, institucional y
+            comercial.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link href="#planes" className="btn-outline">
+              Ver planes mensuales
+            </Link>
+            <Link href="#extras" className="btn-outline">
+              Servicios adicionales
+            </Link>
+            <Link href="/portafolio" className="btn-outline">
+              Ver portafolio
+            </Link>
+          </div>
+        </header>
 
         {/* BENEFICIOS */}
-        <section className="mt-8 bg-black">
+        <section className="mt-10 bg-black">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center">
             Beneficios para tu empresa
           </h2>
@@ -201,19 +218,23 @@ export default function Page() {
             <div className="relative w-full max-w-3xl h-80">
               <Image
                 src="/images/beneficios.jpg"
-                alt="Producción audiovisual Dekaelo Media"
+                alt="Producción audiovisual Dekaelo Media en rodaje"
                 fill
                 className="rounded-2xl shadow-lg object-cover border border-white/10"
+                priority
               />
             </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mt-10">
             {beneficios.map((b) => (
-              <div key={b.t} className="p-6 rounded-2xl bg-gray-900 border border-white/10">
+              <article
+                key={b.t}
+                className="p-6 rounded-2xl bg-gray-900 border border-white/10"
+              >
                 <h3 className="font-semibold text-white">{b.t}</h3>
                 <p className="text-white/70 mt-2">{b.d}</p>
-              </div>
+              </article>
             ))}
           </div>
         </section>
@@ -228,17 +249,20 @@ export default function Page() {
               <p className="text-white/70 mt-3">
                 Si tu equipo no tiene tiempo,{' '}
                 <span className="text-white">Dekaelo se encarga del proceso completo</span>:
-                estrategia, guion, rodaje, post y entregas optimizadas. Tú te concentras en la
-                operación y en las decisiones, no en coordinar una productora distinta cada vez.
+                estrategia, guion, rodaje, postproducción y entregas optimizadas. Tú te concentras en
+                la operación y las decisiones, no en coordinar una productora distinta cada vez.
               </p>
               <p className="text-white/70 mt-3">
                 Trabajamos especialmente con equipos de marketing, comunicaciones internas y
                 directorios que necesitan producción seria, plazos claros y material que pueda
                 reutilizarse en múltiples canales.
               </p>
-              <div className="mt-7">
+              <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/contacto#form" className="btn">
                   Quiero que lo hagan por mí →
+                </Link>
+                <Link href="/portafolio" className="btn-outline">
+                  Ver ejemplos de trabajos →
                 </Link>
               </div>
             </div>
@@ -248,6 +272,7 @@ export default function Page() {
                 height="315"
                 src="https://www.youtube.com/embed/uul8LNP6BbQ?playlist=uul8LNP6BbQ&loop=1&rel=0&modestbranding=1&playsinline=1"
                 title="Reel Dekaelo Media"
+                className="aspect-video w-full"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -258,7 +283,9 @@ export default function Page() {
 
         {/* PLANES */}
         <section id="planes" className="scroll-mt-20 py-24 bg-black rounded-3xl mt-12">
-          <h2 className="text-4xl font-extrabold text-center mb-4 text-white">Planes mensuales</h2>
+          <h2 className="text-4xl font-extrabold text-center mb-4 text-white">
+            Planes audiovisuales mensuales
+          </h2>
           <p className="text-center text-white/60 mb-12 max-w-3xl mx-auto">
             Valores IVA incluido. Contrato mínimo sugerido: 3 meses. Pensado para equipos que
             necesitan contenido constante y un partner estable en producción audiovisual.
@@ -268,7 +295,7 @@ export default function Page() {
             <div className="relative w-full max-w-3xl h-80">
               <Image
                 src="/images/planes.jpg"
-                alt="Planes audiovisuales Dekaelo"
+                alt="Planes audiovisuales mensuales Dekaelo Media"
                 fill
                 className="rounded-2xl shadow-lg object-cover border border-white/10"
               />
@@ -277,7 +304,7 @@ export default function Page() {
 
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
             {planes.map((p) => (
-              <div key={p.key} className="relative p-1 rounded-3xl">
+              <article key={p.key} className="relative p-1 rounded-3xl">
                 <div className="h-full w-full rounded-3xl bg-gray-900 border border-white/10 p-8 flex flex-col">
                   {p.destacado && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full border border-white/15">
@@ -306,7 +333,7 @@ export default function Page() {
                     {p.ctaLabel}
                   </Link>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
 
@@ -323,13 +350,13 @@ export default function Page() {
           </h2>
           <p className="text-center text-white/60 mb-12 max-w-3xl mx-auto">
             Complementa tus planes mensuales con servicios clave para eventos, campañas y
-            comunicación interna. Todos se integran a tu identidad de marca y a tu calendario de
+            comunicación interna. Todo se integra a tu identidad de marca y a tu calendario de
             comunicación.
           </p>
 
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
             {extras.map((x) => (
-              <div
+              <article
                 key={x.t}
                 className="p-6 rounded-2xl bg-gray-900 border border-white/10 flex flex-col"
               >
@@ -342,14 +369,14 @@ export default function Page() {
                 >
                   Solicitar cotización →
                 </Link>
-              </div>
+              </article>
             ))}
           </div>
 
-          <div className="text-center mt-10 text-white/60 text-sm">
+          <p className="text-center mt-10 text-white/60 text-sm max-w-3xl mx-auto">
             Si necesitas algo más específico (por ejemplo, fotografía corporativa o traducciones),
             podemos incorporarlo en una propuesta a medida.
-          </div>
+          </p>
         </section>
 
         {/* FAQ */}
@@ -359,10 +386,13 @@ export default function Page() {
           </h2>
           <div className="mt-8 grid md:grid-cols-2 gap-6">
             {faq.map((f) => (
-              <div key={f.q} className="p-6 rounded-2xl bg-gray-900 border border-white/10">
+              <article
+                key={f.q}
+                className="p-6 rounded-2xl bg-gray-900 border border-white/10"
+              >
                 <h3 className="font-semibold text-white">{f.q}</h3>
                 <p className="text-white/70 mt-2">{f.a}</p>
-              </div>
+              </article>
             ))}
           </div>
         </section>
@@ -384,6 +414,6 @@ export default function Page() {
           </Link>
         </section>
       </div>
-    </section>
+    </main>
   );
 }
