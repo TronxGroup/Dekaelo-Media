@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Dekaelo Media — Producción Audiovisual Estratégica",
   description:
     "Estudio creativo de video en Chile. Plan Audiovisual Mensual, videos corporativos, comerciales y contenido de marca.",
-  alternates: { canonical: "/" },
+  // Recomendación: NO canonical global; define canonical por página (home, contacto, etc.)
   icons: {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png",
@@ -24,8 +24,7 @@ export const metadata: Metadata = {
     url: siteUrl + "/",
     siteName: "Dekaelo Media",
     title: "Dekaelo Media — Producción Audiovisual Estratégica",
-    description:
-      "Contenido con calidad cinematográfica para tu marca, todos los meses.",
+    description: "Contenido con calidad cinematográfica para tu marca, todos los meses.",
     images: [
       {
         url: siteUrl + "/og-cover.jpg",
@@ -70,14 +69,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <head>
-        {/* Preconnect para YouTube */}
+        {/* Preconnect performance */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google.com" />
+
+        {/* YouTube */}
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
         <link rel="preconnect" href="https://img.youtube.com" />
-        <link rel="preconnect" href="https://www.google.com" />
+      </head>
 
-        {/* Google tag (gtag.js) — cargado con el ID de Google Ads */}
+      <body className="text-white selection:bg-brand-red/60 selection:text-white">
+        {/* Google tag (gtag.js): GA4 + Google Ads */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17760996045"
           strategy="afterInteractive"
@@ -89,16 +93,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('js', new Date());
 
             // GA4
-            gtag('config', 'G-96HZDP5PVP');
+            gtag('config', 'G-96HZDP5PVP', {
+              anonymize_ip: true,
+              send_page_view: true
+            });
 
-            // Google Ads (AW-17760996045)
+            // Google Ads
             gtag('config', 'AW-17760996045');
           `}
         </Script>
-        {/* Fin Google tag */}
-      </head>
 
-      <body className="text-white selection:bg-brand-red/60 selection:text-white">
         <Navbar />
         <StickyCTA />
 
