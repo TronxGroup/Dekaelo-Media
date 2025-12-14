@@ -7,7 +7,9 @@ import { ClientLogos } from './components/ClientLogos';
 
 const SITE_URL = 'https://www.dekaelomedia.com';
 const CANONICAL = `${SITE_URL}/`;
-const WHATSAPP_NUMBER = '5699459408688'; // +56 9 9459 408688 (sin +)
+
+// WhatsApp correcto: +56 9 2008 0031  -> wa.me/56920080031
+const WHATSAPP_NUMBER = '56920080031';
 
 export const metadata: Metadata = {
   title: 'Dekaelo Media | Productora Audiovisual | Videos Corporativos en Chile',
@@ -53,6 +55,10 @@ const FAQ = [
     q: '¿Incluyen música y post de audio?',
     a: 'Sí. Incluimos música licenciada/stock según el proyecto, mezcla de audio, limpieza y nivelación para que suene profesional.',
   },
+  {
+    q: '¿Cómo cotizo si no quiero llamadas?',
+    a: 'Perfecto. Envíanos tu brief por el formulario o WhatsApp (objetivo, fecha, ciudad y referencias). Respondemos con una propuesta clara.',
+  },
 ];
 
 const SERVICES = [
@@ -62,7 +68,7 @@ const SERVICES = [
   },
   {
     title: 'Vodcast corporativo',
-    desc: 'Podcast en video con estándar pro: set, audio, multicámara y clips.',
+    desc: 'Podcast en video con estándar profesional: set, audio, multicámara y clips.',
   },
   {
     title: 'Contenido para performance',
@@ -85,17 +91,21 @@ const SERVICES = [
 const PROCESS = [
   { n: '01', title: 'Brief y objetivo', desc: 'Definimos audiencia, mensaje, tono y qué debe lograr el video.' },
   { n: '02', title: 'Guion / pauta', desc: 'Estructura clara + preguntas para entrevistas y testimonios.' },
-  { n: '03', title: 'Grabación pro', desc: 'Imagen cuidada, audio limpio, iluminación y dirección en set.' },
+  { n: '03', title: 'Grabación profesional', desc: 'Imagen cuidada, audio limpio, iluminación y dirección en set.' },
   { n: '04', title: 'Edición y entregas', desc: 'Corte final + versiones por plataforma + ronda de ajustes.' },
 ];
 
 function buildWhatsAppLink() {
   const text =
     'Hola Dekaelo Media 👋 Quiero cotizar un video corporativo.\n\n' +
-    '1) Empresa:\n2) Objetivo (marca / ventas / RRHH / interna):\n3) Tipo (institucional / vodcast / reels / evento):\n4) Fecha y ciudad:\n5) Referencias (links):\n\n' +
+    '1) Empresa:\n' +
+    '2) Objetivo (marca / ventas / RRHH / interna):\n' +
+    '3) Tipo (institucional / vodcast / reels / evento):\n' +
+    '4) Fecha y ciudad:\n' +
+    '5) Referencias (links):\n\n' +
     'Gracias 🙌';
+
   const encoded = encodeURIComponent(text);
-  // wa.me no permite UTMs “reales” como query tracking, pero sí queda el origen en GA4 si trackeas el click (GTM).
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
 }
 
@@ -128,7 +138,7 @@ function buildLocalBusinessJsonLd() {
       addressLocality: 'Santiago',
     },
     sameAs: [
-      // agrega aquí tus perfiles reales si quieres (LinkedIn/IG/YouTube)
+      // Agrega perfiles reales si quieres (YouTube / IG / LinkedIn)
     ],
   };
 }
@@ -154,11 +164,7 @@ export default function Page() {
       <div className="fixed bottom-3 left-0 right-0 z-50 md:hidden">
         <div className="container">
           <div className="p-2 rounded-2xl bg-black/70 border border-white/10 backdrop-blur flex gap-2">
-            <Link
-              href="/contacto#form"
-              className="btn flex-1 text-center"
-              data-cta="sticky_form"
-            >
+            <Link href="/contacto#form" className="btn flex-1 text-center" data-cta="sticky_form">
               Ir al formulario
             </Link>
             <a
@@ -180,17 +186,16 @@ export default function Page() {
           <div>
             <span className="badge">Productora audiovisual para empresas</span>
 
-            {/* Alineado a intención Search: “video corporativo”, “productora audiovisual”, “Chile” */}
-            <h1 className="h1 mt-3">
-              Video corporativo profesional en Chile (calidad cine)
-            </h1>
+            {/* Opción B */}
+            <h1 className="h1 mt-3">Video corporativo profesional para empresas</h1>
 
             <p className="p mt-4">
-              Producimos <strong>videos corporativos</strong>, institucionales y <strong>vodcasts</strong> para empresas,
-              con grabación 4K, audio pro y entregas listas para <strong>LinkedIn</strong>, <strong>YouTube</strong> e Instagram.
+              Producimos <strong>videos corporativos</strong>, institucionales y <strong>vodcasts</strong> con{' '}
+              <strong>calidad cinematográfica</strong>. Grabación 4K, audio limpio y entregas listas para{' '}
+              <strong>LinkedIn</strong>, <strong>YouTube</strong>, Instagram o comunicación interna.
             </p>
 
-            {/* PRICE / PROMISE */}
+            {/* PROMESA + PRECIO */}
             <p className="mt-4 text-sm text-white/70">
               <span className="font-semibold text-white">
                 Proyectos puntuales y planes mensuales desde $595.000 CLP (IVA incluido).
@@ -198,13 +203,9 @@ export default function Page() {
               Entrega típica: <strong>7–14 días hábiles</strong> desde la grabación (según formato).
             </p>
 
-            {/* CTA: NO LLAMADAS */}
+            {/* CTA: sin llamadas */}
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                href="/contacto#form"
-                className="btn"
-                data-cta="hero_form"
-              >
+              <Link href="/contacto#form" className="btn" data-cta="hero_form">
                 Ir al formulario
               </Link>
 
@@ -218,46 +219,34 @@ export default function Page() {
                 Enviar WhatsApp
               </a>
 
-              <Link
-                href="/portafolio"
-                className="btn-outline"
-                data-cta="hero_portfolio"
-              >
+              <Link href="/portafolio" className="btn-outline" data-cta="hero_portfolio">
                 Ver portafolio
               </Link>
             </div>
 
             {/* TRUST */}
             <div className="mt-6 flex items-start gap-4 text-white/70 text-sm">
-              <Image
-                src="/logo.png"
-                alt="Dekaelo Media"
-                width={34}
-                height={34}
-                className="rounded-lg"
-              />
+              <Image src="/logo.png" alt="Dekaelo Media" width={34} height={34} className="rounded-lg" />
               <div>
-                <p className="text-white/80">
-                  Te guiamos desde el concepto y guion, hasta el rodaje y la edición final.
-                </p>
+                <p className="text-white/80">Te guiamos desde el concepto y guion, hasta el rodaje y edición final.</p>
                 <p className="text-white/60 mt-1">
                   Sin llamadas: envía el brief por formulario o WhatsApp y respondemos con propuesta clara.
                 </p>
               </div>
             </div>
 
-            {/* MICRO BENEFITS (rápido de escanear) */}
+            {/* MICRO BENEFITS */}
             <div className="mt-6 grid sm:grid-cols-3 gap-3 text-xs text-white/70">
               <div className="p-3 rounded-2xl bg-black/40 border border-white/10">
-                <div className="font-semibold text-white">Audio pro</div>
+                <div className="font-semibold text-white">Audio impecable</div>
                 <div className="mt-1">Entrevistas limpias</div>
               </div>
               <div className="p-3 rounded-2xl bg-black/40 border border-white/10">
                 <div className="font-semibold text-white">Entrega por formato</div>
-                <div className="mt-1">Versiones por red</div>
+                <div className="mt-1">Versiones por plataforma</div>
               </div>
               <div className="p-3 rounded-2xl bg-black/40 border border-white/10">
-                <div className="font-semibold text-white">Orden y rapidez</div>
+                <div className="font-semibold text-white">Proceso claro</div>
                 <div className="mt-1">Brief → guion → rodaje</div>
               </div>
             </div>
@@ -284,8 +273,8 @@ export default function Page() {
         <div className="max-w-3xl">
           <h2 className="h2">¿Qué producimos?</h2>
           <p className="text-white/70 mt-2">
-            Elegimos el formato según tu objetivo (marca, conversión, reputación, cultura, ventas o comunicación interna).
-            Si no sabes qué pedir, te guiamos.
+            Elegimos el formato según tu objetivo (marca, conversión, reputación, cultura, ventas o comunicación
+            interna). Si no sabes qué pedir, te guiamos.
           </p>
         </div>
 
@@ -294,14 +283,23 @@ export default function Page() {
             <div key={s.title} className="card p-6 border border-white/10">
               <h3 className="font-semibold text-lg">{s.title}</h3>
               <p className="text-white/70 mt-2 text-sm">{s.desc}</p>
-              <div className="mt-4">
+              <div className="mt-4 flex gap-3 flex-wrap">
                 <Link
                   href="/contacto#form"
                   className="underline underline-offset-4 text-white/80 hover:text-white"
-                  data-cta={`service_${s.title.toLowerCase().replace(/\s+/g, '_')}`}
+                  data-cta={`service_form_${s.title.toLowerCase().replace(/[^\w]+/g, '_')}`}
                 >
                   Ir al formulario →
                 </Link>
+                <a
+                  href={waLink}
+                  className="underline underline-offset-4 text-white/60 hover:text-white"
+                  data-cta={`service_whatsapp_${s.title.toLowerCase().replace(/[^\w]+/g, '_')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WhatsApp →
+                </a>
               </div>
             </div>
           ))}
@@ -334,7 +332,7 @@ export default function Page() {
               <ul className="mt-4 space-y-2 text-white/80">
                 <li>• 1 jornada de grabación (hasta 8 hrs)</li>
                 <li>• 1 video largo institucional / YouTube / vodcast</li>
-                <li>• 4–5 reels o cápsulas para redes</li>
+                <li>• 4–5 reels o cápsulas</li>
                 <li>• Guion creativo + asesoría de publicaciones</li>
                 <li>• Entregas optimizadas por plataforma</li>
                 <li>• 1 revisión incluida</li>
@@ -371,8 +369,7 @@ export default function Page() {
         <div className="max-w-3xl">
           <h2 className="h2">Cómo trabajamos</h2>
           <p className="text-white/70 mt-2">
-            Proceso simple, ordenado y rápido. Buscamos que el resultado sea profesional y usable por meses
-            (no solo un video “bonito”).
+            Proceso simple, ordenado y rápido. Buscamos que el resultado sea profesional y usable por meses.
           </p>
         </div>
 
@@ -485,9 +482,7 @@ export default function Page() {
             <div className="card p-6 flex flex-col justify-between border border-cyan-400/40 relative overflow-hidden">
               <div className="absolute inset-x-0 top-0 h-px bg-cyan-400/60" />
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300 mb-2">
-                  Recomendado
-                </p>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300 mb-2">Recomendado</p>
                 <h3 className="font-semibold text-lg">Estándar</h3>
                 <p className="text-white/60 text-sm mt-1">Para equipos con calendario activo y múltiples canales.</p>
                 <p className="mt-4 text-2xl font-bold">
@@ -583,6 +578,15 @@ export default function Page() {
           <Link href="/contacto#form" className="btn" data-cta="cases_form">
             Ir al formulario
           </Link>
+          <a
+            href={waLink}
+            className="btn-outline"
+            data-cta="cases_whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
         </div>
       </section>
 
@@ -623,9 +627,7 @@ export default function Page() {
       <section id="faq" className="container py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="h2 text-center">Preguntas frecuentes</h2>
-          <p className="text-white/70 text-center mt-2">
-            Lo más común antes de cotizar. Puedes resolverlo por formulario o WhatsApp.
-          </p>
+          <p className="text-white/70 text-center mt-2">Lo más común antes de cotizar. Por formulario o WhatsApp.</p>
 
           <div className="mt-10 space-y-4">
             {FAQ.map((f) => (
@@ -651,9 +653,7 @@ export default function Page() {
             </a>
           </div>
 
-          <p className="text-xs text-white/50 text-center mt-5">
-            Respuesta típica en menos de 24 horas hábiles.
-          </p>
+          <p className="text-xs text-white/50 text-center mt-5">Respuesta típica en menos de 24 horas hábiles.</p>
         </div>
       </section>
 
@@ -662,7 +662,8 @@ export default function Page() {
         <div className="p-8 md:p-10 rounded-3xl bg-black/60 border border-white/10 text-center">
           <h2 className="h2 mb-3">Cotiza tu video corporativo</h2>
           <p className="text-white/70 mb-6 max-w-2xl mx-auto">
-            Envíanos objetivo, fecha, ciudad y referencias. Te respondemos con propuesta clara (valor estimado, cronograma y próximos pasos).
+            Envíanos objetivo, fecha, ciudad y referencias. Te respondemos con propuesta clara (valor estimado,
+            cronograma y próximos pasos).
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link href="/contacto#form" className="btn" data-cta="final_form">
@@ -678,9 +679,7 @@ export default function Page() {
               Enviar WhatsApp
             </a>
           </div>
-          <p className="text-xs text-white/50 mt-5">
-            Tip: mientras más referencias (links), más rápida la propuesta.
-          </p>
+          <p className="text-xs text-white/50 mt-5">Tip: mientras más referencias (links), más rápida la propuesta.</p>
         </div>
       </section>
     </section>
