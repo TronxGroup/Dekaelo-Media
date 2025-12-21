@@ -11,6 +11,24 @@ const CANONICAL = `${SITE_URL}/`;
 // WhatsApp correcto: +56 9 2008 0031  -> wa.me/56920080031
 const WHATSAPP_NUMBER = '56920080031';
 
+/**
+ * ✅ PRECIOS NUEVOS (reposicionamiento corporativo)
+ * - Planes mensuales (IVA incluido):
+ *   Básico:   $750.000
+ *   Estándar: $1.290.000
+ *   Premium:  $1.750.000
+ *
+ * - Anclas de "desde" (IVA incluido):
+ *   Proyectos puntuales desde: $1.200.000
+ */
+const PRICING = {
+  oneOffFrom: '$1.200.000',
+  plansFrom: '$750.000',
+  planBasic: '$750.000',
+  planStandard: '$1.290.000',
+  planPremium: '$1.750.000',
+} as const;
+
 export const metadata: Metadata = {
   title: 'Dekaelo Media | Productora Audiovisual | Videos Corporativos en Chile',
   description:
@@ -151,14 +169,8 @@ export default function Page() {
   return (
     <section>
       {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }} />
 
       {/* Sticky CTA (mobile-first) */}
       <div className="fixed bottom-3 left-0 right-0 z-50 md:hidden">
@@ -186,7 +198,6 @@ export default function Page() {
           <div>
             <span className="badge">Productora audiovisual para empresas</span>
 
-            {/* Opción B */}
             <h1 className="h1 mt-3">Video corporativo profesional para empresas</h1>
 
             <p className="p mt-4">
@@ -195,10 +206,11 @@ export default function Page() {
               <strong>LinkedIn</strong>, <strong>YouTube</strong>, Instagram o comunicación interna.
             </p>
 
-            {/* PROMESA + PRECIO */}
+            {/* PROMESA + PRECIO (ACTUALIZADO) */}
             <p className="mt-4 text-sm text-white/70">
               <span className="font-semibold text-white">
-                Proyectos puntuales y planes mensuales desde $595.000 CLP (IVA incluido).
+                Proyectos puntuales desde {PRICING.oneOffFrom} CLP y planes mensuales desde {PRICING.plansFrom} CLP (IVA
+                incluido).
               </span>{' '}
               Entrega típica: <strong>7–14 días hábiles</strong> desde la grabación (según formato).
             </p>
@@ -322,9 +334,10 @@ export default function Page() {
                 para el mes, sin armar un equipo in-house.
               </p>
 
+              {/* PRECIO PLAN RECOMENDADO (ACTUALIZADO) */}
               <p className="mt-4 text-sm text-white/70">
                 <span className="font-semibold text-white">
-                  Plan Estándar recomendado: $952.000 CLP / mes (IVA incluido).
+                  Plan Estándar recomendado: {PRICING.planStandard} CLP / mes (IVA incluido).
                 </span>{' '}
                 Incluye una jornada completa de grabación y piezas suficientes para mantener canales activos.
               </p>
@@ -421,6 +434,13 @@ export default function Page() {
             <p className="mt-3 text-sm text-white/70">
               No hacemos llamadas: envía el brief por formulario o WhatsApp y te respondemos con propuesta.
             </p>
+
+            <div className="mt-4 inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/10 bg-gray-900 px-4 py-3">
+              <span className="text-sm text-white/70">Valores referenciales:</span>
+              <span className="text-sm font-semibold text-white">Proyectos puntuales desde {PRICING.oneOffFrom}</span>
+              <span className="text-xs text-white/40">· IVA incluido · alcance según logística y piezas derivadas</span>
+            </div>
+
             <div className="mt-6 flex justify-center gap-3 flex-wrap">
               <Link href="/contacto#form" className="btn" data-cta="oneoff_form">
                 Ir al formulario
@@ -460,9 +480,12 @@ export default function Page() {
                 <h3 className="font-semibold text-lg">Básico</h3>
                 <p className="text-white/60 text-sm mt-1">Para marcas que comienzan con contenido mensual.</p>
                 <p className="mt-4 text-2xl font-bold">
-                  $595.000
+                  {PRICING.planBasic}
                   <span className="block text-xs text-white/60 font-normal">CLP / mes · IVA incluido</span>
                 </p>
+                <div className="mt-3 text-xs text-white/50">
+                  Incluye 1 ciclo de revisión por pieza (ajustes menores). Versiones extra y cambios mayores se cotizan.
+                </div>
                 <ul className="mt-4 space-y-2 text-white/80 text-sm">
                   <li>• 1 cápsula institucional (máx. 2 min)</li>
                   <li>• 2 reels / shorts / cápsulas</li>
@@ -486,9 +509,12 @@ export default function Page() {
                 <h3 className="font-semibold text-lg">Estándar</h3>
                 <p className="text-white/60 text-sm mt-1">Para equipos con calendario activo y múltiples canales.</p>
                 <p className="mt-4 text-2xl font-bold">
-                  $952.000
+                  {PRICING.planStandard}
                   <span className="block text-xs text-white/60 font-normal">CLP / mes · IVA incluido</span>
                 </p>
+                <div className="mt-3 text-xs text-white/50">
+                  Incluye 1 ciclo de revisión por pieza (ajustes menores). Versiones extra y cambios mayores se cotizan.
+                </div>
                 <ul className="mt-4 space-y-2 text-white/80 text-sm">
                   <li>• 1 jornada de grabación (8 hrs)</li>
                   <li>• 1 video largo institucional / YouTube / vodcast</li>
@@ -510,9 +536,12 @@ export default function Page() {
                 <h3 className="font-semibold text-lg">Premium</h3>
                 <p className="text-white/60 text-sm mt-1">Para campañas, lanzamientos y mayor cobertura mensual.</p>
                 <p className="mt-4 text-2xl font-bold">
-                  $1.450.000
+                  {PRICING.planPremium}
                   <span className="block text-xs text-white/60 font-normal">CLP / mes · IVA incluido</span>
                 </p>
+                <div className="mt-3 text-xs text-white/50">
+                  Incluye 2 ciclos de revisión por pieza (ajustes menores). Versiones extra y cambios mayores se cotizan.
+                </div>
                 <ul className="mt-4 space-y-2 text-white/80 text-sm">
                   <li>• 2 jornadas de grabación (16 hrs)</li>
                   <li>• 2 videos largos de campaña</li>
@@ -642,13 +671,7 @@ export default function Page() {
             <Link href="/contacto#form" className="btn" data-cta="faq_form">
               Ir al formulario →
             </Link>
-            <a
-              href={waLink}
-              className="btn-outline"
-              data-cta="faq_whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={waLink} className="btn-outline" data-cta="faq_whatsapp" target="_blank" rel="noopener noreferrer">
               WhatsApp
             </a>
           </div>
@@ -679,7 +702,11 @@ export default function Page() {
               Enviar WhatsApp
             </a>
           </div>
-          <p className="text-xs text-white/50 mt-5">Tip: mientras más referencias (links), más rápida la propuesta.</p>
+
+          <p className="text-xs text-white/50 mt-5">
+            *Valores referenciales IVA incluido. Alcance definitivo se confirma en propuesta formal según calendario,
+            locación y entregables.
+          </p>
         </div>
       </section>
     </section>
