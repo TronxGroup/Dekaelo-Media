@@ -59,12 +59,20 @@ export default function Page() {
     },
   ];
 
+  /**
+   * ✅ PRECIOS NUEVOS (posicionamiento corporativo / partner mensual)
+   * - Básico: $750.000 (IVA incl.)
+   * - Estándar: $1.290.000 (IVA incl.)
+   * - Premium: $1.750.000 (IVA incl.)
+   *
+   * Nota: si quieres, puedo agregar "Desde" o "Precio 2026" o "Empresas / Instituciones"
+   */
   const planes = [
     {
       key: 'basico',
       nombre: 'Básico',
       subtitulo: 'Para marcas que inician presencia mensual',
-      precio: '$595.000',
+      precio: '$750.000',
       bullets: [
         '1 cápsula institucional (máx. 2 minutos)',
         '2 reels / shorts / cápsulas',
@@ -81,7 +89,7 @@ export default function Page() {
       key: 'estandar',
       nombre: 'Estándar',
       subtitulo: 'Para equipos con calendario activo de marketing',
-      precio: '$952.000',
+      precio: '$1.290.000',
       bullets: [
         '1 jornada de grabación (8 horas)',
         '1 video largo institucional / YouTube / vodcast',
@@ -100,7 +108,7 @@ export default function Page() {
       key: 'premium',
       nombre: 'Premium',
       subtitulo: 'Para campañas y mayor cobertura',
-      precio: '$1.450.000',
+      precio: '$1.750.000',
       bullets: [
         '2 jornadas de grabación (16 horas)',
         '2 videos largos de campaña',
@@ -136,36 +144,45 @@ export default function Page() {
     },
   ];
 
+  /**
+   * ✅ PRECIOS NUEVOS EXTRAS (más coherentes con estándar corporativo)
+   */
   const extras = [
     {
       t: 'Cobertura de eventos',
       d: 'Registro de charlas, lanzamientos y conferencias. Entrega de video highlight + clips para redes y comunicación interna.',
-      p: 'desde $480.000',
+      p: 'desde $850.000',
+      note: 'IVA incluido · valores desde, según duración y logística.',
     },
     {
       t: 'Multicámara / Dron',
       d: 'Segunda cámara y/o tomas aéreas certificadas para dar más dinamismo y contexto a tus videos corporativos y eventos.',
-      p: 'desde $180.000',
+      p: 'desde $250.000',
+      note: 'IVA incluido · sujeto a permisos y locación.',
     },
     {
       t: 'Motion Graphics',
       d: 'Gráficos animados, lower thirds e inserción de datos clave para presentaciones, videos institucionales y campañas.',
-      p: 'desde $220.000',
+      p: 'desde $320.000',
+      note: 'IVA incluido · depende de cantidad de piezas y complejidad.',
     },
     {
       t: 'Streaming y webinars',
       d: 'Producción técnica para transmisiones en YouTube, LinkedIn o Zoom, con gráficas, overlays y soporte de Q&A.',
-      p: 'desde $420.000',
+      p: 'desde $750.000',
+      note: 'IVA incluido · según número de cámaras, plataforma y duración.',
     },
     {
       t: 'Podcast / Vodcast corporativo',
       d: 'Formato conversacional para liderazgo, cultura interna, onboarding y comunicación con equipos distribuidos.',
-      p: 'desde $380.000',
+      p: 'desde $650.000',
+      note: 'IVA incluido · incluye set básico y postproducción estándar.',
     },
     {
       t: 'Kit de marca para video',
       d: 'Plantillas, lower thirds, paletas y tipografías para que todo tu contenido audiovisual mantenga la misma identidad.',
-      p: 'desde $260.000',
+      p: 'desde $320.000',
+      note: 'IVA incluido · entregable reusable para todo el año.',
     },
   ] as const;
 
@@ -195,6 +212,13 @@ export default function Page() {
             contenido constante, profesional y alineado con tus objetivos de comunicación interna,
             institucional y comercial.
           </p>
+
+          {/* microcopy para sostener el reposicionamiento (sin sonar arrogante) */}
+          <p className="mt-3 text-sm text-white/60 max-w-2xl">
+            Valores referenciales (IVA incluido). Trabajamos con estándar corporativo: alcance claro,
+            entregas por hitos y revisiones acotadas. Para licitaciones o compliance, armamos propuesta formal.
+          </p>
+
           <div className="mt-4 flex flex-wrap gap-3">
             <Link href="#videos-corporativos" className="btn-outline">
               Videos corporativos
@@ -239,6 +263,16 @@ export default function Page() {
                 corporativo</span> o integrarlo dentro de un plan mensual, según tus necesidades y
                 calendario de comunicación.
               </p>
+
+              {/* ancla de valor para corporativo (sin poner precio fijo en la web) */}
+              <div className="mt-5 rounded-2xl border border-white/10 bg-gray-900 p-4">
+                <p className="text-sm text-white/70">
+                  <span className="text-white font-semibold">Proyectos puntuales (desde):</span>{' '}
+                  videos institucionales desde <span className="text-white">$1.200.000</span>{' '}
+                  (IVA incl.), según locación, guion y piezas derivadas. Te cotizamos rápido con alcance claro.
+                </p>
+              </div>
+
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link href="/contacto#form" className="btn">
                   Cotizar video corporativo →
@@ -248,6 +282,7 @@ export default function Page() {
                 </Link>
               </div>
             </div>
+
             <div className="relative w-full h-80 md:h-full">
               <Image
                 src="/images/videos-corporativos.jpg"
@@ -373,6 +408,12 @@ export default function Page() {
                     <div className="text-3xl font-extrabold text-white">{p.precio}</div>
                     <div className="text-sm text-white/50">CLP / mes · IVA incluido</div>
                   </div>
+
+                  {/* mini sello de control de alcance */}
+                  <div className="mt-4 text-xs text-white/55">
+                    Incluye 1 ciclo de revisión por pieza (ajustes menores). Cambios mayores o versiones extra se cotizan.
+                  </div>
+
                   <ul className="mt-6 space-y-3 text-white/80 text-sm">
                     {p.bullets.map((b) => (
                       <li key={b}>• {b}</li>
@@ -419,7 +460,10 @@ export default function Page() {
               >
                 <h3 className="font-semibold text-white">{x.t}</h3>
                 <p className="text-white/70 mt-2">{x.d}</p>
-                <div className="mt-4 text-sm text-white/60">{x.p}</div>
+                <div className="mt-4 text-sm text-white/60">{x.p} <span className="text-white/30">· IVA incluido</span></div>
+                {'note' in x && x.note ? (
+                  <div className="mt-2 text-xs text-white/45">{x.note}</div>
+                ) : null}
                 <Link
                   href="/contacto#form"
                   className="mt-6 inline-block w-full text-center px-6 py-3 rounded-xl transition bg-white/10 hover:bg-white/15 border border-white/15 text-white"
@@ -470,6 +514,9 @@ export default function Page() {
           >
             Cotizar mi proyecto →
           </Link>
+          <p className="mt-4 text-xs text-white/50">
+            *Valores referenciales IVA incluido. Alcance definitivo se confirma en propuesta formal según calendario, locación y entregables.
+          </p>
         </section>
       </div>
     </main>
