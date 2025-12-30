@@ -347,7 +347,7 @@ export default function Page() {
             <div className="rounded-3xl border border-white/10 bg-black/40 overflow-hidden">
               <div className="relative w-full h-64">
                 <Image
-                  src="/images/servicios_dekaelo.jpg"
+                  src="/servicios_dekaelo.jpg"
                   alt="Producción audiovisual corporativa — Dekaelo Media"
                   fill
                   className="object-cover"
