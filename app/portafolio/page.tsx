@@ -67,7 +67,7 @@ const projects: Project[] = [
     title: 'Creando Líderes para Asia — APCC',
     youtube: toEmbed('https://www.youtube.com/watch?v=byTylGKp-uI'),
     logo: '/logo_9.png',
-    tag: 'Serie',
+    tag: 'Vodcast',
     desc: '+20 episodios para LinkedIn/YouTube y newsletters. Serie institucional con continuidad editorial y piezas derivadas.',
   },
 
