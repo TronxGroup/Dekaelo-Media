@@ -1,16 +1,16 @@
 // app/page.tsx
-import Link from 'next/link';
-import Image from 'next/image';
-import type { Metadata } from 'next';
+import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
 
-import { VideoEmbed } from './components/VideoEmbed';
-import { ClientLogos } from './components/ClientLogos';
+import { VideoEmbed } from "./components/VideoEmbed";
+import { ClientLogos } from "./components/ClientLogos";
 
-const SITE_URL = 'https://www.dekaelomedia.com';
+const SITE_URL = "https://www.dekaelomedia.com";
 const CANONICAL = `${SITE_URL}/`;
 
 // WhatsApp correcto: +56 9 2008 0031  -> wa.me/56920080031
-const WHATSAPP_NUMBER = '56920080031';
+const WHATSAPP_NUMBER = "56920080031";
 
 /**
  * ✅ PRECIOS NUEVOS (reposicionamiento corporativo)
@@ -21,109 +21,142 @@ const WHATSAPP_NUMBER = '56920080031';
  *
  * - Anclas de "desde" (IVA incluido):
  *   Proyectos puntuales desde: $1.200.000
+ *   Cobertura de eventos desde: $850.000
  */
 const PRICING = {
-  oneOffFrom: '$1.200.000',
-  plansFrom: '$750.000',
-  planBasic: '$750.000',
-  planStandard: '$1.290.000',
-  planPremium: '$1.750.000',
+  oneOffFrom: "$1.200.000",
+  eventFrom: "$850.000",
+  plansFrom: "$750.000",
+  planBasic: "$750.000",
+  planStandard: "$1.290.000",
+  planPremium: "$1.750.000",
 } as const;
 
 export const metadata: Metadata = {
-  title: 'Dekaelo Media | Productora Audiovisual | Videos Corporativos en Chile',
+  title: "Dekaelo Media | Productora Audiovisual | Videos Corporativos en Chile",
   description:
-    'Producimos videos corporativos, institucionales y vodcasts para empresas en Chile. Calidad cinematográfica, enfoque estratégico y entregables listos para redes, directorios y comunicación interna.',
+    "Producimos videos corporativos, institucionales y vodcasts para empresas en Chile. Calidad cinematográfica, enfoque estratégico y entregables listos para redes, directorios y comunicación interna.",
   alternates: { canonical: CANONICAL },
   openGraph: {
-    title: 'Dekaelo Media | Videos corporativos y contenido audiovisual estratégico',
+    title: "Dekaelo Media | Videos corporativos y contenido audiovisual estratégico",
     description:
-      'Videos corporativos, institucionales y vodcasts para empresas en Chile. Calidad cinematográfica y foco en objetivos de negocio.',
+      "Videos corporativos, institucionales y vodcasts para empresas en Chile. Calidad cinematográfica y foco en objetivos de negocio.",
     url: CANONICAL,
-    type: 'website',
-    siteName: 'Dekaelo Media',
-    locale: 'es_CL',
+    type: "website",
+    siteName: "Dekaelo Media",
+    locale: "es_CL",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Dekaelo Media | Videos corporativos en Chile',
+    card: "summary_large_image",
+    title: "Dekaelo Media | Videos corporativos en Chile",
     description:
-      'Videos corporativos, institucionales y vodcasts para empresas en Chile. Calidad cinematográfica y entregables por plataforma.',
+      "Videos corporativos, institucionales y vodcasts para empresas en Chile. Calidad cinematográfica y entregables por plataforma.",
   },
   robots: { index: true, follow: true },
 };
 
 const FAQ = [
   {
-    q: '¿Cuánto demora un video corporativo?',
-    a: 'Depende del formato, pero normalmente entregamos entre 7 y 14 días hábiles desde la grabación. En proyectos urgentes, podemos priorizar entregas.',
+    q: "¿Cuánto demora un video corporativo?",
+    a: "Depende del formato, pero normalmente entregamos entre 7 y 14 días hábiles desde la grabación. En proyectos urgentes, podemos priorizar entregas.",
   },
   {
-    q: '¿Ustedes ayudan con guion y enfoque?',
-    a: 'Sí. Podemos partir desde una pauta simple o construir guion, estructura y preguntas de entrevista para que el mensaje salga claro y natural.',
+    q: "¿Ustedes ayudan con guion y enfoque?",
+    a: "Sí. Podemos partir desde una pauta simple o construir guion, estructura y preguntas de entrevista para que el mensaje salga claro y natural.",
   },
   {
-    q: '¿Qué entregan para redes sociales?',
-    a: 'Además del video principal, entregamos reels/shorts optimizados por formato (vertical/horizontal), duración y plataforma.',
+    q: "¿Qué entregan para redes sociales?",
+    a: "Además del video principal, entregamos reels/shorts optimizados por formato (vertical/horizontal), duración y plataforma.",
   },
   {
-    q: '¿Trabajan en Santiago y regiones?',
-    a: 'Sí. Grabamos en Santiago y también viajamos a regiones. Los traslados/viáticos se cotizan según ubicación y logística.',
+    q: "¿Trabajan en Santiago y regiones?",
+    a: "Sí. Grabamos en Santiago y también viajamos a regiones. Los traslados/viáticos se cotizan según ubicación y logística.",
   },
   {
-    q: '¿Incluyen música y post de audio?',
-    a: 'Sí. Incluimos música licenciada/stock según el proyecto, mezcla de audio, limpieza y nivelación para que suene profesional.',
+    q: "¿Incluyen música y post de audio?",
+    a: "Sí. Incluimos música licenciada/stock según el proyecto, mezcla de audio, limpieza y nivelación para que suene profesional.",
   },
   {
-    q: '¿Cómo cotizo si no quiero llamadas?',
-    a: 'Perfecto. Envíanos tu brief por el formulario o WhatsApp (objetivo, fecha, ciudad y referencias). Respondemos con una propuesta clara.',
+    q: "¿Cómo cotizo si no quiero llamadas?",
+    a: "Perfecto. Envíanos tu brief por el formulario o WhatsApp (objetivo, fecha, ciudad y referencias). Respondemos con una propuesta clara.",
   },
 ];
 
 const PROCESS = [
-  { n: '01', title: 'Brief y objetivo', desc: 'Definimos audiencia, mensaje, tono y qué debe lograr el video.' },
-  { n: '02', title: 'Guion / pauta', desc: 'Estructura clara + preguntas para entrevistas y testimonios.' },
-  { n: '03', title: 'Grabación profesional', desc: 'Imagen cuidada, audio limpio, iluminación y dirección en set.' },
-  { n: '04', title: 'Edición y entregas', desc: 'Corte final + versiones por plataforma + ronda de ajustes.' },
+  {
+    n: "01",
+    title: "Brief y objetivo",
+    desc: "Definimos audiencia, mensaje, tono y qué debe lograr el video.",
+  },
+  {
+    n: "02",
+    title: "Guion / pauta",
+    desc: "Estructura clara + preguntas para entrevistas y testimonios.",
+  },
+  {
+    n: "03",
+    title: "Grabación profesional",
+    desc: "Imagen cuidada, audio limpio, iluminación y dirección en set.",
+  },
+  {
+    n: "04",
+    title: "Edición y entregas",
+    desc: "Corte final + versiones por plataforma + ronda de ajustes.",
+  },
 ];
 
 const OFFERS = [
   {
-    title: 'Video corporativo / institucional (proyecto puntual)',
+    title: "Video corporativo / institucional (proyecto puntual)",
     price: `Desde ${PRICING.oneOffFrom} (IVA incl.)`,
-    who: 'Marketing, comunicaciones, ventas, cultura, marca empleadora.',
+    who: "Marketing, comunicaciones, ventas, cultura, marca empleadora.",
+    meta: "Entrega típica: 7–14 días hábiles (según formato).",
     bullets: [
-      'Brief + pauta/guion simple (te guiamos)',
-      'Grabación 4K + audio limpio + dirección en set',
-      'Edición cinematográfica + música stock/licenciada',
-      'Entrega lista para LinkedIn / YouTube + cortes para redes (según alcance)',
+      "Brief + pauta/guion simple (te guiamos)",
+      "Grabación 4K + audio limpio + dirección en set",
+      "Edición cinematográfica + música stock/licenciada",
+      "Entrega lista para LinkedIn / YouTube + cortes para redes (según alcance)",
     ],
-    ctaKey: 'oneoff',
+    ctaKey: "oneoff",
   },
   {
-    title: 'Vodcast corporativo (serie o episodio)',
-    price: 'Formato profesional multicámara (cotización según set y cantidad)',
-    who: 'Innovación, cultura, liderazgo, contenido B2B de largo plazo.',
+    title: "Vodcast corporativo (serie o episodio)",
+    price: "Formato profesional multicámara (cotización según set y cantidad)",
+    who: "Innovación, cultura, liderazgo, contenido B2B de largo plazo.",
+    meta: "Ideal para liderazgo, cultura y posicionamiento interno/externo.",
     bullets: [
-      'Set + iluminación + multicámara',
-      'Audio pro + limpieza + mezcla',
-      'Edición multicámara + color + gráficas básicas (opcional)',
-      'Clips cortos para difusión interna/externa',
+      "Set + iluminación + multicámara",
+      "Audio pro + limpieza + mezcla",
+      "Edición multicámara + color + gráficas básicas (opcional)",
+      "Clips cortos para difusión interna/externa",
     ],
-    ctaKey: 'vodcast',
+    ctaKey: "vodcast",
+  },
+  {
+    title: "Cobertura de eventos / aftermovie",
+    price: `Desde ${PRICING.eventFrom} (IVA incl.)`,
+    who: "Charlas, lanzamientos, conferencias, hitos internos y cultura.",
+    meta: "Entrega: highlight + clips (según alcance).",
+    bullets: [
+      "Registro + highlights para difusión",
+      "Testimonios / vox pop (opcional)",
+      "Clips verticales para redes",
+      "Entrega optimizada por plataforma",
+    ],
+    ctaKey: "eventos",
   },
 ];
 
 function buildWhatsAppLink() {
   const text =
-    'Hola Dekaelo Media 👋 Quiero cotizar un video corporativo.\n\n' +
-    '1) Empresa:\n' +
-    '2) Objetivo (marca / ventas / RRHH / interna):\n' +
-    '3) Tipo (institucional / vodcast / reels / evento):\n' +
-    '4) Fecha y ciudad:\n' +
-    '5) Presupuesto estimado:\n' +
-    '6) Referencias (links):\n\n' +
-    'Gracias 🙌';
+    "Hola Dekaelo Media 👋 Quiero cotizar un video corporativo.\n\n" +
+    "1) Empresa:\n" +
+    "2) Objetivo (marca / ventas / RRHH / interna):\n" +
+    "3) Tipo (institucional / vodcast / reels / evento):\n" +
+    "4) Fecha y ciudad:\n" +
+    "5) Presupuesto estimado:\n" +
+    "6) Referencias (links):\n\n" +
+    "Gracias 🙌";
 
   const encoded = encodeURIComponent(text);
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
@@ -131,31 +164,28 @@ function buildWhatsAppLink() {
 
 function buildFaqJsonLd() {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
     mainEntity: FAQ.map((f) => ({
-      '@type': 'Question',
+      "@type": "Question",
       name: f.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: f.a,
-      },
+      acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
   };
 }
 
 function buildLocalBusinessJsonLd() {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Dekaelo Media',
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Dekaelo Media",
     url: SITE_URL,
     image: `${SITE_URL}/logo.png`,
-    areaServed: 'CL',
+    areaServed: "CL",
     address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'CL',
-      addressLocality: 'Santiago',
+      "@type": "PostalAddress",
+      addressCountry: "CL",
+      addressLocality: "Santiago",
     },
     sameAs: [
       // Agrega perfiles reales si quieres (YouTube / IG / LinkedIn)
@@ -166,10 +196,10 @@ function buildLocalBusinessJsonLd() {
 function slugifyKey(input: string) {
   return input
     .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^\w]+/g, '_')
-    .replace(/^_+|_+$/g, '');
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^\w]+/g, "_")
+    .replace(/^_+|_+$/g, "");
 }
 
 export default function Page() {
@@ -180,14 +210,24 @@ export default function Page() {
   return (
     <section>
       {/* JSON-LD */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+      />
 
       {/* Sticky CTA (mobile-first) */}
       <div className="fixed bottom-3 left-0 right-0 z-50 md:hidden">
         <div className="container">
           <div className="p-2 rounded-2xl bg-black/70 border border-white/10 backdrop-blur flex gap-2">
-            <Link href="/contacto#form" className="btn flex-1 text-center" data-cta="sticky_form">
+            <Link
+              href="/contacto#form"
+              className="btn flex-1 text-center"
+              data-cta="sticky_form"
+            >
               Cotizar
             </Link>
             <a
@@ -209,25 +249,38 @@ export default function Page() {
           <div>
             <span className="badge">Video corporativo para empresas</span>
 
-            <h1 className="h1 mt-3">Un video corporativo que se usa (y no queda guardado)</h1>
+            {/* 🔻 Título un poco más chico (sin tocar tu sistema) */}
+            <h1 className="h1 mt-3 text-[2.05rem] leading-[1.12] sm:text-[2.35rem]">
+              Un video corporativo que se usa <span className="text-white/80">(no queda guardado)</span>
+            </h1>
 
             <p className="p mt-4">
-              Producimos <strong>videos corporativos</strong> y <strong>vodcasts</strong> con{' '}
+              Producimos <strong>videos corporativos</strong> y <strong>vodcasts</strong> con{" "}
               <strong>calidad cinematográfica</strong>, pero pensados para negocio: reputación, RR.HH., cultura, ventas y
-              comunicación interna. Grabación 4K, audio impecable y entregas listas para <strong>LinkedIn</strong>,{' '}
-              <strong>YouTube</strong> o intranet.
+              comunicación interna. Grabación 4K, audio impecable y entregas listas para{" "}
+              <strong>LinkedIn</strong>, <strong>YouTube</strong> o intranet.
             </p>
 
-            <p className="mt-4 text-sm text-white/70">
-              <span className="font-semibold text-white">
-                Proyecto puntual desde {PRICING.oneOffFrom} CLP (IVA incluido).
-              </span>{' '}
-              Entrega típica: <strong>7–14 días hábiles</strong> desde la grabación (según formato).
-            </p>
+            {/* ✅ Anclas de precio duales (one-off + plan mensual) */}
+            <div className="mt-4 space-y-2 text-sm text-white/70">
+              <p>
+                <span className="font-semibold text-white">
+                  Proyecto puntual desde {PRICING.oneOffFrom} CLP
+                </span>{" "}
+                (IVA incluido) · Entrega típica: <strong>7–14 días hábiles</strong>.
+              </p>
+              <p>
+                <span className="font-semibold text-white">
+                  Plan mensual desde {PRICING.plansFrom} CLP
+                </span>{" "}
+                (IVA incluido) · Para equipos que necesitan contenido constante.
+              </p>
+            </div>
 
             <p className="mt-3 text-xs text-white/50">
-              Trabajamos con <span className="text-white/70 font-semibold">pocos proyectos al mes</span> para cuidar
-              estándar y plazos. Si tu fecha es urgente, cuéntanos y vemos factibilidad.
+              Trabajamos con{" "}
+              <span className="text-white/70 font-semibold">pocos proyectos al mes</span> para cuidar estándar y plazos.
+              Si tu fecha es urgente, cuéntanos y vemos factibilidad.
             </p>
 
             {/* CTA */}
@@ -253,9 +306,17 @@ export default function Page() {
 
             {/* TRUST */}
             <div className="mt-6 flex items-start gap-4 text-white/70 text-sm">
-              <Image src="/logo.png" alt="Dekaelo Media" width={34} height={34} className="rounded-lg" />
+              <Image
+                src="/logo.png"
+                alt="Dekaelo Media"
+                width={34}
+                height={34}
+                className="rounded-lg"
+              />
               <div>
-                <p className="text-white/80">Te guiamos desde el concepto y guion, hasta el rodaje y la edición final.</p>
+                <p className="text-white/80">
+                  Te guiamos desde el concepto y guion, hasta el rodaje y la edición final.
+                </p>
                 <p className="text-white/60 mt-1">
                   Sin llamadas: envía el brief por formulario o WhatsApp y respondemos con propuesta clara.
                 </p>
@@ -300,12 +361,13 @@ export default function Page() {
         <div className="max-w-3xl">
           <h2 className="h2">Elige tu formato (te guiamos)</h2>
           <p className="text-white/70 mt-2">
-            Para campañas de Google, lo más común es: <strong>1 video institucional</strong> o <strong>1 vodcast</strong>
-            . Si no sabes qué pedir, descríbenos el objetivo y te recomendamos formato, duración y entregables.
+            Para campañas de Google, lo más común es: <strong>1 video institucional</strong>, <strong>1 vodcast</strong>{" "}
+            o <strong>cobertura de un evento</strong>. Si no sabes qué pedir, descríbenos el objetivo y te recomendamos
+            formato, duración y entregables.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 mt-10">
+        <div className="grid lg:grid-cols-3 gap-6 mt-10">
           {OFFERS.map((o) => {
             const key = slugifyKey(o.ctaKey);
             return (
@@ -316,6 +378,7 @@ export default function Page() {
                 </div>
 
                 <p className="text-white/70 mt-2 text-sm">{o.who}</p>
+                <div className="mt-2 text-xs text-white/50">{o.meta}</div>
 
                 <ul className="mt-4 space-y-2 text-white/80 text-sm">
                   {o.bullets.map((b) => (
@@ -350,7 +413,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CASES (moved up for trust) */}
+      {/* CASES (trust) */}
       <section className="container py-16">
         <h2 className="h2 text-center mb-12">Casos destacados</h2>
 
@@ -401,7 +464,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* FEATURE: MONTHLY PLAN (as upsell) */}
+      {/* FEATURE: MONTHLY PLAN (upsell) */}
       <section className="bg-black/40 border-y border-white/10">
         <div className="container py-16">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
@@ -420,7 +483,7 @@ export default function Page() {
               <p className="mt-4 text-sm text-white/70">
                 <span className="font-semibold text-white">
                   Plan Estándar recomendado: {PRICING.planStandard} CLP / mes (IVA incluido).
-                </span>{' '}
+                </span>{" "}
                 Incluye una jornada completa de grabación y piezas suficientes para mantener canales activos.
               </p>
 
@@ -520,7 +583,9 @@ export default function Page() {
             <div className="mt-4 inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/10 bg-gray-900 px-4 py-3">
               <span className="text-sm text-white/70">Valores referenciales:</span>
               <span className="text-sm font-semibold text-white">Desde {PRICING.oneOffFrom}</span>
-              <span className="text-xs text-white/40">· IVA incluido · alcance según logística y piezas derivadas</span>
+              <span className="text-xs text-white/40">
+                · IVA incluido · alcance según logística y piezas derivadas
+              </span>
             </div>
 
             <div className="mt-6 flex justify-center gap-3 flex-wrap">
@@ -673,7 +738,9 @@ export default function Page() {
             </div>
 
             <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
-              <p className="text-white/80 italic">“El video institucional ha sido una inversión de largo plazo y credibilidad.”</p>
+              <p className="text-white/80 italic">
+                “El video institucional ha sido una inversión de largo plazo y credibilidad.”
+              </p>
               <p className="mt-4 font-semibold">William Barhoma</p>
               <p className="text-sm text-white/60">CEO, Exploflex</p>
             </div>
@@ -708,7 +775,13 @@ export default function Page() {
             <Link href="/contacto#form" className="btn" data-cta="faq_form">
               Cotizar →
             </Link>
-            <a href={waLink} className="btn-outline" data-cta="faq_whatsapp" target="_blank" rel="noopener noreferrer">
+            <a
+              href={waLink}
+              className="btn-outline"
+              data-cta="faq_whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               WhatsApp
             </a>
           </div>
