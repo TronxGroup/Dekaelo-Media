@@ -91,7 +91,7 @@ const projects: Project[] = [
     title: 'OXIMIXO — Tutorial Better Life',
     youtube: toEmbed('https://www.youtube.com/watch?v=f7BpYpTSPLk'),
     logo: '/logo_12.png',
-    desc: 'Tutorial con más de 3.000.000 de visualizaciones. Alto posicionamiento orgánico y autoridad en el rubro.',
+    desc: 'Tutorial con más de 3.800.000 de visualizaciones. Alto posicionamiento orgánico y autoridad en el rubro.',
   },
 ];
 
