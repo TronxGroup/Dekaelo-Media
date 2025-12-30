@@ -1,751 +1,153 @@
-// app/page.tsx
-import Link from 'next/link';
-import Image from 'next/image';
-import type { Metadata } from 'next';
+// app/layout.tsx
+import "./globals.css";
+import type { Metadata, Viewport } from "next";
+import Script from "next/script";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
+import { StickyCTA } from "./components/StickyCTA";
 
-import { VideoEmbed } from './components/VideoEmbed';
-import { ClientLogos } from './components/ClientLogos';
-
-const SITE_URL = 'https://www.dekaelomedia.com';
-const CANONICAL = `${SITE_URL}/`;
-
-// WhatsApp correcto: +56 9 2008 0031  -> wa.me/56920080031
-const WHATSAPP_NUMBER = '56920080031';
-
-/**
- * ✅ PRECIOS NUEVOS (reposicionamiento corporativo)
- * - Planes mensuales (IVA incluido):
- *   Básico:   $750.000
- *   Estándar: $1.290.000
- *   Premium:  $1.750.000
- *
- * - Anclas de "desde" (IVA incluido):
- *   Proyectos puntuales desde: $1.200.000
- */
-const PRICING = {
-  oneOffFrom: '$1.200.000',
-  plansFrom: '$750.000',
-  planBasic: '$750.000',
-  planStandard: '$1.290.000',
-  planPremium: '$1.750.000',
-} as const;
+const siteUrl = "https://www.dekaelomedia.com";
 
 export const metadata: Metadata = {
-  title: 'Dekaelo Media | Productora Audiovisual | Videos Corporativos en Chile',
+  metadataBase: new URL(siteUrl),
+  title: "Dekaelo Media — Producción Audiovisual Estratégica",
   description:
-    'Producimos videos corporativos, institucionales y vodcasts para empresas en Chile. Calidad cinematográfica, enfoque estratégico y entregables listos para redes, directorios y comunicación interna.',
-  alternates: { canonical: CANONICAL },
+    "Estudio audiovisual en Chile. Video corporativo, vodcast y contenido para equipos de marketing, comunicaciones y RR.HH.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.png",
+  },
   openGraph: {
-    title: 'Dekaelo Media | Videos corporativos y contenido audiovisual estratégico',
-    description:
-      'Videos corporativos, institucionales y vodcasts para empresas en Chile. Calidad cinematográfica y foco en objetivos de negocio.',
-    url: CANONICAL,
-    type: 'website',
-    siteName: 'Dekaelo Media',
-    locale: 'es_CL',
+    type: "website",
+    url: siteUrl + "/",
+    siteName: "Dekaelo Media",
+    title: "Dekaelo Media — Producción Audiovisual Estratégica",
+    description: "Contenido con calidad cinematográfica para empresas: video corporativo y vodcast.",
+    images: [
+      {
+        url: siteUrl + "/og-cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dekaelo Media — Producción Audiovisual Estratégica",
+      },
+    ],
+    locale: "es_CL",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Dekaelo Media | Videos corporativos en Chile',
+    card: "summary_large_image",
+    title: "Dekaelo Media — Producción Audiovisual Estratégica",
     description:
-      'Videos corporativos, institucionales y vodcasts para empresas en Chile. Calidad cinematográfica y entregables por plataforma.',
+      "Video corporativo, vodcast y contenido para redes. Proyectos puntuales o plan mensual.",
+    images: [siteUrl + "/og-cover.jpg"],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#000000" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
 };
 
-const FAQ = [
-  {
-    q: '¿Cuánto demora un video corporativo?',
-    a: 'Depende del formato, pero normalmente entregamos entre 7 y 14 días hábiles desde la grabación. En proyectos urgentes, podemos priorizar entregas.',
-  },
-  {
-    q: '¿Ustedes ayudan con guion y enfoque?',
-    a: 'Sí. Podemos partir desde una pauta simple o construir guion, estructura y preguntas de entrevista para que el mensaje salga claro y natural.',
-  },
-  {
-    q: '¿Qué entregan para redes sociales?',
-    a: 'Además del video principal, entregamos reels/shorts optimizados por formato (vertical/horizontal), duración y plataforma.',
-  },
-  {
-    q: '¿Trabajan en Santiago y regiones?',
-    a: 'Sí. Grabamos en Santiago y también viajamos a regiones. Los traslados/viáticos se cotizan según ubicación y logística.',
-  },
-  {
-    q: '¿Incluyen música y post de audio?',
-    a: 'Sí. Incluimos música licenciada/stock según el proyecto, mezcla de audio, limpieza y nivelación para que suene profesional.',
-  },
-  {
-    q: '¿Cómo cotizo si no quiero llamadas?',
-    a: 'Perfecto. Envíanos tu brief por el formulario o WhatsApp (objetivo, fecha, ciudad y referencias). Respondemos con una propuesta clara.',
-  },
-];
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
-const PROCESS = [
-  { n: '01', title: 'Brief y objetivo', desc: 'Definimos audiencia, mensaje, tono y qué debe lograr el video.' },
-  { n: '02', title: 'Guion / pauta', desc: 'Estructura clara + preguntas para entrevistas y testimonios.' },
-  { n: '03', title: 'Grabación profesional', desc: 'Imagen cuidada, audio limpio, iluminación y dirección en set.' },
-  { n: '04', title: 'Edición y entregas', desc: 'Corte final + versiones por plataforma + ronda de ajustes.' },
-];
+// IDs (mantén los tuyos)
+const GA4_ID = "G-96HZDP5PVP";
+const ADS_ID = "AW-17760996045";
 
-const OFFERS = [
-  {
-    title: 'Video corporativo / institucional (proyecto puntual)',
-    price: `Desde ${PRICING.oneOffFrom} (IVA incl.)`,
-    who: 'Marketing, comunicaciones, ventas, cultura, marca empleadora.',
-    bullets: [
-      'Brief + pauta/guion simple (te guiamos)',
-      'Grabación 4K + audio limpio + dirección en set',
-      'Edición cinematográfica + música stock/licenciada',
-      'Entrega lista para LinkedIn / YouTube + cortes para redes (según alcance)',
-    ],
-    ctaKey: 'oneoff',
-  },
-  {
-    title: 'Vodcast corporativo (serie o episodio)',
-    price: 'Formato profesional multicámara (cotización según set y cantidad)',
-    who: 'Innovación, cultura, liderazgo, contenido B2B de largo plazo.',
-    bullets: [
-      'Set + iluminación + multicámara',
-      'Audio pro + limpieza + mezcla',
-      'Edición multicámara + color + gráficas básicas (opcional)',
-      'Clips cortos para difusión interna/externa',
-    ],
-    ctaKey: 'vodcast',
-  },
-];
+// ⚠️ Opcional: IDs de conversiones (si ya los tienes, completa)
+// const ADS_CONV_FORM = "AW-17760996045/XXXXXXXXXXX"; // form_submit
+// const ADS_CONV_WA = "AW-17760996045/YYYYYYYYYYY";   // whatsapp_click
 
-function buildWhatsAppLink() {
-  const text =
-    'Hola Dekaelo Media 👋 Quiero cotizar un video corporativo.\n\n' +
-    '1) Empresa:\n' +
-    '2) Objetivo (marca / ventas / RRHH / interna):\n' +
-    '3) Tipo (institucional / vodcast / reels / evento):\n' +
-    '4) Fecha y ciudad:\n' +
-    '5) Presupuesto estimado:\n' +
-    '6) Referencias (links):\n\n' +
-    'Gracias 🙌';
-
-  const encoded = encodeURIComponent(text);
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
-}
-
-function buildFaqJsonLd() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: FAQ.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: f.a,
-      },
-    })),
-  };
-}
-
-function buildLocalBusinessJsonLd() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Dekaelo Media',
-    url: SITE_URL,
-    image: `${SITE_URL}/logo.png`,
-    areaServed: 'CL',
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'CL',
-      addressLocality: 'Santiago',
-    },
-    sameAs: [
-      // Agrega perfiles reales si quieres (YouTube / IG / LinkedIn)
-    ],
-  };
-}
-
-function slugifyKey(input: string) {
-  return input
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^\w]+/g, '_')
-    .replace(/^_+|_+$/g, '');
-}
-
-export default function Page() {
-  const waLink = buildWhatsAppLink();
-  const faqJsonLd = buildFaqJsonLd();
-  const businessJsonLd = buildLocalBusinessJsonLd();
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <section>
-      {/* JSON-LD */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }} />
+    <html lang="es">
+      <head>
+        {/* Preconnect performance */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google.com" />
 
-      {/* Sticky CTA (mobile-first) */}
-      <div className="fixed bottom-3 left-0 right-0 z-50 md:hidden">
-        <div className="container">
-          <div className="p-2 rounded-2xl bg-black/70 border border-white/10 backdrop-blur flex gap-2">
-            <Link href="/contacto#form" className="btn flex-1 text-center" data-cta="sticky_form">
-              Cotizar
-            </Link>
-            <a
-              href={waLink}
-              className="btn-outline flex-1 text-center"
-              data-cta="sticky_whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
+        {/* YouTube (embeds) */}
+        <link rel="preconnect" href="https://www.youtube.com" />
+        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        <link rel="preconnect" href="https://i.ytimg.com" />
+        <link rel="preconnect" href="https://img.youtube.com" />
+      </head>
 
-      {/* HERO */}
-      <div className="container pt-16 md:pt-24 pb-12 md:pb-16">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <span className="badge">Video corporativo para empresas</span>
+      <body className="text-white selection:bg-brand-red/60 selection:text-white">
+        {/* Google tag (gtag.js): GA4 + Google Ads */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-            <h1 className="h1 mt-3">Un video corporativo que se usa (y no queda guardado)</h1>
+            // GA4
+            gtag('config', '${GA4_ID}', {
+              anonymize_ip: true,
+              send_page_view: true
+            });
 
-            <p className="p mt-4">
-              Producimos <strong>videos corporativos</strong> y <strong>vodcasts</strong> con{' '}
-              <strong>calidad cinematográfica</strong>, pero pensados para negocio: reputación, RR.HH., cultura, ventas y
-              comunicación interna. Grabación 4K, audio impecable y entregas listas para <strong>LinkedIn</strong>,{' '}
-              <strong>YouTube</strong> o intranet.
-            </p>
+            // Google Ads
+            gtag('config', '${ADS_ID}');
+          `}
+        </Script>
 
-            <p className="mt-4 text-sm text-white/70">
-              <span className="font-semibold text-white">
-                Proyecto puntual desde {PRICING.oneOffFrom} CLP (IVA incluido).
-              </span>{' '}
-              Entrega típica: <strong>7–14 días hábiles</strong> desde la grabación (según formato).
-            </p>
+        <Navbar />
+        <StickyCTA />
 
-            <p className="mt-3 text-xs text-white/50">
-              Trabajamos con <span className="text-white/70 font-semibold">pocos proyectos al mes</span> para cuidar
-              estándar y plazos. Si tu fecha es urgente, cuéntanos y vemos factibilidad.
-            </p>
+        <main>{children}</main>
 
-            {/* CTA */}
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/contacto#form" className="btn" data-cta="hero_form">
-                Cotizar (sin llamada)
-              </Link>
+        <Footer />
 
-              <a
-                href={waLink}
-                className="btn-outline"
-                data-cta="hero_whatsapp"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Enviar WhatsApp
-              </a>
-
-              <Link href="/portafolio" className="btn-outline" data-cta="hero_portfolio">
-                Ver ejemplos
-              </Link>
-            </div>
-
-            {/* TRUST */}
-            <div className="mt-6 flex items-start gap-4 text-white/70 text-sm">
-              <Image src="/logo.png" alt="Dekaelo Media" width={34} height={34} className="rounded-lg" />
-              <div>
-                <p className="text-white/80">Te guiamos desde el concepto y guion, hasta el rodaje y la edición final.</p>
-                <p className="text-white/60 mt-1">
-                  Sin llamadas: envía el brief por formulario o WhatsApp y respondemos con propuesta clara.
-                </p>
-              </div>
-            </div>
-
-            {/* MICRO BENEFITS */}
-            <div className="mt-6 grid sm:grid-cols-3 gap-3 text-xs text-white/70">
-              <div className="p-3 rounded-2xl bg-black/40 border border-white/10">
-                <div className="font-semibold text-white">Audio impecable</div>
-                <div className="mt-1">Entrevistas limpias</div>
-              </div>
-              <div className="p-3 rounded-2xl bg-black/40 border border-white/10">
-                <div className="font-semibold text-white">Entrega por formato</div>
-                <div className="mt-1">Versiones por plataforma</div>
-              </div>
-              <div className="p-3 rounded-2xl bg-black/40 border border-white/10">
-                <div className="font-semibold text-white">Proceso claro</div>
-                <div className="mt-1">Brief → guion → rodaje</div>
-              </div>
-            </div>
-          </div>
-
-          {/* MAIN REEL */}
-          <VideoEmbed
-            src="https://www.youtube.com/embed/uul8LNP6BbQ?rel=0&start=0&modestbranding=1&playsinline=1"
-            title="Reel Dekaelo Media — Lo mejor"
-          />
-        </div>
-      </div>
-
-      {/* LOGOS */}
-      <section className="border-y border-white/10 bg-black/60">
-        <div className="container py-10">
-          <p className="text-center text-white/50 text-sm mb-6">Confían en nosotros</p>
-          <ClientLogos />
-        </div>
-      </section>
-
-      {/* OFFERS (ads-friendly) */}
-      <section id="servicios" className="container py-16">
-        <div className="max-w-3xl">
-          <h2 className="h2">Elige tu formato (te guiamos)</h2>
-          <p className="text-white/70 mt-2">
-            Para campañas de Google, lo más común es: <strong>1 video institucional</strong> o <strong>1 vodcast</strong>
-            . Si no sabes qué pedir, descríbenos el objetivo y te recomendamos formato, duración y entregables.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-6 mt-10">
-          {OFFERS.map((o) => {
-            const key = slugifyKey(o.ctaKey);
-            return (
-              <div key={o.title} className="card p-7 border border-white/10">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-semibold text-lg">{o.title}</h3>
-                  <span className="text-xs text-white/60">{o.price}</span>
-                </div>
-
-                <p className="text-white/70 mt-2 text-sm">{o.who}</p>
-
-                <ul className="mt-4 space-y-2 text-white/80 text-sm">
-                  {o.bullets.map((b) => (
-                    <li key={b}>• {b}</li>
-                  ))}
-                </ul>
-
-                <div className="mt-6 flex gap-3 flex-wrap">
-                  <Link href="/contacto#form" className="btn" data-cta={`offer_${key}_form`}>
-                    Cotizar
-                  </Link>
-                  <a
-                    href={waLink}
-                    className="btn-outline"
-                    data-cta={`offer_${key}_whatsapp`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    WhatsApp
-                  </a>
-                  <Link
-                    href="/portafolio"
-                    className="underline underline-offset-4 text-white/70 hover:text-white"
-                    data-cta={`offer_${key}_portfolio`}
-                  >
-                    Ver ejemplos →
-                  </Link>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* CASES (moved up for trust) */}
-      <section className="container py-16">
-        <h2 className="h2 text-center mb-12">Casos destacados</h2>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="card p-6 border border-white/10">
-            <h3 className="font-semibold text-lg">Innova Talks — Banco BICE</h3>
-            <p className="text-white/70 mt-2">
-              Vodcast corporativo en video con entrevistas. Formato para posicionar cultura, iniciativas y liderazgo.
-            </p>
-            <div className="mt-4 text-xs text-white/50">
-              Entregas listas para difusión interna/externa + clips cortos.
-            </div>
-          </div>
-
-          <div className="card p-6 border border-white/10">
-            <h3 className="font-semibold text-lg">Creando Líderes para Asia — APCC</h3>
-            <p className="text-white/70 mt-2">
-              Serie de episodios + clips reutilizables para YouTube, LinkedIn y newsletters.
-            </p>
-            <div className="mt-4 text-xs text-white/50">Piezas pensadas para comunicar valor y continuidad.</div>
-          </div>
-
-          <div className="card p-6 border border-white/10">
-            <h3 className="font-semibold text-lg">Documental 80 Años — Trewhela’s School</h3>
-            <p className="text-white/70 mt-2">
-              Pieza institucional con versiones y cortes breves para admisión, marketing y redes.
-            </p>
-            <div className="mt-4 text-xs text-white/50">Storytelling largo + recortes de alta utilidad.</div>
-          </div>
-        </div>
-
-        <div className="text-center mt-10 flex justify-center gap-3 flex-wrap">
-          <Link href="/portafolio" className="btn-outline" data-cta="cases_portfolio">
-            Ver más trabajos →
-          </Link>
-          <Link href="/contacto#form" className="btn" data-cta="cases_form">
-            Cotizar
-          </Link>
-          <a
-            href={waLink}
-            className="btn-outline"
-            data-cta="cases_whatsapp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WhatsApp
-          </a>
-        </div>
-      </section>
-
-      {/* FEATURE: MONTHLY PLAN (as upsell) */}
-      <section className="bg-black/40 border-y border-white/10">
-        <div className="container py-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-start">
-            <VideoEmbed
-              src="https://www.youtube.com/embed/LAaLA-spVH0?rel=0&start=0&modestbranding=1&playsinline=1"
-              title="Reel Dekaelo Media — Otras marcas"
-            />
-
-            <div>
-              <h2 className="h2">Plan Audiovisual Mensual</h2>
-              <p className="text-white/70 mt-2">
-                Consistencia + calidad + estrategia. Un partner que produce y deja un “banco de contenido” mensual sin
-                armar un equipo in-house.
-              </p>
-
-              <p className="mt-4 text-sm text-white/70">
-                <span className="font-semibold text-white">
-                  Plan Estándar recomendado: {PRICING.planStandard} CLP / mes (IVA incluido).
-                </span>{' '}
-                Incluye una jornada completa de grabación y piezas suficientes para mantener canales activos.
-              </p>
-
-              <ul className="mt-4 space-y-2 text-white/80">
-                <li>• 1 jornada de grabación (hasta 8 hrs)</li>
-                <li>• 1 video largo institucional / YouTube / vodcast</li>
-                <li>• 4–5 reels o cápsulas</li>
-                <li>• Guion creativo + asesoría de publicaciones</li>
-                <li>• Entregas optimizadas por plataforma</li>
-                <li>• 1 revisión incluida</li>
-              </ul>
-
-              <div className="mt-6 flex gap-3 flex-wrap">
-                <Link href="#planes" className="btn" data-cta="monthly_view_plans">
-                  Ver planes
-                </Link>
-                <Link href="/contacto#form" className="btn-outline" data-cta="monthly_form">
-                  Cotizar
-                </Link>
-                <a
-                  href={waLink}
-                  className="btn-outline"
-                  data-cta="monthly_whatsapp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WhatsApp
-                </a>
-              </div>
-
-              <p className="text-xs text-white/50 mt-4">
-                * Ajustamos el plan según calendario, prioridades y cantidad de piezas.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PROCESS */}
-      <section id="proceso" className="container py-16">
-        <div className="max-w-3xl">
-          <h2 className="h2">Cómo trabajamos</h2>
-          <p className="text-white/70 mt-2">
-            Proceso simple, ordenado y rápido. Buscamos que el resultado sea profesional y usable por meses.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-4 gap-6 mt-10">
-          {PROCESS.map((p) => (
-            <div key={p.n} className="p-6 rounded-2xl bg-gray-900 border border-white/10">
-              <div className="text-xs text-white/50">{p.n}</div>
-              <div className="font-semibold text-white mt-2">{p.title}</div>
-              <div className="text-sm text-white/70 mt-2">{p.desc}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-10 p-6 rounded-2xl bg-black/40 border border-white/10">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div className="text-white/80">
-              <div className="font-semibold text-white">¿Quieres cotizar sin vueltas?</div>
-              <div className="text-sm text-white/70 mt-1">
-                Envíanos objetivo + fecha + ciudad + presupuesto estimado + referencias. Respondemos con propuesta clara.
-              </div>
-            </div>
-            <div className="flex gap-3 flex-wrap">
-              <Link href="/contacto#form" className="btn" data-cta="process_form">
-                Cotizar
-              </Link>
-              <a
-                href={waLink}
-                className="btn-outline"
-                data-cta="process_whatsapp"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ONE-OFF PROJECTS */}
-      <section className="bg-black/40 border-y border-white/10">
-        <div className="container py-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="h2">¿Necesitas un proyecto puntual?</h2>
-            <p className="text-white/70 mt-2">
-              Institucionales, cápsulas, testimonios, registro de eventos y piezas explicativas. Te recomendamos formato,
-              duración y enfoque según objetivo.
-            </p>
-            <p className="mt-3 text-sm text-white/70">
-              Sin llamadas: envía el brief por formulario o WhatsApp y te respondemos con propuesta.
-            </p>
-
-            <div className="mt-4 inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/10 bg-gray-900 px-4 py-3">
-              <span className="text-sm text-white/70">Valores referenciales:</span>
-              <span className="text-sm font-semibold text-white">Desde {PRICING.oneOffFrom}</span>
-              <span className="text-xs text-white/40">· IVA incluido · alcance según logística y piezas derivadas</span>
-            </div>
-
-            <div className="mt-6 flex justify-center gap-3 flex-wrap">
-              <Link href="/contacto#form" className="btn" data-cta="oneoff_form">
-                Cotizar
-              </Link>
-              <a
-                href={waLink}
-                className="btn-outline"
-                data-cta="oneoff_whatsapp"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp
-              </a>
-              <Link href="/portafolio" className="btn-outline" data-cta="oneoff_portfolio">
-                Ver ejemplos →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PLANS */}
-      <section id="planes" className="bg-black/40 border-y border-white/10">
-        <div className="container py-16">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="h2">Planes audiovisuales mensuales</h2>
-            <p className="text-white/70 mt-2">
-              Valores IVA incluido. Contrato mínimo sugerido: 3 meses. Diseñados para equipos de marketing,
-              comunicaciones internas y empresas que necesitan consistencia.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mt-10">
-            {/* Básico */}
-            <div className="card p-6 flex flex-col justify-between border border-white/10">
-              <div>
-                <h3 className="font-semibold text-lg">Básico</h3>
-                <p className="text-white/60 text-sm mt-1">Para marcas que comienzan con contenido mensual.</p>
-                <p className="mt-4 text-2xl font-bold">
-                  {PRICING.planBasic}
-                  <span className="block text-xs text-white/60 font-normal">CLP / mes · IVA incluido</span>
-                </p>
-                <div className="mt-3 text-xs text-white/50">
-                  Incluye 1 ciclo de revisión por pieza (ajustes menores). Versiones extra y cambios mayores se cotizan.
-                </div>
-                <ul className="mt-4 space-y-2 text-white/80 text-sm">
-                  <li>• 1 cápsula institucional (máx. 2 min)</li>
-                  <li>• 2 reels / shorts / cápsulas</li>
-                  <li>• Grabación simple (1 cámara, hasta 3 hrs)</li>
-                  <li>• Exportación para 1 plataforma</li>
-                  <li>• 1 revisión incluida</li>
-                </ul>
-              </div>
-              <div className="mt-6 flex gap-3">
-                <Link href="/contacto#form" className="btn w-full text-center" data-cta="plan_basic_form">
-                  Cotizar
-                </Link>
-              </div>
-            </div>
-
-            {/* Estándar */}
-            <div className="card p-6 flex flex-col justify-between border border-cyan-400/40 relative overflow-hidden">
-              <div className="absolute inset-x-0 top-0 h-px bg-cyan-400/60" />
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300 mb-2">Recomendado</p>
-                <h3 className="font-semibold text-lg">Estándar</h3>
-                <p className="text-white/60 text-sm mt-1">Para equipos con calendario activo y múltiples canales.</p>
-                <p className="mt-4 text-2xl font-bold">
-                  {PRICING.planStandard}
-                  <span className="block text-xs text-white/60 font-normal">CLP / mes · IVA incluido</span>
-                </p>
-                <div className="mt-3 text-xs text-white/50">
-                  Incluye 1 ciclo de revisión por pieza (ajustes menores). Versiones extra y cambios mayores se cotizan.
-                </div>
-                <ul className="mt-4 space-y-2 text-white/80 text-sm">
-                  <li>• 1 jornada de grabación (8 hrs)</li>
-                  <li>• 1 video largo institucional / YouTube / vodcast</li>
-                  <li>• 4–5 reels / shorts / cápsulas</li>
-                  <li>• Asesoría + guion creativo</li>
-                  <li>• 1 revisión incluida</li>
-                </ul>
-              </div>
-              <div className="mt-6 flex gap-3">
-                <Link href="/contacto#form" className="btn w-full text-center" data-cta="plan_standard_form">
-                  Cotizar
-                </Link>
-              </div>
-            </div>
-
-            {/* Premium */}
-            <div className="card p-6 flex flex-col justify-between border border-white/10">
-              <div>
-                <h3 className="font-semibold text-lg">Premium</h3>
-                <p className="text-white/60 text-sm mt-1">Para campañas, lanzamientos y mayor cobertura mensual.</p>
-                <p className="mt-4 text-2xl font-bold">
-                  {PRICING.planPremium}
-                  <span className="block text-xs text-white/60 font-normal">CLP / mes · IVA incluido</span>
-                </p>
-                <div className="mt-3 text-xs text-white/50">
-                  Incluye 2 ciclos de revisión por pieza (ajustes menores). Versiones extra y cambios mayores se cotizan.
-                </div>
-                <ul className="mt-4 space-y-2 text-white/80 text-sm">
-                  <li>• 2 jornadas de grabación (16 hrs)</li>
-                  <li>• 2 videos largos de campaña</li>
-                  <li>• 8–10 reels / shorts / cápsulas</li>
-                  <li>• 2 rondas de revisión</li>
-                  <li>• Informe mensual con recomendaciones</li>
-                </ul>
-              </div>
-              <div className="mt-6 flex gap-3">
-                <Link href="/contacto#form" className="btn w-full text-center" data-cta="plan_premium_form">
-                  Cotizar
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <p className="mt-6 text-center text-xs text-white/60">
-            Todos los planes se pueden ajustar según calendario, equipo y objetivos.
-          </p>
-
-          <div className="text-center mt-8">
-            <a
-              href={waLink}
-              className="btn-outline"
-              data-cta="plans_whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Cotizar por WhatsApp →
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="bg-black/60 border-y border-white/10">
-        <div className="container py-16">
-          <h2 className="h2 text-center mb-12">Testimonios</h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
-              <p className="text-white/80 italic">
-                “Muy profesionales y puntuales. El podcast se volvió una herramienta para generar nuevos negocios.”
-              </p>
-              <p className="mt-4 font-semibold">Víctor Ruz</p>
-              <p className="text-sm text-white/60">CEO, IGROMI</p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
-              <p className="text-white/80 italic">“El video institucional ha sido una inversión de largo plazo y credibilidad.”</p>
-              <p className="mt-4 font-semibold">William Barhoma</p>
-              <p className="text-sm text-white/60">CEO, Exploflex</p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
-              <p className="text-white/80 italic">
-                “Videos explicativos claros y profesionales. Nuestro video principal se usó durante años.”
-              </p>
-              <p className="mt-4 font-semibold">Rodrigo González</p>
-              <p className="text-sm text-white/60">Gerente Comercial, Acmanet</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section id="faq" className="container py-16">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="h2 text-center">Preguntas frecuentes</h2>
-          <p className="text-white/70 text-center mt-2">Lo más común antes de cotizar. Por formulario o WhatsApp.</p>
-
-          <div className="mt-10 space-y-4">
-            {FAQ.map((f) => (
-              <details key={f.q} className="p-5 rounded-2xl bg-gray-900 border border-white/10">
-                <summary className="cursor-pointer font-semibold text-white">{f.q}</summary>
-                <p className="text-white/70 mt-3 text-sm">{f.a}</p>
-              </details>
-            ))}
-          </div>
-
-          <div className="text-center mt-10 flex justify-center gap-3 flex-wrap">
-            <Link href="/contacto#form" className="btn" data-cta="faq_form">
-              Cotizar →
-            </Link>
-            <a href={waLink} className="btn-outline" data-cta="faq_whatsapp" target="_blank" rel="noopener noreferrer">
-              WhatsApp
-            </a>
-          </div>
-
-          <p className="text-xs text-white/50 text-center mt-5">Respuesta típica en menos de 24 horas hábiles.</p>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section className="container pb-16">
-        <div className="p-8 md:p-10 rounded-3xl bg-black/60 border border-white/10 text-center">
-          <h2 className="h2 mb-3">Cotiza tu video corporativo</h2>
-          <p className="text-white/70 mb-6 max-w-2xl mx-auto">
-            Envíanos objetivo, fecha, ciudad, presupuesto estimado y referencias. Te respondemos con propuesta clara
-            (valor estimado, cronograma y próximos pasos).
-          </p>
-          <div className="flex justify-center gap-3 flex-wrap">
-            <Link href="/contacto#form" className="btn" data-cta="final_form">
-              Cotizar
-            </Link>
-            <a
-              href={waLink}
-              className="btn-outline"
-              data-cta="final_whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Enviar WhatsApp
-            </a>
-          </div>
-
-          <p className="text-xs text-white/50 mt-5">
-            *Valores referenciales IVA incluido. Alcance definitivo se confirma en propuesta formal según calendario,
-            locación y entregables.
-          </p>
-        </div>
-      </section>
-    </section>
+        {/* SCHEMA.ORG Organization */}
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Dekaelo Media",
+              url: siteUrl,
+              logo: siteUrl + "/logo.png",
+              description:
+                "Estudio audiovisual en Chile. Video corporativo, vodcast y contenido para redes y comunicación interna.",
+              sameAs: [
+                "https://www.instagram.com/dekaelo_media",
+                "https://www.youtube.com/@dekaelo_media",
+                "https://www.linkedin.com/company/dekaelo-media",
+              ],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  telephone: "+56-9-2008-0031",
+                  contactType: "sales",
+                  areaServed: "CL",
+                  availableLanguage: ["es"],
+                },
+              ],
+            }),
+          }}
+        />
+      </body>
+    </html>
   );
 }
