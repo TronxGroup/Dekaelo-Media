@@ -1,20 +1,64 @@
+// app/servicios/page.tsx
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const SITE_URL = 'https://www.dekaelomedia.com';
+const CANONICAL = `${SITE_URL}/servicios`;
+
+// WhatsApp: +56 9 2008 0031 -> wa.me/56920080031
+const WHATSAPP_NUMBER = '56920080031';
+
+function buildWhatsAppLink() {
+  const text =
+    'Hola Dekaelo Media 👋 Quiero cotizar.\n\n' +
+    '1) Empresa:\n' +
+    '2) Objetivo (marca / ventas / RRHH / interna):\n' +
+    '3) Tipo (plan mensual / video corporativo / vodcast / evento):\n' +
+    '4) Fecha y ciudad:\n' +
+    '5) Presupuesto estimado:\n' +
+    '6) Referencias (links):\n\n' +
+    'Gracias 🙌';
+
+  const encoded = encodeURIComponent(text);
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+}
+
+function buildFaqJsonLd(faq: Array<{ q: string; a: string }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+}
+
+function buildServiceJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Dekaelo Media',
+    url: SITE_URL,
+    areaServed: 'CL',
+    serviceType: ['Producción audiovisual', 'Videos corporativos', 'Vodcast corporativo', 'Contenido para redes'],
+    image: `${SITE_URL}/og-cover.jpg`,
+  };
+}
+
 export const metadata: Metadata = {
-  title: 'Servicios de Producción Audiovisual y Videos Corporativos | Dekaelo Media',
+  title: 'Servicios Audiovisuales | Videos Corporativos y Plan Mensual | Dekaelo Media',
   description:
-    'Plan audiovisual mensual, videos corporativos, comunicación interna, reels y motion graphics para bancos, cámaras, colegios y empresas del Chile Central.',
-  alternates: {
-    canonical: 'https://www.dekaelomedia.com/servicios',
-  },
+    'Plan audiovisual mensual (partner de contenido) + videos corporativos e institucionales. Entregas listas para LinkedIn, YouTube y comunicación interna. Valores IVA incluido.',
+  alternates: { canonical: CANONICAL },
   openGraph: {
     type: 'website',
-    url: 'https://www.dekaelomedia.com/servicios',
-    title: 'Servicios de Producción Audiovisual y Videos Corporativos | Dekaelo Media',
+    url: CANONICAL,
+    title: 'Servicios Audiovisuales | Videos Corporativos y Plan Mensual | Dekaelo Media',
     description:
-      'Planes mensuales, videos corporativos y servicios audiovisuales para comunicación interna, institucional y campañas en Chile.',
+      'Planes mensuales y proyectos puntuales: video corporativo, vodcast, eventos y motion graphics. Calidad cinematográfica, foco en objetivos.',
     images: ['/og-cover.jpg'],
   },
   twitter: { card: 'summary_large_image' },
@@ -32,165 +76,206 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const waLink = buildWhatsAppLink();
+
   const beneficios = [
     {
-      t: 'Consistencia que posiciona',
-      d: 'Presencia sostenida mes a mes: tu marca deja de “aparecer y desaparecer” según la urgencia del momento.',
+      t: 'Un partner mensual (no “un video suelto”)',
+      d: 'Nos encargamos del calendario, guion, rodaje y post. Tu equipo solo aprueba. Menos fricción, más continuidad.',
     },
     {
-      t: 'Velocidad y planificación',
-      d: 'Calendario editorial, guion y rodaje programados. Menos incendios de última hora, más calidad y foco.',
+      t: 'Contenido reutilizable',
+      d: 'De una jornada sacamos una pieza principal + clips + versiones por plataforma (LinkedIn / YouTube / Reels / Intranet).',
     },
     {
-      t: 'Eficiencia de costos',
-      d: 'Aprovechamos cada jornada al máximo: un video corporativo largo, varios clips y versiones para distintos canales.',
+      t: 'Estándar corporativo',
+      d: 'Alcance claro, entregas por hitos, revisiones acotadas y material listo para directorio, RRHH y marketing.',
+    },
+    {
+      t: 'Velocidad sin bajar calidad',
+      d: 'Planificación y proceso ordenado para evitar incendios de última hora: calidad constante y plazos realistas.',
     },
     {
       t: 'Coherencia de marca',
-      d: 'Mismo tono visual y narrativo en todas las piezas: YouTube, LinkedIn, redes sociales e intranet.',
+      d: 'Un mismo look & tone en todo el contenido: se nota profesional, se entiende mejor y se vuelve “usable”.',
     },
     {
-      t: 'Medición y mejora',
-      d: 'Informe básico mensual para entender qué funciona mejor y ajustar formatos, mensajes y duración.',
-    },
-    {
-      t: 'Comunicación interna',
-      d: 'Inducción, onboarding, cultura y seguridad. Podcasts internos y contenidos para salas, intranet y pantallas.',
+      t: 'Aprendizaje mensual',
+      d: 'Informe básico para entender qué formato rinde más y ajustar duración, mensajes y estilos por canal.',
     },
   ];
 
   /**
-   * ✅ PRECIOS NUEVOS (posicionamiento corporativo / partner mensual)
-   * - Básico: $750.000 (IVA incl.)
-   * - Estándar: $1.290.000 (IVA incl.)
-   * - Premium: $1.750.000 (IVA incl.)
-   *
-   * Nota: si quieres, puedo agregar "Desde" o "Precio 2026" o "Empresas / Instituciones"
+   * ✅ Planes Mensuales (IVA incl.)
    */
   const planes = [
     {
       key: 'basico',
       nombre: 'Básico',
-      subtitulo: 'Para marcas que inician presencia mensual',
+      subtitulo: 'Para iniciar presencia mensual con calidad pro',
       precio: '$750.000',
-      bullets: [
-        '1 cápsula institucional (máx. 2 minutos)',
-        '2 reels / shorts / cápsulas',
-        'Grabación simple (1 cámara, hasta 3 horas)',
-        'Exportación para 1 plataforma',
-        '1 revisión incluida',
-        'Publicación lista para YouTube / LinkedIn / Instagram / Intranet',
-        'Dekaelo gestiona guion, rodaje y post. Tu equipo solo aprueba.',
-      ],
-      ctaLabel: 'Cotizar plan Básico',
       destacado: false,
+      bullets: [
+        '1 cápsula institucional (máx. 2 min)',
+        '2 reels / shorts / cápsulas',
+        'Grabación simple (1 cámara, hasta 3 hrs)',
+        'Exportación optimizada para 1 plataforma',
+        '1 revisión incluida por pieza (ajustes menores)',
+        'Guion/pauta + dirección (nosotros guiamos)',
+        'Entregas listas para publicar',
+      ],
+      ctaLabel: 'Cotizar Básico',
     },
     {
       key: 'estandar',
       nombre: 'Estándar',
-      subtitulo: 'Para equipos con calendario activo de marketing',
+      subtitulo: 'El plan recomendado para equipos corporativos',
       precio: '$1.290.000',
+      destacado: true,
       bullets: [
-        '1 jornada de grabación (8 horas)',
+        '1 jornada de grabación (hasta 8 hrs)',
         '1 video largo institucional / YouTube / vodcast',
         '4–5 reels / shorts / cápsulas',
-        'Asesoría + guion creativo',
+        'Guion creativo + pauta de entrevistas',
         'Entrega optimizada por plataforma',
-        '1 revisión incluida',
+        '1 revisión incluida por pieza (ajustes menores)',
         'Informe mensual estratégico básico',
-        'Publicación lista para YouTube / LinkedIn / Instagram / Intranet',
-        'Dekaelo gestiona guion, rodaje y post. Tu equipo solo aprueba.',
+        'Entregas listas para LinkedIn / YouTube / RRSS / Intranet',
       ],
-      ctaLabel: 'Cotizar plan Estándar',
-      destacado: true,
+      ctaLabel: 'Cotizar Estándar (recomendado)',
     },
     {
       key: 'premium',
       nombre: 'Premium',
-      subtitulo: 'Para campañas y mayor cobertura',
+      subtitulo: 'Para campañas, lanzamientos y mayor cobertura',
       precio: '$1.750.000',
+      destacado: false,
       bullets: [
-        '2 jornadas de grabación (16 horas)',
+        '2 jornadas de grabación (16 hrs)',
         '2 videos largos de campaña',
         '8–10 reels / shorts / cápsulas',
         'Asesoría estratégica avanzada',
-        '2 rondas de revisión',
+        '2 rondas de revisión (ajustes menores)',
         'Entregas personalizadas + material adicional',
-        'Informe mensual con métricas y recomendaciones de pauta',
-        'Publicación lista para YouTube / LinkedIn / Instagram / Intranet',
-        'Dekaelo gestiona guion, rodaje y post. Tu equipo solo aprueba.',
+        'Informe mensual con métricas y recomendaciones',
+        'Entregas listas para publicar',
       ],
-      ctaLabel: 'Cotizar plan Premium',
-      destacado: false,
+      ctaLabel: 'Cotizar Premium',
+    },
+  ] as const;
+
+  /**
+   * Proyectos puntuales (desde)
+   */
+  const oneOff = {
+    title: 'Proyecto puntual: video corporativo / institucional',
+    from: '$1.200.000',
+    bullets: [
+      'Brief + pauta/guion simple (te guiamos)',
+      'Grabación 4K + audio limpio + dirección',
+      'Edición + color + música stock/licenciada',
+      'Entrega lista para LinkedIn / YouTube (y cortes según alcance)',
+    ],
+    note: 'IVA incluido · valor desde, según locación, duración, logística y piezas derivadas.',
+  };
+
+  const extras = [
+    {
+      t: 'Cobertura de eventos',
+      d: 'Registro de charlas, lanzamientos y conferencias. Video highlight + clips para difusión.',
+      p: 'desde $850.000',
+      note: 'IVA incluido · según duración y logística.',
+    },
+    {
+      t: 'Multicámara / Dron',
+      d: 'Más dinamismo y contexto para institucionales, eventos y campañas.',
+      p: 'desde $250.000',
+      note: 'IVA incluido · sujeto a permisos y locación.',
+    },
+    {
+      t: 'Motion Graphics',
+      d: 'Lower thirds, datos y gráficos animados para elevar claridad y estándar corporativo.',
+      p: 'desde $320.000',
+      note: 'IVA incluido · depende de complejidad.',
+    },
+    {
+      t: 'Streaming y webinars',
+      d: 'Producción técnica para transmisiones con overlays, gráficas y soporte.',
+      p: 'desde $750.000',
+      note: 'IVA incluido · según cámaras/plataforma/duración.',
+    },
+    {
+      t: 'Podcast / Vodcast corporativo',
+      d: 'Formato conversacional para liderazgo, cultura, onboarding y contenido B2B.',
+      p: 'desde $650.000',
+      note: 'IVA incluido · set básico + post estándar.',
+    },
+    {
+      t: 'Kit de marca para video',
+      d: 'Plantillas, lower thirds, tipografías y estilo visual para todo tu contenido del año.',
+      p: 'desde $320.000',
+      note: 'IVA incluido · reutilizable.',
     },
   ] as const;
 
   const faq = [
     {
       q: 'No tenemos tiempo ni ideas, ¿igual sirve?',
-      a: 'Sí. Partimos con una reunión corta mensual; nosotros proponemos calendario, guiones y formatos. Tu equipo solo valida antes de grabar.',
+      a: 'Sí. En una reunión corta mensual definimos objetivos y nosotros proponemos calendario, guiones y formatos. Tu equipo solo valida antes de grabar.',
+    },
+    {
+      q: '¿Qué tan “sin fricción” es el plan mensual?',
+      a: 'Ustedes definen objetivos y aprueban. Nosotros gestionamos guion/pauta, agenda de rodaje, producción y post. Entregamos archivos listos para publicar.',
     },
     {
       q: '¿Publican por nosotros?',
-      a: 'Entregamos archivos optimizados y, si lo necesitas, te asistimos con la carga, formatos y buenas prácticas por plataforma.',
+      a: 'Entregamos versiones optimizadas por plataforma. Si lo necesitas, podemos asistir con la carga y buenas prácticas de publicación.',
     },
     {
       q: '¿Trabajan en regiones?',
-      a: 'Sí. Coordinamos logística y equipo local o viajamos según agenda y plan. Lo vemos caso a caso en la propuesta.',
+      a: 'Sí. Coordinamos logística y viáticos según calendario. Se cotiza caso a caso.',
     },
     {
-      q: '¿Pueden incluir más reels o un evento?',
-      a: 'Claro. El plan es escalable: podemos sumar jornadas, multicámara/dron, motion extra o cobertura de eventos específicos.',
+      q: '¿Puedo sumar reels, un evento o multicámara?',
+      a: 'Claro. El plan es escalable: sumamos jornadas, piezas, multicámara/dron, motion extra o cobertura de eventos.',
     },
   ];
 
-  /**
-   * ✅ PRECIOS NUEVOS EXTRAS (más coherentes con estándar corporativo)
-   */
-  const extras = [
-    {
-      t: 'Cobertura de eventos',
-      d: 'Registro de charlas, lanzamientos y conferencias. Entrega de video highlight + clips para redes y comunicación interna.',
-      p: 'desde $850.000',
-      note: 'IVA incluido · valores desde, según duración y logística.',
-    },
-    {
-      t: 'Multicámara / Dron',
-      d: 'Segunda cámara y/o tomas aéreas certificadas para dar más dinamismo y contexto a tus videos corporativos y eventos.',
-      p: 'desde $250.000',
-      note: 'IVA incluido · sujeto a permisos y locación.',
-    },
-    {
-      t: 'Motion Graphics',
-      d: 'Gráficos animados, lower thirds e inserción de datos clave para presentaciones, videos institucionales y campañas.',
-      p: 'desde $320.000',
-      note: 'IVA incluido · depende de cantidad de piezas y complejidad.',
-    },
-    {
-      t: 'Streaming y webinars',
-      d: 'Producción técnica para transmisiones en YouTube, LinkedIn o Zoom, con gráficas, overlays y soporte de Q&A.',
-      p: 'desde $750.000',
-      note: 'IVA incluido · según número de cámaras, plataforma y duración.',
-    },
-    {
-      t: 'Podcast / Vodcast corporativo',
-      d: 'Formato conversacional para liderazgo, cultura interna, onboarding y comunicación con equipos distribuidos.',
-      p: 'desde $650.000',
-      note: 'IVA incluido · incluye set básico y postproducción estándar.',
-    },
-    {
-      t: 'Kit de marca para video',
-      d: 'Plantillas, lower thirds, paletas y tipografías para que todo tu contenido audiovisual mantenga la misma identidad.',
-      p: 'desde $320.000',
-      note: 'IVA incluido · entregable reusable para todo el año.',
-    },
-  ] as const;
+  const faqJsonLd = buildFaqJsonLd(faq);
+  const serviceJsonLd = buildServiceJsonLd();
 
   return (
     <main className="section bg-black">
+      {/* JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+
+      {/* TOP BAR: quick CTA */}
+      <div className="sticky top-0 z-40 border-b border-white/10 bg-black/70 backdrop-blur">
+        <div className="container py-3 flex items-center justify-between gap-3">
+          <div className="text-xs text-white/60 hidden md:block">
+            Plan mensual + videos corporativos · Entregas listas para LinkedIn / YouTube / Intranet
+          </div>
+          <div className="flex gap-2">
+            <Link href="/contacto#form" className="btn text-sm" data-cta="services_top_form">
+              Cotizar
+            </Link>
+            <a
+              href={waLink}
+              className="btn-outline text-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="services_top_whatsapp"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="container">
-        {/* Breadcrumb / contexto */}
-        <nav className="text-xs text-white/50 mb-4" aria-label="Breadcrumb">
+        {/* Breadcrumb */}
+        <nav className="text-xs text-white/50 mb-4 mt-6" aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-1">
             <li>
               <Link href="/" className="hover:text-white">
@@ -199,129 +284,100 @@ export default function Page() {
             </li>
             <li className="text-white/40">/</li>
             <li>
-              <span className="text-white">Servicios audiovisuales</span>
+              <span className="text-white">Servicios</span>
             </li>
           </ol>
         </nav>
 
-        {/* H1 + accesos rápidos */}
-        <header>
-          <h1 className="h2">Servicios de producción audiovisual y videos corporativos</h1>
-          <p className="mt-2 text-white/70 max-w-2xl">
-            Planes mensuales, videos corporativos y servicios adicionales para que tu marca tenga
-            contenido constante, profesional y alineado con tus objetivos de comunicación interna,
-            institucional y comercial.
-          </p>
-
-          {/* microcopy para sostener el reposicionamiento (sin sonar arrogante) */}
-          <p className="mt-3 text-sm text-white/60 max-w-2xl">
-            Valores referenciales (IVA incluido). Trabajamos con estándar corporativo: alcance claro,
-            entregas por hitos y revisiones acotadas. Para licitaciones o compliance, armamos propuesta formal.
-          </p>
-
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="#videos-corporativos" className="btn-outline">
-              Videos corporativos
-            </Link>
-            <Link href="#planes" className="btn-outline">
-              Ver planes mensuales
-            </Link>
-            <Link href="#extras" className="btn-outline">
-              Servicios adicionales
-            </Link>
-            <Link href="/portafolio" className="btn-outline">
-              Ver portafolio
-            </Link>
-          </div>
-        </header>
-
-        {/* BLOQUE: VIDEOS CORPORATIVOS & PROYECTOS PUNTUALES */}
-        <section
-          id="videos-corporativos"
-          className="mt-10 bg-black border-y border-white/10 py-12 rounded-3xl"
-        >
-          <div className="grid md:grid-cols-2 gap-10 items-start">
+        {/* HERO */}
+        <header className="pt-4 pb-10">
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
             <div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                Videos corporativos y proyectos puntuales
-              </h2>
-              <p className="text-white/70 mt-3">
-                Producción de <span className="text-white">videos corporativos e institucionales</span>{' '}
-                para empresas que necesitan comunicar con claridad a clientes, colaboradores o
-                inversionistas. Desde una sola pieza estratégica hasta un plan recurrente de
-                contenido.
-              </p>
-              <ul className="mt-4 space-y-2 text-white/80 text-sm">
-                <li>• Videos institucionales para web, presentaciones y admisión.</li>
-                <li>• Videos corporativos para comunicación con clientes y proveedores.</li>
-                <li>• Cápsulas de comunicación interna, cultura y seguridad.</li>
-                <li>• Vodcasts corporativos y piezas para LinkedIn y YouTube.</li>
-                <li>• Videos explicativos de procesos, productos o servicios B2B.</li>
-              </ul>
-              <p className="text-white/70 mt-4 text-sm">
-                Puedes contratar un <span className="text-white">proyecto puntual de video
-                corporativo</span> o integrarlo dentro de un plan mensual, según tus necesidades y
-                calendario de comunicación.
+              <h1 className="h2">Servicios audiovisuales para empresas</h1>
+
+              <p className="mt-3 text-white/70 max-w-2xl">
+                Dos formas de trabajar: <strong>plan audiovisual mensual</strong> (partner de contenido) o{' '}
+                <strong>proyectos puntuales</strong> (video corporativo / institucional). En ambos casos:
+                estándar corporativo, proceso claro y entregas listas para usar.
               </p>
 
-              {/* ancla de valor para corporativo (sin poner precio fijo en la web) */}
-              <div className="mt-5 rounded-2xl border border-white/10 bg-gray-900 p-4">
+              <div className="mt-4 p-4 rounded-2xl border border-white/10 bg-gray-900">
                 <p className="text-sm text-white/70">
-                  <span className="text-white font-semibold">Proyectos puntuales (desde):</span>{' '}
-                  videos institucionales desde <span className="text-white">$1.200.000</span>{' '}
-                  (IVA incl.), según locación, guion y piezas derivadas. Te cotizamos rápido con alcance claro.
+                  <span className="font-semibold text-white">Recomendación para convertir (Google/LinkedIn):</span>{' '}
+                  el <span className="text-white font-semibold">Plan Estándar</span> suele ser el mejor equilibrio:
+                  1 jornada + 1 pieza principal + clips reutilizables.
                 </p>
               </div>
 
+              <p className="mt-3 text-sm text-white/60 max-w-2xl">
+                Valores referenciales (IVA incluido). Alcance claro, revisiones acotadas y entregas por hitos.
+                Para licitaciones/compliance, armamos propuesta formal.
+              </p>
+
               <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/contacto#form" className="btn">
-                  Cotizar video corporativo →
+                <Link href="#planes" className="btn" data-cta="services_hero_view_plans">
+                  Ver planes mensuales
                 </Link>
-                <Link href="/portafolio" className="btn-outline">
-                  Ver ejemplos de videos →
+                <Link href="#proyecto-puntual" className="btn-outline" data-cta="services_hero_oneoff">
+                  Video corporativo puntual
                 </Link>
+                <Link href="/portafolio" className="btn-outline" data-cta="services_hero_portfolio">
+                  Ver portafolio
+                </Link>
+                <a
+                  href={waLink}
+                  className="btn-outline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cta="services_hero_whatsapp"
+                >
+                  WhatsApp
+                </a>
+              </div>
+
+              <div className="mt-6 flex flex-wrap items-center gap-2 text-[11px] text-white/60">
+                <span className="px-3 py-1 rounded-full bg-black/40 border border-white/10">Plazos realistas</span>
+                <span className="px-3 py-1 rounded-full bg-black/40 border border-white/10">Audio pro</span>
+                <span className="px-3 py-1 rounded-full bg-black/40 border border-white/10">Versiones por plataforma</span>
+                <span className="px-3 py-1 rounded-full bg-black/40 border border-white/10">Proceso claro</span>
               </div>
             </div>
 
-            <div className="relative w-full h-80 md:h-full">
-              <Image
-                src="/images/videos-corporativos.jpg"
-                alt="Rodaje de video corporativo Dekaelo Media"
-                fill
-                className="rounded-2xl shadow-lg object-cover border border-white/10"
-              />
+            {/* Trust / visual */}
+            <div className="rounded-3xl border border-white/10 bg-black/40 overflow-hidden">
+              <div className="relative w-full h-64">
+                <Image
+                  src="/images/servicios-hero.jpg"
+                  alt="Producción audiovisual corporativa — Dekaelo Media"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="p-5">
+                <div className="text-sm text-white/80 font-semibold">Qué obtienes</div>
+                <ul className="mt-3 space-y-2 text-sm text-white/70">
+                  <li>• Pauta/guion que aterriza el mensaje</li>
+                  <li>• Rodaje cuidado + audio impecable</li>
+                  <li>• Edición + versiones por canal</li>
+                  <li>• Entrega lista para usar (no “archivos sueltos”)</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </section>
+        </header>
 
         {/* BENEFICIOS */}
-        <section className="mt-10 bg-black">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center">
-            Beneficios para tu empresa
-          </h2>
+        <section className="py-12 border-y border-white/10">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-white text-center">Por qué el plan mensual funciona</h2>
           <p className="text-center text-white/70 mt-3 max-w-3xl mx-auto">
-            Más que producir videos sueltos: creamos un sistema mensual de contenido que mantiene tu
-            comunicación activa, coherente y medible, sin sobrecargar a tu equipo interno.
+            La ventaja no es “hacer más videos”, sino mantener una comunicación constante, coherente y reutilizable sin
+            sobrecargar al equipo interno.
           </p>
-
-          <div className="mt-8 flex justify-center">
-            <div className="relative w-full max-w-3xl h-80">
-              <Image
-                src="/images/beneficios.jpg"
-                alt="Producción audiovisual Dekaelo Media en rodaje"
-                fill
-                className="rounded-2xl shadow-lg object-cover border border-white/10"
-                priority
-              />
-            </div>
-          </div>
 
           <div className="grid md:grid-cols-3 gap-6 mt-10">
             {beneficios.map((b) => (
-              <article
-                key={b.t}
-                className="p-6 rounded-2xl bg-gray-900 border border-white/10"
-              >
+              <article key={b.t} className="p-6 rounded-2xl bg-gray-900 border border-white/10">
                 <h3 className="font-semibold text-white">{b.t}</h3>
                 <p className="text-white/70 mt-2">{b.d}</p>
               </article>
@@ -329,33 +385,47 @@ export default function Page() {
           </div>
         </section>
 
-        {/* NOSOTROS + VIDEO */}
-        <section className="mt-14 bg-black">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+        {/* PROYECTO PUNTUAL */}
+        <section id="proyecto-puntual" className="scroll-mt-24 py-14">
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                Nosotros lo hacemos por ti
-              </h2>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">{oneOff.title}</h2>
               <p className="text-white/70 mt-3">
-                Si tu equipo no tiene tiempo,{' '}
-                <span className="text-white">Dekaelo se encarga del proceso completo</span>:
-                estrategia, guion, rodaje, postproducción y entregas optimizadas. Tú te concentras en
-                la operación y las decisiones, no en coordinar una productora distinta cada vez.
+                Para cuando necesitas una pieza estratégica (web, directorio, admisión, RRHH, campaña) con estándar
+                corporativo. Si luego quieres continuidad, lo migramos a plan mensual.
               </p>
-              <p className="text-white/70 mt-3">
-                Trabajamos especialmente con equipos de marketing, comunicaciones internas y
-                directorios que necesitan producción seria, plazos claros y material que pueda
-                reutilizarse en múltiples canales.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link href="/contacto#form" className="btn">
-                  Quiero que lo hagan por mí →
+
+              <div className="mt-5 rounded-2xl border border-white/10 bg-gray-900 p-4">
+                <p className="text-sm text-white/70">
+                  <span className="text-white font-semibold">Desde:</span>{' '}
+                  <span className="text-white font-semibold">{oneOff.from}</span>{' '}
+                  <span className="text-white/50">CLP (IVA incluido)</span>
+                </p>
+                <p className="text-xs text-white/50 mt-2">{oneOff.note}</p>
+              </div>
+
+              <ul className="mt-5 space-y-2 text-white/80 text-sm">
+                {oneOff.bullets.map((b) => (
+                  <li key={b}>• {b}</li>
+                ))}
+              </ul>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link href="/contacto#form" className="btn" data-cta="services_oneoff_form">
+                  Cotizar proyecto puntual →
                 </Link>
-                <Link href="/portafolio" className="btn-outline">
-                  Ver ejemplos de trabajos →
-                </Link>
+                <a
+                  href={waLink}
+                  className="btn-outline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cta="services_oneoff_whatsapp"
+                >
+                  WhatsApp →
+                </a>
               </div>
             </div>
+
             <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10">
               <iframe
                 width="100%"
@@ -366,50 +436,42 @@ export default function Page() {
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-              ></iframe>
+              />
             </div>
           </div>
         </section>
 
         {/* PLANES */}
-        <section id="planes" className="scroll-mt-20 py-24 bg-black rounded-3xl mt-12">
-          <h2 className="text-4xl font-extrabold text-center mb-4 text-white">
-            Planes audiovisuales mensuales
-          </h2>
-          <p className="text-center text-white/60 mb-12 max-w-3xl mx-auto">
-            Valores IVA incluido. Contrato mínimo sugerido: 3 meses. Pensado para equipos que
-            necesitan contenido constante y un partner estable en producción audiovisual, además de
-            proyectos puntuales de video corporativo cuando se requiera.
+        <section id="planes" className="scroll-mt-24 py-16 border-y border-white/10">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-4 text-white">Planes audiovisuales mensuales</h2>
+          <p className="text-center text-white/60 mb-10 max-w-3xl mx-auto">
+            Valores IVA incluido. Contrato mínimo sugerido: 3 meses. Diseñado para equipos que necesitan continuidad
+            sin armar un equipo in-house.
           </p>
-
-          <div className="mb-12 flex justify-center">
-            <div className="relative w-full max-w-3xl h-80">
-              <Image
-                src="/images/planes.jpg"
-                alt="Planes audiovisuales mensuales Dekaelo Media"
-                fill
-                className="rounded-2xl shadow-lg object-cover border border-white/10"
-              />
-            </div>
-          </div>
 
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
             {planes.map((p) => (
               <article key={p.key} className="relative p-1 rounded-3xl">
-                <div className="h-full w-full rounded-3xl bg-gray-900 border border-white/10 p-8 flex flex-col">
+                <div
+                  className={[
+                    'h-full w-full rounded-3xl bg-gray-900 border p-8 flex flex-col',
+                    p.destacado ? 'border-cyan-400/40' : 'border-white/10',
+                  ].join(' ')}
+                >
                   {p.destacado && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full border border-white/15">
-                      Plan recomendado
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-300/15 text-cyan-200 text-xs font-bold px-3 py-1 rounded-full border border-cyan-300/25">
+                      Recomendado
                     </div>
                   )}
+
                   <h3 className="text-xl font-bold text-white">{p.nombre}</h3>
                   <p className="mt-1 text-sm text-white/70">{p.subtitulo}</p>
+
                   <div className="mt-6">
                     <div className="text-3xl font-extrabold text-white">{p.precio}</div>
                     <div className="text-sm text-white/50">CLP / mes · IVA incluido</div>
                   </div>
 
-                  {/* mini sello de control de alcance */}
                   <div className="mt-4 text-xs text-white/55">
                     Incluye 1 ciclo de revisión por pieza (ajustes menores). Cambios mayores o versiones extra se cotizan.
                   </div>
@@ -419,54 +481,89 @@ export default function Page() {
                       <li key={b}>• {b}</li>
                     ))}
                   </ul>
-                  <Link
-                    href="/contacto#form"
-                    className={`mt-auto inline-block w-full text-center px-6 py-3 rounded-xl transition ${
-                      p.destacado
-                        ? 'bg-white text-black font-semibold hover:opacity-90 border border-white/10'
-                        : 'bg-white/10 hover:bg-white/15 border border-white/15 text-white'
-                    }`}
-                  >
-                    {p.ctaLabel}
-                  </Link>
+
+                  <div className="mt-6 grid gap-3">
+                    <Link
+                      href="/contacto#form"
+                      className={[
+                        'inline-block w-full text-center px-6 py-3 rounded-xl transition border',
+                        p.destacado
+                          ? 'bg-white text-black font-semibold hover:opacity-90 border-white/10'
+                          : 'bg-white/10 hover:bg-white/15 border-white/15 text-white',
+                      ].join(' ')}
+                      data-cta={`services_plan_${p.key}_form`}
+                    >
+                      {p.ctaLabel}
+                    </Link>
+
+                    <a
+                      href={waLink}
+                      className="inline-block w-full text-center px-6 py-3 rounded-xl transition bg-transparent border border-white/15 text-white/90 hover:bg-white/5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-cta={`services_plan_${p.key}_whatsapp`}
+                    >
+                      Cotizar por WhatsApp
+                    </a>
+                  </div>
+
+                  <p className="mt-3 text-[11px] text-white/50">
+                    Definimos alcance final por escrito según objetivos, agenda y locación.
+                  </p>
                 </div>
               </article>
             ))}
           </div>
 
-          <p className="mt-6 text-center text-xs text-white/60 max-w-3xl mx-auto">
-            ¿Tienes una necesidad particular (más jornadas, más piezas, un video corporativo
-            específico o integración con campañas)? Podemos ajustar cualquiera de los planes en la
-            propuesta.
-          </p>
+          <div className="mt-10 p-6 rounded-2xl bg-black/40 border border-white/10">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <div className="font-semibold text-white">¿No sabes qué plan elegir?</div>
+                <div className="text-sm text-white/70 mt-1">
+                  Dinos objetivo + canal principal + frecuencia, y te recomendamos el plan más eficiente.
+                </div>
+              </div>
+              <div className="flex gap-3 flex-wrap">
+                <Link href="/contacto#form" className="btn" data-cta="services_plans_help_form">
+                  Pedir recomendación →
+                </Link>
+                <a
+                  href={waLink}
+                  className="btn-outline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cta="services_plans_help_whatsapp"
+                >
+                  WhatsApp →
+                </a>
+              </div>
+            </div>
+          </div>
         </section>
 
-        {/* SERVICIOS ADICIONALES */}
-        <section id="extras" className="scroll-mt-20 py-24 bg-black rounded-3xl mt-12">
-          <h2 className="text-4xl font-extrabold text-center mb-4 text-white">
-            Servicios adicionales
-          </h2>
+        {/* EXTRAS */}
+        <section id="extras" className="scroll-mt-24 py-16">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-4 text-white">Servicios adicionales</h2>
           <p className="text-center text-white/60 mb-12 max-w-3xl mx-auto">
-            Complementa tus planes mensuales o tus videos corporativos con servicios clave para
-            eventos, campañas y comunicación interna. Todo se integra a tu identidad de marca y a tu
-            calendario de comunicación.
+            Para complementar planes mensuales o proyectos puntuales: eventos, campañas, motion y formatos especiales.
           </p>
 
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
             {extras.map((x) => (
-              <article
-                key={x.t}
-                className="p-6 rounded-2xl bg-gray-900 border border-white/10 flex flex-col"
-              >
+              <article key={x.t} className="p-6 rounded-2xl bg-gray-900 border border-white/10 flex flex-col">
                 <h3 className="font-semibold text-white">{x.t}</h3>
                 <p className="text-white/70 mt-2">{x.d}</p>
-                <div className="mt-4 text-sm text-white/60">{x.p} <span className="text-white/30">· IVA incluido</span></div>
-                {'note' in x && x.note ? (
-                  <div className="mt-2 text-xs text-white/45">{x.note}</div>
-                ) : null}
+
+                <div className="mt-4 text-sm text-white/70">
+                  <span className="font-semibold text-white">{x.p}</span>{' '}
+                  <span className="text-white/30">· IVA incluido</span>
+                </div>
+                <div className="mt-2 text-xs text-white/45">{x.note}</div>
+
                 <Link
                   href="/contacto#form"
                   className="mt-6 inline-block w-full text-center px-6 py-3 rounded-xl transition bg-white/10 hover:bg-white/15 border border-white/15 text-white"
+                  data-cta={`services_extra_${x.t.toLowerCase().replace(/[^\w]+/g, '_')}_form`}
                 >
                   Solicitar cotización →
                 </Link>
@@ -475,47 +572,73 @@ export default function Page() {
           </div>
 
           <p className="text-center mt-10 text-white/60 text-sm max-w-3xl mx-auto">
-            Si necesitas algo más específico (por ejemplo, fotografía corporativa o traducciones),
-            podemos incorporarlo en una propuesta a medida.
+            Si necesitas algo específico (fotografía, traducciones, locución, subtítulos, etc.), lo incorporamos en una
+            propuesta a medida.
           </p>
         </section>
 
         {/* FAQ */}
-        <section className="mt-16 bg-black">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-white text-center">
-            Preguntas frecuentes
-          </h2>
-          <div className="mt-8 grid md:grid-cols-2 gap-6">
+        <section className="py-16 border-y border-white/10">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-white text-center">Preguntas frecuentes</h2>
+
+          <div className="mt-10 grid md:grid-cols-2 gap-6">
             {faq.map((f) => (
-              <article
-                key={f.q}
-                className="p-6 rounded-2xl bg-gray-900 border border-white/10"
-              >
+              <article key={f.q} className="p-6 rounded-2xl bg-gray-900 border border-white/10">
                 <h3 className="font-semibold text-white">{f.q}</h3>
                 <p className="text-white/70 mt-2">{f.a}</p>
               </article>
             ))}
           </div>
+
+          <div className="text-center mt-10 flex justify-center gap-3 flex-wrap">
+            <Link href="/contacto#form" className="btn" data-cta="services_faq_form">
+              Cotizar →
+            </Link>
+            <a
+              href={waLink}
+              className="btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="services_faq_whatsapp"
+            >
+              WhatsApp
+            </a>
+          </div>
+
+          <p className="text-xs text-white/50 text-center mt-5">Respuesta típica en menos de 24 horas hábiles.</p>
         </section>
 
-        {/* CTA FINAL */}
+        {/* FINAL CTA */}
         <section className="py-20 text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-            ¿Listo para tu próximo video corporativo?
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white">¿Listo para tu próximo video corporativo?</h2>
           <p className="mt-3 text-white/70 max-w-2xl mx-auto">
-            En 30 días puedes tener un video corporativo bien producido —o un sistema audiovisual
-            constante— que informe, venda y comunique mejor hacia dentro y hacia fuera de tu
-            organización.
+            En 30 días puedes tener una pieza institucional sólida —o un sistema mensual— para comunicar mejor hacia
+            dentro y hacia fuera de tu organización.
           </p>
-          <Link
-            href="/contacto#form"
-            className="mt-8 inline-block px-10 py-4 bg-white text-black font-semibold rounded-2xl hover:opacity-90 transition"
-          >
-            Cotizar mi proyecto →
-          </Link>
+
+          <div className="mt-8 flex justify-center gap-3 flex-wrap">
+            <Link
+              href="/contacto#form"
+              className="inline-block px-10 py-4 bg-white text-black font-semibold rounded-2xl hover:opacity-90 transition"
+              data-cta="services_final_form"
+            >
+              Cotizar mi proyecto →
+            </Link>
+
+            <a
+              href={waLink}
+              className="inline-block px-10 py-4 bg-transparent text-white font-semibold rounded-2xl border border-white/15 hover:bg-white/5 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="services_final_whatsapp"
+            >
+              WhatsApp →
+            </a>
+          </div>
+
           <p className="mt-4 text-xs text-white/50">
-            *Valores referenciales IVA incluido. Alcance definitivo se confirma en propuesta formal según calendario, locación y entregables.
+            *Valores referenciales IVA incluido. Alcance definitivo se confirma en propuesta formal según calendario,
+            locación y entregables.
           </p>
         </section>
       </div>
