@@ -8,6 +8,7 @@ const CANONICAL = `${SITE_URL}/contacto`;
 const WHATSAPP_NUMBER = '56920080031';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'Contacto | Dekaelo Media',
   description:
     'Cotiza tu video corporativo o plan audiovisual mensual. Envíanos el brief por formulario o WhatsApp. Respondemos con propuesta clara en menos de 24–48 horas hábiles.',
@@ -21,17 +22,25 @@ export const metadata: Metadata = {
     siteName: 'Dekaelo Media',
     locale: 'es_CL',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contacto | Dekaelo Media',
+    description:
+      'Cotiza tu video corporativo o plan audiovisual mensual. Formulario + WhatsApp. Respuesta en 24–48 horas hábiles.',
+  },
   robots: { index: true, follow: true },
 };
 
 function buildWhatsAppLink() {
   const text =
-    'Hola Dekaelo Media 👋 Quiero cotizar un video corporativo.\n\n' +
+    'Hola Dekaelo Media 👋 Quiero cotizar.\n\n' +
     '1) Empresa:\n' +
     '2) Objetivo (marca / ventas / RRHH / interna):\n' +
-    '3) Tipo (institucional / vodcast / reels / evento):\n' +
+    '3) Tipo (institucional / vodcast / reels / evento / plan mensual):\n' +
     '4) Fecha y ciudad:\n' +
-    '5) Referencias (links):\n\n' +
+    '5) Plataformas (LinkedIn / YouTube / Instagram / Intranet):\n' +
+    '6) Presupuesto estimado (si tienes):\n' +
+    '7) Referencias (1–3 links):\n\n' +
     'Gracias 🙌';
 
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -40,11 +49,11 @@ function buildWhatsAppLink() {
 const FAQ = [
   {
     q: '¿Necesito agendar una llamada?',
-    a: 'No. Trabajamos sin llamadas: envía el brief por formulario o WhatsApp y respondemos con una propuesta clara.',
+    a: 'No es obligatorio. Puedes enviar el brief por formulario o WhatsApp y respondemos con una propuesta clara. Si tu organización lo requiere, también podemos coordinar una llamada breve.',
   },
   {
     q: '¿Qué información debo enviar para cotizar rápido?',
-    a: 'Empresa, objetivo, tipo de video, fecha/ciudad y 1–3 referencias (links). Con eso podemos estimar formato, equipo y tiempos.',
+    a: 'Empresa, objetivo, tipo de video/plan, fecha/ciudad, plataformas y 1–3 referencias (links). Con eso estimamos formato, equipo y tiempos.',
   },
   {
     q: '¿Cuánto demoran en responder?',
@@ -68,17 +77,31 @@ function buildFaqJsonLd() {
   };
 }
 
+function buildLocalBusinessJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Dekaelo Media',
+    url: SITE_URL,
+    areaServed: 'CL',
+    sameAs: [
+      'https://www.instagram.com/dekaelo_media',
+      'https://www.linkedin.com/company/dekaelo-media',
+      'https://www.youtube.com/@dekaelo_media',
+    ],
+  };
+}
+
 export default function Page() {
   const waLink = buildWhatsAppLink();
   const faqJsonLd = buildFaqJsonLd();
+  const businessJsonLd = buildLocalBusinessJsonLd();
 
   return (
     <section className="section">
       {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }} />
 
       <div className="container max-w-2xl">
         {/* HEADER */}
@@ -90,13 +113,12 @@ export default function Page() {
             Envíanos el brief por <strong>formulario</strong> o <strong>WhatsApp</strong>.
             <br className="hidden sm:block" />
             <span className="text-white/70">
-              No hacemos llamadas: respondemos con una propuesta clara (valor estimado, cronograma y próximos pasos).
+              Respondemos con una propuesta clara (valor estimado, cronograma y próximos pasos).
             </span>
           </p>
 
           <p className="mt-3 text-sm text-white/70">
-            Tiempo de respuesta típico:{' '}
-            <span className="font-semibold text-white">24–48 horas hábiles</span>.
+            Tiempo de respuesta típico: <span className="font-semibold text-white">24–48 horas hábiles</span>.
           </p>
         </div>
 
@@ -141,25 +163,52 @@ export default function Page() {
           </Link>
         </div>
 
+        {/* PLAN vs ONE-OFF (filtro mental rápido) */}
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 text-sm">
+          <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white/75">
+            <p className="font-semibold text-white">Plan mensual</p>
+            <p className="mt-1">
+              Ideal si necesitas constancia (1 jornada + varias piezas por mes). Nosotros proponemos pauta/guion y tu equipo valida.
+            </p>
+            <Link href="/servicios#planes" className="underline underline-offset-4 text-white/80 hover:text-white">
+              Ver planes →
+            </Link>
+          </div>
+          <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white/75">
+            <p className="font-semibold text-white">Proyecto puntual</p>
+            <p className="mt-1">
+              Video institucional, evento, testimonios o piezas de campaña. Definimos alcance, cronograma y entregables por escrito.
+            </p>
+            <Link href="/servicios#videos-corporativos" className="underline underline-offset-4 text-white/80 hover:text-white">
+              Ver formatos →
+            </Link>
+          </div>
+        </div>
+
         {/* EXPECTATIONS / HELP */}
         <div className="mt-8 grid gap-4 text-sm text-white/70">
           <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
             <p className="font-semibold text-white">Para cotizar más rápido, incluye:</p>
             <ul className="mt-2 list-disc list-inside space-y-1">
-              <li><strong className="text-white">Objetivo</strong> (marca / ventas / RRHH / interna)</li>
-              <li><strong className="text-white">Tipo</strong> (institucional / vodcast / reels / evento)</li>
-              <li><strong className="text-white">Fecha y ciudad</strong></li>
-              <li><strong className="text-white">Referencias</strong> (1–3 links)</li>
-              <li><strong className="text-white">Plataformas</strong> (LinkedIn / YouTube / Instagram / Intranet)</li>
+              <li>
+                <strong className="text-white">Objetivo</strong> (marca / ventas / RRHH / interna)
+              </li>
+              <li>
+                <strong className="text-white">Tipo</strong> (institucional / vodcast / reels / evento / plan mensual)
+              </li>
+              <li>
+                <strong className="text-white">Fecha y ciudad</strong>
+              </li>
+              <li>
+                <strong className="text-white">Plataformas</strong> (LinkedIn / YouTube / Instagram / Intranet)
+              </li>
+              <li>
+                <strong className="text-white">Referencias</strong> (1–3 links)
+              </li>
+              <li>
+                <strong className="text-white">Presupuesto estimado</strong> (si tienes)
+              </li>
             </ul>
-          </div>
-
-          <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-            <p className="font-semibold text-white">¿Qué tipo de proyectos atendemos?</p>
-            <p className="mt-1">
-              Planes audiovisuales mensuales para equipos de marketing y comunicaciones internas, y también proyectos puntuales:
-              videos institucionales, testimonios, registro de eventos, cápsulas formativas y piezas para campañas.
-            </p>
           </div>
 
           <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
@@ -220,9 +269,7 @@ export default function Page() {
 
         {/* SOCIAL */}
         <div className="mt-10 border-t border-white/10 pt-6">
-          <p className="text-center text-white/60 text-sm mb-4">
-            Casos y trabajos recientes:
-          </p>
+          <p className="text-center text-white/60 text-sm mb-4">Casos y trabajos recientes:</p>
           <div className="flex justify-center gap-6 text-white/80 text-sm flex-wrap">
             <a
               href="https://www.instagram.com/dekaelo_media"
