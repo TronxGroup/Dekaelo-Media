@@ -1,3 +1,4 @@
+// app/page.tsx
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
@@ -79,38 +80,38 @@ const FAQ = [
   },
 ];
 
-const SERVICES = [
-  {
-    title: 'Videos corporativos',
-    desc: 'Institucionales, marca empleadora, cultura, innovación, testimoniales y casos.',
-  },
-  {
-    title: 'Vodcast corporativo',
-    desc: 'Podcast en video con estándar profesional: set, audio, multicámara y clips.',
-  },
-  {
-    title: 'Contenido para performance',
-    desc: 'Reels/shorts pensados para anuncios y conversión, no solo “bonito”.',
-  },
-  {
-    title: 'Comunicación interna',
-    desc: 'Mensajes de gerencia, onboarding, inducción, seguridad y capacitación.',
-  },
-  {
-    title: 'Registro de eventos',
-    desc: 'Cobertura, aftermovie, fotos, testimonios y piezas de difusión.',
-  },
-  {
-    title: 'Documental institucional',
-    desc: 'Storytelling de origen, impacto y propósito (formato largo y cortes).',
-  },
-];
-
 const PROCESS = [
   { n: '01', title: 'Brief y objetivo', desc: 'Definimos audiencia, mensaje, tono y qué debe lograr el video.' },
   { n: '02', title: 'Guion / pauta', desc: 'Estructura clara + preguntas para entrevistas y testimonios.' },
   { n: '03', title: 'Grabación profesional', desc: 'Imagen cuidada, audio limpio, iluminación y dirección en set.' },
   { n: '04', title: 'Edición y entregas', desc: 'Corte final + versiones por plataforma + ronda de ajustes.' },
+];
+
+const OFFERS = [
+  {
+    title: 'Video corporativo / institucional (proyecto puntual)',
+    price: `Desde ${PRICING.oneOffFrom} (IVA incl.)`,
+    who: 'Marketing, comunicaciones, ventas, cultura, marca empleadora.',
+    bullets: [
+      'Brief + pauta/guion simple (te guiamos)',
+      'Grabación 4K + audio limpio + dirección en set',
+      'Edición cinematográfica + música stock/licenciada',
+      'Entrega lista para LinkedIn / YouTube + cortes para redes (según alcance)',
+    ],
+    ctaKey: 'oneoff',
+  },
+  {
+    title: 'Vodcast corporativo (serie o episodio)',
+    price: 'Formato profesional multicámara (cotización según set y cantidad)',
+    who: 'Innovación, cultura, liderazgo, contenido B2B de largo plazo.',
+    bullets: [
+      'Set + iluminación + multicámara',
+      'Audio pro + limpieza + mezcla',
+      'Edición multicámara + color + gráficas básicas (opcional)',
+      'Clips cortos para difusión interna/externa',
+    ],
+    ctaKey: 'vodcast',
+  },
 ];
 
 function buildWhatsAppLink() {
@@ -120,7 +121,8 @@ function buildWhatsAppLink() {
     '2) Objetivo (marca / ventas / RRHH / interna):\n' +
     '3) Tipo (institucional / vodcast / reels / evento):\n' +
     '4) Fecha y ciudad:\n' +
-    '5) Referencias (links):\n\n' +
+    '5) Presupuesto estimado:\n' +
+    '6) Referencias (links):\n\n' +
     'Gracias 🙌';
 
   const encoded = encodeURIComponent(text);
@@ -161,6 +163,15 @@ function buildLocalBusinessJsonLd() {
   };
 }
 
+function slugifyKey(input: string) {
+  return input
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^\w]+/g, '_')
+    .replace(/^_+|_+$/g, '');
+}
+
 export default function Page() {
   const waLink = buildWhatsAppLink();
   const faqJsonLd = buildFaqJsonLd();
@@ -177,7 +188,7 @@ export default function Page() {
         <div className="container">
           <div className="p-2 rounded-2xl bg-black/70 border border-white/10 backdrop-blur flex gap-2">
             <Link href="/contacto#form" className="btn flex-1 text-center" data-cta="sticky_form">
-              Ir al formulario
+              Cotizar
             </Link>
             <a
               href={waLink}
@@ -196,29 +207,33 @@ export default function Page() {
       <div className="container pt-16 md:pt-24 pb-12 md:pb-16">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <span className="badge">Productora audiovisual para empresas</span>
+            <span className="badge">Video corporativo para empresas</span>
 
-            <h1 className="h1 mt-3">Video corporativo profesional para empresas</h1>
+            <h1 className="h1 mt-3">Un video corporativo que se usa (y no queda guardado)</h1>
 
             <p className="p mt-4">
-              Producimos <strong>videos corporativos</strong>, institucionales y <strong>vodcasts</strong> con{' '}
-              <strong>calidad cinematográfica</strong>. Grabación 4K, audio limpio y entregas listas para{' '}
-              <strong>LinkedIn</strong>, <strong>YouTube</strong>, Instagram o comunicación interna.
+              Producimos <strong>videos corporativos</strong> y <strong>vodcasts</strong> con{' '}
+              <strong>calidad cinematográfica</strong>, pero pensados para negocio: reputación, RR.HH., cultura, ventas y
+              comunicación interna. Grabación 4K, audio impecable y entregas listas para <strong>LinkedIn</strong>,{' '}
+              <strong>YouTube</strong> o intranet.
             </p>
 
-            {/* PROMESA + PRECIO (ACTUALIZADO) */}
             <p className="mt-4 text-sm text-white/70">
               <span className="font-semibold text-white">
-                Proyectos puntuales desde {PRICING.oneOffFrom} CLP y planes mensuales desde {PRICING.plansFrom} CLP (IVA
-                incluido).
+                Proyecto puntual desde {PRICING.oneOffFrom} CLP (IVA incluido).
               </span>{' '}
               Entrega típica: <strong>7–14 días hábiles</strong> desde la grabación (según formato).
             </p>
 
-            {/* CTA: sin llamadas */}
+            <p className="mt-3 text-xs text-white/50">
+              Trabajamos con <span className="text-white/70 font-semibold">pocos proyectos al mes</span> para cuidar
+              estándar y plazos. Si tu fecha es urgente, cuéntanos y vemos factibilidad.
+            </p>
+
+            {/* CTA */}
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/contacto#form" className="btn" data-cta="hero_form">
-                Ir al formulario
+                Cotizar (sin llamada)
               </Link>
 
               <a
@@ -232,7 +247,7 @@ export default function Page() {
               </a>
 
               <Link href="/portafolio" className="btn-outline" data-cta="hero_portfolio">
-                Ver portafolio
+                Ver ejemplos
               </Link>
             </div>
 
@@ -240,7 +255,7 @@ export default function Page() {
             <div className="mt-6 flex items-start gap-4 text-white/70 text-sm">
               <Image src="/logo.png" alt="Dekaelo Media" width={34} height={34} className="rounded-lg" />
               <div>
-                <p className="text-white/80">Te guiamos desde el concepto y guion, hasta el rodaje y edición final.</p>
+                <p className="text-white/80">Te guiamos desde el concepto y guion, hasta el rodaje y la edición final.</p>
                 <p className="text-white/60 mt-1">
                   Sin llamadas: envía el brief por formulario o WhatsApp y respondemos con propuesta clara.
                 </p>
@@ -280,45 +295,113 @@ export default function Page() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* OFFERS (ads-friendly) */}
       <section id="servicios" className="container py-16">
         <div className="max-w-3xl">
-          <h2 className="h2">¿Qué producimos?</h2>
+          <h2 className="h2">Elige tu formato (te guiamos)</h2>
           <p className="text-white/70 mt-2">
-            Elegimos el formato según tu objetivo (marca, conversión, reputación, cultura, ventas o comunicación
-            interna). Si no sabes qué pedir, te guiamos.
+            Para campañas de Google, lo más común es: <strong>1 video institucional</strong> o <strong>1 vodcast</strong>
+            . Si no sabes qué pedir, descríbenos el objetivo y te recomendamos formato, duración y entregables.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-10">
-          {SERVICES.map((s) => (
-            <div key={s.title} className="card p-6 border border-white/10">
-              <h3 className="font-semibold text-lg">{s.title}</h3>
-              <p className="text-white/70 mt-2 text-sm">{s.desc}</p>
-              <div className="mt-4 flex gap-3 flex-wrap">
-                <Link
-                  href="/contacto#form"
-                  className="underline underline-offset-4 text-white/80 hover:text-white"
-                  data-cta={`service_form_${s.title.toLowerCase().replace(/[^\w]+/g, '_')}`}
-                >
-                  Ir al formulario →
-                </Link>
-                <a
-                  href={waLink}
-                  className="underline underline-offset-4 text-white/60 hover:text-white"
-                  data-cta={`service_whatsapp_${s.title.toLowerCase().replace(/[^\w]+/g, '_')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WhatsApp →
-                </a>
+        <div className="grid lg:grid-cols-2 gap-6 mt-10">
+          {OFFERS.map((o) => {
+            const key = slugifyKey(o.ctaKey);
+            return (
+              <div key={o.title} className="card p-7 border border-white/10">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-semibold text-lg">{o.title}</h3>
+                  <span className="text-xs text-white/60">{o.price}</span>
+                </div>
+
+                <p className="text-white/70 mt-2 text-sm">{o.who}</p>
+
+                <ul className="mt-4 space-y-2 text-white/80 text-sm">
+                  {o.bullets.map((b) => (
+                    <li key={b}>• {b}</li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 flex gap-3 flex-wrap">
+                  <Link href="/contacto#form" className="btn" data-cta={`offer_${key}_form`}>
+                    Cotizar
+                  </Link>
+                  <a
+                    href={waLink}
+                    className="btn-outline"
+                    data-cta={`offer_${key}_whatsapp`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp
+                  </a>
+                  <Link
+                    href="/portafolio"
+                    className="underline underline-offset-4 text-white/70 hover:text-white"
+                    data-cta={`offer_${key}_portfolio`}
+                  >
+                    Ver ejemplos →
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
-      {/* FEATURE: MONTHLY PLAN */}
+      {/* CASES (moved up for trust) */}
+      <section className="container py-16">
+        <h2 className="h2 text-center mb-12">Casos destacados</h2>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="card p-6 border border-white/10">
+            <h3 className="font-semibold text-lg">Innova Talks — Banco BICE</h3>
+            <p className="text-white/70 mt-2">
+              Vodcast corporativo en video con entrevistas. Formato para posicionar cultura, iniciativas y liderazgo.
+            </p>
+            <div className="mt-4 text-xs text-white/50">
+              Entregas listas para difusión interna/externa + clips cortos.
+            </div>
+          </div>
+
+          <div className="card p-6 border border-white/10">
+            <h3 className="font-semibold text-lg">Creando Líderes para Asia — APCC</h3>
+            <p className="text-white/70 mt-2">
+              Serie de episodios + clips reutilizables para YouTube, LinkedIn y newsletters.
+            </p>
+            <div className="mt-4 text-xs text-white/50">Piezas pensadas para comunicar valor y continuidad.</div>
+          </div>
+
+          <div className="card p-6 border border-white/10">
+            <h3 className="font-semibold text-lg">Documental 80 Años — Trewhela’s School</h3>
+            <p className="text-white/70 mt-2">
+              Pieza institucional con versiones y cortes breves para admisión, marketing y redes.
+            </p>
+            <div className="mt-4 text-xs text-white/50">Storytelling largo + recortes de alta utilidad.</div>
+          </div>
+        </div>
+
+        <div className="text-center mt-10 flex justify-center gap-3 flex-wrap">
+          <Link href="/portafolio" className="btn-outline" data-cta="cases_portfolio">
+            Ver más trabajos →
+          </Link>
+          <Link href="/contacto#form" className="btn" data-cta="cases_form">
+            Cotizar
+          </Link>
+          <a
+            href={waLink}
+            className="btn-outline"
+            data-cta="cases_whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
+        </div>
+      </section>
+
+      {/* FEATURE: MONTHLY PLAN (as upsell) */}
       <section className="bg-black/40 border-y border-white/10">
         <div className="container py-16">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
@@ -330,11 +413,10 @@ export default function Page() {
             <div>
               <h2 className="h2">Plan Audiovisual Mensual</h2>
               <p className="text-white/70 mt-2">
-                Consistencia + calidad + estrategia. Un partner creativo que produce y te deja un “banco de contenido”
-                para el mes, sin armar un equipo in-house.
+                Consistencia + calidad + estrategia. Un partner que produce y deja un “banco de contenido” mensual sin
+                armar un equipo in-house.
               </p>
 
-              {/* PRECIO PLAN RECOMENDADO (ACTUALIZADO) */}
               <p className="mt-4 text-sm text-white/70">
                 <span className="font-semibold text-white">
                   Plan Estándar recomendado: {PRICING.planStandard} CLP / mes (IVA incluido).
@@ -356,7 +438,7 @@ export default function Page() {
                   Ver planes
                 </Link>
                 <Link href="/contacto#form" className="btn-outline" data-cta="monthly_form">
-                  Ir al formulario
+                  Cotizar
                 </Link>
                 <a
                   href={waLink}
@@ -401,12 +483,12 @@ export default function Page() {
             <div className="text-white/80">
               <div className="font-semibold text-white">¿Quieres cotizar sin vueltas?</div>
               <div className="text-sm text-white/70 mt-1">
-                Envíanos objetivo + fecha + ciudad + referencias. Respondemos con propuesta clara.
+                Envíanos objetivo + fecha + ciudad + presupuesto estimado + referencias. Respondemos con propuesta clara.
               </div>
             </div>
             <div className="flex gap-3 flex-wrap">
               <Link href="/contacto#form" className="btn" data-cta="process_form">
-                Ir al formulario
+                Cotizar
               </Link>
               <a
                 href={waLink}
@@ -428,22 +510,22 @@ export default function Page() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="h2">¿Necesitas un proyecto puntual?</h2>
             <p className="text-white/70 mt-2">
-              Institucionales, cápsulas, testimonios, registro de eventos y piezas explicativas.
-              Te recomendamos formato, duración y enfoque según objetivo.
+              Institucionales, cápsulas, testimonios, registro de eventos y piezas explicativas. Te recomendamos formato,
+              duración y enfoque según objetivo.
             </p>
             <p className="mt-3 text-sm text-white/70">
-              No hacemos llamadas: envía el brief por formulario o WhatsApp y te respondemos con propuesta.
+              Sin llamadas: envía el brief por formulario o WhatsApp y te respondemos con propuesta.
             </p>
 
             <div className="mt-4 inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/10 bg-gray-900 px-4 py-3">
               <span className="text-sm text-white/70">Valores referenciales:</span>
-              <span className="text-sm font-semibold text-white">Proyectos puntuales desde {PRICING.oneOffFrom}</span>
+              <span className="text-sm font-semibold text-white">Desde {PRICING.oneOffFrom}</span>
               <span className="text-xs text-white/40">· IVA incluido · alcance según logística y piezas derivadas</span>
             </div>
 
             <div className="mt-6 flex justify-center gap-3 flex-wrap">
               <Link href="/contacto#form" className="btn" data-cta="oneoff_form">
-                Ir al formulario
+                Cotizar
               </Link>
               <a
                 href={waLink}
@@ -496,7 +578,7 @@ export default function Page() {
               </div>
               <div className="mt-6 flex gap-3">
                 <Link href="/contacto#form" className="btn w-full text-center" data-cta="plan_basic_form">
-                  Ir al formulario
+                  Cotizar
                 </Link>
               </div>
             </div>
@@ -525,7 +607,7 @@ export default function Page() {
               </div>
               <div className="mt-6 flex gap-3">
                 <Link href="/contacto#form" className="btn w-full text-center" data-cta="plan_standard_form">
-                  Ir al formulario
+                  Cotizar
                 </Link>
               </div>
             </div>
@@ -552,7 +634,7 @@ export default function Page() {
               </div>
               <div className="mt-6 flex gap-3">
                 <Link href="/contacto#form" className="btn w-full text-center" data-cta="plan_premium_form">
-                  Ir al formulario
+                  Cotizar
                 </Link>
               </div>
             </div>
@@ -576,49 +658,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CASES */}
-      <section className="container py-16">
-        <h2 className="h2 text-center mb-12">Casos destacados</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="card p-6 border border-white/10">
-            <h3 className="font-semibold text-lg">Innova Talks — Banco BICE</h3>
-            <p className="text-white/70 mt-2">
-              Podcast corporativo en video con entrevistas. Formato para posicionar cultura e iniciativas.
-            </p>
-          </div>
-          <div className="card p-6 border border-white/10">
-            <h3 className="font-semibold text-lg">Creando Líderes para Asia — APCC</h3>
-            <p className="text-white/70 mt-2">
-              Serie de episodios + clips reutilizables para YouTube, LinkedIn y newsletters.
-            </p>
-          </div>
-          <div className="card p-6 border border-white/10">
-            <h3 className="font-semibold text-lg">Documental 80 Años — Trewhela’s School</h3>
-            <p className="text-white/70 mt-2">
-              Pieza institucional con versiones y cortes breves para admisión, marketing y redes.
-            </p>
-          </div>
-        </div>
-
-        <div className="text-center mt-10 flex justify-center gap-3 flex-wrap">
-          <Link href="/portafolio" className="btn-outline" data-cta="cases_portfolio">
-            Ver más trabajos →
-          </Link>
-          <Link href="/contacto#form" className="btn" data-cta="cases_form">
-            Ir al formulario
-          </Link>
-          <a
-            href={waLink}
-            className="btn-outline"
-            data-cta="cases_whatsapp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WhatsApp
-          </a>
-        </div>
-      </section>
-
       {/* TESTIMONIALS */}
       <section className="bg-black/60 border-y border-white/10">
         <div className="container py-16">
@@ -634,9 +673,7 @@ export default function Page() {
             </div>
 
             <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
-              <p className="text-white/80 italic">
-                “El video institucional ha sido una inversión de largo plazo y credibilidad.”
-              </p>
+              <p className="text-white/80 italic">“El video institucional ha sido una inversión de largo plazo y credibilidad.”</p>
               <p className="mt-4 font-semibold">William Barhoma</p>
               <p className="text-sm text-white/60">CEO, Exploflex</p>
             </div>
@@ -669,7 +706,7 @@ export default function Page() {
 
           <div className="text-center mt-10 flex justify-center gap-3 flex-wrap">
             <Link href="/contacto#form" className="btn" data-cta="faq_form">
-              Ir al formulario →
+              Cotizar →
             </Link>
             <a href={waLink} className="btn-outline" data-cta="faq_whatsapp" target="_blank" rel="noopener noreferrer">
               WhatsApp
@@ -685,12 +722,12 @@ export default function Page() {
         <div className="p-8 md:p-10 rounded-3xl bg-black/60 border border-white/10 text-center">
           <h2 className="h2 mb-3">Cotiza tu video corporativo</h2>
           <p className="text-white/70 mb-6 max-w-2xl mx-auto">
-            Envíanos objetivo, fecha, ciudad y referencias. Te respondemos con propuesta clara (valor estimado,
-            cronograma y próximos pasos).
+            Envíanos objetivo, fecha, ciudad, presupuesto estimado y referencias. Te respondemos con propuesta clara
+            (valor estimado, cronograma y próximos pasos).
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link href="/contacto#form" className="btn" data-cta="final_form">
-              Ir al formulario
+              Cotizar
             </Link>
             <a
               href={waLink}
