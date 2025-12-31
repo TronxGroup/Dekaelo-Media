@@ -24,15 +24,14 @@ export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const activeHref = useMemo(() => {
-    // marca activo por prefijo, pero "/" solo exacto
+  const isActive = useMemo(() => {
     return (href: string) => {
       if (href === "/") return pathname === "/";
       return pathname.startsWith(href);
     };
   }, [pathname]);
 
-  // ✅ Lock scroll al abrir el menú móvil
+  // Lock scroll al abrir
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -42,7 +41,7 @@ export function Navbar() {
     };
   }, [open]);
 
-  // ✅ Cerrar con Escape
+  // Cerrar con Escape
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") setOpen(false);
@@ -51,10 +50,9 @@ export function Navbar() {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  // ✅ Cerrar al cambiar de ruta
+  // Cerrar al cambiar ruta
   useEffect(() => {
     setOpen(false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   const NavList = ({ variant }: { variant: "desktop" | "mobile" }) => (
@@ -67,15 +65,14 @@ export function Navbar() {
       )}
     >
       {navItems.map((item) => {
-        const isActive = activeHref(item.href);
+        const active = isActive(item.href);
 
         const common =
           "transition-colors rounded-xl px-3 py-2 inline-flex items-center gap-2";
-        const active = "text-white bg-white/10 border border-white/15";
-        const idle =
+        const activeCls = "text-white bg-white/10 border border-white/15";
+        const idleCls =
           "text-white/80 hover:text-white hover:bg-white/5 border border-transparent";
 
-        // external support (si en el futuro agregas)
         if (item.external) {
           return (
             <li key={item.href}>
@@ -83,7 +80,7 @@ export function Navbar() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={cx(common, idle)}
+                className={cx(common, idleCls)}
               >
                 {item.label}
                 <ArrowUpRight className="w-4 h-4" />
@@ -93,11 +90,12 @@ export function Navbar() {
         }
 
         return (
-          <li key={item.href} className="w-full">
+          <li key={item.href} className={variant === "mobile" ? "w-full" : ""}>
             <Link
-              className={cx(common, isActive ? active : idle, variant === "mobile" && "w-full")}
               href={item.href}
-              aria-current={isActive ? "page" : undefined}
+              className={cx(common, active ? activeCls : idleCls, variant === "mobile" && "w-full")}
+              aria-current={active ? "page" : undefined}
+              onClick={() => variant === "mobile" && setOpen(false)}
             >
               {item.label}
             </Link>
@@ -132,10 +130,7 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <Link
-            href="/contacto"
-            className="btn-primary inline-flex items-center gap-2"
-          >
+          <Link href="/contacto" className="btn-primary inline-flex items-center gap-2">
             Cotizar
             <ArrowUpRight className="w-4 h-4" />
           </Link>
@@ -148,21 +143,15 @@ export function Navbar() {
           aria-expanded={open}
           className={cx(
             "md:hidden p-2 rounded-xl border transition",
-            open
-              ? "border-sky-400/40 bg-sky-500/15"
-              : "border-white/15 hover:bg-white/5"
+            open ? "border-sky-400/40 bg-sky-500/15" : "border-white/15 hover:bg-white/5"
           )}
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
+          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* ✅ Mobile overlay menu (fondo oscuro + panel legible) */}
+      {/* Mobile overlay menu */}
       <div
         className={cx(
           "md:hidden fixed inset-0 z-50 transition",
@@ -171,14 +160,9 @@ export function Navbar() {
         aria-hidden={!open}
       >
         {/* Backdrop */}
-        <button
-          type="button"
-          aria-label="Cerrar menú"
+        <div
+          className={cx("absolute inset-0 transition-opacity", open ? "opacity-100" : "opacity-0")}
           onClick={() => setOpen(false)}
-          className={cx(
-            "absolute inset-0 transition-opacity",
-            open ? "opacity-100" : "opacity-0"
-          )}
           style={{
             background:
               "radial-gradient(1200px 600px at 50% 0%, rgba(56,189,248,0.18), rgba(0,0,0,0.78) 60%, rgba(0,0,0,0.92) 100%)",
@@ -187,11 +171,14 @@ export function Navbar() {
 
         {/* Panel */}
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menú principal"
           className={cx(
             "absolute top-0 left-0 right-0 border-b border-white/10",
             "bg-black/92 backdrop-blur-xl",
-            "transition-transform duration-200",
-            open ? "translate-y-0" : "-translate-y-3"
+            "transition-all duration-200",
+            open ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
           )}
         >
           <div className="container py-4">
