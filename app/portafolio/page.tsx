@@ -127,7 +127,7 @@ const projects: Project[] = [
 
   // 10) MOTION (upsell / soporte)
   {
-    title: 'Motion Graphics — KGHM, Inducom, TAPP',
+    title: 'Motion — KGHM, Inducom, TAPP',
     youtube: toEmbed('https://www.youtube.com/watch?v=ilvi2u_c_a0'),
     logo: '/logo_motion.png',
     tag: 'Motion',
