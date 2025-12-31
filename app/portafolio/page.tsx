@@ -129,6 +129,7 @@ const projects: Project[] = [
   {
     title: 'Motion — KGHM, Inducom, TAPP',
     youtube: toEmbed('https://www.youtube.com/watch?v=ilvi2u_c_a0'),
+    logo: '/logo_motion.png',
     tag: 'Motion',
     desc: 'Lower thirds, key visuals, data-visual y animaciones de marca para campañas, institucionales y presentaciones.',
   },
@@ -144,8 +145,9 @@ const projects: Project[] = [
 
   // 12) ORIGIN STORY (al final)
   {
-    title: 'Reel Cine y Series',
+    title: 'Reel Cine y Series — Yokai / Las Horribles / Danny Wang',
     youtube: toEmbed('https://www.youtube.com/watch?v=550zTI8nEvY'),
+    logo: '/logo_cine.png',
     tag: 'Cine/Indie',
     desc: 'Largometraje “Yokai” (Sitges, BARS), “Las Horribles” y proyecto premiado “Danny Wang”.',
   },
