@@ -69,9 +69,10 @@ export function Navbar() {
 
         const common =
           "transition-colors rounded-xl px-3 py-2 inline-flex items-center gap-2";
-        const activeCls = "text-white bg-white/10 border border-white/15";
+        const activeCls =
+          "text-white bg-sky-500/15 border border-sky-400/25";
         const idleCls =
-          "text-white/80 hover:text-white hover:bg-white/5 border border-transparent";
+          "text-white/85 hover:text-white hover:bg-sky-500/10 border border-transparent";
 
         if (item.external) {
           return (
@@ -93,7 +94,11 @@ export function Navbar() {
           <li key={item.href} className={variant === "mobile" ? "w-full" : ""}>
             <Link
               href={item.href}
-              className={cx(common, active ? activeCls : idleCls, variant === "mobile" && "w-full")}
+              className={cx(
+                common,
+                active ? activeCls : idleCls,
+                variant === "mobile" && "w-full"
+              )}
               aria-current={active ? "page" : undefined}
               onClick={() => variant === "mobile" && setOpen(false)}
             >
@@ -151,7 +156,7 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile overlay menu */}
+      {/* Mobile overlay menu (CON FONDO) */}
       <div
         className={cx(
           "md:hidden fixed inset-0 z-50 transition",
@@ -159,24 +164,29 @@ export function Navbar() {
         )}
         aria-hidden={!open}
       >
-        {/* Backdrop */}
+        {/* Backdrop oscuro (separa el texto del sitio) */}
         <div
-          className={cx("absolute inset-0 transition-opacity", open ? "opacity-100" : "opacity-0")}
+          className={cx(
+            "absolute inset-0 transition-opacity",
+            open ? "opacity-100" : "opacity-0"
+          )}
           onClick={() => setOpen(false)}
           style={{
             background:
-              "radial-gradient(1200px 600px at 50% 0%, rgba(56,189,248,0.18), rgba(0,0,0,0.78) 60%, rgba(0,0,0,0.92) 100%)",
+              "linear-gradient(to bottom, rgba(2,6,23,0.88), rgba(2,6,23,0.95))",
           }}
         />
 
-        {/* Panel */}
+        {/* Panel (fondo sólido legible) */}
         <div
           role="dialog"
           aria-modal="true"
           aria-label="Menú principal"
           className={cx(
-            "absolute top-0 left-0 right-0 border-b border-white/10",
-            "bg-black/92 backdrop-blur-xl",
+            "absolute top-0 left-0 right-0",
+            "border-b border-white/10",
+            "bg-slate-950/95 backdrop-blur-xl",
+            "shadow-[0_20px_80px_rgba(0,0,0,0.55)]",
             "transition-all duration-200",
             open ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
           )}
@@ -199,7 +209,7 @@ export function Navbar() {
               <button
                 type="button"
                 aria-label="Cerrar menú"
-                className="p-2 rounded-xl border border-white/15 hover:bg-white/5 transition"
+                className="p-2 rounded-xl border border-white/15 hover:bg-sky-500/10 transition"
                 onClick={() => setOpen(false)}
               >
                 <X className="w-6 h-6" />
@@ -228,7 +238,7 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/portafolio"
-                  className="btn-ghost w-full justify-center bg-white/10 hover:bg-white/15"
+                  className="btn-ghost w-full justify-center bg-white/10 hover:bg-sky-500/10"
                   onClick={() => setOpen(false)}
                 >
                   Ver portafolio →
