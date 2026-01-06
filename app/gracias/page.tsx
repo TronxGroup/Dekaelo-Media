@@ -20,7 +20,7 @@ export default function Page() {
         <div className="container text-center max-w-xl">
           <h1 className="h2">¡Gracias por tu mensaje!</h1>
           <p className="mt-3 text-white/80">
-            Hemoss recibido tu solicitud. Nuestro equipo te contactará en breve para coordinar los siguientes pasos.
+            Hemos recibido tu solicitud. Nuestro equipo te contactará en breve para coordinar los siguientes pasos.
           </p>
           <a href="/" className="btn mt-6">Volver al inicio</a>
         </div>
