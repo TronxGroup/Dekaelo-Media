@@ -83,26 +83,10 @@ const FAQ = [
 ];
 
 const PROCESS = [
-  {
-    n: "01",
-    title: "Brief y objetivo",
-    desc: "Definimos audiencia, mensaje, tono y qué debe lograr el video.",
-  },
-  {
-    n: "02",
-    title: "Guion / pauta",
-    desc: "Estructura clara + preguntas para entrevistas y testimonios.",
-  },
-  {
-    n: "03",
-    title: "Grabación profesional",
-    desc: "Imagen cuidada, audio limpio, iluminación y dirección en set.",
-  },
-  {
-    n: "04",
-    title: "Edición y entregas",
-    desc: "Corte final + versiones por plataforma + ronda de ajustes.",
-  },
+  { n: "01", title: "Brief y objetivo", desc: "Definimos audiencia, mensaje, tono y qué debe lograr el video." },
+  { n: "02", title: "Guion / pauta", desc: "Estructura clara + preguntas para entrevistas y testimonios." },
+  { n: "03", title: "Grabación profesional", desc: "Imagen cuidada, audio limpio, iluminación y dirección en set." },
+  { n: "04", title: "Edición y entregas", desc: "Corte final + versiones por plataforma + ronda de ajustes." },
 ];
 
 const OFFERS = [
@@ -147,19 +131,73 @@ const OFFERS = [
   },
 ];
 
-function buildWhatsAppLink() {
+/**
+ * ✅ WhatsApp mejorado (campaña-friendly)
+ * - Permite pasar "intent" (oneoff/monthly/vodcast/eventos)
+ * - Agrega UTM para atribución
+ * - Agrega "contexto" por CTA (hero, sticky, offers, etc.)
+ * - Mensaje más corto (mejor tasa de envío) + opciones rápidas
+ */
+type WaIntent = "oneoff" | "monthly" | "vodcast" | "eventos" | "general";
+type WaContext =
+  | "sticky"
+  | "hero"
+  | "offers_oneoff"
+  | "offers_vodcast"
+  | "offers_eventos"
+  | "cases"
+  | "monthly"
+  | "process"
+  | "oneoff"
+  | "plans"
+  | "faq"
+  | "final";
+
+function buildWhatsAppLink(opts?: {
+  intent?: WaIntent;
+  context?: WaContext;
+  cta?: string; // data-cta
+}) {
+  const intent = opts?.intent ?? "general";
+  const context = opts?.context ?? "hero";
+  const cta = opts?.cta ?? "";
+
+  const intentLabel: Record<WaIntent, string> = {
+    oneoff: "Video corporativo (proyecto puntual)",
+    monthly: "Plan mensual audiovisual",
+    vodcast: "Vodcast corporativo",
+    eventos: "Cobertura / aftermovie",
+    general: "Cotización audiovisual",
+  };
+
+  // ✅ mensaje breve + guía (mejor que 6 preguntas largas)
   const text =
-    "Hola Dekaelo Media 👋 Quiero cotizar un video corporativo.\n\n" +
-    "1) Empresa:\n" +
-    "2) Objetivo (marca / ventas / RRHH / interna):\n" +
-    "3) Tipo (institucional / vodcast / reels / evento):\n" +
-    "4) Fecha y ciudad:\n" +
-    "5) Presupuesto estimado:\n" +
-    "6) Referencias (links):\n\n" +
-    "Gracias 🙌";
+    `Hola Dekaelo Media 👋\n` +
+    `Quiero cotizar: *${intentLabel[intent]}*\n\n` +
+    `✅ Empresa:\n` +
+    `✅ Ciudad / fecha tentativa:\n` +
+    `✅ Objetivo (marca/ventas/RRHH/interna):\n` +
+    `✅ Presupuesto estimado (aprox):\n` +
+    `✅ Referencias (links) (opcional):\n\n` +
+    `Enviado desde: ${context}${cta ? ` · ${cta}` : ""}`;
 
   const encoded = encodeURIComponent(text);
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+
+  // ✅ UTM para atribución (aunque sea WhatsApp)
+  const utm = new URLSearchParams({
+    utm_source: "whatsapp",
+    utm_medium: "cta",
+    utm_campaign: "search_videos_corporativos",
+    utm_content: `${context}${cta ? `_${cta}` : ""}`,
+    utm_term: intent,
+  }).toString();
+
+  // WhatsApp acepta un solo ?text=, así que metemos UTM en el texto como línea final corta (no ensucia)
+  const withUtmText = encodeURIComponent(
+    `${text}\n\n(UTM: ${utm})`
+  );
+
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${withUtmText}`;
 }
 
 function buildFaqJsonLd() {
@@ -188,7 +226,9 @@ function buildLocalBusinessJsonLd() {
       addressLocality: "Santiago",
     },
     sameAs: [
-      // Agrega perfiles reales si quieres (YouTube / IG / LinkedIn)
+      "https://www.instagram.com/dekaelo_media",
+      "https://www.youtube.com/@dekaelo_media",
+      "https://www.linkedin.com/company/dekaelo-media",
     ],
   };
 }
@@ -203,9 +243,19 @@ function slugifyKey(input: string) {
 }
 
 export default function Page() {
-  const waLink = buildWhatsAppLink();
   const faqJsonLd = buildFaqJsonLd();
   const businessJsonLd = buildLocalBusinessJsonLd();
+
+  // Links WA por contexto (mejor atribución + mejor intención)
+  const waHero = buildWhatsAppLink({ intent: "oneoff", context: "hero", cta: "hero_whatsapp" });
+  const waSticky = buildWhatsAppLink({ intent: "general", context: "sticky", cta: "sticky_whatsapp" });
+  const waMonthly = buildWhatsAppLink({ intent: "monthly", context: "monthly", cta: "monthly_whatsapp" });
+  const waPlans = buildWhatsAppLink({ intent: "monthly", context: "plans", cta: "plans_whatsapp" });
+  const waProcess = buildWhatsAppLink({ intent: "general", context: "process", cta: "process_whatsapp" });
+  const waOneoff = buildWhatsAppLink({ intent: "oneoff", context: "oneoff", cta: "oneoff_whatsapp" });
+  const waFAQ = buildWhatsAppLink({ intent: "general", context: "faq", cta: "faq_whatsapp" });
+  const waFinal = buildWhatsAppLink({ intent: "general", context: "final", cta: "final_whatsapp" });
+  const waCases = buildWhatsAppLink({ intent: "general", context: "cases", cta: "cases_whatsapp" });
 
   return (
     <section>
@@ -231,7 +281,7 @@ export default function Page() {
               Cotizar
             </Link>
             <a
-              href={waLink}
+              href={waSticky}
               className="btn-outline flex-1 text-center"
               data-cta="sticky_whatsapp"
               target="_blank"
@@ -249,9 +299,9 @@ export default function Page() {
           <div>
             <span className="badge">Video corporativo para empresas</span>
 
-            {/* 🔻 Título un poco más chico (sin tocar tu sistema) */}
             <h1 className="h1 mt-3 text-[2.05rem] leading-[1.12] sm:text-[2.35rem]">
-              Un video corporativo que se usa <span className="text-white/80">(no queda guardado)</span>
+              Un video corporativo que se usa{" "}
+              <span className="text-white/80">(no queda guardado)</span>
             </h1>
 
             <p className="p mt-4">
@@ -290,7 +340,7 @@ export default function Page() {
               </Link>
 
               <a
-                href={waLink}
+                href={waHero}
                 className="btn-outline"
                 data-cta="hero_whatsapp"
                 target="_blank"
@@ -306,13 +356,7 @@ export default function Page() {
 
             {/* TRUST */}
             <div className="mt-6 flex items-start gap-4 text-white/70 text-sm">
-              <Image
-                src="/logo.png"
-                alt="Dekaelo Media"
-                width={34}
-                height={34}
-                className="rounded-lg"
-              />
+              <Image src="/logo.png" alt="Dekaelo Media" width={34} height={34} className="rounded-lg" />
               <div>
                 <p className="text-white/80">
                   Te guiamos desde el concepto y guion, hasta el rodaje y la edición final.
@@ -361,15 +405,23 @@ export default function Page() {
         <div className="max-w-3xl">
           <h2 className="h2">Elige tu formato (te guiamos)</h2>
           <p className="text-white/70 mt-2">
-            Para campañas de Google, lo más común es: <strong>1 video institucional</strong>, <strong>1 vodcast</strong>{" "}
-            o <strong>cobertura de un evento</strong>. Si no sabes qué pedir, descríbenos el objetivo y te recomendamos
-            formato, duración y entregables.
+            Para campañas de Google, lo más común es: <strong>1 video institucional</strong>,{" "}
+            <strong>1 vodcast</strong> o <strong>cobertura de un evento</strong>. Si no sabes qué pedir, descríbenos el
+            objetivo y te recomendamos formato, duración y entregables.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6 mt-10">
           {OFFERS.map((o) => {
             const key = slugifyKey(o.ctaKey);
+
+            const waOffer =
+              o.ctaKey === "oneoff"
+                ? buildWhatsAppLink({ intent: "oneoff", context: "offers_oneoff", cta: `offer_${key}_whatsapp` })
+                : o.ctaKey === "vodcast"
+                ? buildWhatsAppLink({ intent: "vodcast", context: "offers_vodcast", cta: `offer_${key}_whatsapp` })
+                : buildWhatsAppLink({ intent: "eventos", context: "offers_eventos", cta: `offer_${key}_whatsapp` });
+
             return (
               <div key={o.title} className="card p-7 border border-white/10">
                 <div className="flex items-start justify-between gap-4">
@@ -391,7 +443,7 @@ export default function Page() {
                     Cotizar
                   </Link>
                   <a
-                    href={waLink}
+                    href={waOffer}
                     className="btn-outline"
                     data-cta={`offer_${key}_whatsapp`}
                     target="_blank"
@@ -453,7 +505,7 @@ export default function Page() {
             Cotizar
           </Link>
           <a
-            href={waLink}
+            href={waCases}
             className="btn-outline"
             data-cta="cases_whatsapp"
             target="_blank"
@@ -504,13 +556,13 @@ export default function Page() {
                   Cotizar
                 </Link>
                 <a
-                  href={waLink}
+                  href={waMonthly}
                   className="btn-outline"
                   data-cta="monthly_whatsapp"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  WhatsApp
+                  WhatsApp (Plan mensual)
                 </a>
               </div>
 
@@ -554,7 +606,7 @@ export default function Page() {
                 Cotizar
               </Link>
               <a
-                href={waLink}
+                href={waProcess}
                 className="btn-outline"
                 data-cta="process_whatsapp"
                 target="_blank"
@@ -583,9 +635,7 @@ export default function Page() {
             <div className="mt-4 inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/10 bg-gray-900 px-4 py-3">
               <span className="text-sm text-white/70">Valores referenciales:</span>
               <span className="text-sm font-semibold text-white">Desde {PRICING.oneOffFrom}</span>
-              <span className="text-xs text-white/40">
-                · IVA incluido · alcance según logística y piezas derivadas
-              </span>
+              <span className="text-xs text-white/40">· IVA incluido · alcance según logística y piezas derivadas</span>
             </div>
 
             <div className="mt-6 flex justify-center gap-3 flex-wrap">
@@ -593,13 +643,13 @@ export default function Page() {
                 Cotizar
               </Link>
               <a
-                href={waLink}
+                href={waOneoff}
                 className="btn-outline"
                 data-cta="oneoff_whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WhatsApp
+                WhatsApp (Proyecto puntual)
               </a>
               <Link href="/portafolio" className="btn-outline" data-cta="oneoff_portfolio">
                 Ver ejemplos →
@@ -711,7 +761,7 @@ export default function Page() {
 
           <div className="text-center mt-8">
             <a
-              href={waLink}
+              href={waPlans}
               className="btn-outline"
               data-cta="plans_whatsapp"
               target="_blank"
@@ -776,7 +826,7 @@ export default function Page() {
               Cotizar →
             </Link>
             <a
-              href={waLink}
+              href={waFAQ}
               className="btn-outline"
               data-cta="faq_whatsapp"
               target="_blank"
@@ -803,7 +853,7 @@ export default function Page() {
               Cotizar
             </Link>
             <a
-              href={waLink}
+              href={waFinal}
               className="btn-outline"
               data-cta="final_whatsapp"
               target="_blank"
