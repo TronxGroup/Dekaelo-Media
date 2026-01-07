@@ -10,25 +10,14 @@ const CANONICAL = `${SITE_URL}/servicios`;
 const WHATSAPP_NUMBER = "56920080031";
 
 /**
- * ✅ WhatsApp (SIN emojis + con intención)
+ * ✅ WhatsApp LIMPIO (SIN UTM / SIN "enviado desde" / SIN emojis)
  * - intent por tipo de solicitud (monthly/oneoff/vodcast/eventos/general)
- * - contexto/cta para trazabilidad humana
- * - UTM como última línea (texto), sin romper el link
+ * - mensaje corto y usable (menos fricción)
  */
 type WaIntent = "general" | "monthly" | "oneoff" | "vodcast" | "eventos";
-type WaContext =
-  | "services_top"
-  | "services_hero"
-  | "services_plans"
-  | "services_oneoff"
-  | "services_extras"
-  | "services_faq"
-  | "services_final";
 
-function buildWhatsAppLink(opts?: { intent?: WaIntent; context?: WaContext; cta?: string }) {
+function buildWhatsAppLink(opts?: { intent?: WaIntent }) {
   const intent = opts?.intent ?? "general";
-  const context = opts?.context ?? "services_hero";
-  const cta = opts?.cta ?? "";
 
   const intentLabel: Record<WaIntent, string> = {
     general: "Cotización audiovisual",
@@ -38,27 +27,20 @@ function buildWhatsAppLink(opts?: { intent?: WaIntent; context?: WaContext; cta?
     eventos: "Cobertura de evento / aftermovie",
   };
 
+  // Mensaje limpio (sin tracking)
+  // Mantén el orden: empresa -> fecha -> objetivo -> presupuesto -> referencias
   const text =
     `Hola Dekaelo Media.\n` +
     `Quiero cotizar: ${intentLabel[intent]}\n\n` +
     `Empresa:\n` +
+    `Ciudad y fecha tentativa:\n` +
     `Objetivo (marca / ventas / RRHH / interna):\n` +
     `Tipo (plan mensual / institucional / vodcast / reels / evento):\n` +
-    `Fecha y ciudad:\n` +
     `Plataformas (LinkedIn / YouTube / Instagram / Intranet):\n` +
-    `Presupuesto estimado (si tienes):\n` +
-    `Referencias (1–3 links):\n\n` +
-    `Enviado desde: ${context}${cta ? ` · ${cta}` : ""}`;
+    `Presupuesto estimado:\n` +
+    `Referencias (1–3 links) (opcional):\n`;
 
-  const utm = new URLSearchParams({
-    utm_source: "whatsapp",
-    utm_medium: "cta",
-    utm_campaign: "search_servicios",
-    utm_content: `${context}${cta ? `_${cta}` : ""}`,
-    utm_term: intent,
-  }).toString();
-
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`${text}\n\nUTM: ${utm}`)}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 
 function buildFaqJsonLd(faq: Array<{ q: string; a: string }>) {
@@ -111,15 +93,6 @@ export const metadata: Metadata = {
     },
   },
 };
-
-function slugify(input: string) {
-  return input
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^\w]+/g, "_")
-    .replace(/^_+|_+$/g, "");
-}
 
 export default function Page() {
   /**
@@ -303,13 +276,13 @@ export default function Page() {
   const faqJsonLd = buildFaqJsonLd(faq);
   const serviceJsonLd = buildServiceJsonLd();
 
-  // WhatsApp links por sección (sin emojis, con intent)
-  const waTop = buildWhatsAppLink({ intent: "general", context: "services_top", cta: "services_top_whatsapp" });
-  const waHero = buildWhatsAppLink({ intent: "general", context: "services_hero", cta: "services_hero_whatsapp" });
-  const waPlans = buildWhatsAppLink({ intent: "monthly", context: "services_plans", cta: "services_plans_whatsapp" });
-  const waOneoff = buildWhatsAppLink({ intent: "oneoff", context: "services_oneoff", cta: "services_oneoff_whatsapp" });
-  const waFaq = buildWhatsAppLink({ intent: "general", context: "services_faq", cta: "services_faq_whatsapp" });
-  const waFinal = buildWhatsAppLink({ intent: "general", context: "services_final", cta: "services_final_whatsapp" });
+  // WhatsApp por sección (limpio, sin tracking)
+  const waTop = buildWhatsAppLink({ intent: "general" });
+  const waHero = buildWhatsAppLink({ intent: "general" });
+  const waPlans = buildWhatsAppLink({ intent: "monthly" });
+  const waOneoff = buildWhatsAppLink({ intent: "oneoff" });
+  const waFaq = buildWhatsAppLink({ intent: "general" });
+  const waFinal = buildWhatsAppLink({ intent: "general" });
 
   return (
     <main className="section bg-black">
@@ -327,13 +300,7 @@ export default function Page() {
             <Link href="/contacto#form" className="btn text-sm" data-cta="services_top_form">
               Cotizar
             </Link>
-            <a
-              href={waTop}
-              className="btn-outline text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cta="services_top_whatsapp"
-            >
+            <a href={waTop} className="btn-outline text-sm" target="_blank" rel="noopener noreferrer" data-cta="services_top_whatsapp">
               WhatsApp
             </a>
           </div>
@@ -365,21 +332,18 @@ export default function Page() {
 
               <p className="mt-3 text-white/70 max-w-2xl">
                 Dos formas de trabajar: <strong>plan audiovisual mensual</strong> (partner de contenido) o{" "}
-                <strong>proyectos puntuales</strong> (video corporativo / institucional). Proceso claro, estándar
-                corporativo y entregas listas para usar.
+                <strong>proyectos puntuales</strong> (video corporativo / institucional). Proceso claro, estándar corporativo y entregas listas para usar.
               </p>
 
               <div className="mt-4 p-4 rounded-2xl border border-white/10 bg-gray-900">
                 <p className="text-sm text-white/70">
                   <span className="font-semibold text-white">Para performance (Google/LinkedIn):</span> el{" "}
-                  <span className="text-white font-semibold">Plan Estándar</span> suele ser el mejor equilibrio: 1
-                  jornada + 1 pieza principal + clips reutilizables.
+                  <span className="text-white font-semibold">Plan Estándar</span> suele ser el mejor equilibrio: 1 jornada + 1 pieza principal + clips reutilizables.
                 </p>
               </div>
 
               <p className="mt-3 text-sm text-white/60 max-w-2xl">
-                Valores referenciales (IVA incluido). Alcance claro, revisiones acotadas y entregas por hitos. Para
-                licitaciones/compliance, armamos propuesta formal.
+                Valores referenciales (IVA incluido). Alcance claro, revisiones acotadas y entregas por hitos. Para licitaciones/compliance, armamos propuesta formal.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
@@ -395,13 +359,7 @@ export default function Page() {
                 <Link href="/portafolio" className="btn-outline" data-cta="services_hero_portfolio">
                   Ver portafolio
                 </Link>
-                <a
-                  href={waHero}
-                  className="btn-outline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-cta="services_hero_whatsapp"
-                >
+                <a href={waHero} className="btn-outline" target="_blank" rel="noopener noreferrer" data-cta="services_hero_whatsapp">
                   WhatsApp
                 </a>
               </div>
@@ -457,8 +415,7 @@ export default function Page() {
         <section className="py-12 border-y border-white/10">
           <h2 className="text-2xl md:text-3xl font-extrabold text-white text-center">Por qué el plan mensual funciona</h2>
           <p className="text-center text-white/70 mt-3 max-w-3xl mx-auto">
-            La ventaja no es producir más, sino mantener una comunicación constante, coherente y reutilizable sin
-            sobrecargar al equipo interno.
+            La ventaja no es producir más, sino mantener una comunicación constante, coherente y reutilizable sin sobrecargar al equipo interno.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-10">
@@ -471,13 +428,7 @@ export default function Page() {
           </div>
 
           <div className="mt-10 text-center">
-            <a
-              href={waPlans}
-              className="btn-outline"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cta="services_benefits_whatsapp"
-            >
+            <a href={waPlans} className="btn-outline" target="_blank" rel="noopener noreferrer" data-cta="services_benefits_whatsapp">
               Cotizar plan mensual por WhatsApp →
             </a>
           </div>
@@ -489,8 +440,7 @@ export default function Page() {
             <div>
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">{oneOff.title}</h2>
               <p className="text-white/70 mt-3">
-                Para una pieza estratégica (web, directorio, admisión, RRHH, campaña) con estándar corporativo. Si luego
-                quieres continuidad, lo convertimos a plan mensual.
+                Para una pieza estratégica (web, directorio, admisión, RRHH, campaña) con estándar corporativo. Si luego quieres continuidad, lo convertimos a plan mensual.
               </p>
 
               <div className="mt-5 rounded-2xl border border-white/10 bg-gray-900 p-4">
@@ -512,19 +462,13 @@ export default function Page() {
                 <Link href="/contacto#form" className="btn" data-cta="services_oneoff_form">
                   Cotizar proyecto puntual →
                 </Link>
-                <a
-                  href={waOneoff}
-                  className="btn-outline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-cta="services_oneoff_whatsapp"
-                >
+                <a href={waOneoff} className="btn-outline" target="_blank" rel="noopener noreferrer" data-cta="services_oneoff_whatsapp">
                   WhatsApp →
                 </a>
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-black/40">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10">
               <iframe
                 width="100%"
                 height="315"
@@ -535,9 +479,6 @@ export default function Page() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
-              <div className="p-4 border-t border-white/10 text-sm text-white/70">
-                Si quieres, envíanos 1–2 referencias y te proponemos duración, estructura y entregables recomendados.
-              </div>
             </div>
           </div>
         </section>
@@ -546,17 +487,12 @@ export default function Page() {
         <section id="planes" className="scroll-mt-24 py-16 border-y border-white/10">
           <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-4 text-white">Planes audiovisuales mensuales</h2>
           <p className="text-center text-white/60 mb-10 max-w-3xl mx-auto">
-            Valores IVA incluido. Contrato mínimo sugerido: 3 meses. Diseñado para equipos que necesitan continuidad
-            sin armar un equipo in-house.
+            Valores IVA incluido. Contrato mínimo sugerido: 3 meses. Diseñado para equipos que necesitan continuidad sin armar un equipo in-house.
           </p>
 
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
             {planes.map((p) => {
-              const waPlan = buildWhatsAppLink({
-                intent: "monthly",
-                context: "services_plans",
-                cta: `services_plan_${p.key}_whatsapp`,
-              });
+              const waPlan = buildWhatsAppLink({ intent: "monthly" });
 
               return (
                 <article key={p.key} className="relative p-1 rounded-3xl">
@@ -615,38 +551,11 @@ export default function Page() {
                       </a>
                     </div>
 
-                    <p className="mt-3 text-[11px] text-white/50">
-                      Definimos alcance final por escrito según objetivos, agenda y locación.
-                    </p>
+                    <p className="mt-3 text-[11px] text-white/50">Definimos alcance final por escrito según objetivos, agenda y locación.</p>
                   </div>
                 </article>
               );
             })}
-          </div>
-
-          <div className="mt-10 p-6 rounded-2xl bg-black/40 border border-white/10">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div>
-                <div className="font-semibold text-white">¿No sabes qué plan elegir?</div>
-                <div className="text-sm text-white/70 mt-1">
-                  Dinos objetivo + canal principal + frecuencia, y te recomendamos el plan más eficiente.
-                </div>
-              </div>
-              <div className="flex gap-3 flex-wrap">
-                <Link href="/contacto#form" className="btn" data-cta="services_plans_help_form">
-                  Pedir recomendación →
-                </Link>
-                <a
-                  href={waPlans}
-                  className="btn-outline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-cta="services_plans_help_whatsapp"
-                >
-                  WhatsApp →
-                </a>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -659,11 +568,7 @@ export default function Page() {
 
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
             {extras.map((x) => {
-              const waExtra = buildWhatsAppLink({
-                intent: x.intent,
-                context: "services_extras",
-                cta: `services_extra_${x.key}_whatsapp`,
-              });
+              const waExtra = buildWhatsAppLink({ intent: x.intent });
 
               return (
                 <article key={x.key} className="p-6 rounded-2xl bg-gray-900 border border-white/10 flex flex-col">
@@ -679,7 +584,7 @@ export default function Page() {
                   <div className="mt-6 grid gap-3">
                     <Link
                       href="/contacto#form"
-                      className="inline-block w-full text-center px-6 py-3 rounded-xl transition bg-white/10 hover:bg-white/15 border border-white/15 text-white"
+                      className="mt-0 inline-block w-full text-center px-6 py-3 rounded-xl transition bg-white/10 hover:bg-white/15 border border-white/15 text-white"
                       data-cta={`services_extra_${x.key}_form`}
                     >
                       Solicitar cotización →
@@ -701,8 +606,7 @@ export default function Page() {
           </div>
 
           <p className="text-center mt-10 text-white/60 text-sm max-w-3xl mx-auto">
-            Si necesitas algo específico (fotografía, traducciones, locución, subtítulos, etc.), lo incorporamos en una
-            propuesta a medida.
+            Si necesitas algo específico (fotografía, traducciones, locución, subtítulos, etc.), lo incorporamos en una propuesta a medida.
           </p>
         </section>
 
@@ -723,13 +627,7 @@ export default function Page() {
             <Link href="/contacto#form" className="btn" data-cta="services_faq_form">
               Cotizar →
             </Link>
-            <a
-              href={waFaq}
-              className="btn-outline"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cta="services_faq_whatsapp"
-            >
+            <a href={waFaq} className="btn-outline" target="_blank" rel="noopener noreferrer" data-cta="services_faq_whatsapp">
               WhatsApp
             </a>
           </div>
@@ -741,8 +639,7 @@ export default function Page() {
         <section className="py-20 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white">Cotiza tu próximo proyecto</h2>
           <p className="mt-3 text-white/70 max-w-2xl mx-auto">
-            Puedes partir con un proyecto puntual o con un sistema mensual de contenido. En ambos casos, te guiamos en
-            estructura, producción y entregables por plataforma.
+            Puedes partir con un proyecto puntual o con un sistema mensual de contenido. En ambos casos, te guiamos en estructura, producción y entregables por plataforma.
           </p>
 
           <div className="mt-8 flex justify-center gap-3 flex-wrap">
@@ -766,8 +663,7 @@ export default function Page() {
           </div>
 
           <p className="mt-4 text-xs text-white/50">
-            Valores referenciales IVA incluido. Alcance definitivo se confirma en propuesta formal según calendario,
-            locación y entregables.
+            Valores referenciales IVA incluido. Alcance definitivo se confirma en propuesta formal según calendario, locación y entregables.
           </p>
         </section>
       </div>
