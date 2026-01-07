@@ -9,7 +9,7 @@ import { ClientLogos } from "./components/ClientLogos";
 const SITE_URL = "https://www.dekaelomedia.com";
 const CANONICAL = `${SITE_URL}/`;
 
-// WhatsApp correcto: +56 9 2008 0031  -> wa.me/56920080031
+// WhatsApp: +56 9 2008 0031 -> wa.me/56920080031
 const WHATSAPP_NUMBER = "56920080031";
 
 /**
@@ -132,35 +132,15 @@ const OFFERS = [
 ];
 
 /**
- * ✅ WhatsApp (campaña-friendly y SIN EMOJIS)
- * - Permite pasar intent (oneoff/monthly/vodcast/eventos/general)
- * - Agrega UTM como línea final (para trazabilidad humana)
- * - Texto corto y claro
- * - Para planes: "Plan mensual" (no "video corporativo")
+ * ✅ WhatsApp limpio (SIN UTM / SIN "enviado desde" / SIN emojis)
+ * - "intent" define el tipo de cotización
+ * - Mensajes cortos, listos para completar
+ * - Para planes: "Plan mensual audiovisual" (no "video corporativo")
  */
 type WaIntent = "oneoff" | "monthly" | "vodcast" | "eventos" | "general";
-type WaContext =
-  | "sticky"
-  | "hero"
-  | "offers_oneoff"
-  | "offers_vodcast"
-  | "offers_eventos"
-  | "cases"
-  | "monthly"
-  | "process"
-  | "oneoff"
-  | "plans"
-  | "faq"
-  | "final";
 
-function buildWhatsAppLink(opts?: {
-  intent?: WaIntent;
-  context?: WaContext;
-  cta?: string; // data-cta
-}) {
+function buildWhatsAppLink(opts?: { intent?: WaIntent }) {
   const intent = opts?.intent ?? "general";
-  const context = opts?.context ?? "hero";
-  const cta = opts?.cta ?? "";
 
   const intentLabel: Record<WaIntent, string> = {
     oneoff: "Video corporativo (proyecto puntual)",
@@ -170,28 +150,18 @@ function buildWhatsAppLink(opts?: {
     general: "Cotización audiovisual",
   };
 
-  // Mensaje SIN emojis
+  // Mensaje corto y sin fricción
+  // (mantén el orden: empresa -> fecha -> objetivo -> presupuesto -> referencias)
   const text =
     `Hola Dekaelo Media.\n` +
     `Quiero cotizar: ${intentLabel[intent]}\n\n` +
     `Empresa:\n` +
-    `Ciudad / fecha tentativa:\n` +
+    `Ciudad y fecha tentativa:\n` +
     `Objetivo (marca / ventas / RRHH / interna):\n` +
-    `Presupuesto estimado (aprox):\n` +
-    `Referencias (links) (opcional):\n\n` +
-    `Enviado desde: ${context}${cta ? ` · ${cta}` : ""}`;
+    `Presupuesto estimado:\n` +
+    `Referencias (links) (opcional):\n`;
 
-  const utm = new URLSearchParams({
-    utm_source: "whatsapp",
-    utm_medium: "cta",
-    utm_campaign: "search_videos_corporativos",
-    utm_content: `${context}${cta ? `_${cta}` : ""}`,
-    utm_term: intent,
-  }).toString();
-
-  const withUtm = `${text}\n\nUTM: ${utm}`;
-
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(withUtm)}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 
 function buildFaqJsonLd() {
@@ -240,28 +210,22 @@ export default function Page() {
   const faqJsonLd = buildFaqJsonLd();
   const businessJsonLd = buildLocalBusinessJsonLd();
 
-  // Links WA por contexto (mejor atribución + mejor intención)
-  const waHero = buildWhatsAppLink({ intent: "oneoff", context: "hero", cta: "hero_whatsapp" });
-  const waSticky = buildWhatsAppLink({ intent: "general", context: "sticky", cta: "sticky_whatsapp" });
-  const waMonthly = buildWhatsAppLink({ intent: "monthly", context: "monthly", cta: "monthly_whatsapp" });
-  const waPlans = buildWhatsAppLink({ intent: "monthly", context: "plans", cta: "plans_whatsapp" });
-  const waProcess = buildWhatsAppLink({ intent: "general", context: "process", cta: "process_whatsapp" });
-  const waOneoff = buildWhatsAppLink({ intent: "oneoff", context: "oneoff", cta: "oneoff_whatsapp" });
-  const waFAQ = buildWhatsAppLink({ intent: "general", context: "faq", cta: "faq_whatsapp" });
-  const waFinal = buildWhatsAppLink({ intent: "general", context: "final", cta: "final_whatsapp" });
-  const waCases = buildWhatsAppLink({ intent: "general", context: "cases", cta: "cases_whatsapp" });
+  // Links WA por intención (mensajes limpios)
+  const waHero = buildWhatsAppLink({ intent: "oneoff" });
+  const waSticky = buildWhatsAppLink({ intent: "general" });
+  const waMonthly = buildWhatsAppLink({ intent: "monthly" });
+  const waPlans = buildWhatsAppLink({ intent: "monthly" });
+  const waProcess = buildWhatsAppLink({ intent: "general" });
+  const waOneoff = buildWhatsAppLink({ intent: "oneoff" });
+  const waFAQ = buildWhatsAppLink({ intent: "general" });
+  const waFinal = buildWhatsAppLink({ intent: "general" });
+  const waCases = buildWhatsAppLink({ intent: "general" });
 
   return (
     <section>
       {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }} />
 
       {/* Sticky CTA (mobile-first) */}
       <div className="fixed bottom-3 left-0 right-0 z-50 md:hidden">
@@ -290,8 +254,7 @@ export default function Page() {
             <span className="badge">Video corporativo para empresas</span>
 
             <h1 className="h1 mt-3 text-[2.05rem] leading-[1.12] sm:text-[2.35rem]">
-              Un video corporativo que se usa{" "}
-              <span className="text-white/80">(no queda guardado)</span>
+              Un video corporativo que se usa <span className="text-white/80">(no queda guardado)</span>
             </h1>
 
             <p className="p mt-4">
@@ -304,16 +267,12 @@ export default function Page() {
             {/* Anclas de precio duales (one-off + plan mensual) */}
             <div className="mt-4 space-y-2 text-sm text-white/70">
               <p>
-                <span className="font-semibold text-white">
-                  Proyecto puntual desde {PRICING.oneOffFrom} CLP
-                </span>{" "}
+                <span className="font-semibold text-white">Proyecto puntual desde {PRICING.oneOffFrom} CLP</span>{" "}
                 (IVA incluido) · Entrega típica: <strong>7–14 días hábiles</strong>.
               </p>
               <p>
-                <span className="font-semibold text-white">
-                  Plan mensual desde {PRICING.plansFrom} CLP
-                </span>{" "}
-                (IVA incluido) · Para equipos que necesitan contenido constante.
+                <span className="font-semibold text-white">Plan mensual desde {PRICING.plansFrom} CLP</span> (IVA
+                incluido) · Para equipos que necesitan contenido constante.
               </p>
             </div>
 
@@ -387,7 +346,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* OFFERS (ads-friendly) */}
+      {/* OFFERS */}
       <section id="servicios" className="container py-16">
         <div className="max-w-3xl">
           <h2 className="h2">Elige tu formato (te guiamos)</h2>
@@ -404,10 +363,10 @@ export default function Page() {
 
             const waOffer =
               o.ctaKey === "oneoff"
-                ? buildWhatsAppLink({ intent: "oneoff", context: "offers_oneoff", cta: `offer_${key}_whatsapp` })
+                ? buildWhatsAppLink({ intent: "oneoff" })
                 : o.ctaKey === "vodcast"
-                ? buildWhatsAppLink({ intent: "vodcast", context: "offers_vodcast", cta: `offer_${key}_whatsapp` })
-                : buildWhatsAppLink({ intent: "eventos", context: "offers_eventos", cta: `offer_${key}_whatsapp` });
+                ? buildWhatsAppLink({ intent: "vodcast" })
+                : buildWhatsAppLink({ intent: "eventos" });
 
             return (
               <div key={o.title} className="card p-7 border border-white/10">
@@ -452,7 +411,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CASES (trust) */}
+      {/* CASES */}
       <section className="container py-16">
         <h2 className="h2 text-center mb-12">Casos destacados</h2>
 
@@ -467,17 +426,13 @@ export default function Page() {
 
           <div className="card p-6 border border-white/10">
             <h3 className="font-semibold text-lg">Creando Líderes para Asia — APCC</h3>
-            <p className="text-white/70 mt-2">
-              Serie de episodios + clips reutilizables para YouTube, LinkedIn y newsletters.
-            </p>
+            <p className="text-white/70 mt-2">Serie de episodios + clips reutilizables para YouTube, LinkedIn y newsletters.</p>
             <div className="mt-4 text-xs text-white/50">Piezas pensadas para comunicar valor y continuidad.</div>
           </div>
 
           <div className="card p-6 border border-white/10">
             <h3 className="font-semibold text-lg">Documental 80 Años — Trewhela’s School</h3>
-            <p className="text-white/70 mt-2">
-              Pieza institucional con versiones y cortes breves para admisión, marketing y redes.
-            </p>
+            <p className="text-white/70 mt-2">Pieza institucional con versiones y cortes breves para admisión, marketing y redes.</p>
             <div className="mt-4 text-xs text-white/50">Storytelling largo + recortes de alta utilidad.</div>
           </div>
         </div>
@@ -495,7 +450,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* FEATURE: MONTHLY PLAN (upsell) */}
+      {/* MONTHLY */}
       <section className="bg-black/40 border-y border-white/10">
         <div className="container py-16">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
@@ -507,8 +462,7 @@ export default function Page() {
             <div>
               <h2 className="h2">Plan Audiovisual Mensual</h2>
               <p className="text-white/70 mt-2">
-                Consistencia + calidad + estrategia. Un partner que produce y deja un “banco de contenido” mensual sin
-                armar un equipo in-house.
+                Consistencia + calidad + estrategia. Un partner que produce y deja un “banco de contenido” mensual sin armar un equipo in-house.
               </p>
 
               <p className="mt-4 text-sm text-white/70">
@@ -555,9 +509,7 @@ export default function Page() {
       <section id="proceso" className="container py-16">
         <div className="max-w-3xl">
           <h2 className="h2">Cómo trabajamos</h2>
-          <p className="text-white/70 mt-2">
-            Proceso simple, ordenado y rápido. Buscamos que el resultado sea profesional y usable por meses.
-          </p>
+          <p className="text-white/70 mt-2">Proceso simple, ordenado y rápido. Buscamos que el resultado sea profesional y usable por meses.</p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-6 mt-10">
@@ -582,13 +534,7 @@ export default function Page() {
               <Link href="/contacto#form" className="btn" data-cta="process_form">
                 Cotizar
               </Link>
-              <a
-                href={waProcess}
-                className="btn-outline"
-                data-cta="process_whatsapp"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={waProcess} className="btn-outline" data-cta="process_whatsapp" target="_blank" rel="noopener noreferrer">
                 WhatsApp
               </a>
             </div>
@@ -596,18 +542,15 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ONE-OFF PROJECTS */}
+      {/* ONE-OFF */}
       <section className="bg-black/40 border-y border-white/10">
         <div className="container py-16">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="h2">¿Necesitas un proyecto puntual?</h2>
             <p className="text-white/70 mt-2">
-              Institucionales, cápsulas, testimonios, registro de eventos y piezas explicativas. Te recomendamos formato,
-              duración y enfoque según objetivo.
+              Institucionales, cápsulas, testimonios, registro de eventos y piezas explicativas. Te recomendamos formato, duración y enfoque según objetivo.
             </p>
-            <p className="mt-3 text-sm text-white/70">
-              Sin llamadas: envía el brief por formulario o WhatsApp y te respondemos con propuesta.
-            </p>
+            <p className="mt-3 text-sm text-white/70">Sin llamadas: envía el brief por formulario o WhatsApp y te respondemos con propuesta.</p>
 
             <div className="mt-4 inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/10 bg-gray-900 px-4 py-3">
               <span className="text-sm text-white/70">Valores referenciales:</span>
@@ -619,13 +562,7 @@ export default function Page() {
               <Link href="/contacto#form" className="btn" data-cta="oneoff_form">
                 Cotizar
               </Link>
-              <a
-                href={waOneoff}
-                className="btn-outline"
-                data-cta="oneoff_whatsapp"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={waOneoff} className="btn-outline" data-cta="oneoff_whatsapp" target="_blank" rel="noopener noreferrer">
                 WhatsApp (Proyecto puntual)
               </a>
               <Link href="/portafolio" className="btn-outline" data-cta="oneoff_portfolio">
@@ -642,8 +579,7 @@ export default function Page() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="h2">Planes audiovisuales mensuales</h2>
             <p className="text-white/70 mt-2">
-              Valores IVA incluido. Contrato mínimo sugerido: 3 meses. Diseñados para equipos de marketing,
-              comunicaciones internas y empresas que necesitan consistencia.
+              Valores IVA incluido. Contrato mínimo sugerido: 3 meses. Diseñados para equipos de marketing, comunicaciones internas y empresas que necesitan consistencia.
             </p>
           </div>
 
@@ -732,9 +668,7 @@ export default function Page() {
             </div>
           </div>
 
-          <p className="mt-6 text-center text-xs text-white/60">
-            Todos los planes se pueden ajustar según calendario, equipo y objetivos.
-          </p>
+          <p className="mt-6 text-center text-xs text-white/60">Todos los planes se pueden ajustar según calendario, equipo y objetivos.</p>
 
           <div className="text-center mt-8">
             <a href={waPlans} className="btn-outline" data-cta="plans_whatsapp" target="_blank" rel="noopener noreferrer">
@@ -751,25 +685,19 @@ export default function Page() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
-              <p className="text-white/80 italic">
-                “Muy profesionales y puntuales. El podcast se volvió una herramienta para generar nuevos negocios.”
-              </p>
+              <p className="text-white/80 italic">“Muy profesionales y puntuales. El podcast se volvió una herramienta para generar nuevos negocios.”</p>
               <p className="mt-4 font-semibold">Víctor Ruz</p>
               <p className="text-sm text-white/60">CEO, IGROMI</p>
             </div>
 
             <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
-              <p className="text-white/80 italic">
-                “El video institucional ha sido una inversión de largo plazo y credibilidad.”
-              </p>
+              <p className="text-white/80 italic">“El video institucional ha sido una inversión de largo plazo y credibilidad.”</p>
               <p className="mt-4 font-semibold">William Barhoma</p>
               <p className="text-sm text-white/60">CEO, Exploflex</p>
             </div>
 
             <div className="p-6 rounded-2xl bg-gray-900 border border-white/10">
-              <p className="text-white/80 italic">
-                “Videos explicativos claros y profesionales. Nuestro video principal se usó durante años.”
-              </p>
+              <p className="text-white/80 italic">“Videos explicativos claros y profesionales. Nuestro video principal se usó durante años.”</p>
               <p className="mt-4 font-semibold">Rodrigo González</p>
               <p className="text-sm text-white/60">Gerente Comercial, Acmanet</p>
             </div>
@@ -810,8 +738,7 @@ export default function Page() {
         <div className="p-8 md:p-10 rounded-3xl bg-black/60 border border-white/10 text-center">
           <h2 className="h2 mb-3">Cotiza tu video corporativo</h2>
           <p className="text-white/70 mb-6 max-w-2xl mx-auto">
-            Envíanos objetivo, fecha, ciudad, presupuesto estimado y referencias. Te respondemos con propuesta clara
-            (valor estimado, cronograma y próximos pasos).
+            Envíanos objetivo, fecha, ciudad, presupuesto estimado y referencias. Te respondemos con propuesta clara (valor estimado, cronograma y próximos pasos).
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link href="/contacto#form" className="btn" data-cta="final_form">
@@ -823,8 +750,7 @@ export default function Page() {
           </div>
 
           <p className="text-xs text-white/50 mt-5">
-            *Valores referenciales IVA incluido. Alcance definitivo se confirma en propuesta formal según calendario,
-            locación y entregables.
+            *Valores referenciales IVA incluido. Alcance definitivo se confirma en propuesta formal según calendario, locación y entregables.
           </p>
         </div>
       </section>
