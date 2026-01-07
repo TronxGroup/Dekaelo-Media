@@ -5,6 +5,8 @@ import ZohoLeadForm from "../components/ZohoLeadForm";
 
 const SITE_URL = "https://www.dekaelomedia.com";
 const CANONICAL = `${SITE_URL}/contacto`;
+
+// WhatsApp: +56 9 2008 0031 -> wa.me/56920080031
 const WHATSAPP_NUMBER = "56920080031";
 
 export const metadata: Metadata = {
@@ -32,18 +34,14 @@ export const metadata: Metadata = {
 };
 
 /**
- * ✅ WhatsApp (SIN emojis, campaña-friendly)
+ * ✅ WhatsApp LIMPIO (SIN UTM / SIN "enviado desde" / SIN emojis)
  * - intent por tipo de solicitud
- * - contexto/cta para trazabilidad humana
- * - UTM como última línea (texto), sin romper el link
+ * - mensajes cortos y claros
  */
 type WaIntent = "general" | "oneoff" | "monthly" | "vodcast" | "eventos";
-type WaContext = "contact" | "contact_after_form" | "contact_header";
 
-function buildWhatsAppLink(opts?: { intent?: WaIntent; context?: WaContext; cta?: string }) {
+function buildWhatsAppLink(opts?: { intent?: WaIntent }) {
   const intent = opts?.intent ?? "general";
-  const context = opts?.context ?? "contact";
-  const cta = opts?.cta ?? "";
 
   const intentLabel: Record<WaIntent, string> = {
     general: "Cotización audiovisual",
@@ -53,28 +51,19 @@ function buildWhatsAppLink(opts?: { intent?: WaIntent; context?: WaContext; cta?
     eventos: "Cobertura de evento / aftermovie",
   };
 
-  // Texto corto, sin caracteres raros, sin emojis
+  // Mensaje limpio (sin tracking)
   const text =
     `Hola Dekaelo Media.\n` +
     `Quiero cotizar: ${intentLabel[intent]}\n\n` +
     `Empresa:\n` +
+    `Ciudad y fecha tentativa:\n` +
     `Objetivo (marca / ventas / RRHH / interna):\n` +
     `Tipo (institucional / vodcast / reels / evento / plan mensual):\n` +
-    `Fecha y ciudad:\n` +
     `Plataformas (LinkedIn / YouTube / Instagram / Intranet):\n` +
-    `Presupuesto estimado (si tienes):\n` +
-    `Referencias (1–3 links):\n\n` +
-    `Enviado desde: ${context}${cta ? ` · ${cta}` : ""}`;
+    `Presupuesto estimado:\n` +
+    `Referencias (1–3 links) (opcional):\n`;
 
-  const utm = new URLSearchParams({
-    utm_source: "whatsapp",
-    utm_medium: "cta",
-    utm_campaign: "search_videos_corporativos",
-    utm_content: `${context}${cta ? `_${cta}` : ""}`,
-    utm_term: intent,
-  }).toString();
-
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`${text}\n\nUTM: ${utm}`)}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 
 const FAQ = [
@@ -127,11 +116,13 @@ export default function Page() {
   const faqJsonLd = buildFaqJsonLd();
   const businessJsonLd = buildLocalBusinessJsonLd();
 
-  // WhatsApp por intención (contact page)
-  const waGeneral = buildWhatsAppLink({ intent: "general", context: "contact", cta: "contact_whatsapp" });
-  const waMonthly = buildWhatsAppLink({ intent: "monthly", context: "contact", cta: "contact_whatsapp_monthly" });
-  const waOneOff = buildWhatsAppLink({ intent: "oneoff", context: "contact", cta: "contact_whatsapp_oneoff" });
-  const waAfterForm = buildWhatsAppLink({ intent: "general", context: "contact_after_form", cta: "contact_whatsapp_after_form" });
+  // WhatsApp (limpio) por intención
+  const waGeneral = buildWhatsAppLink({ intent: "general" });
+  const waMonthly = buildWhatsAppLink({ intent: "monthly" });
+  const waOneOff = buildWhatsAppLink({ intent: "oneoff" });
+  const waVodcast = buildWhatsAppLink({ intent: "vodcast" });
+  const waEventos = buildWhatsAppLink({ intent: "eventos" });
+  const waAfterForm = buildWhatsAppLink({ intent: "general" });
 
   return (
     <section className="section">
@@ -178,7 +169,7 @@ export default function Page() {
           </a>
         </div>
 
-        {/* WA INTENT BUTTONS (mejor tasa de inicio de conversación) */}
+        {/* WhatsApp por tipo (más conversión, mismo mensaje limpio) */}
         <div className="mt-3 grid sm:grid-cols-2 gap-3">
           <a
             href={waMonthly}
@@ -188,7 +179,7 @@ export default function Page() {
             data-cta="contact_whatsapp_monthly"
           >
             WhatsApp: Plan mensual
-            <div className="text-xs text-white/60 mt-1">Brief corto para plan mensual</div>
+            <div className="text-xs text-white/60 mt-1">Brief corto para continuidad</div>
           </a>
 
           <a
@@ -199,7 +190,29 @@ export default function Page() {
             data-cta="contact_whatsapp_oneoff"
           >
             WhatsApp: Proyecto puntual
-            <div className="text-xs text-white/60 mt-1">Institucional, evento, testimonios, campaña</div>
+            <div className="text-xs text-white/60 mt-1">Institucional / campaña / testimonios</div>
+          </a>
+
+          <a
+            href={waVodcast}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center hover:bg-white/10 transition text-sm"
+            data-cta="contact_whatsapp_vodcast"
+          >
+            WhatsApp: Vodcast
+            <div className="text-xs text-white/60 mt-1">Serie o episodio corporativo</div>
+          </a>
+
+          <a
+            href={waEventos}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center hover:bg-white/10 transition text-sm"
+            data-cta="contact_whatsapp_eventos"
+          >
+            WhatsApp: Evento
+            <div className="text-xs text-white/60 mt-1">Cobertura / aftermovie</div>
           </a>
         </div>
 
@@ -222,7 +235,7 @@ export default function Page() {
           </Link>
         </div>
 
-        {/* PLAN vs ONE-OFF (filtro mental rápido) */}
+        {/* PLAN vs ONE-OFF */}
         <div className="mt-8 grid gap-3 sm:grid-cols-2 text-sm">
           <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white/75">
             <p className="font-semibold text-white">Plan mensual</p>
@@ -249,7 +262,7 @@ export default function Page() {
           </div>
         </div>
 
-        {/* EXPECTATIONS / HELP */}
+        {/* EXPECTATIONS */}
         <div className="mt-8 grid gap-4 text-sm text-white/70">
           <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
             <p className="font-semibold text-white">Para cotizar más rápido, incluye:</p>
@@ -283,14 +296,6 @@ export default function Page() {
               <li>Si estás de acuerdo, avanzamos a brief final y calendario de producción.</li>
             </ol>
           </div>
-
-          <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-            <p className="font-semibold text-white">Si vienes desde Google Ads</p>
-            <p className="mt-1">
-              Indica si tu objetivo es leads, marca o RR.HH. para proponer entregables orientados a conversión (variantes, cortes,
-              ganchos y formatos por plataforma).
-            </p>
-          </div>
         </div>
 
         {/* FORM */}
@@ -321,7 +326,7 @@ export default function Page() {
           </div>
 
           <p className="mt-4 text-xs text-white/50">
-            Nota: si tu fecha es dentro de los próximos 10 días, indícalo. Confirmamos factibilidad de agenda antes de prometer plazos.
+            Nota: si tu fecha es dentro de los próximos 10 días, indícalo para confirmar disponibilidad de agenda.
           </p>
         </div>
 
