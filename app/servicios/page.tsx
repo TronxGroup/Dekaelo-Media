@@ -10,11 +10,24 @@ const CANONICAL = `${SITE_URL}/servicios`;
 const WHATSAPP_NUMBER = "56920080031";
 
 /**
+ * ✅ PROMO (Google Ads friendly)
+ * - Solicitud/promoción válida solo en enero y febrero
+ * - Grabación puede ser en marzo
+ * - Precio promo: $750.000 + IVA
+ */
+const PROMO = {
+  title: "Promoción Video Corporativo",
+  price: "$750.000 + IVA",
+  window: "Solo enero y febrero",
+  note: "Puedes grabar en marzo (según agenda)",
+} as const;
+
+/**
  * ✅ WhatsApp LIMPIO (SIN UTM / SIN "enviado desde" / SIN emojis)
- * - intent por tipo de solicitud (monthly/oneoff/vodcast/eventos/general)
+ * - intent por tipo de solicitud (monthly/oneoff/vodcast/eventos/general/promo)
  * - mensaje corto y usable (menos fricción)
  */
-type WaIntent = "general" | "monthly" | "oneoff" | "vodcast" | "eventos";
+type WaIntent = "general" | "monthly" | "oneoff" | "vodcast" | "eventos" | "promo";
 
 function buildWhatsAppLink(opts?: { intent?: WaIntent }) {
   const intent = opts?.intent ?? "general";
@@ -25,14 +38,21 @@ function buildWhatsAppLink(opts?: { intent?: WaIntent }) {
     oneoff: "Video corporativo (proyecto puntual)",
     vodcast: "Vodcast corporativo",
     eventos: "Cobertura de evento / aftermovie",
+    promo: `Promo: Video corporativo (${PROMO.price})`,
   };
+
+  const promoLine =
+    intent === "promo"
+      ? `\nPromo: ${PROMO.window}. ${PROMO.note}.\n`
+      : "";
 
   // Mensaje limpio (sin tracking)
   // Mantén el orden: empresa -> fecha -> objetivo -> presupuesto -> referencias
   const text =
     `Hola Dekaelo Media.\n` +
-    `Quiero cotizar: ${intentLabel[intent]}\n\n` +
-    `Empresa:\n` +
+    `Quiero cotizar: ${intentLabel[intent]}\n` +
+    promoLine +
+    `\nEmpresa:\n` +
     `Ciudad y fecha tentativa:\n` +
     `Objetivo (marca / ventas / RRHH / interna):\n` +
     `Tipo (plan mensual / institucional / vodcast / reels / evento):\n` +
@@ -279,6 +299,7 @@ export default function Page() {
   // WhatsApp por sección (limpio, sin tracking)
   const waTop = buildWhatsAppLink({ intent: "general" });
   const waHero = buildWhatsAppLink({ intent: "general" });
+  const waPromo = buildWhatsAppLink({ intent: "promo" });
   const waPlans = buildWhatsAppLink({ intent: "monthly" });
   const waOneoff = buildWhatsAppLink({ intent: "oneoff" });
   const waFaq = buildWhatsAppLink({ intent: "general" });
@@ -300,7 +321,13 @@ export default function Page() {
             <Link href="/contacto#form" className="btn text-sm" data-cta="services_top_form">
               Cotizar
             </Link>
-            <a href={waTop} className="btn-outline text-sm" target="_blank" rel="noopener noreferrer" data-cta="services_top_whatsapp">
+            <a
+              href={waTop}
+              className="btn-outline text-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="services_top_whatsapp"
+            >
               WhatsApp
             </a>
           </div>
@@ -324,7 +351,7 @@ export default function Page() {
         </nav>
 
         {/* HERO */}
-        <header className="pt-4 pb-10">
+        <header className="pt-4 pb-8">
           <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
             <div>
               <span className="badge">Servicios</span>
@@ -359,7 +386,13 @@ export default function Page() {
                 <Link href="/portafolio" className="btn-outline" data-cta="services_hero_portfolio">
                   Ver portafolio
                 </Link>
-                <a href={waHero} className="btn-outline" target="_blank" rel="noopener noreferrer" data-cta="services_hero_whatsapp">
+                <a
+                  href={waHero}
+                  className="btn-outline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cta="services_hero_whatsapp"
+                >
                   WhatsApp
                 </a>
               </div>
@@ -411,6 +444,41 @@ export default function Page() {
           </div>
         </header>
 
+        {/* ✅ PROMO BANNER (visible antes de planes/precios) */}
+        <section className="pb-10">
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-transparent p-6 md:p-7">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+              <div>
+                <div className="text-xs uppercase tracking-[0.16em] text-white/60">Promoción limitada</div>
+                <div className="mt-2 text-xl md:text-2xl font-extrabold text-white">
+                  {PROMO.title}: <span className="text-white/90">{PROMO.price}</span>
+                </div>
+                <div className="mt-2 text-sm text-white/70">
+                  <strong className="text-white">{PROMO.window}</strong> · {PROMO.note}
+                </div>
+                <div className="mt-3 text-xs text-white/50">
+                  Ideal para: video institucional breve, presentación de empresa, servicios o equipo. (Alcance final se confirma por propuesta).
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2 min-w-[220px]">
+                <Link href="/contacto#form" className="btn w-full text-center" data-cta="services_promo_form">
+                  Cotizar promo
+                </Link>
+                <a
+                  href={waPromo}
+                  className="btn-outline w-full text-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cta="services_promo_whatsapp"
+                >
+                  WhatsApp promo
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* BENEFICIOS */}
         <section className="py-12 border-y border-white/10">
           <h2 className="text-2xl md:text-3xl font-extrabold text-white text-center">Por qué el plan mensual funciona</h2>
@@ -428,7 +496,13 @@ export default function Page() {
           </div>
 
           <div className="mt-10 text-center">
-            <a href={waPlans} className="btn-outline" target="_blank" rel="noopener noreferrer" data-cta="services_benefits_whatsapp">
+            <a
+              href={waPlans}
+              className="btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="services_benefits_whatsapp"
+            >
               Cotizar plan mensual por WhatsApp →
             </a>
           </div>
@@ -442,6 +516,32 @@ export default function Page() {
               <p className="text-white/70 mt-3">
                 Para una pieza estratégica (web, directorio, admisión, RRHH, campaña) con estándar corporativo. Si luego quieres continuidad, lo convertimos a plan mensual.
               </p>
+
+              {/* ✅ MINI PROMO dentro de proyecto puntual */}
+              <div className="mt-5 rounded-2xl border border-white/10 bg-black/40 p-4">
+                <div className="text-sm text-white/80 font-semibold">Promo disponible</div>
+                <div className="mt-1 text-sm text-white/70">
+                  <span className="font-semibold text-white">{PROMO.title}</span>:{" "}
+                  <span className="font-semibold text-white">{PROMO.price}</span>
+                  <span className="text-white/60"> · {PROMO.window}</span>
+                </div>
+                <div className="mt-2 text-xs text-white/50">{PROMO.note}</div>
+
+                <div className="mt-3 flex gap-2 flex-wrap">
+                  <a
+                    href={waPromo}
+                    className="btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-cta="services_oneoff_promo_whatsapp"
+                  >
+                    WhatsApp promo →
+                  </a>
+                  <Link href="/contacto#form" className="btn" data-cta="services_oneoff_promo_form">
+                    Cotizar promo →
+                  </Link>
+                </div>
+              </div>
 
               <div className="mt-5 rounded-2xl border border-white/10 bg-gray-900 p-4">
                 <p className="text-sm text-white/70">
@@ -462,7 +562,13 @@ export default function Page() {
                 <Link href="/contacto#form" className="btn" data-cta="services_oneoff_form">
                   Cotizar proyecto puntual →
                 </Link>
-                <a href={waOneoff} className="btn-outline" target="_blank" rel="noopener noreferrer" data-cta="services_oneoff_whatsapp">
+                <a
+                  href={waOneoff}
+                  className="btn-outline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cta="services_oneoff_whatsapp"
+                >
                   WhatsApp →
                 </a>
               </div>
@@ -485,7 +591,9 @@ export default function Page() {
 
         {/* PLANES */}
         <section id="planes" className="scroll-mt-24 py-16 border-y border-white/10">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-4 text-white">Planes audiovisuales mensuales</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-4 text-white">
+            Planes audiovisuales mensuales
+          </h2>
           <p className="text-center text-white/60 mb-10 max-w-3xl mx-auto">
             Valores IVA incluido. Contrato mínimo sugerido: 3 meses. Diseñado para equipos que necesitan continuidad sin armar un equipo in-house.
           </p>
@@ -551,7 +659,9 @@ export default function Page() {
                       </a>
                     </div>
 
-                    <p className="mt-3 text-[11px] text-white/50">Definimos alcance final por escrito según objetivos, agenda y locación.</p>
+                    <p className="mt-3 text-[11px] text-white/50">
+                      Definimos alcance final por escrito según objetivos, agenda y locación.
+                    </p>
                   </div>
                 </article>
               );
@@ -610,6 +720,16 @@ export default function Page() {
           </p>
         </section>
 
+        {/* LOGOS (si quieres, puedes moverlo aquí o dejarlo donde está en tu layout global) */}
+        <section className="py-12 border-y border-white/10">
+          <p className="text-center text-white/50 text-sm mb-6">Confían en nosotros</p>
+          {/* Si no lo usas en esta página, borra esta sección. Si existe el componente, puedes habilitarlo: */}
+          {/* <ClientLogos /> */}
+          <div className="flex justify-center">
+            <div className="text-xs text-white/40">—</div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="py-16 border-y border-white/10">
           <h2 className="text-2xl md:text-3xl font-extrabold text-white text-center">Preguntas frecuentes</h2>
@@ -627,7 +747,13 @@ export default function Page() {
             <Link href="/contacto#form" className="btn" data-cta="services_faq_form">
               Cotizar →
             </Link>
-            <a href={waFaq} className="btn-outline" target="_blank" rel="noopener noreferrer" data-cta="services_faq_whatsapp">
+            <a
+              href={waFaq}
+              className="btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="services_faq_whatsapp"
+            >
               WhatsApp
             </a>
           </div>
@@ -659,6 +785,16 @@ export default function Page() {
               data-cta="services_final_whatsapp"
             >
               WhatsApp →
+            </a>
+
+            <a
+              href={waPromo}
+              className="inline-block px-10 py-4 bg-transparent text-white font-semibold rounded-2xl border border-white/15 hover:bg-white/5 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="services_final_promo_whatsapp"
+            >
+              WhatsApp promo →
             </a>
           </div>
 
