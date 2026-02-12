@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 const SITE_URL = "https://www.dekaelomedia.com";
 const WHATSAPP_NUMBER = "56920080031";
-const EMAIL = "hola@dekaelomedia.com"; // cámbialo si usas otro
+const EMAIL = "info@dekaelomedia.com"; // cámbialo si usas otro
 
 export const metadata: Metadata = {
   title: "Contacto — Dekaelo Media",
