@@ -44,7 +44,7 @@ export default function Page() {
       {/* REEL */}
       <section className="container pb-28">
         <VideoEmbed
-          src="https://www.youtube.com/embed/uul8LNP6BbQ"
+          src="https://www.youtube.com/watch?v=hAyZFw0-55o"
           title="Dekaelo Media Reel"
         />
       </section>
