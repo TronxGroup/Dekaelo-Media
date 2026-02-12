@@ -56,7 +56,7 @@ const featured: Project[] = [
   },
   {
     title: "Reality Day — Tronx TV",
-    youtube: toEmbed("https://www.youtube.com/watch?v=dyP-ioW3Qng"),
+    youtube: toEmbed("https://youtu.be/4xe4CtPW4lI?si=7kAElTNXlME8AYnb"),
     logo: "/logo_cine.png",
     tag: "Serie",
     desc:
