@@ -4,135 +4,201 @@ import type { Metadata } from "next";
 import { VideoEmbed } from "./components/VideoEmbed";
 import { ClientLogos } from "./components/ClientLogos";
 
-const SITE_URL = "https://www.dekaelomedia.com";
-
 export const metadata: Metadata = {
-  title: "Dekaelo Media — Vodcast & Contenido Corporativo",
+  title: "Dekaelo Media — Vodcast & Series Corporativas",
   description:
-    "Productora boutique especializada en vodcast corporativo y series institucionales. Más de 58 episodios producidos para banca, gremios, salud y tecnología.",
+    "Estudio audiovisual boutique especializado en vodcast corporativo y series institucionales. Más de 58 episodios producidos para banca, gremios, salud y tecnología.",
 };
 
 export default function Page() {
   return (
-    <main className="bg-black text-white">
+    <main className="bg-black text-white selection:bg-white selection:text-black">
+
       {/* HERO */}
-      <section className="container py-32 max-w-4xl">
-        <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-          Vodcast y contenido corporativo
-          <br /> con criterio editorial.
+      <section className="container max-w-4xl py-36">
+        <h1 className="text-4xl md:text-6xl font-semibold leading-[1.1] tracking-tight">
+          Historias reales
+          <br />
+          dentro de organizaciones reales.
         </h1>
 
-        <p className="mt-8 text-lg text-white/70">
-          En Dekaelo producimos series audiovisuales para organizaciones que
-          necesitan comunicar con claridad y profesionalismo.
+        <p className="mt-8 text-lg text-white/65 leading-relaxed">
+          Dekaelo Media es un estudio audiovisual boutique especializado en
+          vodcast corporativo y series institucionales.
           <br />
-          Más de 58 episodios realizados desde 2023 para banca, gremios,
-          medicina y tecnología.
+          Desde 2023 hemos producido más de 58 episodios para banca,
+          gremios empresariales, salud y tecnología.
         </p>
 
-        <div className="mt-10">
-          <Link href="/contacto" className="btn-outline">
+        <div className="mt-12">
+          <Link
+            href="/contacto"
+            className="border border-white/30 px-6 py-3 text-sm hover:bg-white hover:text-black transition"
+          >
             Conversar un proyecto
           </Link>
         </div>
       </section>
 
+
       {/* REEL */}
-      <section className="container pb-24">
+      <section className="container pb-28">
         <VideoEmbed
           src="https://www.youtube.com/embed/uul8LNP6BbQ"
           title="Dekaelo Media Reel"
         />
       </section>
 
-      {/* CASOS */}
-      <section className="container py-24 border-t border-white/10">
-        <h2 className="text-2xl mb-12 text-white/70">Casos recientes</h2>
 
-        <div className="grid md:grid-cols-2 gap-10">
-          <VideoEmbed src="https://www.youtube.com/embed/dyP-ioW3Qng" title="Banco BICE — Nos Une" />
-          <VideoEmbed src="https://www.youtube.com/embed/tu-link-reality-day" title="Reality Day — Tronx TV" />
+      {/* CASOS */}
+      <section className="container border-t border-white/10 py-28">
+        <h2 className="text-sm uppercase tracking-widest text-white/40 mb-16">
+          Casos
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-14 text-white/70">
+
+          {/* BICE confidencial */}
+          <div>
+            <h3 className="text-white font-medium mb-3">
+              Banco nacional — Serie institucional
+            </h3>
+            <p className="text-sm leading-relaxed">
+              Vodcast interno para liderazgo y cultura organizacional.
+              Producción continua 2024–2026.
+              <br />
+              <span className="text-white/40">
+                Contenido confidencial (uso interno).
+              </span>
+            </p>
+          </div>
+
+          {/* Reality Day */}
+          <div>
+            <VideoEmbed
+              src="https://www.youtube.com/embed/dyP-ioW3Qng"
+              title="Reality Day — Tronx TV"
+            />
+            <p className="text-sm mt-4 text-white/50">
+              Serie documental original.
+            </p>
+          </div>
+
+          {/* APCC */}
+          <div>
+            <h3 className="text-white font-medium mb-3">
+              Cámara empresarial — Ciclo de entrevistas
+            </h3>
+            <p className="text-sm leading-relaxed">
+              24 episodios consecutivos.
+              Conversaciones con líderes del ecosistema Asia–Pacífico.
+            </p>
+          </div>
         </div>
       </section>
 
+
       {/* CLIENTES */}
-      <section className="py-20 border-t border-white/10">
+      <section className="border-t border-white/10 py-24">
         <div className="container">
           <ClientLogos />
         </div>
       </section>
 
+
       {/* EXPERIENCIA */}
-      <section className="container py-28 border-t border-white/10 max-w-5xl">
-        <h2 className="text-3xl mb-12">Experiencia</h2>
+      <section className="container border-t border-white/10 py-32 max-w-5xl">
+        <h2 className="text-sm uppercase tracking-widest text-white/40 mb-16">
+          Experiencia
+        </h2>
 
-        <div className="grid md:grid-cols-3 gap-12 text-white/70">
+        <div className="grid md:grid-cols-3 gap-16">
+
           <div>
-            <div className="text-5xl font-semibold text-white">58+</div>
-            <p className="mt-3">episodios producidos</p>
+            <div className="text-6xl font-semibold">58+</div>
+            <p className="text-white/50 mt-3 text-sm">
+              episodios producidos
+            </p>
           </div>
 
           <div>
-            <div className="text-5xl font-semibold text-white">6</div>
-            <p className="mt-3">industrias distintas</p>
+            <div className="text-6xl font-semibold">6</div>
+            <p className="text-white/50 mt-3 text-sm">
+              industrias distintas
+            </p>
           </div>
 
           <div>
-            <div className="text-5xl font-semibold text-white">3+</div>
-            <p className="mt-3">años creando series continuas</p>
+            <div className="text-6xl font-semibold">3+</div>
+            <p className="text-white/50 mt-3 text-sm">
+              años creando series continuas
+            </p>
           </div>
+
         </div>
 
-        <p className="mt-14 text-white/60 leading-relaxed">
-          Hemos desarrollado formatos recurrentes para instituciones como
-          Banco BICE, APCC, proyectos médicos y compañías tecnológicas,
-          combinando narrativa, imagen cinematográfica y procesos de producción
-          simples para equipos internos.
+        <p className="mt-16 text-white/60 leading-relaxed max-w-3xl">
+          Trabajamos como un partner de producción, no como un proveedor
+          puntual. Diseñamos formatos, grabamos con equipos ligeros y
+          cinematográficos, y entregamos piezas listas para web, comunicación
+          interna y plataformas digitales.
         </p>
       </section>
+
 
       {/* SERVICIOS */}
-      <section className="container py-28 border-t border-white/10">
-        <h2 className="text-3xl mb-12">Servicios</h2>
+      <section className="container border-t border-white/10 py-32 max-w-5xl">
+        <h2 className="text-sm uppercase tracking-widest text-white/40 mb-16">
+          Servicios
+        </h2>
 
-        <div className="grid md:grid-cols-3 gap-10 text-white/70">
+        <div className="grid md:grid-cols-3 gap-14 text-white/70 text-sm leading-relaxed">
+
           <div>
-            <h3 className="text-white font-medium mb-3">Vodcast corporativo</h3>
-            <p>Series de conversación, entrevistas y liderazgo de opinión.</p>
+            <h3 className="text-white font-medium mb-4">Vodcast corporativo</h3>
+            Series de conversación, entrevistas y liderazgo de opinión.
           </div>
 
           <div>
-            <h3 className="text-white font-medium mb-3">Contenido institucional</h3>
-            <p>Marca empleadora, cultura, onboarding y comunicación interna.</p>
+            <h3 className="text-white font-medium mb-4">Contenido institucional</h3>
+            Cultura, marca empleadora, comunicación interna y relato estratégico.
           </div>
 
           <div>
-            <h3 className="text-white font-medium mb-3">Series editoriales</h3>
-            <p>Formatos documentales y storytelling para plataformas propias.</p>
+            <h3 className="text-white font-medium mb-4">Series editoriales</h3>
+            Documental, storytelling y proyectos originales para plataformas propias.
           </div>
+
         </div>
       </section>
 
-      {/* SOBRE */}
-      <section className="container py-28 border-t border-white/10 max-w-3xl">
-        <p className="text-white/70 leading-relaxed">
-          Dekaelo Media es el estudio audiovisual de Tronx Group.
-          También desarrollamos proyectos editoriales originales como
-          <strong> Tronx TV</strong> y la serie documental <strong>Reality Day</strong>,
-          lo que mantiene nuestro estándar narrativo y visual más cercano al
-          lenguaje cinematográfico que al video corporativo tradicional.
+
+      {/* ESTUDIO */}
+      <section className="container border-t border-white/10 py-32 max-w-3xl">
+        <p className="text-white/65 leading-relaxed">
+          Dekaelo Media forma parte de Tronx Group.
+          Paralelamente desarrollamos proyectos editoriales como
+          <strong> Tronx TV</strong> y la serie documental
+          <strong> Reality Day</strong>, lo que mantiene nuestro lenguaje visual
+          cercano al cine y al documental, más que al video corporativo
+          tradicional.
         </p>
       </section>
 
+
       {/* CONTACTO */}
-      <section className="container py-28 border-t border-white/10 text-center">
-        <h2 className="text-3xl mb-6">Hablemos</h2>
-        <p className="text-white/60 mb-10">
-          Si necesitas producir una serie o vodcast para tu organización,
-          conversemos.
+      <section className="container border-t border-white/10 py-32 text-center">
+        <h2 className="text-2xl mb-6">Hablemos</h2>
+
+        <p className="text-white/50 mb-10">
+          Si tu organización necesita producir una serie o vodcast,
+          podemos ayudarte a diseñarlo y ejecutarlo de principio a fin.
         </p>
 
-        <Link href="/contacto" className="btn-outline">
+        <Link
+          href="/contacto"
+          className="border border-white/30 px-8 py-3 text-sm hover:bg-white hover:text-black transition"
+        >
           Escribirnos
         </Link>
       </section>
