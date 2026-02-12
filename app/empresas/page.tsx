@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { VideoEmbed } from "../components/VideoEmbed";
+import { ClientLogos } from "../components/ClientLogos";
 
 export const metadata = {
   title: "Producción Audiovisual para Empresas — Dekaelo Media",
   description:
-    "Vodcast corporativo y contenido institucional para organizaciones. Más de 58 episodios producidos para banca, gremios y empresas B2B.",
+    "Vodcast corporativo y contenido institucional para organizaciones. Más de 58 episodios producidos para banca y empresas B2B.",
 };
 
 export default function Page() {
@@ -11,16 +13,16 @@ export default function Page() {
     <main className="bg-black text-white">
 
       {/* HERO */}
-      <section className="container max-w-4xl py-32">
+      <section className="container max-w-4xl py-32 text-center">
         <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-          Producción audiovisual
+          Vodcast y contenido corporativo
           <br />
           para organizaciones
         </h1>
 
         <p className="mt-8 text-white/65 text-lg">
-          Diseñamos y producimos vodcasts, series institucionales y contenido
-          corporativo con estándar profesional y continuidad en el tiempo.
+          Diseñamos y producimos series audiovisuales para banca,
+          gremios empresariales, salud y empresas B2B.
         </p>
 
         <Link
@@ -32,57 +34,57 @@ export default function Page() {
       </section>
 
 
+      {/* LOGOS */}
+      <section className="border-t border-white/10 py-16">
+        <div className="container">
+          <ClientLogos />
+        </div>
+      </section>
+
+
       {/* MÉTRICAS */}
-      <section className="container border-t border-white/10 py-24">
-        <div className="grid md:grid-cols-3 gap-12 text-center">
+      <section className="container border-t border-white/10 py-20 text-center">
+        <div className="grid md:grid-cols-3 gap-12">
           <div>
             <div className="text-5xl font-semibold">58+</div>
-            <p className="text-white/50 mt-2">episodios producidos</p>
+            <p className="text-white/50">episodios producidos</p>
           </div>
           <div>
             <div className="text-5xl font-semibold">6</div>
-            <p className="text-white/50 mt-2">industrias distintas</p>
+            <p className="text-white/50">industrias distintas</p>
           </div>
           <div>
             <div className="text-5xl font-semibold">3+</div>
-            <p className="text-white/50 mt-2">años en series continuas</p>
+            <p className="text-white/50">años de continuidad</p>
           </div>
         </div>
       </section>
 
 
-      {/* SERVICIOS */}
-      <section className="container border-t border-white/10 py-28">
-        <div className="grid md:grid-cols-3 gap-14 text-white/70">
+      {/* REEL (solo 1) */}
+      <section className="container border-t border-white/10 py-24 max-w-4xl">
+        <VideoEmbed
+          src="https://www.youtube.com/embed/uul8LNP6BbQ?rel=0"
+          title="Dekaelo Media Reel"
+        />
+      </section>
 
-          <div>
-            <h3 className="text-white font-medium mb-3">Vodcast corporativo</h3>
-            Series de entrevistas y conversación para liderazgo, cultura y comunicación interna.
-          </div>
 
-          <div>
-            <h3 className="text-white font-medium mb-3">Contenido institucional</h3>
-            Marca empleadora, cultura, onboarding y piezas de largo uso.
-          </div>
-
-          <div>
-            <h3 className="text-white font-medium mb-3">Series editoriales</h3>
-            Documental y storytelling para plataformas propias.
-          </div>
-
-        </div>
+      {/* CASOS TEXTO */}
+      <section className="container border-t border-white/10 py-24 max-w-4xl text-white/70">
+        <ul className="space-y-4">
+          <li>Banco nacional — Vodcast institucional (contenido interno)</li>
+          <li>APCC — 24 episodios de entrevistas empresariales</li>
+          <li>Industria 4.0 — Podcast B2B tecnológico</li>
+        </ul>
       </section>
 
 
       {/* CTA FINAL */}
       <section className="container border-t border-white/10 py-32 text-center">
-        <h2 className="text-2xl font-semibold mb-6">
-          ¿Conversemos tu próximo proyecto?
-        </h2>
-
         <Link
           href="/contacto"
-          className="border border-white/30 px-8 py-3 hover:bg-white hover:text-black transition"
+          className="border border-white/30 px-10 py-4 hover:bg-white hover:text-black transition"
         >
           Contactar
         </Link>
