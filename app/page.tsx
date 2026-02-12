@@ -44,7 +44,7 @@ export default function Page() {
       {/* REEL */}
       <section className="container pb-28">
         <VideoEmbed
-          src="https://www.youtube.com/watch?v=hAyZFw0-55o"
+          src="https://youtu.be/uul8LNP6BbQ"
           title="Dekaelo Media Reel"
         />
       </section>
@@ -73,14 +73,14 @@ export default function Page() {
             </p>
           </div>
 
-          {/* Reality Day */}
+          {/* iGromi */}
           <div>
             <VideoEmbed
-              src="https://www.youtube.com/embed/dyP-ioW3Qng"
+              src="https://youtu.be/2G7oKXKjPl8"
               title="Reality Day — Tronx TV"
             />
             <p className="text-sm mt-4 text-white/50">
-              Serie documental original.
+              B2B tecnológico / industrial.
             </p>
           </div>
 
