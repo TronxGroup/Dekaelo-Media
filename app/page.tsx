@@ -1,13 +1,31 @@
-// app/page.tsx
 import Link from "next/link";
 import type { Metadata } from "next";
 import { VideoEmbed } from "./components/VideoEmbed";
 import { ClientLogos } from "./components/ClientLogos";
 
 export const metadata: Metadata = {
-  title: "Dekaelo Media — Vodcast & Series Corporativas",
+  title:
+    "Dekaelo Media — Productora Audiovisual Corporativa en Chile",
   description:
-    "Estudio audiovisual boutique especializado en vodcast corporativo y series institucionales. Más de 58 episodios producidos para banca, gremios, salud y tecnología.",
+    "Dekaelo Media es una productora audiovisual boutique especializada en comunicación corporativa, series institucionales y vodcast internos para banca, gremios, clínicas y empresas tecnológicas en Chile.",
+  keywords: [
+    "productora audiovisual Chile",
+    "video corporativo Chile",
+    "vodcast corporativo",
+    "serie institucional",
+    "comunicación interna empresas",
+    "productora audiovisual corporativa",
+  ],
+  openGraph: {
+    title:
+      "Dekaelo Media — Producción Audiovisual Corporativa",
+    description:
+      "Producción audiovisual para organizaciones que comunican liderazgo, cultura y visión de largo plazo.",
+    url: "https://www.dekaelomedia.com",
+    siteName: "Dekaelo Media",
+    locale: "es_CL",
+    type: "website",
+  },
 };
 
 export default function Page() {
@@ -17,17 +35,16 @@ export default function Page() {
       {/* HERO */}
       <section className="container max-w-4xl py-36">
         <h1 className="text-4xl md:text-6xl font-semibold leading-[1.1] tracking-tight">
-          Historias reales
-          <br />
-          dentro de organizaciones reales.
+          Producción audiovisual para organizaciones que comunican liderazgo,
+          cultura y visión de largo plazo.
         </h1>
 
         <p className="mt-8 text-lg text-white/65 leading-relaxed">
-          Dekaelo Media es un estudio audiovisual boutique especializado en
-          vodcast corporativo y series institucionales.
-          <br />
-          Desde 2023 hemos producido más de 58 episodios para banca,
-          gremios empresariales, salud y tecnología.
+          Dekaelo Media es una productora audiovisual boutique enfocada en
+          comunicación corporativa y series institucionales. Trabajamos con
+          banca, gremios empresariales, clínicas, empresas tecnológicas y
+          holdings familiares desarrollando proyectos de alto estándar visual
+          y narrativa cuidada.
         </p>
 
         <div className="mt-12">
@@ -40,71 +57,87 @@ export default function Page() {
         </div>
       </section>
 
+      {/* IMAGEN DESTACADA */}
+      <section className="container pb-28">
+        <img
+          src="/images/dekaelo-entrevista.jpg"
+          alt="Grabación entrevista institucional Dekaelo Media"
+          className="w-full object-cover rounded-lg"
+        />
+      </section>
 
       {/* REEL */}
       <section className="container pb-28">
+        <h2 className="text-sm uppercase tracking-widest text-white/40 mb-10">
+          Reel institucional
+        </h2>
+
         <VideoEmbed
           src="https://www.youtube.com/embed/uul8LNP6BbQ?rel=0&modestbranding=1&playsinline=1"
           title="Dekaelo Media Reel"
         />
       </section>
 
-
       {/* CASOS */}
       <section className="container border-t border-white/10 py-28">
         <h2 className="text-sm uppercase tracking-widest text-white/40 mb-16">
-          Casos
+          Casos seleccionados
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-14 text-white/70">
+        <div className="grid md:grid-cols-3 gap-14 text-white/70 text-sm leading-relaxed">
 
-          {/* BICE confidencial */}
           <div>
             <h3 className="text-white font-medium mb-3">
-              Banco nacional — Serie institucional
+              Banco BICE — Serie vodcast interna (2024–2026)
             </h3>
-            <p className="text-sm leading-relaxed">
-              Vodcast interno para liderazgo y cultura organizacional.
-              Producción continua 2024–2026.
+            <p>
+              Producción continua de temporada institucional enfocada en
+              liderazgo ejecutivo y cultura organizacional.
               <br />
               <span className="text-white/40">
-                Contenido confidencial (uso interno).
+                Contenido confidencial de uso interno.
               </span>
             </p>
           </div>
 
-          {/* iGromi */}
-          <div>
-            <VideoEmbed
-              src="https://www.youtube.com/embed/2G7oKXKjPl8?rel=0&modestbranding=1&playsinline=1"
-              title="Reality Day — Tronx TV"
-            />
-            <p className="text-sm mt-4 text-white/50">
-              B2B tecnológico / industrial.
-            </p>
-          </div>
-
-          {/* APCC */}
           <div>
             <h3 className="text-white font-medium mb-3">
-              Cámara empresarial — Ciclo de entrevistas
+              iGromi — Serie corporativa (8 episodios)
             </h3>
-            <p className="text-sm leading-relaxed">
-              24 episodios consecutivos.
-              Conversaciones con líderes del ecosistema Asia–Pacífico.
+            <p>
+              Producción audiovisual para posicionamiento tecnológico e
+              industrial, combinando claridad técnica y tratamiento visual
+              cinematográfico.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-white font-medium mb-3">
+              Reality Day — Serie documental original
+            </h3>
+            <p>
+              Proyecto editorial desarrollado junto a Tronx TV. Retratos
+              documentales de oficios y pequeñas empresas en Chile.
             </p>
           </div>
         </div>
       </section>
 
-
-      {/* CLIENTES */}
-      <section className="border-t border-white/10 py-24">
-        <div className="container">
-          <ClientLogos />
+      {/* GALERÍA VISUAL */}
+      <section className="container border-t border-white/10 py-28">
+        <div className="grid md:grid-cols-2 gap-10">
+          <img
+            src="/images/dekaelo-set.jpg"
+            alt="Set de grabación Dekaelo Media"
+            className="w-full object-cover rounded-lg"
+          />
+          <img
+            src="/images/dekaelo-closeup.jpg"
+            alt="Plano entrevista institucional"
+            className="w-full object-cover rounded-lg"
+          />
         </div>
       </section>
-
 
       {/* EXPERIENCIA */}
       <section className="container border-t border-white/10 py-32 max-w-5xl">
@@ -113,7 +146,6 @@ export default function Page() {
         </h2>
 
         <div className="grid md:grid-cols-3 gap-16">
-
           <div>
             <div className="text-6xl font-semibold">58+</div>
             <p className="text-white/50 mt-3 text-sm">
@@ -131,20 +163,18 @@ export default function Page() {
           <div>
             <div className="text-6xl font-semibold">3+</div>
             <p className="text-white/50 mt-3 text-sm">
-              años creando series continuas
+              años desarrollando series continuas
             </p>
           </div>
-
         </div>
 
         <p className="mt-16 text-white/60 leading-relaxed max-w-3xl">
-          Trabajamos como un partner de producción, no como un proveedor
-          puntual. Diseñamos formatos, grabamos con equipos ligeros y
-          cinematográficos, y entregamos piezas listas para web, comunicación
-          interna y plataformas digitales.
+          Diseñamos formatos, producimos temporadas completas y entregamos
+          piezas listas para comunicación interna, web y plataformas digitales.
+          Trabajamos como partner de producción, manteniendo procesos
+          eficientes y discretos para organizaciones de alto perfil.
         </p>
       </section>
-
 
       {/* SERVICIOS */}
       <section className="container border-t border-white/10 py-32 max-w-5xl">
@@ -155,44 +185,47 @@ export default function Page() {
         <div className="grid md:grid-cols-3 gap-14 text-white/70 text-sm leading-relaxed">
 
           <div>
-            <h3 className="text-white font-medium mb-4">Vodcast corporativo</h3>
-            Series de conversación, entrevistas y liderazgo de opinión.
+            <h3 className="text-white font-medium mb-4">
+              Series corporativas
+            </h3>
+            Producción de ciclos audiovisuales para liderazgo, cultura
+            organizacional y posicionamiento institucional.
           </div>
 
           <div>
-            <h3 className="text-white font-medium mb-4">Contenido institucional</h3>
-            Cultura, marca empleadora, comunicación interna y relato estratégico.
+            <h3 className="text-white font-medium mb-4">
+              Comunicación institucional
+            </h3>
+            Videos estratégicos para comunicación interna, directorio,
+            marca empleadora y presentaciones ejecutivas.
           </div>
 
           <div>
-            <h3 className="text-white font-medium mb-4">Series editoriales</h3>
-            Documental, storytelling y proyectos originales para plataformas propias.
+            <h3 className="text-white font-medium mb-4">
+              Proyectos editoriales
+            </h3>
+            Desarrollo de formatos documentales y narrativas originales
+            con lenguaje cinematográfico.
           </div>
 
         </div>
       </section>
 
-
-      {/* ESTUDIO */}
-      <section className="container border-t border-white/10 py-32 max-w-3xl">
-        <p className="text-white/65 leading-relaxed">
-          Dekaelo Media forma parte de Tronx Group.
-          Paralelamente desarrollamos proyectos editoriales como
-          <strong> Tronx TV</strong> y la serie documental
-          <strong> Reality Day</strong>, lo que mantiene nuestro lenguaje visual
-          cercano al cine y al documental, más que al video corporativo
-          tradicional.
-        </p>
+      {/* CLIENTES */}
+      <section className="border-t border-white/10 py-24">
+        <div className="container">
+          <ClientLogos />
+        </div>
       </section>
-
 
       {/* CONTACTO */}
       <section className="container border-t border-white/10 py-32 text-center">
         <h2 className="text-2xl mb-6">Hablemos</h2>
 
         <p className="text-white/50 mb-10">
-          Si tu organización necesita producir una serie o vodcast,
-          podemos ayudarte a diseñarlo y ejecutarlo de principio a fin.
+          Si tu organización necesita producir una serie, desarrollar contenido
+          institucional o fortalecer su comunicación audiovisual, podemos
+          diseñar el proyecto y ejecutarlo de principio a fin.
         </p>
 
         <Link
@@ -202,6 +235,7 @@ export default function Page() {
           Escribirnos
         </Link>
       </section>
+
     </main>
   );
 }
