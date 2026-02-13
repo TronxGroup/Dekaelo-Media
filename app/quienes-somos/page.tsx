@@ -1,16 +1,32 @@
-// app/quienes-somos/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Quiénes somos — Dekaelo Media",
+  title: "Quiénes somos — Dekaelo Media | Productora Audiovisual Corporativa",
   description:
-    "Estudio audiovisual boutique especializado en vodcast corporativo y series institucionales. Más de 58 episodios producidos desde 2023 para banca, gremios, salud y tecnología.",
+    "Dekaelo Media es una productora audiovisual boutique en Chile especializada en comunicación corporativa, series institucionales y proyectos editoriales. Más de 58 episodios producidos desde 2023 para banca, gremios, salud y tecnología.",
+  keywords: [
+    "Dekaelo Media",
+    "productora audiovisual Chile",
+    "video corporativo Chile",
+    "serie institucional",
+    "vodcast corporativo",
+    "comunicación corporativa audiovisual",
+  ],
   alternates: {
     canonical: "https://www.dekaelomedia.com/quienes-somos",
   },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: "Quiénes somos — Dekaelo Media",
+    description:
+      "Estudio audiovisual boutique enfocado en comunicación corporativa y series institucionales.",
+    url: "https://www.dekaelomedia.com/quienes-somos",
+    siteName: "Dekaelo Media",
+    locale: "es_CL",
+    type: "website",
+  },
 };
 
 export default function Page() {
@@ -25,16 +41,23 @@ export default function Page() {
           </h1>
 
           <p className="mt-6 text-lg text-white/70 leading-relaxed">
-            Somos un estudio audiovisual boutique enfocado en
-            <strong> vodcast corporativo</strong> y
+            Somos una productora audiovisual boutique enfocada en
+            <strong> comunicación corporativa</strong> y
             <strong> series institucionales</strong>.
-            <br />
             Diseñamos formatos, dirigimos conversaciones y producimos
             contenido que las organizaciones pueden sostener en el tiempo.
           </p>
+
+          <p className="mt-6 text-white/60 leading-relaxed">
+            Trabajamos con banca, gremios empresariales, clínicas,
+            empresas tecnológicas y holdings familiares desarrollando
+            proyectos de alto estándar visual, criterio editorial y
+            procesos discretos.
+          </p>
         </header>
 
-        {/* EXPERIENCIA RESUMIDA */}
+
+        {/* EXPERIENCIA */}
         <section className="mt-20 border-t border-white/10 pt-16">
           <h2 className="text-sm uppercase tracking-widest text-white/40 mb-10">
             Experiencia
@@ -64,9 +87,11 @@ export default function Page() {
           </div>
 
           <p className="mt-14 text-white/60 leading-relaxed">
-            Hemos trabajado con banca, cámaras empresariales, proyectos médicos
-            y compañías tecnológicas, desarrollando ciclos de entrevistas,
-            vodcasts internos y contenido institucional de uso continuo.
+            Hemos producido temporadas institucionales, ciclos ejecutivos
+            y series documentales que combinan claridad estratégica
+            con lenguaje cinematográfico. Nuestra experiencia incluye
+            banca nacional, cámaras empresariales y compañías del sector
+            salud y tecnología.
           </p>
         </section>
 
@@ -78,17 +103,16 @@ export default function Page() {
           </h2>
 
           <p className="text-white/70 leading-relaxed">
-            Nuestro recorrido comienza en el cine independiente con la película
-            <strong> “Yokai”</strong>, seleccionada oficialmente en
-            <strong> Sitges</strong> y
-            <strong> Buenos Aires Rojo Sangre</strong> (2014).
+            Nuestro recorrido comienza en el cine independiente con la
+            película <strong>“Yokai”</strong>, seleccionada oficialmente
+            en festivales internacionales en 2014.
           </p>
 
           <p className="mt-6 text-white/70 leading-relaxed">
-            Esa etapa definió nuestro estándar: narrativa clara, ritmo,
-            dirección precisa y cuidado visual. Hoy trasladamos esa escuela al
-            mundo corporativo, donde combinamos lenguaje cinematográfico con
-            procesos ordenados y entregables concretos.
+            Esa etapa definió nuestro estándar: narrativa clara,
+            ritmo preciso y cuidado visual. Hoy trasladamos esa
+            experiencia al mundo corporativo, combinando lenguaje
+            cinematográfico con procesos ordenados y entregables concretos.
           </p>
 
           <div className="my-14">
@@ -104,25 +128,23 @@ export default function Page() {
         </section>
 
 
-        {/* ENFOQUE ACTUAL */}
+        {/* ENFOQUE */}
         <section className="mt-24 border-t border-white/10 pt-16">
           <h2 className="text-sm uppercase tracking-widest text-white/40 mb-10">
-            Enfoque actual
+            Enfoque
           </h2>
 
           <p className="text-white/70 leading-relaxed">
-            Nos especializamos en formatos de conversación y series
-            institucionales que requieren continuidad.
-            <br />
-            No trabajamos como proveedores aislados, sino como partner de
-            producción para equipos de comunicación, gerencias y directorios.
+            No trabajamos como proveedores aislados, sino como partner
+            de producción para equipos de comunicación, gerencias y
+            directorios.
           </p>
 
           <p className="mt-6 text-white/70 leading-relaxed">
-            Diseñamos el formato, definimos estructura, grabamos con equipos
-            ligeros y cinematográficos, editamos con criterio editorial y
-            entregamos versiones listas para web, LinkedIn, intranet o
-            plataformas internas.
+            Diseñamos el formato, definimos estructura narrativa,
+            grabamos con equipos ligeros y cinematográficos, editamos
+            con criterio editorial y entregamos versiones optimizadas
+            para web, LinkedIn, intranet o plataformas internas.
           </p>
 
           <div className="my-14 grid md:grid-cols-2 gap-6">
@@ -144,7 +166,7 @@ export default function Page() {
         </section>
 
 
-        {/* TRONX TV */}
+        {/* PROYECTOS EDITORIALES */}
         <section className="mt-24 border-t border-white/10 pt-16">
           <h2 className="text-sm uppercase tracking-widest text-white/40 mb-10">
             Proyectos editoriales
@@ -153,19 +175,33 @@ export default function Page() {
           <p className="text-white/70 leading-relaxed">
             Paralelamente desarrollamos proyectos originales como
             <strong> Tronx TV</strong> y la serie documental
-            <strong> Reality Day</strong>.
-            <br />
-            Ese espacio creativo mantiene nuestro lenguaje narrativo activo y
-            evita que el contenido corporativo pierda humanidad.
+            <strong> Reality Day</strong>. Ese espacio creativo mantiene
+            nuestro lenguaje narrativo activo y refuerza la dimensión
+            humana del contenido institucional.
           </p>
         </section>
 
 
-        {/* CTA FINAL */}
+        {/* FILOSOFÍA */}
+        <section className="mt-24 border-t border-white/10 pt-16">
+          <h2 className="text-sm uppercase tracking-widest text-white/40 mb-10">
+            Filosofía
+          </h2>
+
+          <p className="text-white/70 leading-relaxed">
+            Creemos en la comunicación clara, la estética sobria y los
+            procesos eficientes. La discreción, el orden y la continuidad
+            son parte central de nuestro trabajo con organizaciones de
+            alto perfil.
+          </p>
+        </section>
+
+
+        {/* CTA */}
         <section className="mt-24 border-t border-white/10 pt-16 text-center">
           <h2 className="text-2xl font-semibold mb-6">
-            Si tu organización necesita producir una serie o vodcast,
-            conversemos.
+            Si tu organización necesita desarrollar una serie o fortalecer
+            su comunicación audiovisual, conversemos.
           </h2>
 
           <Link
