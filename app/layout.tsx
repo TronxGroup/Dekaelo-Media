@@ -1,4 +1,3 @@
-// app/layout.tsx
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
@@ -8,39 +7,65 @@ import { StickyCTA } from "./components/StickyCTA";
 
 const siteUrl = "https://www.dekaelomedia.com";
 
+/* -------------------------------------------------------------------------- */
+/*                                   SEO                                      */
+/* -------------------------------------------------------------------------- */
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Dekaelo Media — Producción Audiovisual Estratégica",
+
+  title: {
+    default: "Dekaelo Media — Productora Audiovisual Corporativa en Chile",
+    template: "%s | Dekaelo Media",
+  },
+
   description:
-    "Estudio audiovisual en Chile. Video corporativo, vodcast y contenido para equipos de marketing, comunicaciones y RR.HH.",
+    "Productora audiovisual boutique en Chile especializada en series institucionales, vodcast ejecutivos y comunicación corporativa para banca, gremios y organizaciones de alto perfil.",
+
+  keywords: [
+    "productora audiovisual Chile",
+    "video corporativo Chile",
+    "serie institucional",
+    "vodcast ejecutivo",
+    "comunicación corporativa audiovisual",
+  ],
+
+  alternates: {
+    canonical: siteUrl,
+  },
+
   icons: {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png",
     shortcut: "/favicon.png",
   },
+
   openGraph: {
     type: "website",
-    url: siteUrl + "/",
+    url: siteUrl,
     siteName: "Dekaelo Media",
-    title: "Dekaelo Media — Producción Audiovisual Estratégica",
-    description: "Contenido con calidad cinematográfica para empresas: video corporativo y vodcast.",
+    title: "Dekaelo Media — Productora Audiovisual Corporativa",
+    description:
+      "Producción audiovisual para liderazgo, cultura organizacional y comunicación estratégica.",
     images: [
       {
         url: siteUrl + "/og-cover.jpg",
         width: 1200,
         height: 630,
-        alt: "Dekaelo Media — Producción Audiovisual Estratégica",
+        alt: "Dekaelo Media — Productora Audiovisual Corporativa",
       },
     ],
     locale: "es_CL",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Dekaelo Media — Producción Audiovisual Estratégica",
+    title: "Dekaelo Media — Productora Audiovisual Corporativa",
     description:
-      "Video corporativo, vodcast y contenido para redes. Proyectos puntuales o plan mensual.",
+      "Series institucionales, vodcast ejecutivos y contenido audiovisual estratégico.",
     images: [siteUrl + "/og-cover.jpg"],
   },
+
   robots: {
     index: true,
     follow: true,
@@ -52,43 +77,48 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#000000" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
+
+  category: "business",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: "#000000",
 };
 
-// IDs (mantén los tuyos)
+/* -------------------------------------------------------------------------- */
+/*                                ANALYTICS                                   */
+/* -------------------------------------------------------------------------- */
+
 const GA4_ID = "G-96HZDP5PVP";
 const ADS_ID = "AW-17760996045";
 
-// ⚠️ Opcional: IDs de conversiones (si ya los tienes, completa)
-// const ADS_CONV_FORM = "AW-17760996045/XXXXXXXXXXX"; // form_submit
-// const ADS_CONV_WA = "AW-17760996045/YYYYYYYYYYY";   // whatsapp_click
+/* -------------------------------------------------------------------------- */
+/*                                LAYOUT                                      */
+/* -------------------------------------------------------------------------- */
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="es">
       <head>
-        {/* Preconnect performance */}
+        {/* Performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google.com" />
-
-        {/* YouTube (embeds) */}
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
         <link rel="preconnect" href="https://img.youtube.com" />
       </head>
 
-      <body className="text-white selection:bg-brand-red/60 selection:text-white">
-        {/* Google tag (gtag.js): GA4 + Google Ads */}
+      <body className="bg-black text-white selection:bg-white selection:text-black">
+
+        {/* Google Tag (GA4 + Google Ads) */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`}
           strategy="afterInteractive"
@@ -117,34 +147,54 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <Footer />
 
-        {/* SCHEMA.ORG Organization */}
-        <script
+        {/* Structured Data */}
+        <Script
+          id="schema-organization"
           type="application/ld+json"
-          suppressHydrationWarning
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Dekaelo Media",
-              url: siteUrl,
-              logo: siteUrl + "/logo.png",
-              description:
-                "Estudio audiovisual en Chile. Video corporativo, vodcast y contenido para redes y comunicación interna.",
-              sameAs: [
-                "https://www.instagram.com/dekaelo_media",
-                "https://www.youtube.com/@dekaelo_media",
-                "https://www.linkedin.com/company/dekaelo-media",
-              ],
-              contactPoint: [
-                {
-                  "@type": "ContactPoint",
-                  telephone: "+56-9-2008-0031",
-                  contactType: "sales",
-                  areaServed: "CL",
-                  availableLanguage: ["es"],
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: "Dekaelo Media",
+                url: siteUrl,
+                logo: siteUrl + "/logo.png",
+                description:
+                  "Productora audiovisual corporativa en Chile especializada en series institucionales y vodcast ejecutivos.",
+                sameAs: [
+                  "https://www.instagram.com/dekaelo_media",
+                  "https://www.youtube.com/@dekaelo_media",
+                  "https://www.linkedin.com/company/dekaelo-media",
+                ],
+                contactPoint: [
+                  {
+                    "@type": "ContactPoint",
+                    telephone: "+56-9-2008-0031",
+                    contactType: "sales",
+                    areaServed: "CL",
+                    availableLanguage: ["es"],
+                  },
+                ],
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                name: "Dekaelo Media",
+                image: siteUrl + "/og-cover.jpg",
+                url: siteUrl,
+                areaServed: {
+                  "@type": "Country",
+                  name: "Chile",
                 },
-              ],
-            }),
+                serviceType: [
+                  "Producción audiovisual corporativa",
+                  "Serie institucional",
+                  "Vodcast ejecutivo",
+                  "Video institucional",
+                ],
+              },
+            ]),
           }}
         />
       </body>
