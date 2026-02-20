@@ -24,7 +24,7 @@ export default function Page() {
         </h1>
 
         <p className="mt-6 text-white/60 text-sm">
-          Última actualización: Enero 2026
+          Última actualización: Febrero 2026
         </p>
 
         {/* INTRO */}
