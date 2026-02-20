@@ -7,14 +7,14 @@ const EMAIL = "info@dekaelomedia.com";
 
 export const metadata: Metadata = {
   title:
-    "Contacto — Dekaelo Media | Productora Audiovisual Corporativa en Chile",
+    "Contacto — Dekaelo Media | Producción Audiovisual Corporativa en Chile",
   description:
-    "Contacto Dekaelo Media. Producción audiovisual corporativa, series institucionales y vodcast ejecutivos para banca, gremios, clínicas y empresas tecnológicas en Chile.",
+    "Contacto Dekaelo Media. Producción de video corporativo, series institucionales y comunicación ejecutiva para empresas en Chile.",
   keywords: [
-    "contacto productora audiovisual",
+    "contacto productora audiovisual Chile",
     "cotizar video corporativo Chile",
-    "vodcast corporativo",
     "producción audiovisual ejecutiva",
+    "serie institucional",
   ],
   alternates: {
     canonical: `${SITE_URL}/contacto`,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contacto — Dekaelo Media",
     description:
-      "Conversemos tu proyecto audiovisual corporativo.",
+      "Conversemos tu proyecto audiovisual corporativo en Chile.",
     url: `${SITE_URL}/contacto`,
     siteName: "Dekaelo Media",
     locale: "es_CL",
@@ -36,10 +36,11 @@ function buildWhatsAppLink() {
     `Hola Dekaelo Media.\n` +
     `Quiero conversar un proyecto audiovisual.\n\n` +
     `Organización:\n` +
-    `Tipo de proyecto:\n` +
-    `Fecha estimada:\n` +
+    `Tipo de proyecto (serie / video corporativo / vodcast):\n` +
+    `Fecha estimada de grabación:\n` +
     `Objetivo principal:\n` +
-    `Ciudad:\n`;
+    `Ciudad:\n` +
+    `Presupuesto referencial (opcional):\n`;
 
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
@@ -54,25 +55,39 @@ export default function Page() {
 
         {/* HEADER */}
         <h1 className="text-4xl md:text-5xl font-semibold">
-          Hablemos
+          Contacto
         </h1>
 
         <p className="mt-6 text-white/65 leading-relaxed">
-          Si tu organización necesita desarrollar una serie institucional,
-          producir contenido ejecutivo o fortalecer su comunicación
-          audiovisual, conversemos el contexto y objetivos.
+          Si tu empresa necesita producir un video corporativo,
+          desarrollar una serie institucional o estructurar comunicación ejecutiva,
+          conversemos el contexto y objetivos.
         </p>
 
         <p className="mt-6 text-white/60 leading-relaxed">
           Diseñamos el formato adecuado y estructuramos el proyecto
-          con alcance claro, tiempos definidos y estándar visual
-          corporativo.
+          con alcance claro, tiempos definidos y estándar visual corporativo.
         </p>
 
         <p className="mt-6 text-sm text-white/40">
           Tiempo de respuesta habitual: 24–48 horas hábiles.
         </p>
 
+        {/* DISPONIBILIDAD */}
+        <div className="mt-10 border border-white/10 rounded-xl p-6 text-left text-sm text-white/60 leading-relaxed">
+          <p className="text-white font-medium mb-2">
+            Disponibilidad 2026
+          </p>
+          <p>
+            La agenda de rodajes se organiza con anticipación.
+            Durante el período <strong>22 de abril al 5 de mayo de 2026</strong>
+            no se realizarán rodajes presenciales.
+          </p>
+          <p className="mt-3">
+            La planificación, preproducción y postproducción continúan con normalidad.
+            Recomendamos coordinar fechas con anticipación para asegurar disponibilidad.
+          </p>
+        </div>
 
         {/* CTAs */}
         <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
@@ -101,7 +116,6 @@ export default function Page() {
 
         </div>
 
-
         {/* GUÍA ESTRATÉGICA */}
         <div className="mt-16 text-white/50 text-sm leading-relaxed max-w-xl mx-auto">
           <p>
@@ -114,20 +128,19 @@ export default function Page() {
           </p>
         </div>
 
-
         {/* PERFIL DE CLIENTE */}
         <div className="mt-20 border-t border-white/10 pt-12 text-white/50 text-sm leading-relaxed">
           <p>
-            Trabajamos principalmente con banca, gremios empresariales,
-            clínicas, empresas tecnológicas y holdings familiares.
+            Trabajamos con banca, educación, industria, clínicas,
+            empresas tecnológicas y organizaciones que requieren
+            comunicación audiovisual clara y profesional.
           </p>
 
           <p className="mt-4">
-            Proyectos de continuidad, temporadas ejecutivas y comunicación
-            institucional de mediano y largo plazo.
+            Desarrollamos tanto temporadas ejecutivas como
+            proyectos puntuales de video corporativo.
           </p>
         </div>
-
 
         {/* VOLVER */}
         <div className="mt-16">
