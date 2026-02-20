@@ -14,25 +14,31 @@ const siteUrl = "https://www.dekaelomedia.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
+  applicationName: "Dekaelo Media",
+
   title: {
     default: "Dekaelo Media — Productora Audiovisual Corporativa en Chile",
     template: "%s | Dekaelo Media",
   },
 
   description:
-    "Productora audiovisual boutique en Chile especializada en series institucionales, vodcast ejecutivos y comunicación corporativa para banca, gremios y organizaciones de alto perfil.",
+    "Productora audiovisual corporativa en Chile especializada en video corporativo, series institucionales y vodcast ejecutivos para empresas y organizaciones de alto perfil.",
 
   keywords: [
     "productora audiovisual Chile",
     "video corporativo Chile",
     "serie institucional",
     "vodcast ejecutivo",
-    "comunicación corporativa audiovisual",
+    "producción audiovisual corporativa",
   ],
 
   alternates: {
     canonical: siteUrl,
   },
+
+  authors: [{ name: "Dekaelo Media", url: siteUrl }],
+  creator: "Dekaelo Media",
+  publisher: "Dekaelo Media",
 
   icons: {
     icon: "/favicon.png",
@@ -40,13 +46,15 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
   },
 
+  manifest: "/site.webmanifest",
+
   openGraph: {
     type: "website",
     url: siteUrl,
     siteName: "Dekaelo Media",
     title: "Dekaelo Media — Productora Audiovisual Corporativa",
     description:
-      "Producción audiovisual para liderazgo, cultura organizacional y comunicación estratégica.",
+      "Producción audiovisual estratégica para liderazgo, cultura organizacional y comunicación corporativa en Chile.",
     images: [
       {
         url: siteUrl + "/og-cover.jpg",
@@ -62,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dekaelo Media — Productora Audiovisual Corporativa",
     description:
-      "Series institucionales, vodcast ejecutivos y contenido audiovisual estratégico.",
+      "Series institucionales, vodcast ejecutivos y video corporativo en Chile.",
     images: [siteUrl + "/og-cover.jpg"],
   },
 
@@ -108,12 +116,14 @@ export default function RootLayout({
     <html lang="es">
       <head>
         {/* Performance */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.google.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
-        <link rel="preconnect" href="https://img.youtube.com" />
+
+        {/* Security / Performance */}
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </head>
 
       <body className="bg-black text-white selection:bg-white selection:text-black">
@@ -149,7 +159,7 @@ export default function RootLayout({
 
         {/* Structured Data */}
         <Script
-          id="schema-organization"
+          id="schema"
           type="application/ld+json"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -161,37 +171,48 @@ export default function RootLayout({
                 url: siteUrl,
                 logo: siteUrl + "/logo.png",
                 description:
-                  "Productora audiovisual corporativa en Chile especializada en series institucionales y vodcast ejecutivos.",
+                  "Productora audiovisual corporativa en Chile especializada en video corporativo y series institucionales.",
                 sameAs: [
                   "https://www.instagram.com/dekaelo_media",
                   "https://www.youtube.com/@dekaelo_media",
                   "https://www.linkedin.com/company/dekaelo-media",
                 ],
-                contactPoint: [
-                  {
-                    "@type": "ContactPoint",
-                    telephone: "+56-9-2008-0031",
-                    contactType: "sales",
-                    areaServed: "CL",
-                    availableLanguage: ["es"],
-                  },
-                ],
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  telephone: "+56-9-2008-0031",
+                  contactType: "sales",
+                  areaServed: "CL",
+                  availableLanguage: ["Spanish"],
+                },
               },
               {
                 "@context": "https://schema.org",
-                "@type": "ProfessionalService",
+                "@type": "WebSite",
                 name: "Dekaelo Media",
-                image: siteUrl + "/og-cover.jpg",
                 url: siteUrl,
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target: siteUrl + "/?q={search_term_string}",
+                  "query-input": "required name=search_term_string",
+                },
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                name: "Producción Audiovisual Corporativa",
+                provider: {
+                  "@type": "Organization",
+                  name: "Dekaelo Media",
+                },
                 areaServed: {
                   "@type": "Country",
                   name: "Chile",
                 },
                 serviceType: [
-                  "Producción audiovisual corporativa",
+                  "Video corporativo",
                   "Serie institucional",
                   "Vodcast ejecutivo",
-                  "Video institucional",
+                  "Comunicación corporativa audiovisual",
                 ],
               },
             ]),
