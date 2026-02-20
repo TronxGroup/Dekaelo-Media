@@ -7,24 +7,23 @@ import { VideoEmbed } from "../components/VideoEmbed";
 
 export const metadata: Metadata = {
   title:
-    "Portafolio — Dekaelo Media | Producción Audiovisual Corporativa",
+    "Portafolio — Dekaelo Media | Producción Audiovisual Corporativa en Chile",
   description:
-    "Portafolio de Dekaelo Media. Series institucionales, vodcast ejecutivos y proyectos documentales producidos para banca, gremios empresariales, salud y tecnología en Chile.",
+    "Portafolio de Dekaelo Media. Series institucionales, documentales corporativos y videos empresariales producidos para banca, educación, industria y tecnología en Chile.",
   keywords: [
-    "portafolio productora audiovisual",
-    "vodcast corporativo Chile",
-    "video institucional Chile",
+    "portafolio productora audiovisual Chile",
+    "video corporativo Chile",
+    "documental institucional",
     "serie corporativa",
     "producción audiovisual ejecutiva",
   ],
   alternates: {
     canonical: "https://www.dekaelomedia.com/portafolio",
   },
-  robots: { index: true, follow: true },
   openGraph: {
     title: "Portafolio — Dekaelo Media",
     description:
-      "Series institucionales, vodcast ejecutivos y proyectos documentales desarrollados para organizaciones de alto perfil.",
+      "Series institucionales, documentales corporativos y videos estratégicos desarrollados para organizaciones de alto perfil.",
     url: "https://www.dekaelomedia.com/portafolio",
     siteName: "Dekaelo Media",
     locale: "es_CL",
@@ -54,37 +53,33 @@ const toEmbed = (url: string) => {
 type Project = {
   title: string;
   youtube: string;
-  logo?: string;
-  desc: string;
   tag: string;
+  desc: string;
 };
 
-/* ------------------------------ CASOS ESTRATÉGICOS ------------------------------ */
+/* ------------------------------ CASOS DESTACADOS ------------------------------ */
 
 const featured: Project[] = [
   {
+    title: "Trewhela’s School — Documental 80 Años",
+    youtube: toEmbed("https://www.youtube.com/watch?v=JKsSN2lo_RU"),
+    tag: "Documental institucional",
+    desc:
+      "Producción documental conmemorativa por los 80 años de Trewhela’s School. Narrativa histórica, entrevistas multicámara y tratamiento cinematográfico aplicado al entorno educacional.",
+  },
+  {
     title: "Banco BICE — Serie institucional (2024–2026)",
     youtube: toEmbed("https://www.youtube.com/watch?v=lyt5wWzPCg8"),
-    logo: "/logo_2.png",
     tag: "Serie corporativa",
     desc:
-      "Temporada continua de vodcast ejecutivo para liderazgo y cultura organizacional. Producción integral: diseño de formato, dirección editorial, grabación multicámara y postproducción.",
+      "Temporada continua de vodcast ejecutivo enfocada en liderazgo y cultura organizacional. Producción integral: diseño de formato, dirección editorial y grabación multicámara.",
   },
   {
-    title: "APCC — Ciclo de entrevistas empresariales",
-    youtube: toEmbed("https://www.youtube.com/watch?v=byTylGKp-uI"),
-    logo: "/logo_9.png",
-    tag: "Serie institucional",
+    title: "Coesam® — Video Corporativo Internacional",
+    youtube: toEmbed("https://www.youtube.com/watch?v=b_sq_6TiwdE"),
+    tag: "Video corporativo",
     desc:
-      "Más de 20 episodios consecutivos orientados a posicionamiento institucional y comunicación estratégica en LinkedIn y YouTube.",
-  },
-  {
-    title: "Reality Day — Serie documental",
-    youtube: toEmbed("https://youtu.be/4xe4CtPW4lI?si=7kAElTNXlME8AYnb"),
-    logo: "/logo_cine.png",
-    tag: "Proyecto editorial",
-    desc:
-      "Serie original desarrollada junto a Tronx TV. Narrativa observacional y estándar cinematográfico aplicado a historias reales de trabajo.",
+      "Producción corporativa orientada a posicionamiento internacional. Mensaje estratégico, entrevistas ejecutivas y tratamiento visual sobrio enfocado en credibilidad global.",
   },
 ];
 
@@ -92,11 +87,18 @@ const featured: Project[] = [
 
 const projects: Project[] = [
   {
-    title: "Fútbol y Parrilla",
-    youtube: toEmbed("https://www.youtube.com/watch?v=PLSfbZU_asQ"),
-    tag: "Vodcast",
+    title: "APCC — Ciclo de entrevistas empresariales",
+    youtube: toEmbed("https://www.youtube.com/watch?v=byTylGKp-uI"),
+    tag: "Serie institucional",
     desc:
-      "+300.000 visualizaciones acumuladas. Conversación multicámara con invitados profesionales.",
+      "Más de 20 episodios consecutivos orientados a posicionamiento institucional y comunicación estratégica en LinkedIn y YouTube.",
+  },
+  {
+    title: "Reality Day — Serie documental",
+    youtube: toEmbed("https://youtu.be/4xe4CtPW4lI?si=7kAElTNXlME8AYnb"),
+    tag: "Proyecto editorial",
+    desc:
+      "Serie original desarrollada junto a Tronx TV. Narrativa observacional y estándar cinematográfico aplicado a historias reales de trabajo.",
   },
   {
     title: "Exploflex — Video institucional",
@@ -108,16 +110,9 @@ const projects: Project[] = [
   {
     title: "U-Payments — Corporate",
     youtube: toEmbed("https://www.youtube.com/watch?v=BAN7i2d01W8"),
-    tag: "Corporativo",
+    tag: "Corporativo internacional",
     desc:
-      "Pieza enfocada en posicionamiento internacional y confianza corporativa.",
-  },
-  {
-    title: "Sistemas Motion Graphics",
-    youtube: toEmbed("https://www.youtube.com/watch?v=ilvi2u_c_a0"),
-    tag: "Motion",
-    desc:
-      "Diseño de lower thirds, sistemas gráficos y paquetes visuales para series continuas.",
+      "Pieza audiovisual enfocada en posicionamiento internacional y fortalecimiento de confianza corporativa.",
   },
 ];
 
@@ -135,42 +130,39 @@ export default function Page() {
 
         <p className="mt-6 text-white/65 leading-relaxed">
           Desde 2023 hemos producido más de <strong>58 episodios</strong> de
-          series institucionales, vodcast ejecutivos y proyectos documentales
-          para organizaciones de alto perfil.
-          <br />
-          Nos especializamos en formatos de continuidad, no en piezas aisladas.
+          series institucionales, documentales corporativos y videos
+          empresariales en Chile.
+        </p>
+
+        <p className="mt-6 text-white/60 leading-relaxed">
+          Nuestro foco está en proyectos con estructura narrativa clara,
+          continuidad estratégica y estándar visual consistente.
         </p>
       </section>
-
 
       {/* MÉTRICAS */}
       <section className="container border-t border-white/10 py-20">
         <div className="grid md:grid-cols-3 gap-14 text-center">
-
           <div>
             <div className="text-5xl font-semibold">58+</div>
             <p className="text-white/50 text-sm mt-3">
               episodios producidos
             </p>
           </div>
-
           <div>
             <div className="text-5xl font-semibold">6</div>
             <p className="text-white/50 text-sm mt-3">
               industrias distintas
             </p>
           </div>
-
           <div>
             <div className="text-5xl font-semibold">3+</div>
             <p className="text-white/50 text-sm mt-3">
               años desarrollando series continuas
             </p>
           </div>
-
         </div>
       </section>
-
 
       {/* CASOS DESTACADOS */}
       <section className="container border-t border-white/10 py-28">
@@ -183,31 +175,22 @@ export default function Page() {
             <article key={p.title}>
               <VideoEmbed src={p.youtube} title={p.title} />
 
-              <div className="mt-4 flex items-center gap-3">
-                {p.logo && (
-                  <Image
-                    src={p.logo}
-                    alt=""
-                    width={90}
-                    height={28}
-                    className="opacity-80"
-                  />
-                )}
-                <span className="text-xs text-white/50">{p.tag}</span>
+              <div className="mt-4 flex items-center justify-between">
+                <h3 className="text-white font-medium">
+                  {p.title}
+                </h3>
+                <span className="text-xs text-white/50">
+                  {p.tag}
+                </span>
               </div>
 
-              <h3 className="mt-3 text-white font-medium">
-                {p.title}
-              </h3>
-
-              <p className="text-white/60 text-sm mt-2">
+              <p className="text-white/60 text-sm mt-3">
                 {p.desc}
               </p>
             </article>
           ))}
         </div>
       </section>
-
 
       {/* OTROS PROYECTOS */}
       <section className="container border-t border-white/10 py-28">
@@ -237,11 +220,10 @@ export default function Page() {
         </div>
       </section>
 
-
       {/* CTA FINAL */}
       <section className="container border-t border-white/10 py-28 text-center">
         <h2 className="text-2xl font-semibold mb-6">
-          ¿Necesitas producir una serie o proyecto similar?
+          ¿Quieres producir un proyecto similar?
         </h2>
 
         <p className="text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
