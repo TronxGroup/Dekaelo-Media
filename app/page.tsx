@@ -220,7 +220,7 @@ export default function Page() {
 
         <p className="text-white/60 leading-relaxed">
           La agenda de rodajes se organiza con anticipación.
-          Durante el período <strong>22 de abril al 5 de mayo de 2026</strong>
+          Durante el período <strong>22 de abril al 5 de mayo de 2026</strong> 
           no se realizarán rodajes presenciales.
           La planificación y postproducción continúan con normalidad.
           Recomendamos coordinar proyectos con anticipación para asegurar
