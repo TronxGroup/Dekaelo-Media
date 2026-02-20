@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Portafolio — Dekaelo Media",
     description:
-      "Series institucionales, documentales corporativos y videos estratégicos desarrollados para organizaciones de alto perfil.",
+      "Series institucionales y videos corporativos desarrollados para organizaciones de alto perfil en Chile.",
     url: "https://www.dekaelomedia.com/portafolio",
     siteName: "Dekaelo Media",
     locale: "es_CL",
@@ -36,14 +36,13 @@ const toEmbed = (url: string) => {
   const patterns = [
     /[?&]v=([a-zA-Z0-9_-]{11})/,
     /youtu\.be\/([a-zA-Z0-9_-]{11})/,
-    /shorts\/([a-zA-Z0-9_-]{11})/,
-    /embed\/([a-zA-Z0-9_-]{11})/,
   ];
 
   for (const p of patterns) {
     const m = url.match(p);
-    if (m?.[1])
+    if (m?.[1]) {
       return `https://www.youtube.com/embed/${m[1]}?rel=0&modestbranding=1&playsinline=1`;
+    }
   }
 
   return url;
@@ -82,16 +81,35 @@ const featured: Project[] = [
   },
 ];
 
-/* ------------------------------ OTROS PROYECTOS ------------------------------ */
+/* ------------------------------ PROYECTOS CORPORATIVOS ------------------------------ */
 
-const projects: Project[] = [
+const corporate: Project[] = [
   {
     title: "iGromi — Serie corporativa industrial",
-    youtube: toEmbed("https://www.youtube.com/watch?v=RF8kLsTZgsU"),
+    youtube: toEmbed("https://www.youtube.com/watch?v=2G7oKXKjPl8"),
     tag: "Serie corporativa",
     desc:
       "Serie audiovisual enfocada en posicionamiento tecnológico e industrial. Claridad técnica combinada con tratamiento cinematográfico.",
   },
+  {
+    title: "Exploflex® — Video Corporativo Sustentable",
+    youtube: toEmbed("https://www.youtube.com/watch?v=RF8kLsTZgsU"),
+    tag: "Video corporativo",
+    desc:
+      "Producción institucional enfocada en sostenibilidad y comunicación estratégica industrial. Dirección ejecutiva y tratamiento visual sobrio.",
+  },
+  {
+    title: "U-Payments — Corporate",
+    youtube: toEmbed("https://www.youtube.com/watch?v=BAN7i2d01W8"),
+    tag: "Corporativo internacional",
+    desc:
+      "Pieza audiovisual orientada a posicionamiento internacional y fortalecimiento de confianza corporativa.",
+  },
+];
+
+/* ------------------------------ PROYECTOS EDITORIALES ------------------------------ */
+
+const editorial: Project[] = [
   {
     title: "APCC — Ciclo de entrevistas empresariales",
     youtube: toEmbed("https://www.youtube.com/watch?v=byTylGKp-uI"),
@@ -108,17 +126,10 @@ const projects: Project[] = [
   },
   {
     title: "Reality Day — Serie documental",
-    youtube: toEmbed("https://youtu.be/4xe4CtPW4lI?si=7kAElTNXlME8AYnb"),
+    youtube: toEmbed("https://youtu.be/4xe4CtPW4lI"),
     tag: "Proyecto editorial",
     desc:
       "Serie original desarrollada junto a Tronx TV. Narrativa observacional aplicada a historias reales de trabajo.",
-  },
-  {
-    title: "U-Payments — Corporate",
-    youtube: toEmbed("https://www.youtube.com/watch?v=BAN7i2d01W8"),
-    tag: "Corporativo internacional",
-    desc:
-      "Pieza audiovisual enfocada en posicionamiento internacional y fortalecimiento de confianza corporativa.",
   },
 ];
 
@@ -136,8 +147,8 @@ export default function Page() {
 
         <p className="mt-6 text-white/65 leading-relaxed">
           Producción audiovisual corporativa en Chile.
-          Series institucionales, documentales corporativos y videos
-          estratégicos desarrollados para organizaciones de alto perfil.
+          Series institucionales, documentales corporativos y videos estratégicos
+          desarrollados para organizaciones de alto perfil.
         </p>
 
         <p className="mt-6 text-white/60 leading-relaxed">
@@ -147,60 +158,13 @@ export default function Page() {
       </section>
 
       {/* CASOS ESTRATÉGICOS */}
-      <section className="container border-t border-white/10 py-28">
-        <h2 className="text-sm uppercase tracking-widest text-white/40 mb-16">
-          Casos estratégicos
-        </h2>
+      <Section title="Casos estratégicos" items={featured} />
 
-        <div className="grid md:grid-cols-3 gap-12">
-          {featured.map((p) => (
-            <article key={p.title}>
-              <VideoEmbed src={p.youtube} title={p.title} />
+      {/* PROYECTOS CORPORATIVOS */}
+      <Section title="Proyectos corporativos" items={corporate} />
 
-              <div className="mt-4 flex items-center justify-between">
-                <h3 className="text-white font-medium">
-                  {p.title}
-                </h3>
-                <span className="text-xs text-white/50">
-                  {p.tag}
-                </span>
-              </div>
-
-              <p className="text-white/60 text-sm mt-3">
-                {p.desc}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* OTROS PROYECTOS */}
-      <section className="container border-t border-white/10 py-28">
-        <h2 className="text-sm uppercase tracking-widest text-white/40 mb-16">
-          Otros proyectos
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-10">
-          {projects.map((p) => (
-            <article key={p.title}>
-              <VideoEmbed src={p.youtube} title={p.title} />
-
-              <div className="mt-3 flex items-center justify-between">
-                <h3 className="text-white font-medium">
-                  {p.title}
-                </h3>
-                <span className="text-xs text-white/50">
-                  {p.tag}
-                </span>
-              </div>
-
-              <p className="text-white/60 text-sm mt-2">
-                {p.desc}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
+      {/* PROYECTOS EDITORIALES */}
+      <Section title="Proyectos editoriales" items={editorial} />
 
       {/* CTA FINAL */}
       <section className="container border-t border-white/10 py-28 text-center">
@@ -222,5 +186,32 @@ export default function Page() {
       </section>
 
     </main>
+  );
+}
+
+/* ------------------------------ REUSABLE SECTION ------------------------------ */
+
+function Section({ title, items }: { title: string; items: Project[] }) {
+  return (
+    <section className="container border-t border-white/10 py-28">
+      <h2 className="text-sm uppercase tracking-widest text-white/40 mb-16">
+        {title}
+      </h2>
+
+      <div className="grid md:grid-cols-3 gap-12">
+        {items.map((p) => (
+          <article key={p.title}>
+            <VideoEmbed src={p.youtube} title={p.title} />
+
+            <div className="mt-4 flex items-center justify-between">
+              <h3 className="text-white font-medium">{p.title}</h3>
+              <span className="text-xs text-white/50">{p.tag}</span>
+            </div>
+
+            <p className="text-white/60 text-sm mt-3">{p.desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
