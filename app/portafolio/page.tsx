@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { VideoEmbed } from "../components/VideoEmbed";
 
@@ -57,7 +56,7 @@ type Project = {
   desc: string;
 };
 
-/* ------------------------------ CASOS DESTACADOS ------------------------------ */
+/* ------------------------------ CASOS ESTRATÉGICOS ------------------------------ */
 
 const featured: Project[] = [
   {
@@ -65,21 +64,21 @@ const featured: Project[] = [
     youtube: toEmbed("https://www.youtube.com/watch?v=JKsSN2lo_RU"),
     tag: "Documental institucional",
     desc:
-      "Producción documental conmemorativa por los 80 años de Trewhela’s School. Narrativa histórica, entrevistas multicámara y tratamiento cinematográfico aplicado al entorno educacional.",
+      "Producción documental conmemorativa con narrativa histórica, entrevistas multicámara y tratamiento cinematográfico aplicado al entorno educacional.",
   },
   {
     title: "Banco BICE — Serie institucional (2024–2026)",
     youtube: toEmbed("https://www.youtube.com/watch?v=lyt5wWzPCg8"),
     tag: "Serie corporativa",
     desc:
-      "Temporada continua de vodcast ejecutivo enfocada en liderazgo y cultura organizacional. Producción integral: diseño de formato, dirección editorial y grabación multicámara.",
+      "Temporada continua de vodcast ejecutivo enfocada en liderazgo y cultura organizacional. Diseño de formato, dirección editorial y producción integral.",
   },
   {
     title: "Coesam® — Video Corporativo Internacional",
     youtube: toEmbed("https://www.youtube.com/watch?v=b_sq_6TiwdE"),
     tag: "Video corporativo",
     desc:
-      "Producción corporativa orientada a posicionamiento internacional. Mensaje estratégico, entrevistas ejecutivas y tratamiento visual sobrio enfocado en credibilidad global.",
+      "Producción orientada a posicionamiento internacional. Mensaje estratégico y tratamiento visual sobrio enfocado en credibilidad global.",
   },
 ];
 
@@ -87,25 +86,32 @@ const featured: Project[] = [
 
 const projects: Project[] = [
   {
+    title: "iGromi — Serie corporativa industrial",
+    youtube: toEmbed("https://www.youtube.com/watch?v=RF8kLsTZgsU"),
+    tag: "Serie corporativa",
+    desc:
+      "Serie audiovisual enfocada en posicionamiento tecnológico e industrial. Claridad técnica combinada con tratamiento cinematográfico.",
+  },
+  {
     title: "APCC — Ciclo de entrevistas empresariales",
     youtube: toEmbed("https://www.youtube.com/watch?v=byTylGKp-uI"),
     tag: "Serie institucional",
     desc:
-      "Más de 20 episodios consecutivos orientados a posicionamiento institucional y comunicación estratégica en LinkedIn y YouTube.",
+      "Más de 20 episodios consecutivos orientados a posicionamiento institucional y comunicación estratégica digital.",
+  },
+  {
+    title: "Fútbol y Parrilla — Vodcast",
+    youtube: toEmbed("https://www.youtube.com/watch?v=PLSfbZU_asQ"),
+    tag: "Vodcast",
+    desc:
+      "+300.000 visualizaciones acumuladas. Producción multicámara con invitados profesionales y estructura de conversación dinámica.",
   },
   {
     title: "Reality Day — Serie documental",
     youtube: toEmbed("https://youtu.be/4xe4CtPW4lI?si=7kAElTNXlME8AYnb"),
     tag: "Proyecto editorial",
     desc:
-      "Serie original desarrollada junto a Tronx TV. Narrativa observacional y estándar cinematográfico aplicado a historias reales de trabajo.",
-  },
-  {
-    title: "Exploflex — Video institucional",
-    youtube: toEmbed("https://www.youtube.com/watch?v=RF8kLsTZgsU"),
-    tag: "Corporativo",
-    desc:
-      "Producción industrial orientada a presentaciones estratégicas y comunicación institucional.",
+      "Serie original desarrollada junto a Tronx TV. Narrativa observacional aplicada a historias reales de trabajo.",
   },
   {
     title: "U-Payments — Corporate",
@@ -129,45 +135,21 @@ export default function Page() {
         </h1>
 
         <p className="mt-6 text-white/65 leading-relaxed">
-          Desde 2023 hemos producido más de <strong>58 episodios</strong> de
-          series institucionales, documentales corporativos y videos
-          empresariales en Chile.
+          Producción audiovisual corporativa en Chile.
+          Series institucionales, documentales corporativos y videos
+          estratégicos desarrollados para organizaciones de alto perfil.
         </p>
 
         <p className="mt-6 text-white/60 leading-relaxed">
-          Nuestro foco está en proyectos con estructura narrativa clara,
-          continuidad estratégica y estándar visual consistente.
+          Más de <strong>58 episodios</strong> producidos desde 2023,
+          combinando claridad estratégica con estándar visual consistente.
         </p>
       </section>
 
-      {/* MÉTRICAS */}
-      <section className="container border-t border-white/10 py-20">
-        <div className="grid md:grid-cols-3 gap-14 text-center">
-          <div>
-            <div className="text-5xl font-semibold">58+</div>
-            <p className="text-white/50 text-sm mt-3">
-              episodios producidos
-            </p>
-          </div>
-          <div>
-            <div className="text-5xl font-semibold">6</div>
-            <p className="text-white/50 text-sm mt-3">
-              industrias distintas
-            </p>
-          </div>
-          <div>
-            <div className="text-5xl font-semibold">3+</div>
-            <p className="text-white/50 text-sm mt-3">
-              años desarrollando series continuas
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* CASOS DESTACADOS */}
+      {/* CASOS ESTRATÉGICOS */}
       <section className="container border-t border-white/10 py-28">
         <h2 className="text-sm uppercase tracking-widest text-white/40 mb-16">
-          Casos destacados
+          Casos estratégicos
         </h2>
 
         <div className="grid md:grid-cols-3 gap-12">
@@ -223,20 +205,19 @@ export default function Page() {
       {/* CTA FINAL */}
       <section className="container border-t border-white/10 py-28 text-center">
         <h2 className="text-2xl font-semibold mb-6">
-          ¿Quieres producir un proyecto similar?
+          ¿Necesitas producir un video corporativo o una serie institucional?
         </h2>
 
         <p className="text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Diseñamos formatos sostenibles en el tiempo y ejecutamos
-          producción audiovisual con estándar corporativo y criterio
-          cinematográfico.
+          Diseñamos formatos sostenibles y ejecutamos producción audiovisual
+          con estándar corporativo y criterio cinematográfico.
         </p>
 
         <Link
           href="/contacto"
           className="border border-white/30 px-8 py-3 text-sm hover:bg-white hover:text-black transition"
         >
-          Conversar proyecto
+          Solicitar propuesta
         </Link>
       </section>
 
