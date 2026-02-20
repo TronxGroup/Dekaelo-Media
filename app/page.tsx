@@ -53,10 +53,10 @@ export default function Page() {
           </Link>
 
           <Link
-            href="/video-corporativo-chile"
+            href="/servicios"
             className="border border-white/10 px-6 py-3 text-sm text-white/60 hover:text-white transition"
           >
-            Ver video corporativo
+            Ver servicios
           </Link>
         </div>
       </section>
