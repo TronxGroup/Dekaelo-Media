@@ -60,7 +60,7 @@ const featured: Project[] = [
   {
     title: "Banco BICE — Serie institucional (2024–2026)",
     youtube: toEmbed("https://www.youtube.com/watch?v=lyt5wWzPCg8"),
-    tag: "Serie corporativa",
+    tag: "Vodcast",
     desc:
       "Temporada continua de vodcast ejecutivo enfocada en liderazgo y cultura organizacional. Diseño de formato, dirección editorial y producción integral.",
   },
@@ -86,7 +86,7 @@ const projects: Project[] = [
   {
     title: "iGromi — Serie corporativa industrial",
     youtube: toEmbed("https://www.youtube.com/watch?v=2G7oKXKjPl8"),
-    tag: "Serie corporativa",
+    tag: "Vodcast",
     desc:
       "Serie audiovisual enfocada en posicionamiento tecnológico e industrial. Claridad técnica combinada con tratamiento cinematográfico.",
   },
