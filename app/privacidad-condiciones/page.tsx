@@ -1,102 +1,185 @@
-export const metadata = {
-  title: 'Privacidad y Condiciones | Dekaelo Media',
+import type { Metadata } from "next";
+import Link from "next/link";
+
+const SITE_URL = "https://www.dekaelomedia.com";
+const EMAIL = "info@dekaelomedia.com";
+
+export const metadata: Metadata = {
+  title: "Privacidad y Condiciones — Dekaelo Media",
   description:
-    'Política de privacidad y términos de uso de los servicios de Dekaelo Media.',
+    "Política de privacidad y condiciones de uso del sitio web de Dekaelo Media.",
+  alternates: {
+    canonical: `${SITE_URL}/privacidad-y-condiciones`,
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function Page() {
   return (
-    <section className="section container max-w-4xl">
-      <h1 className="h2 mb-6">Privacidad y Condiciones</h1>
+    <main className="bg-black text-white">
+      <section className="container max-w-3xl py-28">
 
-      <p className="text-white/70 mb-4">
-        En <strong>Dekaelo Media</strong> valoramos la confianza de nuestros clientes y usuarios.
-        Este documento reúne nuestra <strong>Política de Privacidad</strong> y nuestros
-        <strong> Términos & Condiciones</strong>, que regulan el uso de nuestro sitio web y
-        servicios audiovisuales.
-      </p>
+        <h1 className="text-4xl md:text-5xl font-semibold">
+          Privacidad y Condiciones
+        </h1>
 
-      {/* PRIVACIDAD */}
-      <h2 className="h3 mt-10 mb-3">1. Política de Privacidad</h2>
+        <p className="mt-6 text-white/60 text-sm">
+          Última actualización: Enero 2026
+        </p>
 
-      <h3 className="font-semibold mt-6 mb-2">1.1 Datos recopilados</h3>
-      <p className="text-white/70 mb-4">
-        Podemos recopilar datos como nombre, correo electrónico, teléfono u otra información entregada
-        voluntariamente al usar formularios de contacto, suscribirse a campañas o contratar servicios.
-      </p>
+        {/* INTRO */}
+        <section className="mt-16 space-y-6 text-white/70 leading-relaxed">
+          <p>
+            El presente documento regula el uso del sitio web
+            <strong> Dekaelo Media</strong> (www.dekaelomedia.com),
+            así como el tratamiento de datos personales recopilados
+            a través de los canales de contacto disponibles.
+          </p>
 
-      <h3 className="font-semibold mt-6 mb-2">1.2 Uso de la información</h3>
-      <p className="text-white/70 mb-4">
-        La información será utilizada exclusivamente para fines relacionados con la prestación de
-        servicios, gestión de relaciones comerciales, envío de comunicaciones y mejoras en nuestros
-        procesos internos.
-      </p>
+          <p>
+            Al acceder y utilizar este sitio, el usuario acepta
+            las condiciones aquí descritas.
+          </p>
+        </section>
 
-      <h3 className="font-semibold mt-6 mb-2">1.3 Almacenamiento y seguridad</h3>
-      <p className="text-white/70 mb-4">
-        Los datos se almacenan en plataformas seguras y de acceso restringido. No vendemos ni
-        compartimos información con terceros, salvo obligación legal o proveedores que nos ayudan a
-        operar los servicios (ej: hosting, CRM, email marketing).
-      </p>
+        {/* DATOS PERSONALES */}
+        <section className="mt-20 border-t border-white/10 pt-12 space-y-6">
+          <h2 className="text-xl font-semibold">
+            1. Tratamiento de datos personales
+          </h2>
 
-      <h3 className="font-semibold mt-6 mb-2">1.4 Derechos del usuario</h3>
-      <p className="text-white/70 mb-4">
-        Todo usuario puede solicitar acceso, rectificación o eliminación de sus datos escribiendo a{' '}
-        <a href="mailto:info@dekaelomedia.com" className="underline">
-          info@dekaelomedia.com
-        </a>.
-      </p>
+          <p className="text-white/70 leading-relaxed">
+            Los datos entregados voluntariamente por el usuario a través
+            de formularios, correo electrónico o WhatsApp (nombre,
+            organización, correo, teléfono u otra información relevante)
+            serán utilizados exclusivamente para responder consultas,
+            evaluar proyectos y mantener comunicación comercial.
+          </p>
 
-      {/* CONDICIONES */}
-      <h2 className="h3 mt-10 mb-3">2. Términos y Condiciones</h2>
+          <p className="text-white/70 leading-relaxed">
+            Dekaelo Media no vende, arrienda ni comparte datos personales
+            con terceros, salvo obligación legal.
+          </p>
 
-      <h3 className="font-semibold mt-6 mb-2">2.1 Propiedad intelectual</h3>
-      <p className="text-white/70 mb-4">
-        Todo material audiovisual, gráfico o escrito creado por Dekaelo Media es propiedad de la
-        empresa, salvo acuerdo contractual distinto. El cliente adquiere el derecho de uso para los
-        fines definidos, pero no puede revender ni sublicenciar sin autorización.
-      </p>
+          <p className="text-white/70 leading-relaxed">
+            El usuario puede solicitar la eliminación o actualización
+            de sus datos escribiendo a <a href={`mailto:${EMAIL}`} className="underline">{EMAIL}</a>.
+          </p>
+        </section>
 
-      <h3 className="font-semibold mt-6 mb-2">2.2 Uso de contenidos</h3>
-      <p className="text-white/70 mb-4">
-        El cliente es responsable del uso de los contenidos entregados. Dekaelo Media no se hace
-        responsable por ediciones, modificaciones o distribuciones no autorizadas.
-      </p>
+        {/* COOKIES */}
+        <section className="mt-20 border-t border-white/10 pt-12 space-y-6">
+          <h2 className="text-xl font-semibold">
+            2. Uso de cookies y herramientas analíticas
+          </h2>
 
-      <h3 className="font-semibold mt-6 mb-2">2.3 Confidencialidad</h3>
-      <p className="text-white/70 mb-4">
-        Toda la información compartida por el cliente durante la producción será tratada de manera
-        confidencial y utilizada solo para los servicios contratados.
-      </p>
+          <p className="text-white/70 leading-relaxed">
+            Este sitio utiliza herramientas de análisis como Google Analytics
+            y Google Ads con el fin de medir tráfico, comportamiento de usuario
+            y efectividad de campañas publicitarias.
+          </p>
 
-      <h3 className="font-semibold mt-6 mb-2">2.4 Plazos y entregas</h3>
-      <p className="text-white/70 mb-4">
-        Los plazos de entrega se establecerán en cada propuesta o contrato. Dekaelo Media no es
-        responsable de retrasos causados por demoras en aprobaciones, pagos o envío de insumos por
-        parte del cliente.
-      </p>
+          <p className="text-white/70 leading-relaxed">
+            Estas herramientas pueden recopilar información anónima como
+            dirección IP (anonimizada), tipo de dispositivo, navegador y
+            páginas visitadas.
+          </p>
 
-      <h3 className="font-semibold mt-6 mb-2">2.5 Pagos</h3>
-      <p className="text-white/70 mb-4">
-        Las condiciones de pago se detallarán en cada propuesta. El incumplimiento puede generar
-        suspensión del servicio y retención de los materiales hasta regularizar la situación.
-      </p>
+          <p className="text-white/70 leading-relaxed">
+            El usuario puede configurar su navegador para bloquear cookies,
+            aunque esto podría afectar la experiencia de navegación.
+          </p>
+        </section>
 
-      <h3 className="font-semibold mt-6 mb-2">2.6 Limitación de responsabilidad</h3>
-      <p className="text-white/70 mb-4">
-        Dekaelo Media no será responsable por daños indirectos, pérdida de beneficios o perjuicios
-        derivados del uso de los contenidos.
-      </p>
+        {/* PROPIEDAD INTELECTUAL */}
+        <section className="mt-20 border-t border-white/10 pt-12 space-y-6">
+          <h2 className="text-xl font-semibold">
+            3. Propiedad intelectual
+          </h2>
 
-      <h3 className="font-semibold mt-6 mb-2">2.7 Legislación aplicable</h3>
-      <p className="text-white/70 mb-8">
-        Estas condiciones se rigen por las leyes de la República de Chile. Cualquier disputa será
-        sometida a los tribunales competentes de Santiago.
-      </p>
+          <p className="text-white/70 leading-relaxed">
+            Todos los contenidos publicados en este sitio —incluyendo textos,
+            videos, imágenes, logotipos, gráficos y estructura visual—
+            son propiedad de Dekaelo Media o de sus respectivos clientes,
+            y se encuentran protegidos por la legislación vigente.
+          </p>
 
-      <p className="text-sm text-white/60">
-        Última actualización: {new Date().getFullYear()}
-      </p>
-    </section>
+          <p className="text-white/70 leading-relaxed">
+            Queda prohibida su reproducción, distribución o uso sin autorización
+            expresa por escrito.
+          </p>
+        </section>
+
+        {/* RESPONSABILIDAD */}
+        <section className="mt-20 border-t border-white/10 pt-12 space-y-6">
+          <h2 className="text-xl font-semibold">
+            4. Limitación de responsabilidad
+          </h2>
+
+          <p className="text-white/70 leading-relaxed">
+            Dekaelo Media no garantiza la disponibilidad permanente del sitio
+            ni la ausencia de errores técnicos, aunque se adoptan medidas
+            razonables para su correcto funcionamiento.
+          </p>
+
+          <p className="text-white/70 leading-relaxed">
+            El uso del sitio es responsabilidad exclusiva del usuario.
+          </p>
+        </section>
+
+        {/* ENLACES EXTERNOS */}
+        <section className="mt-20 border-t border-white/10 pt-12 space-y-6">
+          <h2 className="text-xl font-semibold">
+            5. Enlaces externos
+          </h2>
+
+          <p className="text-white/70 leading-relaxed">
+            Este sitio puede contener enlaces a plataformas externas como
+            YouTube, Instagram o LinkedIn. Dekaelo Media no es responsable
+            de las políticas de privacidad ni del contenido publicado
+            en dichos sitios.
+          </p>
+        </section>
+
+        {/* MODIFICACIONES */}
+        <section className="mt-20 border-t border-white/10 pt-12 space-y-6">
+          <h2 className="text-xl font-semibold">
+            6. Modificaciones
+          </h2>
+
+          <p className="text-white/70 leading-relaxed">
+            Dekaelo Media se reserva el derecho de modificar la presente
+            política en cualquier momento. Las actualizaciones serán
+            publicadas en esta misma página.
+          </p>
+        </section>
+
+        {/* CONTACTO */}
+        <section className="mt-20 border-t border-white/10 pt-12 space-y-6">
+          <h2 className="text-xl font-semibold">
+            7. Contacto
+          </h2>
+
+          <p className="text-white/70 leading-relaxed">
+            Para consultas relacionadas con privacidad o condiciones
+            de uso, puedes escribir a:
+          </p>
+
+          <p className="text-white/70">
+            <a href={`mailto:${EMAIL}`} className="underline">
+              {EMAIL}
+            </a>
+          </p>
+        </section>
+
+        {/* VOLVER */}
+        <div className="mt-24 text-sm text-white/40">
+          <Link href="/" className="hover:text-white transition">
+            ← Volver al inicio
+          </Link>
+        </div>
+
+      </section>
+    </main>
   );
 }
