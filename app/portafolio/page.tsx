@@ -33,19 +33,11 @@ export const metadata: Metadata = {
 /* ---------------------------------- utils --------------------------------- */
 
 const toEmbed = (url: string) => {
-  const patterns = [
-    /[?&]v=([a-zA-Z0-9_-]{11})/,
-    /youtu\.be\/([a-zA-Z0-9_-]{11})/,
-  ];
-
-  for (const p of patterns) {
-    const m = url.match(p);
-    if (m?.[1]) {
-      return `https://www.youtube.com/embed/${m[1]}?rel=0&modestbranding=1&playsinline=1`;
-    }
-  }
-
-  return url;
+  const match = url.match(/[?&]v=([a-zA-Z0-9_-]{11})|youtu\.be\/([a-zA-Z0-9_-]{11})/);
+  const id = match?.[1] || match?.[2];
+  return id
+    ? `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&playsinline=1`
+    : url;
 };
 
 type Project = {
@@ -81,15 +73,36 @@ const featured: Project[] = [
   },
 ];
 
-/* ------------------------------ PROYECTOS CORPORATIVOS ------------------------------ */
+/* ------------------------------ OTROS PROYECTOS ------------------------------ */
 
-const corporate: Project[] = [
+const projects: Project[] = [
+  {
+    title: "Fútbol y Parrilla — Vodcast",
+    youtube: toEmbed("https://www.youtube.com/watch?v=PLSfbZU_asQ"),
+    tag: "Vodcast",
+    desc:
+      "+300.000 visualizaciones acumuladas. Producción multicámara con invitados profesionales y estructura de conversación dinámica.",
+  },
   {
     title: "iGromi — Serie corporativa industrial",
     youtube: toEmbed("https://www.youtube.com/watch?v=2G7oKXKjPl8"),
     tag: "Serie corporativa",
     desc:
       "Serie audiovisual enfocada en posicionamiento tecnológico e industrial. Claridad técnica combinada con tratamiento cinematográfico.",
+  },
+  {
+    title: "Reality Day — Serie documental",
+    youtube: toEmbed("https://youtu.be/4xe4CtPW4lI"),
+    tag: "Proyecto editorial",
+    desc:
+      "Serie original desarrollada junto a Tronx TV. Narrativa observacional aplicada a historias reales de trabajo.",
+  },
+  {
+    title: "APCC — Ciclo de entrevistas empresariales",
+    youtube: toEmbed("https://www.youtube.com/watch?v=byTylGKp-uI"),
+    tag: "Serie institucional",
+    desc:
+      "Más de 20 episodios consecutivos orientados a posicionamiento institucional y comunicación estratégica digital.",
   },
   {
     title: "Exploflex® — Video Corporativo Sustentable",
@@ -104,32 +117,6 @@ const corporate: Project[] = [
     tag: "Corporativo internacional",
     desc:
       "Pieza audiovisual orientada a posicionamiento internacional y fortalecimiento de confianza corporativa.",
-  },
-];
-
-/* ------------------------------ PROYECTOS EDITORIALES ------------------------------ */
-
-const editorial: Project[] = [
-  {
-    title: "APCC — Ciclo de entrevistas empresariales",
-    youtube: toEmbed("https://www.youtube.com/watch?v=byTylGKp-uI"),
-    tag: "Serie institucional",
-    desc:
-      "Más de 20 episodios consecutivos orientados a posicionamiento institucional y comunicación estratégica digital.",
-  },
-  {
-    title: "Fútbol y Parrilla — Vodcast",
-    youtube: toEmbed("https://www.youtube.com/watch?v=PLSfbZU_asQ"),
-    tag: "Vodcast",
-    desc:
-      "+300.000 visualizaciones acumuladas. Producción multicámara con invitados profesionales y estructura de conversación dinámica.",
-  },
-  {
-    title: "Reality Day — Serie documental",
-    youtube: toEmbed("https://youtu.be/4xe4CtPW4lI"),
-    tag: "Proyecto editorial",
-    desc:
-      "Serie original desarrollada junto a Tronx TV. Narrativa observacional aplicada a historias reales de trabajo.",
   },
 ];
 
@@ -160,11 +147,8 @@ export default function Page() {
       {/* CASOS ESTRATÉGICOS */}
       <Section title="Casos estratégicos" items={featured} />
 
-      {/* PROYECTOS CORPORATIVOS */}
-      <Section title="Proyectos corporativos" items={corporate} />
-
-      {/* PROYECTOS EDITORIALES */}
-      <Section title="Proyectos editoriales" items={editorial} />
+      {/* OTROS PROYECTOS */}
+      <Section title="Otros proyectos" items={projects} />
 
       {/* CTA FINAL */}
       <section className="container border-t border-white/10 py-28 text-center">
