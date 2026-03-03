@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Video Corporativo y Comunicación Interna | Dekaelo Media",
+  title: "Video Corporativo Profesional para Empresas | Dekaelo Media Chile",
   description:
-    "Producción de videos corporativos, institucionales y cápsulas internas para empresas en Chile. Dirección profesional y entrega clara.",
+    "Producción de videos corporativos e institucionales para empresas en Chile. Propuesta en 48 horas. Desde $1.200.000 + IVA.",
 };
 
 export default function Page() {
@@ -16,70 +16,87 @@ export default function Page() {
       <section className="relative min-h-[75vh] flex items-center">
         <Image
           src="/images/dekaelo-entrevista.jpg"
-          alt="Grabación video corporativo"
+          alt="Grabación video corporativo profesional"
           fill
           priority
           className="object-cover opacity-40"
         />
         <div className="relative container max-w-4xl py-28">
           <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-            Video corporativo profesional
+            Video corporativo profesional para empresas
           </h1>
 
           <p className="mt-6 text-lg text-white/80">
-            Producción audiovisual para empresas que necesitan comunicar con
-            claridad, orden y estándar profesional.
+            Producción audiovisual clara, sobria y con estándar cinematográfico
+            aplicada al entorno corporativo.
+          </p>
+
+          <p className="mt-4 text-sm text-white/60">
+            Propuesta en 48 horas. Producción en 2–4 semanas.
+            Inversión referencial desde $1.200.000 + IVA.
           </p>
 
           <div className="mt-10">
             <Link
               href="/contacto"
-              className="border border-white/40 px-8 py-3 text-sm hover:bg-white hover:text-black transition"
+              className="border border-white px-8 py-3 text-sm hover:bg-white hover:text-black transition"
             >
-              Solicitar propuesta
+              Recibir propuesta en 48 horas
             </Link>
           </div>
         </div>
       </section>
 
+      {/* DIFERENCIAL */}
+      <section className="container border-t border-white/10 py-24 max-w-5xl">
+        <h2 className="text-2xl font-semibold mb-8">
+          Producción con estructura, no improvisación
+        </h2>
+
+        <p className="text-white/70 leading-relaxed">
+          No desarrollamos piezas aisladas sin criterio estratégico.
+          Diseñamos cada proyecto en función de un objetivo comunicacional claro,
+          manteniendo dirección profesional, procesos ordenados y tratamiento visual consistente.
+        </p>
+      </section>
 
       {/* SERVICIOS */}
-      <section className="container border-t border-white/10 py-28 max-w-6xl">
+      <section className="container border-t border-white/10 py-24 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-12">
-          ¿Qué producimos?
+          ¿Qué tipo de proyectos realizamos?
         </h2>
 
         <div className="grid md:grid-cols-3 gap-14 text-white/70 text-sm leading-relaxed">
 
           <div>
             <h3 className="text-white font-medium mb-4">
-              Video institucional
+              Video institucional empresa
             </h3>
-            Producción integral para sitio web, presentaciones ejecutivas,
-            hitos organizacionales y posicionamiento institucional.
+            Presentaciones corporativas, posicionamiento institucional
+            y contenido para sitio web.
           </div>
 
           <div>
             <h3 className="text-white font-medium mb-4">
               Comunicación interna
             </h3>
-            Cápsulas estratégicas para liderazgo, cultura organizacional
-            y alineamiento transversal.
+            Cápsulas para liderazgo, cultura organizacional
+            y alineamiento estratégico.
           </div>
 
           <div>
             <h3 className="text-white font-medium mb-4">
               Entrevistas ejecutivas
             </h3>
-            Formato profesional para presidencias, gerencias y equipos directivos.
+            Formato profesional para gerencias,
+            presidencias y equipos directivos.
           </div>
 
         </div>
       </section>
 
-
-      {/* VIDEO REEL */}
-      <section className="container border-t border-white/10 py-28 max-w-4xl">
+      {/* REEL */}
+      <section className="container border-t border-white/10 py-24 max-w-4xl">
         <h2 className="text-sm uppercase tracking-widest text-white/40 mb-10">
           Reel institucional
         </h2>
@@ -94,52 +111,50 @@ export default function Page() {
         </div>
       </section>
 
-
       {/* PROCESO */}
-      <section className="container border-t border-white/10 py-28 max-w-6xl">
+      <section className="container border-t border-white/10 py-24 max-w-6xl">
         <h2 className="text-sm uppercase tracking-widest text-white/40 mb-16">
-          Proceso de trabajo
+          Proceso claro y estructurado
         </h2>
 
         <div className="grid md:grid-cols-4 gap-12 text-white/70 text-sm leading-relaxed">
 
           <div>
-            <div className="text-white font-medium mb-3">01 — Brief</div>
-            Definición clara de objetivo, audiencia y mensaje.
+            <div className="text-white font-medium mb-3">01 — Reunión estratégica</div>
+            Definición de objetivo, audiencia y alcance.
           </div>
 
           <div>
-            <div className="text-white font-medium mb-3">02 — Diseño</div>
-            Estructura narrativa y planificación de rodaje.
+            <div className="text-white font-medium mb-3">02 — Propuesta</div>
+            Envío de estructura y presupuesto en 48 horas.
           </div>
 
           <div>
             <div className="text-white font-medium mb-3">03 — Producción</div>
-            Grabación con equipo profesional y dirección precisa.
+            Rodaje profesional con dirección precisa.
           </div>
 
           <div>
             <div className="text-white font-medium mb-3">04 — Entrega</div>
-            Edición, color, sonido y formatos optimizados.
+            Edición completa, color, sonido y formatos optimizados.
           </div>
 
         </div>
       </section>
 
-
       {/* PARA QUIÉN ES */}
-      <section className="container border-t border-white/10 py-28 max-w-4xl">
+      <section className="container border-t border-white/10 py-24 max-w-4xl">
         <h2 className="text-2xl font-semibold mb-6">
           ¿Para quién es este servicio?
         </h2>
 
         <div className="text-white/70 leading-relaxed space-y-4">
           <p>• Empresas medianas y grandes.</p>
-          <p>• Áreas de marketing y comunicaciones internas.</p>
-          <p>• Organizaciones que requieren piezas audiovisuales claras y profesionales.</p>
+          <p>• Clínicas y redes de salud privadas.</p>
+          <p>• Banca y organizaciones con comunicación estructurada.</p>
+          <p>• Equipos de marketing o comunicaciones internas.</p>
         </div>
       </section>
-
 
       {/* CTA FINAL */}
       <section className="container border-t border-white/10 py-32 text-center max-w-3xl">
@@ -148,15 +163,15 @@ export default function Page() {
         </h2>
 
         <p className="text-white/50 mb-10">
-          Cuéntanos objetivo, fechas y alcance.
-          Diseñamos propuesta clara y ajustada a tu organización.
+          Envíanos contexto, fechas y objetivo.
+          Recibirás una propuesta clara en menos de 48 horas.
         </p>
 
         <Link
           href="/contacto"
-          className="border border-white/40 px-10 py-4 text-sm hover:bg-white hover:text-black transition"
+          className="border border-white px-10 py-4 text-sm hover:bg-white hover:text-black transition"
         >
-          Solicitar propuesta
+          Solicitar propuesta ejecutiva
         </Link>
       </section>
 
