@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { VideoEmbed } from "../components/VideoEmbed";
 import { ClientLogos } from "../components/ClientLogos";
 
 export default function Page() {
   const [loading, setLoading] = useState(false);
-  const [sent, setSent] = useState(false);
+  const router = useRouter();
 
   async function handleSubmit(e: any) {
     e.preventDefault();
@@ -20,8 +21,7 @@ export default function Page() {
     });
 
     if (res.ok) {
-      setSent(true);
-      e.target.reset();
+      router.push("/video-corporativo-gracias");
     }
 
     setLoading(false);
@@ -33,14 +33,12 @@ export default function Page() {
       {/* HERO */}
       <section className="container max-w-4xl py-32 text-center">
         <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-          Video corporativo profesional
-          <br />
-          para organizaciones
+          Video corporativo profesional en Chile
         </h1>
 
-        <p className="mt-8 text-white/65 text-lg">
-          Producción audiovisual institucional para banca,
-          salud, gremios y empresas B2B en Chile.
+        <p className="mt-8 text-white/70 text-lg">
+          Producción audiovisual institucional para empresas que necesitan
+          comunicar con claridad, liderazgo y estándar profesional.
         </p>
 
         <div className="mt-8 text-sm text-white/50">
@@ -49,14 +47,14 @@ export default function Page() {
 
         <a
           href="#formulario"
-          className="mt-10 inline-block border border-white/30 px-8 py-3 hover:bg-white hover:text-black transition"
+          className="mt-10 inline-block border border-white/40 px-8 py-3 hover:bg-white hover:text-black transition"
         >
           Solicitar propuesta
         </a>
       </section>
 
-      {/* LOGOS */}
-      <section className="border-t border-white/10 py-16">
+      {/* CLIENTES */}
+      <section className="border-t border-white/10 py-24">
         <div className="container">
           <ClientLogos />
         </div>
@@ -75,7 +73,37 @@ export default function Page() {
           </div>
           <div>
             <div className="text-5xl font-semibold">3+</div>
-            <p className="text-white/50">años de continuidad</p>
+            <p className="text-white/50">años desarrollando series</p>
+          </div>
+        </div>
+      </section>
+
+      {/* QUÉ INCLUYE */}
+      <section className="container border-t border-white/10 py-24 max-w-5xl">
+        <h2 className="text-2xl font-semibold mb-10 text-center">
+          Qué incluye tu video corporativo
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-12 text-white/70 text-sm leading-relaxed">
+          <div>
+            • Reunión estratégica inicial <br />
+            • Definición clara de mensaje y audiencia <br />
+            • 1 jornada de grabación profesional <br />
+            • Dirección y puesta en escena cuidada <br />
+            • Iluminación y sonido profesional <br />
+            • Edición completa y corrección de color <br />
+            • Música licenciada <br />
+            • Entrega optimizada para web o uso interno
+          </div>
+
+          <div>
+            Ideal para:
+            <br /><br />
+            • Video institucional empresa <br />
+            • Comunicación interna ejecutiva <br />
+            • Presentación a directorio <br />
+            • Marca empleadora <br />
+            • Lanzamientos corporativos
           </div>
         </div>
       </section>
@@ -84,25 +112,32 @@ export default function Page() {
       <section className="container border-t border-white/10 py-24 max-w-4xl">
         <VideoEmbed
           src="https://www.youtube.com/embed/uul8LNP6BbQ?rel=0"
-          title="Dekaelo Media Reel"
+          title="Reel Dekaelo Media"
         />
+      </section>
+
+      {/* DIFERENCIAL */}
+      <section className="container border-t border-white/10 py-24 max-w-4xl text-center">
+        <h2 className="text-2xl font-semibold mb-6">
+          Nuestro diferencial
+        </h2>
+
+        <p className="text-white/70 leading-relaxed">
+          No producimos piezas improvisadas. Diseñamos cada proyecto con estructura,
+          narrativa clara y estándar cinematográfico aplicado al entorno corporativo.
+          Trabajamos con procesos eficientes y discreción profesional.
+        </p>
       </section>
 
       {/* FORMULARIO */}
       <section id="formulario" className="container border-t border-white/10 py-24 max-w-3xl text-center">
         <h2 className="text-2xl mb-6">
-          Solicita tu propuesta
+          Recibe tu propuesta en 48 horas
         </h2>
 
         <p className="text-white/50 mb-10">
-          Te responderemos en menos de 24 horas.
+          Cuéntanos objetivo, fechas y contexto del proyecto.
         </p>
-
-        {sent && (
-          <div className="mb-6 text-green-400">
-            Mensaje enviado correctamente.
-          </div>
-        )}
 
         <form onSubmit={handleSubmit} className="space-y-6 text-left">
 
@@ -150,7 +185,7 @@ export default function Page() {
             disabled={loading}
             className="w-full border border-white py-4 hover:bg-white hover:text-black transition"
           >
-            {loading ? "Enviando..." : "Enviar solicitud"}
+            {loading ? "Enviando..." : "Solicitar propuesta"}
           </button>
         </form>
       </section>
