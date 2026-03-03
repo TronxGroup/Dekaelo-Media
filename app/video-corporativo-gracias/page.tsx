@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 
 export const metadata = {
   title: "Solicitud enviada | Dekaelo Media",
@@ -10,18 +11,15 @@ export default function Page() {
   return (
     <main className="bg-black text-white min-h-screen flex items-center">
       <section className="container max-w-3xl text-center py-32">
-
-        <h1 className="text-4xl md:text-5xl font-semibold">
-          Solicitud recibida
-        </h1>
+        <h1 className="text-4xl md:text-5xl font-semibold">Solicitud recibida</h1>
 
         <p className="mt-8 text-white/70 text-lg">
           Gracias por confiar en Dekaelo Media.
         </p>
 
         <p className="mt-4 text-white/60">
-          Revisaremos tu información y te responderemos
-          en menos de 24 horas con una propuesta clara.
+          Revisaremos tu información y te responderemos en menos de 24 horas con una
+          propuesta clara.
         </p>
 
         <div className="mt-10 border-t border-white/10 pt-10 text-white/60 text-sm space-y-3">
@@ -39,6 +37,14 @@ export default function Page() {
           </Link>
         </div>
 
+        {/* Google Ads Conversion */}
+        <Script id="google-ads-conversion" strategy="afterInteractive">
+          {`
+            gtag('event', 'conversion', {
+              'send_to': 'AW-17760996045/et5-CN7fpIIcEM2VjZVC'
+            });
+          `}
+        </Script>
       </section>
     </main>
   );
