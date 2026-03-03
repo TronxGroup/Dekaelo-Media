@@ -75,7 +75,7 @@ export default function Page() {
           </div>
           <div>
             <div className="text-5xl font-semibold">3+</div>
-            <p className="text-white/50">años de continuidad</p>
+            <p className="text-white/50">años dee continuidad</p>
           </div>
         </div>
       </section>
