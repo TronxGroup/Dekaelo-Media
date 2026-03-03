@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   const formData = await request.formData();
@@ -10,18 +12,8 @@ export async function POST(request: Request) {
   const telefono = formData.get("telefono");
   const mensaje = formData.get("mensaje");
 
-  const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: 465,
-    secure: true,
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
-
-  await transporter.sendMail({
-    from: `"Formulario Web" <${process.env.EMAIL_USER}>`,
+  await resend.emails.send({
+    from: "Dekaelo Web <onboarding@resend.dev>",
     to: "info@dekaelomedia.com",
     subject: "Nuevo Lead - Video Corporativo",
     html: `
@@ -35,5 +27,5 @@ export async function POST(request: Request) {
     `,
   });
 
-  return NextResponse.redirect(new URL("/gracias", request.url));
+  return NextResponse.json({ success: true });
 }
