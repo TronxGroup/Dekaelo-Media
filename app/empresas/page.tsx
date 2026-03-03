@@ -15,7 +15,7 @@ export default function Page() {
       {/* HERO */}
       <section className="container max-w-4xl py-32 text-center">
         <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-          Vodcast y contenido corporativo
+          Vodcast y contenido corporativoo
           <br />
           para organizaciones
         </h1>
