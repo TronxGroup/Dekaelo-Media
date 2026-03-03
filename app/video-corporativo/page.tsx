@@ -1,138 +1,156 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import ClientLogos from "@/components/ClientLogos";
-import { useState } from "react";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Video Corporativo Profesional en Chile | Desde $1.000.000 + IVA",
-  description:
-    "Producción de video corporativo profesional para empresas en Chile. Propuesta en 48 horas. Entrega en 2–4 semanas. Desde $1.000.000 + IVA.",
-};
+import { useState } from "react";
+import { VideoEmbed } from "../components/VideoEmbed";
+import { ClientLogos } from "../components/ClientLogos";
 
 export default function Page() {
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  async function handleSubmit(e: any) {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.target);
+
+    const res = await fetch("/api/contacto", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (res.ok) {
+      setSent(true);
+      e.target.reset();
+    }
+
+    setLoading(false);
+  }
+
   return (
-    <main className="bg-black text-white selection:bg-white selection:text-black">
+    <main className="bg-black text-white">
 
       {/* HERO */}
-      <section className="relative min-h-[85vh] flex items-center">
-        <Image
-          src="/images/dekaelo-entrevista.jpg"
-          alt="Producción de video corporativo profesional en Chile"
-          fill
-          priority
-          className="object-cover opacity-40"
-        />
-        <div className="relative container max-w-4xl py-28">
-          <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-            Video corporativo profesional en Chile
-          </h1>
+      <section className="container max-w-4xl py-32 text-center">
+        <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
+          Video corporativo profesional
+          <br />
+          para organizaciones
+        </h1>
 
-          <p className="mt-6 text-lg text-white/80">
-            Producción audiovisual institucional para empresas que necesitan comunicar
-            con claridad, estructura y estándar profesional.
-          </p>
+        <p className="mt-8 text-white/65 text-lg">
+          Producción audiovisual institucional para banca,
+          salud, gremios y empresas B2B en Chile.
+        </p>
 
-          <div className="mt-6 text-sm text-white/60 space-y-1">
-            <p>✔ Propuesta en 48 horas</p>
-            <p>✔ Producción en 2–4 semanas</p>
-            <p>✔ Desde $1.000.000 + IVA</p>
-          </div>
-
-          <div className="mt-10">
-            <a
-              href="#formulario"
-              className="border border-white px-8 py-3 text-sm hover:bg-white hover:text-black transition"
-            >
-              Solicitar propuesta ahora
-            </a>
-          </div>
+        <div className="mt-8 text-sm text-white/50">
+          Desde $1.000.000 + IVA • Propuesta en 48 horas • Entrega 2–4 semanas
         </div>
+
+        <a
+          href="#formulario"
+          className="mt-10 inline-block border border-white/30 px-8 py-3 hover:bg-white hover:text-black transition"
+        >
+          Solicitar propuesta
+        </a>
       </section>
 
-      {/* CLIENTES */}
-      <section className="border-t border-white/10 py-24">
+      {/* LOGOS */}
+      <section className="border-t border-white/10 py-16">
         <div className="container">
           <ClientLogos />
         </div>
       </section>
 
-      {/* AUTORIDAD */}
-      <section className="container border-t border-white/10 py-16 max-w-5xl">
-        <div className="grid md:grid-cols-3 gap-10 text-center">
+      {/* MÉTRICAS */}
+      <section className="container border-t border-white/10 py-20 text-center">
+        <div className="grid md:grid-cols-3 gap-12">
           <div>
-            <div className="text-4xl font-semibold">58+</div>
-            <p className="text-white/50 text-sm mt-2">episodios producidos</p>
+            <div className="text-5xl font-semibold">58+</div>
+            <p className="text-white/50">episodios producidos</p>
           </div>
           <div>
-            <div className="text-4xl font-semibold">6</div>
-            <p className="text-white/50 text-sm mt-2">industrias distintas</p>
+            <div className="text-5xl font-semibold">6</div>
+            <p className="text-white/50">industrias distintas</p>
           </div>
           <div>
-            <div className="text-4xl font-semibold">3+</div>
-            <p className="text-white/50 text-sm mt-2">años desarrollando series</p>
+            <div className="text-5xl font-semibold">3+</div>
+            <p className="text-white/50">años de continuidad</p>
           </div>
         </div>
       </section>
 
+      {/* REEL */}
+      <section className="container border-t border-white/10 py-24 max-w-4xl">
+        <VideoEmbed
+          src="https://www.youtube.com/embed/uul8LNP6BbQ?rel=0"
+          title="Dekaelo Media Reel"
+        />
+      </section>
+
       {/* FORMULARIO */}
-      <section id="formulario" className="container border-t border-white/10 py-24 max-w-3xl">
-        <h2 className="text-2xl mb-6 text-center">
+      <section id="formulario" className="container border-t border-white/10 py-24 max-w-3xl text-center">
+        <h2 className="text-2xl mb-6">
           Solicita tu propuesta
         </h2>
 
-        <p className="text-white/50 text-center mb-10">
+        <p className="text-white/50 mb-10">
           Te responderemos en menos de 24 horas.
         </p>
 
-        <form
-          action="/api/contacto"
-          method="POST"
-          className="space-y-6"
-        >
+        {sent && (
+          <div className="mb-6 text-green-400">
+            Mensaje enviado correctamente.
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-6 text-left">
+
           <input
             name="nombre"
             type="text"
             placeholder="Nombre"
-            className="w-full bg-black border border-white/20 px-4 py-3 text-sm"
             required
+            className="w-full bg-black border border-white/20 px-4 py-3"
           />
 
           <input
             name="empresa"
             type="text"
             placeholder="Empresa"
-            className="w-full bg-black border border-white/20 px-4 py-3 text-sm"
             required
+            className="w-full bg-black border border-white/20 px-4 py-3"
           />
 
           <input
             name="email"
             type="email"
             placeholder="Email corporativo"
-            className="w-full bg-black border border-white/20 px-4 py-3 text-sm"
             required
+            className="w-full bg-black border border-white/20 px-4 py-3"
           />
 
           <input
             name="telefono"
             type="tel"
             placeholder="Teléfono / WhatsApp"
-            className="w-full bg-black border border-white/20 px-4 py-3 text-sm"
+            className="w-full bg-black border border-white/20 px-4 py-3"
           />
 
           <textarea
             name="mensaje"
             placeholder="Describe brevemente tu proyecto"
-            rows={4}
-            className="w-full bg-black border border-white/20 px-4 py-3 text-sm"
             required
+            rows={4}
+            className="w-full bg-black border border-white/20 px-4 py-3"
           />
 
           <button
             type="submit"
-            className="w-full border border-white py-4 text-sm hover:bg-white hover:text-black transition"
+            disabled={loading}
+            className="w-full border border-white py-4 hover:bg-white hover:text-black transition"
           >
-            Enviar solicitud
+            {loading ? "Enviando..." : "Enviar solicitud"}
           </button>
         </form>
       </section>
