@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { VideoEmbed } from "../components/VideoEmbed";
 import { ClientLogos } from "../components/ClientLogos";
 
@@ -39,17 +39,54 @@ function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
 
+type QueryState = {
+  intent: string;
+  utm_source: string;
+  utm_medium: string;
+  utm_campaign: string;
+  utm_content: string;
+  utm_term: string;
+  gclid: string;
+};
+
+const EMPTY_QUERY: QueryState = {
+  intent: "",
+  utm_source: "",
+  utm_medium: "",
+  utm_campaign: "",
+  utm_content: "",
+  utm_term: "",
+  gclid: "",
+};
+
 export default function Page() {
   const [loading, setLoading] = useState(false);
+  const [q, setQ] = useState<QueryState>(EMPTY_QUERY);
   const router = useRouter();
-  const searchParams = useSearchParams();
 
-  // Permite alinear copy según grupo/UTM sin crear nuevas páginas.
-  // Ejemplo: ?intent=interno o ?intent=productora o ?intent=institucional
-  const intent = (searchParams.get("intent") || "").toLowerCase();
+  // Lee query params SOLO en cliente (compatible con next export)
+  useEffect(() => {
+    try {
+      const sp = new URLSearchParams(window.location.search);
+      const intent = (sp.get("intent") || "").toLowerCase();
+
+      setQ({
+        intent,
+        utm_source: sp.get("utm_source") || "",
+        utm_medium: sp.get("utm_medium") || "",
+        utm_campaign: sp.get("utm_campaign") || "",
+        utm_content: sp.get("utm_content") || "",
+        utm_term: sp.get("utm_term") || "",
+        gclid: sp.get("gclid") || "",
+      });
+    } catch {
+      // si algo raro pasa, dejamos todo vacío
+      setQ(EMPTY_QUERY);
+    }
+  }, []);
 
   const hero = useMemo(() => {
-    if (intent === "interno" || intent === "comunicacion" || intent === "comunicacion-interna") {
+    if (q.intent === "interno" || q.intent === "comunicacion" || q.intent === "comunicacion-interna") {
       return {
         h1: "Comunicación interna en video",
         sub:
@@ -59,7 +96,7 @@ export default function Page() {
       };
     }
 
-    if (intent === "productora" || intent === "agencia" || intent === "proveedor") {
+    if (q.intent === "productora" || q.intent === "agencia" || q.intent === "proveedor") {
       return {
         h1: "Productora audiovisual corporativa",
         sub:
@@ -69,7 +106,7 @@ export default function Page() {
       };
     }
 
-    if (intent === "institucional") {
+    if (q.intent === "institucional") {
       return {
         h1: "Video institucional empresa",
         sub:
@@ -79,7 +116,6 @@ export default function Page() {
       };
     }
 
-    // Default (Grupo 1 / genérico alta intención)
     return {
       h1: "Video corporativo profesional en Chile",
       sub:
@@ -87,7 +123,7 @@ export default function Page() {
       bullets: ["Desde $1.000.000 + IVA", "Propuesta en 48 horas", "Entrega 2–4 semanas"],
       cta: "Recibir propuesta en 48h",
     };
-  }, [intent]);
+  }, [q.intent]);
 
   async function handleSubmit(e: any) {
     e.preventDefault();
@@ -96,21 +132,14 @@ export default function Page() {
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
-    // UTM / tracking básico (si existen)
-    const utm_source = searchParams.get("utm_source") || "";
-    const utm_medium = searchParams.get("utm_medium") || "";
-    const utm_campaign = searchParams.get("utm_campaign") || "";
-    const utm_content = searchParams.get("utm_content") || "";
-    const utm_term = searchParams.get("utm_term") || "";
-    const gclid = searchParams.get("gclid") || "";
-
-    formData.set("utm_source", utm_source);
-    formData.set("utm_medium", utm_medium);
-    formData.set("utm_campaign", utm_campaign);
-    formData.set("utm_content", utm_content);
-    formData.set("utm_term", utm_term);
-    formData.set("gclid", gclid);
-    formData.set("intent", intent);
+    // Adjunta tracking (por si quieres guardarlo)
+    formData.set("utm_source", q.utm_source);
+    formData.set("utm_medium", q.utm_medium);
+    formData.set("utm_campaign", q.utm_campaign);
+    formData.set("utm_content", q.utm_content);
+    formData.set("utm_term", q.utm_term);
+    formData.set("gclid", q.gclid);
+    formData.set("intent", q.intent);
 
     try {
       const res = await fetch("/api/contacto", {
@@ -131,7 +160,6 @@ export default function Page() {
     <main className="bg-black text-white">
       {/* HERO */}
       <section className="container max-w-5xl py-24 md:py-32 text-center">
-        {/* Badge / microproof */}
         <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs text-white/70">
           <span className="inline-block h-2 w-2 rounded-full bg-white/50" />
           Estándar institucional • Proceso ejecutivo • Discreción profesional
@@ -147,10 +175,7 @@ export default function Page() {
 
         <div className="mt-6 flex flex-wrap justify-center gap-3 text-sm text-white/60">
           {hero.bullets.map((b) => (
-            <span
-              key={b}
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-2"
-            >
+            <span key={b} className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
               {b}
             </span>
           ))}
@@ -173,7 +198,7 @@ export default function Page() {
         </div>
 
         <div className="mt-4 text-xs text-white/50">
-          Respuesta en 48h hábiles • Sin compromiso • Trabajamos con agenda y aprobación clara
+          Respuesta en 48h hábiles • Sin compromiso • Agenda y aprobación clara
         </div>
       </section>
 
@@ -205,7 +230,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* PAQUETES / RANGOS */}
+      {/* PAQUETES */}
       <section className="container border-t border-white/10 py-16 md:py-20 max-w-6xl">
         <h2 className="text-2xl font-semibold mb-10 text-center">
           Rangos de servicio (referencial)
@@ -219,33 +244,25 @@ export default function Page() {
               1 jornada de grabación, dirección cuidada y post completa.
               Ideal para presentación institucional o mensaje ejecutivo.
             </div>
-            <div className="mt-6 text-xs text-white/50">
-              Entrega típica: 2–4 semanas
-            </div>
+            <div className="mt-6 text-xs text-white/50">Entrega típica: 2–4 semanas</div>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
             <div className="text-sm text-white/60">Institucional pro</div>
             <div className="mt-2 text-xl font-semibold">$1.500.000 – $3.000.000</div>
             <div className="mt-4 text-sm text-white/70 leading-relaxed">
-              Más profundidad narrativa, guion/estructura, 1–2 jornadas
-              y piezas derivadas para uso interno o web.
+              Más estructura narrativa, 1–2 jornadas y piezas derivadas para uso interno o web.
             </div>
-            <div className="mt-6 text-xs text-white/50">
-              Para directorio, marca empleadora o cultura
-            </div>
+            <div className="mt-6 text-xs text-white/50">Para directorio, marca empleadora o cultura</div>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
             <div className="text-sm text-white/60">Serie corporativa</div>
             <div className="mt-2 text-xl font-semibold">3–8 episodios (contrato)</div>
             <div className="mt-4 text-sm text-white/70 leading-relaxed">
-              Sistema editorial corporativo: entrevistas ejecutivas,
-              cápsulas de cultura o vodcast institucional con calendario.
+              Sistema editorial corporativo: entrevistas ejecutivas, cápsulas de cultura o vodcast con calendario.
             </div>
-            <div className="mt-6 text-xs text-white/50">
-              Propuesta a medida en 48 horas
-            </div>
+            <div className="mt-6 text-xs text-white/50">Propuesta a medida en 48 horas</div>
           </div>
         </div>
 
@@ -298,77 +315,11 @@ export default function Page() {
 
       {/* DIFERENCIAL */}
       <section className="container border-t border-white/10 py-16 md:py-20 max-w-4xl text-center">
-        <h2 className="text-2xl font-semibold mb-6">
-          Nuestro diferencial
-        </h2>
-
+        <h2 className="text-2xl font-semibold mb-6">Nuestro diferencial</h2>
         <p className="text-white/70 leading-relaxed">
           No producimos piezas improvisadas. Diseñamos cada proyecto con estructura,
-          narrativa clara y estándar cinematográfico aplicado al entorno corporativo.
-          Trabajamos con procesos eficientes y discreción profesional.
+          narrativa clara y estándar aplicado al entorno corporativo. Procesos eficientes y discreción profesional.
         </p>
-
-        <div className="mt-10 grid sm:grid-cols-3 gap-4 text-left">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <div className="text-sm font-medium">Proceso ejecutivo</div>
-            <div className="mt-2 text-sm text-white/70">
-              Brief claro, propuesta en 48h y entregas con rondas definidas.
-            </div>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <div className="text-sm font-medium">Estándar profesional</div>
-            <div className="mt-2 text-sm text-white/70">
-              Sonido, luz y color cuidados para un look institucional sólido.
-            </div>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <div className="text-sm font-medium">Discreción</div>
-            <div className="mt-2 text-sm text-white/70">
-              Trabajo respetuoso en entornos corporativos, equipos y agendas.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="container border-t border-white/10 py-16 md:py-20 max-w-5xl">
-        <h2 className="text-2xl font-semibold mb-10 text-center">
-          Preguntas frecuentes
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-6 text-sm text-white/70">
-          {[
-            {
-              q: "¿Qué necesitan de mi equipo para partir?",
-              a: "Un objetivo claro, referente (si existe), fechas tentativas y un responsable de aprobación.",
-            },
-            {
-              q: "¿Incluye guion o asesoría de mensaje?",
-              a: "Incluye estructura narrativa y guía de mensaje. Guion completo depende del alcance y se cotiza.",
-            },
-            {
-              q: "¿Cuántas rondas de cambios incluye?",
-              a: "Incluimos una ronda estándar. Cambios adicionales se acuerdan para cuidar plazos y calidad.",
-            },
-            {
-              q: "¿Cuánto demora la entrega?",
-              a: "En general 2–4 semanas. Proyectos urgentes se pueden priorizar según agenda.",
-            },
-            {
-              q: "¿Puedo usar el video en redes y comunicación interna?",
-              a: "Sí. Entregamos archivos optimizados para web, presentaciones y uso interno.",
-            },
-            {
-              q: "¿Trabajan con música licenciada?",
-              a: "Sí, usamos música licenciada según el tipo de uso y el alcance del proyecto.",
-            },
-          ].map((item) => (
-            <div key={item.q} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div className="text-white font-medium">{item.q}</div>
-              <div className="mt-2">{item.a}</div>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* FORMULARIO */}
@@ -376,23 +327,20 @@ export default function Page() {
         id="formulario"
         className="container border-t border-white/10 py-16 md:py-20 max-w-3xl text-center"
       >
-        <h2 className="text-2xl mb-3">
-          Recibe tu propuesta en 48 horas
-        </h2>
-
+        <h2 className="text-2xl mb-3">Recibe tu propuesta en 48 horas</h2>
         <p className="text-white/50 mb-10">
           Cuéntanos objetivo, fechas y contexto. Si no hay fecha definida, indícalo igual.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-5 text-left">
-          {/* Hidden tracking (por si quieres guardarlo en tu backend) */}
-          <input type="hidden" name="utm_source" value={searchParams.get("utm_source") || ""} />
-          <input type="hidden" name="utm_medium" value={searchParams.get("utm_medium") || ""} />
-          <input type="hidden" name="utm_campaign" value={searchParams.get("utm_campaign") || ""} />
-          <input type="hidden" name="utm_content" value={searchParams.get("utm_content") || ""} />
-          <input type="hidden" name="utm_term" value={searchParams.get("utm_term") || ""} />
-          <input type="hidden" name="gclid" value={searchParams.get("gclid") || ""} />
-          <input type="hidden" name="intent" value={intent} />
+          {/* Tracking hidden */}
+          <input type="hidden" name="utm_source" value={q.utm_source} />
+          <input type="hidden" name="utm_medium" value={q.utm_medium} />
+          <input type="hidden" name="utm_campaign" value={q.utm_campaign} />
+          <input type="hidden" name="utm_content" value={q.utm_content} />
+          <input type="hidden" name="utm_term" value={q.utm_term} />
+          <input type="hidden" name="gclid" value={q.gclid} />
+          <input type="hidden" name="intent" value={q.intent} />
 
           <div className="grid sm:grid-cols-2 gap-4">
             <input
@@ -402,7 +350,6 @@ export default function Page() {
               required
               className="w-full bg-black border border-white/20 px-4 py-3"
             />
-
             <input
               name="empresa"
               type="text"
@@ -420,7 +367,6 @@ export default function Page() {
               required
               className="w-full bg-black border border-white/20 px-4 py-3"
             />
-
             <input
               name="telefono"
               type="tel"
@@ -429,30 +375,23 @@ export default function Page() {
             />
           </div>
 
-          {/* NUEVOS CAMPOS (alineados a Ads y filtro de calidad) */}
+          {/* Filtros (calidad lead) */}
           <div className="grid sm:grid-cols-2 gap-4">
             <select
               name="objetivo"
               required
-              defaultValue={(() => {
-                if (intent === "interno" || intent === "comunicacion" || intent === "comunicacion-interna") {
-                  return "Comunicación interna";
-                }
-                if (intent === "institucional") return "Video institucional";
-                return "";
-              })()}
-              className={cx(
-                "w-full bg-black border border-white/20 px-4 py-3",
-                "text-white/90"
-              )}
+              defaultValue={
+                q.intent === "interno" || q.intent === "comunicacion" || q.intent === "comunicacion-interna"
+                  ? "Comunicación interna"
+                  : q.intent === "institucional"
+                  ? "Video institucional"
+                  : ""
+              }
+              className={cx("w-full bg-black border border-white/20 px-4 py-3", "text-white/90")}
             >
-              <option value="" disabled>
-                Objetivo principal
-              </option>
+              <option value="" disabled>Objetivo principal</option>
               {OBJECTIVES.map((o) => (
-                <option key={o} value={o}>
-                  {o}
-                </option>
+                <option key={o} value={o}>{o}</option>
               ))}
             </select>
 
@@ -460,18 +399,11 @@ export default function Page() {
               name="presupuesto"
               required
               defaultValue=""
-              className={cx(
-                "w-full bg-black border border-white/20 px-4 py-3",
-                "text-white/90"
-              )}
+              className={cx("w-full bg-black border border-white/20 px-4 py-3", "text-white/90")}
             >
-              <option value="" disabled>
-                Presupuesto estimado
-              </option>
+              <option value="" disabled>Presupuesto estimado</option>
               {BUDGETS.map((b) => (
-                <option key={b} value={b}>
-                  {b}
-                </option>
+                <option key={b} value={b}>{b}</option>
               ))}
             </select>
           </div>
@@ -483,9 +415,7 @@ export default function Page() {
               defaultValue=""
               className="w-full bg-black border border-white/20 px-4 py-3 text-white/90"
             >
-              <option value="" disabled>
-                ¿Para cuándo lo necesitas?
-              </option>
+              <option value="" disabled>¿Para cuándo lo necesitas?</option>
               <option value="1–2 semanas">1–2 semanas</option>
               <option value="3–4 semanas">3–4 semanas</option>
               <option value="1–2 meses">1–2 meses</option>
@@ -498,9 +428,7 @@ export default function Page() {
               defaultValue=""
               className="w-full bg-black border border-white/20 px-4 py-3 text-white/90"
             >
-              <option value="" disabled>
-                Jornadas de grabación (estimado)
-              </option>
+              <option value="" disabled>Jornadas de grabación</option>
               <option value="1 jornada">1 jornada</option>
               <option value="2 jornadas">2 jornadas</option>
               <option value="A definir">A definir</option>
@@ -516,8 +444,7 @@ export default function Page() {
           />
 
           <div className="text-xs text-white/50">
-            Respuesta en 48h hábiles. Si tu correo es @gmail/@hotmail igual lo recibimos, pero
-            idealmente usa correo corporativo.
+            Respuesta en 48h hábiles. Ideal correo corporativo, pero recibimos cualquier correo.
           </div>
 
           <button
@@ -530,7 +457,6 @@ export default function Page() {
         </form>
       </section>
 
-      {/* FOOTER MINI */}
       <footer className="border-t border-white/10 py-10 text-center text-xs text-white/40">
         Dekaelo Media • Producción audiovisual corporativa • Santiago, Chile
       </footer>
