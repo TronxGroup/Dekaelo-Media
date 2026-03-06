@@ -55,21 +55,21 @@ const featured: Project[] = [
     youtube: toEmbed("https://www.youtube.com/watch?v=JKsSN2lo_RU"),
     tag: "Documental institucional",
     desc:
-      "Producción documental conmemorativa con narrativa histórica, entrevistas multicámara y tratamiento cinematográfico aplicado al entorno educacional.",
+      "Documental conmemorativo con narrativa histórica, entrevistas multicámara y tratamiento cinematográfico aplicado al entorno educacional.",
   },
   {
     title: "Banco BICE — Serie institucional (2024–2026)",
     youtube: toEmbed("https://www.youtube.com/watch?v=lyt5wWzPCg8"),
     tag: "Vodcast",
     desc:
-      "Temporada continua de vodcast ejecutivo enfocada en liderazgo y cultura organizacional. Diseño de formato, dirección editorial y producción integral.",
+      "Temporada continua enfocada en liderazgo y cultura organizacional. Diseño de formato, dirección editorial y ejecución integral.",
   },
   {
     title: "Coesam® — Video Corporativo Internacional",
     youtube: toEmbed("https://www.youtube.com/watch?v=b_sq_6TiwdE"),
     tag: "Video corporativo",
     desc:
-      "Producción orientada a posicionamiento internacional. Mensaje estratégico y tratamiento visual sobrio enfocado en credibilidad global.",
+      "Pieza orientada a posicionamiento internacional. Mensaje estratégico y tratamiento visual sobrio enfocado en credibilidad global.",
   },
 ];
 
@@ -81,42 +81,42 @@ const projects: Project[] = [
     youtube: toEmbed("https://www.youtube.com/watch?v=PLSfbZU_asQ"),
     tag: "Vodcast",
     desc:
-      "+300.000 visualizaciones acumuladas. Producción multicámara con invitados profesionales y estructura de conversación dinámica.",
+      "Producción multicámara con invitados profesionales y estructura de conversación dinámica. +300.000 visualizaciones acumuladas.",
   },
   {
     title: "iGromi — Serie corporativa industrial",
     youtube: toEmbed("https://www.youtube.com/watch?v=2G7oKXKjPl8"),
     tag: "Vodcast",
     desc:
-      "Serie audiovisual enfocada en posicionamiento tecnológico e industrial. Claridad técnica combinada con tratamiento cinematográfico.",
+      "Serie enfocada en posicionamiento tecnológico e industrial. Claridad técnica combinada con tratamiento visual cinematográfico.",
   },
   {
     title: "Reality Day — Serie documental",
     youtube: toEmbed("https://youtu.be/4xe4CtPW4lI"),
     tag: "Proyecto editorial",
     desc:
-      "Serie original desarrollada junto a Tronx TV. Narrativa observacional aplicada a historias reales de trabajo.",
+      "Serie original desarrollada junto a Tronx TV. Narrativa observacional aplicada a historias reales de trabajo y oficios.",
   },
   {
     title: "APCC — Ciclo de entrevistas empresariales",
     youtube: toEmbed("https://www.youtube.com/watch?v=byTylGKp-uI"),
     tag: "Serie institucional",
     desc:
-      "Más de 20 episodios consecutivos orientados a posicionamiento institucional y comunicación estratégica digital.",
+      "Ciclo de entrevistas orientado a posicionamiento institucional y comunicación estratégica digital. Más de 20 episodios consecutivos.",
   },
   {
     title: "Exploflex® — Video Corporativo Sustentable",
     youtube: toEmbed("https://www.youtube.com/watch?v=RF8kLsTZgsU"),
     tag: "Video corporativo",
     desc:
-      "Producción institucional enfocada en sostenibilidad y comunicación estratégica industrial. Dirección ejecutiva y tratamiento visual sobrio.",
+      "Video institucional enfocado en sostenibilidad y comunicación estratégica industrial. Dirección ejecutiva y estética sobria.",
   },
   {
     title: "U-Payments — Corporate",
     youtube: toEmbed("https://www.youtube.com/watch?v=BAN7i2d01W8"),
     tag: "Corporativo internacional",
     desc:
-      "Pieza audiovisual orientada a posicionamiento internacional y fortalecimiento de confianza corporativa.",
+      "Pieza corporativa orientada a posicionamiento internacional y fortalecimiento de confianza. Mensaje claro y ejecución sobria.",
   },
 ];
 
