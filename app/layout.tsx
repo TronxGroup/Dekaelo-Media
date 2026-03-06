@@ -1,9 +1,7 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
-import { StickyCTA } from "./components/StickyCTA";
+import { LayoutShell } from "./components/LayoutShell";
 
 const siteUrl = "https://www.dekaelomedia.com";
 
@@ -116,8 +114,16 @@ export default function RootLayout({
     <html lang="es">
       <head>
         {/* Performance */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
-        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+          crossOrigin=""
+        />
+        <link
+          rel="preconnect"
+          href="https://www.google-analytics.com"
+          crossOrigin=""
+        />
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
@@ -127,7 +133,6 @@ export default function RootLayout({
       </head>
 
       <body className="bg-black text-white selection:bg-white selection:text-black">
-
         {/* Google Tag (GA4 + Google Ads) */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`}
@@ -150,12 +155,8 @@ export default function RootLayout({
           `}
         </Script>
 
-        <Navbar />
-        <StickyCTA />
-
-        <main>{children}</main>
-
-        <Footer />
+        {/* Layout condicional: oculta navbar/footer en /video-corporativo */}
+        <LayoutShell>{children}</LayoutShell>
 
         {/* Structured Data */}
         <Script
