@@ -37,8 +37,7 @@ export default function Page() {
         </h1>
 
         <p className="mt-8 text-white/70 text-lg">
-          Producción audiovisual institucional para empresas que necesitan
-          comunicar con claridad, liderazgo y estándar profesional.
+          Video corporativo y comunicación interna para liderazgo y equipos. Producción institucional clara y discreta.
         </p>
 
         <div className="mt-8 text-sm text-white/50">
