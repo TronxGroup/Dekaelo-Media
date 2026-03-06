@@ -81,17 +81,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* IMAGEN DESTACADA */}
-      <section className="container pb-20 md:pb-24">
-        <Image
-          src="/images/dekaelo-entrevista.jpg"
-          alt="Grabación entrevista institucional Dekaelo Media"
-          width={1600}
-          height={900}
-          className="w-full object-cover rounded-3xl border border-white/10"
-          priority
-        />
-      </section>
 
       {/* REEL */}
       <section className="container pb-20 md:pb-24 max-w-5xl">
