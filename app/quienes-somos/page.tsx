@@ -32,26 +32,27 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className="bg-black text-white">
-
       <section className="container max-w-5xl py-28">
-
         {/* HERO */}
         <header>
-          <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+          <div className="text-sm uppercase tracking-widest text-white/40">
+            Estudio audiovisual corporativo
+          </div>
+
+          <h1 className="mt-4 text-4xl md:text-5xl font-semibold leading-tight">
             Dekaelo Media
           </h1>
 
           <p className="mt-6 text-lg text-white/70 leading-relaxed">
             Somos una productora audiovisual boutique en Chile especializada en
-            <strong> video corporativo</strong>,
-            <strong> series institucionales</strong> y
-            <strong> comunicación ejecutiva</strong>.
+            <strong> video corporativo</strong>, <strong>series institucionales</strong> y{" "}
+            <strong>comunicación ejecutiva</strong>.
           </p>
 
           <p className="mt-6 text-white/60 leading-relaxed">
             Diseñamos formatos, estructuramos narrativa y producimos contenido
-            que las organizaciones pueden sostener en el tiempo.
-            Nuestro foco está en claridad estratégica, estética sobria y procesos eficientes.
+            que las organizaciones pueden sostener en el tiempo. Nuestro foco está
+            en claridad estratégica, estética sobria y procesos eficientes.
           </p>
         </header>
 
@@ -116,7 +117,6 @@ export default function Page() {
               width={1200}
               height={700}
               className="rounded-3xl border border-white/10 object-cover"
-              priority
             />
           </div>
         </section>
@@ -137,6 +137,22 @@ export default function Page() {
             equipo técnico profesional y entregamos piezas optimizadas para web,
             LinkedIn, intranet o plataformas internas.
           </p>
+
+          {/* Mini bullets (escaneo rápido) */}
+          <div className="mt-10 grid md:grid-cols-4 gap-6 text-sm text-white/70">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              Objetivo estratégico claro
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              Diseño de formato y pauta
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              Producción profesional
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              Entrega optimizada por canal
+            </div>
+          </div>
 
           <div className="my-14 grid md:grid-cols-2 gap-6">
             <Image
@@ -208,14 +224,22 @@ export default function Page() {
             Si tu empresa necesita producir un video corporativo o desarrollar una serie institucional, conversemos.
           </h2>
 
-          <Link
-            href="/contacto"
-            className="border border-white/30 px-8 py-3 text-sm hover:bg-white hover:text-black transition"
-          >
-            Contactar
-          </Link>
-        </section>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/video-corporativo"
+              className="border border-white/30 px-8 py-3 text-sm hover:bg-white hover:text-black transition"
+            >
+              Solicitar propuesta
+            </Link>
 
+            <Link
+              href="/contacto"
+              className="border border-white/10 bg-white/5 px-8 py-3 text-sm text-white/80 hover:bg-white/10 transition"
+            >
+              Contacto directo
+            </Link>
+          </div>
+        </section>
       </section>
     </main>
   );
