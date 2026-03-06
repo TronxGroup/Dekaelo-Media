@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { VideoEmbed } from "../components/VideoEmbed";
 import { ClientLogos } from "../components/ClientLogos";
 
@@ -80,13 +81,16 @@ export default function Page() {
         gclid: sp.get("gclid") || "",
       });
     } catch {
-      // si algo raro pasa, dejamos todo vacío
       setQ(EMPTY_QUERY);
     }
   }, []);
 
   const hero = useMemo(() => {
-    if (q.intent === "interno" || q.intent === "comunicacion" || q.intent === "comunicacion-interna") {
+    if (
+      q.intent === "interno" ||
+      q.intent === "comunicacion" ||
+      q.intent === "comunicacion-interna"
+    ) {
       return {
         h1: "Comunicación interna en video",
         sub:
@@ -158,8 +162,30 @@ export default function Page() {
 
   return (
     <main className="bg-black text-white">
+      {/* TOP BAR (logo only) */}
+      <div className="container max-w-6xl pt-6">
+        <div className="flex items-center justify-between">
+          <a href="/" className="inline-flex items-center gap-3">
+            <Image
+              src="/logo_text_white.png"
+              alt="Dekaelo Media"
+              width={170}
+              height={28}
+              priority
+            />
+          </a>
+
+          <a
+            href="#formulario"
+            className="hidden sm:inline-flex items-center justify-center border border-white/20 bg-white/5 px-5 py-2 text-sm text-white/80 hover:bg-white/10 transition"
+          >
+            Recibir propuesta
+          </a>
+        </div>
+      </div>
+
       {/* HERO */}
-      <section className="container max-w-5xl py-24 md:py-32 text-center">
+      <section className="container max-w-5xl py-20 md:py-28 text-center">
         <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs text-white/70">
           <span className="inline-block h-2 w-2 rounded-full bg-white/50" />
           Estándar institucional • Proceso ejecutivo • Discreción profesional
@@ -169,13 +195,14 @@ export default function Page() {
           {hero.h1}
         </h1>
 
-        <p className="mt-6 text-white/70 text-lg leading-relaxed">
-          {hero.sub}
-        </p>
+        <p className="mt-6 text-white/70 text-lg leading-relaxed">{hero.sub}</p>
 
         <div className="mt-6 flex flex-wrap justify-center gap-3 text-sm text-white/60">
           {hero.bullets.map((b) => (
-            <span key={b} className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+            <span
+              key={b}
+              className="rounded-full border border-white/10 bg-white/5 px-4 py-2"
+            >
               {b}
             </span>
           ))}
@@ -253,7 +280,9 @@ export default function Page() {
             <div className="mt-4 text-sm text-white/70 leading-relaxed">
               Más estructura narrativa, 1–2 jornadas y piezas derivadas para uso interno o web.
             </div>
-            <div className="mt-6 text-xs text-white/50">Para directorio, marca empleadora o cultura</div>
+            <div className="mt-6 text-xs text-white/50">
+              Para directorio, marca empleadora o cultura
+            </div>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
@@ -375,13 +404,14 @@ export default function Page() {
             />
           </div>
 
-          {/* Filtros (calidad lead) */}
           <div className="grid sm:grid-cols-2 gap-4">
             <select
               name="objetivo"
               required
               defaultValue={
-                q.intent === "interno" || q.intent === "comunicacion" || q.intent === "comunicacion-interna"
+                q.intent === "interno" ||
+                q.intent === "comunicacion" ||
+                q.intent === "comunicacion-interna"
                   ? "Comunicación interna"
                   : q.intent === "institucional"
                   ? "Video institucional"
@@ -389,9 +419,13 @@ export default function Page() {
               }
               className={cx("w-full bg-black border border-white/20 px-4 py-3", "text-white/90")}
             >
-              <option value="" disabled>Objetivo principal</option>
+              <option value="" disabled>
+                Objetivo principal
+              </option>
               {OBJECTIVES.map((o) => (
-                <option key={o} value={o}>{o}</option>
+                <option key={o} value={o}>
+                  {o}
+                </option>
               ))}
             </select>
 
@@ -401,9 +435,13 @@ export default function Page() {
               defaultValue=""
               className={cx("w-full bg-black border border-white/20 px-4 py-3", "text-white/90")}
             >
-              <option value="" disabled>Presupuesto estimado</option>
+              <option value="" disabled>
+                Presupuesto estimado
+              </option>
               {BUDGETS.map((b) => (
-                <option key={b} value={b}>{b}</option>
+                <option key={b} value={b}>
+                  {b}
+                </option>
               ))}
             </select>
           </div>
@@ -415,7 +453,9 @@ export default function Page() {
               defaultValue=""
               className="w-full bg-black border border-white/20 px-4 py-3 text-white/90"
             >
-              <option value="" disabled>¿Para cuándo lo necesitas?</option>
+              <option value="" disabled>
+                ¿Para cuándo lo necesitas?
+              </option>
               <option value="1–2 semanas">1–2 semanas</option>
               <option value="3–4 semanas">3–4 semanas</option>
               <option value="1–2 meses">1–2 meses</option>
@@ -428,7 +468,9 @@ export default function Page() {
               defaultValue=""
               className="w-full bg-black border border-white/20 px-4 py-3 text-white/90"
             >
-              <option value="" disabled>Jornadas de grabación</option>
+              <option value="" disabled>
+                Jornadas de grabación
+              </option>
               <option value="1 jornada">1 jornada</option>
               <option value="2 jornadas">2 jornadas</option>
               <option value="A definir">A definir</option>
