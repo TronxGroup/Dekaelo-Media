@@ -8,13 +8,13 @@ import { StickyCTA } from "./StickyCTA";
 export function LayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  // Aquí defines qué rutas son "landing sin menú"
+  // Rutas que NO deben mostrar navbar/footer
   const isLanding =
     pathname === "/video-corporativo" ||
+    pathname === "/video-corporativo-gracias" ||
     pathname.startsWith("/video-corporativo/");
 
   if (isLanding) {
-    // Sin navbar / sticky / footer
     return <main>{children}</main>;
   }
 
