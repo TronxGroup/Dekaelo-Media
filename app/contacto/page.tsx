@@ -6,7 +6,7 @@ import { ArrowUpRight, ArrowRight, CheckCircle2 } from "lucide-react";
 
 const WHATSAPP = "56920080031";
 const EMAIL = "info@dekaelomedia.com";
-const FORMSPREE_ID = "TU_FORMSPREE_ID"; // ← reemplazar en formspree.io
+const FORMSPREE_ID = "https://formspree.io/f/xnjovqaz"; // ← reemplazar en formspree.io
 
 const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Hola 👋 Quiero conversar sobre un proyecto con Dekaelo Media.\n\nEmpresa:\nQué necesito:\nFecha tentativa:\n\nGracias")}`;
 
