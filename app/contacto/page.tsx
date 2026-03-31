@@ -1,158 +1,322 @@
-import Link from "next/link";
-import type { Metadata } from "next";
+"use client";
 
-const SITE_URL = "https://www.dekaelomedia.com";
+import { useState } from "react";
+import Link from "next/link";
+import { ArrowUpRight, ArrowRight, CheckCircle2 } from "lucide-react";
+
+/* ------------------------------------------------------------------ */
+/*  Config                                                              */
+/*  → Reemplaza FORMSPREE_ID por tu endpoint de formspree.io           */
+/*    Crea cuenta gratis en formspree.io, crea un form y copia el ID   */
+/* ------------------------------------------------------------------ */
+
 const WHATSAPP_NUMBER = "56920080031";
 const EMAIL = "info@dekaelomedia.com";
+const FORMSPREE_ID = "TU_FORMSPREE_ID"; // ← reemplazar
 
-export const metadata: Metadata = {
-  title:
-    "Contacto — Dekaelo Media | Producción Audiovisual Corporativa en Chile",
-  description:
-    "Contacto Dekaelo Media. Producción de video corporativo, series institucionales y comunicación ejecutiva para empresas en Chile.",
-  keywords: [
-    "contacto productora audiovisual Chile",
-    "cotizar video corporativo Chile",
-    "producción audiovisual ejecutiva",
-    "serie institucional",
-  ],
-  alternates: {
-    canonical: `${SITE_URL}/contacto`,
-  },
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: "Contacto — Dekaelo Media",
-    description:
-      "Conversemos tu proyecto audiovisual corporativo en Chile.",
-    url: `${SITE_URL}/contacto`,
-    siteName: "Dekaelo Media",
-    locale: "es_CL",
-    type: "website",
-  },
-};
+const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  "Hola 👋 Quiero conversar sobre un proyecto con Dekaelo Media.\n\nEmpresa:\nQué necesito:\nFecha tentativa:\n\nGracias"
+)}`;
 
-function buildWhatsAppLink() {
-  const text =
-    `Hola Dekaelo Media.\n` +
-    `Quiero conversar un proyecto audiovisual.\n\n` +
-    `Organización:\n` +
-    `Tipo de proyecto (serie / video corporativo / vodcast):\n` +
-    `Fecha estimada de grabación:\n` +
-    `Objetivo principal:\n` +
-    `Ciudad:\n` +
-    `Presupuesto referencial (opcional):\n`;
+/* ------------------------------------------------------------------ */
+/*  Subcomponentes                                                      */
+/* ------------------------------------------------------------------ */
 
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
+      {children}
+    </p>
+  );
 }
 
-export default function Page() {
-  const wa = buildWhatsAppLink();
+function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
+  return (
+    <label
+      htmlFor={htmlFor}
+      className="block text-sm font-medium text-white/60 mb-1.5"
+    >
+      {children}
+    </label>
+  );
+}
+
+const inputClass =
+  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/25 outline-none transition focus:border-white/30 focus:bg-white/8";
+
+/* ------------------------------------------------------------------ */
+/*  Form                                                                */
+/* ------------------------------------------------------------------ */
+
+function ContactForm() {
+  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setStatus("ok");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  if (status === "ok") {
+    return (
+      <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
+        <CheckCircle2 className="h-10 w-10 text-emerald-400" />
+        <h3 className="text-xl font-semibold text-white">
+          Mensaje recibido
+        </h3>
+        <p className="text-sm text-white/50 max-w-xs leading-relaxed">
+          Te respondemos antes de las próximas 24 horas hábiles con un
+          alcance claro para tu proyecto.
+        </p>
+        <button
+          onClick={() => setStatus("idle")}
+          className="mt-2 text-sm text-white/35 transition hover:text-white"
+        >
+          Enviar otro mensaje →
+        </button>
+      </div>
+    );
+  }
 
   return (
-    <main className="bg-black text-white">
+    <form onSubmit={handleSubmit} className="space-y-5">
 
-      <section className="container max-w-2xl py-32 text-center">
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <Label htmlFor="nombre">Nombre</Label>
+          <input
+            id="nombre"
+            name="nombre"
+            type="text"
+            required
+            placeholder="Tu nombre"
+            className={inputClass}
+          />
+        </div>
+        <div>
+          <Label htmlFor="empresa">Empresa u organización</Label>
+          <input
+            id="empresa"
+            name="empresa"
+            type="text"
+            required
+            placeholder="Nombre de la empresa"
+            className={inputClass}
+          />
+        </div>
+      </div>
 
-        {/* HEADER */}
-        <h1 className="text-4xl md:text-5xl font-semibold">
-          Contacto
+      <div>
+        <Label htmlFor="email">Correo electrónico</Label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder="tu@empresa.cl"
+          className={inputClass}
+        />
+      </div>
+
+      <div>
+        <Label htmlFor="servicio">¿Qué necesitas?</Label>
+        <select
+          id="servicio"
+          name="servicio"
+          required
+          className={`${inputClass} cursor-pointer`}
+          defaultValue=""
+        >
+          <option value="" disabled className="bg-black text-white/40">
+            Selecciona un servicio
+          </option>
+          <option value="contenido-mensual" className="bg-black">
+            Contenido corporativo mensual (edición recurrente)
+          </option>
+          <option value="video-puntual" className="bg-black">
+            Video institucional editado (pago único)
+          </option>
+          <option value="vodcast" className="bg-black">
+            Serie vodcast ejecutiva
+          </option>
+          <option value="no-se" className="bg-black">
+            No estoy seguro, quiero orientación
+          </option>
+        </select>
+      </div>
+
+      <div>
+        <Label htmlFor="mensaje">Cuéntanos tu proyecto</Label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          required
+          rows={4}
+          placeholder="Qué tienes grabado o qué quieres comunicar. Fecha tentativa si la tienes."
+          className={`${inputClass} resize-none`}
+        />
+      </div>
+
+      {status === "error" && (
+        <p className="text-sm text-red-400">
+          Algo salió mal. Intenta de nuevo o escríbenos por WhatsApp.
+        </p>
+      )}
+
+      <button
+        type="submit"
+        disabled={status === "sending"}
+        className="inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90 disabled:opacity-50"
+      >
+        {status === "sending" ? "Enviando…" : "Enviar mensaje"}
+        {status !== "sending" && <ArrowRight className="h-4 w-4" />}
+      </button>
+
+      <p className="text-center text-xs text-white/25">
+        Respondemos antes de 24 horas hábiles. Sin compromiso.
+      </p>
+    </form>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Page — "use client" porque el form tiene estado                    */
+/*  El metadata se mueve a un archivo separado: contacto/metadata.ts  */
+/* ------------------------------------------------------------------ */
+
+export default function ContactoPage() {
+  return (
+    <main className="bg-black text-white selection:bg-white selection:text-black">
+
+      {/* ── HERO ─────────────────────────────────────────────────── */}
+      <section className="container max-w-4xl pt-28 pb-16 md:pt-36 md:pb-20">
+        <Eyebrow>Contacto</Eyebrow>
+        <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
+          Cuéntanos tu proyecto.{" "}
+          <span className="text-white/35">
+            Te respondemos con precio y plazo el mismo día.
+          </span>
         </h1>
-
-        <p className="mt-6 text-white/65 leading-relaxed">
-          Si tu empresa necesita producir un video corporativo,
-          desarrollar una serie institucional o estructurar comunicación ejecutiva,
-          conversemos el contexto y objetivos.
+        <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
+          No necesitamos reuniones largas para darte un precio. Cuéntanos
+          qué necesitas y en menos de 24 horas hábiles tienes un alcance
+          claro por escrito.
         </p>
-
-        <p className="mt-6 text-white/60 leading-relaxed">
-          Diseñamos el formato adecuado y estructuramos el proyecto
-          con alcance claro, tiempos definidos y estándar visual corporativo.
-        </p>
-
-        <p className="mt-6 text-sm text-white/40">
-          Tiempo de respuesta habitual: 24–48 horas hábiles.
-        </p>
-
-        {/* DISPONIBILIDAD */}
-        <div className="mt-10 border border-white/10 rounded-xl p-6 text-left text-sm text-white/60 leading-relaxed">
-          <p className="text-white font-medium mb-2">
-            Disponibilidad 2026
-          </p>
-          <p>
-            La agenda de rodajes se organiza con anticipación.
-            Durante el período <strong>22 de abril al 5 de mayo de 2026</strong>
-            no se realizarán rodajes presenciales.
-          </p>
-          <p className="mt-3">
-            La planificación, preproducción y postproducción continúan con normalidad.
-            Recomendamos coordinar fechas con anticipación para asegurar disponibilidad.
-          </p>
-        </div>
-
-        {/* CTAs */}
-        <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-
-          <a
-            href={wa}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-white/30 px-8 py-4 hover:bg-white hover:text-black transition"
-          >
-            Escribir por WhatsApp
-            <div className="text-xs opacity-60 mt-1">
-              +56 9 2008 0031
-            </div>
-          </a>
-
-          <a
-            href={`mailto:${EMAIL}`}
-            className="border border-white/30 px-8 py-4 hover:bg-white hover:text-black transition"
-          >
-            Enviar correo
-            <div className="text-xs opacity-60 mt-1">
-              {EMAIL}
-            </div>
-          </a>
-
-        </div>
-
-        {/* GUÍA ESTRATÉGICA */}
-        <div className="mt-16 text-white/50 text-sm leading-relaxed max-w-xl mx-auto">
-          <p>
-            Para avanzar de forma más eficiente, puedes incluir:
-          </p>
-
-          <p className="mt-4">
-            organización · objetivo estratégico · tipo de contenido ·
-            ciudad de grabación · fecha estimada · presupuesto referencial
-          </p>
-        </div>
-
-        {/* PERFIL DE CLIENTE */}
-        <div className="mt-20 border-t border-white/10 pt-12 text-white/50 text-sm leading-relaxed">
-          <p>
-            Trabajamos con banca, educación, industria, clínicas,
-            empresas tecnológicas y organizaciones que requieren
-            comunicación audiovisual clara y profesional.
-          </p>
-
-          <p className="mt-4">
-            Desarrollamos tanto temporadas ejecutivas como
-            proyectos puntuales de video corporativo.
-          </p>
-        </div>
-
-        {/* VOLVER */}
-        <div className="mt-16">
-          <Link
-            href="/"
-            className="text-white/40 hover:text-white text-sm transition"
-          >
-            ← Volver al inicio
-          </Link>
-        </div>
-
       </section>
+
+      {/* ── CONTENIDO PRINCIPAL ──────────────────────────────────── */}
+      <section className="container max-w-5xl pb-28">
+        <div className="grid gap-12 lg:grid-cols-[1fr_420px] lg:items-start">
+
+          {/* Columna izquierda: opciones de contacto */}
+          <div>
+
+            {/* WhatsApp — opción principal */}
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-7 mb-6">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className="mb-3 inline-flex items-center rounded-full border border-emerald-400/20 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
+                    Más rápido
+                  </div>
+                  <h2 className="text-lg font-semibold text-white">
+                    WhatsApp
+                  </h2>
+                  <p className="mt-2 text-sm text-white/50 leading-relaxed">
+                    La forma más rápida. Escribimos de vuelta el mismo día
+                    hábil. Si no sabes exactamente qué necesitas, por acá
+                    es más fácil orientarte.
+                  </p>
+                  <p className="mt-3 text-sm text-white/30">
+                    +56 9 2008 0031
+                  </p>
+                </div>
+              </div>
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
+              >
+                Abrir WhatsApp
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            {/* Email */}
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 mb-6">
+              <h2 className="text-base font-semibold text-white mb-1">
+                Correo electrónico
+              </h2>
+              <p className="text-sm text-white/45 mb-4">
+                Si prefieres comunicarte por correo o tienes documentos
+                que adjuntar.
+              </p>
+              <a
+                href={`mailto:${EMAIL}`}
+                className="inline-flex items-center gap-2 text-sm text-white/55 transition hover:text-white"
+              >
+                {EMAIL}
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
+
+            {/* Qué incluir */}
+            <div className="rounded-2xl border border-white/10 p-6">
+              <h2 className="text-sm font-semibold text-white mb-4">
+                Para responderte más rápido, cuéntanos:
+              </h2>
+              <ul className="space-y-2">
+                {[
+                  "Qué tienes grabado o qué quieres comunicar",
+                  "A qué plataforma va el contenido (LinkedIn, YouTube, interno)",
+                  "Fecha tentativa si la tienes",
+                  "Si ya tienes presupuesto en mente o no",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2.5 text-sm text-white/40"
+                  >
+                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/25 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 text-xs text-white/25 leading-relaxed">
+                Si no tienes todo esto claro, escríbenos igual. En la
+                primera conversación lo definimos juntos.
+              </p>
+            </div>
+          </div>
+
+          {/* Columna derecha: formulario */}
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:sticky lg:top-24">
+            <h2 className="text-base font-semibold text-white mb-6">
+              O completa el formulario
+            </h2>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
