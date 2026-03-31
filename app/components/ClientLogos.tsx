@@ -1,0 +1,22 @@
+import Image from "next/image";
+
+const logos = [
+  { src: "/logo_1.png", alt: "Banco BICE" },
+  { src: "/logo_2.png", alt: "Trewhela's School" },
+  { src: "/logo_3.png", alt: "Coesam" },
+  { src: "/logo_4.png", alt: "iGromi" },
+  { src: "/logo_5.png", alt: "APCC" },
+  { src: "/logo_6.png", alt: "Exploflex" },
+];
+
+export function ClientLogos() {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-6 gap-6 items-center justify-items-center">
+      {logos.map((l, i) => (
+        <div key={i} className="opacity-60 hover:opacity-100 transition">
+          <Image src={l.src} alt={l.alt} width={160} height={48} />
+        </div>
+      ))}
+    </div>
+  );
+}
