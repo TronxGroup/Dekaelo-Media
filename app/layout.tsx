@@ -5,28 +5,24 @@ import { LayoutShell } from "./components/LayoutShell";
 
 const siteUrl = "https://www.dekaelomedia.com";
 
-/* -------------------------------------------------------------------------- */
-/*                                   SEO                                      */
-/* -------------------------------------------------------------------------- */
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   applicationName: "Dekaelo Media",
 
   title: {
-    default: "Dekaelo Media — Productora Audiovisual Corporativa en Chile",
+    default: "Dekaelo Media — Video corporativo y series institucionales en Chile",
     template: "%s | Dekaelo Media",
   },
 
   description:
-    "Productora audiovisual corporativa en Chile especializada en video corporativo, series institucionales y vodcast ejecutivos para empresas y organizaciones de alto perfil.",
+    "Convertimos tu contenido en video profesional listo para LinkedIn, YouTube e Instagram. Edición mensual, videos institucionales y vodcast ejecutivos para empresas en Chile.",
 
   keywords: [
-    "productora audiovisual Chile",
     "video corporativo Chile",
-    "serie institucional",
-    "vodcast ejecutivo",
+    "edición video empresas Chile",
+    "vodcast corporativo Santiago",
+    "serie institucional empresa Chile",
     "producción audiovisual corporativa",
   ],
 
@@ -50,15 +46,15 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "Dekaelo Media",
-    title: "Dekaelo Media — Productora Audiovisual Corporativa",
+    title: "Dekaelo Media — Video corporativo en Chile",
     description:
-      "Producción audiovisual estratégica para liderazgo, cultura organizacional y comunicación corporativa en Chile.",
+      "Tu empresa genera contenido todos los días. El problema es que nadie lo ve bien. Nosotros lo resolvemos.",
     images: [
       {
         url: siteUrl + "/og-cover.jpg",
         width: 1200,
         height: 630,
-        alt: "Dekaelo Media — Productora Audiovisual Corporativa",
+        alt: "Dekaelo Media — Video corporativo en Chile",
       },
     ],
     locale: "es_CL",
@@ -66,9 +62,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Dekaelo Media — Productora Audiovisual Corporativa",
+    title: "Dekaelo Media — Video corporativo en Chile",
     description:
-      "Series institucionales, vodcast ejecutivos y video corporativo en Chile.",
+      "Edición mensual, videos institucionales y vodcast ejecutivos para empresas en Chile.",
     images: [siteUrl + "/og-cover.jpg"],
   },
 
@@ -94,16 +90,8 @@ export const viewport: Viewport = {
   themeColor: "#000000",
 };
 
-/* -------------------------------------------------------------------------- */
-/*                                ANALYTICS                                   */
-/* -------------------------------------------------------------------------- */
-
 const GA4_ID = "G-96HZDP5PVP";
 const ADS_ID = "AW-17760996045";
-
-/* -------------------------------------------------------------------------- */
-/*                                LAYOUT                                      */
-/* -------------------------------------------------------------------------- */
 
 export default function RootLayout({
   children,
@@ -113,27 +101,15 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        {/* Performance */}
-        <link
-          rel="preconnect"
-          href="https://www.googletagmanager.com"
-          crossOrigin=""
-        />
-        <link
-          rel="preconnect"
-          href="https://www.google-analytics.com"
-          crossOrigin=""
-        />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
-
-        {/* Security / Performance */}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </head>
 
       <body className="bg-black text-white selection:bg-white selection:text-black">
-        {/* Google Tag (GA4 + Google Ads) */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`}
           strategy="afterInteractive"
@@ -143,22 +119,13 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
-            // GA4
-            gtag('config', '${GA4_ID}', {
-              anonymize_ip: true,
-              send_page_view: true
-            });
-
-            // Google Ads
+            gtag('config', '${GA4_ID}', { anonymize_ip: true, send_page_view: true });
             gtag('config', '${ADS_ID}');
           `}
         </Script>
 
-        {/* Layout condicional: oculta navbar/footer en /video-corporativo */}
         <LayoutShell>{children}</LayoutShell>
 
-        {/* Structured Data */}
         <Script
           id="schema"
           type="application/ld+json"
@@ -172,7 +139,7 @@ export default function RootLayout({
                 url: siteUrl,
                 logo: siteUrl + "/logo.png",
                 description:
-                  "Productora audiovisual corporativa en Chile especializada en video corporativo y series institucionales.",
+                  "Productora audiovisual corporativa en Chile especializada en video corporativo, edición mensual y series institucionales.",
                 sameAs: [
                   "https://www.instagram.com/dekaelo_media",
                   "https://www.youtube.com/@dekaelo_media",
@@ -200,7 +167,7 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "Service",
-                name: "Producción Audiovisual Corporativa",
+                name: "Video Corporativo",
                 provider: {
                   "@type": "Organization",
                   name: "Dekaelo Media",
@@ -211,9 +178,9 @@ export default function RootLayout({
                 },
                 serviceType: [
                   "Video corporativo",
+                  "Edición de video mensual",
                   "Serie institucional",
                   "Vodcast ejecutivo",
-                  "Comunicación corporativa audiovisual",
                 ],
               },
             ]),
