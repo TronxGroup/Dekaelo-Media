@@ -1,87 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  color-scheme: dark;
-}
-
-html,
-body {
-  height: 100%;
-  background: #000;
-}
-
-@layer components {
-  /* ── Layout ──────────────────────────────────────────── */
-  .container {
-    @apply mx-auto max-w-6xl px-4;
-  }
-
-  .section {
-    @apply py-16 md:py-24;
-  }
-
-  /* ── Typography ──────────────────────────────────────── */
-  .h1 {
-    @apply text-4xl md:text-6xl font-extrabold tracking-tight;
-  }
-
-  .h2 {
-    @apply text-3xl md:text-4xl font-bold;
-  }
-
-  .p {
-    @apply text-white/80 leading-relaxed;
-  }
-
-  .link {
-    @apply text-white/90 hover:text-white transition;
-  }
-
-  /* ── Buttons ─────────────────────────────────────────── */
-
-  /* Botón principal — fondo blanco, texto negro */
-  .btn-primary {
-    @apply inline-flex items-center justify-center rounded-xl
-           px-5 py-2.5 text-sm font-semibold
-           bg-white text-black
-           hover:bg-white/90
-           transition-colors;
-  }
-
-  /* Botón fantasma — borde sutil, sin fondo */
-  .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-xl
-           px-5 py-2.5 text-sm font-medium
-           border border-white/15 text-white/70
-           hover:bg-white/8 hover:text-white
-           transition-colors;
-  }
-
-  /* Alias legacy — mantener compatibilidad con código anterior */
-  .btn {
-    @apply btn-primary;
-  }
-
-  .btn-outline {
-    @apply btn-ghost;
-  }
-
-  /* ── Cards ───────────────────────────────────────────── */
-  .card {
-    @apply rounded-2xl border border-white/10 bg-white/5 p-6;
-  }
-
-  /* ── Badge ───────────────────────────────────────────── */
-  .badge {
-    @apply inline-flex items-center rounded-full
-           border border-white/20
-           px-2 py-0.5 text-[11px] font-medium text-white/80;
-  }
-}
-
-/* ── Footer links ────────────────────────────────────── */
-footer a {
-  @apply text-white/70 hover:text-white transition-colors;
-}
+    at Object.<anonymous> (/vercel/path0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!/vercel/path0/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!/vercel/path0/app/globals.css:1:7)
+    at /vercel/path0/node_modules/next/dist/compiled/webpack/bundle5.js:28:922493
+    at Hook.eval [as call] (eval at create (/vercel/path0/node_modules/next/dist/compiled/webpack/bundle5.js:13:28636), <anonymous>:7:1)
+    at Hook.CALL_DELEGATE [as _call] (/vercel/path0/node_modules/next/dist/compiled/webpack/bundle5.js:13:25906)
+    at /vercel/path0/node_modules/next/dist/compiled/webpack/bundle5.js:28:131198
+    at tryRunOrWebpackError (/vercel/path0/node_modules/next/dist/compiled/webpack/bundle5.js:28:312943)
+    at __webpack_require_module__ (/vercel/path0/node_modules/next/dist/compiled/webpack/bundle5.js:28:131165)
+    at __nested_webpack_require_153728__ (/vercel/path0/node_modules/next/dist/compiled/webpack/bundle5.js:28:130607)
+    at /vercel/path0/node_modules/next/dist/compiled/webpack/bundle5.js:28:131454
+    at symbolIterator (/vercel/path0/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+Generated code for /vercel/path0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!/vercel/path0/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!/vercel/path0/app/globals.css
+Import trace for requested module:
+./app/globals.css
+> Build failed because of webpack errors
+Error: Command "npm run build" exited with 1
