@@ -48,7 +48,7 @@ const services = [
       "Entrega en 5 dias habiles",
       "Pago 50% adelantado",
     ],
-    price: "$400.000 - $650.000",
+    price: "$300.000 - $700.000",
     note: "+ IVA - pago unico por proyecto",
     href: "/servicios#postproduccion",
   },
