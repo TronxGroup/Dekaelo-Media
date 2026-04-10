@@ -44,8 +44,8 @@ export default function QuienesSomosPage() {
       <section className="container max-w-4xl pt-28 pb-16 md:pt-36 md:pb-20">
         <Eyebrow>Quienes somos</Eyebrow>
         <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
-          Mas de una decada produciendo video corporativo.{" "}
-          <span className="text-white/35">Sin el ego ni el precio de una agencia grande.</span>
+          Produccion audiovisual corporativa desde 2013.{" "}
+          <span className="text-white/35">El mismo estandar de siempre, sin el precio de una agencia.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
           Estudio audiovisual en Santiago especializado en vodcast corporativo y series institucionales.
@@ -76,7 +76,7 @@ export default function QuienesSomosPage() {
                 El recorrido parte en el cine independiente con <strong className="text-white">Yokai</strong>, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre en 2014. Ahi aprendimos estructura narrativa, ritmo y criterio visual.
               </p>
               <p className="mt-4 text-white/60 leading-relaxed">
-                Antes de eso, comerciales para Editorial Televisa Chile. Despues, un video tutorial que llego a 3.8 millones de vistas sin pauta. Hoy, vodcast institucional para Banco BICE.
+                Después de eso, comerciales para Editorial Televisa Chile y un video tutorial que llego a 3.8 millones de vistas sin pauta. Hoy, vodcast institucional para BICE.
               </p>
               <p className="mt-4 text-white/60 leading-relaxed">
                 El mismo estandar de siempre, aplicado al video corporativo.
