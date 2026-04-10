@@ -188,7 +188,7 @@ export default function Page() {
 
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/60">
           Mas de una decada produciendo vodcast, series institucionales y video corporativo
-          para empresas en Chile. Sin el ego ni el precio de una agencia grande.
+          para empresas en Chile. Estudio independiente. Sin estructura de agencia ni sus costos.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
