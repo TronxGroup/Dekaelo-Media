@@ -113,27 +113,21 @@ export default function QuienesSomosPage() {
       </section>
 
       {/* ORIGEN */}
-      <section className="border-t border-white/10 py-24">
-        <div className="container max-w-5xl">
-          <div className="grid gap-12 md:grid-cols-2 md:items-center">
-            <div>
-              <Eyebrow>De donde venimos</Eyebrow>
-              <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
-                Empezamos en el cine
-              </h2>
-
-              <p className="mt-6 text-white/60 leading-relaxed">
-                “Yokai”, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre (2014).
-              </p>
-
-              <p className="mt-4 text-white/60 leading-relaxed">
-                Ese origen define el criterio: narrativa, ritmo y claridad.
-              </p>
-
-              <p className="mt-4 text-white/60 leading-relaxed">
-                Hoy aplicado a contenido corporativo. Producción continua para BICE.
-              </p>
-            </div>
+<section className="border-t border-white/10 py-24">
+  <div className="container max-w-5xl">
+    <div className="grid gap-12 md:grid-cols-2 md:items-center">
+      <div>
+        <Eyebrow>De donde venimos</Eyebrow>
+        <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+          Empezamos en el cine
+        </h2>
+        <p className="mt-6 text-white/60 leading-relaxed">
+          Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre en 2014. Ese origen define el criterio: narrativa, ritmo y criterio visual.
+        </p>
+        <p className="mt-4 text-white/60 leading-relaxed">
+          Hoy aplicado al video corporativo. Desde 2013, produccion continua para banca, industria y camaras empresariales en Chile.
+        </p>
+      </div>
 
             <Image
               src="/qs_dekaelo_3.png"
