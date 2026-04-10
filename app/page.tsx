@@ -71,58 +71,18 @@ const biceImages = [
   { src: "/bice/bice-3.jpg", alt: "Set vodcast BICE detalle de produccion" },
 ];
 
-const cases = [
-  {
-    tag: "Vodcast corporativo",
-    name: "iGromi - Industria 4.0 y nuevos negocios Ep. 8",
-    desc: "Serie vodcast sobre tecnologia e industria. Produccion completa.",
-    youtube: "https://www.youtube.com/embed/2G7oKXKjPl8?rel=0&modestbranding=1&playsinline=1",
-  },
-  {
-    tag: "Evento corporativo - Figuras publicas",
-    name: "HKLABA - Introduccion institucional",
-    desc: "Produccion con Charles Kimber de Arauco, Eduardo Frei y Jorge Carey.",
-    youtube: "https://www.youtube.com/embed/a1OcIDBTHgw?rel=0&modestbranding=1&playsinline=1",
-  },
-  {
-    tag: "Vodcast - Serie original",
-    name: "Futbol y Parrilla - Borghi, Paredes y Monje",
-    desc: "Produccion completa de serie original. Mas de 357K vistas en los primeros 4 episodios.",
-    youtube: "https://www.youtube.com/embed/PLSfbZU_asQ?rel=0&modestbranding=1&playsinline=1",
-  },
-  {
-    tag: "Vodcast institucional - Camara de Comercio",
-    name: "APCC Chamber - Hong Kong y Latinoamerica Ep. 2",
-    desc: "Serie Asia-Pacifico para la Camara de Comercio. Mas de 20 episodios producidos.",
-    youtube: "https://www.youtube.com/embed/byTylGKp-uI?rel=0&modestbranding=1&playsinline=1",
-  },
-];
-
-const forWho = [
-  "Quieres posicionar a tus lideres con un vodcast corporativo",
-  "Tu empresa hace cosas importantes pero nadie lo sabe porque no publican",
-  "Grabaste algo en un evento y lleva meses sin editar",
-  "Necesitas un video institucional antes de una reunion o licitacion",
-];
-
-const notForWho = [
-  "Necesitas produccion de TV o publicidad masiva",
-  "Buscas el precio mas bajo del mercado",
-  "No tienes claro que quieres comunicar",
-];
-
-function Chip({ children }: { children: React.ReactNode }) {
+function Chip(props: { children: React.ReactNode }) {
   return (
     <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-white/55">
-      {children}
+      {props.children}
     </span>
   );
 }
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
+function Eyebrow(props: { children: React.ReactNode }) {
   return (
     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
-      {children}
+      {props.children}
     </p>
   );
 }
@@ -170,13 +130,19 @@ export default function Page() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-          <a href={waLink} target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-white px-8 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90">
+          <a
+            href={waLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-white px-8 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
+          >
             Cuentanos tu proyecto por WhatsApp <ArrowUpRight className="h-4 w-4" />
           </a>
 
-          <Link href="/portafolio"
-            className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-8 py-3.5 text-sm text-white/65 transition hover:bg-white/10 hover:text-white">
+          <Link
+            href="/portafolio"
+            className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-8 py-3.5 text-sm text-white/65 transition hover:bg-white/10 hover:text-white"
+          >
             Ver trabajos realizados <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
