@@ -88,11 +88,11 @@ export default function Page() {
       {/* HERO */}
       <section className="container max-w-5xl pt-28 pb-20">
         <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-          Produccion de video corporativo y vodcast para empresas en Chile.
+          PProducción de vodcast y video corporativo, sin fricción.
         </h1>
 
         <p className="mt-6 text-sm text-white/40">
-          Santiago, Chile · Trabajo directo con el equipo
+          Procesos claros, tiempos definidos y entrega lista para publicar.
         </p>
 
         <p className="mt-8 max-w-2xl text-lg text-white/60">
