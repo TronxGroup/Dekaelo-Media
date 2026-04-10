@@ -45,7 +45,7 @@ const milestones = [
   },
   {
     year: "2025 — 2026",
-    text: "Producción continua para BICE. Temporada activa.",
+    text: "Continuidad de producción para BICE. Temporada activa.",
   },
 ];
 
