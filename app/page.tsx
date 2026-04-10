@@ -178,7 +178,7 @@ export default function Page() {
 <section className="container max-w-5xl pt-28 pb-20 md:pt-36 md:pb-28">
   <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50">
     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-    BICE - Serie vodcast institucional 2024-2026
+    Estudio de Producción Audiovisual
   </div>
 
   <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
