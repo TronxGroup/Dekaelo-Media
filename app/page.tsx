@@ -6,50 +6,50 @@ import { ClientLogos } from "./components/ClientLogos";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 const waLink = `https://wa.me/56920080031?text=${encodeURIComponent(
-  "Hola Quiero conversar sobre un proyecto con Dekaelo Media.\n\nEmpresa:\nQué necesito:\nFecha tentativa:\n\nGracias"
+  "Hola, quiero conversar sobre un proyecto con Dekaelo Media.\n\nEmpresa:\nQue necesito:\nFecha tentativa:\n\nGracias"
 )}`;
 
 export const metadata: Metadata = {
   title: "Dekaelo Media — Vodcast y video corporativo en Chile",
   description:
-    "Más de una década produciendo vodcast, series institucionales y video corporativo para empresas en Chile. Banco BICE, Cámara de Comercio Asia Pacífico, iGromi y más.",
+    "Mas de una decada produciendo vodcast, series institucionales y video corporativo para empresas en Chile. Banco BICE, Camara de Comercio Asia Pacifico, iGromi y mas.",
 };
 
 const services = [
   {
     badge: "Especialidad principal",
     badgeClass: "bg-amber-500/15 text-amber-300 border border-amber-400/20",
-    name: "Producción completa",
+    name: "Produccion completa",
     tagline:
-      "Para empresas que quieren vodcast, series corporativas o video institucional sin preocuparse de nada técnico.",
-    how: "Diseñamos el formato, llegamos con equipo a tu oficina, grabamos y producimos la temporada completa. Tú solo apareces y hablas.",
+      "Para empresas que quieren vodcast, series corporativas o video institucional sin preocuparse de nada tecnico.",
+    how: "Disenamos el formato, llegamos con equipo a tu oficina, grabamos y producimos la temporada completa. Tu solo apareces y hablas.",
     includes: [
-      "Diseño de formato y pauta",
-      "Grabación profesional en tu oficina",
-      "Dirección y conducción técnica",
-      "Edición, subtítulos y entrega lista para publicar",
-      "Referencia: Banco BICE (2024–2026)",
+      "Diseno de formato y pauta",
+      "Grabacion profesional en tu oficina",
+      "Direccion y conduccion tecnica",
+      "Edicion, subtitulos y entrega lista para publicar",
+      "Referencia: Banco BICE (2024-2026)",
     ],
     price: "Desde $1.200.000 / temporada",
-    note: "+ IVA · desde 4 episodios",
+    note: "+ IVA - desde 4 episodios",
     href: "/servicios#produccion",
   },
   {
-    badge: "Post-producción",
+    badge: "Post-produccion",
     badgeClass: "bg-sky-500/15 text-sky-300 border border-sky-400/20",
-    name: "Post-producción",
+    name: "Post-produccion",
     tagline:
-      "Tú o tu empresa graban. Nosotros lo dejamos profesional y listo para LinkedIn, YouTube o Instagram.",
+      "Tu o tu empresa graban. Nosotros lo dejamos profesional y listo para LinkedIn, YouTube o Instagram.",
     how: "Mandas el material en bruto. Nosotros editamos, corregimos audio y color, titulamos, subtitulamos y entregamos en el formato correcto.",
     includes: [
-      "Corrección de audio y color",
-      "Títulos, créditos y subtítulos",
+      "Correccion de audio y color",
+      "Titulos, creditos y subtitulos",
       "Formato para redes y web",
-      "Entrega en 5 días hábiles",
+      "Entrega en 5 dias habiles",
       "Pago 50% adelantado",
     ],
-    price: "$400.000 – $650.000",
-    note: "+ IVA · pago único por proyecto",
+    price: "$400.000 - $650.000",
+    note: "+ IVA - pago unico por proyecto",
     href: "/servicios#postproduccion",
   },
 ];
@@ -57,78 +57,78 @@ const services = [
 const milestones = [
   {
     year: "2014",
-    text: "Selección oficial a Sitges Film Festival y BARS con el largometraje Yokai. Comerciales para Editorial Televisa Chile — Revista Caras.",
+    text: "Seleccion oficial a Sitges Film Festival y BARS con el largometraje Yokai. Comerciales para Editorial Televisa Chile — Revista Caras.",
   },
   {
     year: "2015",
-    text: "Video tutorial para Oximixo supera 3.8M de vistas en YouTube con 18K likes. Orgánico, sin pauta.",
+    text: "Video tutorial para Oximixo supera 3.8M de vistas en YouTube con 18K likes. Organico, sin pauta.",
   },
   {
     year: "2023",
-    text: "Inicio de producción continua de vodcast corporativos. Más de 20 episodios para la Cámara de Comercio Asia Pacífico y serie para iGromi distribuida en TV abierta.",
+    text: "Inicio de produccion continua de vodcast corporativos. Mas de 20 episodios para la Camara de Comercio Asia Pacifico y serie para iGromi distribuida en TV abierta.",
   },
   {
     year: "2024",
-    text: "Producción de los 4 primeros episodios de Fútbol y Parrilla — más de 357K vistas acumuladas. Inicio de serie vodcast institucional para Banco BICE.",
+    text: "Produccion de los 4 primeros episodios de Futbol y Parrilla — mas de 357K vistas acumuladas. Inicio de serie vodcast institucional para Banco BICE.",
   },
   {
-    year: "2025–2026",
-    text: "Producción continua para Banco BICE. Temporada activa en curso.",
+    year: "2025-2026",
+    text: "Produccion continua para Banco BICE. Temporada activa en curso.",
   },
 ];
 
 const stats = [
   { value: "100+", label: "videos producidos desde 2013" },
-  { value: "3.8M", label: "vistas en un solo video orgánico" },
-  { value: "357K+", label: "vistas en serie Fútbol y Parrilla" },
+  { value: "3.8M", label: "vistas en un solo video organico" },
+  { value: "357K+", label: "vistas en serie Futbol y Parrilla" },
   { value: "60+", label: "episodios vodcast corporativos" },
 ];
 
 const biceImages = [
-  { src: "/bice/bice-1.jpg", alt: "Set vodcast Banco BICE — episodio en producción" },
-  { src: "/bice/bice-2.jpg", alt: "Set vodcast Banco BICE — configuración de cámaras" },
-  { src: "/bice/bice-3.jpg", alt: "Set vodcast Banco BICE — detalle de producción" },
+  { src: "/bice/bice-1.jpg", alt: "Set vodcast Banco BICE — episodio en produccion" },
+  { src: "/bice/bice-2.jpg", alt: "Set vodcast Banco BICE — configuracion de camaras" },
+  { src: "/bice/bice-3.jpg", alt: "Set vodcast Banco BICE — detalle de produccion" },
 ];
 
 const cases = [
   {
     tag: "Vodcast corporativo · TV abierta",
     name: "iGromi — Industria 4.0 y nuevos negocios · Ep. 8",
-    desc: "Serie vodcast sobre tecnología e industria distribuida en TV abierta. Producción completa.",
+    desc: "Serie vodcast sobre tecnologia e industria distribuida en TV abierta. Produccion completa.",
     youtube: "https://www.youtube.com/embed/2G7oKXKjPl8?rel=0&modestbranding=1&playsinline=1",
   },
   {
-    tag: "Evento corporativo · Figuras públicas",
-    name: "HKLABA — Introducción institucional",
-    desc: "Producción para evento con Charles Kimber (Arauco), Eduardo Frei y Jorge Carey. Registro profesional de alto perfil.",
+    tag: "Evento corporativo · Figuras publicas",
+    name: "HKLABA — Introduccion institucional",
+    desc: "Produccion para evento con Charles Kimber (Arauco), Eduardo Frei y Jorge Carey. Registro profesional de alto perfil.",
     youtube: "https://www.youtube.com/embed/a1OcIDBTHgw?rel=0&modestbranding=1&playsinline=1",
   },
   {
     tag: "Vodcast · Serie original",
-    name: "Fútbol y Parrilla — Borghi, Paredes y Monje",
-    desc: "Producción completa de serie original. Más de 357K vistas acumuladas en los primeros 4 episodios.",
+    name: "Futbol y Parrilla — Borghi, Paredes y Monje",
+    desc: "Produccion completa de serie original. Mas de 357K vistas acumuladas en los primeros 4 episodios.",
     youtube: "https://www.youtube.com/embed/PLSfbZU_asQ?rel=0&modestbranding=1&playsinline=1",
   },
   {
-    tag: "Vodcast institucional · Cámara de Comercio",
-    name: "APCC Chamber — Hong Kong y Latinoamérica · Ep. 2",
-    desc: "Serie sobre oportunidades de negocio Asia-Pacífico para la Cámara de Comercio. Más de 20 episodios producidos.",
+    tag: "Vodcast institucional · Camara de Comercio",
+    name: "APCC Chamber — Hong Kong y Latinoamerica · Ep. 2",
+    desc: "Serie sobre oportunidades de negocio Asia-Pacifico para la Camara de Comercio. Mas de 20 episodios producidos.",
     youtube: "https://www.youtube.com/embed/byTylGKp-uI?rel=0&modestbranding=1&playsinline=1",
   },
 ];
 
 const forWho = [
-  "Quieres posicionar a tus líderes o comunicar cultura organizacional con un vodcast",
-  "Tienes un jefe o cliente que te pide video y no sabes a quién llamar",
+  "Quieres posicionar a tus lideres o comunicar cultura organizacional con un vodcast",
+  "Tienes un jefe o cliente que te pide video y no sabes a quien llamar",
   "Tu empresa hace cosas importantes pero nadie lo sabe porque no publican",
   "Grabaste algo en un evento y lleva meses sin editar",
-  "Necesitas un video institucional antes de una reunión o licitación",
+  "Necesitas un video institucional antes de una reunion o licitacion",
 ];
 
 const notForWho = [
-  "Necesitas producción de TV o publicidad masiva",
-  "Buscas el precio más bajo del mercado",
-  "No tienes claro qué quieres comunicar",
+  "Necesitas produccion de TV o publicidad masiva",
+  "Buscas el precio mas bajo del mercado",
+  "No tienes claro que quieres comunicar",
 ];
 
 function Chip({ children }: { children: React.ReactNode }) {
@@ -171,20 +171,20 @@ export default function Page() {
       <section className="container max-w-5xl pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          Banco BICE · Serie vodcast institucional 2024–2026
+          Banco BICE · Serie vodcast institucional 2024-2026
         </div>
         <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
           Video corporativo que{" "}
-          <span className="text-white/35">habla por sí solo.</span>
+          <span className="text-white/35">habla por si solo.</span>
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/60">
-          Más de una década produciendo vodcast, series institucionales y video corporativo
-          para empresas en Chile. Producción completa o post-producción,
+          Mas de una decada produciendo vodcast, series institucionales y video corporativo
+          para empresas en Chile. Produccion completa o post-produccion,
           sin el ego ni el precio de una agencia grande.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Chip>Especialistas en vodcast corporativo</Chip>
-          <Chip>Entrega en 5 días hábiles</Chip>
+          <Chip>Entrega en 5 dias habiles</Chip>
           <Chip>Santiago, Chile</Chip>
         </div>
         <div className="mt-12 flex flex-col gap-4 sm:flex-row">
@@ -194,7 +194,7 @@ export default function Page() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-white px-8 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
           >
-            Cuéntanos tu proyecto por WhatsApp <ArrowUpRight className="h-4 w-4" />
+            Cuentanos tu proyecto por WhatsApp <ArrowUpRight className="h-4 w-4" />
           </a>
           <Link
             href="/portafolio"
@@ -210,7 +210,7 @@ export default function Page() {
         <div className="mb-8 flex items-center justify-between gap-4">
           <Eyebrow>Reel corporativo</Eyebrow>
           <Link href="/portafolio" className="text-sm text-white/35 transition hover:text-white">
-            Ver todos los casos →
+            Ver todos los casos
           </Link>
         </div>
         <VideoEmbed
@@ -229,7 +229,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* NÚMEROS */}
+      {/* NUMEROS */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <div className="grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
@@ -250,7 +250,7 @@ export default function Page() {
         <div className="container max-w-5xl">
           <Eyebrow>Trayectoria</Eyebrow>
           <h2 className="mt-3 text-3xl font-semibold md:text-4xl">El trabajo habla.</h2>
-          <div className="mt-14 space-y-0">
+          <div className="mt-14">
             {milestones.map((m, i) => (
               <div
                 key={m.year}
@@ -276,12 +276,12 @@ export default function Page() {
               <Eyebrow>Caso destacado</Eyebrow>
               <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Banco BICE</h2>
               <p className="mt-3 max-w-xl text-white/50 leading-relaxed">
-                Serie vodcast institucional en producción continua desde 2024. 3 episodios
-                finalizados, temporada activa con más capítulos en camino.
+                Serie vodcast institucional en produccion continua desde 2024. 3 episodios
+                finalizados, temporada activa con mas capitulos en camino.
               </p>
             </div>
             <span className="hidden shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/35 sm:inline-flex">
-              2024 – 2026
+              2024 - 2026
             </span>
           </div>
           <div className="grid grid-cols-3 gap-3 md:gap-4">
@@ -310,7 +310,7 @@ export default function Page() {
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <Chip>Vodcast ejecutivo</Chip>
-            <Chip>Producción completa</Chip>
+            <Chip>Produccion completa</Chip>
             <Chip>3 episodios finalizados</Chip>
             <Chip>Temporada en curso</Chip>
           </div>
@@ -330,7 +330,7 @@ export default function Page() {
             href="/servicios"
             className="hidden text-sm text-white/35 transition hover:text-white sm:block"
           >
-            Ver detalle completo →
+            Ver detalle completo
           </Link>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
@@ -371,7 +371,7 @@ export default function Page() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-white/20 bg-white/5 px-8 py-3.5 text-sm text-white/70 transition hover:bg-white hover:text-black"
           >
-            No estás seguro cuál necesitas — escríbenos y te orientamos{" "}
+            No estas seguro cual necesitas — escribenos y te orientamos{" "}
             <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
@@ -390,7 +390,7 @@ export default function Page() {
             href="/portafolio"
             className="hidden text-sm text-white/35 transition hover:text-white sm:block"
           >
-            Ver portafolio completo →
+            Ver portafolio completo
           </Link>
         </div>
         <div className="grid gap-10 md:grid-cols-2">
@@ -417,14 +417,14 @@ export default function Page() {
         </div>
       </section>
 
-      {/* PARA QUIÉN */}
+      {/* PARA QUIEN */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
-          <Eyebrow>Para quién es</Eyebrow>
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">¿Esto es para ti?</h2>
+          <Eyebrow>Para quien es</Eyebrow>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Esto es para ti?</h2>
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <p className="text-sm font-semibold text-white mb-5">Sí es para ti si…</p>
+              <p className="text-sm font-semibold text-white mb-5">Si es para ti si...</p>
               <ul className="space-y-3">
                 {forWho.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-white/60 leading-relaxed">
@@ -435,7 +435,7 @@ export default function Page() {
               </ul>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <p className="text-sm font-semibold text-white mb-5">No es para ti si…</p>
+              <p className="text-sm font-semibold text-white mb-5">No es para ti si...</p>
               <ul className="space-y-3">
                 {notForWho.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-white/40 leading-relaxed">
@@ -446,7 +446,7 @@ export default function Page() {
               </ul>
               <div className="mt-8 border-t border-white/10 pt-6">
                 <p className="text-sm text-white/50 leading-relaxed">
-                  Si no estás seguro, escríbenos igual. Si no somos la mejor opción, te lo decimos sin rodeos.
+                  Si no estas seguro, escribenos igual. Si no somos la mejor opcion, te lo decimos sin rodeos.
                 </p>
               </div>
             </div>
@@ -459,12 +459,12 @@ export default function Page() {
         <div className="container max-w-4xl text-center">
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Banco BICE · Cámara de Comercio Asia Pacífico · iGromi · Coesam · Exploflex
+            Banco BICE · Camara de Comercio Asia Pacifico · iGromi · Coesam · Exploflex
           </div>
-          <h2 className="text-3xl font-semibold md:text-4xl">¿Conversamos tu proyecto?</h2>
+          <h2 className="text-3xl font-semibold md:text-4xl">Conversamos tu proyecto?</h2>
           <p className="mx-auto mt-5 max-w-xl text-white/55 leading-relaxed">
-            Cuéntanos qué necesitas. Te respondemos con un alcance claro y un precio concreto
-            en menos de 24 horas hábiles.
+            Cuentanos que necesitas. Te respondemos con un alcance claro y un precio concreto
+            en menos de 24 horas habiles.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             
@@ -473,7 +473,7 @@ export default function Page() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
             >
-              Escríbenos por WhatsApp <ArrowUpRight className="h-4 w-4" />
+              Escribenos por WhatsApp <ArrowUpRight className="h-4 w-4" />
             </a>
             <Link
               href="/contacto"
@@ -482,7 +482,7 @@ export default function Page() {
               O usa el formulario de contacto <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <p className="mt-6 text-xs text-white/25">Respondemos el mismo día hábil. Sin compromiso.</p>
+          <p className="mt-6 text-xs text-white/25">Respondemos el mismo dia habil. Sin compromiso.</p>
         </div>
       </section>
 
