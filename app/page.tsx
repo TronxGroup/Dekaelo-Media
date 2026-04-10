@@ -348,7 +348,7 @@ export default function Page() {
             </Link>
           ))}
        </div>
-        <div className="mt-10 text-center">
+       <div className="mt-10 text-center">
   <a
     href={waLink}
     target="_blank"
@@ -359,12 +359,6 @@ export default function Page() {
     <ArrowUpRight className="h-4 w-4" />
   </a>
 </div>
-    No estas seguro cual necesitas - escribenos y te orientamos <ArrowUpRight className="h-4 w-4" />
-</a>
-</div>
-            No estas seguro cual necesitas - escribenos y te orientamos <ArrowUpRight className="h-4 w-4" />
-          </a>
-        </div>
       </section>
 
       <section className="container border-t border-white/10 py-24 max-w-6xl">
