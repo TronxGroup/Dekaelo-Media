@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
-import { VideoEmbed } from "./components/VideoEmbed";
+import { VideoEmbed } from "../components/VideoEmbed";
 
 const waLink = `https://wa.me/56920080031?text=${encodeURIComponent("Hola 👋 Vi el portafolio de Dekaelo Media y quiero conversar sobre un proyecto.\n\nEmpresa:\nQué necesito:\nFecha tentativa:\n\nGracias")}`;
 
