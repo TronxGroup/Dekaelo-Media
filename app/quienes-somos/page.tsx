@@ -7,12 +7,12 @@ const waLink = "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20so
 
 export const metadata: Metadata = {
   title: "Quienes somos - Dekaelo Media",
-  description: "Productora audiovisual en Chile con mas de una decada de trayectoria. Especializados en vodcast corporativo y video institucional. Banco BICE, APCC, iGromi y mas.",
+  description: "Productora audiovisual en Chile con mas de una decada de trayectoria. Especializados en vodcast corporativo y video institucional. BICE, APCC, iGromi y mas.",
   alternates: { canonical: "https://www.dekaelomedia.com/quienes-somos" },
 };
 
 const stats = [
-  { n: "100+", label: "videos producidos desde 2013" },
+  { n: "150+", label: "videos producidos desde 2013" },
   { n: "3.8M", label: "vistas en un solo video organico" },
   { n: "60+", label: "episodios vodcast corporativos" },
   { n: "6+", label: "industrias distintas" },
