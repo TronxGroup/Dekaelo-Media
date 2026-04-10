@@ -6,7 +6,7 @@ import { ClientLogos } from "./components/ClientLogos";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 const waLink = `https://wa.me/56920080031?text=${encodeURIComponent(
-  "Hola 👋 Quiero conversar sobre un proyecto con Dekaelo Media.\n\nEmpresa:\nQué necesito:\nFecha tentativa:\n\nGracias"
+  "Hola Quiero conversar sobre un proyecto con Dekaelo Media.\n\nEmpresa:\nQué necesito:\nFecha tentativa:\n\nGracias"
 )}`;
 
 export const metadata: Metadata = {
