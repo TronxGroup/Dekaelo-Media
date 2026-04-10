@@ -21,9 +21,10 @@ const stats = [
 const milestones = [
   { year: "2014", text: "Seleccion oficial a Sitges Film Festival y BARS con Yokai. Comerciales para Editorial Televisa Chile — Revista Caras." },
   { year: "2015", text: "Video tutorial para Oximixo supera 3.8M de vistas en YouTube con 18K likes. Organico, sin pauta." },
+  { year: "2016-2022", text: "Videos corporativos para industria, tecnologia y educacion." },
   { year: "2023", text: "Mas de 20 episodios para la Camara de Comercio Asia Pacifico y serie para iGromi." },
   { year: "2024", text: "4 episodios de Futbol y Parrilla con mas de 357K vistas acumuladas. Inicio de serie vodcast institucional para BICE." },
-  { year: "2025-2026", text: "Produccion continua para Banco BICE. Temporada activa en curso." },
+  { year: "2025-2026", text: "Produccion continua para BICE. Temporada activa en curso." },
 ];
 
 const values = [
