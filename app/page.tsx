@@ -349,12 +349,16 @@ export default function Page() {
           ))}
        </div>
         <div className="mt-10 text-center">
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-white/20 bg-white/5 px-8 py-3.5 text-sm text-white/70 transition hover:bg-white hover:text-black"
-          >
+  <a
+    href={waLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 border border-white/20 bg-white/5 px-8 py-3.5 text-sm text-white/70 transition hover:bg-white hover:text-black"
+  >
+    No estas seguro cual necesitas - escribenos y te orientamos{" "}
+    <ArrowUpRight className="h-4 w-4" />
+  </a>
+</div>
     No estas seguro cual necesitas - escribenos y te orientamos <ArrowUpRight className="h-4 w-4" />
   </a>
 </div>
