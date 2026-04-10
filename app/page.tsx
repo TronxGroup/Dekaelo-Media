@@ -154,7 +154,7 @@ export default function Page() {
       {/* BICE */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
-          <Eyebrow>Proyecto</Eyebrow>
+          <Eyebrow>Algunos proyectos en curso</Eyebrow>
 
           <h2 className="mt-3 text-3xl font-semibold">BICE</h2>
 
