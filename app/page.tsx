@@ -166,7 +166,7 @@ function CrossIcon() {
 export default function Page() {
   return (
     <main className="bg-black text-white selection:bg-white selection:text-black">
-
+      
       {/* HERO */}
       <section className="container max-w-5xl pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50">
