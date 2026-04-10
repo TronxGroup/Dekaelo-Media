@@ -85,38 +85,41 @@ export default function Page() {
   return (
     <main className="bg-black text-white">
 
-      {/* HERO */}
-      <section className="container max-w-5xl pt-28 pb-20">
-        <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-          Produccion de vodcast y video corporativo para empresas en Chile.
-        </h1>
-
-        <p className="mt-6 text-sm text-white/40">
-          Mas de una decada produciendo contenido para empresas.
-        </p>
-
-        <p className="mt-8 max-w-2xl text-lg text-white/60">
-          Procesos claros, tiempos definidos y entrega lista para publicar.
-        </p>
-
-        <div className="mt-10 flex gap-4">
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-black px-6 py-3 text-sm"
-          >
-            Escribenos por WhatsApp
-          </a>
-
-          <Link
-            href="/portafolio"
-            className="border border-white/20 px-6 py-3 text-sm text-white/60"
-          >
-            Ver trabajos
-          </Link>
-        </div>
-      </section>
+      <section className="container max-w-5xl pt-28 pb-20 md:pt-36 md:pb-28">
+  <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50">
+    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+    BICE - Serie vodcast institucional 2024-2026
+  </div>
+  <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
+    Video corporativo que{" "}
+    <span className="text-white/35">habla por si solo.</span>
+  </h1>
+  <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/60">
+    Mas de una decada produciendo vodcast, series institucionales y video corporativo
+    para empresas en Chile. Sin el ego ni el precio de una agencia grande.
+  </p>
+  <div className="mt-8 flex flex-wrap gap-3">
+    <Chip>Especialistas en vodcast corporativo</Chip>
+    <Chip>Entrega en 5 dias habiles</Chip>
+    <Chip>Santiago, Chile</Chip>
+  </div>
+  <div className="mt-12 flex flex-col gap-4 sm:flex-row">
+    
+      href={waLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center gap-2 bg-white px-8 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
+    >
+      Cuentanos tu proyecto por WhatsApp <ArrowUpRight className="h-4 w-4" />
+    </a>
+    <Link
+      href="/portafolio"
+      className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-8 py-3.5 text-sm text-white/65 transition hover:bg-white/10 hover:text-white"
+    >
+      Ver trabajos realizados <ArrowRight className="h-4 w-4" />
+    </Link>
+  </div>
+</section>
 
       {/* REEL */}
       <section className="container max-w-5xl pb-24">
