@@ -111,18 +111,18 @@ const notForWho = [
   "No tienes claro que quieres comunicar",
 ];
 
-function Chip(props: { children: React.ReactNode }) {
+function Chip({ children }: { children: React.ReactNode }) {
   return (
     <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-white/55">
-      {props.children}
+      {children}
     </span>
   );
 }
 
-function Eyebrow(props: { children: React.ReactNode }) {
+function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
-      {props.children}
+      {children}
     </p>
   );
 }
@@ -170,25 +170,17 @@ export default function Page() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-white px-8 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
-          >
+          <a href={waLink} target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-white px-8 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90">
             Cuentanos tu proyecto por WhatsApp <ArrowUpRight className="h-4 w-4" />
           </a>
 
-          <Link
-            href="/portafolio"
-            className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-8 py-3.5 text-sm text-white/65 transition hover:bg-white/10 hover:text-white"
-          >
+          <Link href="/portafolio"
+            className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-8 py-3.5 text-sm text-white/65 transition hover:bg-white/10 hover:text-white">
             Ver trabajos realizados <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
-
-      {/* resto intacto */}
 
     </main>
   );
