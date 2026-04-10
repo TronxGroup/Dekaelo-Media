@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { VideoEmbed } from "../components/VideoEmbed";
+import { VideoEmbed } from "./components/VideoEmbed";
 
 export const metadata: Metadata = {
   title: "Portafolio - Dekaelo Media | Video corporativo en Chile",
