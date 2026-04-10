@@ -41,9 +41,9 @@ const stats = [
 ];
 
 const biceImages = [
-  { src: "/bice/bice-1.jpg", alt: "Banco BICE vodcast" },
-  { src: "/bice/bice-2.jpg", alt: "Banco BICE grabacion" },
-  { src: "/bice/bice-3.jpg", alt: "Banco BICE produccion" },
+  { src: "/bice/bice-1.jpg", alt: "BICE vodcast" },
+  { src: "/bice/bice-2.jpg", alt: "BICE grabacion" },
+  { src: "/bice/bice-3.jpg", alt: "BICE produccion" },
 ];
 
 const cases = [
@@ -151,12 +151,12 @@ export default function Page() {
         </div>
       </section>
 
-      {/* BANCO BICE */}
+      {/* BICE */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <Eyebrow>Proyecto</Eyebrow>
 
-          <h2 className="mt-3 text-3xl font-semibold">Banco BICE</h2>
+          <h2 className="mt-3 text-3xl font-semibold">BICE</h2>
 
           <p className="mt-3 text-white/50">
             Produccion continua desde 2024. Serie institucional.
