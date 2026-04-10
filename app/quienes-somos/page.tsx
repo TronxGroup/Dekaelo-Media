@@ -19,12 +19,12 @@ const stats = [
 ];
 
 const milestones = [
-  { year: "2013", text: "Seleccion oficial a Sitges Film Festival y BARS con Yokai. Comerciales para Editorial Televisa Chile — Revista Caras." },
-  { year: "2015", text: "Video tutorial para Oximixo supera 3.8M de vistas en YouTube con 18K likes. Organico, sin pauta." },
-  { year: "2016-2022", text: "Videos corporativos para industria, tecnologia y educacion. Post-produccion para contenido interno de Ripley." },
-  { year: "2023", text: "Mas de 20 episodios para la Camara de Comercio Asia Pacifico y serie para iGromi." },
-  { year: "2024", text: "4 episodios de Futbol y Parrilla con mas de 357K vistas acumuladas. Inicio de serie vodcast institucional para BICE." },
-  { year: "2025-2026", text: "Produccion continua para BICE. Temporada activa en curso." },
+  { year: "2013", text: "Selección oficial en Sitges Film Festival y BARS con “Yokai”. Producción comerciales para Editorial Televisa Chile (Revista Caras)." },
+  { year: "2015", text: "Video para Oximixo supera 3.8M de visualizaciones en YouTube, sin inversión en pauta." },
+  { year: "2016-2022", text: "Producción y postproducción para empresas en industria, tecnología y educación. Contenido interno para Ripley." },
+  { year: "2023", text: "Más de 20 episodios para la Cámara de Comercio Asia Pacífico.  Desarrollo de serie para iGromi." },
+  { year: "2024", text: "Serie “Fútbol y Parrilla” supera 357K visualizaciones acumuladas. Inicio de producción de vodcast institucional para BICE." },
+  { year: "2025-2026", text: "Producción continua para BICE. Temporada activa en curso." },
 ];
 
 const values = [
