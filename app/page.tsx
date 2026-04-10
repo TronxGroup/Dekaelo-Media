@@ -274,7 +274,7 @@ export default function Page() {
           <div className="mb-12 flex items-end justify-between gap-4">
             <div>
               <Eyebrow>Caso destacado</Eyebrow>
-              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Banco BICE</h2>
+              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">BICE</h2>
               <p className="mt-3 max-w-xl text-white/50 leading-relaxed">
                 Serie vodcast institucional en produccion continua desde 2024. 3 episodios finalizados, temporada activa con mas capitulos en camino.
               </p>
