@@ -8,7 +8,7 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 const waLink = "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20sobre%20un%20proyecto%20con%20Dekaelo%20Media.%0A%0AEmpresa%3A%0AQue%20necesito%3A%0AFecha%20tentativa%3A%0A%0AGracias";
 
 export const metadata: Metadata = {
-  title: "Dekaelo Media — Vodcast y video corporativo en Chile",
+  title: "Dekaelo Media - Vodcast y video corporativo en Chile",
   description: "Mas de una decada produciendo vodcast y video corporativo en Chile. Banco BICE, Camara de Comercio Asia Pacifico, iGromi y mas.",
 };
 
@@ -73,25 +73,25 @@ const biceImages = [
 const cases = [
   {
     tag: "Vodcast corporativo - TV abierta",
-    name: "iGromi — Industria 4.0 y nuevos negocios Ep. 8",
+    name: "iGromi - Industria 4.0 y nuevos negocios Ep. 8",
     desc: "Serie vodcast sobre tecnologia e industria distribuida en TV abierta. Produccion completa.",
     youtube: "https://www.youtube.com/embed/2G7oKXKjPl8?rel=0&modestbranding=1&playsinline=1",
   },
   {
     tag: "Evento corporativo - Figuras publicas",
-    name: "HKLABA — Introduccion institucional",
-    desc: "Produccion con Charles Kimber (Arauco), Eduardo Frei y Jorge Carey. Registro de alto perfil.",
+    name: "HKLABA - Introduccion institucional",
+    desc: "Produccion con Charles Kimber de Arauco, Eduardo Frei y Jorge Carey. Registro de alto perfil.",
     youtube: "https://www.youtube.com/embed/a1OcIDBTHgw?rel=0&modestbranding=1&playsinline=1",
   },
   {
     tag: "Vodcast - Serie original",
-    name: "Futbol y Parrilla — Borghi, Paredes y Monje",
+    name: "Futbol y Parrilla - Borghi, Paredes y Monje",
     desc: "Produccion completa de serie original. Mas de 357K vistas en los primeros 4 episodios.",
     youtube: "https://www.youtube.com/embed/PLSfbZU_asQ?rel=0&modestbranding=1&playsinline=1",
   },
   {
     tag: "Vodcast institucional - Camara de Comercio",
-    name: "APCC Chamber — Hong Kong y Latinoamerica Ep. 2",
+    name: "APCC Chamber - Hong Kong y Latinoamerica Ep. 2",
     desc: "Serie Asia-Pacifico para la Camara de Comercio. Mas de 20 episodios producidos.",
     youtube: "https://www.youtube.com/embed/byTylGKp-uI?rel=0&modestbranding=1&playsinline=1",
   },
@@ -110,18 +110,18 @@ const notForWho = [
   "No tienes claro que quieres comunicar",
 ];
 
-function Chip({ children }: { children: React.ReactNode }) {
+function Chip(props: { children: React.ReactNode }) {
   return (
     <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-white/55">
-      {children}
+      {props.children}
     </span>
   );
 }
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
+function Eyebrow(props: { children: React.ReactNode }) {
   return (
     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
-      {children}
+      {props.children}
     </p>
   );
 }
@@ -322,7 +322,7 @@ export default function Page() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-white/20 bg-white/5 px-8 py-3.5 text-sm text-white/70 transition hover:bg-white hover:text-black"
           >
-            No estas seguro cual necesitas — escribenos y te orientamos <ArrowUpRight className="h-4 w-4" />
+            No estas seguro cual necesitas - escribenos y te orientamos <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
       </section>
