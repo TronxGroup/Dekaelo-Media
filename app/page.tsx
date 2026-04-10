@@ -30,7 +30,7 @@ const services = [
       "Edicion, subtitulos y entrega lista para publicar",
       "Referencia: BICE (2024-2026)",
     ],
-    price: "Desde $6000.000 / episodio",
+    price: "Desde $600.000 / episodio",
     note: "+ IVA - temporada minima 4 episodios",
     href: "/servicios#produccion",
   },
