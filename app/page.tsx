@@ -5,13 +5,11 @@ import { VideoEmbed } from "./components/VideoEmbed";
 import { ClientLogos } from "./components/ClientLogos";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 
-const waLink = `https://wa.me/56920080031?text=${encodeURIComponent(
-  "Hola, quiero conversar sobre un proyecto con Dekaelo Media.\n\nEmpresa:\nQue necesito:\nFecha tentativa:\n\nGracias"
-)}`;
+const waLink = "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20sobre%20un%20proyecto%20con%20Dekaelo%20Media.%0A%0AEmpresa%3A%0AQue%20necesito%3A%0AFecha%20tentativa%3A%0A%0AGracias";
 
 export const metadata: Metadata = {
   title: "Dekaelo Media — Vodcast y video corporativo en Chile",
-  description: "Mas de una decada produciendo vodcast y video corporativo en Chile.",
+  description: "Mas de una decada produciendo vodcast y video corporativo en Chile. Banco BICE, Camara de Comercio Asia Pacifico, iGromi y mas.",
 };
 
 const services = [
@@ -227,7 +225,7 @@ export default function Page() {
             {milestones.map((m, i) => (
               <div
                 key={m.year}
-                className={`grid grid-cols-[80px_1fr] gap-8 py-6 ${i !== milestones.length - 1 ? "border-b border-white/8" : ""}`}
+                className={"grid grid-cols-[80px_1fr] gap-8 py-6" + (i !== milestones.length - 1 ? " border-b border-white/8" : "")}
               >
                 <p className="text-sm font-semibold tabular-nums text-white/25 pt-0.5">{m.year}</p>
                 <p className="text-sm text-white/60 leading-relaxed">{m.text}</p>
@@ -244,8 +242,7 @@ export default function Page() {
               <Eyebrow>Caso destacado</Eyebrow>
               <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Banco BICE</h2>
               <p className="mt-3 max-w-xl text-white/50 leading-relaxed">
-                Serie vodcast institucional en produccion continua desde 2024. 3 episodios
-                finalizados, temporada activa con mas capitulos en camino.
+                Serie vodcast institucional en produccion continua desde 2024. 3 episodios finalizados, temporada activa con mas capitulos en camino.
               </p>
             </div>
             <span className="hidden shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/35 sm:inline-flex">
@@ -256,11 +253,7 @@ export default function Page() {
             {biceImages.map((img, i) => (
               <div
                 key={i}
-                className={`relative overflow-hidden rounded-xl bg-white/5 ${
-                  i === 0
-                    ? "col-span-3 aspect-video md:col-span-2 md:row-span-2 md:aspect-auto md:min-h-[320px]"
-                    : "col-span-3 aspect-video md:col-span-1"
-                }`}
+                className={"relative overflow-hidden rounded-xl bg-white/5 " + (i === 0 ? "col-span-3 aspect-video md:col-span-2 md:row-span-2 md:aspect-auto md:min-h-[320px]" : "col-span-3 aspect-video md:col-span-1")}
               >
                 <Image
                   src={img.src}
@@ -298,7 +291,7 @@ export default function Page() {
               href={s.href}
               className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 p-8 transition hover:border-white/20"
             >
-              <span className={`mb-4 inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-medium ${s.badgeClass}`}>
+              <span className={"mb-4 inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-medium " + s.badgeClass}>
                 {s.badge}
               </span>
               <h3 className="text-xl font-semibold text-white leading-snug">{s.name}</h3>
