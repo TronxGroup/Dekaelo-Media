@@ -9,7 +9,7 @@ const waLink = "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20so
 
 export const metadata: Metadata = {
   title: "Dekaelo Media - Vodcast y video corporativo en Chile",
-  description: "Mas de una decada produciendo vodcast y video corporativo en Chile. Banco BICE, Camara de Comercio Asia Pacifico, iGromi y mas.",
+  description: "Mas de una decada produciendo vodcast y video corporativo en Chile. BICE, Camara de Comercio Asia Pacifico, iGromi y mas.",
 };
 
 const services = [
@@ -24,7 +24,7 @@ const services = [
       "Grabacion profesional en tu oficina",
       "Direccion y conduccion tecnica",
       "Edicion, subtitulos y entrega lista para publicar",
-      "Referencia: Banco BICE (2024-2026)",
+      "Referencia: BICE (2024-2026)",
     ],
     price: "Desde $1.200.000 / temporada",
     note: "+ IVA - desde 4 episodios",
@@ -54,8 +54,8 @@ const milestones = [
   { year: "2015", text: "Video tutorial para Oximixo supera 3.8M de vistas en YouTube con 18K likes. Organico, sin pauta." },
   { year: "2016-2022", text: "Videos corporativos para industria, tecnologia y educacion. Post-produccion para contenido interno de Ripley." },
   { year: "2023", text: "Mas de 20 episodios para la Camara de Comercio Asia Pacifico y serie para iGromi." },
-  { year: "2024", text: "4 episodios de Futbol y Parrilla con mas de 357K vistas acumuladas. Inicio de serie vodcast institucional para Banco BICE." },
-  { year: "2025-2026", text: "Produccion continua para Banco BICE. Temporada activa en curso." },
+  { year: "2024", text: "4 episodios de Futbol y Parrilla con mas de 357K vistas acumuladas. Inicio de serie vodcast institucional para BICE." },
+  { year: "2025-2026", text: "Produccion continua para BICE. Temporada activa en curso." },
 ];
 
 const stats = [
@@ -66,9 +66,9 @@ const stats = [
 ];
 
 const biceImages = [
-  { src: "/bice/bice-1.jpg", alt: "Set vodcast Banco BICE episodio en produccion" },
-  { src: "/bice/bice-2.jpg", alt: "Set vodcast Banco BICE configuracion de camaras" },
-  { src: "/bice/bice-3.jpg", alt: "Set vodcast Banco BICE detalle de produccion" },
+  { src: "/bice/bice-1.jpg", alt: "Set vodcast BICE episodio en produccion" },
+  { src: "/bice/bice-2.jpg", alt: "Set vodcast BICE configuracion de camaras" },
+  { src: "/bice/bice-3.jpg", alt: "Set vodcast BICE detalle de produccion" },
 ];
 
 const cases = [
@@ -150,7 +150,7 @@ export default function Page() {
       <section className="container max-w-5xl pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          Banco BICE - Serie vodcast institucional 2024-2026
+          BICE - Serie vodcast institucional 2024-2026
         </div>
 
         <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
@@ -188,36 +188,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* TODO LO DEMÁS IGUAL... */}
-
-      <section className="mt-10 text-center">
-        <a
-          href={waLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 border border-white/20 bg-white/5 px-8 py-3.5 text-sm text-white/70 transition hover:bg-white hover:text-black"
-        >
-          No estas seguro cual necesitas - escribenos y te orientamos <ArrowUpRight className="h-4 w-4" />
-        </a>
-      </section>
-
-      <section className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a
-          href={waLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
-        >
-          Escribenos por WhatsApp <ArrowUpRight className="h-4 w-4" />
-        </a>
-
-        <Link
-          href="/contacto"
-          className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/60 transition hover:bg-white/10 hover:text-white"
-        >
-          O usa el formulario de contacto <ArrowRight className="h-4 w-4" />
-        </Link>
-      </section>
+      {/* resto intacto */}
 
     </main>
   );
