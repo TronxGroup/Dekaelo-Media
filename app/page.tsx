@@ -183,7 +183,7 @@ export default function Page() {
 
   <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
     Contenido corporativo{" "}
-    <span className="text-white/35">que posiciona a tu empresa.</span>
+    <span className="text-white/35">que posiciona tu empresa.</span>
   </h1>
 
   <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/60">
