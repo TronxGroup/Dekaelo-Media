@@ -123,7 +123,7 @@ export default function PortafolioPage() {
         <div className="container max-w-3xl text-center">
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Banco BICE · Trewhela's · Coesam · APCC · iGromi · Exploflex
+            BICE · Trewhela's · Coesam · APCC · iGromi · Exploflex
           </div>
           <h2 className="text-3xl font-semibold md:text-4xl">¿Tu empresa necesita algo así?</h2>
           <p className="mx-auto mt-5 max-w-xl text-white/50 leading-relaxed">Cuéntanos qué tienes grabado o qué quieres comunicar. En una conversación corta te decimos si podemos ayudarte y a qué precio.</p>
