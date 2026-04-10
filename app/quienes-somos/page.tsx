@@ -41,7 +41,7 @@ const milestones = [
   },
   {
     year: "2024",
-    text: "Inicio de vodcast institucional para BICE.",
+    text: "Serie “Fútbol y Parrilla” supera 357K visualizaciones acumuladas. Inicio de vodcast institucional para BICE.",
   },
   {
     year: "2025 — 2026",
