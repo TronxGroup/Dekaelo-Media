@@ -302,7 +302,6 @@ export default function Page() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Chip>Vodcast ejecutivo</Chip>
             <Chip>Produccion completa</Chip>
-            <Chip>3 episodios finalizados</Chip>
             <Chip>Temporada en curso</Chip>
           </div>
         </div>
