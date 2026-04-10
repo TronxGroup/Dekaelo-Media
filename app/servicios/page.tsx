@@ -102,7 +102,7 @@ export default function ServiciosPage() {
                   Referencia
                 </p>
                 <p className="text-white/70">
-                  <strong className="text-white">BICE</strong> · trabajo
+                  <strong className="text-white">BICE</strong> · Trabajo
                   continuo desde 2024. Grabación, edición y entrega en ciclo mensual.
                 </p>
               </div>
