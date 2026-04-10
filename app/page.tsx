@@ -276,7 +276,7 @@ export default function Page() {
               <Eyebrow>Caso destacado</Eyebrow>
               <h2 className="mt-3 text-3xl font-semibold md:text-4xl">BICE</h2>
               <p className="mt-3 max-w-xl text-white/50 leading-relaxed">
-                Serie vodcast institucional en produccion continua desde 2024. 3 episodios finalizados, temporada activa con mas capitulos en camino.
+                Serie vodcast institucional en produccion continua desde 2024. Temporada activa con mas capitulos en camino.
               </p>
             </div>
             <span className="hidden shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/35 sm:inline-flex">
