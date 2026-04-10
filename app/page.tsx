@@ -11,8 +11,7 @@ const waLink = `https://wa.me/56920080031?text=${encodeURIComponent(
 
 export const metadata: Metadata = {
   title: "Dekaelo Media — Vodcast y video corporativo en Chile",
-  description:
-    "Mas de una decada produciendo vodcast, series institucionales y video corporativo para empresas en Chile. Banco BICE, Camara de Comercio Asia Pacifico, iGromi y mas.",
+  description: "Mas de una decada produciendo vodcast y video corporativo en Chile.",
 };
 
 const services = [
@@ -20,9 +19,8 @@ const services = [
     badge: "Especialidad principal",
     badgeClass: "bg-amber-500/15 text-amber-300 border border-amber-400/20",
     name: "Produccion completa",
-    tagline:
-      "Para empresas que quieren vodcast, series corporativas o video institucional sin preocuparse de nada tecnico.",
-    how: "Disenamos el formato, llegamos con equipo a tu oficina, grabamos y producimos la temporada completa. Tu solo apareces y hablas.",
+    tagline: "Para empresas que quieren vodcast o series corporativas sin preocuparse de nada tecnico.",
+    how: "Disenamos el formato, llegamos con equipo a tu oficina y producimos la temporada completa.",
     includes: [
       "Diseno de formato y pauta",
       "Grabacion profesional en tu oficina",
@@ -38,9 +36,8 @@ const services = [
     badge: "Post-produccion",
     badgeClass: "bg-sky-500/15 text-sky-300 border border-sky-400/20",
     name: "Post-produccion",
-    tagline:
-      "Tu o tu empresa graban. Nosotros lo dejamos profesional y listo para LinkedIn, YouTube o Instagram.",
-    how: "Mandas el material en bruto. Nosotros editamos, corregimos audio y color, titulamos, subtitulamos y entregamos en el formato correcto.",
+    tagline: "Tu o tu empresa graban. Nosotros lo dejamos profesional y listo para LinkedIn o YouTube.",
+    how: "Mandas el material en bruto. Nosotros editamos, corregimos audio y color y entregamos en el formato correcto.",
     includes: [
       "Correccion de audio y color",
       "Titulos, creditos y subtitulos",
@@ -55,26 +52,11 @@ const services = [
 ];
 
 const milestones = [
-  {
-    year: "2014",
-    text: "Seleccion oficial a Sitges Film Festival y BARS con el largometraje Yokai. Comerciales para Editorial Televisa Chile — Revista Caras.",
-  },
-  {
-    year: "2015",
-    text: "Video tutorial para Oximixo supera 3.8M de vistas en YouTube con 18K likes. Organico, sin pauta.",
-  },
-  {
-    year: "2023",
-    text: "Inicio de produccion continua de vodcast corporativos. Mas de 20 episodios para la Camara de Comercio Asia Pacifico y serie para iGromi distribuida en TV abierta.",
-  },
-  {
-    year: "2024",
-    text: "Produccion de los 4 primeros episodios de Futbol y Parrilla — mas de 357K vistas acumuladas. Inicio de serie vodcast institucional para Banco BICE.",
-  },
-  {
-    year: "2025-2026",
-    text: "Produccion continua para Banco BICE. Temporada activa en curso.",
-  },
+  { year: "2014", text: "Seleccion oficial a Sitges Film Festival y BARS con Yokai. Comerciales para Editorial Televisa Chile." },
+  { year: "2015", text: "Video tutorial para Oximixo supera 3.8M de vistas en YouTube con 18K likes. Organico, sin pauta." },
+  { year: "2023", text: "Mas de 20 episodios para la Camara de Comercio Asia Pacifico y serie para iGromi en TV abierta." },
+  { year: "2024", text: "4 episodios de Futbol y Parrilla con mas de 357K vistas. Inicio de serie vodcast para Banco BICE." },
+  { year: "2025-2026", text: "Produccion continua para Banco BICE. Temporada activa en curso." },
 ];
 
 const stats = [
@@ -85,41 +67,40 @@ const stats = [
 ];
 
 const biceImages = [
-  { src: "/bice/bice-1.jpg", alt: "Set vodcast Banco BICE — episodio en produccion" },
-  { src: "/bice/bice-2.jpg", alt: "Set vodcast Banco BICE — configuracion de camaras" },
-  { src: "/bice/bice-3.jpg", alt: "Set vodcast Banco BICE — detalle de produccion" },
+  { src: "/bice/bice-1.jpg", alt: "Set vodcast Banco BICE episodio en produccion" },
+  { src: "/bice/bice-2.jpg", alt: "Set vodcast Banco BICE configuracion de camaras" },
+  { src: "/bice/bice-3.jpg", alt: "Set vodcast Banco BICE detalle de produccion" },
 ];
 
 const cases = [
   {
-    tag: "Vodcast corporativo · TV abierta",
-    name: "iGromi — Industria 4.0 y nuevos negocios · Ep. 8",
+    tag: "Vodcast corporativo - TV abierta",
+    name: "iGromi — Industria 4.0 y nuevos negocios Ep. 8",
     desc: "Serie vodcast sobre tecnologia e industria distribuida en TV abierta. Produccion completa.",
     youtube: "https://www.youtube.com/embed/2G7oKXKjPl8?rel=0&modestbranding=1&playsinline=1",
   },
   {
-    tag: "Evento corporativo · Figuras publicas",
+    tag: "Evento corporativo - Figuras publicas",
     name: "HKLABA — Introduccion institucional",
-    desc: "Produccion para evento con Charles Kimber (Arauco), Eduardo Frei y Jorge Carey. Registro profesional de alto perfil.",
+    desc: "Produccion con Charles Kimber (Arauco), Eduardo Frei y Jorge Carey. Registro de alto perfil.",
     youtube: "https://www.youtube.com/embed/a1OcIDBTHgw?rel=0&modestbranding=1&playsinline=1",
   },
   {
-    tag: "Vodcast · Serie original",
+    tag: "Vodcast - Serie original",
     name: "Futbol y Parrilla — Borghi, Paredes y Monje",
-    desc: "Produccion completa de serie original. Mas de 357K vistas acumuladas en los primeros 4 episodios.",
+    desc: "Produccion completa de serie original. Mas de 357K vistas en los primeros 4 episodios.",
     youtube: "https://www.youtube.com/embed/PLSfbZU_asQ?rel=0&modestbranding=1&playsinline=1",
   },
   {
-    tag: "Vodcast institucional · Camara de Comercio",
-    name: "APCC Chamber — Hong Kong y Latinoamerica · Ep. 2",
-    desc: "Serie sobre oportunidades de negocio Asia-Pacifico para la Camara de Comercio. Mas de 20 episodios producidos.",
+    tag: "Vodcast institucional - Camara de Comercio",
+    name: "APCC Chamber — Hong Kong y Latinoamerica Ep. 2",
+    desc: "Serie Asia-Pacifico para la Camara de Comercio. Mas de 20 episodios producidos.",
     youtube: "https://www.youtube.com/embed/byTylGKp-uI?rel=0&modestbranding=1&playsinline=1",
   },
 ];
 
 const forWho = [
-  "Quieres posicionar a tus lideres o comunicar cultura organizacional con un vodcast",
-  "Tienes un jefe o cliente que te pide video y no sabes a quien llamar",
+  "Quieres posicionar a tus lideres con un vodcast corporativo",
   "Tu empresa hace cosas importantes pero nadie lo sabe porque no publican",
   "Grabaste algo en un evento y lleva meses sin editar",
   "Necesitas un video institucional antes de una reunion o licitacion",
@@ -166,12 +147,11 @@ function CrossIcon() {
 export default function Page() {
   return (
     <main className="bg-black text-white selection:bg-white selection:text-black">
-      
-      {/* HERO */}
+
       <section className="container max-w-5xl pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          Banco BICE · Serie vodcast institucional 2024-2026
+          Banco BICE - Serie vodcast institucional 2024-2026
         </div>
         <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
           Video corporativo que{" "}
@@ -179,8 +159,7 @@ export default function Page() {
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/60">
           Mas de una decada produciendo vodcast, series institucionales y video corporativo
-          para empresas en Chile. Produccion completa o post-produccion,
-          sin el ego ni el precio de una agencia grande.
+          para empresas en Chile. Sin el ego ni el precio de una agencia grande.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Chip>Especialistas en vodcast corporativo</Chip>
@@ -205,7 +184,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* REEL */}
       <section className="container max-w-5xl pb-24">
         <div className="mb-8 flex items-center justify-between gap-4">
           <Eyebrow>Reel corporativo</Eyebrow>
@@ -219,7 +197,6 @@ export default function Page() {
         />
       </section>
 
-      {/* CLIENTES */}
       <section className="border-t border-white/10 py-16">
         <div className="container">
           <p className="mb-10 text-center text-xs uppercase tracking-widest text-white/25">
@@ -229,15 +206,12 @@ export default function Page() {
         </div>
       </section>
 
-      {/* NUMEROS */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <div className="grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="bg-black px-8 py-10">
-                <p className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
-                  {s.value}
-                </p>
+                <p className="text-4xl font-semibold tracking-tight text-white md:text-5xl">{s.value}</p>
                 <p className="mt-2 text-sm text-white/40 leading-snug">{s.label}</p>
               </div>
             ))}
@@ -245,7 +219,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* TRAYECTORIA */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <Eyebrow>Trayectoria</Eyebrow>
@@ -254,13 +227,9 @@ export default function Page() {
             {milestones.map((m, i) => (
               <div
                 key={m.year}
-                className={`grid grid-cols-[80px_1fr] gap-8 py-6 ${
-                  i !== milestones.length - 1 ? "border-b border-white/8" : ""
-                }`}
+                className={`grid grid-cols-[80px_1fr] gap-8 py-6 ${i !== milestones.length - 1 ? "border-b border-white/8" : ""}`}
               >
-                <p className="text-sm font-semibold tabular-nums text-white/25 pt-0.5">
-                  {m.year}
-                </p>
+                <p className="text-sm font-semibold tabular-nums text-white/25 pt-0.5">{m.year}</p>
                 <p className="text-sm text-white/60 leading-relaxed">{m.text}</p>
               </div>
             ))}
@@ -268,7 +237,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CASO BICE */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <div className="mb-12 flex items-end justify-between gap-4">
@@ -299,11 +267,7 @@ export default function Page() {
                   alt={img.alt}
                   fill
                   className="object-cover transition duration-500 hover:scale-105"
-                  sizes={
-                    i === 0
-                      ? "(max-width: 768px) 100vw, 66vw"
-                      : "(max-width: 768px) 100vw, 33vw"
-                  }
+                  sizes={i === 0 ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
                 />
               </div>
             ))}
@@ -317,19 +281,13 @@ export default function Page() {
         </div>
       </section>
 
-      {/* SERVICIOS */}
       <section className="container border-t border-white/10 py-24 max-w-5xl">
         <div className="mb-14 flex items-end justify-between gap-4">
           <div>
             <Eyebrow>Servicios</Eyebrow>
-            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-              Dos formas de trabajar juntos
-            </h2>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Dos formas de trabajar juntos</h2>
           </div>
-          <Link
-            href="/servicios"
-            className="hidden text-sm text-white/35 transition hover:text-white sm:block"
-          >
+          <Link href="/servicios" className="hidden text-sm text-white/35 transition hover:text-white sm:block">
             Ver detalle completo
           </Link>
         </div>
@@ -338,7 +296,7 @@ export default function Page() {
             <Link
               key={s.name}
               href={s.href}
-              className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 p-8 transition hover:bg-white/8 hover:border-white/20"
+              className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 p-8 transition hover:border-white/20"
             >
               <span className={`mb-4 inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-medium ${s.badgeClass}`}>
                 {s.badge}
@@ -371,25 +329,18 @@ export default function Page() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-white/20 bg-white/5 px-8 py-3.5 text-sm text-white/70 transition hover:bg-white hover:text-black"
           >
-            No estas seguro cual necesitas — escribenos y te orientamos{" "}
-            <ArrowUpRight className="h-4 w-4" />
+            No estas seguro cual necesitas — escribenos y te orientamos <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
       </section>
 
-      {/* CASOS */}
       <section className="container border-t border-white/10 py-24 max-w-6xl">
         <div className="mb-14 flex items-end justify-between gap-4">
           <div>
             <Eyebrow>Trabajos seleccionados</Eyebrow>
-            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-              Lo que hemos producido
-            </h2>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Lo que hemos producido</h2>
           </div>
-          <Link
-            href="/portafolio"
-            className="hidden text-sm text-white/35 transition hover:text-white sm:block"
-          >
+          <Link href="/portafolio" className="hidden text-sm text-white/35 transition hover:text-white sm:block">
             Ver portafolio completo
           </Link>
         </div>
@@ -399,9 +350,7 @@ export default function Page() {
               <VideoEmbed src={c.youtube} title={c.name} />
               <div className="mt-5">
                 <p className="text-xs text-white/35">{c.tag}</p>
-                <h3 className="mt-1.5 text-base font-semibold text-white leading-snug">
-                  {c.name}
-                </h3>
+                <h3 className="mt-1.5 text-base font-semibold text-white leading-snug">{c.name}</h3>
                 <p className="mt-2 text-sm text-white/55 leading-relaxed">{c.desc}</p>
               </div>
             </article>
@@ -417,7 +366,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* PARA QUIEN */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <Eyebrow>Para quien es</Eyebrow>
@@ -454,17 +402,15 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CTA FINAL */}
       <section className="border-t border-white/10 py-28">
         <div className="container max-w-4xl text-center">
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Banco BICE · Camara de Comercio Asia Pacifico · iGromi · Coesam · Exploflex
+            Banco BICE - Camara de Comercio Asia Pacifico - iGromi - Coesam - Exploflex
           </div>
           <h2 className="text-3xl font-semibold md:text-4xl">Conversamos tu proyecto?</h2>
           <p className="mx-auto mt-5 max-w-xl text-white/55 leading-relaxed">
-            Cuentanos que necesitas. Te respondemos con un alcance claro y un precio concreto
-            en menos de 24 horas habiles.
+            Cuentanos que necesitas. Te respondemos con un alcance claro y un precio concreto en menos de 24 horas habiles.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             
