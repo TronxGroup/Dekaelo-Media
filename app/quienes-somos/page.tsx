@@ -23,8 +23,8 @@ const milestones = [
   { year: "2015", text: "Video para Oximixo supera 3.8M de visualizaciones en YouTube, sin inversión en pauta." },
   { year: "2016-2022", text: "Producción y postproducción para empresas en industria, tecnología y educación. Contenido interno para Ripley." },
   { year: "2023", text: "Más de 20 episodios para la Cámara de Comercio Asia Pacífico.  Desarrollo de serie para iGromi." },
-  { year: "2024", text: "Serie “Fútbol y Parrilla” supera 357K visualizaciones acumuladas. Inicio de producción de vodcast institucional para BICE." },
-  { year: "2025-2026", text: "Producción continua para BICE. Temporada activa en curso." },
+  { year: "2024", text: "Serie “Fútbol y Parrilla” supera 357K visualizaciones acumuladas. Inicio de vodcast institucional para BICE." },
+  { year: "2025-2026", text: "Producción continua para BICE. Temporada activa." },
 ];
 
 const values = [
