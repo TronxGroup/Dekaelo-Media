@@ -34,7 +34,7 @@ const services = [
 ];
 
 const stats = [
-  { value: "100+", label: "videos producidos" },
+  { value: "150+", label: "videos producidos para empresas" },
   { value: "3.8M", label: "visualizaciones en un video" },
   { value: "357K+", label: "visualizaciones en serie" },
   { value: "60+", label: "episodios vodcast" },
@@ -88,15 +88,15 @@ export default function Page() {
       {/* HERO */}
       <section className="container max-w-5xl pt-28 pb-20">
         <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-          PProducción de vodcast y video corporativo, sin fricción.
+          Producción de vodcast y video corporativo, sin fricción.
         </h1>
 
         <p className="mt-6 text-sm text-white/40">
-          Procesos claros, tiempos definidos y entrega lista para publicar.
+          Mas de una decada produciendo contenido para empresas.
         </p>
 
         <p className="mt-8 max-w-2xl text-lg text-white/60">
-          Mas de una decada produciendo contenido para empresas.
+          Procesos claros, tiempos definidos y entrega lista para publicar.
         </p>
 
         <div className="mt-10 flex gap-4">
@@ -215,7 +215,7 @@ export default function Page() {
           <Eyebrow>Proyectos</Eyebrow>
 
           <h2 className="mt-3 text-3xl font-semibold">
-            Trabajos realizados
+            Algunos proyectos en curso y realizados
           </h2>
 
           <div className="grid md:grid-cols-2 gap-10 mt-10">
@@ -237,7 +237,7 @@ export default function Page() {
 
           <p className="mt-4 text-white/50">
             Cuentanos brevemente el proyecto.
-            Respondemos con alcance y presupuesto.
+            Recibes alcance, tiempos y presupuesto por escrito.
           </p>
 
           <div className="mt-8">
