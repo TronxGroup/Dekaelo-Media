@@ -71,6 +71,46 @@ const biceImages = [
   { src: "/bice/bice-3.jpg", alt: "Set vodcast BICE detalle de produccion" },
 ];
 
+const cases = [
+  {
+    tag: "Vodcast corporativo",
+    name: "iGromi - Industria 4.0 y nuevos negocios Ep. 8",
+    desc: "Serie vodcast sobre tecnologia e industria. Produccion completa.",
+    youtube: "https://www.youtube.com/embed/2G7oKXKjPl8?rel=0&modestbranding=1&playsinline=1",
+  },
+  {
+    tag: "Evento corporativo - Figuras publicas",
+    name: "HKLABA - Introduccion institucional",
+    desc: "Produccion con Charles Kimber de Arauco, Eduardo Frei y Jorge Carey.",
+    youtube: "https://www.youtube.com/embed/a1OcIDBTHgw?rel=0&modestbranding=1&playsinline=1",
+  },
+  {
+    tag: "Vodcast - Serie original",
+    name: "Futbol y Parrilla - Borghi, Paredes y Monje",
+    desc: "Produccion completa de serie original. Mas de 357K vistas en los primeros 4 episodios.",
+    youtube: "https://www.youtube.com/embed/PLSfbZU_asQ?rel=0&modestbranding=1&playsinline=1",
+  },
+  {
+    tag: "Vodcast institucional - Camara de Comercio",
+    name: "APCC Chamber - Hong Kong y Latinoamerica Ep. 2",
+    desc: "Serie Asia-Pacifico para la Camara de Comercio. Mas de 20 episodios producidos.",
+    youtube: "https://www.youtube.com/embed/byTylGKp-uI?rel=0&modestbranding=1&playsinline=1",
+  },
+];
+
+const forWho = [
+  "Quieres posicionar a tus lideres con un vodcast corporativo",
+  "Tu empresa hace cosas importantes pero nadie lo sabe porque no publican",
+  "Grabaste algo en un evento y lleva meses sin editar",
+  "Necesitas un video institucional antes de una reunion o licitacion",
+];
+
+const notForWho = [
+  "Necesitas produccion de TV o publicidad masiva",
+  "Buscas el precio mas bajo del mercado",
+  "No tienes claro que quieres comunicar",
+];
+
 function Chip(props: { children: React.ReactNode }) {
   return (
     <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-white/55">
@@ -145,6 +185,136 @@ export default function Page() {
           >
             Ver trabajos realizados <ArrowRight className="h-4 w-4" />
           </Link>
+        </div>
+      </section>
+
+      <section className="container max-w-5xl pb-24">
+        <div className="mb-8 flex items-center justify-between gap-4">
+          <Eyebrow>Reel corporativo</Eyebrow>
+          <Link href="/portafolio" className="text-sm text-white/35 transition hover:text-white">
+            Ver todos los casos
+          </Link>
+        </div>
+        <VideoEmbed
+          src="https://www.youtube.com/embed/uul8LNP6BbQ?rel=0&modestbranding=1&playsinline=1"
+          title="Dekaelo Media Reel Corporativo"
+        />
+      </section>
+
+      <section className="border-t border-white/10 py-16">
+        <div className="container">
+          <p className="mb-10 text-center text-xs uppercase tracking-widest text-white/25">
+            Empresas e instituciones con las que hemos trabajado
+          </p>
+          <ClientLogos />
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 py-24">
+        <div className="container max-w-5xl">
+          <div className="grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.label} className="bg-black px-8 py-10">
+                <p className="text-4xl font-semibold tracking-tight text-white md:text-5xl">{s.value}</p>
+                <p className="mt-2 text-sm text-white/40 leading-snug">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 py-24">
+        <div className="container max-w-5xl">
+          <Eyebrow>Trayectoria</Eyebrow>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">El trabajo habla.</h2>
+          <div className="mt-14">
+            {milestones.map((m, i) => (
+              <div
+                key={m.year}
+                className={"grid grid-cols-[90px_1fr] gap-8 py-6" + (i !== milestones.length - 1 ? " border-b border-white/8" : "")}
+              >
+                <p className="text-sm font-semibold tabular-nums text-white/25 pt-0.5">{m.year}</p>
+                <p className="text-sm text-white/60 leading-relaxed">{m.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 py-24">
+        <div className="container max-w-5xl">
+          <div className="mb-12 flex items-end justify-between gap-4">
+            <div>
+              <Eyebrow>Caso destacado</Eyebrow>
+              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">BICE</h2>
+              <p className="mt-3 max-w-xl text-white/50 leading-relaxed">
+                Serie vodcast institucional en produccion continua desde 2024. 3 episodios finalizados, temporada activa con mas capitulos en camino.
+              </p>
+            </div>
+            <span className="hidden shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/35 sm:inline-flex">
+              2024 - 2026
+            </span>
+          </div>
+
+          <div className="grid grid-cols-3 gap-3 md:gap-4">
+            {biceImages.map((img, i) => (
+              <div
+                key={i}
+                className={"relative overflow-hidden rounded-xl bg-white/5 " + (i === 0 ? "col-span-3 aspect-video md:col-span-2 md:row-span-2 md:aspect-auto md:min-h-[320px]" : "col-span-3 aspect-video md:col-span-1")}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover transition duration-500 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Chip>Vodcast ejecutivo</Chip>
+            <Chip>Produccion completa</Chip>
+            <Chip>3 episodios finalizados</Chip>
+            <Chip>Temporada en curso</Chip>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 py-28">
+        <div className="container max-w-4xl text-center">
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            BICE - Camara de Comercio Asia Pacifico - iGromi - Coesam - Exploflex
+          </div>
+
+          <h2 className="text-3xl font-semibold md:text-4xl">Conversamos tu proyecto?</h2>
+
+          <p className="mx-auto mt-5 max-w-xl text-white/55 leading-relaxed">
+            Cuentanos que necesitas. Te respondemos con un alcance claro y un precio concreto en menos de 24 horas habiles.
+          </p>
+
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
+            >
+              Escribenos por WhatsApp <ArrowUpRight className="h-4 w-4" />
+            </a>
+
+            <Link
+              href="/contacto"
+              className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/60 transition hover:bg-white/10 hover:text-white"
+            >
+              O usa el formulario de contacto <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <p className="mt-6 text-xs text-white/25">
+            Respondemos el mismo dia habil. Sin compromiso.
+          </p>
         </div>
       </section>
 
