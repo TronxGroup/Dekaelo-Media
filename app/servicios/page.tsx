@@ -50,7 +50,7 @@ export default function ServiciosPage() {
               <p className="mt-5 text-lg text-white/55 leading-relaxed">Produccion completa en terreno, con direccion y postproduccion. Para empresas que quieren vodcast, series corporativas o video institucional.</p>
               <div className="mt-8 rounded-2xl border border-amber-400/15 bg-amber-500/5 p-6">
                 <p className="text-xs font-semibold uppercase tracking-wider text-amber-300/60 mb-3">Referencia real</p>
-                <p className="text-white/70 leading-relaxed"><strong className="text-white">BICE</strong> lleva trabajando con nosotros desde 2024 en una serie continua de vodcast institucional. 3 episodios finalizados, temporada activa en curso.</p>
+                <p className="text-white/70 leading-relaxed"><strong className="text-white">BICE</strong> lleva trabajando con nosotros desde 2024 en una serie continua de vodcast institucional. Temporada activa en curso.</p>
               </div>
               <div className="mt-8 grid gap-6 sm:grid-cols-2">
                 <div>
