@@ -64,11 +64,11 @@ const milestones = [
     text: "Contenido digital que supera 3.8M de vistas orgánicas en YouTube (Oximixo).",
   },
   {
-    year: "2016-2022",
+    year: "2016-2020",
     text: "Producción y postproducción para industria, tecnología y educación. Contenido interno para Ripley.",
   },
   {
-    year: "2023",
+    year: "2022-2023",
     text: "Más de 20 episodios para la Cámara de Comercio Asia Pacífico. Serie para iGromi.",
   },
   {
