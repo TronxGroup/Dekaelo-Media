@@ -1,11 +1,11 @@
 import Image from "next/image";
 
 const logos = [
-  { src: "/logo_1.png", alt: "iGromi" },
   { src: "/logo_2.png", alt: "BICE CORP" },
-  { src: "/logo_3.png", alt: "KGHM Chile" },
   { src: "/logo_14.png", alt: "Inchalam" },
+  { src: "/logo_3.png", alt: "KGHM Chile" },
   { src: "/logo_13.png", alt: "Molinera San Cristobal" },
+  { src: "/logo_15.png", alt: "iCity" },
   { src: "/logo_9.png", alt: "APCC Chamber" },
 ];
 
