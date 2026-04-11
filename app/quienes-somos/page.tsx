@@ -190,43 +190,46 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 py-28">
-  <div className="container max-w-3xl text-center">
-    
-    <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">
-      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-      Más de una década produciendo video corporativo en Chile
-    </div>
+       <section className="border-t border-white/10 py-28">
+        <div className="container max-w-3xl text-center">
+          
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            Más de una década produciendo video corporativo en Chile
+          </div>
 
-    <h2 className="text-3xl font-semibold md:text-4xl">
-      Solicitar propuesta
-    </h2>
+          <h2 className="text-3xl font-semibold md:text-4xl">
+            Solicitar propuesta
+          </h2>
 
-    <p className="mx-auto mt-5 max-w-xl text-white/50 leading-relaxed">
-      Cuéntanos qué necesitas. Respondemos con alcance y precio en menos de 24 horas hábiles.
-    </p>
+          <p className="mx-auto mt-5 max-w-xl text-white/50 leading-relaxed">
+            Cuéntanos qué necesitas. Respondemos con alcance y precio en menos de 24 horas hábiles.
+          </p>
 
-    <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-      <a
-        href={waLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
-      >
-        Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
-      </a>
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
+            >
+              Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
+            </a>
 
-      <Link
-        href="/servicios"
-        className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/55 transition hover:bg-white/10 hover:text-white"
-      >
-        Ver servicios <ArrowRight className="h-4 w-4" />
-      </Link>
-    </div>
+            <Link
+              href="/servicios"
+              className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/55 transition hover:bg-white/10 hover:text-white"
+            >
+              Ver servicios <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
 
-    <p className="mt-6 text-xs text-white/25">
-      Respuesta el mismo día hábil. Sin compromiso.
-    </p>
+          <p className="mt-6 text-xs text-white/25">
+            Respuesta el mismo día hábil. Sin compromiso.
+          </p>
+
+        </div>
+      </section>
 
     </main>
   );
