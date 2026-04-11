@@ -37,11 +37,11 @@ const milestones = [
   },
   {
     year: "2024",
-    text: "Diseño y producción de Fútbol y Parrilla, serie de vodcast. Episodio 1 alcanza 158K vistas, el más visto del canal. Inicio de vodcast institucional para Banco BICE.",
+    text: "Diseño y producción de Fútbol y Parrilla, serie de vodcast. Episodio 1 alcanza 158K vistas, el más visto del canal. Inicio de vodcast institucional para BICE.",
   },
   {
     year: "2025–2026",
-    text: "Producción continua de vodcast institucional para Banco BICE. Proyecto en desarrollo y expansión.",
+    text: "Producción continua de vodcast institucional para BICE. Proyecto en desarrollo y expansión.",
   },
 ];
 
