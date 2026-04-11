@@ -73,7 +73,7 @@ const milestones = [
   },
   {
     year: "2024",
-    text: "Serie Fútbol y Parrilla (+357K vistas acumuladas en 4 episodios). Inicio de vodcast institucional para BICE.",
+    text: "Diseño de formato y produccion de los primeros 4 episodios de Futbol y Parrilla. El capitulo 1 acumula 158K vistas, el mas visto del canal. Inicio de serie vodcast institucional para BICE.",
   },
   {
     year: "2025-2026",
