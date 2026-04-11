@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const logos = [
-  { src: "/logo_1.png", alt: "Banco BICE" },
-  { src: "/logo_2.png", alt: "Trewhela's School" },
-  { src: "/logo_3.png", alt: "Coesam" },
-  { src: "/logo_4.png", alt: "iGromi" },
-  { src: "/logo_5.png", alt: "APCC" },
-  { src: "/logo_6.png", alt: "Exploflex" },
+  { src: "/logo_1.png", alt: "iGromi" },
+  { src: "/logo_2.png", alt: "BICE CORP" },
+  { src: "/logo_3.png", alt: "KGHM Chile" },
+  { src: "/logo_4.png", alt: "Acmanet" },
+  { src: "/logo_13.png", alt: "Molinera San Cristobal" },
+  { src: "/logo_6.png", alt: "Upayments" },
 ];
 
 export function ClientLogos() {
