@@ -23,6 +23,7 @@ function cx(...classes: Array<string | false | undefined | null>) {
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const isActive = useMemo(
     () => (href: string) =>
@@ -30,6 +31,17 @@ export function Navbar() {
     [pathname]
   );
 
+  // 👉 Detectar scroll
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 40);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // 👉 Lock scroll mobile
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -67,22 +79,6 @@ export function Navbar() {
         const idleCls =
           "text-white/85 hover:text-white hover:bg-sky-500/10 border border-transparent";
 
-        if (item.external) {
-          return (
-            <li key={item.href}>
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cx(common, idleCls)}
-              >
-                {item.label}
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
-            </li>
-          );
-        }
-
         return (
           <li key={item.href} className={variant === "mobile" ? "w-full" : ""}>
             <Link
@@ -104,8 +100,20 @@ export function Navbar() {
   );
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 backdrop-blur bg-black/70">
-      <div className="container flex items-center justify-between h-20">
+    <header
+      className={cx(
+        "sticky top-0 z-40 border-b backdrop-blur transition-all duration-300",
+        scrolled
+          ? "bg-black/90 border-white/10"
+          : "bg-black/70 border-white/10"
+      )}
+    >
+      <div
+        className={cx(
+          "container flex items-center justify-between transition-all duration-300",
+          scrolled ? "h-16 py-1" : "h-20 py-2"
+        )}
+      >
         {/* LOGO */}
         <Link href="/" className="flex items-center">
           <Image
@@ -113,7 +121,10 @@ export function Navbar() {
             alt="Dekaelo Media"
             width={120}
             height={76}
-            className="h-9 w-auto object-contain"
+            className={cx(
+              "w-auto object-contain transition-all duration-300",
+              scrolled ? "h-7" : "h-10"
+            )}
             priority
           />
         </Link>
@@ -134,7 +145,7 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* BOTÓN MOBILE */}
+        {/* MOBILE BUTTON */}
         <button
           type="button"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
@@ -178,7 +189,6 @@ export function Navbar() {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Menú principal"
           className={cx(
             "absolute top-0 left-0 right-0 border-b border-white/10 bg-slate-950/95 backdrop-blur-xl shadow-[0_20px_80px_rgba(0,0,0,0.55)] transition-all duration-200",
             open ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
@@ -186,23 +196,15 @@ export function Navbar() {
         >
           <div className="container py-4">
             <div className="flex items-center justify-between">
-              <Link
-                href="/"
-                className="flex items-center"
-                onClick={() => setOpen(false)}
-              >
-                <Image
-                  src="/logo_text_white.png"
-                  alt="Dekaelo Media"
-                  width={140}
-                  height={36}
-                  className="object-contain"
-                />
-              </Link>
+              <Image
+                src="/logo_text_white.png"
+                alt="Dekaelo Media"
+                width={120}
+                height={76}
+                className="h-8 w-auto object-contain"
+              />
 
               <button
-                type="button"
-                aria-label="Cerrar menú"
                 className="p-2 rounded-xl border border-white/15 hover:bg-sky-500/10 transition"
                 onClick={() => setOpen(false)}
               >
@@ -213,38 +215,6 @@ export function Navbar() {
             <div className="mt-4">
               <NavList variant="mobile" />
             </div>
-
-            <div className="mt-5 rounded-2xl border border-sky-400/20 bg-sky-500/10 p-4">
-              <p className="text-sm text-white font-semibold">
-                ¿Hacemos tu proyecto?
-              </p>
-              <p className="mt-1 text-sm text-white/70">
-                Cuéntanos objetivo, fecha y formato. Respondemos con propuesta.
-              </p>
-
-              <div className="mt-3 flex flex-col gap-2">
-                <Link
-                  href="/contacto"
-                  className="btn-primary w-full justify-center inline-flex items-center gap-2"
-                  onClick={() => setOpen(false)}
-                >
-                  Cotizar ahora
-                  <ArrowUpRight className="w-4 h-4" />
-                </Link>
-
-                <Link
-                  href="/portafolio"
-                  className="btn-ghost w-full justify-center"
-                  onClick={() => setOpen(false)}
-                >
-                  Ver portafolio →
-                </Link>
-              </div>
-            </div>
-
-            <p className="mt-4 text-[11px] text-white/50">
-              Presiona <span className="text-white/70">Esc</span> para cerrar.
-            </p>
           </div>
         </div>
       </div>
