@@ -57,27 +57,27 @@ const services = [
 const milestones = [
   {
     year: "2013",
-    text: "Selección oficial en Sitges Film Festival y BARS con Yokai. Comerciales para Editorial Televisa Chile (Revista Caras).",
+    text: "Selección oficial en Sitges Film Festival y BARS con Yokai. Producción de comerciales para Editorial Televisa Chile (Revista Caras).",
   },
   {
     year: "2015",
-    text: "Contenido digital que supera 3.8M de vistas orgánicas en YouTube (Oximixo).",
+    text: "Contenido digital supera 3.8M de vistas orgánicas en YouTube (Oximixo).",
   },
   {
     year: "2016-2020",
-    text: "Producción y postproducción para industria, tecnología y educación. Contenido interno para Ripley.",
+    text: "Producción y postproducción para empresas en industria, tecnología y educación. Desarrollo de contenido corporativo para Ripley.",
   },
   {
     year: "2022-2023",
-    text: "Más de 20 episodios para la Cámara de Comercio Asia Pacífico. Serie para iGromi.",
+    text: "Producción de más de 20 episodios para la Cámara de Comercio Asia Pacífico. Desarrollo y producción de serie para iGromi.",
   },
   {
     year: "2024",
-    text: "Diseño de formato y produccion de los primeros 4 episodios de Futbol y Parrilla. El capitulo 1 acumula 158K vistas, el mas visto del canal. Inicio de serie vodcast institucional para BICE.",
+    text: "Creación de formato y producción de Fútbol y Parrilla. Episodio 1 alcanza 158K vistas, el más visto del canal. Inicio de vodcast institucional para BICE.",
   },
   {
     year: "2025-2026",
-    text: "Produccion continua para BICE. Temporada activa en desarrollo.",
+    text: "Producción continua para BICE. Temporada activa en desarrollo.",
   },
 ];
 
