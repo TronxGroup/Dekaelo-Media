@@ -24,7 +24,7 @@ const services = [
       "Para empresas que quieren vodcast o series corporativas sin preocuparse de nada tecnico.",
     how: "Disenamos el formato, llegamos con equipo a tu oficina y producimos la temporada completa.",
     includes: [
-      "Diseno de formato y pauta",
+      "Diseño de formato y pauta",
       "Grabacion profesional en tu oficina",
       "Direccion y conduccion tecnica",
       "Edicion, subtitulos y entrega lista para publicar",
