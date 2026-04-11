@@ -28,8 +28,8 @@ const services = [
       "Grabacion profesional en tu oficina",
       "Direccion y conduccion tecnica",
       "Edicion, subtitulos y entrega lista para publicar",
-      "Referencia: BICE (2024-2026)",
-    ],
+      
+  ],
     price: "Desde $600.000 / episodio",
     note: "+ IVA - temporada minima 4 episodios",
     href: "/servicios#produccion",
