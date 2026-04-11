@@ -56,7 +56,7 @@ const services = [
 
 const milestones = [
   {
-    year: "2014",
+    year: "2013",
     text: "Selección oficial en Sitges Film Festival y BARS con Yokai. Comerciales para Editorial Televisa Chile (Revista Caras).",
   },
   {
