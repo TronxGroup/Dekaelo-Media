@@ -113,7 +113,7 @@ export function Navbar() {
             alt="Dekaelo Media"
             width={120}
             height={76}
-            className="object-contain"
+            className="h-9 w-auto object-contain"
             priority
           />
         </Link>
