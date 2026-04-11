@@ -79,7 +79,7 @@ export default function QuienesSomosPage() {
           <span className="block text-white/35">Vodcast y contenido institucional para empresas.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
-          Producción completa en terreno o postproducción sobre material existente. Alcance, tiempos y entrega definidos desde el inicio.
+          Producción de contenido seriado y formatos largos desde 2013, incluyendo largometraje, documental y más de 60 episodios de vodcast.
         </p>
       </section>
 
