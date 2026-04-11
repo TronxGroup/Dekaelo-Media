@@ -105,7 +105,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 backdrop-blur bg-black/70">
-      <div className="container flex items-center justify-between h-16">
+      <div className="container flex items-center justify-between h-20">
         {/* LOGO */}
         <Link href="/" className="flex items-center">
           <Image
