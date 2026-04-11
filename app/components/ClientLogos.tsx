@@ -6,7 +6,7 @@ const logos = [
   { src: "/logo_3.png", alt: "KGHM Chile" },
   { src: "/logo_4.png", alt: "Acmanet" },
   { src: "/logo_13.png", alt: "Molinera San Cristobal" },
-  { src: "/logo_6.png", alt: "Upayments" },
+  { src: "/logo_12.png", alt: "Oximixo" },
 ];
 
 export function ClientLogos() {
