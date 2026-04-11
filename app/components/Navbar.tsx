@@ -119,11 +119,11 @@ export function Navbar() {
           <Image
   src="/logo_text_white.png"
   alt="Dekaelo Media"
-  width={120}
-  height={76}
+  width={220}
+  height={120}
   className={cx(
     "w-auto object-contain transition-all duration-300",
-    scrolled ? "h-8" : "h-12"
+    scrolled ? "h-10" : "h-16"
   )}
   priority
 />
