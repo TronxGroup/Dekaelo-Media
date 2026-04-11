@@ -117,16 +117,16 @@ export function Navbar() {
         {/* LOGO */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo_text_white.png"
-            alt="Dekaelo Media"
-            width={140}
-            height={76}
-            className={cx(
-              "w-auto object-contain transition-all duration-300",
-              scrolled ? "h-7" : "h-10"
-            )}
-            priority
-          />
+  src="/logo_text_white.png"
+  alt="Dekaelo Media"
+  width={120}
+  height={76}
+  className={cx(
+    "w-auto object-contain transition-all duration-300",
+    scrolled ? "h-8" : "h-12"
+  )}
+  priority
+/>
         </Link>
 
         {/* NAV DESKTOP */}
