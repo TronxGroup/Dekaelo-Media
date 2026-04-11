@@ -111,8 +111,8 @@ export function Navbar() {
           <Image
             src="/logo_text_white.png"
             alt="Dekaelo Media"
-            width={106}
-            height={70}
+            width={120}
+            height={76}
             className="object-contain"
             priority
           />
