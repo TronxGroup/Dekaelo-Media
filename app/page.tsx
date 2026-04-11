@@ -82,8 +82,8 @@ const milestones = [
 ];
 
 const stats = [
-  { value: "150+", label: "videos producidos desde 2013" },
-  { value: "3.8M", label: "vistas en un solo video organico" },
+  { value: "150+", label: "piezas producidas desde 2013" },
+  { value: "3.8M", label: "visualizaciones orgánicas en un contenido" },
   { value: "357K+", label: "vistas en serie Futbol y Parrilla" },
   { value: "60+", label: "episodios vodcast corporativos" },
 ];
