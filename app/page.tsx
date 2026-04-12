@@ -234,7 +234,7 @@ export default function Page() {
       <section className="border-t border-white/10 py-16">
         <div className="container">
           <p className="mb-10 text-center text-xs uppercase tracking-widest text-white/25">
-            Empresas e instituciones con las que hemos trabajado
+            Algunas empresas e instituciones con las que hemos trabajado
           </p>
           <ClientLogos />
         </div>
