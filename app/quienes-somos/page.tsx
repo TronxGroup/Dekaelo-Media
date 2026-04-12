@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { n: "150+", label: "piezas producidas" },
+  { n: "200+", label: "piezas producidas" },
   { n: "3.8M", label: "vistas en un solo video organico" },
   { n: "60+", label: "episodios de vodcast corporativo" },
   { n: "6+", label: "industrias" },
