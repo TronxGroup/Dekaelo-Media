@@ -55,30 +55,9 @@ const services = [
 ];
 
 const milestones = [
-  {
-    year: "2013",
-    text: "Inicio en producción audiovisual con Yokai, largometraje seleccionado en Sitges Film Festival y BARS. Producción de piezas comerciales para Editorial Televisa Chile (Revista Caras).",
-  },
-  {
-    year: "2015",
-    text: "Desarrollo de contenido digital con alto alcance orgánico, superando 3.8M de visualizaciones en YouTube (Oximixo).",
-  },
-  {
-    year: "2016–2020",
-    text: "Producción y postproducción para empresas en industria, tecnología y educación. Desarrollo de contenido corporativo para Ripley.",
-  },
-  {
-    year: "2022–2023",
-    text: "Producción de series de contenido para la Cámara de Comercio Asia Pacífico. Desarrollo y ejecución de formato para iGromi.",
-  },
-  {
-    year: "2024",
-    text: "Diseño y producción de Fútbol y Parrilla, serie de vodcast. Episodio 1 alcanza 158K vistas, el más visto del canal. Inicio de vodcast institucional para BICE.",
-  },
-  {
-    year: "2025–2026",
-    text: "Producción continua de vodcast institucional para BICE. Proyecto en desarrollo y expansión.",
-  },
+  { year: "2014", text: "Seleccion oficial Sitges Film Festival con Yokai. Comerciales para Editorial Televisa Chile." },
+  { year: "2015", text: "Video para Oximixo supera 3.8M de vistas organicas en YouTube." },
+  { year: "2024", text: "Diseño de formato y produccion de Futbol y Parrilla — ep. 1 con 158K vistas. Inicio de serie vodcast para Banco BICE." },
 ];
 
 const stats = [
@@ -253,23 +232,30 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 py-24">
-        <div className="container max-w-5xl">
-          <Eyebrow>Trayectoria</Eyebrow>
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">El trabajo habla.</h2>
-          <div className="mt-14">
-            {milestones.map((m, i) => (
-              <div
-                key={m.year}
-                className={"grid grid-cols-[90px_1fr] gap-8 py-6" + (i !== milestones.length - 1 ? " border-b border-white/8" : "")}
-              >
-                <p className="text-sm font-semibold tabular-nums text-white/25 pt-0.5">{m.year}</p>
-                <p className="text-sm text-white/60 leading-relaxed">{m.text}</p>
-              </div>
-            ))}
-          </div>
+     <section className="border-t border-white/10 py-16">
+  <div className="container max-w-5xl">
+    <div className="flex items-end justify-between gap-4 mb-10">
+      <div>
+        <Eyebrow>Trayectoria</Eyebrow>
+        <h2 className="mt-2 text-2xl font-semibold">El trabajo habla.</h2>
+      </div>
+      <Link href="/quienes-somos" className="text-sm text-white/35 transition hover:text-white">
+        Historia completa
+      </Link>
+    </div>
+    <div>
+      {milestones.map((m, i) => (
+        <div
+          key={m.year}
+          className={"grid grid-cols-[80px_1fr] gap-6 py-4" + (i !== milestones.length - 1 ? " border-b border-white/8" : "")}
+        >
+          <p className="text-sm font-semibold tabular-nums text-white/25 pt-0.5">{m.year}</p>
+          <p className="text-sm text-white/60 leading-relaxed">{m.text}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
