@@ -28,9 +28,6 @@ export function Footer() {
               Estudio audiovisual en Santiago. Producción de vodcast corporativo y contenido institucional para empresas.
             </p>
 
-            <p className="mt-4 text-xs text-white/25">
-              Dekaelo Media es parte de Tronx Group.
-            </p>
           </div>
 
           {/* Contacto */}
