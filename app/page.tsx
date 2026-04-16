@@ -237,8 +237,7 @@ export default function Page() {
     <div className="flex items-end justify-between gap-4 mb-10">
       <div>
         <Eyebrow>Trayectoria</Eyebrow>
-        <h2 className="mt-2 text-2xl font-semibold">El trabajo habla.</h2>
-      </div>
+        </div>
       <Link href="/quienes-somos" className="text-sm text-white/35 transition hover:text-white">
         Historia completa
       </Link>
