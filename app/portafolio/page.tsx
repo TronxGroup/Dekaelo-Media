@@ -60,7 +60,7 @@ const categories: Category[] = [
         year: "2024 - 2026 ",
         tag: "Vodcast interno",
         type: "image",
-        image: "/images/bice.jpg",
+        image: "/Bice_portafolio_2026.jpg",
         description:
           "Conversaciones con quienes toman decisiones dentro del banco. Un espacio para alinear visión, experiencia y cultura desde adentro.",
         bullets: [
