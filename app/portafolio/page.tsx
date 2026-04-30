@@ -73,7 +73,7 @@ const categories: Category[] = [
         description:
           "Conversaciones sobre industria y negocio con quienes están construyendo el futuro.",
         bullets: [
-          "+6K visualizaciones",
+          "+8 episodios",
           "Contacto comercial con empresas relevantes",
           "Producido por Dekaelo Media",
         ],
