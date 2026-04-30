@@ -94,6 +94,21 @@ const categories: Category[] = [
   ],
 },
       {
+  client: "Trewhela’s School",
+  name: "80 años",
+  year: "2017",
+  tag: "Documental institucional",
+  type: "video",
+  youtube: "https://www.youtube.com/embed/JKsSN2lo_RU",
+  description:
+    "Un registro que no existía. Historia, identidad y presente en una sola pieza.",
+  bullets: [
+    "Herramienta para generar confianza en nuevos apoderados",
+    "Proyecto institucional clave",
+    "Producido por Dekaelo Media",
+  ],
+},
+      {
         client: "Tronx TV",
         name: "Reality Day",
         year: "2026",
