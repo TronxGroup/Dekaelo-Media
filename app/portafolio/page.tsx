@@ -3,6 +3,9 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { VideoEmbed } from "../components/VideoEmbed";
 
+/* =========================
+   META
+========================= */
 export const metadata: Metadata = {
   title: "Portafolio - Dekaelo Media | Video corporativo en Chile",
   description:
@@ -13,7 +16,40 @@ export const metadata: Metadata = {
 const waLink =
   "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20sobre%20un%20proyecto%20con%20Dekaelo%20Media.%0A%0AEmpresa%3A%0AQue%20necesito%3A%0AFecha%20tentativa%3A%0A%0AGracias";
 
-const categories = [
+/* =========================
+   TYPES (evita error TS)
+========================= */
+type BaseItem = {
+  client: string;
+  name: string;
+  year: string;
+  tag: string;
+  description: string;
+  bullets: string[];
+};
+
+type VideoItem = BaseItem & {
+  type: "video";
+  youtube: string;
+};
+
+type ImageItem = BaseItem & {
+  type: "image";
+  image: string;
+};
+
+type PortfolioItem = VideoItem | ImageItem;
+
+type Category = {
+  id: string;
+  label: string;
+  items: PortfolioItem[];
+};
+
+/* =========================
+   DATA
+========================= */
+const categories: Category[] = [
   {
     id: "vodcast",
     label: "Vodcast y series",
@@ -93,7 +129,8 @@ const categories = [
         year: "2025",
         tag: "Serie documental",
         type: "video",
-        youtube: "https://www.youtube.com/embed/VIDEO_EP1", // reemplazar
+        youtube:
+          "https://www.youtube.com/embed/acC3dyDKqe8?rel=0&modestbranding=1&playsinline=1",
         description:
           "Un día real de trabajo. Sin guión, sin intervención.",
         bullets: [
@@ -150,9 +187,7 @@ const categories = [
           "https://www.youtube.com/embed/1bayIqD5hcs?rel=0&modestbranding=1&playsinline=1",
         description:
           "Una película que recorrió festivales internacionales.",
-        bullets: [
-          "Edición y postproducción por Dekaelo Media",
-        ],
+        bullets: ["Edición y postproducción por Dekaelo Media"],
       },
       {
         client: "Proyecto original",
@@ -161,14 +196,16 @@ const categories = [
         tag: "Cine",
         type: "image",
         image: "/images/domo.jpg",
-        description:
-          "No todos los lugares te dejan ir.",
+        description: "No todos los lugares te dejan ir.",
         bullets: ["Proyecto original de Dekaelo Media"],
       },
     ],
   },
 ];
 
+/* =========================
+   UI HELPERS
+========================= */
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
@@ -177,6 +214,9 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
+/* =========================
+   PAGE
+========================= */
 export default function PortafolioPage() {
   return (
     <main className="bg-black text-white selection:bg-white selection:text-black">
@@ -197,63 +237,70 @@ export default function PortafolioPage() {
           <div className="container max-w-6xl">
             <Eyebrow>{cat.label}</Eyebrow>
 
-            <div className="mt-12 space-y-16">
-              {cat.items.map((item, i) => (
-                <article
-                  key={item.name}
-                  className="grid gap-10 md:grid-cols-2 items-center"
-                >
-                  {/* MEDIA */}
-                  <div
-                    className={`relative aspect-video bg-black overflow-hidden ${
-                      i % 2 === 1 ? "md:order-2" : ""
-                    }`}
-                  >
-                    {item.type === "video" ? (
-                      <VideoEmbed src={item.youtube} title={item.name} />
-                    ) : (
-                      <>
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/30 flex items-end p-4">
-                          <span className="text-xs text-white/60">
-                            {item.name === "Nos Une"
-                              ? "Contenido interno"
-                              : "Proyecto en desarrollo"}
-                          </span>
-                        </div>
-                      </>
-                    )}
-                  </div>
+            <div className="mt-12 space-y-20">
+              {cat.items.map((item, i) => {
+                const isReverse = i % 2 === 1;
 
-                  {/* TEXTO */}
-                  <div>
-                    <div className="flex items-center justify-between text-xs text-white/30">
-                      <span>{item.tag}</span>
-                      <span>{item.year}</span>
+                return (
+                  <article
+                    key={item.name}
+                    className="grid gap-10 md:grid-cols-2 items-center"
+                  >
+                    {/* MEDIA */}
+                    <div
+                      className={`relative aspect-video bg-black overflow-hidden ${
+                        isReverse ? "md:order-2" : ""
+                      }`}
+                    >
+                      {item.type === "video" ? (
+                        <VideoEmbed
+                          src={item.youtube}
+                          title={`${item.client} — ${item.name}`}
+                        />
+                      ) : (
+                        <>
+                          <img
+                            src={item.image}
+                            alt={`${item.client} — ${item.name}`}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-black/30 flex items-end p-4">
+                            <span className="text-xs text-white/60">
+                              {item.name === "Nos Une"
+                                ? "Contenido interno"
+                                : "Proyecto en desarrollo"}
+                            </span>
+                          </div>
+                        </>
+                      )}
                     </div>
 
-                    <h3 className="mt-2 text-xl font-semibold">
-                      {item.client} — {item.name}
-                    </h3>
+                    {/* TEXTO */}
+                    <div>
+                      <div className="flex items-center justify-between text-xs text-white/30">
+                        <span>{item.tag}</span>
+                        <span>{item.year}</span>
+                      </div>
 
-                    <p className="mt-4 text-white/60 leading-relaxed">
-                      {item.description}
-                    </p>
+                      <h3 className="mt-2 text-xl font-semibold">
+                        {item.client} — {item.name}
+                      </h3>
 
-                    <ul className="mt-4 space-y-1">
-                      {item.bullets.map((b: string, idx: number) => (
-                        <li key={idx} className="text-sm text-white/40">
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </article>
-              ))}
+                      <p className="mt-4 text-white/60 leading-relaxed">
+                        {item.description}
+                      </p>
+
+                      <ul className="mt-4 space-y-1">
+                        {item.bullets.map((b, idx) => (
+                          <li key={idx} className="text-sm text-white/40">
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -275,18 +322,22 @@ export default function PortafolioPage() {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black hover:bg-white/90"
+              className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
             >
               Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
             </a>
 
             <Link
               href="/servicios"
-              className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/60 hover:bg-white/10 hover:text-white"
+              className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/60 transition hover:bg-white/10 hover:text-white"
             >
               Ver servicios <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
+
+          <p className="mt-6 text-xs text-white/25">
+            Respondemos el mismo día hábil. Sin compromiso.
+          </p>
         </div>
       </section>
     </main>
