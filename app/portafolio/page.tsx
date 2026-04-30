@@ -55,9 +55,9 @@ const categories: Category[] = [
     label: "Vodcast y series",
     items: [
       {
-        client: "Banco Bice",
+        client: "BiceCorp",
         name: "Nos Une",
-        year: "2024",
+        year: "2024 - 2026 ",
         tag: "Vodcast interno",
         type: "image",
         image: "/images/bice.jpg",
@@ -72,7 +72,7 @@ const categories: Category[] = [
       {
         client: "iGromi",
         name: "Breaking Industrial",
-        year: "2024",
+        year: "2024 - 2025",
         tag: "Vodcast",
         type: "video",
         youtube:
@@ -87,9 +87,9 @@ const categories: Category[] = [
         ],
       },
       {
-        client: "Asia Pacific Chamber of Commerce",
+        client: "Asia Pacific Chamber of Commerce APCC",
         name: "Creando Líderes para Asia",
-        year: "2024",
+        year: "2023 - 2024",
         tag: "Serie",
         type: "video",
         youtube:
@@ -126,7 +126,7 @@ const categories: Category[] = [
       {
         client: "Tronx TV",
         name: "Reality Day",
-        year: "2025",
+        year: "2026",
         tag: "Serie documental",
         type: "video",
         youtube:
@@ -186,7 +186,7 @@ const categories: Category[] = [
         youtube:
           "https://www.youtube.com/embed/1bayIqD5hcs?rel=0&modestbranding=1&playsinline=1",
         description:
-          "Una película que recorrió festivales internacionales.",
+          "Una película que recorrió festivales internacionales. Actualmente en Amazon Prime.",
         bullets: ["Edición y postproducción por Dekaelo Media"],
       },
       {
