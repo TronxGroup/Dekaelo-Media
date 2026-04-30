@@ -146,6 +146,20 @@ const categories: Category[] = [
         bullets: ["+3.8M vistas", "Sigue generando comentarios hoy"],
       },
       {
+  client: "Pepper & Dreams SpA",
+  name: "Yokai",
+  year: "2014",
+  tag: "Largometraje",
+  type: "video",
+  youtube: "https://www.youtube.com/embed/1bayIqD5hcs",
+  description:
+    "Una película que recorrió festivales internacionales.",
+  bullets: [
+    "Edición y postproducción por Dekaelo Media",
+    "Selección a festivales internacionales como Buenos Aires Rojo Sangre y Sitges. Ahora disponible en Amazon Prime.",
+  ],
+},
+      {
         client: "Proyecto original",
         name: "Domo",
         year: "En desarrollo",
