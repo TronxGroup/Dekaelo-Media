@@ -195,7 +195,7 @@ const categories: Category[] = [
         year: "En desarrollo",
         tag: "Cine",
         type: "image",
-        image: "/images/domo.jpg",
+        image: "/Domo_portafolio_2026.jpg",
         description: "No todos los lugares te dejan ir.",
         bullets: ["Proyecto original de Dekaelo Media"],
       },
