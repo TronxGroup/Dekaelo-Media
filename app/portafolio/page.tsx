@@ -79,6 +79,21 @@ const categories: Category[] = [
         ],
       },
       {
+  client: "Asia Pacific Chamber of Commerce (APCC)",
+  name: "Creando Líderes para Asia",
+  year: "2023 - 2024",
+  tag: "Serie internacional",
+  type: "video",
+  youtube: "https://www.youtube.com/embed/byTylGKp-uI",
+  description:
+    "Conversaciones que conectan Chile y Asia a través de comercio, innovación y liderazgo.",
+  bullets: [
+    "+25 episodios producidos",
+    "Relación directa con líderes Chile–Asia",
+    "Producido por Dekaelo Media",
+  ],
+},
+      {
         client: "Tronx TV",
         name: "Reality Day",
         year: "2026",
