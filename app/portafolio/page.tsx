@@ -104,7 +104,22 @@ const categories: Category[] = [
     "Un registro que no existía. Historia, identidad y presente en una sola pieza.",
   bullets: [
     "Herramienta para generar confianza en nuevos apoderados",
-    "Proyecto institucional clave",
+    "Proyecto institucional clave que acompañó un proceso de transformación",
+    "Producido por Dekaelo Media",
+  ],
+},
+      {
+  client: "Fútbol y Parrilla",
+  name: "Serie original",
+  year: "2024",
+  tag: "Serie / entretenimiento",
+  type: "video",
+  youtube: "https://www.youtube.com/embed/PLSfbZU_asQ",
+  description:
+    "Fútbol, conversación y fuego. Un espacio donde las historias aparecen sin pauta.",
+  bullets: [
+    "+390K vistas en los primeros 4 episodios",
+    "Alcance orgánico real",
     "Producido por Dekaelo Media",
   ],
 },
