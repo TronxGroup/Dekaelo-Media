@@ -148,7 +148,7 @@ const categories: Category[] = [
       {
   client: "Pepper & Dreams SpA",
   name: "Yokai",
-  year: "2014",
+  year: "2013",
   tag: "Largometraje",
   type: "video",
   youtube: "https://www.youtube.com/embed/1bayIqD5hcs",
@@ -156,7 +156,7 @@ const categories: Category[] = [
     "Una película que recorrió festivales internacionales.",
   bullets: [
     "Edición y postproducción por Dekaelo Media",
-    "Selección a festivales internacionales como Buenos Aires Rojo Sangre y Sitges. Ahora disponible en Amazon Prime.",
+    "Selección en festivales como Sitges y Buenos Aires Rojo Sangre. Disponible en Amazon Prime.",
   ],
 },
       {
