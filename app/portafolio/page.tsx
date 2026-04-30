@@ -56,7 +56,7 @@ const categories: Category[] = [
         type: "image",
         image: "/Bice_portafolio_2026.jpg",
         description:
-          "Conversaciones con quienes toman decisiones dentro del banco.",
+          "Conversaciones con quienes toman decisiones dentro del grupo.",
         bullets: [
           "+14 episodios",
           "Serie interna activa",
