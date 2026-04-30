@@ -3,22 +3,17 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { VideoEmbed } from "../components/VideoEmbed";
 
-/* =========================
-   META
-========================= */
 export const metadata: Metadata = {
-  title: "Portafolio - Dekaelo Media | Video corporativo en Chile",
+  title: "Portafolio - Dekaelo Media",
   description:
-    "Trabajos seleccionados de Dekaelo Media. Vodcast corporativo, documentales y contenido estratégico.",
-  alternates: { canonical: "https://www.dekaelomedia.com/portafolio" },
+    "Contenido audiovisual que conecta, posiciona y genera impacto real.",
 };
 
 const waLink =
-  "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20sobre%20un%20proyecto%20con%20Dekaelo%20Media.%0A%0AEmpresa%3A%0AQue%20necesito%3A%0AFecha%20tentativa%3A%0A%0AGracias";
+  "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20sobre%20un%20proyecto%20con%20Dekaelo%20Media";
 
-/* =========================
-   TYPES (evita error TS)
-========================= */
+/* ================= TYPES ================= */
+
 type BaseItem = {
   client: string;
   name: string;
@@ -46,25 +41,24 @@ type Category = {
   items: PortfolioItem[];
 };
 
-/* =========================
-   DATA
-========================= */
+/* ================= DATA PRINCIPAL ================= */
+
 const categories: Category[] = [
   {
-    id: "vodcast",
-    label: "Vodcast y series",
+    id: "main",
+    label: "Casos seleccionados",
     items: [
       {
         client: "BiceCorp",
         name: "Nos Une",
-        year: "2024 - 2026 ",
+        year: "2024 - 2026",
         tag: "Vodcast interno",
         type: "image",
         image: "/Bice_portafolio_2026.jpg",
         description:
-          "Conversaciones con quienes toman decisiones dentro del banco. Un espacio para alinear visión, experiencia y cultura desde adentro.",
+          "Conversaciones con quienes toman decisiones dentro del banco.",
         bullets: [
-          "+14 episodios realizados",
+          "+14 episodios",
           "Serie interna activa",
           "Producido por Dekaelo Media",
         ],
@@ -75,85 +69,25 @@ const categories: Category[] = [
         year: "2024 - 2025",
         tag: "Vodcast",
         type: "video",
-        youtube:
-          "https://www.youtube.com/embed/2G7oKXKjPl8?rel=0&modestbranding=1&playsinline=1",
+        youtube: "https://www.youtube.com/embed/2G7oKXKjPl8",
         description:
-          "Conversaciones sobre industria, tecnología y negocio con quienes están construyendo el futuro en la práctica.",
+          "Conversaciones sobre industria y negocio con quienes están construyendo el futuro.",
         bullets: [
-          "+8 episodios producidos",
-          "+20 líderes entrevistados",
-          "+6K visualizaciones acumuladas",
+          "+6K visualizaciones",
+          "Contacto comercial con empresas relevantes",
           "Producido por Dekaelo Media",
         ],
       },
-      {
-        client: "Asia Pacific Chamber of Commerce APCC",
-        name: "Creando Líderes para Asia",
-        year: "2023 - 2024",
-        tag: "Serie",
-        type: "video",
-        youtube:
-          "https://www.youtube.com/embed/byTylGKp-uI?rel=0&modestbranding=1&playsinline=1",
-        description:
-          "Un puente entre Chile y Asia a través de conversaciones sobre comercio, cultura e innovación.",
-        bullets: [
-          "+25 episodios",
-          "Líderes de Chile y Asia",
-          "Producido por Dekaelo Media",
-        ],
-      },
-      {
-        client: "Fútbol y Parrilla",
-        name: "Serie original",
-        year: "2024",
-        tag: "Serie",
-        type: "video",
-        youtube:
-          "https://www.youtube.com/embed/PLSfbZU_asQ?rel=0&modestbranding=1&playsinline=1",
-        description:
-          "Fútbol, conversación y fuego. Un espacio donde las historias aparecen sin pauta.",
-        bullets: [
-          "+390K vistas en los primeros 4 episodios",
-          "Producido por Dekaelo Media",
-        ],
-      },
-    ],
-  },
-  {
-    id: "documental",
-    label: "Documentales y contenido",
-    items: [
       {
         client: "Tronx TV",
         name: "Reality Day",
         year: "2026",
         tag: "Serie documental",
         type: "video",
-        youtube:
-          "https://www.youtube.com/embed/acC3dyDKqe8?rel=0&modestbranding=1&playsinline=1",
+        youtube: "https://www.youtube.com/embed/acC3dyDKqe8",
         description:
-          "Un día real de trabajo. Sin guión, sin intervención.",
-        bullets: [
-          "Episodio 1 disponible",
-          "Temporada en desarrollo",
-          "Producido por Dekaelo Media",
-        ],
-      },
-      {
-        client: "Trewhela’s School",
-        name: "80 años",
-        year: "2017",
-        tag: "Documental institucional",
-        type: "video",
-        youtube:
-          "https://www.youtube.com/embed/JKsSN2lo_RU?rel=0&modestbranding=1&playsinline=1",
-        description:
-          "Un registro que no existía. Historia, identidad y presente en una sola pieza.",
-        bullets: [
-          "Herramienta clave para nuevos apoderados",
-          "El colegio fue vendido posteriormente",
-          "Producido por Dekaelo Media",
-        ],
+          "Un día real de trabajo. Sin guión. Sin intervención.",
+        bullets: ["Temporada en desarrollo"],
       },
       {
         client: "Oximixo",
@@ -161,33 +95,10 @@ const categories: Category[] = [
         year: "2014",
         tag: "Tutorial",
         type: "video",
-        youtube:
-          "https://www.youtube.com/embed/f7BpYpTSPLk?rel=0&modestbranding=1&playsinline=1",
+        youtube: "https://www.youtube.com/embed/f7BpYpTSPLk",
         description:
-          "Un video útil. Sin campaña. Sin pauta. Sigue trabajando solo.",
-        bullets: [
-          "+3.8 millones de visualizaciones",
-          "Sigue generando comentarios hoy",
-          "Producido por Dekaelo Media",
-        ],
-      },
-    ],
-  },
-  {
-    id: "cine",
-    label: "Cine y proyectos originales",
-    items: [
-      {
-        client: "Pepper & Dreams SpA",
-        name: "Yokai",
-        year: "2014",
-        tag: "Largometraje",
-        type: "video",
-        youtube:
-          "https://www.youtube.com/embed/1bayIqD5hcs?rel=0&modestbranding=1&playsinline=1",
-        description:
-          "Una película que recorrió festivales internacionales. Actualmente en Amazon Prime.",
-        bullets: ["Edición y postproducción por Dekaelo Media"],
+          "Un video útil que sigue funcionando más de 10 años después.",
+        bullets: ["+3.8M vistas", "Sigue generando comentarios hoy"],
       },
       {
         client: "Proyecto original",
@@ -203,102 +114,116 @@ const categories: Category[] = [
   },
 ];
 
-/* =========================
-   UI HELPERS
-========================= */
+/* ================= OTROS PROYECTOS ================= */
+
+const otherProjects = [
+  {
+    client: "Televisa Chile",
+    name: "Revista Caras 25 años",
+    youtube: "https://www.youtube.com/embed/hs6DLxIJ0jA",
+  },
+  {
+    client: "Inchalam",
+    name: "Video corporativo",
+    youtube: "https://www.youtube.com/embed/FnHKIkDaHb4",
+  },
+  {
+    client: "KGHM / TAPP / Inducom",
+    name: "Motion graphics reel",
+    youtube: "https://www.youtube.com/embed/ilvi2u_c_a0",
+  },
+  {
+    client: "Coesam",
+    name: "Video internacional",
+    youtube: "https://www.youtube.com/embed/b_sq_6TiwdE",
+  },
+  {
+    client: "Exploflex",
+    name: "Video sustentable",
+    youtube: "https://www.youtube.com/embed/RF8kLsTZgsU",
+  },
+  {
+    client: "HKLABA",
+    name: "Video institucional",
+    youtube: "https://www.youtube.com/embed/a1OcIDBTHgw",
+  },
+];
+
+/* ================= UI ================= */
+
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
+    <p className="text-xs uppercase tracking-[0.2em] text-white/40">
       {children}
     </p>
   );
 }
 
-/* =========================
-   PAGE
-========================= */
-export default function PortafolioPage() {
+/* ================= PAGE ================= */
+
+export default function Page() {
   return (
-    <main className="bg-black text-white selection:bg-white selection:text-black">
+    <main className="bg-black text-white">
+
       {/* HERO */}
-      <section className="container max-w-4xl pt-28 pb-16 md:pt-36 md:pb-20">
+      <section className="container max-w-4xl pt-32 pb-20">
         <Eyebrow>Portafolio</Eyebrow>
-        <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
-          Trabajos seleccionados
+        <h1 className="mt-4 text-5xl font-semibold">
+          Contenido que mueve decisiones
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
-          Contenido que no solo se ve. Se usa, se comparte y mueve decisiones.
+        <p className="mt-6 text-white/60">
+          Vodcast, documentales y contenido estratégico para empresas.
         </p>
       </section>
 
-      {/* SECCIONES */}
+      {/* CASOS PRINCIPALES */}
       {categories.map((cat) => (
         <section key={cat.id} className="border-t border-white/10 py-20">
           <div className="container max-w-6xl">
             <Eyebrow>{cat.label}</Eyebrow>
 
-            <div className="mt-12 space-y-20">
+            <div className="mt-16 space-y-24">
               {cat.items.map((item, i) => {
-                const isReverse = i % 2 === 1;
+                const reverse = i % 2 === 1;
 
                 return (
-                  <article
+                  <div
                     key={item.name}
-                    className="grid gap-10 md:grid-cols-2 items-center"
+                    className="grid md:grid-cols-2 gap-10 items-center"
                   >
                     {/* MEDIA */}
-                    <div
-                      className={`relative aspect-video bg-black overflow-hidden ${
-                        isReverse ? "md:order-2" : ""
-                      }`}
-                    >
+                    <div className={reverse ? "md:order-2" : ""}>
                       {item.type === "video" ? (
-                        <VideoEmbed
-                          src={item.youtube}
-                          title={`${item.client} — ${item.name}`}
-                        />
+                        <VideoEmbed src={item.youtube} title={item.name} />
                       ) : (
-                        <>
-                          <img
-                            src={item.image}
-                            alt={`${item.client} — ${item.name}`}
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute inset-0 bg-black/30 flex items-end p-4">
-                            <span className="text-xs text-white/60">
-                              {item.name === "Nos Une"
-                                ? "Contenido interno"
-                                : "Proyecto en desarrollo"}
-                            </span>
-                          </div>
-                        </>
+                        <img
+                          src={item.image}
+                          className="w-full aspect-video object-cover"
+                        />
                       )}
                     </div>
 
                     {/* TEXTO */}
                     <div>
-                      <div className="flex items-center justify-between text-xs text-white/30">
-                        <span>{item.tag}</span>
-                        <span>{item.year}</span>
-                      </div>
+                      <p className="text-xs text-white/40">
+                        {item.tag} — {item.year}
+                      </p>
 
-                      <h3 className="mt-2 text-xl font-semibold">
+                      <h3 className="text-2xl mt-2 font-semibold">
                         {item.client} — {item.name}
                       </h3>
 
-                      <p className="mt-4 text-white/60 leading-relaxed">
+                      <p className="mt-4 text-white/60">
                         {item.description}
                       </p>
 
-                      <ul className="mt-4 space-y-1">
-                        {item.bullets.map((b, idx) => (
-                          <li key={idx} className="text-sm text-white/40">
-                            {b}
-                          </li>
+                      <ul className="mt-4 text-white/40 text-sm space-y-1">
+                        {item.bullets.map((b, i) => (
+                          <li key={i}>{b}</li>
                         ))}
                       </ul>
                     </div>
-                  </article>
+                  </div>
                 );
               })}
             </div>
@@ -306,39 +231,37 @@ export default function PortafolioPage() {
         </section>
       ))}
 
-      {/* CTA */}
-      <section className="border-t border-white/10 py-28">
-        <div className="container max-w-3xl text-center">
-          <h2 className="text-3xl font-semibold md:text-4xl">
-            Hablemos de tu proyecto
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-white/50">
-            Cuéntanos qué necesitas. Te respondemos con un alcance claro y un
-            precio concreto en menos de 24 horas hábiles.
-          </p>
+      {/* OTROS PROYECTOS */}
+      <section className="border-t border-white/10 py-24">
+        <div className="container max-w-6xl">
+          <Eyebrow>Otros proyectos</Eyebrow>
 
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <a
-              href={waLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
-            >
-              Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
-            </a>
-
-            <Link
-              href="/servicios"
-              className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/60 transition hover:bg-white/10 hover:text-white"
-            >
-              Ver servicios <ArrowUpRight className="h-4 w-4" />
-            </Link>
+          <div className="mt-12 grid md:grid-cols-3 gap-6">
+            {otherProjects.map((item, i) => (
+              <div key={i}>
+                <VideoEmbed src={item.youtube} title={item.name} />
+                <p className="mt-2 text-sm text-white/50">
+                  {item.client}
+                </p>
+              </div>
+            ))}
           </div>
-
-          <p className="mt-6 text-xs text-white/25">
-            Respondemos el mismo día hábil. Sin compromiso.
-          </p>
         </div>
+      </section>
+
+      {/* CTA */}
+      <section className="border-t border-white/10 py-28 text-center">
+        <h2 className="text-3xl font-semibold">
+          Hablemos de tu proyecto
+        </h2>
+
+        <a
+          href={waLink}
+          target="_blank"
+          className="inline-block mt-8 bg-white text-black px-10 py-4"
+        >
+          Escribir por WhatsApp
+        </a>
       </section>
     </main>
   );
