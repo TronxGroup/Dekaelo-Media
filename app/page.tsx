@@ -232,27 +232,52 @@ export default function Page() {
         </div>
       </section>
 
-     <section className="border-t border-white/10 py-16">
+     <section className="border-t border-white/10 py-24">
   <div className="container max-w-5xl">
-    <div className="flex items-end justify-between gap-4 mb-10">
-      <div>
-        <Eyebrow>Trayectoria</Eyebrow>
-        </div>
-      <Link href="/quienes-somos" className="text-sm text-white/35 transition hover:text-white">
-        Historia completa
-      </Link>
+    
+    <div className="mb-14">
+      <Eyebrow>Resultados</Eyebrow>
+      <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+        No hablamos de contenido. Mostramos lo que genera.
+      </h2>
     </div>
-    <div>
-      {milestones.map((m, i) => (
-        <div
-          key={m.year}
-          className={"grid grid-cols-[80px_1fr] gap-6 py-4" + (i !== milestones.length - 1 ? " border-b border-white/8" : "")}
-        >
-          <p className="text-sm font-semibold tabular-nums text-white/25 pt-0.5">{m.year}</p>
-          <p className="text-sm text-white/60 leading-relaxed">{m.text}</p>
-        </div>
-      ))}
+
+    <div className="grid gap-6 md:grid-cols-2">
+      
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+        <p className="text-4xl font-semibold text-white">3.8M+</p>
+        <p className="mt-2 text-sm text-white/50">
+          visualizaciones orgánicas en un contenido
+        </p>
+      </div>
+
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+        <p className="text-4xl font-semibold text-white">60+</p>
+        <p className="mt-2 text-sm text-white/50">
+          episodios de vodcast corporativo producidos
+        </p>
+      </div>
+
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+        <p className="text-4xl font-semibold text-white">BICE</p>
+        <p className="mt-2 text-sm text-white/50">
+          serie vodcast corporativa en producción activa
+        </p>
+      </div>
+
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+        <p className="text-4xl font-semibold text-white">+350K</p>
+        <p className="mt-2 text-sm text-white/50">
+          visualizaciones en serie "Fútbol y Parrilla"
+        </p>
+      </div>
+
     </div>
+
+    <p className="mt-12 text-sm text-white/35">
+      +10 años produciendo contenido audiovisual en Chile.
+    </p>
+
   </div>
 </section>
 
