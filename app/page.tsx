@@ -30,7 +30,7 @@ const services = [
       "Edicion, subtitulos y entrega lista para publicar",
       
   ],
-    price: "Desde $600.000 / episodio",
+    price: "Desde $650.000 / episodio",
     note: "+ IVA - temporada minima 4 episodios",
     href: "/servicios#produccion",
   },
@@ -48,7 +48,7 @@ const services = [
       "Entrega en 5 dias habiles",
       "Pago 50% adelantado",
     ],
-    price: "Desde $300.000",
+    price: "Desde $350.000",
     note: "+ IVA - pago unico por proyecto",
     href: "/servicios#postproduccion",
   },
