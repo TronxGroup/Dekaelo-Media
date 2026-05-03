@@ -321,6 +321,29 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="border-t border-white/10 py-24">
+  <div className="container max-w-5xl">
+
+    <Eyebrow>Experiencia en distintas industrias</Eyebrow>
+
+    <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+      Desde banca hasta contenido original.
+    </h2>
+
+    <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6 text-sm text-white/60">
+      
+      <div>BICE — Serie vodcast institucional</div>
+      <div>APCC — +25 episodios internacionales</div>
+      <div>iGromi — Industria y tecnología</div>
+      <div>Fútbol y Parrilla — +390K vistas</div>
+      <div>Trewhela’s School — documental institucional</div>
+      <div>Oximixo — +3.8M vistas orgánicas</div>
+
+    </div>
+
+  </div>
+</section>
+      
       <section className="container border-t border-white/10 py-24 max-w-5xl">
         <div className="mb-14 flex items-end justify-between gap-4">
           <div>
