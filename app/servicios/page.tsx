@@ -50,7 +50,7 @@ export default function ServiciosPage() {
               <p className="mt-5 text-lg text-white/55 leading-relaxed">Produccion completa en terreno, con direccion y postproduccion. Para empresas que quieren vodcast, series corporativas o video institucional.</p>
               <div className="mt-8 rounded-2xl border border-amber-400/15 bg-amber-500/5 p-6">
                 <p className="text-xs font-semibold uppercase tracking-wider text-amber-300/60 mb-3">Referencia real</p>
-                <p className="text-white/70 leading-relaxed"><strong className="text-white">BICE</strong> lleva trabajando con nosotros desde 2024 en una serie continua de vodcast institucional. Temporada activa en curso.</p>
+                <p className="text-white/70 leading-relaxed"><strong className="text-white">BICECORP</strong> lleva trabajando con nosotros desde 2024 en una serie continua de vodcast institucional. Temporada activa en curso.</p>
               </div>
               <div className="mt-8 grid gap-6 sm:grid-cols-2">
                 <div>
@@ -73,7 +73,7 @@ export default function ServiciosPage() {
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:sticky lg:top-24">
               <p className="text-sm text-white/40">Precio por temporada</p>
-              <p className="mt-2 text-3xl font-semibold text-white">Desde $600.000 / episodio</p>
+              <p className="mt-2 text-3xl font-semibold text-white">Desde $650.000 / episodio</p>
               <p className="text-white/35 text-sm">+ IVA - minimo 4 episodios</p>
               <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4 text-sm text-white/50 leading-relaxed">El alcance se define segun numero de episodios y produccion.</div>
               <a href={buildWa("Produccion completa - vodcast o serie corporativa")} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90">
@@ -120,8 +120,8 @@ export default function ServiciosPage() {
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:sticky lg:top-24">
               <p className="text-sm text-white/40">Precio por video</p>
-              <p className="mt-2 text-4xl font-semibold text-white">$300.000</p>
-              <p className="text-white/35 text-sm">- $700.000 + IVA - pago unico</p>
+              <p className="mt-2 text-4xl font-semibold text-white">Desde $350.000</p>
+              <p className="text-white/35 text-sm">- + IVA - pago unico</p>
               <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4 text-sm text-white/50 leading-relaxed">El alcance se define segun duracion y cantidad de material.</div>
               <a href={buildWa("Post-produccion - edicion de material grabado")} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90">
                 Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
