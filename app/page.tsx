@@ -219,64 +219,66 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 py-24">
-        <div className="container max-w-5xl">
-          <div className="grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.label} className="bg-black px-8 py-10">
-                <p className="text-4xl font-semibold tracking-tight text-white md:text-5xl">{s.value}</p>
-                <p className="mt-2 text-sm text-white/40 leading-snug">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
      <section className="border-t border-white/10 py-24">
   <div className="container max-w-5xl">
-    
-    <div className="mb-14">
-      <Eyebrow>Resultados</Eyebrow>
-      <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-        No hablamos de contenido. Mostramos lo que genera.
-      </h2>
-    </div>
 
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
       
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-        <p className="text-4xl font-semibold text-white">3.8M+</p>
-        <p className="mt-2 text-sm text-white/50">
-          visualizaciones orgánicas en un contenido
-        </p>
+      <div>
+        <Eyebrow>Experiencia y resultados</Eyebrow>
+        <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+          Contenido que ya está generando impacto.
+        </h2>
       </div>
 
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-        <p className="text-4xl font-semibold text-white">60+</p>
-        <p className="mt-2 text-sm text-white/50">
-          episodios de vodcast corporativo producidos
+      <div className="flex flex-col items-start gap-3">
+        <p className="text-sm text-white/40">
+          +10 años produciendo contenido audiovisual en Chile
         </p>
-      </div>
 
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-        <p className="text-4xl font-semibold text-white">BICE</p>
-        <p className="mt-2 text-sm text-white/50">
-          serie vodcast corporativa en producción activa
-        </p>
-      </div>
-
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-        <p className="text-4xl font-semibold text-white">+350K</p>
-        <p className="mt-2 text-sm text-white/50">
-          visualizaciones en serie "Fútbol y Parrilla"
-        </p>
+        <Link
+          href="/quienes-somos"
+          className="inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white"
+        >
+          Ver quiénes somos <ArrowRight className="h-4 w-4" />
+        </Link>
       </div>
 
     </div>
 
-    <p className="mt-12 text-sm text-white/35">
-      +10 años produciendo contenido audiovisual en Chile.
-    </p>
+    <div className="grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
+      
+      <div className="bg-black px-8 py-10">
+        <p className="text-4xl font-semibold md:text-5xl">200+</p>
+        <p className="mt-2 text-sm text-white/40">
+          piezas producidas
+        </p>
+      </div>
+
+      <div className="bg-black px-8 py-10">
+        <p className="text-4xl font-semibold md:text-5xl">3.8M</p>
+        <p className="mt-2 text-sm text-white/40">
+          visualizaciones orgánicas
+        </p>
+      </div>
+
+      <div className="bg-black px-8 py-10">
+        <p className="text-4xl font-semibold md:text-5xl">60+</p>
+        <p className="mt-2 text-sm text-white/40">
+          episodios de vodcast corporativo
+        </p>
+      </div>
+
+      <div className="bg-black px-8 py-10">
+        <p className="text-4xl font-semibold md:text-5xl">
+          Series activas
+        </p>
+        <p className="mt-2 text-sm text-white/40">
+          con empresas como BICE
+        </p>
+      </div>
+
+    </div>
 
   </div>
 </section>
