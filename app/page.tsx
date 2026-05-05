@@ -146,7 +146,7 @@ export default function Page() {
           src="/bg_dekaelo.png"
           alt=""
           fill
-          className="object-cover object-center opacity-15"
+          className="object-cover object-center opacity-50"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/90" />
