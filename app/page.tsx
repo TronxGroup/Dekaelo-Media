@@ -154,46 +154,54 @@ export default function Page() {
     <main className="bg-black text-white selection:bg-white selection:text-black">
 
       {/* HERO */}
-<section className="container max-w-5xl pt-28 pb-20 md:pt-36 md:pb-28">
-  <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50">
-    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-    Estudio de Producción Audiovisual
-  </div>
-
-  <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
-    Contenido corporativo{" "}
-    <span className="text-white/35">que posiciona tu empresa.</span>
-  </h1>
-
-  <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/60">
-    Mas de una decada produciendo vodcast y video corporativo para empresas en Chile. 
-    Estudio independiente, sin estructura de agencia ni sus costos.
-  </p>
-
-  <div className="mt-8 flex flex-wrap gap-3">
-    <Chip>Especialistas en vodcast corporativo</Chip>
-    <Chip>Entrega en 5 dias habiles</Chip>
-    <Chip>Santiago, Chile</Chip>
-  </div>
-
-  <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-    <a
-      href={waLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center justify-center gap-2 bg-white px-8 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
-    >
-      Cuentanos tu proyecto por WhatsApp
-      <ArrowUpRight className="h-4 w-4" />
-    </a>
-
-    <Link
-      href="/portafolio"
-      className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-8 py-3.5 text-sm text-white/65 transition hover:bg-white/10 hover:text-white"
-    >
-      Ver trabajos realizados
-      <ArrowRight className="h-4 w-4" />
-    </Link>
+<section className="relative overflow-hidden">
+  {/* IMAGEN DE FONDO */}
+  <Image
+    src="/bg_dekaelo.png"
+    alt=""
+    fill
+    className="object-cover object-center opacity-15"
+    priority
+  />
+  {/* GRADIENTE ENCIMA */}
+  <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/90" />
+  {/* CONTENIDO */}
+  <div className="relative container max-w-5xl pt-28 pb-20 md:pt-36 md:pb-28">
+    <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50">
+      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+      Estudio de Producción Audiovisual
+    </div>
+    <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
+      Contenido corporativo{" "}
+      <span className="text-white/35">que posiciona tu empresa.</span>
+    </h1>
+    <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/60">
+      Mas de una decada produciendo vodcast y video corporativo para empresas en Chile.
+      Estudio independiente, sin estructura de agencia ni sus costos.
+    </p>
+    <div className="mt-8 flex flex-wrap gap-3">
+      <Chip>Especialistas en vodcast corporativo</Chip>
+      <Chip>Entrega en 5 dias habiles</Chip>
+      <Chip>Santiago, Chile</Chip>
+    </div>
+    <div className="mt-12 flex flex-col gap-4 sm:flex-row">
+      
+        href={waLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center gap-2 bg-white px-8 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
+      >
+        Cuentanos tu proyecto por WhatsApp
+        <ArrowUpRight className="h-4 w-4" />
+      </a>
+      <Link
+        href="/portafolio"
+        className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-8 py-3.5 text-sm text-white/65 transition hover:bg-white/10 hover:text-white"
+      >
+        Ver trabajos realizados
+        <ArrowRight className="h-4 w-4" />
+      </Link>
+    </div>
   </div>
 </section>
 
