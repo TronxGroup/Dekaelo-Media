@@ -225,7 +225,7 @@ export default function Page() {
             </div>
             <div className="flex flex-col items-start gap-3">
               <p className="text-sm text-white/40">
-                +10 anos produciendo contenido audiovisual en Chile
+                +10 años produciendo contenido audiovisual en Chile
               </p>
               <Link
                 href="/quienes-somos"
