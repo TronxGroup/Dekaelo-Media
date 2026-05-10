@@ -21,9 +21,9 @@ const services = [
     name: "Produccion completa",
     tagline:
       "Para empresas que quieren vodcast o series corporativas sin preocuparse de nada tecnico.",
-    how: "Disenamos el formato, llegamos con equipo a tu oficina y producimos la temporada completa.",
+    how: "Diseñamos el formato, llegamos con equipo a tu oficina y producimos la temporada completa.",
     includes: [
-      "Diseno de formato y pauta",
+      "Disño de formato y pauta",
       "Grabacion profesional en tu oficina",
       "Direccion y conduccion tecnica",
       "Edicion, subtitulos y entrega lista para publicar",
@@ -153,7 +153,7 @@ export default function Page() {
         <div className="relative container max-w-5xl pt-28 pb-20 md:pt-36 md:pb-28">
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Estudio de Produccion Audiovisual
+            Vodcast y video corporativo para empresas en Chile.
           </div>
           <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
             Contenido corporativo{" "}
@@ -249,8 +249,8 @@ export default function Page() {
               <p className="mt-2 text-sm text-white/40">episodios de vodcast corporativo</p>
             </div>
             <div className="bg-black px-8 py-10">
-              <p className="text-4xl font-semibold md:text-5xl">Series activas</p>
-              <p className="mt-2 text-sm text-white/40">con empresas como BICE</p>
+              <p className="text-4xl font-semibold md:text-5xl">14+</p>
+              <p className="mt-2 text-sm text-white/40">episodios BICE en producción activa</p>
             </div>
           </div>
         </div>
