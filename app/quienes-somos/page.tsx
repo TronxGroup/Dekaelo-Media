@@ -40,8 +40,8 @@ const milestones = [
     text: "Diseño y producción de Fútbol y Parrilla, serie de vodcast. Episodio 1 alcanza 158K vistas, el más visto del canal. Inicio de vodcast institucional para BICE.",
   },
   {
-    year: "2025–2026",
-    text: "Producción continua de vodcast institucional para BICE. Proyecto en desarrollo y expansión.",
+    year: "2024–2026",
+    text: "Producción continua de vodcast institucional para BICE — más de 14 episodios producidos. Lanzamiento de Tronx TV con Reality Day, serie documental original. ",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function QuienesSomosPage() {
         <Eyebrow>Quiénes somos</Eyebrow>
         <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
           Producción audiovisual corporativa desde 2013.
-          <span className="block text-white/35">Vodcast y contenido institucional para empresas.</span>
+          <span className="block text-white/35">Vodcast, documental y contenido institucional para empresas en Chile.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
           Producción de contenido seriado y formatos largos desde 2013, incluyendo largometraje, documental y más de 60 episodios de vodcast.
