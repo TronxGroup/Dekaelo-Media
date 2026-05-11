@@ -11,19 +11,20 @@ const waLink =
 export const metadata: Metadata = {
   title: "Dekaelo Media - Vodcast y video corporativo en Chile",
   description:
-    "Mas de una decada produciendo vodcast y video corporativo en Chile. BICE, Camara de Comercio Asia Pacifico, iGromi y mas.",
+    "Tu departamento de contenido. Sin equipo interno, sin estructura de agencia. Vodcast y video corporativo para empresas en Chile.",
 };
 
 const services = [
   {
     badge: "Especialidad principal",
-    badgeClass: "bg-amber-500/15 text-amber-300 border border-amber-400/20",
+    badgeClass:
+      "bg-amber-500/15 text-amber-300 border border-amber-400/20",
     name: "Produccion completa",
     tagline:
       "Para empresas que quieren vodcast o series corporativas sin preocuparse de nada tecnico.",
-    how: "Diseñamos el formato, llegamos con equipo a tu oficina y producimos la temporada completa.",
+    how: "Disenamos el formato, llegamos con equipo a tu oficina y producimos la temporada completa.",
     includes: [
-      "Disño de formato y pauta",
+      "Diseno de formato y pauta",
       "Grabacion profesional en tu oficina",
       "Direccion y conduccion tecnica",
       "Edicion, subtitulos y entrega lista para publicar",
@@ -52,12 +53,6 @@ const services = [
   },
 ];
 
-const milestones = [
-  { year: "2014", text: "Seleccion oficial Sitges Film Festival con Yokai. Comerciales para Editorial Televisa Chile." },
-  { year: "2015", text: "Video para Oximixo supera 3.8M de vistas organicas en YouTube." },
-  { year: "2024", text: "Diseno de formato y produccion de Futbol y Parrilla — ep. 1 con 158K vistas. Inicio de serie vodcast para Banco BICE." },
-];
-
 const biceImages = [
   { src: "/bice/bice-1.jpg", alt: "Set vodcast BICE episodio en produccion" },
   { src: "/bice/bice-2.jpg", alt: "Set vodcast BICE configuracion de camaras" },
@@ -69,25 +64,29 @@ const cases = [
     tag: "Vodcast corporativo",
     name: "iGromi - Industria 4.0 y nuevos negocios Ep. 8",
     desc: "Serie vodcast sobre tecnologia e industria. Produccion completa.",
-    youtube: "https://www.youtube.com/embed/2G7oKXKjPl8?rel=0&modestbranding=1&playsinline=1",
+    youtube:
+      "https://www.youtube.com/embed/2G7oKXKjPl8?rel=0&modestbranding=1&playsinline=1",
   },
   {
     tag: "Evento corporativo - Figuras publicas",
     name: "HKLABA - Introduccion institucional",
     desc: "Produccion con Charles Kimber de Arauco, Eduardo Frei y Jorge Carey.",
-    youtube: "https://www.youtube.com/embed/a1OcIDBTHgw?rel=0&modestbranding=1&playsinline=1",
+    youtube:
+      "https://www.youtube.com/embed/a1OcIDBTHgw?rel=0&modestbranding=1&playsinline=1",
   },
   {
     tag: "Vodcast - Serie original",
     name: "Futbol y Parrilla - Borghi, Paredes y Monje",
     desc: "Produccion completa de serie original. Mas de 357K vistas en los primeros 4 episodios.",
-    youtube: "https://www.youtube.com/embed/PLSfbZU_asQ?rel=0&modestbranding=1&playsinline=1",
+    youtube:
+      "https://www.youtube.com/embed/PLSfbZU_asQ?rel=0&modestbranding=1&playsinline=1",
   },
   {
     tag: "Vodcast institucional - Camara de Comercio",
     name: "APCC Chamber - Hong Kong y Latinoamerica Ep. 2",
     desc: "Serie Asia-Pacifico para la Camara de Comercio. Mas de 20 episodios producidos.",
-    youtube: "https://www.youtube.com/embed/byTylGKp-uI?rel=0&modestbranding=1&playsinline=1",
+    youtube:
+      "https://www.youtube.com/embed/byTylGKp-uI?rel=0&modestbranding=1&playsinline=1",
   },
 ];
 
@@ -156,12 +155,13 @@ export default function Page() {
             Vodcast y video corporativo para empresas en Chile.
           </div>
           <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
-            Contenido corporativo{" "}
-            <span className="text-white/35">que posiciona tu empresa.</span>
+            Tu departamento de contenido.{" "}
+            <span className="text-white/35">Sin equipo interno, sin estructura de agencia.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/60">
-            Mas de una decada produciendo vodcast y video corporativo para empresas en Chile.
-            Estudio independiente, sin estructura de agencia ni sus costos.
+            Producimos vodcast y video corporativo para empresas en Chile desde 2013.
+            Llegamos, grabamos, editamos y entregamos listo para publicar.
+            Tu empresa publica. Nosotros producimos.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Chip>Especialistas en vodcast corporativo</Chip>
@@ -225,7 +225,7 @@ export default function Page() {
             </div>
             <div className="flex flex-col items-start gap-3">
               <p className="text-sm text-white/40">
-                +10 años produciendo contenido audiovisual en Chile
+                +10 anos produciendo contenido audiovisual en Chile
               </p>
               <Link
                 href="/quienes-somos"
@@ -250,8 +250,35 @@ export default function Page() {
             </div>
             <div className="bg-black px-8 py-10">
               <p className="text-4xl font-semibold md:text-5xl">14+</p>
-              <p className="mt-2 text-sm text-white/40">episodios BICE en producción activa</p>
+              <p className="mt-2 text-sm text-white/40">episodios BICE en produccion activa</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* COMO FUNCIONA */}
+      <section className="border-t border-white/10 py-24">
+        <div className="container max-w-5xl">
+          <Eyebrow>Como funciona</Eyebrow>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+            Tu empresa publica. Nosotros producimos.
+          </h2>
+          <p className="mt-5 max-w-2xl text-white/50 leading-relaxed">
+            No necesitas equipo de video interno ni pagar estructura de agencia. Dekaelo Media es tu departamento de contenido externalizado. Llegas a grabar, nosotros nos encargamos de todo lo demas.
+          </p>
+          <div className="mt-12 grid gap-px bg-white/10 md:grid-cols-4">
+            {[
+              { n: "01", title: "Nos cuentas lo que necesitas", desc: "Por WhatsApp o formulario. Sin reuniones largas." },
+              { n: "02", title: "Disenamos el formato", desc: "Estructura, pauta y logistica. Todo coordinado por Dekaelo." },
+              { n: "03", title: "Grabamos y producimos", desc: "Llegamos con equipo. Tu solo apareces y hablas." },
+              { n: "04", title: "Entregamos listo para publicar", desc: "Edicion, subtitulos, formatos para cada plataforma. En 5 dias habiles." },
+            ].map((s) => (
+              <div key={s.n} className="bg-black px-8 py-10">
+                <p className="text-3xl font-semibold text-white/15">{s.n}</p>
+                <h3 className="mt-4 text-sm font-semibold text-white">{s.title}</h3>
+                <p className="mt-2 text-sm text-white/40 leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
