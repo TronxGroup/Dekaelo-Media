@@ -1,19 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { VideoEmbed } from "../components/VideoEmbed";
 
 export const metadata: Metadata = {
   title: "Portafolio - Dekaelo Media",
   description:
-    "Series, vodcast, documentales y contenido estratégico para empresas y audiencias.",
+    "Contenido audiovisual para empresas, instituciones y proyectos originales.",
+  alternates: {
+    canonical: "https://www.dekaelo.com/portafolio",
+  },
 };
 
 const waLink =
-  "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20sobre%20un%20proyecto%20con%20Dekaelo%20Media";
+  "https://wa.me/56920080031?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20audiovisual%20con%20Dekaelo%20Media";
 
-/* ================= TYPES ================= */
+/* =========================
+TYPES
+========================= */
 
 type BaseItem = {
   client: string;
@@ -39,36 +43,34 @@ type PortfolioItem = VideoItem | ImageItem;
 type Category = {
   id: string;
   label: string;
-  title: string;
-  description: string;
   items: PortfolioItem[];
 };
 
-/* ================= DATA ================= */
+/* =========================
+DATA
+========================= */
 
 const categories: Category[] = [
   {
-    id: "companies",
-    label: "Empresas e instituciones",
-    title: "Contenido estratégico para empresas",
-    description:
-      "Series, vodcast y piezas audiovisuales diseñadas para posicionar organizaciones y líderes.",
+    id: "selected",
+    label: "Casos seleccionados",
     items: [
       {
-        client: "BICECORP",
+        client: "BiceCorp",
         name: "Nos Une",
         year: "2024 - 2026",
         tag: "Vodcast interno",
         type: "image",
         image: "/Bice_portafolio_2026.jpg",
         description:
-          "Conversaciones con quienes toman decisiones dentro del grupo.",
+          "Conversaciones con quienes toman decisiones dentro del grupo BiceCorp.",
         bullets: [
           "+14 episodios",
           "Serie interna activa",
-          "Producción integral por Dekaelo Media",
+          "Producido por Dekaelo Media",
         ],
       },
+
       {
         client: "iGromi",
         name: "Breaking Industrial",
@@ -77,13 +79,14 @@ const categories: Category[] = [
         type: "video",
         youtube: "https://www.youtube.com/embed/2G7oKXKjPl8",
         description:
-          "Conversaciones sobre industria, innovación y negocios con quienes están construyendo el futuro.",
+          "Conversaciones sobre industria, tecnología y negocio con quienes están construyendo el futuro.",
         bullets: [
-          "+8 episodios",
-          "Relación con empresas relevantes de la industria",
-          "Producción integral por Dekaelo Media",
+          "+6K visualizaciones acumuladas",
+          "Generó contacto comercial con empresas relevantes",
+          "Producido por Dekaelo Media",
         ],
       },
+
       {
         client: "Asia Pacific Chamber of Commerce (APCC)",
         name: "Creando Líderes para Asia",
@@ -95,24 +98,11 @@ const categories: Category[] = [
           "Conversaciones que conectan Chile y Asia a través de comercio, innovación y liderazgo.",
         bullets: [
           "+25 episodios producidos",
-          "Participación de líderes Chile–Asia",
-          "Producción integral por Dekaelo Media",
+          "Relación directa con líderes Chile–Asia",
+          "Producido por Dekaelo Media",
         ],
       },
-      {
-        client: "HKLABA",
-        name: "Video institucional",
-        year: "2023",
-        tag: "Institucional",
-        type: "video",
-        youtube: "https://www.youtube.com/embed/a1OcIDBTHgw",
-        description:
-          "Contenido institucional orientado a relaciones internacionales y liderazgo empresarial.",
-        bullets: [
-          "Participación de figuras públicas y empresariales",
-          "Producción corporativa",
-        ],
-      },
+
       {
         client: "Trewhela’s School",
         name: "80 años",
@@ -121,23 +111,14 @@ const categories: Category[] = [
         type: "video",
         youtube: "https://www.youtube.com/embed/JKsSN2lo_RU",
         description:
-          "Historia, identidad y presente en una sola pieza.",
+          "Un registro que no existía. Historia, identidad y presente en una sola pieza.",
         bullets: [
-          "Herramienta de confianza institucional",
-          "Proyecto audiovisual de largo plazo",
-          "Producción por Dekaelo Media",
+          "Herramienta para generar confianza en nuevos apoderados",
+          "Proyecto institucional clave",
+          "Producido por Dekaelo Media",
         ],
       },
-    ],
-  },
 
-  {
-    id: "originals",
-    label: "Series originales",
-    title: "Contenido propio y formatos originales",
-    description:
-      "Proyectos creados desde la identidad editorial de Dekaelo Media y Tronx TV.",
-    items: [
       {
         client: "Fútbol y Parrilla",
         name: "Serie original",
@@ -148,11 +129,12 @@ const categories: Category[] = [
         description:
           "Fútbol, conversación y fuego. Un espacio donde las historias aparecen sin pauta.",
         bullets: [
-          "+390K vistas en los primeros episodios",
+          "+390K vistas en los primeros 4 episodios",
           "Alcance orgánico real",
-          "Formato original producido por Dekaelo Media",
+          "Producido por Dekaelo Media",
         ],
       },
+
       {
         client: "Tronx TV",
         name: "Reality Day",
@@ -163,10 +145,42 @@ const categories: Category[] = [
         description:
           "Un día real de trabajo. Sin guión. Sin intervención.",
         bullets: [
-          "Formato observacional",
-          "Serie en desarrollo",
+          "Episodio 1 disponible",
+          "Temporada en desarrollo",
+          "Producido por Dekaelo Media",
         ],
       },
+
+      {
+        client: "Oximixo",
+        name: "Contenido evergreen",
+        year: "2014",
+        tag: "Tutorial",
+        type: "video",
+        youtube: "https://www.youtube.com/embed/f7BpYpTSPLk",
+        description:
+          "Un video útil que sigue funcionando más de 10 años después.",
+        bullets: [
+          "+3.8 millones de visualizaciones",
+          "Sigue generando comentarios hoy",
+          "Producido por Dekaelo Media",
+        ],
+      },
+
+      {
+        client: "Pepper & Dreams SpA",
+        name: "Yokai",
+        year: "2014",
+        tag: "Largometraje",
+        type: "video",
+        youtube: "https://www.youtube.com/embed/1bayIqD5hcs",
+        description:
+          "Selección en festivales internacionales como Sitges y Buenos Aires Rojo Sangre. Disponible en Amazon Prime.",
+        bullets: [
+          "Edición y postproducción por Dekaelo Media",
+        ],
+      },
+
       {
         client: "Proyecto original",
         name: "Domo",
@@ -178,144 +192,116 @@ const categories: Category[] = [
           "No todos los lugares te dejan ir.",
         bullets: [
           "Proyecto original de Dekaelo Media",
-          "Desarrollo cinematográfico",
-        ],
-      },
-    ],
-  },
-
-  {
-    id: "cinema",
-    label: "Documentales y cine",
-    title: "Narrativa audiovisual y proyectos de largo formato",
-    description:
-      "Historias desarrolladas desde una mirada cinematográfica.",
-    items: [
-      {
-        client: "Pepper & Dreams SpA",
-        name: "Yokai",
-        year: "2013",
-        tag: "Largometraje",
-        type: "video",
-        youtube: "https://www.youtube.com/embed/1bayIqD5hcs",
-        description:
-          "Una película que recorrió festivales internacionales.",
-        bullets: [
-          "Edición y postproducción por Dekaelo Media",
-          "Selección en festivales como Sitges y Buenos Aires Rojo Sangre",
-          "Disponible en Amazon Prime",
-        ],
-      },
-      {
-        client: "Oximixo",
-        name: "Contenido evergreen",
-        year: "2014",
-        tag: "Tutorial",
-        type: "video",
-        youtube: "https://www.youtube.com/embed/f7BpYpTSPLk",
-        description:
-          "Un video útil que sigue funcionando más de 10 años después.",
-        bullets: [
-          "+3.8M vistas",
-          "Contenido evergreen",
         ],
       },
     ],
   },
 ];
 
-/* ================= UI ================= */
+/* =========================
+OTROS PROYECTOS
+========================= */
+
+const otherProjects = [
+  {
+    client: "Televisa Chile",
+    name: "Revista Caras 25 años",
+    youtube: "https://www.youtube.com/embed/hs6DLxIJ0jA",
+  },
+  {
+    client: "Inchalam",
+    name: "Video corporativo",
+    youtube: "https://www.youtube.com/embed/FnHKIkDaHb4",
+  },
+  {
+    client: "KGHM Chile / TAPP / Inducom",
+    name: "Motion graphics reel",
+    youtube: "https://www.youtube.com/embed/ilvi2u_c_a0",
+  },
+  {
+    client: "Coesam",
+    name: "Video internacional",
+    youtube: "https://www.youtube.com/embed/b_sq_6TiwdE",
+  },
+  {
+    client: "Exploflex",
+    name: "Video corporativo sustentable",
+    youtube: "https://www.youtube.com/embed/RF8kLsTZgsU",
+  },
+  {
+    client: "HKLABA",
+    name: "Video testimonial institucional",
+    youtube: "https://www.youtube.com/embed/a1OcIDBTHgw",
+  },
+];
+
+/* =========================
+UI
+========================= */
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs uppercase tracking-[0.2em] text-white/35">
+    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
       {children}
     </p>
   );
 }
 
-/* ================= PAGE ================= */
+/* =========================
+PAGE
+========================= */
 
-export default function Page() {
+export default function PortafolioPage() {
   return (
     <main className="bg-black text-white selection:bg-white selection:text-black">
 
       {/* HERO */}
-      <section className="container max-w-5xl pt-32 pb-24 md:pt-40 md:pb-32">
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/45">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          Dekaelo Media — Media Company
-        </div>
+      <section className="container max-w-4xl pt-28 pb-20 md:pt-36">
+        <Eyebrow>Portafolio</Eyebrow>
 
-        <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
-          Series, vodcast y contenido
-          <span className="text-white/35">
-            {" "}que conecta empresas y audiencias.
-          </span>
+        <h1 className="mt-4 text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
+          Contenido que mueve decisiones
         </h1>
 
-        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/60">
-          Creamos formatos originales, contenido corporativo y proyectos audiovisuales con enfoque cinematográfico.
+        <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
+          Vodcast, documentales, contenido corporativo y proyectos originales
+          desarrollados por Dekaelo Media.
         </p>
-
-        <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-white px-8 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
-          >
-            Hablemos de tu proyecto
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
-
-          <Link
-            href="/"
-            className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-8 py-4 text-sm text-white/65 transition hover:bg-white/10 hover:text-white"
-          >
-            Volver al inicio
-          </Link>
-        </div>
       </section>
 
-      {/* CATEGORIES */}
-      {categories.map((cat) => (
-        <section key={cat.id} className="border-t border-white/10 py-24">
+      {/* CASES */}
+      {categories.map((category) => (
+        <section
+          key={category.id}
+          className="border-t border-white/10 py-20"
+        >
           <div className="container max-w-6xl">
+            <Eyebrow>{category.label}</Eyebrow>
 
-            <div className="mb-16 max-w-3xl">
-              <Eyebrow>{cat.label}</Eyebrow>
-
-              <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                {cat.title}
-              </h2>
-
-              <p className="mt-5 text-white/55 leading-relaxed">
-                {cat.description}
-              </p>
-            </div>
-
-            <div className="space-y-28">
-              {cat.items.map((item, i) => {
+            <div className="mt-14 space-y-24">
+              {category.items.map((item, i) => {
                 const reverse = i % 2 === 1;
 
                 return (
                   <article
                     key={item.name}
-                    className="grid items-center gap-12 md:grid-cols-2"
+                    className="grid items-center gap-10 md:grid-cols-2"
                   >
-
                     {/* MEDIA */}
                     <div className={reverse ? "md:order-2" : ""}>
                       {item.type === "video" ? (
-                        <VideoEmbed src={item.youtube} title={item.name} />
+                        <div className="overflow-hidden bg-black">
+                          <VideoEmbed
+                            src={item.youtube}
+                            title={item.name}
+                          />
+                        </div>
                       ) : (
-                        <div className="relative aspect-video overflow-hidden rounded-2xl bg-white/5">
-                          <Image
+                        <div className="overflow-hidden bg-black">
+                          <img
                             src={item.image}
                             alt={item.name}
-                            fill
-                            className="object-cover"
+                            className="aspect-video w-full object-cover"
                           />
                         </div>
                       )}
@@ -323,28 +309,26 @@ export default function Page() {
 
                     {/* TEXT */}
                     <div>
-                      <p className="text-xs uppercase tracking-wide text-white/35">
-                        {item.tag} — {item.year}
-                      </p>
+                      <div className="flex items-center justify-between text-xs text-white/30">
+                        <span>{item.tag}</span>
+                        <span>{item.year}</span>
+                      </div>
 
-                      <h3 className="mt-3 text-3xl font-semibold leading-tight md:text-4xl">
-                        {item.client}
-                        <span className="text-white/35">
-                          {" "}— {item.name}
-                        </span>
-                      </h3>
+                      <h2 className="mt-2 text-2xl font-semibold md:text-3xl">
+                        {item.client} — {item.name}
+                      </h2>
 
-                      <p className="mt-5 text-base leading-relaxed text-white/60">
+                      <p className="mt-5 text-white/60 leading-relaxed">
                         {item.description}
                       </p>
 
-                      <ul className="mt-6 space-y-2">
-                        {item.bullets.map((b, idx) => (
+                      <ul className="mt-5 space-y-2">
+                        {item.bullets.map((bullet, idx) => (
                           <li
                             key={idx}
-                            className="text-sm leading-relaxed text-white/40"
+                            className="text-sm text-white/40"
                           >
-                            {b}
+                            {bullet}
                           </li>
                         ))}
                       </ul>
@@ -357,32 +341,67 @@ export default function Page() {
         </section>
       ))}
 
-      {/* CTA */}
-      <section className="border-t border-white/10 py-32">
-        <div className="container max-w-4xl text-center">
+      {/* OTHER PROJECTS */}
+      <section className="border-t border-white/10 py-24">
+        <div className="container max-w-6xl">
+          <Eyebrow>Otros proyectos</Eyebrow>
 
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            BICE — APCC — iGromi — Tronx TV — Yokai
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {otherProjects.map((project, idx) => (
+              <div key={idx}>
+                <div className="overflow-hidden bg-black">
+                  <VideoEmbed
+                    src={project.youtube}
+                    title={project.name}
+                  />
+                </div>
+
+                <div className="mt-3">
+                  <p className="text-sm text-white/35">
+                    {project.client}
+                  </p>
+
+                  <h3 className="mt-1 text-base font-medium text-white/85">
+                    {project.name}
+                  </h3>
+                </div>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <h2 className="text-4xl font-semibold md:text-5xl">
+      {/* CTA */}
+      <section className="border-t border-white/10 py-28">
+        <div className="container max-w-3xl text-center">
+          <h2 className="text-3xl font-semibold md:text-4xl">
             Hablemos de tu proyecto
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-white/55 leading-relaxed">
-            Series corporativas, formatos originales, vodcast y contenido audiovisual desarrollado desde una mirada estratégica y cinematográfica.
+          <p className="mx-auto mt-5 max-w-xl text-white/50">
+            Cuéntanos qué necesitas. Respondemos con una propuesta clara y un
+            alcance real.
           </p>
 
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
-          >
-            Escribir por WhatsApp
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
+            >
+              Escribir por WhatsApp
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+
+            <Link
+              href="/servicios"
+              className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/60 transition hover:bg-white/10 hover:text-white"
+            >
+              Ver servicios
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
     </main>
