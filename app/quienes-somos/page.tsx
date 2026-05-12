@@ -76,11 +76,11 @@ export default function QuienesSomosPage() {
       <section className="container max-w-4xl pt-28 pb-16 md:pt-36 md:pb-20">
         <Eyebrow>Quiénes somos</Eyebrow>
         <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
-          Tu departamento de contenido.
-          <span className="block text-white/35">Sin equipo interno, sin estructura de agencia.</span>
+          Empezamos en el cine.
+          <span className="block text-white/35">Hoy producimos para empresas.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
-          Producimos vodcast corporativo, video institucional y contenido seriado para empresas en Chile desde 2013. Llegamos, grabamos, editamos y entregamos listo para publicar.
+          Yokai llegó al Sitges Film Festival en 2013. Ese mismo criterio narrativo es el que aplicamos hoy a cada vodcast corporativo, documental institucional y serie de contenido que producimos para empresas en Chile.
         </p>
       </section>
 
