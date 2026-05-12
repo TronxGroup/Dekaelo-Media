@@ -7,13 +7,13 @@ const waLink = "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20so
 
 export const metadata: Metadata = {
   title: "Quiénes somos - Dekaelo Media",
-  description: "Productora audiovisual en Chile. Especializada en vodcast corporativo y contenido institucional. Producción clara, ejecución precisa.",
+  description: "Tu departamento de contenido. Vodcast corporativo y video institucional para empresas en Chile desde 2013. Sin equipo interno, sin estructura de agencia.",
   alternates: { canonical: "https://www.dekaelomedia.com/quienes-somos" },
 };
 
 const stats = [
   { n: "200+", label: "piezas producidas" },
-  { n: "3.8M", label: "vistas en un solo video organico" },
+  { n: "3.8M", label: "vistas en un solo video orgánico" },
   { n: "60+", label: "episodios de vodcast corporativo" },
   { n: "6+", label: "industrias" },
 ];
@@ -41,7 +41,7 @@ const milestones = [
   },
   {
     year: "2024–2026",
-    text: "Producción continua de vodcast institucional para BICE — más de 14 episodios producidos. Lanzamiento de Tronx TV con Reality Day, serie documental original. ",
+    text: "Producción continua de vodcast institucional para BICE — más de 14 episodios producidos. Lanzamiento de Tronx TV con Reality Day, serie documental original.",
   },
 ];
 
@@ -72,17 +72,19 @@ export default function QuienesSomosPage() {
   return (
     <main className="bg-black text-white selection:bg-white selection:text-black">
 
+      {/* HERO */}
       <section className="container max-w-4xl pt-28 pb-16 md:pt-36 md:pb-20">
         <Eyebrow>Quiénes somos</Eyebrow>
         <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
-          Producción audiovisual corporativa desde 2013.
-          <span className="block text-white/35">Vodcast, documental y contenido institucional para empresas en Chile.</span>
+          Tu departamento de contenido.
+          <span className="block text-white/35">Sin equipo interno, sin estructura de agencia.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
-          Producción de contenido seriado y formatos largos desde 2013, incluyendo largometraje, documental y más de 60 episodios de vodcast.
+          Producimos vodcast corporativo, video institucional y contenido seriado para empresas en Chile desde 2013. Llegamos, grabamos, editamos y entregamos listo para publicar.
         </p>
       </section>
 
+      {/* STATS */}
       <section className="border-t border-white/10 py-16">
         <div className="container max-w-5xl">
           <div className="grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
@@ -96,6 +98,7 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
+      {/* ORIGEN */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
@@ -103,10 +106,10 @@ export default function QuienesSomosPage() {
               <Eyebrow>De dónde venimos</Eyebrow>
               <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Empezamos en el cine</h2>
               <p className="mt-6 text-white/60 leading-relaxed">
-                Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Ese origen define el criterio: narrativa, ritmo y criterio visual.
+                Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Ese origen define el criterio: narrativa, ritmo y visión cinematográfica aplicada a cada formato.
               </p>
               <p className="mt-4 text-white/60 leading-relaxed">
-                Hoy aplicado al video corporativo. Producción continua para banca, industria y organizaciones en Chile.
+                Hoy ese mismo criterio se aplica al video corporativo. Producción continua para banca, industria y organizaciones en Chile. El nivel de exigencia del cine sin los costos de una agencia.
               </p>
             </div>
             <Image
@@ -120,6 +123,7 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
+      {/* TRAYECTORIA */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <Eyebrow>Trayectoria</Eyebrow>
@@ -128,7 +132,7 @@ export default function QuienesSomosPage() {
             {milestones.map((m, i) => (
               <div
                 key={m.year}
-                className={"grid grid-cols-[90px_1fr] gap-8 py-6" + (i !== milestones.length - 1 ? " border-b border-white/8" : "")}
+                className={"grid grid-cols-[90px_1fr] gap-8 py-6" + (i !== milestones.length - 1 ? " border-b border-white/[0.08]" : "")}
               >
                 <p className="text-sm font-semibold text-white/25">{m.year}</p>
                 <p className="text-sm text-white/60 leading-relaxed">{m.text}</p>
@@ -138,16 +142,17 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
+      {/* PROCESO */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <Eyebrow>Cómo trabajamos</Eyebrow>
           <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Proceso directo</h2>
           <div className="mt-12 grid gap-8 md:grid-cols-4">
             {[
-              { n: "01", title: "Nos cuentas lo que necesitas", desc: "Por WhatsApp o formulario." },
+              { n: "01", title: "Nos cuentas lo que necesitas", desc: "Por WhatsApp o formulario. Sin reuniones largas." },
               { n: "02", title: "Alcance y precio", desc: "Respuesta en menos de 24 horas hábiles." },
               { n: "03", title: "Producción", desc: "Grabamos o trabajamos sobre tu material." },
-              { n: "04", title: "Entrega", desc: "Video listo para publicar." },
+              { n: "04", title: "Entrega", desc: "Video listo para publicar en 5 días hábiles." },
             ].map((s) => (
               <div key={s.n}>
                 <p className="text-3xl font-semibold text-white/10">{s.n}</p>
@@ -175,6 +180,7 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
+      {/* VALORES */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <Eyebrow>Cómo pensamos</Eyebrow>
@@ -190,22 +196,19 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
-       <section className="border-t border-white/10 py-28">
+      {/* CTA */}
+      <section className="border-t border-white/10 py-28">
         <div className="container max-w-3xl text-center">
-          
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             Más de una década produciendo video corporativo en Chile
           </div>
-
           <h2 className="text-3xl font-semibold md:text-4xl">
             Solicitar propuesta
           </h2>
-
           <p className="mx-auto mt-5 max-w-xl text-white/50 leading-relaxed">
             Cuéntanos qué necesitas. Respondemos con alcance y precio en menos de 24 horas hábiles.
           </p>
-
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
               href={waLink}
@@ -215,7 +218,6 @@ export default function QuienesSomosPage() {
             >
               Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
             </a>
-
             <Link
               href="/servicios"
               className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/55 transition hover:bg-white/10 hover:text-white"
@@ -223,11 +225,9 @@ export default function QuienesSomosPage() {
               Ver servicios <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-
           <p className="mt-6 text-xs text-white/25">
             Respuesta el mismo día hábil. Sin compromiso.
           </p>
-
         </div>
       </section>
 
