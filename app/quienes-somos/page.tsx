@@ -80,7 +80,7 @@ export default function QuienesSomosPage() {
           <span className="block text-white/35">Hoy producimos para empresas.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
-          Yokai llegó al Sitges Film Festival en 2013. Ese mismo estándar — narrativa, ritmo, criterio visual — es el que aplicamos hoy a cada vodcast corporativo, documental institucional y serie de contenido para empresas en Chile.
+          Yokai llegó al Sitges Film Festival en 2013. Ese mismo enfoque narrativo — ritmo, intención visual y construcción audiovisual — es el que aplicamos hoy a cada vodcast corporativo, documental institucional y serie de contenido para empresas en Chile.
         </p>
       </section>
 
@@ -106,7 +106,7 @@ export default function QuienesSomosPage() {
               <Eyebrow>De dónde venimos</Eyebrow>
               <h2 className="mt-4 text-3xl font-semibold md:text-4xl">El origen define el estándar</h2>
               <p className="mt-6 text-white/60 leading-relaxed">
-                Dekaelo nace desde el cine independiente. En 2013 produjimos Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Ese proceso definió nuestra forma de trabajar: narrativa, ritmo y producción aplicada hoy al contenido corporativo.
+                Dekaelo nace desde el cine independiente. En 2013 produjimos Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Ese proceso definió nuestra forma de trabajar: narrativa, ritmo y criterio audiovisual aplicados hoy al contenido corporativo.
               </p>
               <p className="mt-4 text-white/60 leading-relaxed">
                 Producción continua para banca, industria y organizaciones en Chile. Lo que cambió es el formato. La forma de trabajar es la misma.
