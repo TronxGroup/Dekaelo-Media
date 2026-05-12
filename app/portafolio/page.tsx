@@ -183,7 +183,7 @@ const categories: Category[] = [
 
       {
         client: "Proyecto original",
-        name: "Domo",
+        name: "Donde Nos Conocimos",
         year: "En desarrollo",
         tag: "Cine",
         type: "image",
