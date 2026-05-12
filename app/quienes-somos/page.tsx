@@ -106,10 +106,10 @@ export default function QuienesSomosPage() {
               <Eyebrow>De dónde venimos</Eyebrow>
               <h2 className="mt-4 text-3xl font-semibold md:text-4xl">El origen define el estándar</h2>
               <p className="mt-6 text-white/60 leading-relaxed">
-                Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Ese origen define el estándar: narrativa, ritmo y criterio visual aplicados a cada formato.
+                Dekaelo nace desde el cine independiente. En 2013 produjimos Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Ese proceso definió nuestra forma de trabajar: narrativa, ritmo y producción aplicada hoy al contenido corporativo.
               </p>
               <p className="mt-4 text-white/60 leading-relaxed">
-                Producción audiovisual continua para banca, industria y organizaciones que necesitan comunicar con claridad y nivel cinematográfico. Sin estructura de agencia ni sus costos.
+                Producción continua para banca, industria y organizaciones en Chile. Lo que cambió es el formato. La forma de trabajar es la misma.
               </p>
             </div>
             <Image
