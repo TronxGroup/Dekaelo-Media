@@ -104,7 +104,7 @@ export default function QuienesSomosPage() {
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div>
               <Eyebrow>De dónde venimos</Eyebrow>
-              <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Empezamos en el cine</h2>
+              <h2 className="mt-4 text-3xl font-semibold md:text-4xl">El origen define el estándar</h2>
               <p className="mt-6 text-white/60 leading-relaxed">
                 Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Ese origen define el estándar: narrativa, ritmo y criterio visual aplicados a cada formato.
               </p>
