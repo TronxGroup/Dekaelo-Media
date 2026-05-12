@@ -15,14 +15,16 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Producción de vodcast corporativo y contenido institucional para empresas en Chile. Propuesta clara, ejecución precisa.",
+    "Tu departamento de contenido. Vodcast corporativo y video institucional para empresas en Chile. Sin equipo interno, sin estructura de agencia.",
 
   keywords: [
     "vodcast corporativo Chile",
     "video corporativo Santiago",
-    "produccion audiovisual empresas",
+    "producción audiovisual empresas",
     "serie institucional empresa",
-    "postproduccion video corporativo",
+    "postproducción video corporativo",
+    "departamento de contenido externo",
+    "productora audiovisual Chile",
   ],
 
   alternates: { canonical: siteUrl },
@@ -45,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Dekaelo Media",
     title: "Dekaelo Media — Vodcast y video corporativo",
     description:
-      "Producción de vodcast corporativo y contenido institucional para empresas en Chile. Alcance y precio definidos desde el inicio.",
+      "Tu departamento de contenido. Vodcast corporativo y video institucional para empresas en Chile. Sin equipo interno, sin estructura de agencia.",
     images: [
       {
         url: siteUrl + "/og-cover.jpg",
@@ -61,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dekaelo Media — Vodcast y video corporativo",
     description:
-      "Producción audiovisual corporativa en Chile. Propuestas claras y ejecución precisa.",
+      "Tu departamento de contenido. Sin equipo interno, sin estructura de agencia. Santiago, Chile.",
     images: [siteUrl + "/og-cover.jpg"],
   },
 
@@ -104,12 +106,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
-
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </head>
 
       <body className="bg-black text-white selection:bg-white selection:text-black">
-        
+
         {/* Google Ads + Analytics */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`}
@@ -145,7 +146,7 @@ export default function RootLayout({
                 url: siteUrl,
                 logo: siteUrl + "/logo.png",
                 description:
-                  "Productora audiovisual corporativa en Chile especializada en vodcast y contenido institucional.",
+                  "Estudio de producción audiovisual en Chile. Vodcast corporativo, video institucional y contenido seriado para empresas desde 2013.",
                 sameAs: [
                   "https://www.instagram.com/dekaelo_media",
                   "https://www.youtube.com/@dekaelo_media",
@@ -182,6 +183,7 @@ export default function RootLayout({
                   "Serie institucional",
                   "Producción audiovisual completa",
                   "Postproducción de video",
+                  "Departamento de contenido externo",
                 ],
               },
             ]),
