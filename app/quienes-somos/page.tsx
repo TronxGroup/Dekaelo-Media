@@ -80,7 +80,7 @@ export default function QuienesSomosPage() {
           <span className="block text-white/35">Hoy producimos para empresas.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
-          Yokai llegó al Sitges Film Festival en 2013. Ese mismo criterio narrativo es el que aplicamos hoy a cada vodcast corporativo, documental institucional y serie de contenido que producimos para empresas en Chile.
+          Yokai llegó al Sitges Film Festival en 2013. Ese mismo estándar — narrativa, ritmo, criterio visual — es el que aplicamos hoy a cada vodcast corporativo, documental institucional y serie de contenido para empresas en Chile.
         </p>
       </section>
 
@@ -106,10 +106,10 @@ export default function QuienesSomosPage() {
               <Eyebrow>De dónde venimos</Eyebrow>
               <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Empezamos en el cine</h2>
               <p className="mt-6 text-white/60 leading-relaxed">
-                Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Ese origen define el criterio: narrativa, ritmo y visión cinematográfica aplicada a cada formato.
+                Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Ese origen define el estándar: narrativa, ritmo y criterio visual aplicados a cada formato.
               </p>
               <p className="mt-4 text-white/60 leading-relaxed">
-                Hoy ese mismo criterio se aplica al video corporativo. Producción continua para banca, industria y organizaciones en Chile. El nivel de exigencia del cine sin los costos de una agencia.
+                Producción audiovisual continua para banca, industria y organizaciones que necesitan comunicar con claridad y nivel cinematográfico. Sin estructura de agencia ni sus costos.
               </p>
             </div>
             <Image
@@ -149,10 +149,10 @@ export default function QuienesSomosPage() {
           <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Proceso directo</h2>
           <div className="mt-12 grid gap-8 md:grid-cols-4">
             {[
-              { n: "01", title: "Nos cuentas lo que necesitas", desc: "Por WhatsApp o formulario. Sin reuniones largas." },
+              { n: "01", title: "Nos cuentas lo que necesitas", desc: "Por WhatsApp o formulario. Contacto directo desde el inicio." },
               { n: "02", title: "Alcance y precio", desc: "Respuesta en menos de 24 horas hábiles." },
               { n: "03", title: "Producción", desc: "Grabamos o trabajamos sobre tu material." },
-              { n: "04", title: "Entrega", desc: "Video listo para publicar en 5 días hábiles." },
+              { n: "04", title: "Entrega", desc: "Video listo para publicar. Plazos definidos desde el inicio." },
             ].map((s) => (
               <div key={s.n}>
                 <p className="text-3xl font-semibold text-white/10">{s.n}</p>
