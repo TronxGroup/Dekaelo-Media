@@ -1,307 +1,195 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { VideoEmbed } from "../components/VideoEmbed";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+
+const waLink = "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20sobre%20un%20proyecto%20con%20Dekaelo%20Media.%0A%0AEmpresa%3A%0AQue%20necesito%3A%0AFecha%20tentativa%3A%0A%0AGracias";
 
 export const metadata: Metadata = {
-  title: "Portafolio - Dekaelo Media",
-  description:
-    "Contenido audiovisual que conecta, posiciona y genera impacto real.",
+  title: "Quiénes somos - Dekaelo Media",
+  description: "Tu departamento de contenido. Vodcast corporativo y video institucional para empresas en Chile desde 2013. Sin equipo interno, sin estructura de agencia.",
+  alternates: { canonical: "https://www.dekaelomedia.com/quienes-somos" },
 };
 
-const waLink =
-  "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20sobre%20un%20proyecto%20con%20Dekaelo%20Media";
+const stats = [
+  { n: "200+", label: "piezas producidas" },
+  { n: "3.8M", label: "vistas en un solo video orgánico" },
+  { n: "60+", label: "episodios de vodcast corporativo" },
+  { n: "6+", label: "industrias" },
+];
 
-/* ================= TYPES ================= */
-
-type BaseItem = {
-  client: string;
-  name: string;
-  year: string;
-  tag: string;
-  description: string;
-  bullets: string[];
-};
-
-type VideoItem = BaseItem & {
-  type: "video";
-  youtube: string;
-};
-
-type ImageItem = BaseItem & {
-  type: "image";
-  image: string;
-};
-
-type PortfolioItem = VideoItem | ImageItem;
-
-type Category = {
-  id: string;
-  label: string;
-  items: PortfolioItem[];
-};
-
-/* ================= DATA PRINCIPAL ================= */
-
-const categories: Category[] = [
+const milestones = [
   {
-    id: "main",
-    label: "Casos seleccionados",
-    items: [
-      {
-        client: "BICECORP",
-        name: "Nos Une",
-        year: "2024 - 2026",
-        tag: "Vodcast interno",
-        type: "image",
-        image: "/Bice_portafolio_2026.jpg",
-        description:
-          "Conversaciones con quienes toman decisiones dentro del grupo.",
-        bullets: [
-          "+14 episodios",
-          "Serie interna activa",
-          "Producido por Dekaelo Media",
-        ],
-      },
-      {
-        client: "iGromi",
-        name: "Breaking Industrial",
-        year: "2024 - 2025",
-        tag: "Vodcast",
-        type: "video",
-        youtube: "https://www.youtube.com/embed/2G7oKXKjPl8",
-        description:
-          "Conversaciones sobre industria y negocio con quienes están construyendo el futuro.",
-        bullets: [
-          "+8 episodios",
-          "Contacto comercial con empresas relevantes",
-          "Producido por Dekaelo Media",
-        ],
-      },
-      {
-  client: "Asia Pacific Chamber of Commerce (APCC)",
-  name: "Creando Líderes para Asia",
-  year: "2023 - 2024",
-  tag: "Serie internacional",
-  type: "video",
-  youtube: "https://www.youtube.com/embed/byTylGKp-uI",
-  description:
-    "Conversaciones que conectan Chile y Asia a través de comercio, innovación y liderazgo.",
-  bullets: [
-    "+25 episodios producidos",
-    "Relación directa con líderes Chile–Asia",
-    "Producido por Dekaelo Media",
-  ],
-},
-      {
-  client: "Trewhela’s School",
-  name: "80 años",
-  year: "2017",
-  tag: "Documental institucional",
-  type: "video",
-  youtube: "https://www.youtube.com/embed/JKsSN2lo_RU",
-  description:
-    "Un registro que no existía. Historia, identidad y presente en una sola pieza.",
-  bullets: [
-    "Herramienta para generar confianza en nuevos apoderados",
-    "Proyecto institucional clave que acompañó un proceso de transformación",
-    "Producido por Dekaelo Media",
-  ],
-},
-      {
-  client: "Fútbol y Parrilla",
-  name: "Serie original",
-  year: "2024",
-  tag: "Serie / entretenimiento",
-  type: "video",
-  youtube: "https://www.youtube.com/embed/PLSfbZU_asQ",
-  description:
-    "Fútbol, conversación y fuego. Un espacio donde las historias aparecen sin pauta.",
-  bullets: [
-    "+390K vistas en los primeros 4 episodios",
-    "Alcance orgánico real",
-    "Producido por Dekaelo Media",
-  ],
-},
-      {
-        client: "Tronx TV",
-        name: "Reality Day",
-        year: "2026",
-        tag: "Serie documental",
-        type: "video",
-        youtube: "https://www.youtube.com/embed/acC3dyDKqe8",
-        description:
-          "Un día real de trabajo. Sin guión. Sin intervención.",
-        bullets: ["Temporada en desarrollo"],
-      },
-      {
-        client: "Oximixo",
-        name: "Contenido evergreen",
-        year: "2014",
-        tag: "Tutorial",
-        type: "video",
-        youtube: "https://www.youtube.com/embed/f7BpYpTSPLk",
-        description:
-          "Un video útil que sigue funcionando más de 10 años después.",
-        bullets: ["+3.8M vistas", "Sigue generando comentarios hoy"],
-      },
-      {
-  client: "Pepper & Dreams SpA",
-  name: "Yokai",
-  year: "2013",
-  tag: "Largometraje",
-  type: "video",
-  youtube: "https://www.youtube.com/embed/1bayIqD5hcs",
-  description:
-    "Una película que recorrió festivales internacionales.",
-  bullets: [
-    "Edición y postproducción por Dekaelo Media",
-    "Selección en festivales como Sitges y Buenos Aires Rojo Sangre. Disponible en Amazon Prime.",
-  ],
-},
-      {
-        client: "Proyecto original",
-        name: "Donde nos Conocimos",
-        year: "En desarrollo",
-        tag: "Cine",
-        type: "image",
-        image: "/Domo_portafolio_2026.jpg",
-        description: "A veces. Recordar es la única forma de perder.",
-        bullets: ["Proyecto original de Dekaelo Media"],
-      },
-    ],
+    year: "2013",
+    text: "Inicio en producción audiovisual con Yokai, largometraje seleccionado en Sitges Film Festival y BARS. Producción de piezas comerciales para Editorial Televisa Chile (Revista Caras).",
+  },
+  {
+    year: "2015",
+    text: "Desarrollo de contenido digital con alto alcance orgánico, superando 3.8M de visualizaciones en YouTube (Oximixo).",
+  },
+  {
+    year: "2016–2020",
+    text: "Producción y postproducción para empresas en industria, tecnología y educación. Desarrollo de contenido corporativo para Ripley.",
+  },
+  {
+    year: "2022–2023",
+    text: "Producción de series de contenido para la Cámara de Comercio Asia Pacífico. Desarrollo y ejecución de formato para iGromi.",
+  },
+  {
+    year: "2024",
+    text: "Diseño y producción de Fútbol y Parrilla, serie de vodcast. Episodio 1 alcanza 158K vistas, el más visto del canal. Inicio de vodcast institucional para BICE.",
+  },
+  {
+    year: "2024–2026",
+    text: "Producción continua de vodcast institucional para BICE — más de 14 episodios producidos. Lanzamiento de Tronx TV con Reality Day, serie documental original.",
   },
 ];
 
-/* ================= OTROS PROYECTOS ================= */
-
-const otherProjects = [
+const values = [
   {
-    client: "Televisa Chile",
-    name: "Revista Caras 25 años",
-    youtube: "https://www.youtube.com/embed/hs6DLxIJ0jA",
+    title: "Claridad antes que estética",
+    desc: "Si no se entiende, no sirve. El mensaje define el video.",
   },
   {
-    client: "Inchalam",
-    name: "Video corporativo",
-    youtube: "https://www.youtube.com/embed/FnHKIkDaHb4",
+    title: "Alcance definido desde el inicio",
+    desc: "Todo queda por escrito antes de empezar. Sin ambigüedad.",
   },
   {
-    client: "KGHM / TAPP / Inducom",
-    name: "Motion graphics reel",
-    youtube: "https://www.youtube.com/embed/ilvi2u_c_a0",
+    title: "Entrega funcional",
+    desc: "Cada pieza se entrega en el formato correcto para su uso.",
   },
   {
-    client: "Coesam",
-    name: "Video internacional",
-    youtube: "https://www.youtube.com/embed/b_sq_6TiwdE",
-  },
-  {
-    client: "Exploflex",
-    name: "Video sustentable",
-    youtube: "https://www.youtube.com/embed/RF8kLsTZgsU",
-  },
-  {
-    client: "HKLABA",
-    name: "Video institucional",
-    youtube: "https://www.youtube.com/embed/a1OcIDBTHgw",
+    title: "Procesos ordenados",
+    desc: "Respuestas rápidas, plazos claros y comunicación directa.",
   },
 ];
 
-/* ================= UI ================= */
-
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-xs uppercase tracking-[0.2em] text-white/40">
-      {children}
-    </p>
-  );
+function Eyebrow(props: { children: React.ReactNode }) {
+  return <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">{props.children}</p>;
 }
 
-/* ================= PAGE ================= */
-
-export default function Page() {
+export default function QuienesSomosPage() {
   return (
-    <main className="bg-black text-white">
+    <main className="bg-black text-white selection:bg-white selection:text-black">
 
       {/* HERO */}
-      <section className="container max-w-4xl pt-32 pb-20">
-        <Eyebrow>Portafolio</Eyebrow>
-        <h1 className="mt-4 text-5xl font-semibold">
-          Contenido que mueve decisiones
+      <section className="container max-w-4xl pt-28 pb-16 md:pt-36 md:pb-20">
+        <Eyebrow>Quiénes somos</Eyebrow>
+        <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
+          Empezamos en el cine.
+          <span className="block text-white/35">Hoy producimos para empresas.</span>
         </h1>
-        <p className="mt-6 text-white/60">
-          Vodcast, documentales y contenido estratégico para empresas.
+        <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
+          Yokai llegó al Sitges Film Festival en 2013. Ese mismo estándar — narrativa, ritmo, criterio visual — es el que aplicamos hoy a cada vodcast corporativo, documental institucional y serie de contenido para empresas en Chile.
         </p>
       </section>
 
-      {/* CASOS PRINCIPALES */}
-      {categories.map((cat) => (
-        <section key={cat.id} className="border-t border-white/10 py-20">
-          <div className="container max-w-6xl">
-            <Eyebrow>{cat.label}</Eyebrow>
-
-            <div className="mt-16 space-y-24">
-              {cat.items.map((item, i) => {
-                const reverse = i % 2 === 1;
-
-                return (
-                  <div
-                    key={item.name}
-                    className="grid md:grid-cols-2 gap-10 items-center"
-                  >
-                    {/* MEDIA */}
-                    <div className={reverse ? "md:order-2" : ""}>
-                      {item.type === "video" ? (
-                        <VideoEmbed src={item.youtube} title={item.name} />
-                      ) : (
-                        <img
-                          src={item.image}
-                          className="w-full aspect-video object-cover"
-                        />
-                      )}
-                    </div>
-
-                    {/* TEXTO */}
-                    <div>
-                      <p className="text-xs text-white/40">
-                        {item.tag} — {item.year}
-                      </p>
-
-                      <h3 className="text-2xl mt-2 font-semibold">
-                        {item.client} — {item.name}
-                      </h3>
-
-                      <p className="mt-4 text-white/60">
-                        {item.description}
-                      </p>
-
-                      <ul className="mt-4 text-white/40 text-sm space-y-1">
-                        {item.bullets.map((b, i) => (
-                          <li key={i}>{b}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+      {/* STATS */}
+      <section className="border-t border-white/10 py-16">
+        <div className="container max-w-5xl">
+          <div className="grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.n} className="bg-black px-8 py-10">
+                <p className="text-4xl font-semibold text-white">{s.n}</p>
+                <p className="mt-2 text-sm text-white/40 leading-snug">{s.label}</p>
+              </div>
+            ))}
           </div>
-        </section>
-      ))}
+        </div>
+      </section>
 
-      {/* OTROS PROYECTOS */}
+      {/* ORIGEN */}
       <section className="border-t border-white/10 py-24">
-        <div className="container max-w-6xl">
-          <Eyebrow>Otros proyectos</Eyebrow>
+        <div className="container max-w-5xl">
+          <div className="grid gap-12 md:grid-cols-2 md:items-center">
+            <div>
+              <Eyebrow>De dónde venimos</Eyebrow>
+              <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Empezamos en el cine</h2>
+              <p className="mt-6 text-white/60 leading-relaxed">
+                Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Ese origen define el estándar: narrativa, ritmo y criterio visual aplicados a cada formato.
+              </p>
+              <p className="mt-4 text-white/60 leading-relaxed">
+                Producción audiovisual continua para banca, industria y organizaciones que necesitan comunicar con claridad y nivel cinematográfico. Sin estructura de agencia ni sus costos.
+              </p>
+            </div>
+            <Image
+              src="/qs_dekaelo_3.png"
+              alt="Rodaje Dekaelo Media"
+              width={600}
+              height={400}
+              className="rounded-2xl border border-white/10 object-cover w-full"
+            />
+          </div>
+        </div>
+      </section>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
-            {otherProjects.map((item, i) => (
-              <div key={i}>
-                <VideoEmbed src={item.youtube} title={item.name} />
-                <p className="mt-2 text-sm text-white/50">
-                  {item.client}
-                </p>
+      {/* TRAYECTORIA */}
+      <section className="border-t border-white/10 py-24">
+        <div className="container max-w-5xl">
+          <Eyebrow>Trayectoria</Eyebrow>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">El trabajo habla.</h2>
+          <div className="mt-12">
+            {milestones.map((m, i) => (
+              <div
+                key={m.year}
+                className={"grid grid-cols-[90px_1fr] gap-8 py-6" + (i !== milestones.length - 1 ? " border-b border-white/[0.08]" : "")}
+              >
+                <p className="text-sm font-semibold text-white/25">{m.year}</p>
+                <p className="text-sm text-white/60 leading-relaxed">{m.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESO */}
+      <section className="border-t border-white/10 py-24">
+        <div className="container max-w-5xl">
+          <Eyebrow>Cómo trabajamos</Eyebrow>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Proceso directo</h2>
+          <div className="mt-12 grid gap-8 md:grid-cols-4">
+            {[
+              { n: "01", title: "Nos cuentas lo que necesitas", desc: "Por WhatsApp o formulario. Contacto directo desde el inicio." },
+              { n: "02", title: "Alcance y precio", desc: "Respuesta en menos de 24 horas hábiles." },
+              { n: "03", title: "Producción", desc: "Grabamos o trabajamos sobre tu material." },
+              { n: "04", title: "Entrega", desc: "Video listo para publicar. Plazos definidos desde el inicio." },
+            ].map((s) => (
+              <div key={s.n}>
+                <p className="text-3xl font-semibold text-white/10">{s.n}</p>
+                <h3 className="mt-3 text-sm font-semibold text-white">{s.title}</h3>
+                <p className="mt-2 text-sm text-white/45">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            <Image
+              src="/qs_dekaelo_4.png"
+              alt="Producción audiovisual corporativa"
+              width={580}
+              height={380}
+              className="rounded-2xl border border-white/10 object-cover w-full"
+            />
+            <Image
+              src="/qs_dekaelo_1.png"
+              alt="Rodaje institucional"
+              width={580}
+              height={380}
+              className="rounded-2xl border border-white/10 object-cover w-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* VALORES */}
+      <section className="border-t border-white/10 py-24">
+        <div className="container max-w-5xl">
+          <Eyebrow>Cómo pensamos</Eyebrow>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Criterio de trabajo</h2>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {values.map((v) => (
+              <div key={v.title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <h3 className="text-base font-semibold text-white">{v.title}</h3>
+                <p className="mt-2 text-sm text-white/50">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -309,19 +197,40 @@ export default function Page() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-white/10 py-28 text-center">
-        <h2 className="text-3xl font-semibold">
-          Hablemos de tu proyecto
-        </h2>
-
-        <a
-          href={waLink}
-          target="_blank"
-          className="inline-block mt-8 bg-white text-black px-10 py-4"
-        >
-          Escribir por WhatsApp
-        </a>
+      <section className="border-t border-white/10 py-28">
+        <div className="container max-w-3xl text-center">
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            Más de una década produciendo video corporativo en Chile
+          </div>
+          <h2 className="text-3xl font-semibold md:text-4xl">
+            Solicitar propuesta
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-white/50 leading-relaxed">
+            Cuéntanos qué necesitas. Respondemos con alcance y precio en menos de 24 horas hábiles.
+          </p>
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
+            >
+              Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
+            </a>
+            <Link
+              href="/servicios"
+              className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/55 transition hover:bg-white/10 hover:text-white"
+            >
+              Ver servicios <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <p className="mt-6 text-xs text-white/25">
+            Respuesta el mismo día hábil. Sin compromiso.
+          </p>
+        </div>
       </section>
+
     </main>
   );
 }
