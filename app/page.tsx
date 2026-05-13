@@ -345,7 +345,7 @@ export default function Page() {
         <div className="mb-14 flex items-end justify-between gap-4">
           <div>
             <Eyebrow>Servicios</Eyebrow>
-            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Dos formás de trabajar juntos</h2>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Dos formas de trabajar juntos</h2>
           </div>
           <Link href="/servicios" className="hidden text-sm text-white/35 transition hover:text-white sm:block">
             Ver detalle completo
