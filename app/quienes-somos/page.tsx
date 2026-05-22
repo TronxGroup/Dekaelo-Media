@@ -41,7 +41,7 @@ const milestones = [
   },
   {
     year: "2024–2026",
-    text: "Producción continua de vodcast institucional para BICE — más de 14 episodios producidos. Lanzamiento de Tronx TV con Reality Day, serie documental original.",
+    text: "Producción continua de vodcast institucional para BICE — más de 14 episodios producidos. Lanzamiento de Tronx Media con Reality Day, serie documental original.",
   },
 ];
 
