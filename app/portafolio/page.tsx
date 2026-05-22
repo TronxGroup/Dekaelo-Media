@@ -136,20 +136,20 @@ const categories: Category[] = [
       },
 
       {
-        client: "Tronx TV",
-        name: "Reality Day",
-        year: "2026",
-        tag: "Serie documental",
-        type: "video",
-        youtube: "https://www.youtube.com/embed/acC3dyDKqe8",
-        description:
-          "Un día real de trabajo. Sin guión. Sin intervención.",
-        bullets: [
-          "Episodio 1 disponible",
-          "Temporada en desarrollo",
-          "Producido por Dekaelo Media",
-        ],
-      },
+  client: "Tronx Media",
+  name: "Reality Day",
+  year: "2026",
+  tag: "Serie documental",
+  type: "video",
+  youtube: "https://www.youtube.com/embed/_xtAoqqaaEQ",
+  description:
+    "Un día real de trabajo. Sin guión. Sin intervención.",
+  bullets: [
+    "T1 E2 — No era solo mantención",
+    "Reality Day — Temporada 1",
+    "Producido por Dekaelo Media",
+  ],
+},
 
       {
         client: "Oximixo",
