@@ -239,7 +239,7 @@ export default function ServiciosPage() {
                 "Animación, motion graphics o diseño gráfico",
                 "Fotografía corporativa o eventos",
                 "Gestión de redes sociales",
-                "Grabación sin material previo para post-producción",
+                "Grabaciones simples sin enfoque de post-producción",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-white/40">
                   <CrossIcon />{item}
