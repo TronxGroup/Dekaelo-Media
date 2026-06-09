@@ -196,6 +196,39 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
+      <section className="border-t border-white/10 py-24">
+  <div className="container max-w-4xl">
+
+    <Eyebrow>Mirando hacia adelante</Eyebrow>
+
+    <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+      Creemos que la comunicación será una capacidad estratégica.
+    </h2>
+
+    <p className="mt-6 max-w-3xl text-white/60 leading-relaxed">
+      Las organizaciones más relevantes de la próxima década no solo
+      comunicarán cuando tengan algo que anunciar. Construirán canales
+      propios, compartirán conocimiento y desarrollarán conversaciones
+      permanentes con sus audiencias.
+    </p>
+
+    <p className="mt-4 max-w-3xl text-white/60 leading-relaxed">
+      Por eso no entendemos el contenido como una campaña puntual.
+      Lo entendemos como una herramienta para construir confianza,
+      visibilidad y relevancia a largo plazo.
+    </p>
+
+    <Link
+      href="/vision-chile-2030"
+      className="mt-8 inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white"
+    >
+      Leer nuestra visión para Chile 2030
+      <ArrowRight className="h-4 w-4" />
+    </Link>
+
+  </div>
+</section>
+
       {/* CTA */}
       <section className="border-t border-white/10 py-28">
         <div className="container max-w-3xl text-center">
