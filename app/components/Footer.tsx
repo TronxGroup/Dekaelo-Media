@@ -7,9 +7,12 @@ const waLink =
 "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20sobre%20un%20proyecto%20con%20Dekaelo%20Media.%0A%0AEmpresa%3A%0AQue%20necesito%3A%0AFecha%20tentativa%3A%0A%0AGracias";
 
 export function Footer() {
-return ( <footer className="border-t border-white/10 bg-black text-white"> <div className="container max-w-6xl py-16"> <div className="grid gap-12 md:grid-cols-[1fr_auto_auto]">
+return (
 
-```
+
+
+
+
       {/* Marca */}
       <div className="max-w-xs">
         <Link href="/">
@@ -23,7 +26,7 @@ return ( <footer className="border-t border-white/10 bg-black text-white"> <div 
         </Link>
 
         <p className="text-sm leading-relaxed text-white/45">
-          Produccióxn audiovisual y contenido estratégico para empresas,
+          Producción audiovisual y contenido estratégico para empresas,
           instituciones y organizaciones que quieren construir una voz
           relevante para la próxima década.
         </p>
@@ -99,17 +102,14 @@ return ( <footer className="border-t border-white/10 bg-black text-white"> <div 
       </div>
     </div>
 
-    {/* Bottom */}
     <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
 
       {/* Social */}
       <div className="flex items-center gap-4">
-
         <a
           href="https://www.instagram.com/dekaelo_media/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Instagram"
           className="text-white/30 transition hover:text-white"
         >
           Instagram
@@ -119,7 +119,6 @@ return ( <footer className="border-t border-white/10 bg-black text-white"> <div 
           href="https://www.linkedin.com/company/dekaelo-media/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="LinkedIn"
           className="text-white/30 transition hover:text-white"
         >
           LinkedIn
@@ -129,7 +128,6 @@ return ( <footer className="border-t border-white/10 bg-black text-white"> <div 
           href="https://www.youtube.com/@dekaelo_media"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="YouTube"
           className="text-white/30 transition hover:text-white"
         >
           YouTube
@@ -161,7 +159,6 @@ return ( <footer className="border-t border-white/10 bg-black text-white"> <div 
     </div>
   </div>
 </footer>
-```
 
 );
 }
