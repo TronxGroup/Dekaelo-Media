@@ -213,26 +213,26 @@ export default function VisionChile2030Page() {
   </p>
 
   <p>
-    Las organizaciones más relevantes de la próxima década no solo
-    comunicarán cuando tengan algo que anunciar. Construirán canales
-    propios, compartirán conocimiento y mantendrán conversaciones
-    permanentes con sus audiencias.
-  </p>
+  Algunas ya están avanzando en esa dirección. Desarrollan series
+  documentales, producen vodcasts, generan contenido educativo,
+  construyen comunidades y crean espacios de conversación para
+  clientes, colaboradores, inversionistas y audiencias
+  internacionales.
+</p>
 
-  <p>
-    Algunas ya están avanzando en esa dirección. Desarrollan series
-    documentales, producen vodcasts, generan contenido educativo,
-    construyen comunidades y crean plataformas para clientes,
-    colaboradores, inversionistas y audiencias internacionales.
-  </p>
+<p>
+  Ya no competirán únicamente por clientes. También competirán por
+  atención, confianza y relevancia.
+</p>
 
-  <p className="text-white">
-    Comunicarán de forma más frecuente, directa y continua.
-  </p>
+<p className="text-white">
+  Comunicarán de forma más frecuente, directa y continua.
+</p>
 
-  <p className="text-white">
-    La comunicación dejará de ser un evento puntual para transformarse en una capacidad estratégica.
-  </p>
+<p className="text-white">
+  La comunicación dejará de ser un evento puntual para transformarse
+  en una capacidad estratégica.
+</p>
 </Section>
 
       {/* INFRAESTRUCTURA */}
