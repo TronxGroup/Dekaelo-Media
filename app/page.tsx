@@ -193,9 +193,7 @@ export default function Page() {
 
 <section className="border-t border-white/10 py-24">
   <div className="container max-w-5xl">
-
     <div className="grid gap-12 md:grid-cols-[1fr_1.3fr]">
-
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
           Nuestra visión
@@ -208,35 +206,29 @@ export default function Page() {
 
       <div>
         <p className="text-xl leading-relaxed text-white/80">
-          Durante décadas las organizaciones dependieron de terceros para comunicar.
-          Hoy las organizaciones más relevantes están construyendo sus propios canales,
-          compartiendo conocimiento y desarrollando conversaciones permanentes con sus audiencias.
+          Las organizaciones más relevantes de la próxima década no solo
+          comunicarán cuando tengan algo que anunciar. Construirán canales
+          propios, compartirán conocimiento y desarrollarán conversaciones
+          permanentes con sus audiencias.
         </p>
 
         <p className="mt-6 leading-relaxed text-white/50">
-          Crean vodcasts. Desarrollan series. Generan contenido educativo.
-          Fortalecen su comunicación interna. Proyectan liderazgo.
-          Construyen comunidades.
+          Creemos que la comunicación dejará de ser una función secundaria
+          para transformarse en una capacidad estratégica. Por eso ayudamos
+          a empresas, instituciones y organizaciones a construir contenido,
+          conocimiento y confianza a largo plazo.
         </p>
 
-        <p className="mt-6 leading-relaxed text-white/50">
-          Creemos que durante la próxima década las organizaciones se parecerán
-          cada vez más a medios de comunicación propios.
-        </p>
+        <div className="mt-12 border-t border-white/10 pt-10">
+          <p className="text-2xl font-semibold leading-tight text-white md:text-3xl">
+            Las organizaciones más relevantes de la próxima década no serán
+            necesariamente las más grandes.
+          </p>
 
-        <p className="mt-6 leading-relaxed text-white">
-  Y ayudamos a construir esa transición.
-</p>
-
-<div className="mt-12 border-t border-white/10 pt-10">
-  <p className="text-2xl font-semibold leading-tight text-white md:text-3xl">
-    Las organizaciones más relevantes de la próxima década no serán necesariamente las más grandes.
-  </p>
-
-  <p className="mt-3 text-2xl font-semibold leading-tight text-white/35 md:text-3xl">
-    Serán aquellas capaces de generar confianza.
-  </p>
-</div>
+          <p className="mt-3 text-2xl font-semibold leading-tight text-white/35 md:text-3xl">
+            Serán aquellas capaces de generar confianza.
+          </p>
+        </div>
 
         <Link
           href="/vision-chile-2030"
@@ -246,7 +238,6 @@ export default function Page() {
           <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
-
     </div>
   </div>
 </section>
