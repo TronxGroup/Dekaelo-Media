@@ -189,61 +189,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* NUESTRA VISIÓN */}
-
-<section className="border-t border-white/10 py-24">
-  <div className="container max-w-5xl">
-    <div className="grid gap-12 md:grid-cols-[1fr_1.3fr]">
-
-      <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
-          Nuestra visión
-        </p>
-
-        <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-          El futuro de las comunicaciones corporativas
-        </h2>
-      </div>
-
-      <div>
-        <p className="text-xl leading-relaxed text-white/80">
-          Las organizaciones más relevantes de la próxima década no solo
-          comunicarán cuando tengan algo que anunciar. Construirán canales
-          propios, compartirán conocimiento y desarrollarán conversaciones
-          permanentes con sus audiencias.
-        </p>
-
-        <p className="mt-6 leading-relaxed text-white/50">
-          Creemos que la comunicación se transformará en una capacidad
-          estratégica. Por eso ayudamos a empresas e instituciones a
-          desarrollar vodcasts, series corporativas, documentales y
-          contenido diseñado para construir confianza a largo plazo.
-        </p>
-
-        <div className="mt-12 border-t border-white/10 pt-10">
-          <p className="text-2xl font-semibold leading-tight text-white md:text-3xl">
-            Las organizaciones más relevantes de la próxima década no serán
-            necesariamente las más grandes.
-          </p>
-
-          <p className="mt-3 text-2xl font-semibold leading-tight text-white/35 md:text-3xl">
-            Serán aquellas capaces de generar confianza.
-          </p>
-        </div>
-
-        <Link
-          href="/vision-chile-2030"
-          className="mt-8 inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white"
-        >
-          Leer nuestra visión para Chile 2030
-          <ArrowRight className="h-4 w-4" />
-        </Link>
-      </div>
-
-    </div>
-  </div>
-</section>
-
       {/* STATS */}
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
@@ -310,6 +255,61 @@ export default function Page() {
           title="Dekaelo Media Reel Corporativo"
         />
       </section>
+
+      {/* NUESTRA VISIÓN */}
+
+<section className="border-t border-white/10 py-24">
+  <div className="container max-w-5xl">
+    <div className="grid gap-12 md:grid-cols-[1fr_1.3fr]">
+
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
+          Nuestra visión
+        </p>
+
+        <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
+          El futuro de las comunicaciones corporativas
+        </h2>
+      </div>
+
+      <div>
+        <p className="text-xl leading-relaxed text-white/80">
+          Las organizaciones más relevantes de la próxima década no solo
+          comunicarán cuando tengan algo que anunciar. Construirán canales
+          propios, compartirán conocimiento y desarrollarán conversaciones
+          permanentes con sus audiencias.
+        </p>
+
+        <p className="mt-6 leading-relaxed text-white/50">
+          Creemos que la comunicación se transformará en una capacidad
+          estratégica. Por eso ayudamos a empresas e instituciones a
+          desarrollar vodcasts, series corporativas, documentales y
+          contenido diseñado para construir confianza a largo plazo.
+        </p>
+
+        <div className="mt-12 border-t border-white/10 pt-10">
+          <p className="text-2xl font-semibold leading-tight text-white md:text-3xl">
+            Las organizaciones más relevantes de la próxima década no serán
+            necesariamente las más grandes.
+          </p>
+
+          <p className="mt-3 text-2xl font-semibold leading-tight text-white/35 md:text-3xl">
+            Serán aquellas capaces de generar confianza.
+          </p>
+        </div>
+
+        <Link
+          href="/vision-chile-2030"
+          className="mt-8 inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white"
+        >
+          Leer nuestra visión para Chile 2030
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* COMO FUNCIONA */}
       <section className="border-t border-white/10 py-24">
