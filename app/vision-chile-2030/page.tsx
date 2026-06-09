@@ -143,15 +143,18 @@ export default function VisionChile2030Page() {
         </p>
 
         <p>
-          Nuestra posición en el Pacífico. La cercanía con la Antártica. El
-          liderazgo en energías renovables. Los recursos estratégicos para la
-          transición energética global. La capacidad de conectar América Latina
-          con Asia-Pacífico.
-        </p>
+  Nuestra posición en el Pacífico. La conexión natural con
+  Asia-Pacífico. La capacidad de generar energía limpia a gran escala.
+  El potencial científico y tecnológico de nuestras universidades y
+  centros de investigación. La fortaleza de industrias estratégicas
+  para la economía global. La capacidad de atraer talento, inversión y
+  conocimiento.
+</p>
 
-        <p>
-          Pero ninguna ventaja es permanente.
-        </p>
+<p>
+  Chile posee ventajas que pocos países de su tamaño tienen al mismo
+  tiempo.
+</p>
 
         <p>
           Los países que prosperarán durante los próximos años serán aquellos
@@ -259,42 +262,22 @@ export default function VisionChile2030Page() {
         </p>
 
         <p>
-          Bibliotecas audiovisuales.
-        </p>
+  Bibliotecas audiovisuales. Series documentales. Vodcasts
+  corporativos. Comunicación interna. Contenido multilingüe.
+  Formación digital. Transferencia de conocimiento. Plataformas
+  impulsadas por inteligencia artificial.
+</p>
 
         <p>
-          Series documentales.
-        </p>
+  El contenido dejará de ser un gasto de marketing para transformarse
+  en un activo estratégico de largo plazo.
+</p>
 
-        <p>
-          Vodcasts corporativos.
-        </p>
-
-        <p>
-          Comunicación interna.
-        </p>
-
-        <p>
-          Contenido multilingüe.
-        </p>
-
-        <p>
-          Formación digital.
-        </p>
-
-        <p>
-          Transferencia de conocimiento.
-        </p>
-
-        <p>
-          Plataformas impulsadas por inteligencia artificial.
-        </p>
-
-        <p>
-          El contenido dejará de ser un gasto de marketing para transformarse en
-          un activo estratégico de largo plazo. Las próximas décadas también exigirán nuevos liderazgos,
-          capaces de comunicar con transparencia, construir confianza y movilizar conocimiento.
-        </p>
+<p>
+  Las próximas décadas también exigirán nuevos liderazgos, capaces de
+  comunicar con transparencia, construir confianza y movilizar
+  conocimiento.
+</p>
       </Section>
 
       {/* HISTORIAS */}
@@ -375,14 +358,14 @@ export default function VisionChile2030Page() {
         <div className="container max-w-5xl">
           <Eyebrow>Mirando hacia adelante</Eyebrow>
 
-          <h2 className="mt-6 text-4xl font-semibold leading-tight tracking-tight md:text-7xl">
-            El futuro no pertenece a quienes tienen más información.
-          </h2>
+         <h2 className="mt-6 text-4xl font-semibold leading-tight tracking-tight md:text-7xl">
+  El futuro no pertenece a quienes tienen más información.
+</h2>
 
-          <h3 className="mt-6 text-3xl font-semibold leading-tight text-white/35 md:text-6xl">
-            Pertenece a quienes son capaces de transformarla en conocimiento
-            compartido.
-          </h3>
+<h3 className="mt-6 text-3xl font-semibold leading-tight text-white/35 md:text-6xl">
+  Pertenece a quienes son capaces de transformarla en conocimiento,
+  confianza y valor compartido.
+</h3>
         </div>
       </section>
 
