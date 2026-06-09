@@ -227,11 +227,11 @@ export default function VisionChile2030Page() {
   </p>
 
   <p className="text-white">
-    Ya no comunicarán únicamente cuando tengan algo que anunciar.
+    Comunicarán de forma más frecuente, directa y continua.
   </p>
 
   <p className="text-white">
-    Comunicarán de forma permanente.
+    La comunicación dejará de ser un evento puntual para transformarse en una capacidad estratégica.
   </p>
 </Section>
 
