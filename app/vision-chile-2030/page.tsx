@@ -194,44 +194,46 @@ export default function VisionChile2030Page() {
 
       {/* MEDIOS */}
 
-      <Section
-        eyebrow="La transformación"
-        title="Las organizaciones del futuro se parecerán más a medios de comunicación"
-      >
-        <p>
-          Durante gran parte del siglo XX las organizaciones dependieron de
-          terceros para comunicar.
-        </p>
+<Section
+  eyebrow="La transformación"
+  title="Las organizaciones del futuro construirán sus propios canales de comunicación"
+>
+  <p>
+    Durante gran parte del siglo XX las organizaciones dependieron de
+    terceros para comunicar.
+  </p>
 
-        <p>
-          Dependían de medios tradicionales, campañas publicitarias, acciones
-          puntuales de marketing o comunicados esporádicos.
-        </p>
+  <p>
+    Dependían de medios tradicionales, campañas publicitarias, acciones
+    puntuales de marketing o comunicados esporádicos.
+  </p>
 
-        <p>
-          Ese modelo está evolucionando.
-        </p>
+  <p>
+    Ese modelo está evolucionando.
+  </p>
 
-        <p>
-          Las organizaciones más influyentes del mundo están construyendo sus
-          propios canales de comunicación.
-        </p>
+  <p>
+    Las organizaciones más relevantes de la próxima década no solo
+    comunicarán cuando tengan algo que anunciar. Construirán canales
+    propios, compartirán conocimiento y mantendrán conversaciones
+    permanentes con sus audiencias.
+  </p>
 
-        <p>
-          Desarrollan series documentales. Producen vodcasts. Generan contenido
-          educativo. Construyen comunidades. Comparten conocimiento. Crean
-          plataformas para clientes, colaboradores, inversionistas y audiencias
-          internacionales.
-        </p>
+  <p>
+    Algunas ya están avanzando en esa dirección. Desarrollan series
+    documentales, producen vodcasts, generan contenido educativo,
+    construyen comunidades y crean plataformas para clientes,
+    colaboradores, inversionistas y audiencias internacionales.
+  </p>
 
-        <p className="text-white">
-          Ya no comunican únicamente cuando tienen algo que anunciar.
-        </p>
+  <p className="text-white">
+    Ya no comunicarán únicamente cuando tengan algo que anunciar.
+  </p>
 
-        <p className="text-white">
-          Comunican de forma permanente.
-        </p>
-      </Section>
+  <p className="text-white">
+    Comunicarán de forma permanente.
+  </p>
+</Section>
 
       {/* INFRAESTRUCTURA */}
 
