@@ -241,17 +241,6 @@ export default function Page() {
   </div>
 </section>
 
-      <div className="mt-20 border-t border-white/10 pt-16">
-  <p className="max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
-    Las organizaciones más relevantes de la próxima década no serán
-    necesariamente las más grandes.
-  </p>
-
-  <p className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-white/30 md:text-5xl">
-    Serán aquellas capaces de generar confianza.
-  </p>
-</div>
-
       {/* REEL */}
       <section className="container max-w-5xl pb-24">
         <div className="mb-8 flex items-center justify-between gap-4">
