@@ -146,7 +146,7 @@ export default function VisionChile2030Page() {
           Nuestra posición en el Pacífico. La cercanía con la Antártica. El
           liderazgo en energías renovables. Los recursos estratégicos para la
           transición energética global. La capacidad de conectar América Latina
-          con Asia.
+          con Asia-Pacífico.
         </p>
 
         <p>
@@ -292,7 +292,8 @@ export default function VisionChile2030Page() {
 
         <p>
           El contenido dejará de ser un gasto de marketing para transformarse en
-          un activo estratégico de largo plazo.
+          un activo estratégico de largo plazo. Las próximas décadas también exigirán nuevos liderazgos,
+          capaces de comunicar con transparencia, construir confianza y movilizar conocimiento.
         </p>
       </Section>
 
