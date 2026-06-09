@@ -190,10 +190,11 @@ export default function Page() {
       </section>
 
       {/* NUESTRA VISIÓN */}
+
 <section className="border-t border-white/10 py-24">
   <div className="container max-w-5xl">
     <div className="grid gap-12 md:grid-cols-[1fr_1.3fr]">
-      
+
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
           Nuestra visión
@@ -217,13 +218,14 @@ export default function Page() {
           para transformarse en una capacidad estratégica. Por eso ayudamos
           a empresas e instituciones a construir sus propios canales de
           comunicación mediante vodcasts, series corporativas, documentales
-          y contenido audiovisual producido de forma continua.
+          y ecosistemas de contenido desarrollados a largo plazo.
         </p>
 
         <p className="mt-6 leading-relaxed text-white/50">
           No entendemos el contenido como una campaña puntual. Lo entendemos
           como una herramienta para compartir conocimiento, fortalecer la
-          reputación y construir confianza a largo plazo.
+          reputación, proyectar liderazgo y construir confianza de forma
+          sostenida en el tiempo.
         </p>
 
         <div className="mt-12 border-t border-white/10 pt-10">
