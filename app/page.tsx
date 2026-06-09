@@ -214,18 +214,10 @@ export default function Page() {
         </p>
 
         <p className="mt-6 leading-relaxed text-white/50">
-          Creemos que la comunicación dejará de ser una función secundaria
-          para transformarse en una capacidad estratégica. Por eso ayudamos
-          a empresas e instituciones a construir sus propios canales de
-          comunicación mediante vodcasts, series corporativas, documentales
-          y ecosistemas de contenido desarrollados a largo plazo.
-        </p>
-
-        <p className="mt-6 leading-relaxed text-white/50">
-          No entendemos el contenido como una campaña puntual. Lo entendemos
-          como una herramienta para compartir conocimiento, fortalecer la
-          reputación, proyectar liderazgo y construir confianza de forma
-          sostenida en el tiempo.
+          Creemos que la comunicación se transformará en una capacidad
+          estratégica. Por eso ayudamos a empresas e instituciones a
+          desarrollar vodcasts, series corporativas, documentales y
+          contenido diseñado para construir confianza a largo plazo.
         </p>
 
         <div className="mt-12 border-t border-white/10 pt-10">
