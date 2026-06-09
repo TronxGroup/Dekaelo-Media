@@ -225,8 +225,18 @@ export default function Page() {
         </p>
 
         <p className="mt-6 leading-relaxed text-white">
-          Y ayudamos a construir esa transición.
-        </p>
+  Y ayudamos a construir esa transición.
+</p>
+
+<div className="mt-12 border-t border-white/10 pt-10">
+  <p className="text-2xl font-semibold leading-tight text-white md:text-3xl">
+    Las organizaciones más relevantes de la próxima década no serán necesariamente las más grandes.
+  </p>
+
+  <p className="mt-3 text-2xl font-semibold leading-tight text-white/35 md:text-3xl">
+    Serán aquellas capaces de generar confianza.
+  </p>
+</div>
 
         <Link
           href="/vision-chile-2030"
@@ -240,30 +250,6 @@ export default function Page() {
     </div>
   </div>
 </section>
-
-      {/* REEL */}
-      <section className="container max-w-5xl pb-24">
-        <div className="mb-8 flex items-center justify-between gap-4">
-          <Eyebrow>Reel corporativo</Eyebrow>
-          <Link href="/portafolio" className="text-sm text-white/35 transition hover:text-white">
-            Ver todos los casos
-          </Link>
-        </div>
-        <VideoEmbed
-          src="https://www.youtube.com/embed/4jDNXBkv7vU?rel=0&modestbranding=1&playsinline=1"
-          title="Dekaelo Media Reel Corporativo"
-        />
-      </section>
-
-      {/* LOGOS */}
-      <section className="border-t border-white/10 py-16">
-        <div className="container">
-          <p className="mb-10 text-center text-xs uppercase tracking-widest text-white/25">
-            Algunas empresas e instituciónes con las que hemos trabajado
-          </p>
-          <ClientLogos />
-        </div>
-      </section>
 
       {/* STATS */}
       <section className="border-t border-white/10 py-24">
@@ -306,6 +292,30 @@ export default function Page() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* LOGOS */}
+      <section className="border-t border-white/10 py-16">
+        <div className="container">
+          <p className="mb-10 text-center text-xs uppercase tracking-widest text-white/25">
+            Algunas empresas e instituciónes con las que hemos trabajado
+          </p>
+          <ClientLogos />
+        </div>
+      </section>
+
+      {/* REEL */}
+      <section className="container max-w-5xl pb-24">
+        <div className="mb-8 flex items-center justify-between gap-4">
+          <Eyebrow>Reel corporativo</Eyebrow>
+          <Link href="/portafolio" className="text-sm text-white/35 transition hover:text-white">
+            Ver todos los casos
+          </Link>
+        </div>
+        <VideoEmbed
+          src="https://www.youtube.com/embed/4jDNXBkv7vU?rel=0&modestbranding=1&playsinline=1"
+          title="Dekaelo Media Reel Corporativo"
+        />
       </section>
 
       {/* COMO FUNCIONA */}
@@ -374,25 +384,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* INDUSTRIAS */}
-      <section className="border-t border-white/10 py-24">
-        <div className="container max-w-5xl">
-          <Eyebrow>Experiencia en distintas industrias</Eyebrow>
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Desde banca hasta contenido original.
-          </h2>
-          <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-3 text-sm text-white/60">
-            <div>BICE — Serie vodcast instituciónal</div>
-            <div>APCC — +25 episodios internacionales</div>
-            <div>iGromi — Industria y tecnologia</div>
-            <div>Fútbol y Parrilla — +390K vistas</div>
-            <div>Trewhela School — documental instituciónal</div>
-            <div>Oximixo — +3.8M vistas orgánicas</div>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICIOS */}
+       {/* SERVICIOS */}
       <section className="container border-t border-white/10 py-24 max-w-5xl">
         <div className="mb-14 flex items-end justify-between gap-4">
           <div>
@@ -477,6 +469,24 @@ export default function Page() {
           >
             Ver portafolio completo <ArrowRight className="h-4 w-4" />
           </Link>
+        </div>
+      </section>
+
+      {/* INDUSTRIAS */}
+      <section className="border-t border-white/10 py-24">
+        <div className="container max-w-5xl">
+          <Eyebrow>Experiencia en distintas industrias</Eyebrow>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+            Desde banca hasta contenido original.
+          </h2>
+          <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-3 text-sm text-white/60">
+            <div>BICE — Serie vodcast instituciónal</div>
+            <div>APCC — +25 episodios internacionales</div>
+            <div>iGromi — Industria y tecnologia</div>
+            <div>Fútbol y Parrilla — +390K vistas</div>
+            <div>Trewhela School — documental instituciónal</div>
+            <div>Oximixo — +3.8M vistas orgánicas</div>
+          </div>
         </div>
       </section>
 
