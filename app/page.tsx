@@ -189,6 +189,69 @@ export default function Page() {
         </div>
       </section>
 
+      {/* NUESTRA VISIÓN */}
+
+<section className="border-t border-white/10 py-24">
+  <div className="container max-w-5xl">
+
+    <div className="grid gap-12 md:grid-cols-[1fr_1.3fr]">
+
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
+          Nuestra visión
+        </p>
+
+        <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
+          El futuro de las comunicaciones corporativas
+        </h2>
+      </div>
+
+      <div>
+        <p className="text-xl leading-relaxed text-white/80">
+          Durante décadas las organizaciones dependieron de terceros para comunicar.
+          Hoy las organizaciones más relevantes están construyendo sus propios canales,
+          compartiendo conocimiento y desarrollando conversaciones permanentes con sus audiencias.
+        </p>
+
+        <p className="mt-6 leading-relaxed text-white/50">
+          Crean vodcasts. Desarrollan series. Generan contenido educativo.
+          Fortalecen su comunicación interna. Proyectan liderazgo.
+          Construyen comunidades.
+        </p>
+
+        <p className="mt-6 leading-relaxed text-white/50">
+          Creemos que durante la próxima década las organizaciones se parecerán
+          cada vez más a medios de comunicación propios.
+        </p>
+
+        <p className="mt-6 leading-relaxed text-white">
+          Y ayudamos a construir esa transición.
+        </p>
+
+        <Link
+          href="/vision-chile-2030"
+          className="mt-8 inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white"
+        >
+          Leer nuestra visión para Chile 2030
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      <div className="mt-20 border-t border-white/10 pt-16">
+  <p className="max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
+    Las organizaciones más relevantes de la próxima década no serán
+    necesariamente las más grandes.
+  </p>
+
+  <p className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-white/30 md:text-5xl">
+    Serán aquellas capaces de generar confianza.
+  </p>
+</div>
+
       {/* REEL */}
       <section className="container max-w-5xl pb-24">
         <div className="mb-8 flex items-center justify-between gap-4">
