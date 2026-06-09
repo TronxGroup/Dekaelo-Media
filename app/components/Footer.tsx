@@ -23,7 +23,7 @@ return ( <footer className="border-t border-white/10 bg-black text-white"> <div 
         </Link>
 
         <p className="text-sm leading-relaxed text-white/45">
-          Producción audiovisual y contenido estratégico para empresas,
+          Produccióxn audiovisual y contenido estratégico para empresas,
           instituciones y organizaciones que quieren construir una voz
           relevante para la próxima década.
         </p>
