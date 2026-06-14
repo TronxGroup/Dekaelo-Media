@@ -29,9 +29,8 @@ const services = [
       "Direccion y conduccion tecnica",
       "Edición, subtítulos y entrega lista para publicar",
     ],
-    price: "Desde $650.000 / episodio",
-    note: "+ IVA - temporada minima 4 episodios",
-    href: "/servicios#produccion",
+    highlight: "Propuesta personalizada según alcance",
+note: "Diseñado para empresas que buscan contenido continuo",
   },
   {
     badge: "Post-producción",
@@ -47,9 +46,7 @@ const services = [
       "Entrega en 5 días hábiles",
       "Pago 50% adelantado",
     ],
-    price: "Desde $350.000",
-    note: "+ IVA - pago unico por proyecto",
-    href: "/servicios#postproduccion",
+    note: "Ideal para empresas que ya tienen contenido grabado",
   },
 ];
 
