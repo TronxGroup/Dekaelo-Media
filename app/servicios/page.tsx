@@ -47,198 +47,230 @@ export default function ServiciosPage() {
         </p>
       </section>
 
-      {/* PRODUCCION COMPLETA */}
-      <section id="produccion" className="border-t border-white/10 py-24 scroll-mt-20">
-        <div className="container max-w-6xl">
-          <div className="grid gap-12 lg:grid-cols-[1fr_380px] lg:items-start">
-            <div>
-              <Tag className="bg-amber-500/15 text-amber-300 border border-amber-400/20 mb-6">
-                Especialidad principal
-              </Tag>
-              <h2 className="text-3xl font-semibold md:text-4xl leading-tight">
-                Producción completa
-              </h2>
-              <p className="mt-5 text-lg text-white/55 leading-relaxed">
-                Somos tu equipo de producción externo. Diseñamos el formato, llegamos con equipo a tu oficina y producimos la temporada completa. Tu empresa aparece y publica. Nosotros nos encargamos de todo lo demás.
-              </p>
-              <div className="mt-8 rounded-2xl border border-amber-400/15 bg-amber-500/5 p-6">
-                <p className="text-xs font-semibold uppercase tracking-wider text-amber-300/60 mb-3">
-                  Referencia real
-                </p>
-                <p className="text-white/70 leading-relaxed">
-                  <strong className="text-white">BICECORP</strong> lleva trabajando con nosotros desde 2024 en una serie continua de vodcast institucional. Más de 14 episodios producidos. Temporada activa en curso.
-                </p>
-              </div>
-              <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                <div>
-                  <p className="text-sm font-semibold text-white mb-4">Qué incluye</p>
-                  <ul className="space-y-3">
-                    {[
-                      "Diseño de formato y pauta narrativa",
-                      "Grabación profesional en tu oficina",
-                      "Dirección y conducción técnica",
-                      "Edición completa con color y sonido",
-                      "Subtítulos y formatos por plataforma",
-                      "Desde 4 episodios por temporada",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-white/60">
-                        <CheckIcon />{item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-white mb-4">Casos de uso</p>
-                  <ul className="space-y-3">
-                    {[
-                      "Vodcast ejecutivo o de liderazgo",
-                      "Serie institucional para comunicación interna",
-                      "Video corporativo para licitación o presentación",
-                      "Programa de contenido continuo para LinkedIn",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-white/60">
-                        <CheckIcon />{item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
+     {/* PRODUCCION COMPLETA */}
+<section id="produccion" className="border-t border-white/10 py-24 scroll-mt-20">
+  <div className="container max-w-6xl">
+    <div className="grid gap-12 lg:grid-cols-[1fr_380px] lg:items-start">
 
-            {/* PRECIO */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:sticky lg:top-24">
-  <p className="text-sm text-white/40">Producción a medida</p>
+      {/* LEFT */}
+      <div>
+        <Tag className="bg-amber-500/15 text-amber-300 border border-amber-400/20 mb-6">
+          Especialidad principal
+        </Tag>
 
-  <p className="mt-2 text-3xl font-semibold text-white">
-    Diseñamos la propuesta según tu proyecto
-  </p>
+        <h2 className="text-3xl font-semibold md:text-4xl leading-tight">
+          Producción completa
+        </h2>
 
-  <p className="text-white/35 text-sm">
-    Cada producción se define según formato, duración, cantidad de episodios y nivel de producción requerido.
-  </p>
+        <p className="mt-5 text-lg text-white/55 leading-relaxed">
+          Somos tu equipo de producción externo. Diseñamos el formato, llegamos con equipo a tu oficina y producimos la temporada completa. Tu empresa aparece y publica. Nosotros nos encargamos de todo lo demás.
+        </p>
 
-  <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4 text-sm text-white/50 leading-relaxed">
-    Trabajamos principalmente con empresas que buscan construir contenido continuo, series corporativas o proyectos audiovisuales de largo plazo.
+        <div className="mt-8 rounded-2xl border border-amber-400/15 bg-amber-500/5 p-6">
+          <p className="text-xs font-semibold uppercase tracking-wider text-amber-300/60 mb-3">
+            Referencia real
+          </p>
+
+          <p className="text-white/70 leading-relaxed">
+            <strong className="text-white">BICECORP</strong> lleva trabajando con nosotros desde 2024 en una serie continua de vodcast institucional. Más de 14 episodios producidos. Temporada activa en curso.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+
+          <div>
+            <p className="text-sm font-semibold text-white mb-4">Qué incluye</p>
+            <ul className="space-y-3">
+              {[
+                "Diseño de formato y pauta narrativa",
+                "Grabación profesional en tu oficina",
+                "Dirección y conducción técnica",
+                "Edición completa con color y sonido",
+                "Subtítulos y formatos por plataforma",
+                "Desde 4 episodios por temporada",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm text-white/60">
+                  <CheckIcon /> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold text-white mb-4">Casos de uso</p>
+            <ul className="space-y-3">
+              {[
+                "Vodcast ejecutivo o de liderazgo",
+                "Serie institucional para comunicación interna",
+                "Video corporativo para licitación o presentación",
+                "Programa de contenido continuo para LinkedIn",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm text-white/60">
+                  <CheckIcon /> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      {/* RIGHT */}
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:sticky lg:top-24">
+
+        <p className="text-sm text-white/40">Producción a medida</p>
+
+        <p className="mt-2 text-3xl font-semibold text-white">
+          Diseñamos la propuesta según tu proyecto
+        </p>
+
+        <p className="text-white/35 text-sm">
+          Cada producción se define según formato, duración, cantidad de episodios y nivel de producción requerido.
+        </p>
+
+        <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4 text-sm text-white/50 leading-relaxed">
+          Trabajamos principalmente con empresas que buscan construir contenido continuo, series corporativas o proyectos audiovisuales de largo plazo.
+        </div>
+
+        <a
+          href={buildWa("Produccion completa - vodcast o serie corporativa")}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
+        >
+          Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
+        </a>
+
+        <Link
+          href="/contacto"
+          className="mt-3 inline-flex w-full items-center justify-center gap-2 border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/50 transition hover:bg-white/10 hover:text-white"
+        >
+          Prefiero el formulario <ArrowRight className="h-4 w-4" />
+        </Link>
+
+        <p className="mt-4 text-center text-xs text-white/25">
+          Primera conversación sin costo
+        </p>
+
+      </div>
+
+    </div>
   </div>
+</section>
 
-  <a
-    href={buildWa("Produccion completa - vodcast o serie corporativa")}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
-  >
-    Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
-  </a>
 
-  <Link
-    href="/contacto"
-    className="mt-3 inline-flex w-full items-center justify-center gap-2 border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/50 transition hover:bg-white/10 hover:text-white"
-  >
-    Prefiero el formulario <ArrowRight className="h-4 w-4" />
-  </Link>
+{/* POST PRODUCCION */}
+<section id="postproduccion" className="border-t border-white/10 py-24 scroll-mt-20">
+  <div className="container max-w-6xl">
+    <div className="grid gap-12 lg:grid-cols-[1fr_380px] lg:items-start">
 
-  <p className="mt-4 text-center text-xs text-white/25">
-    Primera conversación sin costo
-  </p>
-</div>
-      </section>
+      {/* LEFT */}
+      <div>
 
-      {/* POST PRODUCCION */}
-      <section id="postproduccion" className="border-t border-white/10 py-24 scroll-mt-20">
-        <div className="container max-w-6xl">
-          <div className="grid gap-12 lg:grid-cols-[1fr_380px] lg:items-start">
-            <div>
-              <Tag className="bg-sky-500/15 text-sky-300 border border-sky-400/20 mb-6">
-                Post-producción — pago único
-              </Tag>
-              <h2 className="text-3xl font-semibold md:text-4xl leading-tight">
-                Post-producción
-              </h2>
-              <p className="mt-5 text-lg text-white/55 leading-relaxed">
-                Tú o tu empresa graban. Nosotros editamos y entregamos en el formato correcto para cada plataforma. Ideal para empresas que ya tienen material sin editar.
-              </p>
-              <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
-                <p className="text-xs font-semibold uppercase tracking-wider text-white/30 mb-3">
-                  Cómo funciona
-                </p>
-                <p className="text-white/70 leading-relaxed">
-                  <strong className="text-white">Mandas el material en bruto.</strong> Definimos alcance por escrito antes de empezar, pagas 50% adelantado y en 5 días hábiles recibes el video listo para publicar.
-                </p>
-              </div>
-              <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                <div>
-                  <p className="text-sm font-semibold text-white mb-4">Qué incluye</p>
-                  <ul className="space-y-3">
-                    {[
-                      "Edición completa del material",
-                      "Corrección de audio y color",
-                      "Títulos, créditos y subtítulos",
-                      "Formato para redes y web",
-                      "1 ronda de revisión incluida",
-                      "Entrega en 5 días hábiles",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-white/60">
-                        <CheckIcon />{item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-white mb-4">Casos de uso</p>
-                  <ul className="space-y-3">
-                    {[
-                      "Grabación de evento corporativo",
-                      "Entrevista a gerente o fundador",
-                      "Capacitación interna filmada",
-                      "Lanzamiento de producto registrado",
-                      "Testimonio de cliente o caso de éxito",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-white/60">
-                        <CheckIcon />{item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
+        <Tag className="bg-sky-500/15 text-sky-300 border border-sky-400/20 mb-6">
+          Post-producción
+        </Tag>
 
-            {/* PRECIO */}
-            div className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:sticky lg:top-24">
-  <p className="text-sm text-white/40">Post-producción profesional</p>
+        <h2 className="text-3xl font-semibold md:text-4xl leading-tight">
+          Post-producción
+        </h2>
 
-  <p className="mt-2 text-4xl font-semibold text-white">
-    Editamos y entregamos el contenido listo para publicar
-  </p>
+        <p className="mt-5 text-lg text-white/55 leading-relaxed">
+          Tú o tu empresa graban. Nosotros editamos y entregamos en el formato correcto para cada plataforma. Ideal para empresas que ya tienen material sin editar.
+        </p>
 
-  <p className="text-white/35 text-sm">
-    Definimos cada proyecto según duración, cantidad de material, nivel de edición y formatos de entrega requeridos.
-  </p>
+        <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
+          <p className="text-xs font-semibold uppercase tracking-wider text-white/30 mb-3">
+            Cómo funciona
+          </p>
 
-  <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4 text-sm text-white/50 leading-relaxed">
-    Ideal para empresas que ya grabaron contenido y necesitan una post-producción profesional adaptada a web, redes sociales o comunicación interna.
+          <p className="text-white/70 leading-relaxed">
+            <strong className="text-white">Mandas el material en bruto.</strong> Definimos alcance por escrito antes de empezar, pagas 50% adelantado y en 5 días hábiles recibes el video listo para publicar.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+
+          <div>
+            <p className="text-sm font-semibold text-white mb-4">Qué incluye</p>
+            <ul className="space-y-3">
+              {[
+                "Edición completa del material",
+                "Corrección de audio y color",
+                "Títulos, créditos y subtítulos",
+                "Formato para redes y web",
+                "1 ronda de revisión incluida",
+                "Entrega en 5 días hábiles",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm text-white/60">
+                  <CheckIcon /> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold text-white mb-4">Casos de uso</p>
+            <ul className="space-y-3">
+              {[
+                "Grabación de evento corporativo",
+                "Entrevista a gerente o fundador",
+                "Capacitación interna filmada",
+                "Lanzamiento de producto registrado",
+                "Testimonio de cliente o caso de éxito",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm text-white/60">
+                  <CheckIcon /> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      {/* RIGHT */}
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:sticky lg:top-24">
+
+        <p className="text-sm text-white/40">Post-producción profesional</p>
+
+        <p className="mt-2 text-4xl font-semibold text-white">
+          Editamos y entregamos el contenido listo para publicar
+        </p>
+
+        <p className="text-white/35 text-sm">
+          Definimos cada proyecto según duración, cantidad de material, nivel de edición y formatos de entrega requeridos.
+        </p>
+
+        <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4 text-sm text-white/50 leading-relaxed">
+          Ideal para empresas que ya grabaron contenido y necesitan una post-producción profesional adaptada a web, redes sociales o comunicación interna.
+        </div>
+
+        <a
+          href={buildWa("Post-produccion - edicion de material grabado")}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
+        >
+          Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
+        </a>
+
+        <Link
+          href="/contacto"
+          className="mt-3 inline-flex w-full items-center justify-center gap-2 border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/50 transition hover:bg-white/10 hover:text-white"
+        >
+          Prefiero el formulario <ArrowRight className="h-4 w-4" />
+        </Link>
+
+        <p className="mt-4 text-center text-xs text-white/25">
+          Alcance definido antes de comenzar
+        </p>
+
+      </div>
+
+    </div>
   </div>
-
-  <a
-    href={buildWa("Post-produccion - edicion de material grabado")}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
-  >
-    Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
-  </a>
-
-  <Link
-    href="/contacto"
-    className="mt-3 inline-flex w-full items-center justify-center gap-2 border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/50 transition hover:bg-white/10 hover:text-white"
-  >
-    Prefiero el formulario <ArrowRight className="h-4 w-4" />
-  </Link>
-
-  <p className="mt-4 text-center text-xs text-white/25">
-    Alcance definido antes de comenzar
-  </p>
-</div>
-      </section>
+</section>
 
       {/* LO QUE NO HACEMOS */}
       <section className="border-t border-white/10 py-20">
