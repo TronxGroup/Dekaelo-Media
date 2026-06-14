@@ -30,8 +30,10 @@ const services = [
       "Edición, subtítulos y entrega lista para publicar",
     ],
     highlight: "Propuesta personalizada según alcance",
-note: "Diseñado para empresas que buscan contenido continuo",
+    note: "Diseñado para empresas que buscan contenido continuo",
+    href: "/servicios#produccion",
   },
+
   {
     badge: "Post-producción",
     badgeClass: "bg-sky-500/15 text-sky-300 border border-sky-400/20",
@@ -46,7 +48,9 @@ note: "Diseñado para empresas que buscan contenido continuo",
       "Entrega en 5 días hábiles",
       "Pago 50% adelantado",
     ],
+    highlight: "Proyecto definido según material y objetivos",
     note: "Ideal para empresas que ya tienen contenido grabado",
+    href: "/servicios#postproduccion",
   },
 ];
 
@@ -406,9 +410,9 @@ export default function Page() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 border-t border-white/10 pt-5">
-                <p className="text-base font-semibold text-white">{s.price}</p>
-                <p className="mt-0.5 text-xs text-white/35">{s.note}</p>
+             <div className="mt-6 border-t border-white/10 pt-5">
+  <p className="text-base font-semibold text-white">{s.highlight}</p>
+  <p className="mt-0.5 text-xs text-white/35">{s.note}</p>
               </div>
               <div className="mt-4 flex items-center gap-1 text-sm text-white/35 transition group-hover:text-white/60">
                 Ver detalle <ArrowRight className="h-3.5 w-3.5" />
