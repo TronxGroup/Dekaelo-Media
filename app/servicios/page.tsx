@@ -107,30 +107,40 @@ export default function ServiciosPage() {
 
             {/* PRECIO */}
             <div className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:sticky lg:top-24">
-              <p className="text-sm text-white/40">Precio por episodio</p>
-              <p className="mt-2 text-3xl font-semibold text-white">Desde $650.000</p>
-              <p className="text-white/35 text-sm">+ IVA — mínimo 4 episodios por temporada</p>
-              <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4 text-sm text-white/50 leading-relaxed">
-                El alcance se define según número de episodios y nivel de producción.
-              </div>
-              <a
-                href={buildWa("Produccion completa - vodcast o serie corporativa")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
-              >
-                Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
-              </a>
-              <Link
-                href="/contacto"
-                className="mt-3 inline-flex w-full items-center justify-center gap-2 border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/50 transition hover:bg-white/10 hover:text-white"
-              >
-                Prefiero el formulario <ArrowRight className="h-4 w-4" />
-              </Link>
-              <p className="mt-4 text-center text-xs text-white/25">Primera conversación sin costo</p>
-            </div>
-          </div>
-        </div>
+  <p className="text-sm text-white/40">Producción a medida</p>
+
+  <p className="mt-2 text-3xl font-semibold text-white">
+    Diseñamos la propuesta según tu proyecto
+  </p>
+
+  <p className="text-white/35 text-sm">
+    Cada producción se define según formato, duración, cantidad de episodios y nivel de producción requerido.
+  </p>
+
+  <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4 text-sm text-white/50 leading-relaxed">
+    Trabajamos principalmente con empresas que buscan construir contenido continuo, series corporativas o proyectos audiovisuales de largo plazo.
+  </div>
+
+  <a
+    href={buildWa("Produccion completa - vodcast o serie corporativa")}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
+  >
+    Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
+  </a>
+
+  <Link
+    href="/contacto"
+    className="mt-3 inline-flex w-full items-center justify-center gap-2 border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/50 transition hover:bg-white/10 hover:text-white"
+  >
+    Prefiero el formulario <ArrowRight className="h-4 w-4" />
+  </Link>
+
+  <p className="mt-4 text-center text-xs text-white/25">
+    Primera conversación sin costo
+  </p>
+</div>
       </section>
 
       {/* POST PRODUCCION */}
@@ -193,31 +203,41 @@ export default function ServiciosPage() {
             </div>
 
             {/* PRECIO */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:sticky lg:top-24">
-              <p className="text-sm text-white/40">Precio por video</p>
-              <p className="mt-2 text-4xl font-semibold text-white">Desde $350.000</p>
-              <p className="text-white/35 text-sm">+ IVA — pago único</p>
-              <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4 text-sm text-white/50 leading-relaxed">
-                El alcance se define según duración y cantidad de material.
-              </div>
-              <a
-                href={buildWa("Post-produccion - edicion de material grabado")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
-              >
-                Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
-              </a>
-              <Link
-                href="/contacto"
-                className="mt-3 inline-flex w-full items-center justify-center gap-2 border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/50 transition hover:bg-white/10 hover:text-white"
-              >
-                Prefiero el formulario <ArrowRight className="h-4 w-4" />
-              </Link>
-              <p className="mt-4 text-center text-xs text-white/25">Alcance por escrito antes de empezar</p>
-            </div>
-          </div>
-        </div>
+            div className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:sticky lg:top-24">
+  <p className="text-sm text-white/40">Post-producción profesional</p>
+
+  <p className="mt-2 text-4xl font-semibold text-white">
+    Editamos y entregamos el contenido listo para publicar
+  </p>
+
+  <p className="text-white/35 text-sm">
+    Definimos cada proyecto según duración, cantidad de material, nivel de edición y formatos de entrega requeridos.
+  </p>
+
+  <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4 text-sm text-white/50 leading-relaxed">
+    Ideal para empresas que ya grabaron contenido y necesitan una post-producción profesional adaptada a web, redes sociales o comunicación interna.
+  </div>
+
+  <a
+    href={buildWa("Post-produccion - edicion de material grabado")}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
+  >
+    Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
+  </a>
+
+  <Link
+    href="/contacto"
+    className="mt-3 inline-flex w-full items-center justify-center gap-2 border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/50 transition hover:bg-white/10 hover:text-white"
+  >
+    Prefiero el formulario <ArrowRight className="h-4 w-4" />
+  </Link>
+
+  <p className="mt-4 text-center text-xs text-white/25">
+    Alcance definido antes de comenzar
+  </p>
+</div>
       </section>
 
       {/* LO QUE NO HACEMOS */}
