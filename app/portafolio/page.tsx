@@ -56,7 +56,7 @@ const categories: Category[] = [
     label: "Casos seleccionados",
     items: [
       {
-        client: "BiceCorp",
+        client: "BICECORP",
         name: "Nos Une",
         year: "2024 - 2026",
         tag: "Vodcast interno",
