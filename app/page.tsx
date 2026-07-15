@@ -474,7 +474,7 @@ export default function Page() {
             Desde banca hasta contenido original.
           </h2>
           <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-3 text-sm text-white/60">
-            <div>BICE — Serie vodcast instituciónal</div>
+            <div>BICE — Serie vodcast institucional</div>
             <div>APCC — +25 episodios internacionales</div>
             <div>iGromi — Industria y tecnologia</div>
             <div>Fútbol y Parrilla — +390K vistas</div>
