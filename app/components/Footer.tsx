@@ -3,9 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const waLink =
-  "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20sobre%20un%20proyecto%20con%20Dekaelo%20Media.%0A%0AEmpresa%3A%0AQue%20necesito%3A%0AFecha%20tentativa%3A%0A%0AGracias";
-
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black text-white">
@@ -41,15 +38,6 @@ export function Footer() {
               className="block text-sm text-white/50 transition hover:text-white"
             >
               info@dekaelomedia.com
-            </a>
-
-            <a
-              href={waLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-sm text-white/50 transition hover:text-white"
-            >
-              +56 9 2008 0031
             </a>
 
             <p className="text-sm text-white/25">Santiago, Chile</p>
@@ -139,9 +127,7 @@ export function Footer() {
               Privacidad y condiciones
             </Link>
 
-            <span>
-              © {new Date().getFullYear()} Dekaelo Media
-            </span>
+            <span>© {new Date().getFullYear()} Dekaelo Media</span>
 
             <a
               href="https://www.tronxweb.cl"
