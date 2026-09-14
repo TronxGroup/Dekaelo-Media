@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
-
-const waLink =
-  "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20sobre%20un%20proyecto%20con%20Dekaelo%20Media.%0A%0AEmpresa%3A%0AQue%20necesito%3A%0AFecha%20tentativa%3A%0A%0AGracias";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Chile 2030 | Nuestra Visión | Dekaelo Media",
@@ -143,18 +140,18 @@ export default function VisionChile2030Page() {
         </p>
 
         <p>
-  Nuestra posición en el Pacífico. La conexión natural con
-  Asia-Pacífico. La capacidad de generar energía limpia a gran escala.
-  El potencial científico y tecnológico de nuestras universidades y
-  centros de investigación. La fortaleza de industrias estratégicas
-  para la economía global. La capacidad de atraer talento, inversión y
-  conocimiento.
-</p>
+          Nuestra posición en el Pacífico. La conexión natural con
+          Asia-Pacífico. La capacidad de generar energía limpia a gran escala.
+          El potencial científico y tecnológico de nuestras universidades y
+          centros de investigación. La fortaleza de industrias estratégicas
+          para la economía global. La capacidad de atraer talento, inversión y
+          conocimiento.
+        </p>
 
-<p>
-  Chile posee ventajas que pocos países de su tamaño tienen al mismo
-  tiempo.
-</p>
+        <p>
+          Chile posee ventajas que pocos países de su tamaño tienen al mismo
+          tiempo.
+        </p>
 
         <p>
           Los países que prosperarán durante los próximos años serán aquellos
@@ -197,53 +194,53 @@ export default function VisionChile2030Page() {
 
       {/* MEDIOS */}
 
-<Section
-  eyebrow="La transformación"
-  title="Las organizaciones del futuro construirán sus propios canales de comunicación"
->
-  <p>
-    Durante gran parte del siglo XX las organizaciones dependieron de
-    terceros para comunicar.
-  </p>
+      <Section
+        eyebrow="La transformación"
+        title="Las organizaciones del futuro construirán sus propios canales de comunicación"
+      >
+        <p>
+          Durante gran parte del siglo XX las organizaciones dependieron de
+          terceros para comunicar.
+        </p>
 
-  <p>
-    Dependían de medios tradicionales, campañas publicitarias, acciones
-    puntuales de marketing o comunicados esporádicos.
-  </p>
+        <p>
+          Dependían de medios tradicionales, campañas publicitarias, acciones
+          puntuales de marketing o comunicados esporádicos.
+        </p>
 
-  <p>
-    Ese modelo está evolucionando.
-  </p>
+        <p>
+          Ese modelo está evolucionando.
+        </p>
 
-  <p>
-    Las organizaciones más relevantes de la próxima década no solo
-    comunicarán cuando tengan algo que anunciar. Construirán canales
-    propios, compartirán conocimiento y mantendrán conversaciones
-    permanentes con sus audiencias.
-  </p>
+        <p>
+          Las organizaciones más relevantes de la próxima década no solo
+          comunicarán cuando tengan algo que anunciar. Construirán canales
+          propios, compartirán conocimiento y mantendrán conversaciones
+          permanentes con sus audiencias.
+        </p>
 
-  <p>
-    Algunas ya están avanzando en esa dirección. Desarrollan series
-    documentales, producen vodcasts, generan contenido educativo,
-    construyen comunidades y crean espacios de conversación para
-    clientes, colaboradores, inversionistas y audiencias
-    internacionales.
-  </p>
+        <p>
+          Algunas ya están avanzando en esa dirección. Desarrollan series
+          documentales, producen vodcasts, generan contenido educativo,
+          construyen comunidades y crean espacios de conversación para
+          clientes, colaboradores, inversionistas y audiencias
+          internacionales.
+        </p>
 
-  <p>
-    Ya no competirán únicamente por clientes. También competirán por
-    atención, confianza y relevancia.
-  </p>
+        <p>
+          Ya no competirán únicamente por clientes. También competirán por
+          atención, confianza y relevancia.
+        </p>
 
-  <p className="text-white">
-    Comunicarán de forma más frecuente, directa y continua.
-  </p>
+        <p className="text-white">
+          Comunicarán de forma más frecuente, directa y continua.
+        </p>
 
-  <p className="text-white">
-    La comunicación dejará de ser un evento puntual para transformarse
-    en una capacidad estratégica.
-  </p>
-</Section>
+        <p className="text-white">
+          La comunicación dejará de ser un evento puntual para transformarse
+          en una capacidad estratégica.
+        </p>
+      </Section>
 
       {/* INFRAESTRUCTURA */}
 
@@ -262,22 +259,22 @@ export default function VisionChile2030Page() {
         </p>
 
         <p>
-  Bibliotecas audiovisuales. Series documentales. Vodcasts
-  corporativos. Comunicación interna. Contenido multilingüe.
-  Formación digital. Transferencia de conocimiento. Plataformas
-  impulsadas por inteligencia artificial.
-</p>
+          Bibliotecas audiovisuales. Series documentales. Vodcasts
+          corporativos. Comunicación interna. Contenido multilingüe.
+          Formación digital. Transferencia de conocimiento. Plataformas
+          impulsadas por inteligencia artificial.
+        </p>
 
         <p>
-  El contenido dejará de ser un gasto de marketing para transformarse
-  en un activo estratégico de largo plazo.
-</p>
+          El contenido dejará de ser un gasto de marketing para transformarse
+          en un activo estratégico de largo plazo.
+        </p>
 
-<p>
-  Las próximas décadas también exigirán nuevos liderazgos, capaces de
-  comunicar con transparencia, construir confianza y movilizar
-  conocimiento.
-</p>
+        <p>
+          Las próximas décadas también exigirán nuevos liderazgos, capaces de
+          comunicar con transparencia, construir confianza y movilizar
+          conocimiento.
+        </p>
       </Section>
 
       {/* HISTORIAS */}
@@ -358,14 +355,14 @@ export default function VisionChile2030Page() {
         <div className="container max-w-5xl">
           <Eyebrow>Mirando hacia adelante</Eyebrow>
 
-         <h2 className="mt-6 text-4xl font-semibold leading-tight tracking-tight md:text-7xl">
-  El futuro no pertenece a quienes tienen más información.
-</h2>
+          <h2 className="mt-6 text-4xl font-semibold leading-tight tracking-tight md:text-7xl">
+            El futuro no pertenece a quienes tienen más información.
+          </h2>
 
-<h3 className="mt-6 text-3xl font-semibold leading-tight text-white/35 md:text-6xl">
-  Pertenece a quienes son capaces de transformarla en conocimiento,
-  confianza y valor compartido.
-</h3>
+          <h3 className="mt-6 text-3xl font-semibold leading-tight text-white/35 md:text-6xl">
+            Pertenece a quienes son capaces de transformarla en conocimiento,
+            confianza y valor compartido.
+          </h3>
         </div>
       </section>
 
@@ -388,15 +385,13 @@ export default function VisionChile2030Page() {
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <a
-              href={waLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contacto"
               className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
             >
-              Escribir por WhatsApp
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
+              Conversemos
+              <ArrowRight className="h-4 w-4" />
+            </Link>
 
             <Link
               href="/servicios"
