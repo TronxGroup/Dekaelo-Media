@@ -3,12 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 
-const waLink = "https://wa.me/56920080031?text=Hola%2C%20quiero%20conversar%20sobre%20un%20proyecto%20con%20Dekaelo%20Media.%0A%0AEmpresa%3A%0AQue%20necesito%3A%0AFecha%20tentativa%3A%0A%0AGracias";
-
 export const metadata: Metadata = {
   title: "Quiénes somos - Dekaelo Media",
-  description: "Tu departamento de contenido. Vodcast corporativo y video institucional para empresas en Chile desde 2013. Sin equipo interno, sin estructura de agencia.",
-  alternates: { canonical: "https://www.dekaelomedia.com/quienes-somos" },
+  description:
+    "Tu departamento de contenido. Vodcast corporativo y video institucional para empresas en Chile desde 2013. Sin equipo interno, sin estructura de agencia.",
+  alternates: {
+    canonical: "https://www.dekaelomedia.com/quienes-somos",
+  },
 };
 
 const stats = [
@@ -65,22 +66,32 @@ const values = [
 ];
 
 function Eyebrow(props: { children: React.ReactNode }) {
-  return <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">{props.children}</p>;
+  return (
+    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
+      {props.children}
+    </p>
+  );
 }
 
 export default function QuienesSomosPage() {
   return (
     <main className="bg-black text-white selection:bg-white selection:text-black">
-
       {/* HERO */}
       <section className="container max-w-4xl pt-28 pb-16 md:pt-36 md:pb-20">
         <Eyebrow>Quiénes somos</Eyebrow>
+
         <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
           Empezamos en el cine.
-          <span className="block text-white/35">Hoy producimos para empresas.</span>
+          <span className="block text-white/35">
+            Hoy producimos para empresas.
+          </span>
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
-          Yokai llegó al Sitges Film Festival en 2013. Ese mismo enfoque narrativo — ritmo, intención visual y construcción audiovisual — es el que aplicamos hoy a cada vodcast corporativo, documental institucional y serie de contenido para empresas en Chile.
+
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/55">
+          Yokai llegó al Sitges Film Festival en 2013. Ese mismo enfoque
+          narrativo — ritmo, intención visual y construcción audiovisual — es
+          el que aplicamos hoy a cada vodcast corporativo, documental
+          institucional y serie de contenido para empresas en Chile.
         </p>
       </section>
 
@@ -91,7 +102,9 @@ export default function QuienesSomosPage() {
             {stats.map((s) => (
               <div key={s.n} className="bg-black px-8 py-10">
                 <p className="text-4xl font-semibold text-white">{s.n}</p>
-                <p className="mt-2 text-sm text-white/40 leading-snug">{s.label}</p>
+                <p className="mt-2 text-sm leading-snug text-white/40">
+                  {s.label}
+                </p>
               </div>
             ))}
           </div>
@@ -104,20 +117,32 @@ export default function QuienesSomosPage() {
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div>
               <Eyebrow>De dónde venimos</Eyebrow>
-              <h2 className="mt-4 text-3xl font-semibold md:text-4xl">El origen define el estándar</h2>
-              <p className="mt-6 text-white/60 leading-relaxed">
-                Dekaelo nace desde el cine independiente. En 2013 produjimos Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Ese proceso definió nuestra forma de trabajar: narrativa, ritmo y criterio audiovisual aplicados hoy al contenido corporativo.
+
+              <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+                El origen define el estándar
+              </h2>
+
+              <p className="mt-6 leading-relaxed text-white/60">
+                Dekaelo nace desde el cine independiente. En 2013 produjimos
+                Yokai, largometraje seleccionado en Sitges Film Festival y
+                Buenos Aires Rojo Sangre. Ese proceso definió nuestra forma de
+                trabajar: narrativa, ritmo y criterio audiovisual aplicados hoy
+                al contenido corporativo.
               </p>
-              <p className="mt-4 text-white/60 leading-relaxed">
-                Producción continua para banca, industria y organizaciones en Chile. Lo que cambió es el formato. La forma de trabajar es la misma.
+
+              <p className="mt-4 leading-relaxed text-white/60">
+                Producción continua para banca, industria y organizaciones en
+                Chile. Lo que cambió es el formato. La forma de trabajar es la
+                misma.
               </p>
             </div>
+
             <Image
               src="/qs_dekaelo_3.png"
               alt="Rodaje Dekaelo Media"
               width={600}
               height={400}
-              className="rounded-2xl border border-white/10 object-cover w-full"
+              className="w-full rounded-2xl border border-white/10 object-cover"
             />
           </div>
         </div>
@@ -127,15 +152,29 @@ export default function QuienesSomosPage() {
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <Eyebrow>Trayectoria</Eyebrow>
-          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">El trabajo habla.</h2>
+
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+            El trabajo habla.
+          </h2>
+
           <div className="mt-12">
             {milestones.map((m, i) => (
               <div
                 key={m.year}
-                className={"grid grid-cols-[90px_1fr] gap-8 py-6" + (i !== milestones.length - 1 ? " border-b border-white/[0.08]" : "")}
+                className={
+                  "grid grid-cols-[90px_1fr] gap-8 py-6" +
+                  (i !== milestones.length - 1
+                    ? " border-b border-white/[0.08]"
+                    : "")
+                }
               >
-                <p className="text-sm font-semibold text-white/25">{m.year}</p>
-                <p className="text-sm text-white/60 leading-relaxed">{m.text}</p>
+                <p className="text-sm font-semibold text-white/25">
+                  {m.year}
+                </p>
+
+                <p className="text-sm leading-relaxed text-white/60">
+                  {m.text}
+                </p>
               </div>
             ))}
           </div>
@@ -146,35 +185,63 @@ export default function QuienesSomosPage() {
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <Eyebrow>Cómo trabajamos</Eyebrow>
-          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Proceso directo</h2>
+
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+            Proceso directo
+          </h2>
+
           <div className="mt-12 grid gap-8 md:grid-cols-4">
             {[
-              { n: "01", title: "Nos cuentas lo que necesitas", desc: "Por WhatsApp o formulario. Contacto directo desde el inicio." },
-              { n: "02", title: "Alcance y precio", desc: "Respuesta en menos de 24 horas hábiles." },
-              { n: "03", title: "Producción", desc: "Grabamos o trabajamos sobre tu material." },
-              { n: "04", title: "Entrega", desc: "Video listo para publicar. Plazos definidos desde el inicio." },
+              {
+                n: "01",
+                title: "Nos cuentas lo que necesitas",
+                desc: "A través del formulario de contacto. Partimos definiendo claramente el proyecto.",
+              },
+              {
+                n: "02",
+                title: "Alcance y precio",
+                desc: "Respuesta en menos de 24 horas hábiles.",
+              },
+              {
+                n: "03",
+                title: "Producción",
+                desc: "Grabamos o trabajamos sobre tu material.",
+              },
+              {
+                n: "04",
+                title: "Entrega",
+                desc: "Video listo para publicar. Plazos definidos desde el inicio.",
+              },
             ].map((s) => (
               <div key={s.n}>
-                <p className="text-3xl font-semibold text-white/10">{s.n}</p>
-                <h3 className="mt-3 text-sm font-semibold text-white">{s.title}</h3>
+                <p className="text-3xl font-semibold text-white/10">
+                  {s.n}
+                </p>
+
+                <h3 className="mt-3 text-sm font-semibold text-white">
+                  {s.title}
+                </h3>
+
                 <p className="mt-2 text-sm text-white/45">{s.desc}</p>
               </div>
             ))}
           </div>
+
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             <Image
               src="/qs_dekaelo_4.png"
               alt="Producción audiovisual corporativa"
               width={580}
               height={380}
-              className="rounded-2xl border border-white/10 object-cover w-full"
+              className="w-full rounded-2xl border border-white/10 object-cover"
             />
+
             <Image
               src="/qs_dekaelo_1.png"
               alt="Rodaje institucional"
               width={580}
               height={380}
-              className="rounded-2xl border border-white/10 object-cover w-full"
+              className="w-full rounded-2xl border border-white/10 object-cover"
             />
           </div>
         </div>
@@ -184,11 +251,21 @@ export default function QuienesSomosPage() {
       <section className="border-t border-white/10 py-24">
         <div className="container max-w-5xl">
           <Eyebrow>Cómo pensamos</Eyebrow>
-          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Criterio de trabajo</h2>
+
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+            Criterio de trabajo
+          </h2>
+
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {values.map((v) => (
-              <div key={v.title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <h3 className="text-base font-semibold text-white">{v.title}</h3>
+              <div
+                key={v.title}
+                className="rounded-2xl border border-white/10 bg-white/5 p-6"
+              >
+                <h3 className="text-base font-semibold text-white">
+                  {v.title}
+                </h3>
+
                 <p className="mt-2 text-sm text-white/50">{v.desc}</p>
               </div>
             ))}
@@ -196,38 +273,37 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
+      {/* VISIÓN */}
       <section className="border-t border-white/10 py-24">
-  <div className="container max-w-4xl">
+        <div className="container max-w-4xl">
+          <Eyebrow>Mirando hacia adelante</Eyebrow>
 
-    <Eyebrow>Mirando hacia adelante</Eyebrow>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+            Creemos que la comunicación será una capacidad estratégica.
+          </h2>
 
-    <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
-      Creemos que la comunicación será una capacidad estratégica.
-    </h2>
+          <p className="mt-6 max-w-3xl leading-relaxed text-white/60">
+            Las organizaciones más relevantes de la próxima década no solo
+            comunicarán cuando tengan algo que anunciar. Construirán canales
+            propios, compartirán conocimiento y desarrollarán conversaciones
+            permanentes con sus audiencias.
+          </p>
 
-    <p className="mt-6 max-w-3xl text-white/60 leading-relaxed">
-      Las organizaciones más relevantes de la próxima década no solo
-      comunicarán cuando tengan algo que anunciar. Construirán canales
-      propios, compartirán conocimiento y desarrollarán conversaciones
-      permanentes con sus audiencias.
-    </p>
+          <p className="mt-4 max-w-3xl leading-relaxed text-white/60">
+            Por eso no entendemos el contenido como una campaña puntual. Lo
+            entendemos como una herramienta para construir confianza,
+            visibilidad y relevancia a largo plazo.
+          </p>
 
-    <p className="mt-4 max-w-3xl text-white/60 leading-relaxed">
-      Por eso no entendemos el contenido como una campaña puntual.
-      Lo entendemos como una herramienta para construir confianza,
-      visibilidad y relevancia a largo plazo.
-    </p>
-
-    <Link
-      href="/vision-chile-2030"
-      className="mt-8 inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white"
-    >
-      Leer nuestra visión para Chile 2030
-      <ArrowRight className="h-4 w-4" />
-    </Link>
-
-  </div>
-</section>
+          <Link
+            href="/vision-chile-2030"
+            className="mt-8 inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white"
+          >
+            Leer nuestra visión para Chile 2030
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="border-t border-white/10 py-28">
@@ -236,34 +312,39 @@ export default function QuienesSomosPage() {
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             Más de una década produciendo video corporativo en Chile
           </div>
+
           <h2 className="text-3xl font-semibold md:text-4xl">
             Solicitar propuesta
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-white/50 leading-relaxed">
-            Cuéntanos qué necesitas. Respondemos con alcance y precio en menos de 24 horas hábiles.
+
+          <p className="mx-auto mt-5 max-w-xl leading-relaxed text-white/50">
+            Cuéntanos qué necesitas. Respondemos con alcance y precio en menos
+            de 24 horas hábiles.
           </p>
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <a
-              href={waLink}
-              target="_blank"
-              rel="noopener noreferrer"
+
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href="/contacto"
               className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
             >
-              Escribir por WhatsApp <ArrowUpRight className="h-4 w-4" />
-            </a>
+              Solicitar propuesta
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+
             <Link
               href="/servicios"
               className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/55 transition hover:bg-white/10 hover:text-white"
             >
-              Ver servicios <ArrowRight className="h-4 w-4" />
+              Ver servicios
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
+
           <p className="mt-6 text-xs text-white/25">
             Respuesta el mismo día hábil. Sin compromiso.
           </p>
         </div>
       </section>
-
     </main>
   );
 }
