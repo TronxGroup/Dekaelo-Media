@@ -12,9 +12,6 @@ export const metadata: Metadata = {
   },
 };
 
-const waLink =
-  "https://wa.me/56920080031?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20audiovisual%20con%20Dekaelo%20Media";
-
 /* =========================
 TYPES
 ========================= */
@@ -136,20 +133,20 @@ const categories: Category[] = [
       },
 
       {
-  client: "Tronx Media",
-  name: "Reality Day",
-  year: "2026",
-  tag: "Serie documental",
-  type: "video",
-  youtube: "https://www.youtube.com/embed/_xtAoqqaaEQ",
-  description:
-    "Un día real de trabajo. Sin guión. Sin intervención.",
-  bullets: [
-    "T1 E2 — No era solo mantención",
-    "Reality Day — Temporada 1",
-    "Producido por Dekaelo Media",
-  ],
-},
+        client: "Tronx Media",
+        name: "Reality Day",
+        year: "2026",
+        tag: "Serie documental",
+        type: "video",
+        youtube: "https://www.youtube.com/embed/_xtAoqqaaEQ",
+        description:
+          "Un día real de trabajo. Sin guión. Sin intervención.",
+        bullets: [
+          "T1 E2 — No era solo mantención",
+          "Reality Day — Temporada 1",
+          "Producido por Dekaelo Media",
+        ],
+      },
 
       {
         client: "Oximixo",
@@ -254,7 +251,6 @@ PAGE
 export default function PortafolioPage() {
   return (
     <main className="bg-black text-white selection:bg-white selection:text-black">
-
       {/* HERO */}
       <section className="container max-w-4xl pt-28 pb-20 md:pt-36">
         <Eyebrow>Portafolio</Eyebrow>
@@ -263,7 +259,7 @@ export default function PortafolioPage() {
           Contenido que mueve decisiones
         </h1>
 
-        <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed">
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/55">
           Vodcast, documentales, contenido corporativo y proyectos originales
           desarrollados por Dekaelo Media.
         </p>
@@ -318,7 +314,7 @@ export default function PortafolioPage() {
                         {item.client} — {item.name}
                       </h2>
 
-                      <p className="mt-5 text-white/60 leading-relaxed">
+                      <p className="mt-5 leading-relaxed text-white/60">
                         {item.description}
                       </p>
 
@@ -384,15 +380,13 @@ export default function PortafolioPage() {
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href={waLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contacto"
               className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
             >
-              Escribir por WhatsApp
+              Solicitar propuesta
               <ArrowUpRight className="h-4 w-4" />
-            </a>
+            </Link>
 
             <Link
               href="/servicios"
