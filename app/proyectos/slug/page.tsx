@@ -191,7 +191,7 @@ export default function ProjectPage({
           </h2>
 
           <a
-            href="mailto:contacto@dekaelo.cl"
+            href="mailto:info@dekaelomedia.com"
             className="group inline-flex items-center gap-3 border border-white/20 px-6 py-4 text-[10px] uppercase tracking-[0.2em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
           >
             Contactar
