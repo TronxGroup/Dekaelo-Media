@@ -1,603 +1,491 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
-import { VideoEmbed } from "./components/VideoEmbed";
-import { ClientLogos } from "./components/ClientLogos";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Dekaelo Media - Vodcast y video corporativo en Chile",
+  title: "Dekaelo Media",
   description:
-    "Tu departamento de contenido. Sin equipo interno, sin estructura de agencia. Vodcast y video corporativo para empresas en Chile.",
+    "Dekaelo Media — Distintas voces, una misma producción.",
 };
 
-const services = [
+const projects = [
   {
-    badge: "Especialidad principal",
-    badgeClass:
-      "bg-amber-500/15 text-amber-300 border border-amber-400/20",
-    name: "Producción completa",
-    tagline:
-      "Para empresas que quieren vodcast o series corporativas sin preocuparse de nada técnico.",
-    how: "Diseñamos el formato, llegamos con equipo a tu oficina y producimos la temporada completa.",
-    includes: [
-      "Diseño de formato y pauta",
-      "Grabacion profesional en tu oficina",
-      "Direccion y conduccion tecnica",
-      "Edición, subtítulos y entrega lista para publicar",
+    slug: "bice",
+    title: "BICE",
+    category: "Contenido corporativo",
+    image: "/projects/bice/hero.jpg",
+    images: [
+      "/projects/bice/01.jpg",
+      "/projects/bice/02.jpg",
+      "/projects/bice/03.jpg",
     ],
-    highlight: "Propuesta personalizada según alcance",
-    note: "Diseñado para empresas que buscan contenido continuo",
-    href: "/servicios#produccion",
   },
-
   {
-    badge: "Post-producción",
-    badgeClass: "bg-sky-500/15 text-sky-300 border border-sky-400/20",
-    name: "Post-producción",
-    tagline:
-      "Tu o tu empresa graban. Nosotros lo dejamos profesional y listo para LinkedIn o YouTube.",
-    how: "Mandas el material en bruto. Nosotros editamos, corregimos audio y color y entregamos en el formato correcto.",
-    includes: [
-      "Correccion de audio y color",
-      "Títulos, créditos y subtítulos",
-      "Formato para redes y web",
-      "Entrega en 5 días hábiles",
-      "Pago 50% adelantado",
+    slug: "lolosaurios",
+    title: "LOLOSAURIOS",
+    category: "Entretenimiento",
+    image: "/projects/lolosaurios/hero.jpg",
+    images: [
+      "/projects/lolosaurios/01.jpg",
+      "/projects/lolosaurios/02.jpg",
+      "/projects/lolosaurios/03.jpg",
     ],
-    highlight: "Proyecto definido según material y objetivos",
-    note: "Ideal para empresas que ya tienen contenido grabado",
-    href: "/servicios#postproduccion",
-  },
-];
-
-const biceImages = [
-  {
-    src: "/bice/bice-1.jpg",
-    alt: "Set vodcast BICE episodio en producción",
   },
   {
-    src: "/bice/bice-2.jpg",
-    alt: "Set vodcast BICE configuracion de camaras",
+    slug: "futbol-y-parrilla",
+    title: "FÚTBOL Y PARRILLA",
+    category: "Deporte · Entretenimiento",
+    image: "/projects/futbol-y-parrilla/hero.jpg",
+    images: [
+      "/projects/futbol-y-parrilla/01.jpg",
+      "/projects/futbol-y-parrilla/02.jpg",
+      "/projects/futbol-y-parrilla/03.jpg",
+    ],
   },
   {
-    src: "/bice/bice-3.jpg",
-    alt: "Set vodcast BICE detalle de producción",
+    slug: "break-industrial",
+    title: "BREAK INDUSTRIAL",
+    category: "Industria · Tecnología",
+    image: "/projects/break-industrial/hero.jpg",
+    images: [
+      "/projects/break-industrial/01.jpg",
+      "/projects/break-industrial/02.jpg",
+      "/projects/break-industrial/03.jpg",
+    ],
+  },
+  {
+    slug: "creando-lideres-para-asia",
+    title: "CREANDO LÍDERES PARA ASIA",
+    category: "Contenido internacional",
+    image: "/projects/creando-lideres-asia/hero.jpg",
+    images: [
+      "/projects/creando-lideres-asia/01.jpg",
+      "/projects/creando-lideres-asia/02.jpg",
+      "/projects/creando-lideres-asia/03.jpg",
+    ],
   },
 ];
 
-const forWho = [
-  "Quieres posicionar a tus lideres con un vodcast corporativo",
-  "Tu empresa hace cosas importantes pero nadie lo sabe porque no publican",
-  "Grabaste algo en un evento y lleva meses sin editar",
-  "Necesitas un video instituciónal antes de una reunión o licitación",
-];
-
-const notForWho = [
-  "Necesitas producción de TV o publicidad masiva",
-  "Buscas el precio mas bajo del mercado",
-  "No tienes claro que quieres comunicar",
-];
-
-function Chip(props: { children: React.ReactNode }) {
+export default function Home() {
   return (
-    <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-white/55">
-      {props.children}
-    </span>
-  );
-}
+    <main className="bg-[#050505] text-white">
 
-function Eyebrow(props: { children: React.ReactNode }) {
-  return (
-    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
-      {props.children}
-    </p>
-  );
-}
+      {/* =====================================================
+          HEADER
+      ====================================================== */}
 
-function CheckIcon() {
-  return (
-    <svg
-      className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"
-      fill="none"
-      viewBox="0 0 16 16"
-      stroke="currentColor"
-      strokeWidth={2.2}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3 8l3.5 3.5L13 4"
-      />
-    </svg>
-  );
-}
-
-function CrossIcon() {
-  return (
-    <svg
-      className="mt-0.5 h-4 w-4 shrink-0 text-white/20"
-      fill="none"
-      viewBox="0 0 16 16"
-      stroke="currentColor"
-      strokeWidth={2.2}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M4 4l8 8M12 4l-8 8"
-      />
-    </svg>
-  );
-}
-
-export default function Page() {
-  return (
-    <main className="bg-black text-white selection:bg-white selection:text-black">
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <Image
-          src="/bg_dekaelo.png"
-          alt=""
-          fill
-          className="object-cover object-center opacity-65"
-          priority
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/90" />
-
-        <div className="relative container max-w-5xl pt-28 pb-20 md:pt-36 md:pb-28">
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Vodcast y video corporativo para empresas en Chile.
-          </div>
-
-          <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
-            Tu departamento de contenido.{" "}
-            <span className="text-white/35">
-              Sin equipo interno, sin estructura de agencia.
-            </span>
-          </h1>
-
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/60">
-            Producimos vodcast y video corporativo para empresas en Chile desde
-            2013. Llegamos, grabamos, editamos y entregamos listo para
-            publicar. Tu empresa publica. Nosotros producimos.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Chip>Especialistas en vodcast corporativo</Chip>
-            <Chip>Entrega en 5 días hábiles</Chip>
-            <Chip>Santiago, Chile</Chip>
-          </div>
-
-          <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/contacto"
-              className="inline-flex items-center justify-center gap-2 bg-white px-8 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
-            >
-              Cuéntanos tu proyecto
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
-
-            <Link
-              href="/portafolio"
-              className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-8 py-3.5 text-sm text-white/65 transition hover:bg-white/10 hover:text-white"
-            >
-              Ver trabajos realizados
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* STATS */}
-      <section className="border-t border-white/10 py-24">
-        <div className="container max-w-5xl">
-          <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <Eyebrow>Experiencia y resultados</Eyebrow>
-
-              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-                Contenido que ya esta generando impacto.
-              </h2>
-            </div>
-
-            <div className="flex flex-col items-start gap-3">
-              <p className="text-sm text-white/40">
-                +10 años produciendo contenido audiovisual en Chile
-              </p>
-
-              <Link
-                href="/quienes-somos"
-                className="inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white"
-              >
-                Ver quienes somos
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
-            <div className="bg-black px-8 py-10">
-              <p className="text-4xl font-semibold md:text-5xl">200+</p>
-              <p className="mt-2 text-sm text-white/40">
-                piezas producidas
-              </p>
-            </div>
-
-            <div className="bg-black px-8 py-10">
-              <p className="text-4xl font-semibold md:text-5xl">3.8M</p>
-              <p className="mt-2 text-sm text-white/40">
-                visualizaciones orgánicas
-              </p>
-            </div>
-
-            <div className="bg-black px-8 py-10">
-              <p className="text-4xl font-semibold md:text-5xl">60+</p>
-              <p className="mt-2 text-sm text-white/40">
-                episodios de vodcast corporativo
-              </p>
-            </div>
-
-            <div className="bg-black px-8 py-10">
-              <p className="text-4xl font-semibold md:text-5xl">14+</p>
-              <p className="mt-2 text-sm text-white/40">
-                episodios BICE en producción activa
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* LOGOS */}
-      <section className="border-t border-white/10 py-16">
-        <div className="container">
-          <p className="mb-10 text-center text-xs uppercase tracking-widest text-white/25">
-            Algunas empresas e instituciónes con las que hemos trabajado
-          </p>
-
-          <ClientLogos />
-        </div>
-      </section>
-
-      {/* REEL */}
-      <section className="container max-w-5xl pb-24">
-        <div className="mb-8 flex items-center justify-between gap-4">
-          <Eyebrow>Reel corporativo</Eyebrow>
+      <header className="fixed left-0 top-0 z-50 w-full">
+        <div className="flex items-center justify-between px-6 py-6 md:px-10">
 
           <Link
-            href="/portafolio"
-            className="text-sm text-white/35 transition hover:text-white"
+            href="/"
+            className="relative z-10 flex items-center"
+            aria-label="Dekaelo Media"
           >
-            Ver todos los casos
+            <Image
+              src="/dekaelo-logo.png"
+              alt="Dekaelo Media"
+              width={180}
+              height={70}
+              priority
+              className="h-auto w-[135px] md:w-[165px]"
+            />
           </Link>
+
+          <nav className="hidden items-center gap-8 text-[11px] font-medium uppercase tracking-[0.18em] md:flex">
+            <a
+              href="#proyectos"
+              className="text-white/70 transition hover:text-white"
+            >
+              Proyectos
+            </a>
+
+            <a
+              href="#nosotros"
+              className="text-white/70 transition hover:text-white"
+            >
+              Nosotros
+            </a>
+
+            <a
+              href="#contacto"
+              className="text-white/70 transition hover:text-white"
+            >
+              Contacto
+            </a>
+          </nav>
+
+          <a
+            href="#contacto"
+            className="group hidden items-center gap-2 border border-white/20 px-4 py-2.5 text-[10px] uppercase tracking-[0.16em] transition hover:border-[#ff161f] hover:bg-[#ff161f] md:flex"
+          >
+            Hablemos
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
         </div>
+      </header>
 
-        <VideoEmbed
-          src="https://www.youtube.com/embed/4jDNXBkv7vU?rel=0&modestbranding=1&playsinline=1"
-          title="Dekaelo Media Reel Corporativo"
-        />
-      </section>
 
-      {/* COMO FUNCIONA */}
-      <section className="border-t border-white/10 py-24">
-        <div className="container max-w-5xl">
-          <Eyebrow>Como funciona</Eyebrow>
+      {/* =====================================================
+          HERO VIDEO
+      ====================================================== */}
 
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Tu empresa publica. Nosotros producimos.
-          </h2>
+      <section className="relative h-[100svh] min-h-[650px] overflow-hidden">
 
-          <p className="mt-5 max-w-2xl leading-relaxed text-white/50">
-            No necesitas equipo de video interno ni pagar estructura de
-            agencia. Dekaelo Media es tu departamento de contenido
-            externalizado. Llegas a grabar, nosotros nos encargamos de todo lo
-            demas.
-          </p>
+        {/* VIDEO */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/hero-poster.jpg"
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/dekaelo-reel.mp4" type="video/mp4" />
+        </video>
 
-          <div className="mt-12 grid gap-px bg-white/10 md:grid-cols-4">
-            {[
-              {
-                n: "01",
-                title: "Nos cuentas lo que necesitas",
-                desc: "A través del formulario de contacto. Sin reuniónes largas.",
-              },
-              {
-                n: "02",
-                title: "Diseñamos el formato",
-                desc: "Estructura, pauta y logística. Todo coordinado por Dekaelo.",
-              },
-              {
-                n: "03",
-                title: "Grabamos y producimos",
-                desc: "Llegamos con equipo. Tu solo apareces y hablas.",
-              },
-              {
-                n: "04",
-                title: "Entregamos listo para publicar",
-                desc: "Edición, subtítulos, formatos para cada plataforma. En 5 dias hábiles.",
-              },
-            ].map((s) => (
-              <div key={s.n} className="bg-black px-8 py-10">
-                <p className="text-3xl font-semibold text-white/15">
-                  {s.n}
-                </p>
+        {/* DARK OVERLAY */}
+        <div className="absolute inset-0 bg-black/35" />
 
-                <h3 className="mt-4 text-sm font-semibold text-white">
-                  {s.title}
-                </h3>
+        {/* GRADIENT */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-black/30" />
 
-                <p className="mt-2 text-sm leading-relaxed text-white/40">
-                  {s.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        {/* HERO CONTENT */}
+        <div className="absolute inset-x-0 bottom-0 px-6 pb-10 md:px-10 md:pb-14">
 
-      {/* CASO BICE */}
-      <section className="border-t border-white/10 py-24">
-        <div className="container max-w-5xl">
-          <div className="mb-12 flex items-end justify-between gap-4">
-            <div>
-              <Eyebrow>Caso destacado</Eyebrow>
+          <div className="max-w-5xl">
 
-              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-                BICE
-              </h2>
+            <p className="mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-white/65">
+              Dekaelo Media
+            </p>
 
-              <p className="mt-3 max-w-xl leading-relaxed text-white/50">
-                Serie vodcast instituciónal en producción continua desde 2024.
-                Temporada activa con más capítulos en camino.
-              </p>
-            </div>
+            <h1 className="max-w-4xl text-[clamp(2.7rem,7vw,7rem)] font-medium leading-[0.9] tracking-[-0.055em]">
+              Distintas voces,
+              <br />
+              <span className="text-white/65">
+                una misma producción.
+              </span>
+            </h1>
 
-            <span className="hidden shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/35 sm:inline-flex">
-              2024 - 2026
-            </span>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 md:gap-4">
-            {biceImages.map((img, i) => (
-              <div
-                key={i}
-                className={
-                  "relative overflow-hidden rounded-xl bg-white/5 " +
-                  (i === 0
-                    ? "col-span-3 aspect-video md:col-span-2 md:row-span-2 md:aspect-auto md:min-h-[320px]"
-                    : "col-span-3 aspect-video md:col-span-1")
-                }
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover transition duration-500 hover:scale-105"
-                  sizes={
-                    i === 0
-                      ? "(max-width: 768px) 100vw, 66vw"
-                      : "(max-width: 768px) 100vw, 33vw"
-                  }
-                />
-              </div>
-            ))}
-          </div>
+          <div className="mt-10 flex items-center justify-between">
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Chip>Vodcast ejecutivo</Chip>
-            <Chip>Producción completa</Chip>
-            <Chip>Temporada en curso</Chip>
+            <p className="hidden max-w-sm text-xs leading-relaxed text-white/55 md:block">
+              Producción audiovisual, contenido original y narrativas
+              para marcas, empresas y audiencias.
+            </p>
+
+            <a
+              href="#proyectos"
+              className="group flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
+            >
+              Explorar proyectos
+
+              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 transition group-hover:border-[#ff161f] group-hover:bg-[#ff161f]">
+                <ArrowDownRight className="h-4 w-4" />
+              </span>
+            </a>
+
           </div>
         </div>
       </section>
 
-      {/* SERVICIOS */}
-      <section className="container max-w-5xl border-t border-white/10 py-24">
-        <div className="mb-14 flex items-end justify-between gap-4">
+
+      {/* =====================================================
+          PROJECTS
+      ====================================================== */}
+
+      <section
+        id="proyectos"
+        className="px-6 py-24 md:px-10 md:py-36"
+      >
+
+        <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+
           <div>
-            <Eyebrow>Servicios</Eyebrow>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-[#ff161f]">
+              Nuestro trabajo
+            </p>
 
-            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-              Dos formas de trabajar juntos
+            <h2 className="mt-4 text-4xl font-medium tracking-[-0.04em] md:text-6xl">
+              Proyectos
             </h2>
           </div>
 
-          <Link
-            href="/servicios"
-            className="hidden text-sm text-white/35 transition hover:text-white sm:block"
-          >
-            Ver detalle completo
-          </Link>
+          <p className="max-w-md text-sm leading-relaxed text-white/40">
+            Contenido corporativo, entretenimiento, deporte, tecnología
+            y conversaciones que conectan con distintas audiencias.
+          </p>
+
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {services.map((s) => (
+
+        {/* PROJECT GRID */}
+
+        <div className="grid grid-cols-1 gap-x-6 gap-y-16 md:grid-cols-2">
+
+          {projects.map((project, index) => (
+
             <Link
-              key={s.name}
-              href={s.href}
-              className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 p-8 transition hover:border-white/20"
+              key={project.slug}
+              href={`/proyectos/${project.slug}`}
+              className={`group block ${
+                index === 4 ? "md:col-span-2" : ""
+              }`}
             >
-              <span
-                className={
-                  "mb-4 inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-medium " +
-                  s.badgeClass
-                }
-              >
-                {s.badge}
-              </span>
 
-              <h3 className="text-xl font-semibold leading-snug text-white">
-                {s.name}
-              </h3>
+              <div className="relative aspect-[16/9] overflow-hidden bg-white/5">
 
-              <p className="mt-3 text-sm leading-relaxed text-white/55">
-                {s.tagline}
-              </p>
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes={
+                    index === 4
+                      ? "100vw"
+                      : "(max-width: 768px) 100vw, 50vw"
+                  }
+                  className="object-cover transition duration-700 ease-out group-hover:scale-[1.035]"
+                />
 
-              <p className="mt-4 text-xs italic leading-relaxed text-white/35">
-                {s.how}
-              </p>
+                {/* HOVER */}
+                <div className="absolute inset-0 bg-black/0 transition duration-500 group-hover:bg-black/25" />
 
-              <ul className="mt-5 flex-1 space-y-2">
-                {s.includes.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2 text-sm text-white/60"
-                  >
-                    <CheckIcon />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+                <div className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-black opacity-0 transition duration-300 group-hover:opacity-100">
+                  <ArrowUpRight className="h-4 w-4" />
+                </div>
 
-              <div className="mt-6 border-t border-white/10 pt-5">
-                <p className="text-base font-semibold text-white">
-                  {s.highlight}
-                </p>
-
-                <p className="mt-0.5 text-xs text-white/35">
-                  {s.note}
-                </p>
               </div>
 
-              <div className="mt-4 flex items-center gap-1 text-sm text-white/35 transition group-hover:text-white/60">
-                Ver detalle
-                <ArrowRight className="h-3.5 w-3.5" />
+              <div className="mt-5 flex items-start justify-between gap-6">
+
+                <div>
+                  <h3 className="text-lg font-medium tracking-[-0.02em] md:text-xl">
+                    {project.title}
+                  </h3>
+
+                  <p className="mt-1 text-xs text-white/35">
+                    {project.category}
+                  </p>
+                </div>
+
+                <span className="pt-1 text-[10px] text-white/20">
+                  0{index + 1}
+                </span>
+
               </div>
+
             </Link>
+
           ))}
+
         </div>
 
-        <div className="mt-10 text-center">
-          <Link
-            href="/contacto"
-            className="inline-flex items-center gap-2 border border-white/20 bg-white/5 px-8 py-3.5 text-sm text-white/70 transition hover:bg-white hover:text-black"
-          >
-            No estás seguro cuál necesitas - escríbenos y te orientamos
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </div>
       </section>
 
-      {/* INDUSTRIAS */}
-      <section className="border-t border-white/10 py-24">
-        <div className="container max-w-5xl">
-          <Eyebrow>Experiencia en distintas industrias</Eyebrow>
 
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Desde banca hasta contenido original.
+      {/* =====================================================
+          STATEMENT
+      ====================================================== */}
+
+      <section
+        id="nosotros"
+        className="border-y border-white/10 px-6 py-28 md:px-10 md:py-40"
+      >
+
+        <div className="mx-auto max-w-7xl">
+
+          <p className="text-[10px] uppercase tracking-[0.3em] text-[#ff161f]">
+            Dekaelo Media
+          </p>
+
+          <h2 className="mt-8 max-w-6xl text-[clamp(2.5rem,6vw,6.5rem)] font-medium leading-[0.95] tracking-[-0.055em]">
+            Creamos historias.
+            <br />
+            <span className="text-white/35">
+              Conectamos audiencias.
+            </span>
           </h2>
 
-          <div className="mt-12 grid grid-cols-2 gap-6 text-sm text-white/60 md:grid-cols-3">
-            <div>BICE — Serie vodcast institucional</div>
-            <div>APCC — +25 episodios internacionales</div>
-            <div>iGromi — Industria y tecnologia</div>
-            <div>Fútbol y Parrilla — +390K vistas</div>
-            <div>Trewhela School — documental instituciónal</div>
-            <div>Oximixo — +3.8M vistas orgánicas</div>
+          <div className="mt-14 grid gap-10 md:grid-cols-2">
+
+            <div />
+
+            <p className="max-w-xl text-base leading-relaxed text-white/50 md:text-lg">
+              Dekaelo Media desarrolla y produce contenidos audiovisuales
+              para distintas industrias y audiencias. Desde conversaciones
+              corporativas hasta contenido original, entretenimiento,
+              deporte y tecnología.
+            </p>
+
           </div>
+
         </div>
+
       </section>
 
-      {/* PARA QUIEN ES */}
-      <section className="border-t border-white/10 py-24">
-        <div className="container max-w-5xl">
-          <Eyebrow>Para quien es</Eyebrow>
 
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Esto es para ti?
-          </h2>
+      {/* =====================================================
+          SERVICES / CAPABILITIES
+      ====================================================== */}
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <p className="mb-5 text-sm font-semibold text-white">
-                Si es para ti si...
-              </p>
+      <section className="px-6 py-24 md:px-10 md:py-32">
 
-              <ul className="space-y-3">
-                {forWho.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 text-sm leading-relaxed text-white/60"
-                  >
-                    <CheckIcon />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="grid gap-16 md:grid-cols-[1fr_2fr]">
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <p className="mb-5 text-sm font-semibold text-white">
-                No es para ti si...
-              </p>
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-[#ff161f]">
+              Lo que hacemos
+            </p>
 
-              <ul className="space-y-3">
-                {notForWho.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 text-sm leading-relaxed text-white/40"
-                  >
-                    <CrossIcon />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <h2 className="mt-4 text-3xl font-medium tracking-tight md:text-4xl">
+              Producción
+              <br />
+              audiovisual.
+            </h2>
+          </div>
 
-              <div className="mt-8 border-t border-white/10 pt-6">
-                <p className="text-sm leading-relaxed text-white/50">
-                  Si no estas seguro, escríbenos igual. Si no somos la mejor
-                  opcion, te lo decimos sin rodeos.
-                </p>
+
+          <div className="border-t border-white/15">
+
+            {[
+              "Contenido corporativo",
+              "Vodcast y entrevistas",
+              "Series y contenido original",
+              "Producción audiovisual",
+              "Contenido para redes",
+              "Post-producción",
+            ].map((item, index) => (
+
+              <div
+                key={item}
+                className="group flex items-center justify-between border-b border-white/10 py-6 transition hover:px-3"
+              >
+
+                <div className="flex items-center gap-6">
+
+                  <span className="text-[10px] text-[#ff161f]">
+                    0{index + 1}
+                  </span>
+
+                  <span className="text-lg text-white/75 transition group-hover:text-white md:text-2xl">
+                    {item}
+                  </span>
+
+                </div>
+
+                <ArrowUpRight className="h-4 w-4 text-white/20 transition group-hover:text-[#ff161f]" />
+
               </div>
-            </div>
+
+            ))}
+
           </div>
+
         </div>
+
       </section>
 
-      {/* CTA FINAL */}
-      <section className="border-t border-white/10 py-28">
-        <div className="container max-w-4xl text-center">
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            BICE - Cámara de Comercio Asia Pacífico - iGromi - Coesam -
-            Exploflex
-          </div>
 
-          <h2 className="text-3xl font-semibold md:text-4xl">
-            Conversamos tu proyecto?
+      {/* =====================================================
+          FINAL CTA
+      ====================================================== */}
+
+      <section
+        id="contacto"
+        className="relative overflow-hidden border-t border-white/10 px-6 py-32 md:px-10 md:py-44"
+      >
+
+        <div className="absolute right-[-10%] top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#ff161f]/10 blur-[150px]" />
+
+        <div className="relative mx-auto max-w-6xl">
+
+          <p className="text-[10px] uppercase tracking-[0.3em] text-[#ff161f]">
+            Hablemos
+          </p>
+
+          <h2 className="mt-7 max-w-5xl text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.9] tracking-[-0.06em]">
+            ¿Tienes una
+            <br />
+            <span className="text-white/35">
+              historia que contar?
+            </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-xl leading-relaxed text-white/55">
-            Cuéntanos que necesitas. Te respondemos con un alcance claro y un
-            precio concreto en menos de 24 horas hábiles.
-          </p>
+          <a
+            href="mailto:contacto@dekaelo.cl"
+            className="group mt-12 inline-flex items-center gap-4 border border-white/20 px-7 py-4 text-xs uppercase tracking-[0.18em] transition hover:border-[#ff161f] hover:bg-[#ff161f]"
+          >
+            Contactar a Dekaelo
 
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link
-              href="/contacto"
-              className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
-            >
-              Solicitar propuesta
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </a>
 
-            <Link
-              href="/servicios"
-              className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/60 transition hover:bg-white/10 hover:text-white"
-            >
-              Ver servicios
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          FOOTER
+      ====================================================== */}
+
+      <footer className="border-t border-white/10 px-6 py-10 md:px-10">
+
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+
+          <div>
+
+            <Image
+              src="/dekaelo-logo.png"
+              alt="Dekaelo Media"
+              width={180}
+              height={70}
+              className="w-[140px]"
+            />
+
+            <p className="mt-5 text-xs text-white/30">
+              Distintas voces, una misma producción.
+            </p>
+
           </div>
 
-          <p className="mt-6 text-xs text-white/25">
-            Respondemos el mismo dia habil. Sin compromiso.
-          </p>
+
+          <div className="flex gap-7 text-[10px] uppercase tracking-[0.18em] text-white/35">
+
+            <a
+              href="#proyectos"
+              className="transition hover:text-white"
+            >
+              Proyectos
+            </a>
+
+            <a
+              href="#nosotros"
+              className="transition hover:text-white"
+            >
+              Nosotros
+            </a>
+
+            <a
+              href="#contacto"
+              className="transition hover:text-white"
+            >
+              Contacto
+            </a>
+
+          </div>
+
         </div>
-      </section>
+
+        <div className="mt-12 border-t border-white/10 pt-6 text-[10px] text-white/20">
+          © {new Date().getFullYear()} Dekaelo Media
+        </div>
+
+      </footer>
+
     </main>
   );
 }
