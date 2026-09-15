@@ -13,31 +13,31 @@ const projects = [
     slug: "bice",
     title: "BICE",
     category: "Contenido corporativo",
-    image: "/projects/bice/hero.jpg",
+    image: "/projects/bice/hero.png",
   },
   {
     slug: "lolosaurios",
     title: "LOLOSAURIOS",
     category: "Entretenimiento",
-    image: "/projects/lolosaurios/hero.jpg",
+    image: "/projects/lolosaurios/hero.png",
   },
   {
     slug: "futbol-y-parrilla",
     title: "FÚTBOL Y PARRILLA",
     category: "Deporte · Entretenimiento",
-    image: "/projects/futbol-y-parrilla/hero.jpg",
+    image: "/projects/futbol-y-parrilla/hero.png",
   },
   {
     slug: "break-industrial",
     title: "BREAK INDUSTRIAL",
     category: "Industria · Tecnología",
-    image: "/projects/break-industrial/hero.jpg",
+    image: "/projects/break-industrial/hero.png",
   },
   {
     slug: "creando-lideres-para-asia",
     title: "CREANDO LÍDERES PARA ASIA",
     category: "Contenido internacional",
-    image: "/projects/creando-lideres-asia/hero.jpg",
+    image: "/projects/creando-lideres-asia/hero.png",
   },
 ];
 
