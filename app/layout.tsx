@@ -1,35 +1,43 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { LayoutShell } from "./components/LayoutShell";
 
 const siteUrl = "https://www.dekaelomedia.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+
   applicationName: "Dekaelo Media",
 
   title: {
-    default: "Dekaelo Media — Vodcast y video corporativo",
+    default: "Dekaelo Media — Producción audiovisual",
     template: "%s | Dekaelo Media",
   },
 
   description:
-    "Tu departamento de contenido. Vodcast corporativo y video institucional para empresas en Chile. Sin equipo interno, sin estructura de agencia.",
+    "Dekaelo Media. Distintas voces, una misma producción. Producción audiovisual, contenido corporativo, entretenimiento, deporte y tecnología.",
 
   keywords: [
-    "vodcast corporativo Chile",
-    "video corporativo Santiago",
-    "producción audiovisual empresas",
-    "serie institucional empresa",
-    "postproducción video corporativo",
-    "departamento de contenido externo",
+    "Dekaelo Media",
     "productora audiovisual Chile",
+    "producción audiovisual Chile",
+    "video corporativo Chile",
+    "vodcast Chile",
+    "contenido audiovisual",
+    "productora audiovisual Santiago",
   ],
 
-  alternates: { canonical: siteUrl },
+  alternates: {
+    canonical: siteUrl,
+  },
 
-  authors: [{ name: "Dekaelo Media", url: siteUrl }],
+  authors: [
+    {
+      name: "Dekaelo Media",
+      url: siteUrl,
+    },
+  ],
+
   creator: "Dekaelo Media",
   publisher: "Dekaelo Media",
 
@@ -45,31 +53,34 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "Dekaelo Media",
-    title: "Dekaelo Media — Vodcast y video corporativo",
+    title: "Dekaelo Media — Distintas voces, una misma producción.",
     description:
-      "Tu departamento de contenido. Vodcast corporativo y video institucional para empresas en Chile. Sin equipo interno, sin estructura de agencia.",
+      "Producción audiovisual, contenido corporativo, entretenimiento, deporte y tecnología.",
+
     images: [
       {
-        url: siteUrl + "/og-cover.jpg",
+        url: `${siteUrl}/og-cover.jpg`,
         width: 1200,
         height: 630,
         alt: "Dekaelo Media",
       },
     ],
+
     locale: "es_CL",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Dekaelo Media — Vodcast y video corporativo",
+    title: "Dekaelo Media — Distintas voces, una misma producción.",
     description:
-      "Tu departamento de contenido. Sin equipo interno, sin estructura de agencia. Santiago, Chile.",
-    images: [siteUrl + "/og-cover.jpg"],
+      "Producción audiovisual, contenido corporativo, entretenimiento, deporte y tecnología.",
+    images: [`${siteUrl}/og-cover.jpg`],
   },
 
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -86,7 +97,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#000000",
+  themeColor: "#050505",
 };
 
 const GA4_ID = "G-96HZDP5PVP";
@@ -101,38 +112,60 @@ export default function RootLayout({
     <html lang="es">
       <head>
         {/* Performance */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
-        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
-        <link rel="preconnect" href="https://www.youtube.com" />
-        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
-        <link rel="preconnect" href="https://i.ytimg.com" />
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+          crossOrigin=""
+        />
+
+        <link
+          rel="preconnect"
+          href="https://www.google-analytics.com"
+          crossOrigin=""
+        />
+
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </head>
 
-      <body className="bg-black text-white selection:bg-white selection:text-black">
+      <body className="bg-[#050505] text-white antialiased">
+        {/* =====================================================
+            GOOGLE ANALYTICS + GOOGLE ADS
+        ====================================================== */}
 
-        {/* Google Ads + Analytics */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`}
           strategy="afterInteractive"
         />
 
-        <Script id="gtag-init" strategy="afterInteractive">{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
 
-          gtag('config', '${GA4_ID}', {
-            anonymize_ip: true,
-            send_page_view: true
-          });
+            function gtag() {
+              dataLayer.push(arguments);
+            }
 
-          gtag('config', '${ADS_ID}');
-        `}</Script>
+            gtag('js', new Date());
 
-        <LayoutShell>{children}</LayoutShell>
+            gtag('config', '${GA4_ID}', {
+              anonymize_ip: true,
+              send_page_view: true
+            });
 
-        {/* Schema.org */}
+            gtag('config', '${ADS_ID}');
+          `}
+        </Script>
+
+        {/* =====================================================
+            SITE
+        ====================================================== */}
+
+        {children}
+
+        {/* =====================================================
+            STRUCTURED DATA
+        ====================================================== */}
+
         <Script
           id="schema"
           type="application/ld+json"
@@ -142,16 +175,20 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "Organization",
+
                 name: "Dekaelo Media",
                 url: siteUrl,
-                logo: siteUrl + "/logo.png",
+                logo: `${siteUrl}/logo.png`,
+
                 description:
-                  "Estudio de producción audiovisual en Chile. Vodcast corporativo, video institucional y contenido seriado para empresas desde 2013.",
+                  "Estudio de producción audiovisual en Chile. Producción audiovisual, contenido corporativo, entretenimiento y contenido original.",
+
                 sameAs: [
                   "https://www.instagram.com/dekaelo_media",
                   "https://www.youtube.com/@dekaelo_media",
                   "https://www.linkedin.com/company/dekaelo-media",
                 ],
+
                 contactPoint: {
                   "@type": "ContactPoint",
                   telephone: "+56-9-2008-0031",
@@ -160,30 +197,40 @@ export default function RootLayout({
                   availableLanguage: ["Spanish"],
                 },
               },
+
               {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
+
                 name: "Dekaelo Media",
                 url: siteUrl,
               },
+
               {
                 "@context": "https://schema.org",
                 "@type": "Service",
-                name: "Producción audiovisual corporativa",
+
+                name: "Producción audiovisual",
+
                 provider: {
                   "@type": "Organization",
                   name: "Dekaelo Media",
+                  url: siteUrl,
                 },
+
                 areaServed: {
                   "@type": "Country",
                   name: "Chile",
                 },
+
                 serviceType: [
-                  "Vodcast corporativo",
-                  "Serie institucional",
-                  "Producción audiovisual completa",
-                  "Postproducción de video",
-                  "Departamento de contenido externo",
+                  "Producción audiovisual",
+                  "Contenido corporativo",
+                  "Vodcast",
+                  "Entrevistas",
+                  "Contenido original",
+                  "Producción para redes sociales",
+                  "Postproducción",
                 ],
               },
             ]),
