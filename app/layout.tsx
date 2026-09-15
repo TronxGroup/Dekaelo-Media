@@ -178,7 +178,9 @@ export default function RootLayout({
 
                 name: "Dekaelo Media",
                 url: siteUrl,
-                logo: `${siteUrl}/logo.png`,
+                logo: `${siteUrl}/dekaelo-logo.png`,
+
+                email: "info@dekaelomedia.com",
 
                 description:
                   "Estudio de producción audiovisual en Chile. Producción audiovisual, contenido corporativo, entretenimiento y contenido original.",
