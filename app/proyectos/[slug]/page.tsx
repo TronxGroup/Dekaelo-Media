@@ -8,6 +8,7 @@ const projects = {
     title: "BICE",
     subtitle: "Nos une el nuevo BICE",
     category: "Comunicación interna · Cultura",
+    client: "BICECORP",
     description: "Conversaciones que conectan.",
     videoId: "AUUiBDv242k",
 
@@ -15,7 +16,7 @@ const projects = {
       "Acompañar el proceso de integración entre BICECORP y Grupo Security mediante un formato de comunicación cercano que conectara a la alta administración con sus colaboradores.",
 
     solution:
-      "Desde 2024, Dekaelo Media está a cargo de la producción audiovisual de Nos Une, desarrollando una serie de comunicación interna conducida por Paloma Ávila, con entrevistas, registro y postproducción.",
+      "Dekaelo Media desarrolló el formato Nos Une, definiendo su estructura, ritmo y dinámica audiovisual. Desde 2024, estamos a cargo de su producción audiovisual, incluyendo entrevistas, registro y postproducción.",
 
     result:
       "Una serie activa que continúa desarrollándose hasta hoy, acompañando la comunicación interna de BICE durante 2024, 2025 y 2026.",
@@ -23,7 +24,7 @@ const projects = {
     stats: [
       ["2024–2026", "producción continua"],
       ["ACTIVA", "serie vigente"],
-      ["BICE", "comunicación interna"],
+      ["BICECORP", "cliente"],
     ],
 
     hero: "/projects/bice/hero.png",
@@ -39,6 +40,7 @@ const projects = {
     title: "LOLOSAURIOS",
     subtitle: "La Nueva Tertulia",
     category: "Formato editorial · Entretenimiento",
+    client: "José Luis Larraín",
     description: "La conversación que ya no existe en televisión.",
     videoId: "8638BE6Uumg",
 
@@ -46,7 +48,7 @@ const projects = {
       "Crear un formato de conversación con identidad propia, capaz de conectar con una audiencia adulta interesada en humor, cultura y conversación.",
 
     solution:
-      "Dekaelo Media desarrolló y produjo Lolosaurios desde su lanzamiento el 12 de julio de 2026, encargándose de la producción audiovisual de los episodios y del desarrollo de contenido para YouTube e Instagram.",
+      "Dekaelo Media creó el formato Lolosaurios desde cero, desarrollando su estructura, ritmo, dinámica de conversación y lenguaje audiovisual. Desde su lanzamiento el 12 de julio de 2026, estamos a cargo de la producción de los episodios y del desarrollo de contenido para YouTube e Instagram.",
 
     result:
       "El proyecto comenzó desde cero el 12 de julio de 2026. Al 24 de septiembre, el canal de YouTube había alcanzado 2.470 suscriptores, 169.708 vistas y 22.900 horas de reproducción con 10 episodios publicados. En Instagram, Dekaelo Media también gestiona el contenido y la cuenta alcanzó 13.500 seguidores al 25 de septiembre de 2026.",
@@ -73,14 +75,15 @@ const projects = {
     title: "FÚTBOL Y PARRILLA",
     subtitle: "Fútbol, historias y buena parrilla.",
     category: "Formato editorial · Deporte",
+    client: "Ian Mac-Niven",
     description: "Historias, fútbol y conversación alrededor de la mesa.",
     videoId: "PLSfbZU_asQ",
 
     challenge:
-      "Desarrollar para Ian Mac-Niven un formato de conversación sobre fútbol chileno, bajo su nombre, capaz de convocar a referentes históricos del deporte y construir una audiencia digital.",
+      "Desarrollar un formato de conversación sobre fútbol chileno, capaz de convocar a referentes históricos del deporte y construir una audiencia digital.",
 
     solution:
-      "Dekaelo Media estuvo a cargo de la producción de los primeros cuatro episodios, desarrollando el registro audiovisual, realización y postproducción del formato.",
+      "Dekaelo Media desarrolló el formato, definiendo su estructura, ritmo, dinámica de conversación y lenguaje audiovisual. Además, estuvo a cargo de la producción de los primeros cuatro episodios, incluyendo registro, realización y postproducción.",
 
     result:
       "Los primeros cuatro episodios alcanzaron aproximadamente 316 mil vistas en conjunto dentro de una serie de 43 capítulos.",
@@ -111,6 +114,7 @@ const projects = {
     title: "BREAK INDUSTRIAL",
     subtitle: "Tecnología · Innovación · Industria",
     category: "Posicionamiento B2B · Liderazgo de industria",
+    client: "iGromi",
     description: "Conversaciones sobre innovación y transformación industrial.",
     videoId: "2G7oKXKjPl8",
 
@@ -118,14 +122,14 @@ const projects = {
       "Crear un espacio de conversación que conectara innovación, industria y emprendimiento.",
 
     solution:
-      "Una serie financiada por CORFO y auspiciada por la Universidad Andrés Bello y Colbún, con representantes de CORFO, Microsoft Sudamérica, Siemens y Kauel.",
+      "Dekaelo Media desarrolló el formato Break Industrial, definiendo su estructura, ritmo y dinámica de conversación, y estuvo a cargo de la producción audiovisual y postproducción de la serie.",
 
     result:
       "8 episodios producidos para generar contenido especializado y posicionamiento B2B alrededor de la innovación y la industria.",
 
     stats: [
       ["8", "episodios"],
-      ["CORFO", "financiamiento"],
+      ["iGromi", "cliente"],
       ["B2B", "posicionamiento"],
     ],
 
@@ -142,6 +146,7 @@ const projects = {
     title: "CREANDO LÍDERES PARA ASIA",
     subtitle: "Visión global · Liderazgo · Impacto regional",
     category: "Posicionamiento B2B · Liderazgo de industria",
+    client: "Cámara de Comercio Asia Pacífico · APCC",
     description: "Conversaciones que conectan con Asia.",
     videoId: "byTylGKp-uI",
 
@@ -149,7 +154,7 @@ const projects = {
       "Posicionar digitalmente a la Cámara de Comercio Asia Pacífico como referente en las relaciones comerciales entre Chile y Asia.",
 
     solution:
-      "Una serie internacional conducida por Guillermo Holzmann, desarrollada durante quince meses, con representantes, empresarios, diplomáticos y líderes internacionales.",
+      "Dekaelo Media desarrolló el formato de la serie, definiendo su estructura, ritmo y lenguaje audiovisual. La producción se desarrolló durante quince meses, con entrevistas a empresarios, diplomáticos y líderes internacionales.",
 
     result:
       "24 episodios producidos, más de 15 meses de continuidad editorial y más de 50 nuevos socios incorporados durante el período de emisión.",
@@ -196,7 +201,7 @@ export default function ProjectPage({
           HEADER
       ====================================================== */}
 
-      <header className="fixed left-0 top-0 z-50 w-full bg-gradient-to-b from-black/70 to-transparent px-5 py-5 md:px-10 md:py-7">
+      <header className="fixed left-0 top-0 z-50 w-full bg-gradient-to-b from-black/80 to-transparent px-5 py-5 md:px-10 md:py-7">
         <Link
           href="/"
           className="text-[10px] uppercase tracking-[0.25em] text-white/70 transition hover:text-white"
@@ -221,9 +226,23 @@ export default function ProjectPage({
             Todos los proyectos
           </Link>
 
-          <p className="mt-16 text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
-            {project.category}
-          </p>
+          {/* CATEGORY + CLIENT */}
+
+          <div className="mt-16 flex flex-col gap-3 md:flex-row md:items-center md:gap-8">
+
+            <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
+              {project.category}
+            </p>
+
+            <span className="hidden h-3 w-px bg-white/20 md:block" />
+
+            <p className="text-[10px] uppercase tracking-[0.3em] text-white/40">
+              Cliente · {project.client}
+            </p>
+
+          </div>
+
+          {/* TITLE */}
 
           <h1 className="mt-5 max-w-6xl text-[clamp(3rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
             {project.title}
@@ -235,7 +254,10 @@ export default function ProjectPage({
 
         </div>
 
+        {/* HERO IMAGE */}
+
         <div className="relative mt-14 aspect-[16/9] w-full overflow-hidden">
+
           <Image
             src={project.hero}
             alt={project.title}
@@ -244,12 +266,13 @@ export default function ProjectPage({
             sizes="100vw"
             className="object-cover"
           />
+
         </div>
 
       </section>
 
       {/* =====================================================
-          INTRO
+          PROJECT INTRO
       ====================================================== */}
 
       <section className="px-5 py-24 md:px-10 md:py-32">
@@ -260,6 +283,11 @@ export default function ProjectPage({
 
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
               El proyecto
+            </p>
+
+            <p className="mt-6 max-w-xs text-sm leading-relaxed text-white/35">
+              Dekaelo Media desarrolla formatos audiovisuales desde su
+              concepto hasta su ejecución.
             </p>
 
           </div>
@@ -282,15 +310,23 @@ export default function ProjectPage({
 
       <section className="px-5 pb-24 md:px-10 md:pb-32">
 
-        <div className="mb-8">
+        <div className="mb-8 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
 
-          <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
-            Video
+          <div>
+
+            <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
+              Proyecto audiovisual
+            </p>
+
+            <h2 className="mt-3 text-2xl font-medium md:text-3xl">
+              Ver proyecto
+            </h2>
+
+          </div>
+
+          <p className="text-xs text-white/30">
+            Video publicado en YouTube
           </p>
-
-          <h2 className="mt-3 text-2xl font-medium md:text-3xl">
-            Ver proyecto
-          </h2>
 
         </div>
 
@@ -315,7 +351,13 @@ export default function ProjectPage({
 
       <section className="border-y border-white/10 px-5 py-12 md:px-10 md:py-16">
 
-        <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3">
+        <div
+          className={`grid gap-x-8 gap-y-10 ${
+            project.stats.length > 3
+              ? "grid-cols-2 md:grid-cols-3"
+              : "grid-cols-2 md:grid-cols-3"
+          }`}
+        >
 
           {project.stats.map(([number, label]) => (
 
@@ -325,7 +367,7 @@ export default function ProjectPage({
                 {number}
               </div>
 
-              <div className="mt-2 max-w-[180px] text-[10px] uppercase tracking-[0.2em] leading-relaxed text-white/35">
+              <div className="mt-2 max-w-[200px] text-[10px] uppercase leading-relaxed tracking-[0.2em] text-white/35">
                 {label}
               </div>
 
@@ -358,8 +400,9 @@ export default function ProjectPage({
               </h2>
 
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/40">
-                Dekaelo Media produjo los primeros cuatro episodios
-                dentro de una serie de 45 capítulos.
+                Dekaelo Media desarrolló el formato y produjo los
+                primeros cuatro episodios dentro de una serie de
+                43 capítulos.
               </p>
 
             </div>
@@ -369,9 +412,13 @@ export default function ProjectPage({
               <div className="border-t border-white/20">
 
                 <div className="grid grid-cols-3 border-b border-white/10 py-4 text-[10px] uppercase tracking-[0.2em] text-white/35">
+
                   <span>Ep.</span>
+
                   <span>Vistas</span>
+
                   <span>Posición canal</span>
+
                 </div>
 
                 {project.ranking.map(
@@ -381,9 +428,13 @@ export default function ProjectPage({
                       key={episode}
                       className="grid grid-cols-3 border-b border-white/10 py-5 text-sm"
                     >
+
                       <span>{episode}</span>
+
                       <span>{views}</span>
+
                       <span>{position}</span>
+
                     </div>
 
                   )
@@ -405,6 +456,26 @@ export default function ProjectPage({
 
       <section className="px-5 py-24 md:px-10 md:py-36">
 
+        <div className="mb-20 max-w-3xl md:mb-28">
+
+          <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
+            El trabajo de Dekaelo
+          </p>
+
+          <h2 className="mt-5 text-4xl font-medium tracking-[-0.04em] md:text-6xl">
+            Del concepto
+            <br />
+            al formato.
+          </h2>
+
+          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/40 md:text-xl">
+            Desarrollamos la idea, estructura, ritmo y lenguaje audiovisual
+            de cada proyecto para convertir una conversación o concepto en
+            un formato reconocible y producible.
+          </p>
+
+        </div>
+
         <div className="grid gap-y-20 md:grid-cols-12 md:gap-y-28">
 
           {/* DESAFÍO */}
@@ -415,9 +486,9 @@ export default function ProjectPage({
               01
             </p>
 
-            <h2 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
+            <h3 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
               El desafío
-            </h2>
+            </h3>
 
           </div>
 
@@ -437,9 +508,9 @@ export default function ProjectPage({
               02
             </p>
 
-            <h2 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
-              La solución
-            </h2>
+            <h3 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
+              El formato
+            </h3>
 
           </div>
 
@@ -459,9 +530,9 @@ export default function ProjectPage({
               03
             </p>
 
-            <h2 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
+            <h3 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
               El resultado
-            </h2>
+            </h3>
 
           </div>
 
@@ -478,10 +549,66 @@ export default function ProjectPage({
       </section>
 
       {/* =====================================================
+          CAPACIDADES
+      ====================================================== */}
+
+      <section className="border-y border-white/10 px-5 py-20 md:px-10 md:py-28">
+
+        <div className="grid gap-12 md:grid-cols-12">
+
+          <div className="md:col-span-4">
+
+            <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
+              Dekaelo Media
+            </p>
+
+            <h2 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
+              Qué hacemos
+            </h2>
+
+          </div>
+
+          <div className="md:col-span-7 md:col-start-6">
+
+            <div className="grid border-t border-white/10 md:grid-cols-2">
+
+              {[
+                "Desarrollo de formatos",
+                "Concepto y estructura",
+                "Dirección audiovisual",
+                "Producción",
+                "Realización",
+                "Postproducción",
+              ].map((item, index) => (
+
+                <div
+                  key={item}
+                  className="border-b border-white/10 py-5 text-sm text-white/65 md:pr-8"
+                >
+
+                  <span className="mr-4 text-[10px] text-[#f51b24]">
+                    0{index + 1}
+                  </span>
+
+                  {item}
+
+                </div>
+
+              ))}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =====================================================
           GALERÍA
       ====================================================== */}
 
-      <section className="px-5 pb-24 md:px-10 md:pb-36">
+      <section className="px-5 py-24 md:px-10 md:py-36">
 
         <div className="mb-10">
 
