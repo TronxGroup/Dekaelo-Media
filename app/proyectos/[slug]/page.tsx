@@ -87,15 +87,15 @@ const projects = {
 
     stats: [
       ["4", "episodios producidos"],
-      ["45", "episodios del proyecto"],
+      ["43", "episodios del proyecto"],
       ["~316K", "vistas · primeros 4"],
     ],
 
     ranking: [
-      ["1", "161.472", "1°"],
-      ["2", "52.911", "6°"],
-      ["3", "35.527", "9°"],
-      ["4", "65.764", "3°"],
+      ["1", "162.460", "1°"],
+      ["2", "53.170", "6°"],
+      ["3", "35.705", "12°"],
+      ["4", "66.265", "3°"],
     ],
 
     hero: "/projects/futbol-y-parrilla/hero.png",
