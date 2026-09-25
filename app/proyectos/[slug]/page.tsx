@@ -12,18 +12,18 @@ const projects = {
     videoId: "AUUiBDv242k",
 
     challenge:
-      "Acompañar el proceso de integración entre BICECORP y Grupo Security mediante un formato de comunicación cercano que conectara a la alta administración con más de 6.600 colaboradores.",
+      "Acompañar el proceso de integración entre BICECORP y Grupo Security mediante un formato de comunicación cercano que conectara a la alta administración con sus colaboradores.",
 
     solution:
-      "La serie interna Nos Une, conducida por Paloma Ávila, comunicó decisiones estratégicas, avances del proceso de integración y mensajes de liderazgo con un lenguaje audiovisual cercano, claro y profesional.",
+      "Desde 2024, Dekaelo Media está a cargo de la producción audiovisual de Nos Une, desarrollando una serie de comunicación interna conducida por Paloma Ávila, con entrevistas, registro y postproducción.",
 
     result:
-      "Más de 14 episodios producidos y una herramienta de comunicación interna para acompañar uno de los principales procesos de integración del grupo.",
+      "Una serie activa que continúa desarrollándose hasta hoy, acompañando la comunicación interna de BICE durante 2024, 2025 y 2026.",
 
     stats: [
-      ["+14", "episodios"],
-      ["+6.600", "colaboradores"],
-      ["2024", "desde"],
+      ["2024–2026", "producción continua"],
+      ["ACTIVA", "serie vigente"],
+      ["BICE", "comunicación interna"],
     ],
 
     hero: "/projects/bice/hero.png",
@@ -39,23 +39,25 @@ const projects = {
     title: "LOLOSAURIOS",
     subtitle: "La Nueva Tertulia",
     category: "Formato editorial · Entretenimiento",
-    description:
-      "La conversación que ya no existe en televisión.",
+    description: "La conversación que ya no existe en televisión.",
     videoId: "8638BE6Uumg",
 
     challenge:
-      "Crear un formato de conversación con identidad propia y conectar con una comunidad interesada en humor, cultura y conversación.",
+      "Crear un formato de conversación con identidad propia, capaz de conectar con una audiencia adulta interesada en humor, cultura y conversación.",
 
     solution:
-      "Desarrollamos y producimos Lolosaurios como un formato editorial multiplataforma, con una producción audiovisual consistente, identidad reconocible y estrategia de publicación en YouTube.",
+      "Dekaelo Media desarrolló y produjo Lolosaurios desde su lanzamiento el 12 de julio de 2026, encargándose de la producción audiovisual de los episodios y del desarrollo de contenido para YouTube e Instagram.",
 
     result:
-      "Una temporada proyectada de 12 episodios. Al momento del dossier, el canal registraba 6 episodios publicados, 1.715 suscriptores y 88.316 vistas acumuladas.",
+      "El proyecto comenzó desde cero el 12 de julio de 2026. Al 24 de septiembre, el canal de YouTube había alcanzado 2.470 suscriptores, 169.708 vistas y 22.900 horas de reproducción con 10 episodios publicados. En Instagram, Dekaelo Media también gestiona el contenido y la cuenta alcanzó 13.500 seguidores al 25 de septiembre de 2026.",
 
     stats: [
-      ["12", "episodios temporada"],
-      ["1.715", "suscriptores"],
-      ["88.316", "vistas del canal"],
+      ["2.470", "suscriptores YouTube"],
+      ["169,7K", "vistas YouTube"],
+      ["22,9K", "horas de reproducción"],
+      ["+2,5K", "suscriptores ganados"],
+      ["13.500", "seguidores Instagram"],
+      ["10", "episodios publicados"],
     ],
 
     hero: "/projects/lolosaurios/hero.png",
@@ -71,23 +73,29 @@ const projects = {
     title: "FÚTBOL Y PARRILLA",
     subtitle: "Fútbol, historias y buena parrilla.",
     category: "Formato editorial · Deporte",
-    description:
-      "Historias, fútbol y conversación alrededor de la mesa.",
+    description: "Historias, fútbol y conversación alrededor de la mesa.",
     videoId: "PLSfbZU_asQ",
 
     challenge:
-      "Desarrollar para Ian Mac-Niven un formato de conversación sobre fútbol chileno, bajo su nombre, capaz de convocar a referentes históricos del deporte y construir una audiencia digital medible.",
+      "Desarrollar para Ian Mac-Niven un formato de conversación sobre fútbol chileno, bajo su nombre, capaz de convocar a referentes históricos del deporte y construir una audiencia digital.",
 
     solution:
-      "Desarrollamos un formato de conversación alrededor de una parrilla, reuniendo a referentes del fútbol y figuras públicas en un espacio pensado para generar conversación, historias y contenido digital.",
+      "Dekaelo Media estuvo a cargo de la producción de los primeros cuatro episodios, desarrollando el registro audiovisual, realización y postproducción del formato.",
 
     result:
-      "Los primeros cuatro episodios acumularon aproximadamente 316 mil vistas. El primer episodio alcanzó 161.472 vistas.",
+      "Los primeros cuatro episodios alcanzaron aproximadamente 316 mil vistas en conjunto dentro de una serie de 45 capítulos.",
 
     stats: [
-      ["~316K", "vistas · 4 episodios"],
-      ["161K", "vistas · episodio 1"],
-      ["2024", "producción"],
+      ["4", "episodios producidos"],
+      ["45", "episodios del proyecto"],
+      ["~316K", "vistas · primeros 4"],
+    ],
+
+    ranking: [
+      ["1", "161.472", "1°"],
+      ["2", "52.911", "6°"],
+      ["3", "35.527", "9°"],
+      ["4", "65.764", "3°"],
     ],
 
     hero: "/projects/futbol-y-parrilla/hero.png",
@@ -103,8 +111,7 @@ const projects = {
     title: "BREAK INDUSTRIAL",
     subtitle: "Tecnología · Innovación · Industria",
     category: "Posicionamiento B2B · Liderazgo de industria",
-    description:
-      "Conversaciones sobre innovación y transformación industrial.",
+    description: "Conversaciones sobre innovación y transformación industrial.",
     videoId: "2G7oKXKjPl8",
 
     challenge:
@@ -114,7 +121,7 @@ const projects = {
       "Una serie financiada por CORFO y auspiciada por la Universidad Andrés Bello y Colbún, con representantes de CORFO, Microsoft Sudamérica, Siemens y Kauel.",
 
     result:
-      "Una serie de 8 episodios orientada a generar contenido especializado y posicionamiento B2B alrededor de la innovación y la industria.",
+      "8 episodios producidos para generar contenido especializado y posicionamiento B2B alrededor de la innovación y la industria.",
 
     stats: [
       ["8", "episodios"],
@@ -135,8 +142,7 @@ const projects = {
     title: "CREANDO LÍDERES PARA ASIA",
     subtitle: "Visión global · Liderazgo · Impacto regional",
     category: "Posicionamiento B2B · Liderazgo de industria",
-    description:
-      "Conversaciones que conectan con Asia.",
+    description: "Conversaciones que conectan con Asia.",
     videoId: "byTylGKp-uI",
 
     challenge:
@@ -184,11 +190,13 @@ export default function ProjectPage({
   }
 
   return (
-    <main className="bg-[#050505] text-white">
+    <main className="min-h-screen bg-[#050505] text-white">
 
-      {/* HEADER */}
+      {/* =====================================================
+          HEADER
+      ====================================================== */}
 
-      <header className="fixed left-0 top-0 z-50 w-full px-5 py-5 md:px-10 md:py-7">
+      <header className="fixed left-0 top-0 z-50 w-full bg-gradient-to-b from-black/70 to-transparent px-5 py-5 md:px-10 md:py-7">
         <Link
           href="/"
           className="text-[10px] uppercase tracking-[0.25em] text-white/70 transition hover:text-white"
@@ -197,7 +205,9 @@ export default function ProjectPage({
         </Link>
       </header>
 
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+      ====================================================== */}
 
       <section className="relative pt-28 md:pt-36">
 
@@ -238,7 +248,9 @@ export default function ProjectPage({
 
       </section>
 
-      {/* INTRO */}
+      {/* =====================================================
+          INTRO
+      ====================================================== */}
 
       <section className="px-5 py-24 md:px-10 md:py-32">
 
@@ -264,7 +276,9 @@ export default function ProjectPage({
 
       </section>
 
-      {/* VIDEO */}
+      {/* =====================================================
+          VIDEO
+      ====================================================== */}
 
       <section className="px-5 pb-24 md:px-10 md:pb-32">
 
@@ -295,21 +309,23 @@ export default function ProjectPage({
 
       </section>
 
-      {/* STATS */}
+      {/* =====================================================
+          STATS
+      ====================================================== */}
 
       <section className="border-y border-white/10 px-5 py-12 md:px-10 md:py-16">
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3">
 
           {project.stats.map(([number, label]) => (
 
-            <div key={label}>
+            <div key={`${number}-${label}`}>
 
-              <div className="text-4xl font-medium tracking-[-0.04em] md:text-6xl">
+              <div className="text-3xl font-medium tracking-[-0.04em] md:text-5xl">
                 {number}
               </div>
 
-              <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-white/35">
+              <div className="mt-2 max-w-[180px] text-[10px] uppercase tracking-[0.2em] leading-relaxed text-white/35">
                 {label}
               </div>
 
@@ -321,7 +337,71 @@ export default function ProjectPage({
 
       </section>
 
-      {/* CASE STUDY */}
+      {/* =====================================================
+          FUTBOL Y PARRILLA — RANKING
+      ====================================================== */}
+
+      {"ranking" in project && project.ranking && (
+
+        <section className="border-b border-white/10 px-5 py-20 md:px-10 md:py-28">
+
+          <div className="grid gap-12 md:grid-cols-12">
+
+            <div className="md:col-span-4">
+
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
+                Audiencia
+              </p>
+
+              <h2 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
+                Primeros 4 episodios
+              </h2>
+
+              <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/40">
+                Dekaelo Media produjo los primeros cuatro episodios
+                dentro de una serie de 45 capítulos.
+              </p>
+
+            </div>
+
+            <div className="md:col-span-7 md:col-start-6">
+
+              <div className="border-t border-white/20">
+
+                <div className="grid grid-cols-3 border-b border-white/10 py-4 text-[10px] uppercase tracking-[0.2em] text-white/35">
+                  <span>Ep.</span>
+                  <span>Vistas</span>
+                  <span>Posición canal</span>
+                </div>
+
+                {project.ranking.map(
+                  ([episode, views, position]) => (
+
+                    <div
+                      key={episode}
+                      className="grid grid-cols-3 border-b border-white/10 py-5 text-sm"
+                    >
+                      <span>{episode}</span>
+                      <span>{views}</span>
+                      <span>{position}</span>
+                    </div>
+
+                  )
+                )}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      )}
+
+      {/* =====================================================
+          CASE STUDY
+      ====================================================== */}
 
       <section className="px-5 py-24 md:px-10 md:py-36">
 
@@ -397,7 +477,9 @@ export default function ProjectPage({
 
       </section>
 
-      {/* GALERÍA */}
+      {/* =====================================================
+          GALERÍA
+      ====================================================== */}
 
       <section className="px-5 pb-24 md:px-10 md:pb-36">
 
@@ -442,7 +524,9 @@ export default function ProjectPage({
 
       </section>
 
-      {/* CONTACT */}
+      {/* =====================================================
+          CONTACT
+      ====================================================== */}
 
       <section className="border-t border-white/10 px-5 py-28 md:px-10 md:py-36">
 
