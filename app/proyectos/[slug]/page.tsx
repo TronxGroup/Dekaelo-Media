@@ -7,19 +7,24 @@ const projects = {
   bice: {
     title: "BICE",
     subtitle: "Nos une el nuevo BICE",
-    category: "Contenido corporativo",
+    category: "Comunicación interna · Cultura",
     description: "Conversaciones que conectan.",
+    videoId: "AUUiBDv242k",
 
-    video: "https://www.youtube.com/embed/VIDEO_ID_BICE",
+    challenge:
+      "Acompañar el proceso de integración entre BICECORP y Grupo Security mediante un formato de comunicación cercano que conectara a la alta administración con más de 6.600 colaboradores.",
 
-    objective:
-      "Crear un espacio audiovisual para conversar, conectar y acercar las distintas voces que forman parte de BICE.",
-
-    work:
-      "Dekaelo Media estuvo a cargo de la producción audiovisual, registro, realización y postproducción del contenido.",
+    solution:
+      "La serie interna Nos Une, conducida por Paloma Ávila, comunicó decisiones estratégicas, avances del proceso de integración y mensajes de liderazgo con un lenguaje audiovisual cercano, claro y profesional.",
 
     result:
-      "Una serie de conversaciones desarrollada con una identidad audiovisual consistente y preparada para su difusión en plataformas digitales.",
+      "Más de 14 episodios producidos y una herramienta de comunicación interna para acompañar uno de los principales procesos de integración del grupo.",
+
+    stats: [
+      ["+14", "episodios"],
+      ["+6.600", "colaboradores"],
+      ["2024", "desde"],
+    ],
 
     hero: "/projects/bice/hero.png",
 
@@ -33,20 +38,25 @@ const projects = {
   lolosaurios: {
     title: "LOLOSAURIOS",
     subtitle: "La Nueva Tertulia",
-    category: "Entretenimiento",
+    category: "Formato editorial · Entretenimiento",
     description:
       "La conversación que ya no existe en televisión.",
+    videoId: "8638BE6Uumg",
 
-    video: "https://www.youtube.com/embed/VIDEO_ID_LOLOSAURIOS",
+    challenge:
+      "Crear un formato de conversación con identidad propia y conectar con una comunidad interesada en humor, cultura y conversación.",
 
-    objective:
-      "Crear un espacio de conversación y entretenimiento que recuperara el espíritu de las grandes tertulias televisivas.",
-
-    work:
-      "Dekaelo Media desarrolló la producción audiovisual del programa, desde la grabación multicámara hasta la edición y generación de contenidos para plataformas digitales.",
+    solution:
+      "Desarrollamos y producimos Lolosaurios como un formato editorial multiplataforma, con una producción audiovisual consistente, identidad reconocible y estrategia de publicación en YouTube.",
 
     result:
-      "Un formato audiovisual propio diseñado para televisión, YouTube y redes sociales, con una identidad reconocible y capacidad de generar contenido adicional a partir de cada episodio.",
+      "Una temporada proyectada de 12 episodios. Al momento del dossier, el canal registraba 6 episodios publicados, 1.715 suscriptores y 88.316 vistas acumuladas.",
+
+    stats: [
+      ["12", "episodios temporada"],
+      ["1.715", "suscriptores"],
+      ["88.316", "vistas del canal"],
+    ],
 
     hero: "/projects/lolosaurios/hero.png",
 
@@ -60,20 +70,25 @@ const projects = {
   "futbol-y-parrilla": {
     title: "FÚTBOL Y PARRILLA",
     subtitle: "Fútbol, historias y buena parrilla.",
-    category: "Deporte · Entretenimiento",
+    category: "Formato editorial · Deporte",
     description:
       "Historias, fútbol y conversación alrededor de la mesa.",
+    videoId: "PLSfbZU_asQ",
 
-    video: "https://www.youtube.com/embed/VIDEO_ID_FUTBOL",
+    challenge:
+      "Desarrollar para Ian Mac-Niven un formato de conversación sobre fútbol chileno, bajo su nombre, capaz de convocar a referentes históricos del deporte y construir una audiencia digital medible.",
 
-    objective:
-      "Desarrollar un formato que combinara conversación, fútbol y entretenimiento alrededor de una experiencia cercana y cotidiana.",
-
-    work:
-      "Producción audiovisual, registro, realización y postproducción del contenido.",
+    solution:
+      "Desarrollamos un formato de conversación alrededor de una parrilla, reuniendo a referentes del fútbol y figuras públicas en un espacio pensado para generar conversación, historias y contenido digital.",
 
     result:
-      "Un formato de entretenimiento construido alrededor de la conversación y la cultura futbolera.",
+      "Los primeros cuatro episodios acumularon aproximadamente 316 mil vistas. El primer episodio alcanzó 161.472 vistas.",
+
+    stats: [
+      ["~316K", "vistas · 4 episodios"],
+      ["161K", "vistas · episodio 1"],
+      ["2024", "producción"],
+    ],
 
     hero: "/projects/futbol-y-parrilla/hero.png",
 
@@ -87,20 +102,25 @@ const projects = {
   "break-industrial": {
     title: "BREAK INDUSTRIAL",
     subtitle: "Tecnología · Innovación · Industria",
-    category: "Industria · Tecnología",
+    category: "Posicionamiento B2B · Liderazgo de industria",
     description:
       "Conversaciones sobre innovación y transformación industrial.",
+    videoId: "2G7oKXKjPl8",
 
-    video: "https://www.youtube.com/embed/VIDEO_ID_BREAK",
+    challenge:
+      "Crear un espacio de conversación que conectara innovación, industria y emprendimiento.",
 
-    objective:
-      "Generar contenido audiovisual capaz de acercar temas de industria, tecnología e innovación a una audiencia profesional.",
-
-    work:
-      "Producción audiovisual, registro de entrevistas y postproducción de contenido.",
+    solution:
+      "Una serie financiada por CORFO y auspiciada por la Universidad Andrés Bello y Colbún, con representantes de CORFO, Microsoft Sudamérica, Siemens y Kauel.",
 
     result:
-      "Contenido audiovisual diseñado para comunicar conocimiento y experiencias de manera clara y atractiva.",
+      "Una serie de 8 episodios orientada a generar contenido especializado y posicionamiento B2B alrededor de la innovación y la industria.",
+
+    stats: [
+      ["8", "episodios"],
+      ["CORFO", "financiamiento"],
+      ["B2B", "posicionamiento"],
+    ],
 
     hero: "/projects/break-industrial/hero.png",
 
@@ -114,20 +134,25 @@ const projects = {
   "creando-lideres-para-asia": {
     title: "CREANDO LÍDERES PARA ASIA",
     subtitle: "Visión global · Liderazgo · Impacto regional",
-    category: "Contenido internacional",
+    category: "Posicionamiento B2B · Liderazgo de industria",
     description:
       "Conversaciones que conectan con Asia.",
+    videoId: "byTylGKp-uI",
 
-    video: "https://www.youtube.com/embed/VIDEO_ID_ASIA",
+    challenge:
+      "Posicionar digitalmente a la Cámara de Comercio Asia Pacífico como referente en las relaciones comerciales entre Chile y Asia.",
 
-    objective:
-      "Crear conversaciones audiovisuales en torno al liderazgo, la visión internacional y las relaciones con Asia.",
-
-    work:
-      "Producción audiovisual, registro de entrevistas y desarrollo de contenidos para plataformas digitales.",
+    solution:
+      "Una serie internacional conducida por Guillermo Holzmann, desarrollada durante quince meses, con representantes, empresarios, diplomáticos y líderes internacionales.",
 
     result:
-      "Una propuesta audiovisual orientada a conectar experiencias, liderazgo y oportunidades entre Chile y Asia.",
+      "24 episodios producidos, más de 15 meses de continuidad editorial y más de 50 nuevos socios incorporados durante el período de emisión.",
+
+    stats: [
+      ["24", "episodios"],
+      ["+15", "meses de continuidad"],
+      ["+50", "nuevos socios"],
+    ],
 
     hero: "/projects/creando-lideres-asia/hero.png",
 
@@ -161,9 +186,7 @@ export default function ProjectPage({
   return (
     <main className="bg-[#050505] text-white">
 
-      {/* =====================================================
-          HEADER
-      ====================================================== */}
+      {/* HEADER */}
 
       <header className="fixed left-0 top-0 z-50 w-full px-5 py-5 md:px-10 md:py-7">
         <Link
@@ -174,9 +197,7 @@ export default function ProjectPage({
         </Link>
       </header>
 
-      {/* =====================================================
-          HERO
-      ====================================================== */}
+      {/* HERO */}
 
       <section className="relative pt-28 md:pt-36">
 
@@ -217,18 +238,18 @@ export default function ProjectPage({
 
       </section>
 
-      {/* =====================================================
-          INTRO
-      ====================================================== */}
+      {/* INTRO */}
 
       <section className="px-5 py-24 md:px-10 md:py-32">
 
         <div className="grid gap-12 md:grid-cols-12">
 
           <div className="md:col-span-4">
+
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
               El proyecto
             </p>
+
           </div>
 
           <div className="md:col-span-7 md:col-start-6">
@@ -243,30 +264,26 @@ export default function ProjectPage({
 
       </section>
 
-      {/* =====================================================
-          VIDEO
-      ====================================================== */}
+      {/* VIDEO */}
 
       <section className="px-5 pb-24 md:px-10 md:pb-32">
 
-        <div className="mb-8 flex items-end justify-between">
+        <div className="mb-8">
 
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
-              Video
-            </p>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
+            Video
+          </p>
 
-            <h2 className="mt-3 text-2xl font-medium md:text-3xl">
-              El proyecto en acción
-            </h2>
-          </div>
+          <h2 className="mt-3 text-2xl font-medium md:text-3xl">
+            Ver proyecto
+          </h2>
 
         </div>
 
         <div className="relative aspect-video w-full overflow-hidden bg-black">
 
           <iframe
-            src={project.video}
+            src={`https://www.youtube.com/embed/${project.videoId}`}
             title={`${project.title} — Dekaelo Media`}
             className="absolute inset-0 h-full w-full border-0"
             loading="lazy"
@@ -278,24 +295,48 @@ export default function ProjectPage({
 
       </section>
 
-      {/* =====================================================
-          PROJECT DETAILS
-      ====================================================== */}
+      {/* STATS */}
 
-      <section className="border-t border-white/10 px-5 py-24 md:px-10 md:py-32">
+      <section className="border-y border-white/10 px-5 py-12 md:px-10 md:py-16">
 
-        <div className="grid gap-20 md:grid-cols-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
 
-          {/* OBJECTIVE */}
+          {project.stats.map(([number, label]) => (
+
+            <div key={label}>
+
+              <div className="text-4xl font-medium tracking-[-0.04em] md:text-6xl">
+                {number}
+              </div>
+
+              <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-white/35">
+                {label}
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </section>
+
+      {/* CASE STUDY */}
+
+      <section className="px-5 py-24 md:px-10 md:py-36">
+
+        <div className="grid gap-y-20 md:grid-cols-12 md:gap-y-28">
+
+          {/* DESAFÍO */}
 
           <div className="md:col-span-4">
 
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
-              Objetivo
+              01
             </p>
 
             <h2 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
-              ¿Qué buscábamos?
+              El desafío
             </h2>
 
           </div>
@@ -303,21 +344,21 @@ export default function ProjectPage({
           <div className="md:col-span-7 md:col-start-6">
 
             <p className="text-xl leading-relaxed text-white/65 md:text-3xl">
-              {project.objective}
+              {project.challenge}
             </p>
 
           </div>
 
-          {/* WHAT WE DID */}
+          {/* SOLUCIÓN */}
 
           <div className="md:col-span-4">
 
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
-              Producción
+              02
             </p>
 
             <h2 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
-              Lo que hicimos
+              La solución
             </h2>
 
           </div>
@@ -325,17 +366,17 @@ export default function ProjectPage({
           <div className="md:col-span-7 md:col-start-6">
 
             <p className="text-xl leading-relaxed text-white/65 md:text-3xl">
-              {project.work}
+              {project.solution}
             </p>
 
           </div>
 
-          {/* RESULT */}
+          {/* RESULTADO */}
 
           <div className="md:col-span-4">
 
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
-              Resultado
+              03
             </p>
 
             <h2 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
@@ -356,9 +397,7 @@ export default function ProjectPage({
 
       </section>
 
-      {/* =====================================================
-          GALERÍA
-      ====================================================== */}
+      {/* GALERÍA */}
 
       <section className="px-5 pb-24 md:px-10 md:pb-36">
 
@@ -403,9 +442,7 @@ export default function ProjectPage({
 
       </section>
 
-      {/* =====================================================
-          CONTACT
-      ====================================================== */}
+      {/* CONTACT */}
 
       <section className="border-t border-white/10 px-5 py-28 md:px-10 md:py-36">
 
