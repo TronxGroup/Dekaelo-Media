@@ -83,7 +83,7 @@ const projects = {
       "Dekaelo Media estuvo a cargo de la producción de los primeros cuatro episodios, desarrollando el registro audiovisual, realización y postproducción del formato.",
 
     result:
-      "Los primeros cuatro episodios alcanzaron aproximadamente 316 mil vistas en conjunto dentro de una serie de 45 capítulos.",
+      "Los primeros cuatro episodios alcanzaron aproximadamente 316 mil vistas en conjunto dentro de una serie de 43 capítulos.",
 
     stats: [
       ["4", "episodios producidos"],
