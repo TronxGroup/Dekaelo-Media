@@ -21,17 +21,22 @@ const milestones = [
   {
     year: "2016–2020",
     title: "Producción corporativa",
-    text: "Producción y postproducción para empresas de industria, tecnología y educación. Desarrollo de contenido corporativo y postproducción para Ripley. Algunos clientes de la época fueron Tapp, Grupo KGHM Chile, Trewhela's School, Acmanet, iCity Chile, Inducom, U-Payments, Exploflex y Coesam.",
+    text: "Producción y postproducción para empresas de industria, tecnología y educación. Desarrollo de contenido corporativo y postproducción para Ripley. Algunos clientes de la época fueron Grupo KGHM Chile, Trewhela's School, Acmanet, iCity Chile, Inducom, U-Payments, Exploflex y Coesam.",
+  },
+  {
+    year: "2020–2021",
+    title: "Pausa",
+    text: "El 11 de marzo de 2020, con la llegada de la pandemia, se interrumpe la actividad presencial y la producción audiovisual entra en una etapa de pausa.",
   },
   {
     year: "2022–2023",
     title: "Nuevos formatos",
-    text: "Producción de series de contenido para la Cámara de Comercio Asia Pacífico. Desarrollo y ejecución de formato para iGromi.",
+    text: "Retomamos progresivamente la producción audiovisual con nuevas series de contenido para la Cámara de Comercio Asia Pacífico y el desarrollo y ejecución de formato para iGromi.",
   },
   {
     year: "2023–2026",
     title: "Formatos, vodcast y nuevos proyectos",
-    text: "Desarrollo y producción de nuevos formatos audiovisuales, incluyendo Fútbol y Parrilla, cuyo primer episodio alcanza 160K vistas, y producción continua del vodcast institucional de BICECORP desde 2024. En 2026 se suma Lolosaurios, formato editorial de conversación y entretenimiento producido por Dekaelo Media desde junio. Durante este período también se desarrolla y consolida Tronx Media con Reality Day, serie documental original.",
+    text: "Desarrollo y producción de nuevos formatos audiovisuales, incluyendo Fútbol y Parrilla, cuyo primer episodio alcanza 158K vistas, y producción continua del vodcast institucional de BICECORP desde 2024. En 2026 se suma Lolosaurios, formato editorial de conversación y entretenimiento producido por Dekaelo Media desde junio. Durante este período también se desarrolla y consolida Tronx Media con Reality Day, serie documental original.",
   },
 ];
 
