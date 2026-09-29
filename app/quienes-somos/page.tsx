@@ -21,12 +21,12 @@ const milestones = [
   {
     year: "2015",
     title: "Contenido digital",
-    text: "Desarrollo de contenido digital con alto alcance orgánico, superando 3.8M de visualizaciones en YouTube.",
+    text: "Desarrollo de contenido digital con alto alcance orgánico, superando 3.8M de visualizaciones en YouTube. Algunos clientes de la epoca:  Televisa Chile, Hasbro, Agencia Pixelia (videos Quaker y Kodak), Oximixo, Gran Logia de Chile, etc.",
   },
   {
     year: "2016–2020",
     title: "Producción corporativa",
-    text: "Producción y postproducción para empresas de industria, tecnología y educación. Desarrollo de contenido corporativo para Ripley.",
+    text: "Producción y postproducción para empresas de industria, tecnología y educación. Postproducción contenido corporativo para Ripley. Algunos clientes de la epoca:  Grupo KGHM Chile, Trewhela's School, Acmanet, iCity Chile, Inducom, U-payments, Explofelx, Coesam, etc. ",
   },
   {
     year: "2022–2023",
@@ -42,11 +42,6 @@ const milestones = [
     year: "2024–",
     title: "BICECORP",
     text: "Desde 2024, Dekaelo Media produce de manera continua el vodcast institucional de BICECORP, acompañando su comunicación interna y cultura corporativa. El proyecto continúa activo.",
-  },
-  {
-    year: "2024–2026",
-    title: "Dekaelo hoy",
-    text: "Desarrollo de nuevos formatos y lanzamiento de Tronx Media con Reality Day, serie documental original.",
   },
   {
     year: "2026–",
