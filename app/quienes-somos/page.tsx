@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   },
 };
 
+
 const milestones = [
   {
     year: "2013–2015",
@@ -39,6 +40,8 @@ const milestones = [
     text: "Desarrollo y producción de nuevos formatos audiovisuales, incluyendo Fútbol y Parrilla, cuyo primer episodio alcanza 160K vistas, y producción continua del vodcast institucional de BICECORP desde 2024. En 2026 se suma Lolosaurios, formato editorial de conversación y entretenimiento producido por Dekaelo Media desde junio. Durante este período también se desarrolla y consolida Tronx Media con Reality Day, serie documental original.",
   },
 ];
+
+
 const capabilities = [
   {
     number: "01",
@@ -61,6 +64,7 @@ const capabilities = [
     text: "Edición, color, sonido, motion graphics y versiones para distintas plataformas.",
   },
 ];
+
 
 const values = [
   {
@@ -85,6 +89,7 @@ const values = [
   },
 ];
 
+
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
@@ -93,62 +98,10 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
+
 export default function QuienesSomosPage() {
   return (
     <main className="bg-[#050505] text-white selection:bg-white selection:text-black">
-
-      {/* =====================================================
-          HEADER
-      ====================================================== */}
-
-      <header className="fixed left-0 top-0 z-50 w-full">
-        <div className="flex items-center justify-between px-5 py-5 md:px-10 md:py-7">
-
-          <Link href="/" aria-label="Dekaelo Media">
-            <Image
-              src="/dekaelo-logo.png"
-              alt="Dekaelo Media"
-              width={220}
-              height={80}
-              priority
-              className="h-auto w-[135px] md:w-[165px]"
-            />
-          </Link>
-
-          <nav className="flex items-center gap-6 text-[10px] uppercase tracking-[0.2em] md:gap-10 md:text-[11px]">
-
-            <Link
-              href="/#proyectos"
-              className="text-white/75 transition hover:text-white"
-            >
-              Proyectos
-            </Link>
-
-            <Link
-              href="/quienes-somos"
-              className="text-white"
-            >
-              Nosotros
-            </Link>
-
-            <Link
-              href="/#capacidades"
-              className="hidden text-white/75 transition hover:text-white sm:block"
-            >
-              Capacidades
-            </Link>
-
-            <Link
-              href="/#contacto"
-              className="text-white/75 transition hover:text-white"
-            >
-              Contacto
-            </Link>
-
-          </nav>
-
-        </div>
-      </header>
 
 
       {/* =====================================================
@@ -160,6 +113,7 @@ export default function QuienesSomosPage() {
         <div className="mx-auto max-w-7xl">
 
           <Eyebrow>Nosotros</Eyebrow>
+
 
           <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
 
@@ -179,6 +133,7 @@ export default function QuienesSomosPage() {
               </h1>
 
             </div>
+
 
             <div className="md:col-span-3">
 
@@ -242,6 +197,7 @@ export default function QuienesSomosPage() {
 
               </p>
 
+
               <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
 
                 Ese origen marcó nuestra manera de entender la producción
@@ -249,6 +205,7 @@ export default function QuienesSomosPage() {
                 propia.
 
               </p>
+
 
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
 
@@ -325,6 +282,7 @@ export default function QuienesSomosPage() {
                     {milestone.year}
                   </p>
 
+
                   <div>
 
                     <h3 className="text-xl font-medium md:text-2xl">
@@ -360,6 +318,7 @@ export default function QuienesSomosPage() {
 
           <Eyebrow>Dekaelo hoy</Eyebrow>
 
+
           <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
 
             <div className="md:col-span-8">
@@ -376,6 +335,7 @@ export default function QuienesSomosPage() {
               </h2>
 
             </div>
+
 
             <div className="md:col-span-4">
 
@@ -626,6 +586,7 @@ export default function QuienesSomosPage() {
                       {value.number}
                     </span>
 
+
                     <div>
 
                       <h3 className="text-xl font-medium md:text-2xl">
@@ -662,6 +623,7 @@ export default function QuienesSomosPage() {
         <div className="mx-auto max-w-7xl">
 
           <Eyebrow>Cómo trabajamos</Eyebrow>
+
 
           <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
 
@@ -797,12 +759,14 @@ export default function QuienesSomosPage() {
 
             </p>
 
+
             <p className="mt-6 text-base leading-relaxed text-white/40 md:text-lg">
 
               Construyen canales propios, comparten conocimiento y desarrollan
               conversaciones permanentes con sus audiencias.
 
             </p>
+
 
             <p className="mt-6 text-base leading-relaxed text-white/40 md:text-lg">
 
@@ -853,6 +817,7 @@ export default function QuienesSomosPage() {
 
           </h2>
 
+
           <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-white/40 md:text-lg">
 
             Cuéntanos qué quieres producir. Podemos ayudarte a convertirlo en
@@ -896,114 +861,6 @@ export default function QuienesSomosPage() {
         </div>
 
       </section>
-
-
-      {/* =====================================================
-          FOOTER
-      ====================================================== */}
-
-      <footer className="border-t border-white/10 px-5 py-10 md:px-10 md:py-12">
-
-        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-
-          {/* LOGO */}
-
-          <div>
-
-            <Image
-              src="/dekaelo-logo.png"
-              alt="Dekaelo Media"
-              width={220}
-              height={80}
-              className="w-[140px]"
-            />
-
-            <p className="mt-5 text-xs text-white/30">
-              Distintas voces, una misma producción.
-            </p>
-
-          </div>
-
-
-          {/* CONTACTO + REDES */}
-
-          <div className="flex flex-col gap-5 md:items-end">
-
-            <a
-              href="mailto:info@dekaelomedia.com"
-              className="text-sm text-white/60 transition hover:text-white"
-            >
-              info@dekaelomedia.com
-            </a>
-
-
-            <div className="flex flex-wrap gap-6 text-[10px] uppercase tracking-[0.18em]">
-
-              <a
-                href="https://www.instagram.com/dekaelo_media/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/40 transition hover:text-[#f51b24]"
-              >
-                Instagram
-              </a>
-
-
-              <a
-                href="https://www.linkedin.com/company/dekaelo-media/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/40 transition hover:text-[#f51b24]"
-              >
-                LinkedIn
-              </a>
-
-
-              <Link
-                href="/#proyectos"
-                className="text-white/40 transition hover:text-white"
-              >
-                Proyectos
-              </Link>
-
-
-              <Link
-                href="/quienes-somos"
-                className="text-white transition hover:text-white"
-              >
-                Nosotros
-              </Link>
-
-
-              <Link
-                href="/#capacidades"
-                className="text-white/40 transition hover:text-white"
-              >
-                Capacidades
-              </Link>
-
-
-              <Link
-                href="/#contacto"
-                className="text-white/40 transition hover:text-white"
-              >
-                Contacto
-              </Link>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div className="mt-12 border-t border-white/10 pt-6 text-[10px] text-white/20">
-
-          © {new Date().getFullYear()} Dekaelo Media
-
-        </div>
-
-      </footer>
 
     </main>
   );
