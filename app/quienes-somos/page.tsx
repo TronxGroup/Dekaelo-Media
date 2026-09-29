@@ -14,19 +14,14 @@ export const metadata: Metadata = {
 
 const milestones = [
   {
-    year: "2013",
+    year: "2013–2015",
     title: "El comienzo",
-    text: "Inicio en producción audiovisual con Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Producción de piezas comerciales para Editorial Televisa Chile.",
-  },
-  {
-    year: "2015",
-    title: "Contenido digital",
-    text: "Desarrollo de contenido digital con alto alcance orgánico, superando 3.8M de visualizaciones en YouTube. Algunos clientes de la epoca:  Televisa Chile, Hasbro, Agencia Pixelia (videos Quaker y Kodak), Oximixo, Gran Logia de Chile, etc.",
+    text: "Iniciamos nuestro recorrido en producción audiovisual con Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Durante estos primeros años desarrollamos piezas comerciales y contenido digital para clientes como Editorial Televisa Chile, Hasbro, Agencia Pixelia —con proyectos para Quaker y Kodak—, Oximixo y Gran Logia de Chile. En esta etapa también alcanzamos más de 3.8M de visualizaciones orgánicas en YouTube.",
   },
   {
     year: "2016–2020",
     title: "Producción corporativa",
-    text: "Producción y postproducción para empresas de industria, tecnología y educación. Postproducción contenido corporativo para Ripley. Algunos clientes de la epoca:  Grupo KGHM Chile, Trewhela's School, Acmanet, iCity Chile, Inducom, U-payments, Explofelx, Coesam, etc. ",
+    text: "Producción y postproducción para empresas de industria, tecnología y educación. Desarrollo de contenido corporativo y postproducción para Ripley. Algunos clientes de la época fueron Grupo KGHM Chile, Trewhela's School, Acmanet, iCity Chile, Inducom, U-Payments, Exploflex y Coesam.",
   },
   {
     year: "2022–2023",
