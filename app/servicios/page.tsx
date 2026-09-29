@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Servicios - Dekaelo Media",
@@ -131,65 +130,10 @@ export default function ServiciosPage() {
     <main className="bg-[#050505] text-white selection:bg-white selection:text-black">
 
       {/* =====================================================
-          HEADER
-      ====================================================== */}
-
-      <header className="fixed left-0 top-0 z-50 w-full">
-        <div className="flex items-center justify-between px-5 py-5 md:px-10 md:py-7">
-
-          <Link href="/" aria-label="Dekaelo Media">
-            <Image
-              src="/dekaelo-logo.png"
-              alt="Dekaelo Media"
-              width={220}
-              height={80}
-              priority
-              className="h-auto w-[135px] md:w-[165px]"
-            />
-          </Link>
-
-          <nav className="flex items-center gap-6 text-[10px] uppercase tracking-[0.2em] md:gap-10 md:text-[11px]">
-
-            <Link
-              href="/#proyectos"
-              className="text-white/75 transition hover:text-white"
-            >
-              Proyectos
-            </Link>
-
-            <Link
-              href="/quienes-somos"
-              className="hidden text-white/75 transition hover:text-white sm:block"
-            >
-              Nosotros
-            </Link>
-
-            <Link
-              href="/servicios"
-              className="text-white"
-            >
-              Servicios
-            </Link>
-
-            <Link
-              href="/#contacto"
-              className="text-white/75 transition hover:text-white"
-            >
-              Contacto
-            </Link>
-
-          </nav>
-
-        </div>
-      </header>
-
-
-      {/* =====================================================
           HERO
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 pb-24 pt-40 md:px-10 md:pb-36 md:pt-52">
-
         <div className="mx-auto max-w-7xl">
 
           <Eyebrow>Servicios</Eyebrow>
@@ -226,7 +170,6 @@ export default function ServiciosPage() {
           </div>
 
         </div>
-
       </section>
 
 
@@ -235,28 +178,22 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
-
         <div className="mx-auto max-w-7xl">
 
           <div className="grid gap-12 md:grid-cols-12">
 
             <div className="md:col-span-4">
-
               <Eyebrow>Nuestra forma de trabajar</Eyebrow>
-
             </div>
 
             <div className="md:col-span-8">
 
               <h2 className="max-w-5xl text-[clamp(2.7rem,6vw,6rem)] font-medium leading-[0.92] tracking-[-0.06em]">
-
                 Una producción
                 <br />
-
                 <span className="text-white/35">
                   de principio a fin.
                 </span>
-
               </h2>
 
               <p className="mt-12 max-w-3xl text-lg leading-relaxed text-white/50 md:text-xl">
@@ -276,7 +213,6 @@ export default function ServiciosPage() {
           </div>
 
         </div>
-
       </section>
 
 
@@ -285,7 +221,6 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
-
         <div className="mx-auto max-w-7xl">
 
           <div className="mb-20 max-w-3xl">
@@ -309,11 +244,9 @@ export default function ServiciosPage() {
               >
 
                 <div className="md:col-span-1">
-
                   <span className="text-[10px] uppercase tracking-[0.2em] text-[#f51b24]">
                     {service.number}
                   </span>
-
                 </div>
 
 
@@ -357,7 +290,6 @@ export default function ServiciosPage() {
           </div>
 
         </div>
-
       </section>
 
 
@@ -366,7 +298,6 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="px-5 py-24 md:px-10 md:py-36">
-
         <div className="mx-auto max-w-7xl">
 
           <div className="grid gap-16 md:grid-cols-12">
@@ -434,7 +365,6 @@ export default function ServiciosPage() {
           </div>
 
         </div>
-
       </section>
 
 
@@ -443,7 +373,6 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="border-t border-white/10 px-5 py-24 md:px-10 md:py-36">
-
         <div className="mx-auto max-w-7xl">
 
           <div className="mb-20 grid gap-12 md:grid-cols-12 md:items-end">
@@ -526,7 +455,6 @@ export default function ServiciosPage() {
           </div>
 
         </div>
-
       </section>
 
 
@@ -535,7 +463,6 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="border-t border-white/10 px-5 py-28 md:px-10 md:py-44">
-
         <div className="mx-auto max-w-7xl">
 
           <div className="grid gap-12 md:grid-cols-12 md:items-end">
@@ -545,14 +472,11 @@ export default function ServiciosPage() {
               <Eyebrow>Trabajemos juntos</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
-
                 Tenemos una idea.
                 <br />
-
                 <span className="text-white/35">
                   Hagámosla producción.
                 </span>
-
               </h2>
 
             </div>
@@ -564,15 +488,11 @@ export default function ServiciosPage() {
                 href="/#contacto"
                 className="group inline-flex items-center gap-4 text-sm uppercase tracking-[0.18em]"
               >
-
                 Hablemos
 
                 <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 transition group-hover:border-[#f51b24] group-hover:bg-[#f51b24]">
-
                   <ArrowUpRight className="h-4 w-4" />
-
                 </span>
-
               </Link>
 
             </div>
@@ -580,107 +500,7 @@ export default function ServiciosPage() {
           </div>
 
         </div>
-
       </section>
-
-
-      {/* =====================================================
-          FOOTER
-      ====================================================== */}
-
-      <footer className="border-t border-white/10 px-5 py-10 md:px-10 md:py-14">
-
-        <div className="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:items-end md:justify-between">
-
-          <div>
-
-            <Image
-              src="/dekaelo-logo.png"
-              alt="Dekaelo Media"
-              width={220}
-              height={80}
-              className="w-[140px]"
-            />
-
-            <p className="mt-5 text-xs text-white/30">
-              Distintas voces, una misma producción.
-            </p>
-
-          </div>
-
-
-          <div className="flex flex-col gap-5 md:items-end">
-
-            <a
-              href="mailto:info@dekaelomedia.com"
-              className="text-sm text-white/60 transition hover:text-white"
-            >
-              info@dekaelomedia.com
-            </a>
-
-
-            <div className="flex flex-wrap gap-6 text-[10px] uppercase tracking-[0.18em]">
-
-              <a
-                href="https://www.instagram.com/dekaelo_media/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/40 transition hover:text-[#f51b24]"
-              >
-                Instagram
-              </a>
-
-              <a
-                href="https://www.linkedin.com/company/dekaelo-media/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/40 transition hover:text-[#f51b24]"
-              >
-                LinkedIn
-              </a>
-
-              <Link
-                href="/#proyectos"
-                className="text-white/40 transition hover:text-white"
-              >
-                Proyectos
-              </Link>
-
-              <Link
-                href="/quienes-somos"
-                className="text-white/40 transition hover:text-white"
-              >
-                Nosotros
-              </Link>
-
-              <Link
-                href="/servicios"
-                className="text-white transition hover:text-white"
-              >
-                Servicios
-              </Link>
-
-              <Link
-                href="/#contacto"
-                className="text-white/40 transition hover:text-white"
-              >
-                Contacto
-              </Link>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div className="mx-auto mt-12 max-w-7xl border-t border-white/10 pt-6 text-[10px] text-white/20">
-
-          © {new Date().getFullYear()} Dekaelo Media
-
-        </div>
-
-      </footer>
 
     </main>
   );
