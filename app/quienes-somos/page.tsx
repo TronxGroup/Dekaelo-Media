@@ -36,12 +36,17 @@ const milestones = [
   {
     year: "2024",
     title: "Formatos y vodcast",
-    text: "Diseño y producción de Fútbol y Parrilla. El primer episodio alcanza 158K vistas. Inicio de producción de vodcast institucional para BICE.",
+    text: "Diseño y producción de Fútbol y Parrilla. El primer episodio alcanza 158K vistas. Inicio de producción de vodcast institucional para BICECORP.",
+  },
+  {
+    year: "2024–",
+    title: "BICECORP",
+    text: "Desde 2024, Dekaelo Media produce de manera continua el vodcast institucional de BICECORP, acompañando su comunicación interna y cultura corporativa. El proyecto continúa activo.",
   },
   {
     year: "2024–2026",
     title: "Dekaelo hoy",
-    text: "Producción continua de vodcast institucional para BICE, desarrollo de nuevos formatos y lanzamiento de Tronx Media con Reality Day.",
+    text: "Desarrollo de nuevos formatos y lanzamiento de Tronx Media con Reality Day, serie documental original.",
   },
   {
     year: "2026–",
@@ -49,6 +54,7 @@ const milestones = [
     text: "Desde junio de 2026, Dekaelo Media produce Lolosaurios, formato editorial de conversación y entretenimiento desarrollado para YouTube. El proyecto continúa activo.",
   },
 ];
+
 const capabilities = [
   {
     number: "01",
@@ -126,6 +132,7 @@ export default function QuienesSomosPage() {
           </Link>
 
           <nav className="flex items-center gap-6 text-[10px] uppercase tracking-[0.2em] md:gap-10 md:text-[11px]">
+
             <Link
               href="/#proyectos"
               className="text-white/75 transition hover:text-white"
@@ -153,6 +160,7 @@ export default function QuienesSomosPage() {
             >
               Contacto
             </Link>
+
           </nav>
 
         </div>
@@ -174,13 +182,16 @@ export default function QuienesSomosPage() {
             <div className="md:col-span-9">
 
               <h1 className="max-w-6xl text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
+
                 Empezamos
                 <br />
                 contando historias.
                 <br />
+
                 <span className="text-white/35">
                   Hoy desarrollamos formatos.
                 </span>
+
               </h1>
 
             </div>
@@ -221,41 +232,52 @@ export default function QuienesSomosPage() {
               <Eyebrow>El origen</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.7rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+
                 Antes que una
                 <br />
                 productora,
                 <br />
+
                 <span className="text-white/35">
                   fuimos cine.
                 </span>
+
               </h2>
 
             </div>
 
+
             <div className="md:col-span-7">
 
               <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
+
                 En 2013 comenzamos nuestro recorrido con{" "}
                 <span className="text-white">Yokai</span>, largometraje
                 seleccionado en Sitges Film Festival y Buenos Aires Rojo
                 Sangre.
+
               </p>
 
               <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+
                 Ese origen marcó nuestra manera de entender la producción
                 audiovisual: narrativa, ritmo, intención visual y una mirada
                 propia.
+
               </p>
 
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+
                 Hoy aplicamos esa misma forma de trabajar al contenido
                 corporativo, los formatos editoriales y la producción
                 audiovisual para empresas.
+
               </p>
 
             </div>
 
           </div>
+
 
           <div className="mt-20 md:mt-28">
 
@@ -289,20 +311,25 @@ export default function QuienesSomosPage() {
               <Eyebrow>Trayectoria</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+
                 El trabajo
                 <br />
+
                 <span className="text-white/35">
                   habla.
                 </span>
+
               </h2>
 
             </div>
 
+
             <div className="md:col-span-8">
 
               {milestones.map((milestone, index) => (
+
                 <div
-                  key={milestone.year}
+                  key={`${milestone.year}-${milestone.title}`}
                   className={`grid grid-cols-[85px_1fr] gap-6 py-8 md:grid-cols-[120px_1fr] md:gap-10 ${
                     index !== milestones.length - 1
                       ? "border-b border-white/10"
@@ -327,6 +354,7 @@ export default function QuienesSomosPage() {
                   </div>
 
                 </div>
+
               ))}
 
             </div>
@@ -353,11 +381,14 @@ export default function QuienesSomosPage() {
             <div className="md:col-span-8">
 
               <h2 className="text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.9] tracking-[-0.065em]">
+
                 Una productora.
                 <br />
+
                 <span className="text-white/35">
                   Distintos mundos.
                 </span>
+
               </h2>
 
             </div>
@@ -365,8 +396,10 @@ export default function QuienesSomosPage() {
             <div className="md:col-span-4">
 
               <p className="text-base leading-relaxed text-white/45 md:text-lg">
+
                 El formato cambia según la historia, la audiencia y el
                 objetivo. La producción mantiene el mismo estándar.
+
               </p>
 
             </div>
@@ -377,6 +410,7 @@ export default function QuienesSomosPage() {
           <div className="mt-20 grid border-t border-white/15 md:grid-cols-2">
 
             {capabilities.map((item) => (
+
               <div
                 key={item.number}
                 className="group border-b border-white/10 py-8 md:px-5 md:py-10"
@@ -405,7 +439,72 @@ export default function QuienesSomosPage() {
                 </div>
 
               </div>
+
             ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          REEL DEKAELO
+      ====================================================== */}
+
+      <section className="border-y border-white/10 px-5 py-24 md:px-10 md:py-36">
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="grid gap-12 md:grid-cols-12 md:items-end">
+
+            <div className="md:col-span-5">
+
+              <Eyebrow>Reel</Eyebrow>
+
+              <h2 className="mt-6 text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+
+                Lo que
+                <br />
+
+                <span className="text-white/35">
+                  hacemos.
+                </span>
+
+              </h2>
+
+            </div>
+
+
+            <div className="md:col-span-7">
+
+              <p className="max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+
+                Una selección de proyectos, producciones y formatos
+                desarrollados por Dekaelo Media.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div className="mt-16 md:mt-20">
+
+            <div className="relative aspect-video w-full overflow-hidden bg-white/5">
+
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube.com/embed/4jDNXBkv7vU"
+                title="Dekaelo Media — Reel"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+
+            </div>
 
           </div>
 
@@ -427,11 +526,14 @@ export default function QuienesSomosPage() {
             <Eyebrow>Experiencia</Eyebrow>
 
             <h2 className="mt-5 text-[clamp(2.8rem,5vw,5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+
               El trabajo
               <br />
+
               <span className="text-white/35">
                 habla por sí solo.
               </span>
+
             </h2>
 
           </div>
@@ -440,39 +542,54 @@ export default function QuienesSomosPage() {
           <div className="grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
 
             <div className="bg-[#050505] px-6 py-10 md:px-8 md:py-14">
+
               <p className="text-5xl font-medium tracking-[-0.05em] md:text-6xl">
                 200+
               </p>
+
               <p className="mt-3 text-xs leading-relaxed text-white/35 md:text-sm">
                 piezas producidas
               </p>
+
             </div>
 
+
             <div className="bg-[#050505] px-6 py-10 md:px-8 md:py-14">
+
               <p className="text-5xl font-medium tracking-[-0.05em] md:text-6xl">
                 60+
               </p>
+
               <p className="mt-3 text-xs leading-relaxed text-white/35 md:text-sm">
                 episodios de vodcast
               </p>
+
             </div>
 
+
             <div className="bg-[#050505] px-6 py-10 md:px-8 md:py-14">
+
               <p className="text-5xl font-medium tracking-[-0.05em] md:text-6xl">
                 3.8M
               </p>
+
               <p className="mt-3 text-xs leading-relaxed text-white/35 md:text-sm">
                 vistas en un video orgánico
               </p>
+
             </div>
 
+
             <div className="bg-[#050505] px-6 py-10 md:px-8 md:py-14">
+
               <p className="text-5xl font-medium tracking-[-0.05em] md:text-6xl">
                 6+
               </p>
+
               <p className="mt-3 text-xs leading-relaxed text-white/35 md:text-sm">
                 industrias
               </p>
+
             </div>
 
           </div>
@@ -497,20 +614,25 @@ export default function QuienesSomosPage() {
               <Eyebrow>Cómo pensamos</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+
                 Criterio
                 <br />
+
                 <span className="text-white/35">
                   de trabajo.
                 </span>
+
               </h2>
 
             </div>
+
 
             <div className="md:col-span-8">
 
               <div className="border-t border-white/15">
 
                 {values.map((value) => (
+
                   <div
                     key={value.number}
                     className="grid grid-cols-[45px_1fr] gap-5 border-b border-white/10 py-8 md:grid-cols-[60px_1fr] md:gap-8"
@@ -533,6 +655,7 @@ export default function QuienesSomosPage() {
                     </div>
 
                   </div>
+
                 ))}
 
               </div>
@@ -561,20 +684,26 @@ export default function QuienesSomosPage() {
             <div className="md:col-span-8">
 
               <h2 className="text-[clamp(3rem,6vw,6rem)] font-medium leading-[0.9] tracking-[-0.06em]">
+
                 Una idea.
                 <br />
                 Un formato.
                 <br />
+
                 <span className="text-white/35">
                   Una producción.
                 </span>
+
               </h2>
 
             </div>
 
+
             <p className="md:col-span-4 text-base leading-relaxed text-white/40 md:text-lg">
+
               Nos involucramos desde el principio para que la idea, la
               producción y el resultado final hablen el mismo lenguaje.
+
             </p>
 
           </div>
@@ -604,6 +733,7 @@ export default function QuienesSomosPage() {
                 text: "Editamos, trabajamos color y sonido y preparamos las entregas.",
               },
             ].map((step) => (
+
               <div key={step.n}>
 
                 <p className="text-4xl font-medium text-white/10">
@@ -619,6 +749,7 @@ export default function QuienesSomosPage() {
                 </p>
 
               </div>
+
             ))}
 
           </div>
@@ -662,36 +793,50 @@ export default function QuienesSomosPage() {
           <Eyebrow>Lo que viene</Eyebrow>
 
           <h2 className="mt-7 text-[clamp(3rem,6vw,6rem)] font-medium leading-[0.9] tracking-[-0.06em]">
+
             La comunicación
             <br />
+
             <span className="text-white/35">
               está cambiando.
             </span>
+
           </h2>
+
 
           <div className="mt-12 max-w-3xl">
 
             <p className="text-xl leading-relaxed text-white/55 md:text-2xl">
+
               Las organizaciones ya no solamente comunican cuando tienen algo
               que anunciar.
+
             </p>
 
             <p className="mt-6 text-base leading-relaxed text-white/40 md:text-lg">
+
               Construyen canales propios, comparten conocimiento y desarrollan
               conversaciones permanentes con sus audiencias.
+
             </p>
 
             <p className="mt-6 text-base leading-relaxed text-white/40 md:text-lg">
+
               Por eso entendemos el contenido como una herramienta para
               construir confianza, visibilidad y relevancia a largo plazo.
+
             </p>
+
 
             <Link
               href="/vision-chile-2030"
               className="mt-10 inline-flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-white/55 transition hover:text-white"
             >
+
               Conoce nuestra visión
+
               <ArrowRight className="h-4 w-4" />
+
             </Link>
 
           </div>
@@ -712,19 +857,25 @@ export default function QuienesSomosPage() {
           <Eyebrow>Hablemos</Eyebrow>
 
           <h2 className="mt-7 text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.9] tracking-[-0.06em]">
+
             Una idea puede
             <br />
             convertirse en
             <br />
+
             <span className="text-white/35">
               un formato.
             </span>
+
           </h2>
 
           <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-white/40 md:text-lg">
+
             Cuéntanos qué quieres producir. Podemos ayudarte a convertirlo en
             una propuesta audiovisual.
+
           </p>
+
 
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
@@ -732,19 +883,27 @@ export default function QuienesSomosPage() {
               href="/contacto"
               className="inline-flex items-center gap-3 bg-white px-8 py-4 text-xs uppercase tracking-[0.18em] text-black transition hover:bg-white/90"
             >
+
               Solicitar propuesta
+
               <ArrowUpRight className="h-4 w-4" />
+
             </Link>
+
 
             <Link
               href="/servicios"
               className="inline-flex items-center gap-3 border border-white/15 bg-white/5 px-8 py-4 text-xs uppercase tracking-[0.18em] text-white/55 transition hover:bg-white/10 hover:text-white"
             >
+
               Ver servicios
+
               <ArrowRight className="h-4 w-4" />
+
             </Link>
 
           </div>
+
 
           <p className="mt-6 text-xs text-white/25">
             Respuesta el mismo día hábil. Sin compromiso.
@@ -756,7 +915,7 @@ export default function QuienesSomosPage() {
 
 
       {/* =====================================================
-          FOOTER — MISMO FOOTER DEL HOME
+          FOOTER
       ====================================================== */}
 
       <footer className="border-t border-white/10 px-5 py-10 md:px-10 md:py-12">
@@ -793,6 +952,7 @@ export default function QuienesSomosPage() {
               info@dekaelomedia.com
             </a>
 
+
             <div className="flex flex-wrap gap-6 text-[10px] uppercase tracking-[0.18em]">
 
               <a
@@ -804,6 +964,7 @@ export default function QuienesSomosPage() {
                 Instagram
               </a>
 
+
               <a
                 href="https://www.linkedin.com/company/dekaelo-media/"
                 target="_blank"
@@ -813,12 +974,14 @@ export default function QuienesSomosPage() {
                 LinkedIn
               </a>
 
+
               <Link
                 href="/#proyectos"
                 className="text-white/40 transition hover:text-white"
               >
                 Proyectos
               </Link>
+
 
               <Link
                 href="/quienes-somos"
@@ -827,12 +990,14 @@ export default function QuienesSomosPage() {
                 Nosotros
               </Link>
 
+
               <Link
                 href="/#capacidades"
                 className="text-white/40 transition hover:text-white"
               >
                 Capacidades
               </Link>
+
 
               <Link
                 href="/#contacto"
