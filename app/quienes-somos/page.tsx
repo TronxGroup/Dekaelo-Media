@@ -26,7 +26,7 @@ const milestones = [
   {
     year: "2020–2021",
     title: "Pausa",
-    text: "El 11 de marzo de 2020, con la llegada de la pandemia, se interrumpe la actividad presencial y la producción audiovisual entra en una etapa de pausa.",
+    text: "El 11 de marzo de 2020, con la llegada de la pandemia, se interrumpieron la actividad presencial y la producción audiovisual, dando paso a una etapa de pausa.",
   },
   {
     year: "2022–2023",
