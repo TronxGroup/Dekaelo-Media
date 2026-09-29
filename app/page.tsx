@@ -61,60 +61,6 @@ export default function Home() {
     <main className="bg-[#050505] text-white">
 
       {/* =====================================================
-          HEADER
-      ====================================================== */}
-
-      <header className="fixed left-0 top-0 z-50 w-full">
-        <div className="flex items-center justify-between px-5 py-5 md:px-10 md:py-7">
-
-          <Link href="/" aria-label="Dekaelo Media">
-            <Image
-              src="/dekaelo-logo.png"
-              alt="Dekaelo Media"
-              width={220}
-              height={80}
-              priority
-              className="h-auto w-[135px] md:w-[165px]"
-            />
-          </Link>
-
-          <nav className="flex items-center gap-6 text-[10px] uppercase tracking-[0.2em] md:gap-10 md:text-[11px]">
-
-            <a
-              href="#proyectos"
-              className="text-white/75 transition hover:text-white"
-            >
-              Proyectos
-            </a>
-
-            <Link
-              href="/quienes-somos"
-              className="hidden text-white/75 transition hover:text-white sm:block"
-            >
-              Nosotros
-            </Link>
-
-            <a
-              href="#capacidades"
-              className="hidden text-white/75 transition hover:text-white sm:block"
-            >
-              Capacidades
-            </a>
-
-            <a
-              href="#contacto"
-              className="text-white/75 transition hover:text-white"
-            >
-              Contacto
-            </a>
-
-          </nav>
-
-        </div>
-      </header>
-
-
-      {/* =====================================================
           HERO
       ====================================================== */}
 
@@ -133,6 +79,7 @@ export default function Home() {
             type="video/mp4"
           />
         </video>
+
 
         {/* Overlay */}
 
@@ -166,6 +113,7 @@ export default function Home() {
               </h1>
 
             </div>
+
 
             <a
               href="#proyectos"
@@ -210,6 +158,7 @@ export default function Home() {
 
             </div>
 
+
             <div className="md:col-span-8">
 
               <h2 className="max-w-6xl text-[clamp(2.7rem,6.5vw,6.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
@@ -224,12 +173,14 @@ export default function Home() {
 
               </h2>
 
+
               <p className="mt-12 max-w-2xl text-lg leading-relaxed text-white/50 md:text-xl">
 
                 Dekaelo Media crea, desarrolla y produce formatos
                 audiovisuales para marcas, empresas y audiencias.
 
               </p>
+
 
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/35 md:text-lg">
 
@@ -239,7 +190,6 @@ export default function Home() {
 
               </p>
 
-              {/* Link a Nosotros */}
 
               <Link
                 href="/quienes-somos"
@@ -287,6 +237,7 @@ export default function Home() {
             </h2>
 
           </div>
+
 
           <p className="max-w-md text-sm leading-relaxed text-white/40">
 
@@ -355,6 +306,7 @@ export default function Home() {
 
                 </div>
 
+
                 <span className="pt-1 text-[10px] text-white/20">
                   0{index + 1}
                 </span>
@@ -381,6 +333,7 @@ export default function Home() {
           <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
             Cómo trabajamos
           </p>
+
 
           <h2 className="mt-8 max-w-6xl text-[clamp(2.7rem,6vw,6rem)] font-medium leading-[0.92] tracking-[-0.06em]">
 
@@ -430,12 +383,12 @@ export default function Home() {
 
 
       {/* =====================================================
-          CAPACIDADES
+          SERVICIOS
       ====================================================== */}
 
       <section
-        id="capacidades"
-        className="px-5 py-24 md:px-10 md:py-32"
+        id="servicios"
+        className="border-b border-white/10 px-5 py-24 md:px-10 md:py-32"
       >
 
         <div className="grid gap-16 md:grid-cols-[1fr_2fr]">
@@ -443,7 +396,7 @@ export default function Home() {
           <div>
 
             <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
-              Capacidades
+              Servicios
             </p>
 
             <h2 className="mt-4 text-4xl font-medium tracking-[-0.04em] md:text-5xl">
@@ -457,6 +410,22 @@ export default function Home() {
               </span>
 
             </h2>
+
+
+            <Link
+              href="/servicios"
+              className="group mt-10 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/60 transition hover:text-white"
+            >
+
+              Ver servicios
+
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition group-hover:border-[#f51b24] group-hover:bg-[#f51b24]">
+
+                <ArrowUpRight className="h-4 w-4" />
+
+              </span>
+
+            </Link>
 
           </div>
 
@@ -506,11 +475,13 @@ export default function Home() {
 
         <div className="absolute right-[-10%] top-1/2 h-[450px] w-[450px] -translate-y-1/2 rounded-full bg-[#f51b24]/10 blur-[150px]" />
 
+
         <div className="relative mx-auto max-w-6xl">
 
           <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
             Hablemos
           </p>
+
 
           <h2 className="mt-7 max-w-5xl text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.9] tracking-[-0.06em]">
 
@@ -523,6 +494,7 @@ export default function Home() {
             </span>
 
           </h2>
+
 
           <p className="mt-8 max-w-xl text-base leading-relaxed text-white/40 md:text-lg">
 
@@ -546,114 +518,6 @@ export default function Home() {
         </div>
 
       </section>
-
-
-      {/* =====================================================
-          FOOTER
-      ====================================================== */}
-
-      <footer className="border-t border-white/10 px-5 py-10 md:px-10 md:py-12">
-
-        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-
-          {/* LOGO */}
-
-          <div>
-
-            <Image
-              src="/dekaelo-logo.png"
-              alt="Dekaelo Media"
-              width={220}
-              height={80}
-              className="w-[140px]"
-            />
-
-            <p className="mt-5 text-xs text-white/30">
-              Distintas voces, una misma producción.
-            </p>
-
-          </div>
-
-
-          {/* CONTACTO + REDES */}
-
-          <div className="flex flex-col gap-5 md:items-end">
-
-            <a
-              href="mailto:info@dekaelomedia.com"
-              className="text-sm text-white/60 transition hover:text-white"
-            >
-              info@dekaelomedia.com
-            </a>
-
-
-            <div className="flex flex-wrap gap-6 text-[10px] uppercase tracking-[0.18em]">
-
-              <a
-                href="https://www.instagram.com/dekaelo_media/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/40 transition hover:text-[#f51b24]"
-              >
-                Instagram
-              </a>
-
-
-              <a
-                href="https://www.linkedin.com/company/dekaelo-media/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/40 transition hover:text-[#f51b24]"
-              >
-                LinkedIn
-              </a>
-
-
-              <a
-                href="#proyectos"
-                className="text-white/40 transition hover:text-white"
-              >
-                Proyectos
-              </a>
-
-
-              <Link
-                href="/quienes-somos"
-                className="text-white/40 transition hover:text-white"
-              >
-                Nosotros
-              </Link>
-
-
-              <a
-                href="#capacidades"
-                className="text-white/40 transition hover:text-white"
-              >
-                Capacidades
-              </a>
-
-
-              <a
-                href="#contacto"
-                className="text-white/40 transition hover:text-white"
-              >
-                Contacto
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div className="mt-12 border-t border-white/10 pt-6 text-[10px] text-white/20">
-
-          © {new Date().getFullYear()} Dekaelo Media
-
-        </div>
-
-      </footer>
 
     </main>
   );
