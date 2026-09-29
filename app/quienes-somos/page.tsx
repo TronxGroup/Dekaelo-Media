@@ -43,8 +43,12 @@ const milestones = [
     title: "Dekaelo hoy",
     text: "Producción continua de vodcast institucional para BICE, desarrollo de nuevos formatos y lanzamiento de Tronx Media con Reality Day.",
   },
+  {
+    year: "2026–",
+    title: "Lolosaurios",
+    text: "Desde junio de 2026, Dekaelo Media produce Lolosaurios, formato editorial de conversación y entretenimiento desarrollado para YouTube. El proyecto continúa activo.",
+  },
 ];
-
 const capabilities = [
   {
     number: "01",
