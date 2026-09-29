@@ -68,7 +68,6 @@ export default function Home() {
         <div className="flex items-center justify-between px-5 py-5 md:px-10 md:py-7">
 
           <Link href="/" aria-label="Dekaelo Media">
-
             <Image
               src="/dekaelo-logo.png"
               alt="Dekaelo Media"
@@ -77,7 +76,6 @@ export default function Home() {
               priority
               className="h-auto w-[135px] md:w-[165px]"
             />
-
           </Link>
 
           <nav className="flex items-center gap-6 text-[10px] uppercase tracking-[0.2em] md:gap-10 md:text-[11px]">
@@ -89,12 +87,12 @@ export default function Home() {
               Proyectos
             </a>
 
-            <a
-              href="#nosotros"
+            <Link
+              href="/quienes-somos"
               className="hidden text-white/75 transition hover:text-white sm:block"
             >
               Nosotros
-            </a>
+            </Link>
 
             <a
               href="#capacidades"
@@ -114,6 +112,7 @@ export default function Home() {
 
         </div>
       </header>
+
 
       {/* =====================================================
           HERO
@@ -140,6 +139,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/35" />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-black/25" />
+
 
         {/* Hero content */}
 
@@ -187,6 +187,7 @@ export default function Home() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           INTRO / DIFERENCIAL
@@ -238,6 +239,23 @@ export default function Home() {
 
               </p>
 
+              {/* Link a Nosotros */}
+
+              <Link
+                href="/quienes-somos"
+                className="group mt-10 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/60 transition hover:text-white"
+              >
+
+                Conocer Dekaelo
+
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition group-hover:border-[#f51b24] group-hover:bg-[#f51b24]">
+
+                  <ArrowUpRight className="h-4 w-4" />
+
+                </span>
+
+              </Link>
+
             </div>
 
           </div>
@@ -245,6 +263,7 @@ export default function Home() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           PROYECTOS
@@ -277,6 +296,7 @@ export default function Home() {
           </p>
 
         </div>
+
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-16 md:grid-cols-2">
 
@@ -316,6 +336,7 @@ export default function Home() {
 
               </div>
 
+
               <div className="mt-5 flex items-start justify-between gap-6">
 
                 <div>
@@ -348,6 +369,7 @@ export default function Home() {
 
       </section>
 
+
       {/* =====================================================
           MANIFIESTO
       ====================================================== */}
@@ -371,6 +393,7 @@ export default function Home() {
             </span>
 
           </h2>
+
 
           <div className="mt-16 grid gap-12 md:grid-cols-2">
 
@@ -405,6 +428,7 @@ export default function Home() {
 
       </section>
 
+
       {/* =====================================================
           CAPACIDADES
       ====================================================== */}
@@ -435,6 +459,7 @@ export default function Home() {
             </h2>
 
           </div>
+
 
           <div className="border-t border-white/15">
 
@@ -468,6 +493,7 @@ export default function Home() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           CONTACTO
@@ -505,6 +531,7 @@ export default function Home() {
 
           </p>
 
+
           <a
             href="mailto:info@dekaelomedia.com"
             className="group mt-12 inline-flex items-center gap-4 border border-white/20 px-7 py-4 text-xs uppercase tracking-[0.18em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
@@ -519,6 +546,7 @@ export default function Home() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           FOOTER
@@ -546,6 +574,7 @@ export default function Home() {
 
           </div>
 
+
           {/* CONTACTO + REDES */}
 
           <div className="flex flex-col gap-5 md:items-end">
@@ -556,6 +585,7 @@ export default function Home() {
             >
               info@dekaelomedia.com
             </a>
+
 
             <div className="flex flex-wrap gap-6 text-[10px] uppercase tracking-[0.18em]">
 
@@ -568,6 +598,7 @@ export default function Home() {
                 Instagram
               </a>
 
+
               <a
                 href="https://www.linkedin.com/company/dekaelo-media/"
                 target="_blank"
@@ -577,6 +608,7 @@ export default function Home() {
                 LinkedIn
               </a>
 
+
               <a
                 href="#proyectos"
                 className="text-white/40 transition hover:text-white"
@@ -584,12 +616,14 @@ export default function Home() {
                 Proyectos
               </a>
 
-              <a
-                href="#nosotros"
+
+              <Link
+                href="/quienes-somos"
                 className="text-white/40 transition hover:text-white"
               >
                 Nosotros
-              </a>
+              </Link>
+
 
               <a
                 href="#capacidades"
@@ -597,6 +631,7 @@ export default function Home() {
               >
                 Capacidades
               </a>
+
 
               <a
                 href="#contacto"
@@ -610,6 +645,7 @@ export default function Home() {
           </div>
 
         </div>
+
 
         <div className="mt-12 border-t border-white/10 pt-6 text-[10px] text-white/20">
 
