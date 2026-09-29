@@ -29,19 +29,9 @@ const milestones = [
     text: "Producción de series de contenido para la Cámara de Comercio Asia Pacífico. Desarrollo y ejecución de formato para iGromi.",
   },
   {
-    year: "2024",
-    title: "Formatos y vodcast",
-    text: "Diseño y producción de Fútbol y Parrilla. El primer episodio alcanza 158K vistas. Inicio de producción de vodcast institucional para BICECORP.",
-  },
-  {
-    year: "2024–",
-    title: "BICECORP",
-    text: "Desde 2024, Dekaelo Media produce de manera continua el vodcast institucional de BICECORP, acompañando su comunicación interna y cultura corporativa. El proyecto continúa activo.",
-  },
-  {
-    year: "2026–",
-    title: "Lolosaurios",
-    text: "Desde junio de 2026, Dekaelo Media produce Lolosaurios, formato editorial de conversación y entretenimiento desarrollado para YouTube. El proyecto continúa activo.",
+    year: "2023–2026",
+    title: "Formatos, vodcast y nuevos proyectos",
+    text: "Desarrollo y producción de nuevos formatos audiovisuales, incluyendo Fútbol y Parrilla, cuyo primer episodio alcanza 158K vistas, y producción continua del vodcast institucional de BICECORP desde 2024. En 2026 se suma Lolosaurios, formato editorial de conversación y entretenimiento producido por Dekaelo Media desde junio. Durante este período también se desarrolla y consolida Tronx Media con Reality Day, serie documental original.",
   },
 ];
 
