@@ -1,441 +1,687 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Servicios - Dekaelo Media | Video corporativo en Chile",
+  title: "Servicios - Dekaelo Media",
   description:
-    "Producción completa de vodcast y series corporativas, o post-producción de material grabado. Precios claros, entrega en 5 días hábiles.",
+    "Dekaelo Media desarrolla, produce y postproduce formatos audiovisuales, contenido corporativo y proyectos editoriales para empresas, marcas y audiencias.",
   alternates: {
     canonical: "https://www.dekaelomedia.com/servicios",
   },
 };
 
-function Eyebrow(props: { children: React.ReactNode }) {
+const services = [
+  {
+    number: "01",
+    title: "Desarrollo de formatos",
+    intro:
+      "Convertimos una idea en un formato audiovisual con identidad, estructura y posibilidades reales de producción.",
+    items: [
+      "Vodcast",
+      "Programas de conversación",
+      "Entrevistas",
+      "Series",
+      "Contenido editorial",
+      "Formatos para YouTube y plataformas digitales",
+    ],
+  },
+  {
+    number: "02",
+    title: "Concepto y estructura",
+    intro:
+      "Definimos qué contar, cómo contarlo y qué necesita cada proyecto para funcionar.",
+    items: [
+      "Concepto creativo",
+      "Estructura de episodios",
+      "Línea editorial",
+      "Guion y pauta",
+      "Diseño de secciones",
+      "Identidad audiovisual",
+    ],
+  },
+  {
+    number: "03",
+    title: "Dirección audiovisual",
+    intro:
+      "Llevamos el concepto a una propuesta visual y narrativa coherente con el proyecto.",
+    items: [
+      "Dirección",
+      "Lenguaje visual",
+      "Dirección de entrevistas",
+      "Dirección de cámaras",
+      "Puesta en escena",
+      "Criterio narrativo",
+    ],
+  },
+  {
+    number: "04",
+    title: "Producción",
+    intro:
+      "Organizamos y ejecutamos cada etapa necesaria para llevar el proyecto desde la planificación hasta el rodaje.",
+    items: [
+      "Preproducción",
+      "Planificación de rodaje",
+      "Coordinación técnica",
+      "Locaciones",
+      "Equipamiento",
+      "Producción en terreno",
+    ],
+  },
+  {
+    number: "05",
+    title: "Realización",
+    intro:
+      "Nos hacemos cargo de la ejecución audiovisual para que cada jornada de producción llegue preparada y ordenada.",
+    items: [
+      "Rodaje multicámara",
+      "Vodcast",
+      "Entrevistas",
+      "Programas",
+      "Contenido corporativo",
+      "Registro audiovisual",
+    ],
+  },
+  {
+    number: "06",
+    title: "Postproducción",
+    intro:
+      "Construimos la pieza final a partir del material registrado, cuidando narrativa, imagen, sonido y versiones.",
+    items: [
+      "Edición",
+      "Corrección de color",
+      "Diseño sonoro",
+      "Motion graphics",
+      "Subtítulos",
+      "Versiones para plataformas",
+    ],
+  },
+];
+
+const applications = [
+  {
+    title: "Vodcast corporativo",
+    text: "Formatos de conversación y contenido audiovisual para comunicación interna, cultura y posicionamiento.",
+  },
+  {
+    title: "Contenido institucional",
+    text: "Piezas audiovisuales para comunicar proyectos, equipos, productos, servicios y cultura empresarial.",
+  },
+  {
+    title: "Formatos editoriales",
+    text: "Programas y series pensados para construir una audiencia alrededor de una temática, marca o proyecto.",
+  },
+  {
+    title: "Contenido B2B",
+    text: "Producciones audiovisuales para empresas de industria, tecnología, servicios y mercados especializados.",
+  },
+];
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/35">
-      {props.children}
+    <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
+      {children}
     </p>
-  );
-}
-
-function Tag(props: {
-  children: React.ReactNode;
-  className: string;
-}) {
-  return (
-    <span
-      className={
-        "inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-medium " +
-        props.className
-      }
-    >
-      {props.children}
-    </span>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <svg
-      className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400"
-      fill="none"
-      viewBox="0 0 16 16"
-      stroke="currentColor"
-      strokeWidth={2.2}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3 8l3.5 3.5L13 4"
-      />
-    </svg>
-  );
-}
-
-function CrossIcon() {
-  return (
-    <svg
-      className="mt-0.5 h-4 w-4 shrink-0 text-white/20"
-      fill="none"
-      viewBox="0 0 16 16"
-      stroke="currentColor"
-      strokeWidth={2.2}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M4 4l8 8M12 4l-8 8"
-      />
-    </svg>
   );
 }
 
 export default function ServiciosPage() {
   return (
-    <main className="bg-black text-white selection:bg-white selection:text-black">
-      {/* HERO */}
-      <section className="container max-w-4xl pt-28 pb-16 md:pt-36 md:pb-20">
-        <Eyebrow>Servicios</Eyebrow>
+    <main className="bg-[#050505] text-white selection:bg-white selection:text-black">
 
-        <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
-          Tu departamento de contenido.
-        </h1>
+      {/* =====================================================
+          HEADER
+      ====================================================== */}
 
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/55">
-          Producción completa en terreno o post-producción de lo que tu empresa
-          ya grabó. Sin equipo interno, sin estructura de agencia. Definimos
-          alcance y precio el mismo día.
-        </p>
-      </section>
+      <header className="fixed left-0 top-0 z-50 w-full">
+        <div className="flex items-center justify-between px-5 py-5 md:px-10 md:py-7">
 
-      {/* PRODUCCION COMPLETA */}
-      <section
-        id="produccion"
-        className="scroll-mt-20 border-t border-white/10 py-24"
-      >
-        <div className="container max-w-6xl">
-          <div className="grid gap-12 lg:grid-cols-[1fr_380px] lg:items-start">
-            {/* LEFT */}
-            <div>
-              <Tag className="mb-6 border border-amber-400/20 bg-amber-500/15 text-amber-300">
-                Especialidad principal
-              </Tag>
+          <Link href="/" aria-label="Dekaelo Media">
+            <Image
+              src="/dekaelo-logo.png"
+              alt="Dekaelo Media"
+              width={220}
+              height={80}
+              priority
+              className="h-auto w-[135px] md:w-[165px]"
+            />
+          </Link>
 
-              <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
-                Producción completa
-              </h2>
+          <nav className="flex items-center gap-6 text-[10px] uppercase tracking-[0.2em] md:gap-10 md:text-[11px]">
 
-              <p className="mt-5 text-lg leading-relaxed text-white/55">
-                Somos tu equipo de producción externo. Diseñamos el formato,
-                llegamos con equipo a tu oficina y producimos la temporada
-                completa. Tu empresa aparece y publica. Nosotros nos
-                encargamos de todo lo demás.
-              </p>
-
-              <div className="mt-8 rounded-2xl border border-amber-400/15 bg-amber-500/5 p-6">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-amber-300/60">
-                  Referencia real
-                </p>
-
-                <p className="leading-relaxed text-white/70">
-                  <strong className="text-white">BICECORP</strong> lleva
-                  trabajando con nosotros desde 2024 en una serie continua de
-                  vodcast institucional. Más de 14 episodios producidos.
-                  Temporada activa en curso.
-                </p>
-              </div>
-
-              <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                <div>
-                  <p className="mb-4 text-sm font-semibold text-white">
-                    Qué incluye
-                  </p>
-
-                  <ul className="space-y-3">
-                    {[
-                      "Diseño de formato y pauta narrativa",
-                      "Grabación profesional en tu oficina",
-                      "Dirección y conducción técnica",
-                      "Edición completa con color y sonido",
-                      "Subtítulos y formatos por plataforma",
-                      "Desde 4 episodios por temporada",
-                    ].map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2.5 text-sm text-white/60"
-                      >
-                        <CheckIcon />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <p className="mb-4 text-sm font-semibold text-white">
-                    Casos de uso
-                  </p>
-
-                  <ul className="space-y-3">
-                    {[
-                      "Vodcast ejecutivo o de liderazgo",
-                      "Serie institucional para comunicación interna",
-                      "Video corporativo para licitación o presentación",
-                      "Programa de contenido continuo para LinkedIn",
-                    ].map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2.5 text-sm text-white/60"
-                      >
-                        <CheckIcon />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* RIGHT */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:sticky lg:top-24">
-              <p className="text-sm text-white/40">
-                Producción a medida
-              </p>
-
-              <p className="mt-2 text-3xl font-semibold text-white">
-                Diseñamos la propuesta según tu proyecto
-              </p>
-
-              <p className="text-sm text-white/35">
-                Cada producción se define según formato, duración, cantidad de
-                episodios y nivel de producción requerido.
-              </p>
-
-              <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4 text-sm leading-relaxed text-white/50">
-                Trabajamos principalmente con empresas que buscan construir
-                contenido continuo, series corporativas o proyectos
-                audiovisuales de largo plazo.
-              </div>
-
-              <Link
-                href="/contacto"
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
-              >
-                Solicitar propuesta
-                <ArrowUpRight className="h-4 w-4" />
-              </Link>
-
-              <Link
-                href="/contacto"
-                className="mt-3 inline-flex w-full items-center justify-center gap-2 border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/50 transition hover:bg-white/10 hover:text-white"
-              >
-                Prefiero el formulario
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-
-              <p className="mt-4 text-center text-xs text-white/25">
-                Primera conversación sin costo
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* POST PRODUCCION */}
-      <section
-        id="postproduccion"
-        className="scroll-mt-20 border-t border-white/10 py-24"
-      >
-        <div className="container max-w-6xl">
-          <div className="grid gap-12 lg:grid-cols-[1fr_380px] lg:items-start">
-            {/* LEFT */}
-            <div>
-              <Tag className="mb-6 border border-sky-400/20 bg-sky-500/15 text-sky-300">
-                Post-producción
-              </Tag>
-
-              <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
-                Post-producción
-              </h2>
-
-              <p className="mt-5 text-lg leading-relaxed text-white/55">
-                Tú o tu empresa graban. Nosotros editamos y entregamos en el
-                formato correcto para cada plataforma. Ideal para empresas que
-                ya tienen material sin editar.
-              </p>
-
-              <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-white/30">
-                  Cómo funciona
-                </p>
-
-                <p className="leading-relaxed text-white/70">
-                  <strong className="text-white">
-                    Mandas el material en bruto.
-                  </strong>{" "}
-                  Definimos alcance por escrito antes de empezar, pagas 50%
-                  adelantado y en 5 días hábiles recibes el video listo para
-                  publicar.
-                </p>
-              </div>
-
-              <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                <div>
-                  <p className="mb-4 text-sm font-semibold text-white">
-                    Qué incluye
-                  </p>
-
-                  <ul className="space-y-3">
-                    {[
-                      "Edición completa del material",
-                      "Corrección de audio y color",
-                      "Títulos, créditos y subtítulos",
-                      "Formato para redes y web",
-                      "1 ronda de revisión incluida",
-                      "Entrega en 5 días hábiles",
-                    ].map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2.5 text-sm text-white/60"
-                      >
-                        <CheckIcon />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <p className="mb-4 text-sm font-semibold text-white">
-                    Casos de uso
-                  </p>
-
-                  <ul className="space-y-3">
-                    {[
-                      "Grabación de evento corporativo",
-                      "Entrevista a gerente o fundador",
-                      "Capacitación interna filmada",
-                      "Lanzamiento de producto registrado",
-                      "Testimonio de cliente o caso de éxito",
-                    ].map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2.5 text-sm text-white/60"
-                      >
-                        <CheckIcon />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* RIGHT */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:sticky lg:top-24">
-              <p className="text-sm text-white/40">
-                Post-producción profesional
-              </p>
-
-              <p className="mt-2 text-4xl font-semibold text-white">
-                Editamos y entregamos el contenido listo para publicar
-              </p>
-
-              <p className="text-sm text-white/35">
-                Definimos cada proyecto según duración, cantidad de material,
-                nivel de edición y formatos de entrega requeridos.
-              </p>
-
-              <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4 text-sm leading-relaxed text-white/50">
-                Ideal para empresas que ya grabaron contenido y necesitan una
-                post-producción profesional adaptada a web, redes sociales o
-                comunicación interna.
-              </div>
-
-              <Link
-                href="/contacto"
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
-              >
-                Solicitar propuesta
-                <ArrowUpRight className="h-4 w-4" />
-              </Link>
-
-              <Link
-                href="/contacto"
-                className="mt-3 inline-flex w-full items-center justify-center gap-2 border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/50 transition hover:bg-white/10 hover:text-white"
-              >
-                Prefiero el formulario
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-
-              <p className="mt-4 text-center text-xs text-white/25">
-                Alcance definido antes de comenzar
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* LO QUE NO HACEMOS */}
-      <section className="border-t border-white/10 py-20">
-        <div className="container max-w-5xl">
-          <div className="grid gap-8 md:grid-cols-2">
-            <div>
-              <Eyebrow>Lo que no hacemos</Eyebrow>
-
-              <h2 className="mt-4 text-2xl font-semibold">
-                Preferimos ser claros antes de empezar
-              </h2>
-
-              <p className="mt-4 leading-relaxed text-white/50">
-                Si lo que necesitas no es lo que hacemos, te lo decimos en la
-                primera conversación. Sin rodeos.
-              </p>
-            </div>
-
-            <ul className="space-y-3 self-center">
-              {[
-                "Producción de TV, comerciales o publicidad masiva",
-                "Animación, motion graphics o diseño gráfico",
-                "Fotografía corporativa o eventos",
-                "Gestión de redes sociales",
-                "Grabaciones simples sin enfoque de post-producción",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-2.5 text-sm text-white/40"
-                >
-                  <CrossIcon />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="border-t border-white/10 py-28">
-        <div className="container max-w-3xl text-center">
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            BICE — Cámara de Comercio Asia Pacífico — iGromi — Coesam —
-            Exploflex
-          </div>
-
-          <h2 className="text-3xl font-semibold md:text-4xl">
-            ¿Conversamos tu proyecto?
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-xl leading-relaxed text-white/50">
-            Cuéntanos qué tienes grabado o qué quieres comunicar. Te decimos
-            qué servicio encaja y a qué precio.
-          </p>
-
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
-              href="/contacto"
-              className="inline-flex items-center gap-2 bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90"
+              href="/#proyectos"
+              className="text-white/75 transition hover:text-white"
             >
-              Solicitar propuesta
-              <ArrowUpRight className="h-4 w-4" />
+              Proyectos
             </Link>
 
             <Link
-              href="/contacto"
-              className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-10 py-4 text-sm text-white/55 transition hover:bg-white/10 hover:text-white"
+              href="/quienes-somos"
+              className="hidden text-white/75 transition hover:text-white sm:block"
             >
-              O usa el formulario
-              <ArrowRight className="h-4 w-4" />
+              Nosotros
             </Link>
+
+            <Link
+              href="/servicios"
+              className="text-white"
+            >
+              Servicios
+            </Link>
+
+            <Link
+              href="/#contacto"
+              className="text-white/75 transition hover:text-white"
+            >
+              Contacto
+            </Link>
+
+          </nav>
+
+        </div>
+      </header>
+
+
+      {/* =====================================================
+          HERO
+      ====================================================== */}
+
+      <section className="border-b border-white/10 px-5 pb-24 pt-40 md:px-10 md:pb-36 md:pt-52">
+
+        <div className="mx-auto max-w-7xl">
+
+          <Eyebrow>Servicios</Eyebrow>
+
+          <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
+
+            <div className="md:col-span-9">
+
+              <h1 className="max-w-6xl text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
+                Del concepto
+                <br />
+                a la producción.
+                <br />
+                <span className="text-white/35">
+                  Una misma mirada.
+                </span>
+              </h1>
+
+            </div>
+
+            <div className="md:col-span-3">
+
+              <p className="text-sm leading-relaxed text-white/45 md:text-base">
+                Desarrollamos, producimos y postproducimos formatos
+                audiovisuales para empresas, marcas y audiencias.
+              </p>
+
+              <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-white/25">
+                Dekaelo Media · Desde 2013
+              </p>
+
+            </div>
+
           </div>
 
-          <p className="mt-6 text-xs text-white/25">
-            Respondemos el mismo día hábil. Sin compromiso.
-          </p>
         </div>
+
       </section>
+
+
+      {/* =====================================================
+          INTRO
+      ====================================================== */}
+
+      <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="grid gap-12 md:grid-cols-12">
+
+            <div className="md:col-span-4">
+
+              <Eyebrow>Nuestra forma de trabajar</Eyebrow>
+
+            </div>
+
+            <div className="md:col-span-8">
+
+              <h2 className="max-w-5xl text-[clamp(2.7rem,6vw,6rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+
+                Una producción
+                <br />
+
+                <span className="text-white/35">
+                  de principio a fin.
+                </span>
+
+              </h2>
+
+              <p className="mt-12 max-w-3xl text-lg leading-relaxed text-white/50 md:text-xl">
+                No trabajamos únicamente sobre la pieza final. Nos
+                involucramos desde la definición del formato y la
+                estructura hasta la producción, realización y
+                postproducción.
+              </p>
+
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/35 md:text-lg">
+                Esto permite mantener una misma dirección creativa y
+                audiovisual durante todo el proceso.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          SERVICIOS
+      ====================================================== */}
+
+      <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="mb-20 max-w-3xl">
+
+            <Eyebrow>Capacidades</Eyebrow>
+
+            <h2 className="mt-5 text-[clamp(2.8rem,6vw,6rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+              Lo que hacemos.
+            </h2>
+
+          </div>
+
+
+          <div className="divide-y divide-white/10">
+
+            {services.map((service) => (
+
+              <article
+                key={service.number}
+                className="group grid gap-8 py-12 md:grid-cols-12 md:py-16"
+              >
+
+                <div className="md:col-span-1">
+
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#f51b24]">
+                    {service.number}
+                  </span>
+
+                </div>
+
+
+                <div className="md:col-span-5">
+
+                  <h3 className="text-[clamp(2rem,4vw,4rem)] font-medium leading-[0.95] tracking-[-0.05em] transition group-hover:text-white/70">
+                    {service.title}
+                  </h3>
+
+                </div>
+
+
+                <div className="md:col-span-6">
+
+                  <p className="max-w-xl text-base leading-relaxed text-white/50 md:text-lg">
+                    {service.intro}
+                  </p>
+
+
+                  <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 border-t border-white/10 pt-6 sm:grid-cols-3">
+
+                    {service.items.map((item) => (
+
+                      <p
+                        key={item}
+                        className="text-xs text-white/35 md:text-sm"
+                      >
+                        {item}
+                      </p>
+
+                    ))}
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          APLICACIONES
+      ====================================================== */}
+
+      <section className="px-5 py-24 md:px-10 md:py-36">
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="grid gap-16 md:grid-cols-12">
+
+            <div className="md:col-span-5">
+
+              <Eyebrow>Aplicaciones</Eyebrow>
+
+              <h2 className="mt-6 text-[clamp(2.7rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+                Diferentes
+                <br />
+                proyectos.
+                <br />
+                <span className="text-white/35">
+                  Una misma producción.
+                </span>
+              </h2>
+
+            </div>
+
+
+            <div className="md:col-span-7">
+
+              <div className="divide-y divide-white/10 border-y border-white/10">
+
+                {applications.map((application, index) => (
+
+                  <div
+                    key={application.title}
+                    className="grid gap-5 py-9 md:grid-cols-12"
+                  >
+
+                    <div className="md:col-span-1">
+
+                      <span className="text-[10px] uppercase tracking-[0.2em] text-white/25">
+                        0{index + 1}
+                      </span>
+
+                    </div>
+
+                    <div className="md:col-span-4">
+
+                      <h3 className="text-xl font-medium tracking-[-0.02em]">
+                        {application.title}
+                      </h3>
+
+                    </div>
+
+                    <div className="md:col-span-7">
+
+                      <p className="text-sm leading-relaxed text-white/40 md:text-base">
+                        {application.text}
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          PROCESO
+      ====================================================== */}
+
+      <section className="border-t border-white/10 px-5 py-24 md:px-10 md:py-36">
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="mb-20 grid gap-12 md:grid-cols-12 md:items-end">
+
+            <div className="md:col-span-7">
+
+              <Eyebrow>Proceso</Eyebrow>
+
+              <h2 className="mt-5 text-[clamp(2.8rem,6vw,6rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+                Una idea.
+                <br />
+                Un proceso.
+                <br />
+                <span className="text-white/35">
+                  Una producción.
+                </span>
+              </h2>
+
+            </div>
+
+            <div className="md:col-span-5">
+
+              <p className="text-base leading-relaxed text-white/40 md:text-lg">
+                Cada proyecto tiene necesidades distintas. El proceso se
+                adapta al formato, pero mantenemos una estructura clara
+                para llegar desde la idea hasta la pieza terminada.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div className="grid border-y border-white/10 md:grid-cols-4">
+
+            {[
+              {
+                number: "01",
+                title: "Definición",
+                text: "Objetivo, audiencia, formato y alcance.",
+              },
+              {
+                number: "02",
+                title: "Desarrollo",
+                text: "Concepto, estructura, pauta y planificación.",
+              },
+              {
+                number: "03",
+                title: "Producción",
+                text: "Rodaje, realización y ejecución audiovisual.",
+              },
+              {
+                number: "04",
+                title: "Postproducción",
+                text: "Edición, sonido, color y entregas finales.",
+              },
+            ].map((step) => (
+
+              <div
+                key={step.number}
+                className="border-b border-white/10 px-6 py-10 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 md:py-12"
+              >
+
+                <span className="text-[10px] uppercase tracking-[0.2em] text-[#f51b24]">
+                  {step.number}
+                </span>
+
+                <h3 className="mt-8 text-2xl font-medium tracking-[-0.03em]">
+                  {step.title}
+                </h3>
+
+                <p className="mt-4 text-sm leading-relaxed text-white/35">
+                  {step.text}
+                </p>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          CTA
+      ====================================================== */}
+
+      <section className="border-t border-white/10 px-5 py-28 md:px-10 md:py-44">
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="grid gap-12 md:grid-cols-12 md:items-end">
+
+            <div className="md:col-span-9">
+
+              <Eyebrow>Trabajemos juntos</Eyebrow>
+
+              <h2 className="mt-6 text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
+
+                Tenemos una idea.
+                <br />
+
+                <span className="text-white/35">
+                  Hagámosla producción.
+                </span>
+
+              </h2>
+
+            </div>
+
+
+            <div className="md:col-span-3">
+
+              <Link
+                href="/#contacto"
+                className="group inline-flex items-center gap-4 text-sm uppercase tracking-[0.18em]"
+              >
+
+                Hablemos
+
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 transition group-hover:border-[#f51b24] group-hover:bg-[#f51b24]">
+
+                  <ArrowUpRight className="h-4 w-4" />
+
+                </span>
+
+              </Link>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          FOOTER
+      ====================================================== */}
+
+      <footer className="border-t border-white/10 px-5 py-10 md:px-10 md:py-14">
+
+        <div className="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:items-end md:justify-between">
+
+          <div>
+
+            <Image
+              src="/dekaelo-logo.png"
+              alt="Dekaelo Media"
+              width={220}
+              height={80}
+              className="w-[140px]"
+            />
+
+            <p className="mt-5 text-xs text-white/30">
+              Distintas voces, una misma producción.
+            </p>
+
+          </div>
+
+
+          <div className="flex flex-col gap-5 md:items-end">
+
+            <a
+              href="mailto:info@dekaelomedia.com"
+              className="text-sm text-white/60 transition hover:text-white"
+            >
+              info@dekaelomedia.com
+            </a>
+
+
+            <div className="flex flex-wrap gap-6 text-[10px] uppercase tracking-[0.18em]">
+
+              <a
+                href="https://www.instagram.com/dekaelo_media/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/40 transition hover:text-[#f51b24]"
+              >
+                Instagram
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/dekaelo-media/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/40 transition hover:text-[#f51b24]"
+              >
+                LinkedIn
+              </a>
+
+              <Link
+                href="/#proyectos"
+                className="text-white/40 transition hover:text-white"
+              >
+                Proyectos
+              </Link>
+
+              <Link
+                href="/quienes-somos"
+                className="text-white/40 transition hover:text-white"
+              >
+                Nosotros
+              </Link>
+
+              <Link
+                href="/servicios"
+                className="text-white transition hover:text-white"
+              >
+                Servicios
+              </Link>
+
+              <Link
+                href="/#contacto"
+                className="text-white/40 transition hover:text-white"
+              >
+                Contacto
+              </Link>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div className="mx-auto mt-12 max-w-7xl border-t border-white/10 pt-6 text-[10px] text-white/20">
+
+          © {new Date().getFullYear()} Dekaelo Media
+
+        </div>
+
+      </footer>
+
     </main>
   );
 }
