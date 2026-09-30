@@ -224,33 +224,34 @@ export default function QuienesSomosPage() {
 
             {/* TEXTO */}
 
-            <div className="md:col-span-7">
-              <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
-                Antes de Dekaelo, hubo años de producción audiovisual y una
-                experiencia que comenzó en el cine independiente.
-              </p>
+<div className="md:col-span-7">
+  <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
+    Antes de Dekaelo, hubo años de producción audiovisual y una
+    experiencia que comenzó en el cine independiente.
+  </p>
 
-              <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-                En 2013 se produjo{" "}
-                <span className="text-white">Yokai</span>, un largometraje
-                independiente que posteriormente fue seleccionado en Sitges
-                Film Festival y Buenos Aires Rojo Sangre.
-              </p>
+  <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+    En 2013 se produjo{" "}
+    <span className="text-white">Yokai</span>, un largometraje
+    independiente que posteriormente fue seleccionado en{" "}
+    <span className="text-white">Sitges Film Festival</span> y{" "}
+    <span className="text-white">Buenos Aires Rojo Sangre</span>, y que
+    actualmente también está disponible en{" "}
+    <span className="text-white">Amazon Prime Video</span>.
+  </p>
 
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-                Esa etapa permitió desarrollar una forma de entender la
-                producción basada en resolver, construir equipos y llevar una
-                idea desde el concepto hasta la pantalla.
-              </p>
+  <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+    Esa etapa permitió desarrollar una forma de entender la producción
+    basada en resolver, construir equipos y llevar una idea desde el
+    concepto hasta la pantalla.
+  </p>
 
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-                Con el tiempo, esa experiencia se trasladó a proyectos
-                comerciales, corporativos y editoriales, hasta convertirse en
-                la base sobre la que se funda Dekaelo Media.
-              </p>
-            </div>
-          </div>
-        </div>
+  <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+    Con el tiempo, esa experiencia se trasladó a proyectos comerciales,
+    corporativos y editoriales, hasta convertirse en la base sobre la que
+    se funda Dekaelo Media.
+  </p>
+</div>
       </section>
 
       {/* =====================================================
