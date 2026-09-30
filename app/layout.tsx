@@ -34,26 +34,25 @@ export const metadata: Metadata = {
   creator: "Dekaelo Media",
   publisher: "Dekaelo Media",
 
-  alternates: {
-    canonical: siteUrl,
-  },
+  /*
+   * IMPORTANTE:
+   * No definir canonical aquí.
+   *
+   * Cada página debe definir su propio canonical:
+   * /quienes-somos
+   * /servicios
+   * /contacto
+   * /vision-chile-2030
+   * etc.
+   */
 
   openGraph: {
     type: "website",
     locale: "es_CL",
-    url: siteUrl,
     siteName: "Dekaelo Media",
     title: "Dekaelo Media — Productora Audiovisual",
     description:
       "Desarrollamos formatos. Producimos historias. Construimos contenido.",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Dekaelo Media",
-      },
-    ],
   },
 
   twitter: {
@@ -61,12 +60,12 @@ export const metadata: Metadata = {
     title: "Dekaelo Media — Productora Audiovisual",
     description:
       "Desarrollamos formatos. Producimos historias. Construimos contenido.",
-    images: ["/og-image.jpg"],
   },
 
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -78,12 +77,18 @@ export const metadata: Metadata = {
   },
 };
 
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
   viewportFit: "cover",
 };
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
 
 function Footer() {
   return (
@@ -92,8 +97,15 @@ function Footer() {
       className="border-t border-white/10 bg-[#050505] px-5 py-16 md:px-10 md:py-24"
     >
       <div className="mx-auto max-w-7xl">
+
         <div className="grid gap-12 md:grid-cols-12">
+
+          {/* ==================================================
+              MARCA
+          =================================================== */}
+
           <div className="md:col-span-6">
+
             <Image
               src="/dekaelo-logo.png"
               alt="Dekaelo Media"
@@ -105,14 +117,22 @@ function Footer() {
             <p className="mt-8 max-w-md text-sm leading-relaxed text-white/50">
               Distintas voces, una misma producción.
             </p>
+
           </div>
 
+
+          {/* ==================================================
+              NAVEGACIÓN
+          =================================================== */}
+
           <div className="md:col-span-3">
+
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">
               Navegación
             </p>
 
             <div className="mt-5 flex flex-col gap-3 text-sm">
+
               <Link
                 href="/"
                 className="text-white/60 transition hover:text-white"
@@ -140,15 +160,31 @@ function Footer() {
               >
                 Nuestra visión
               </Link>
+
+              <Link
+                href="/contacto"
+                className="text-white/60 transition hover:text-white"
+              >
+                Contacto
+              </Link>
+
             </div>
+
           </div>
 
+
+          {/* ==================================================
+              CONTACTO
+          =================================================== */}
+
           <div className="md:col-span-3">
+
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">
               Contacto
             </p>
 
             <div className="mt-5 flex flex-col gap-3 text-sm">
+
               <a
                 href="mailto:info@dekaelomedia.com"
                 className="text-white/60 transition hover:text-white"
@@ -173,20 +209,43 @@ function Footer() {
               >
                 LinkedIn
               </a>
+
             </div>
+
           </div>
+
         </div>
 
+
+        {/* ==================================================
+            COPYRIGHT
+        =================================================== */}
+
         <div className="mt-16 border-t border-white/10 pt-6">
+
           <div className="flex flex-col gap-3 text-[10px] uppercase tracking-[0.16em] text-white/25 md:flex-row md:items-center md:justify-between">
-            <p>© {new Date().getFullYear()} Dekaelo Media</p>
-            <p>Tronx Group SpA</p>
+
+            <p>
+              © {new Date().getFullYear()} Dekaelo Media
+            </p>
+
+            <p>
+              Tronx Group SpA
+            </p>
+
           </div>
+
         </div>
+
       </div>
     </footer>
   );
 }
+
+
+/* ============================================================
+   ROOT LAYOUT
+============================================================ */
 
 export default function RootLayout({
   children,
@@ -195,8 +254,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+
       <head>
-        {/* Google Analytics */}
+
+        {/* ==================================================
+            GOOGLE ANALYTICS
+        =================================================== */}
+
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-96HZDP5PVP"
@@ -213,32 +277,59 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Ads */}
+
+        {/* ==================================================
+            GOOGLE ADS
+        =================================================== */}
+
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17760996045"
         />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17760996045');
+            `,
+          }}
+        />
+
       </head>
 
+
       <body className="bg-[#050505] text-white antialiased">
+
         <Header />
 
         <main>{children}</main>
 
         <Footer />
 
-        {/* Organization schema */}
+
+        {/* ==================================================
+            ORGANIZATION SCHEMA
+        =================================================== */}
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
+
               name: "Dekaelo Media",
+
               url: siteUrl,
-              logo: `${siteUrl}/logo-dekaelo-white.png`,
+
+              logo: `${siteUrl}/dekaelo-logo.png`,
+
               description:
                 "Productora audiovisual chilena especializada en desarrollo de formatos, producción, realización y postproducción.",
+
               sameAs: [
                 "https://www.instagram.com/dekaelo_media/",
                 "https://www.linkedin.com/company/dekaelo-media/",
@@ -246,7 +337,9 @@ export default function RootLayout({
             }),
           }}
         />
+
       </body>
+
     </html>
   );
 }
