@@ -571,11 +571,11 @@ export default function ServiciosPage() {
                 <div>
 
                   <p className="text-3xl font-medium tracking-[-0.04em] md:text-4xl">
-                    2024
+                    +6K
                   </p>
 
                   <p className="mt-2 text-[10px] uppercase tracking-[0.18em] text-white/35">
-                    inicio de la colaboración
+                    colaboradores
                   </p>
 
                 </div>
