@@ -1,13 +1,14 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Chile 2030 | Nuestra Visión | Dekaelo Media",
+  title: "Chile 2030: nuestra visión",
   description:
     "Una reflexión de Dekaelo Media sobre el futuro de Chile, las organizaciones y la transformación de las comunicaciones durante la próxima década.",
   alternates: {
-    canonical: "https://www.dekaelomedia.com/vision-chile-2030",
+    canonical: "/vision-chile-2030",
   },
 };
 
@@ -19,7 +20,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Number({
+function Label({
   children,
   className = "",
 }: {
@@ -38,99 +39,84 @@ function Number({
 export default function VisionChile2030Page() {
   return (
     <main className="bg-[#050505] text-white selection:bg-white selection:text-black">
-
       {/* =====================================================
-    HERO
-====================================================== */}
+          HERO
+      ====================================================== */}
 
-<section className="relative min-h-[92vh] overflow-hidden border-b border-white/10 px-5 pt-40 md:px-10 md:pt-48">
+      <section className="relative min-h-[92vh] overflow-hidden border-b border-white/10 px-5 pt-40 md:px-10 md:pt-48">
+        {/* FOTO DE FONDO */}
 
-  {/* FOTO DE FONDO */}
-  <div
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-    style={{
-      backgroundImage: "url('/BG_Chile.jpg')",
-    }}
-  />
+        <div className="absolute inset-0">
+          <Image
+            src="/BG_Chile.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
 
-  {/* OVERLAY OSCURO */}
-  <div className="absolute inset-0 bg-black/60" />
+        {/* OVERLAY OSCURO */}
 
-  {/* DEGRADADO INFERIOR */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/30 to-[#050505]" />
+        <div className="absolute inset-0 bg-black/60" />
 
+        {/* DEGRADADO INFERIOR */}
 
-  {/* CONTENIDO */}
-  <div className="relative z-10 mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-between">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/30 to-[#050505]" />
 
-    <div>
+        {/* CONTENIDO */}
 
-      <Eyebrow>Nuestra visión</Eyebrow>
+        <div className="relative z-10 mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-between">
+          <div>
+            <Eyebrow>Nuestra visión</Eyebrow>
 
-      <h1 className="mt-7 max-w-7xl text-[clamp(4.5rem,13vw,13rem)] font-medium leading-[0.78] tracking-[-0.075em]">
+            <h1 className="mt-7 max-w-7xl text-[clamp(4.5rem,13vw,13rem)] font-medium leading-[0.78] tracking-[-0.075em]">
+              Chile
+              <br />
+              <span className="text-white/35">2030</span>
+            </h1>
+          </div>
 
-        Chile
-        <br />
+          <div className="mt-20 grid gap-12 pb-16 md:grid-cols-12 md:items-end">
+            <div className="md:col-span-7">
+              <p className="max-w-3xl text-[clamp(1.5rem,3vw,2.7rem)] leading-[1.05] tracking-[-0.035em] text-white/85">
+                Una década decisiva.
+              </p>
+            </div>
 
-        <span className="text-white/35">
-          2030
-        </span>
+            <div className="md:col-span-5">
+              <p className="max-w-lg text-sm leading-relaxed text-white/65 md:text-base">
+                Una reflexión sobre el futuro de Chile, las organizaciones y
+                la transformación de las comunicaciones durante la próxima
+                década.
+              </p>
+            </div>
+          </div>
 
-      </h1>
+          {/* INDICADOR */}
 
-    </div>
-
-
-    <div className="mt-20 grid gap-12 pb-16 md:grid-cols-12 md:items-end">
-
-      <div className="md:col-span-7">
-
-        <p className="max-w-3xl text-[clamp(1.5rem,3vw,2.7rem)] leading-[1.05] tracking-[-0.035em] text-white/85">
-          Una década decisiva.
-        </p>
-
-      </div>
-
-
-      <div className="md:col-span-5">
-
-        <p className="max-w-lg text-sm leading-relaxed text-white/65 md:text-base">
-          Una reflexión sobre el futuro de Chile, las organizaciones y
-          la transformación de las comunicaciones durante la próxima
-          década.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    {/* INDICADOR */}
-    <div className="absolute bottom-8 right-0 hidden md:block">
-      <ArrowDownRight className="h-8 w-8 text-white/40" />
-    </div>
-
-  </div>
-
-</section>
-
+          <div className="absolute bottom-8 right-0 hidden md:block">
+            <ArrowDownRight
+              className="h-8 w-8 text-white/40"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* =====================================================
           APERTURA
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
-
         <div className="mx-auto max-w-7xl">
-
           <div className="grid gap-12 md:grid-cols-12">
-
             <div className="md:col-span-4">
               <Eyebrow>El punto de partida</Eyebrow>
             </div>
 
             <div className="md:col-span-8">
-
               <p className="max-w-5xl text-[clamp(2rem,4.5vw,4.8rem)] font-medium leading-[0.98] tracking-[-0.055em]">
                 El mundo está cambiando.
                 <br />
@@ -140,7 +126,6 @@ export default function VisionChile2030Page() {
               </p>
 
               <div className="mt-14 max-w-3xl space-y-6 text-base leading-relaxed text-white/45 md:text-lg">
-
                 <p>
                   La inteligencia artificial, la transición energética, la
                   competencia global por talento y conocimiento y el creciente
@@ -148,33 +133,24 @@ export default function VisionChile2030Page() {
                   de los países y las organizaciones.
                 </p>
 
-                <p>
-                  La pregunta no es si estos cambios ocurrirán.
-                </p>
+                <p>La pregunta no es si estos cambios ocurrirán.</p>
 
                 <p className="text-white">
                   La pregunta es cómo decidiremos enfrentarlos.
                 </p>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           FRASE
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-28 md:px-10 md:py-44">
-
         <div className="mx-auto max-w-7xl">
-
-          <Number>01 / Confianza</Number>
+          <Label>01 / Confianza</Label>
 
           <blockquote className="mt-8 max-w-6xl text-[clamp(2.8rem,7vw,7.5rem)] font-medium leading-[0.88] tracking-[-0.065em]">
             Las organizaciones más relevantes de la próxima década
@@ -187,23 +163,17 @@ export default function VisionChile2030Page() {
           <p className="mt-12 max-w-3xl text-[clamp(1.5rem,3vw,2.8rem)] leading-[1.05] tracking-[-0.035em] text-white/60">
             Serán aquellas capaces de generar confianza.
           </p>
-
         </div>
       </section>
-
 
       {/* =====================================================
           CONTEXTO
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
-
         <div className="mx-auto max-w-7xl">
-
           <div className="grid gap-16 md:grid-cols-12">
-
             <div className="md:col-span-4">
-
               <Eyebrow>El contexto</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.5rem,5vw,5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
@@ -213,13 +183,10 @@ export default function VisionChile2030Page() {
                 <br />
                 pensamos.
               </h2>
-
             </div>
 
             <div className="md:col-span-7 md:col-start-6">
-
               <div className="space-y-8 text-lg leading-relaxed text-white/45 md:text-xl">
-
                 <p>
                   Durante gran parte de las últimas décadas Chile operó dentro
                   de un entorno relativamente estable. Los mercados
@@ -227,9 +194,7 @@ export default function VisionChile2030Page() {
                   globalización avanzaba de forma constante.
                 </p>
 
-                <p>
-                  Ese escenario está cambiando.
-                </p>
+                <p>Ese escenario está cambiando.</p>
 
                 <p>
                   La inteligencia artificial transforma industrias completas.
@@ -251,29 +216,21 @@ export default function VisionChile2030Page() {
                 <p className="text-white/70">
                   Pertenece a quienes son capaces de adaptarse más rápido.
                 </p>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           CHILE
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
-
         <div className="mx-auto max-w-7xl">
-
           <div className="mb-20 flex items-end justify-between">
-
             <div>
-              <Number>02 / Chile</Number>
+              <Label>02 / Chile</Label>
 
               <h2 className="mt-6 max-w-5xl text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.86] tracking-[-0.065em]">
                 Un país pequeño.
@@ -283,12 +240,9 @@ export default function VisionChile2030Page() {
                 </span>
               </h2>
             </div>
-
           </div>
 
-
           <div className="grid gap-10 md:grid-cols-2">
-
             <div className="border-t border-white/10 pt-8">
               <p className="text-sm uppercase tracking-[0.16em] text-white/30">
                 Pacífico
@@ -298,8 +252,20 @@ export default function VisionChile2030Page() {
                 Nuestra posición geográfica y la conexión natural con
                 Asia-Pacífico representan una oportunidad estratégica.
               </p>
-            </div>
 
+              <p className="mt-5 text-base leading-relaxed text-white/35">
+                Lo vimos en{" "}
+                <Link
+                  href="/proyectos/creando-lideres-para-asia"
+                  className="text-white/65 underline decoration-white/20 underline-offset-4 transition hover:text-white"
+                >
+                  Creando Líderes para Asia
+                </Link>
+                : 24 episodios desarrollados para la Cámara de Comercio Asia
+                Pacífico, como parte de una estrategia de contenido y
+                posicionamiento internacional.
+              </p>
+            </div>
 
             <div className="border-t border-white/10 pt-8">
               <p className="text-sm uppercase tracking-[0.16em] text-white/30">
@@ -311,7 +277,6 @@ export default function VisionChile2030Page() {
                 convertirse en una ventaja para las próximas décadas.
               </p>
             </div>
-
 
             <div className="border-t border-white/10 pt-8">
               <p className="text-sm uppercase tracking-[0.16em] text-white/30">
@@ -325,7 +290,6 @@ export default function VisionChile2030Page() {
               </p>
             </div>
 
-
             <div className="border-t border-white/10 pt-8">
               <p className="text-sm uppercase tracking-[0.16em] text-white/30">
                 Proyección
@@ -336,36 +300,26 @@ export default function VisionChile2030Page() {
                 influencia y confianza será parte del desafío.
               </p>
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           CONFIANZA
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-28 md:px-10 md:py-44">
-
         <div className="mx-auto max-w-7xl">
-
           <Eyebrow>La nueva economía</Eyebrow>
 
           <h2 className="mt-7 max-w-6xl text-[clamp(3rem,8vw,8rem)] font-medium leading-[0.85] tracking-[-0.07em]">
             La confianza
             <br />
-            <span className="text-white/30">
-              se vuelve un activo.
-            </span>
+            <span className="text-white/30">se vuelve un activo.</span>
           </h2>
 
-
           <div className="mt-20 grid gap-12 md:grid-cols-12">
-
             <div className="md:col-span-5">
-
               <p className="text-2xl leading-tight tracking-[-0.03em] text-white/70 md:text-3xl">
                 Credibilidad.
                 <br />
@@ -373,24 +327,19 @@ export default function VisionChile2030Page() {
                 <br />
                 Influencia.
                 <br />
-                <span className="text-white">
-                  Confianza.
-                </span>
+                <span className="text-white">Confianza.</span>
               </p>
-
             </div>
 
             <div className="md:col-span-6 md:col-start-7">
-
               <div className="space-y-7 text-base leading-relaxed text-white/45 md:text-lg">
-
                 <p>
                   Durante décadas las organizaciones compitieron principalmente
                   por capital, infraestructura y escala.
                 </p>
 
                 <p>
-                  Durante la próxima década competirán también por algo mucho
+                  Durante los próximos años competirán también por algo mucho
                   más difícil de construir.
                 </p>
 
@@ -405,45 +354,31 @@ export default function VisionChile2030Page() {
                   valiosos para cualquier organización, institución o
                   territorio.
                 </p>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           NUEVOS CANALES
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
-
         <div className="mx-auto max-w-7xl">
-
           <div className="grid gap-16 md:grid-cols-12">
-
             <div className="md:col-span-5">
-
               <Eyebrow>La transformación</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.8rem,6vw,6rem)] font-medium leading-[0.9] tracking-[-0.06em]">
                 Sus propios
                 <br />
-                <span className="text-white/30">
-                  canales.
-                </span>
+                <span className="text-white/30">canales.</span>
               </h2>
-
             </div>
 
             <div className="md:col-span-7">
-
               <div className="space-y-8 text-lg leading-relaxed text-white/45 md:text-xl">
-
                 <p>
                   Durante gran parte del siglo XX las organizaciones dependían
                   de terceros para comunicar.
@@ -454,29 +389,22 @@ export default function VisionChile2030Page() {
                   puntuales de marketing o comunicados esporádicos.
                 </p>
 
-                <p className="text-white">
-                  Ese modelo está evolucionando.
-                </p>
+                <p className="text-white">Ese modelo está evolucionando.</p>
 
                 <p>
-                  Las organizaciones más relevantes de la próxima década no
-                  solo comunicarán cuando tengan algo que anunciar.
+                  Las organizaciones que lideren estos años no solo comunicarán
+                  cuando tengan algo que anunciar.
                 </p>
 
                 <p>
                   Construirán canales propios, compartirán conocimiento y
                   mantendrán conversaciones permanentes con sus audiencias.
                 </p>
-
               </div>
-
             </div>
-
           </div>
 
-
           <div className="mt-24 grid border-y border-white/10 md:grid-cols-3">
-
             {[
               "Series documentales",
               "Vodcast corporativo",
@@ -485,27 +413,20 @@ export default function VisionChile2030Page() {
               "Espacios de conversación",
               "Audiencias internacionales",
             ].map((item, index) => (
-
               <div
                 key={item}
-                className="border-b border-white/10 px-6 py-8 last:border-b-0 md:border-r md:last:border-r-0"
+                className="border-b border-white/10 px-6 py-8 last:border-b-0 md:border-r md:[&:nth-child(3n)]:border-r-0 md:[&:nth-child(n+4)]:border-b-0"
               >
-
-                <Number>0{index + 1}</Number>
+                <Label>0{index + 1}</Label>
 
                 <p className="mt-5 text-xl tracking-[-0.02em] text-white/75">
                   {item}
                 </p>
-
               </div>
-
             ))}
-
           </div>
 
-
           <div className="mt-16 grid gap-8 md:grid-cols-2">
-
             <p className="text-2xl leading-tight tracking-[-0.03em] text-white/60 md:text-3xl">
               La comunicación dejará de ser un evento puntual.
             </p>
@@ -513,68 +434,49 @@ export default function VisionChile2030Page() {
             <p className="text-2xl leading-tight tracking-[-0.03em] text-white md:text-3xl">
               Se transformará en una capacidad estratégica.
             </p>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           CONTENIDO
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-28 md:px-10 md:py-44">
-
         <div className="mx-auto max-w-7xl">
-
           <div className="grid gap-12 md:grid-cols-12">
-
             <div className="md:col-span-4">
-
-              <Number>03 / Contenido</Number>
-
+              <Label>03 / Contenido</Label>
             </div>
 
             <div className="md:col-span-8">
-
               <h2 className="text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.86] tracking-[-0.065em]">
                 El contenido
                 <br />
                 dejará de ser
                 <br />
-                <span className="text-white/30">
-                  marketing.
-                </span>
+                <span className="text-white/30">marketing.</span>
               </h2>
 
               <p className="mt-14 text-[clamp(1.7rem,3vw,3rem)] leading-[1] tracking-[-0.04em] text-white">
                 Se transformará en infraestructura.
               </p>
-
             </div>
-
           </div>
 
-
           <div className="mt-24 grid gap-16 md:grid-cols-12">
-
             <div className="md:col-span-5">
-
               <p className="text-sm uppercase tracking-[0.18em] text-white/30">
                 Una nueva inversión
               </p>
-
             </div>
 
             <div className="md:col-span-7">
-
               <div className="space-y-7 text-base leading-relaxed text-white/45 md:text-lg">
-
                 <p>
                   Así como las organizaciones invierten en tecnología, talento
-                  o infraestructura física, durante la próxima década
-                  invertirán cada vez más en infraestructura de comunicación.
+                  o infraestructura física, invertirán cada vez más en
+                  infraestructura de comunicación.
                 </p>
 
                 <p>
@@ -593,25 +495,18 @@ export default function VisionChile2030Page() {
                   capaces de comunicar con transparencia, construir confianza
                   y movilizar conocimiento.
                 </p>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           CHILE TIENE HISTORIAS
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-28 md:px-10 md:py-44">
-
         <div className="mx-auto max-w-7xl">
-
           <Eyebrow>Chile</Eyebrow>
 
           <h2 className="mt-7 max-w-6xl text-[clamp(3rem,8vw,8rem)] font-medium leading-[0.85] tracking-[-0.07em]">
@@ -619,27 +514,19 @@ export default function VisionChile2030Page() {
             <br />
             historias de las que
             <br />
-            <span className="text-white/30">
-              cuenta.
-            </span>
+            <span className="text-white/30">cuenta.</span>
           </h2>
 
-
           <div className="mt-20 grid gap-12 md:grid-cols-12">
-
             <div className="md:col-span-5">
-
               <p className="text-2xl leading-tight tracking-[-0.03em] text-white/65 md:text-3xl">
                 Todos los días se desarrollan proyectos extraordinarios en
                 distintos rincones del país.
               </p>
-
             </div>
 
             <div className="md:col-span-6 md:col-start-7">
-
               <div className="space-y-7 text-base leading-relaxed text-white/45 md:text-lg">
-
                 <p>
                   Innovación tecnológica. Investigación científica. Desarrollo
                   territorial. Energía. Minería. Educación. Emprendimiento.
@@ -655,51 +542,37 @@ export default function VisionChile2030Page() {
                   aprendizajes. Desarrollan conocimiento sin proyectarlo.
                   Construyen futuro sin contarlo.
                 </p>
-
               </div>
-
             </div>
-
           </div>
 
-
           <div className="mt-24 grid gap-6 md:grid-cols-2">
-
             <div className="border border-white/10 p-8 md:p-12">
-
-              <Number>La oportunidad</Number>
+              <Label>La oportunidad</Label>
 
               <p className="mt-8 text-[clamp(2rem,4vw,4rem)] font-medium leading-[0.95] tracking-[-0.05em]">
                 Chile no tiene un problema de talento.
               </p>
-
             </div>
 
             <div className="border border-white/10 p-8 md:p-12">
-
-              <Number>El desafío</Number>
+              <Label>El desafío</Label>
 
               <p className="mt-8 text-[clamp(2rem,4vw,4rem)] font-medium leading-[0.95] tracking-[-0.05em] text-white/35">
                 Tiene un problema de visibilidad.
               </p>
-
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           CONVICCIÓN
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-28 md:px-10 md:py-44">
-
         <div className="mx-auto max-w-7xl">
-
-          <Number>04 / Nuestra convicción</Number>
+          <Label>04 / Nuestra convicción</Label>
 
           <blockquote className="mt-10 max-w-6xl text-[clamp(2.8rem,7vw,7rem)] font-medium leading-[0.87] tracking-[-0.065em]">
             Una mejor comunicación contribuye a organizaciones más fuertes.
@@ -708,23 +581,17 @@ export default function VisionChile2030Page() {
               Organizaciones más fuertes contribuyen a un país más competitivo.
             </span>
           </blockquote>
-
         </div>
       </section>
-
 
       {/* =====================================================
           POR QUÉ DEKAELO
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
-
         <div className="mx-auto max-w-7xl">
-
           <div className="grid gap-16 md:grid-cols-12">
-
             <div className="md:col-span-5">
-
               <Eyebrow>Por qué existe Dekaelo Media</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.8rem,6vw,6rem)] font-medium leading-[0.9] tracking-[-0.06em]">
@@ -732,17 +599,12 @@ export default function VisionChile2030Page() {
                 <br />
                 experiencia
                 <br />
-                <span className="text-white/30">
-                  en conexión.
-                </span>
+                <span className="text-white/30">en conexión.</span>
               </h2>
-
             </div>
 
             <div className="md:col-span-7">
-
               <div className="space-y-8 text-lg leading-relaxed text-white/45 md:text-xl">
-
                 <p>
                   Creemos que comunicar no consiste únicamente en transmitir
                   información.
@@ -766,25 +628,18 @@ export default function VisionChile2030Page() {
                   personas, fortalecer organizaciones, impulsar territorios y
                   abrir nuevas oportunidades.
                 </p>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           CIERRE
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-32 md:px-10 md:py-52">
-
         <div className="mx-auto max-w-7xl">
-
           <Eyebrow>Mirando hacia adelante</Eyebrow>
 
           <h2 className="mt-8 max-w-6xl text-[clamp(3rem,8vw,8rem)] font-medium leading-[0.84] tracking-[-0.07em]">
@@ -795,24 +650,20 @@ export default function VisionChile2030Page() {
             Pertenece a quienes son capaces de transformarla en conocimiento,
             confianza y valor compartido.
           </p>
-
         </div>
       </section>
-
 
       {/* =====================================================
           CTA
       ====================================================== */}
 
       <section className="px-5 py-28 md:px-10 md:py-40">
-
         <div className="mx-auto max-w-7xl">
-
           <div className="grid gap-12 md:grid-cols-12 md:items-end">
-
             <div className="md:col-span-8">
-
-              <Eyebrow>Construyendo conversaciones para la próxima década</Eyebrow>
+              <Eyebrow>
+                Construyendo conversaciones para la próxima década
+              </Eyebrow>
 
               <h2 className="mt-7 text-[clamp(3.5rem,8vw,8rem)] font-medium leading-[0.84] tracking-[-0.07em]">
                 Conversemos.
@@ -822,14 +673,11 @@ export default function VisionChile2030Page() {
                 Si tu organización busca construir relevancia, confianza y
                 una voz propia para los próximos años, conversemos.
               </p>
-
             </div>
 
-
             <div className="md:col-span-4 md:flex md:justify-end">
-
               <Link
-                href="/#contacto"
+                href="/contacto"
                 className="group inline-flex items-center gap-5 text-sm uppercase tracking-[0.18em]"
               >
                 Hablemos
@@ -838,15 +686,10 @@ export default function VisionChile2030Page() {
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
               </Link>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 }
