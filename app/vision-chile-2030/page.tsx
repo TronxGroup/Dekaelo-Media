@@ -49,7 +49,7 @@ export default function VisionChile2030Page() {
   <div
     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
     style={{
-      backgroundImage: "url('/BG_Servicios_Chile.jpg')",
+      backgroundImage: "url('/BG_Chile.jpg')",
     }}
   />
 
