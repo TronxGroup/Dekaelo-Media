@@ -57,18 +57,19 @@ const projects = {
       "Crear un formato de conversación con identidad propia, capaz de conectar con una audiencia adulta interesada en humor, cultura y conversación.",
 
     solution:
-      "Dekaelo Media creó el formato Lolosaurios desde cero, desarrollando su estructura, ritmo, dinámica de conversación y lenguaje audiovisual. Desde su lanzamiento el 12 de julio de 2026, estamos a cargo de la producción de los episodios y del desarrollo de contenido para YouTube e Instagram.",
+  "Dekaelo Media creó el formato desde cero, desarrollando su estructura, ritmo, dinámica de conversación y lenguaje audiovisual. Desde su lanzamiento, el 12 de julio de 2026, está a cargo de la producción de los episodios y del contenido para YouTube e Instagram.",
 
-    result:
-      "El proyecto comenzó desde cero el 12 de julio de 2026. Al 24 de septiembre, el canal de YouTube había alcanzado 2.470 suscriptores, 169.708 vistas y 22.900 horas de reproducción con 10 episodios publicados. En Instagram, Dekaelo Media también gestiona el contenido y la cuenta alcanzó 13.500 seguidores al 25 de septiembre de 2026.",
+result:
+  "En poco más de dos meses y con 10 episodios publicados, el canal de YouTube alcanzó 2.470 suscriptores, 169.708 vistas y 22.900 horas de reproducción, y la cuenta de Instagram llegó a 13.500 seguidores. Cifras a septiembre de 2026.",
 
-    stats: [
-      ["2.470", "suscriptores YouTube"],
-      ["169,7K", "vistas YouTube"],
-      ["22,9K", "horas de reproducción"],
-      ["13.500", "seguidores Instagram"],
-      ["10", "episodios publicados"],
-    ],
+stats: [
+  ["169,7K", "vistas YouTube"],
+  ["22,9K", "horas de reproducción"],
+  ["13.500", "seguidores Instagram"],
+  ["2.470", "suscriptores YouTube"],
+  ["10", "episodios publicados"],
+  ["2", "meses desde el lanzamiento"],
+],
 
     hero: "/projects/lolosaurios/hero.png",
 
