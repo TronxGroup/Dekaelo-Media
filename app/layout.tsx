@@ -34,18 +34,6 @@ export const metadata: Metadata = {
   creator: "Dekaelo Media",
   publisher: "Dekaelo Media",
 
-  /*
-   * IMPORTANTE:
-   * No definir canonical aquí.
-   *
-   * Cada página debe definir su propio canonical:
-   * /quienes-somos
-   * /servicios
-   * /contacto
-   * /vision-chile-2030
-   * etc.
-   */
-
   openGraph: {
     type: "website",
     locale: "es_CL",
@@ -77,7 +65,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -85,17 +72,14 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-
 /* ============================================================
    FOOTER
 ============================================================ */
 
 function Footer() {
   return (
-    <footer
-      id="contacto"
-      className="border-t border-white/10 bg-[#050505] px-5 py-16 md:px-10 md:py-24"
-    >
+    <footer className="border-t border-white/10 bg-[#050505] px-5 py-16 md:px-10 md:py-24">
+
       <div className="mx-auto max-w-7xl">
 
         <div className="grid gap-12 md:grid-cols-12">
@@ -120,7 +104,6 @@ function Footer() {
 
           </div>
 
-
           {/* ==================================================
               NAVEGACIÓN
           =================================================== */}
@@ -138,6 +121,13 @@ function Footer() {
                 className="text-white/60 transition hover:text-white"
               >
                 Inicio
+              </Link>
+
+              <Link
+                href="/proyectos"
+                className="text-white/60 transition hover:text-white"
+              >
+                Proyectos
               </Link>
 
               <Link
@@ -171,7 +161,6 @@ function Footer() {
             </div>
 
           </div>
-
 
           {/* ==================================================
               CONTACTO
@@ -216,7 +205,6 @@ function Footer() {
 
         </div>
 
-
         {/* ==================================================
             COPYRIGHT
         =================================================== */}
@@ -238,10 +226,10 @@ function Footer() {
         </div>
 
       </div>
+
     </footer>
   );
 }
-
 
 /* ============================================================
    ROOT LAYOUT
@@ -255,52 +243,6 @@ export default function RootLayout({
   return (
     <html lang="es">
 
-      <head>
-
-        {/* ==================================================
-            GOOGLE ANALYTICS
-        =================================================== */}
-
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-96HZDP5PVP"
-        />
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-96HZDP5PVP');
-            `,
-          }}
-        />
-
-
-        {/* ==================================================
-            GOOGLE ADS
-        =================================================== */}
-
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17760996045"
-        />
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17760996045');
-            `,
-          }}
-        />
-
-      </head>
-
-
       <body className="bg-[#050505] text-white antialiased">
 
         <Header />
@@ -308,7 +250,6 @@ export default function RootLayout({
         <main>{children}</main>
 
         <Footer />
-
 
         {/* ==================================================
             ORGANIZATION SCHEMA
