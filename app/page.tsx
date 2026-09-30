@@ -4,10 +4,22 @@ import type { Metadata } from "next";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Dekaelo Media",
+  title: {
+    absolute: "Dekaelo Media — Productora Audiovisual",
+  },
+
   description:
     "Dekaelo Media crea, desarrolla y produce formatos audiovisuales. Distintas voces, una misma producción.",
+
+  alternates: {
+    canonical: "/",
+  },
 };
+
+
+/* ============================================================
+   PROYECTOS
+============================================================ */
 
 const projects = [
   {
@@ -47,6 +59,11 @@ const projects = [
   },
 ];
 
+
+/* ============================================================
+   SERVICIOS
+============================================================ */
+
 const capabilities = [
   "Desarrollo de formatos",
   "Concepto y estructura",
@@ -56,15 +73,23 @@ const capabilities = [
   "Postproducción",
 ];
 
+
+/* ============================================================
+   HOME
+============================================================ */
+
 export default function Home() {
   return (
     <main className="bg-[#050505] text-white">
+
 
       {/* =====================================================
           HERO
       ====================================================== */}
 
       <section className="relative h-[100svh] min-h-[620px] overflow-hidden">
+
+        {/* VIDEO */}
 
         <video
           autoPlay
@@ -81,24 +106,26 @@ export default function Home() {
         </video>
 
 
-        {/* Overlay */}
+        {/* OVERLAY */}
 
         <div className="absolute inset-0 bg-black/35" />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-black/25" />
 
 
-        {/* Hero content */}
+        {/* HERO CONTENT */}
 
         <div className="absolute inset-x-0 bottom-0 px-5 pb-8 md:px-10 md:pb-12">
 
           <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
+
 
             <div>
 
               <p className="mb-5 text-[10px] uppercase tracking-[0.32em] text-white/65">
                 Desarrollo · Producción · Contenido audiovisual
               </p>
+
 
               <h1 className="max-w-6xl text-[clamp(2.8rem,7.5vw,7.5rem)] font-medium leading-[0.88] tracking-[-0.06em]">
 
@@ -150,6 +177,9 @@ export default function Home() {
 
           <div className="grid gap-12 md:grid-cols-12">
 
+
+            {/* COLUMNA IZQUIERDA */}
+
             <div className="md:col-span-4">
 
               <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
@@ -158,6 +188,8 @@ export default function Home() {
 
             </div>
 
+
+            {/* COLUMNA DERECHA */}
 
             <div className="md:col-span-8">
 
@@ -226,6 +258,7 @@ export default function Home() {
 
         <div className="mb-14 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
 
+
           <div>
 
             <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
@@ -277,7 +310,9 @@ export default function Home() {
                   className="object-cover transition duration-700 ease-out group-hover:scale-[1.035]"
                 />
 
+
                 <div className="absolute inset-0 bg-black/0 transition duration-500 group-hover:bg-black/25" />
+
 
                 <div className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-black opacity-0 transition duration-300 group-hover:opacity-100">
 
@@ -352,6 +387,7 @@ export default function Home() {
 
             <div />
 
+
             <div>
 
               <p className="text-lg leading-relaxed text-white/55 md:text-xl">
@@ -393,11 +429,15 @@ export default function Home() {
 
         <div className="grid gap-16 md:grid-cols-[1fr_2fr]">
 
+
+          {/* INTRO */}
+
           <div>
 
             <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
               Servicios
             </p>
+
 
             <h2 className="mt-4 text-4xl font-medium tracking-[-0.04em] md:text-5xl">
 
@@ -430,12 +470,15 @@ export default function Home() {
           </div>
 
 
+          {/* LISTA DE SERVICIOS */}
+
           <div className="border-t border-white/15">
 
             {capabilities.map((item, index) => (
 
-              <div
+              <Link
                 key={item}
+                href="/servicios"
                 className="group flex items-center justify-between border-b border-white/10 py-6 transition hover:px-3"
               >
 
@@ -445,15 +488,19 @@ export default function Home() {
                     0{index + 1}
                   </span>
 
+
                   <span className="text-lg text-white/75 transition group-hover:text-white md:text-2xl">
                     {item}
                   </span>
 
                 </div>
 
-                <ArrowUpRight className="h-4 w-4 text-white/20 transition group-hover:text-[#f51b24]" />
 
-              </div>
+                <ArrowUpRight
+                  className="h-4 w-4 text-white/20 transition group-hover:text-[#f51b24]"
+                />
+
+              </Link>
 
             ))}
 
@@ -465,11 +512,10 @@ export default function Home() {
 
 
       {/* =====================================================
-          CONTACTO
+          CTA
       ====================================================== */}
 
       <section
-        id="contacto"
         className="relative overflow-hidden border-t border-white/10 px-5 py-32 md:px-10 md:py-44"
       >
 
@@ -504,16 +550,21 @@ export default function Home() {
           </p>
 
 
-          <a
-            href="mailto:info@dekaelomedia.com"
+          <Link
+            href="/contacto"
             className="group mt-12 inline-flex items-center gap-4 border border-white/20 px-7 py-4 text-xs uppercase tracking-[0.18em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
           >
 
-            info@dekaelomedia.com
+            Solicitar propuesta
 
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
 
-          </a>
+          </Link>
+
+
+          <p className="mt-5 text-[10px] uppercase tracking-[0.18em] text-white/25">
+            Respuesta en 24 horas hábiles.
+          </p>
 
         </div>
 
