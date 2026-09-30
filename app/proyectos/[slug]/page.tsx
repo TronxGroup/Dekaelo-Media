@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
-
 /* ============================================================
    PROYECTOS
 ============================================================ */
@@ -16,6 +15,8 @@ const projects = {
     category: "Comunicación interna · Cultura",
     client: "BICECORP",
     description: "Conversaciones que conectan.",
+    intro:
+      "Nos Une es un formato de comunicación interna creado para acompañar la integración entre BICECORP y Grupo Security y acercar a sus equipos a través de conversaciones con sus principales protagonistas.",
     videoId: "AUUiBDv242k",
 
     challenge:
@@ -28,9 +29,9 @@ const projects = {
       "Una serie activa que continúa desarrollándose hasta hoy, acompañando la comunicación interna de BICE durante 2024, 2025 y 2026.",
 
     stats: [
+      ["14+", "episodios producidos"],
       ["2024–2026", "producción continua"],
       ["ACTIVA", "serie vigente"],
-      ["BICECORP", "cliente"],
     ],
 
     hero: "/projects/bice/hero.png",
@@ -42,13 +43,14 @@ const projects = {
     ],
   },
 
-
   lolosaurios: {
     title: "LOLOSAURIOS",
     subtitle: "La Nueva Tertulia",
     category: "Formato editorial · Entretenimiento",
     client: "José Luis Larraín",
     description: "La conversación que ya no existe en televisión.",
+    intro:
+      "Un formato editorial de conversación y entretenimiento creado desde cero para recuperar el espíritu de la tertulia y llevarlo a una nueva audiencia digital.",
     videoId: "8638BE6Uumg",
 
     challenge:
@@ -77,13 +79,14 @@ const projects = {
     ],
   },
 
-
   "futbol-y-parrilla": {
     title: "FÚTBOL Y PARRILLA",
     subtitle: "Fútbol, historias y buena parrilla.",
     category: "Formato editorial · Deporte",
     client: "Ian Mac-Niven",
     description: "Historias, fútbol y conversación alrededor de la mesa.",
+    intro:
+      "Un formato que reúne fútbol, historias y conversación alrededor de una mesa, conectando a referentes del deporte con una audiencia digital.",
     videoId: "PLSfbZU_asQ",
 
     challenge:
@@ -117,13 +120,14 @@ const projects = {
     ],
   },
 
-
   "break-industrial": {
     title: "BREAK INDUSTRIAL",
     subtitle: "Tecnología · Innovación · Industria",
     category: "Posicionamiento B2B · Liderazgo de industria",
     client: "iGromi",
     description: "Conversaciones sobre innovación y transformación industrial.",
+    intro:
+      "Un espacio de conversación dedicado a innovación, tecnología e industria, desarrollado para generar contenido especializado y fortalecer la comunicación B2B.",
     videoId: "2G7oKXKjPl8",
 
     challenge:
@@ -136,9 +140,9 @@ const projects = {
       "8 episodios producidos para generar contenido especializado y posicionamiento B2B alrededor de la innovación y la industria.",
 
     stats: [
-      ["8", "episodios"],
-      ["iGromi", "cliente"],
-      ["B2B", "posicionamiento"],
+      ["8", "episodios producidos"],
+      ["B2B", "contenido especializado"],
+      ["INDUSTRIA", "innovación y tecnología"],
     ],
 
     hero: "/projects/break-industrial/hero.png",
@@ -150,13 +154,14 @@ const projects = {
     ],
   },
 
-
   "creando-lideres-para-asia": {
     title: "CREANDO LÍDERES PARA ASIA",
     subtitle: "Visión global · Liderazgo · Impacto regional",
     category: "Posicionamiento B2B · Internacional",
     client: "Cámara de Comercio Asia Pacífico · APCC",
     description: "Conversaciones que conectan con Asia.",
+    intro:
+      "Una serie de conversación internacional desarrollada para conectar a empresarios, diplomáticos y líderes con las oportunidades comerciales entre Chile y Asia.",
     videoId: "byTylGKp-uI",
 
     challenge:
@@ -184,7 +189,6 @@ const projects = {
   },
 } as const;
 
-
 /* ============================================================
    STATIC PARAMS
 ============================================================ */
@@ -194,7 +198,6 @@ export function generateStaticParams() {
     slug,
   }));
 }
-
 
 /* ============================================================
    METADATA DINÁMICA
@@ -221,7 +224,8 @@ export async function generateMetadata({
   return {
     title: project.title,
 
-    description: `${project.description} ${project.category}. Proyecto desarrollado y producido por Dekaelo Media.`,
+    description:
+      `${project.description} ${project.category}. Proyecto desarrollado y producido por Dekaelo Media.`,
 
     alternates: {
       canonical: `/proyectos/${params.slug}`,
@@ -252,7 +256,6 @@ export async function generateMetadata({
   };
 }
 
-
 /* ============================================================
    PAGE
 ============================================================ */
@@ -271,10 +274,8 @@ export default function ProjectPage({
     notFound();
   }
 
-
   return (
     <main className="min-h-screen bg-[#050505] text-white">
-
 
       {/* =====================================================
           HEADER
@@ -290,7 +291,6 @@ export default function ProjectPage({
         </Link>
 
       </header>
-
 
       {/* =====================================================
           HERO
@@ -308,7 +308,6 @@ export default function ProjectPage({
             Todos los proyectos
           </Link>
 
-
           <div className="mt-16 flex flex-col gap-3 md:flex-row md:items-center md:gap-8">
 
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
@@ -323,18 +322,15 @@ export default function ProjectPage({
 
           </div>
 
-
           <h1 className="mt-5 max-w-6xl text-[clamp(3rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
             {project.title}
           </h1>
-
 
           <p className="mt-7 max-w-2xl text-lg text-white/45 md:text-xl">
             {project.subtitle}
           </p>
 
         </div>
-
 
         <div className="relative mt-14 aspect-[16/9] w-full overflow-hidden">
 
@@ -351,7 +347,6 @@ export default function ProjectPage({
 
       </section>
 
-
       {/* =====================================================
           PROJECT INTRO
       ====================================================== */}
@@ -367,12 +362,10 @@ export default function ProjectPage({
             </p>
 
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-white/35">
-              Dekaelo Media desarrolla formatos audiovisuales desde su
-              concepto hasta su ejecución.
+              {project.intro}
             </p>
 
           </div>
-
 
           <div className="md:col-span-7 md:col-start-6">
 
@@ -385,7 +378,6 @@ export default function ProjectPage({
         </div>
 
       </section>
-
 
       {/* =====================================================
           VIDEO
@@ -413,7 +405,6 @@ export default function ProjectPage({
 
         </div>
 
-
         <div className="relative aspect-video w-full overflow-hidden bg-black">
 
           <iframe
@@ -428,7 +419,6 @@ export default function ProjectPage({
         </div>
 
       </section>
-
 
       {/* =====================================================
           STATS
@@ -458,7 +448,6 @@ export default function ProjectPage({
 
       </section>
 
-
       {/* =====================================================
           FUTBOL Y PARRILLA — RANKING
       ====================================================== */}
@@ -487,7 +476,6 @@ export default function ProjectPage({
 
             </div>
 
-
             <div className="md:col-span-7 md:col-start-6">
 
               <div className="border-t border-white/20">
@@ -501,7 +489,6 @@ export default function ProjectPage({
                   <span>Posición canal</span>
 
                 </div>
-
 
                 {project.ranking.map(
                   ([episode, views, position]) => (
@@ -532,7 +519,6 @@ export default function ProjectPage({
 
       )}
 
-
       {/* =====================================================
           CASE STUDY
       ====================================================== */}
@@ -559,7 +545,6 @@ export default function ProjectPage({
 
         </div>
 
-
         <div className="grid gap-y-20 md:grid-cols-12 md:gap-y-28">
 
           {/* DESAFÍO */}
@@ -576,7 +561,6 @@ export default function ProjectPage({
 
           </div>
 
-
           <div className="md:col-span-7 md:col-start-6">
 
             <p className="text-xl leading-relaxed text-white/65 md:text-3xl">
@@ -584,7 +568,6 @@ export default function ProjectPage({
             </p>
 
           </div>
-
 
           {/* SOLUCIÓN */}
 
@@ -600,7 +583,6 @@ export default function ProjectPage({
 
           </div>
 
-
           <div className="md:col-span-7 md:col-start-6">
 
             <p className="text-xl leading-relaxed text-white/65 md:text-3xl">
@@ -608,7 +590,6 @@ export default function ProjectPage({
             </p>
 
           </div>
-
 
           {/* RESULTADO */}
 
@@ -624,7 +605,6 @@ export default function ProjectPage({
 
           </div>
 
-
           <div className="md:col-span-7 md:col-start-6">
 
             <p className="text-xl leading-relaxed text-white/65 md:text-3xl">
@@ -636,7 +616,6 @@ export default function ProjectPage({
         </div>
 
       </section>
-
 
       {/* =====================================================
           CAPACIDADES
@@ -657,7 +636,6 @@ export default function ProjectPage({
             </h2>
 
           </div>
-
 
           <div className="md:col-span-7 md:col-start-6">
 
@@ -695,7 +673,6 @@ export default function ProjectPage({
 
       </section>
 
-
       {/* =====================================================
           GALERÍA
       ====================================================== */}
@@ -713,7 +690,6 @@ export default function ProjectPage({
           </h2>
 
         </div>
-
 
         <div className="space-y-8 md:space-y-12">
 
@@ -744,7 +720,6 @@ export default function ProjectPage({
 
       </section>
 
-
       {/* =====================================================
           CTA
       ====================================================== */}
@@ -767,18 +742,15 @@ export default function ProjectPage({
 
           </div>
 
-
           <Link
             href="/contacto"
             className="group inline-flex items-center gap-3 border border-white/20 px-6 py-4 text-[10px] uppercase tracking-[0.2em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
           >
-
             Contactar
 
             <ArrowUpRight
               className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
             />
-
           </Link>
 
         </div>
