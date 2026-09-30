@@ -58,7 +58,7 @@ export default function Header() {
           <nav className="hidden items-center gap-10 md:flex">
 
             <Link
-              href="/#proyectos"
+              href="/proyectos"
               className="text-[11px] uppercase tracking-[0.16em] text-white/55 transition hover:text-white"
             >
               Proyectos
@@ -134,7 +134,7 @@ export default function Header() {
           <nav className="flex flex-col">
 
             <Link
-              href="/#proyectos"
+              href="/proyectos"
               onClick={closeMenu}
               className="border-b border-white/10 py-5 text-4xl font-medium tracking-[-0.04em] text-white transition hover:text-white/60"
             >
