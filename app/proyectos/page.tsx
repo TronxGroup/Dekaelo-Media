@@ -47,33 +47,34 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[#050505] px-5 py-24 text-white md:px-10 md:py-32">
+    <main className="min-h-screen bg-[#050505] px-5 pb-24 pt-32 text-white md:px-10 md:pb-32 md:pt-40">
 
-      <div className="mb-16 flex items-end justify-between gap-8">
+      {/* =====================================================
+          HEADER DE PÁGINA
+      ====================================================== */}
 
-        <div>
+      <div className="mx-auto mb-16 max-w-7xl">
 
-          <Link
-            href="/"
-            className="text-[10px] uppercase tracking-[0.25em] text-white/40 transition hover:text-white"
-          >
-            ← Dekaelo Media
-          </Link>
+        <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
+          Nuestro trabajo
+        </p>
 
-          <p className="mt-12 text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
-            Nuestro trabajo
-          </p>
+        <h1 className="mt-4 text-[clamp(4rem,9vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
+          Proyectos
+        </h1>
 
-          <h1 className="mt-4 text-6xl font-medium tracking-[-0.06em] md:text-8xl">
-            Proyectos
-          </h1>
-
-        </div>
+        <p className="mt-7 max-w-xl text-base leading-relaxed text-white/40 md:text-lg">
+          Una selección de formatos, contenidos y producciones
+          desarrollados y producidos por Dekaelo Media.
+        </p>
 
       </div>
 
+      {/* =====================================================
+          PROYECTOS
+      ====================================================== */}
 
-      <div className="grid grid-cols-1 gap-x-6 gap-y-16 md:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-6 gap-y-20 md:grid-cols-2 md:gap-y-24">
 
         {projects.map(([slug, title, category, image], index) => (
 
@@ -87,11 +88,13 @@ export default function ProjectsPage() {
             }`}
           >
 
+            {/* IMAGEN */}
+
             <div className="relative aspect-[16/9] overflow-hidden bg-white/5">
 
               <Image
                 src={image}
-                alt={title}
+                alt={`${title} — Dekaelo Media`}
                 fill
                 sizes={
                   index === projects.length - 1
@@ -111,21 +114,21 @@ export default function ProjectsPage() {
 
             </div>
 
+            {/* INFORMACIÓN */}
 
             <div className="mt-5 flex justify-between gap-6">
 
               <div>
 
-                <h2 className="text-xl font-medium tracking-[-0.025em]">
+                <h2 className="text-xl font-medium tracking-[-0.025em] md:text-2xl">
                   {title}
                 </h2>
 
-                <p className="mt-1 text-xs text-white/35">
+                <p className="mt-2 text-xs uppercase tracking-[0.12em] text-white/35">
                   {category}
                 </p>
 
               </div>
-
 
               <span className="pt-1 text-[10px] text-white/20">
                 0{index + 1}
