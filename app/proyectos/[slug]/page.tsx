@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+
+
+/* ============================================================
+   PROYECTOS
+============================================================ */
 
 const projects = {
   bice: {
@@ -36,6 +42,7 @@ const projects = {
     ],
   },
 
+
   lolosaurios: {
     title: "LOLOSAURIOS",
     subtitle: "La Nueva Tertulia",
@@ -57,7 +64,6 @@ const projects = {
       ["2.470", "suscriptores YouTube"],
       ["169,7K", "vistas YouTube"],
       ["22,9K", "horas de reproducción"],
-      ["+2,5K", "suscriptores ganados"],
       ["13.500", "seguidores Instagram"],
       ["10", "episodios publicados"],
     ],
@@ -70,6 +76,7 @@ const projects = {
       "/projects/lolosaurios/03.png",
     ],
   },
+
 
   "futbol-y-parrilla": {
     title: "FÚTBOL Y PARRILLA",
@@ -86,12 +93,12 @@ const projects = {
       "Dekaelo Media desarrolló el formato, definiendo su estructura, ritmo, dinámica de conversación y lenguaje audiovisual. Además, estuvo a cargo de la producción de los primeros cuatro episodios, incluyendo registro, realización y postproducción.",
 
     result:
-      "Los primeros cuatro episodios alcanzaron aproximadamente 316 mil vistas en conjunto dentro de una serie de 43 capítulos.",
+      "Los primeros cuatro episodios alcanzaron aproximadamente 318 mil vistas en conjunto dentro de una serie de 43 capítulos.",
 
     stats: [
       ["4", "episodios producidos"],
       ["43", "episodios del proyecto"],
-      ["~316K", "vistas · primeros 4"],
+      ["~318K", "vistas · primeros 4"],
     ],
 
     ranking: [
@@ -109,6 +116,7 @@ const projects = {
       "/projects/futbol-y-parrilla/03.png",
     ],
   },
+
 
   "break-industrial": {
     title: "BREAK INDUSTRIAL",
@@ -142,10 +150,11 @@ const projects = {
     ],
   },
 
+
   "creando-lideres-para-asia": {
     title: "CREANDO LÍDERES PARA ASIA",
     subtitle: "Visión global · Liderazgo · Impacto regional",
-    category: "Posicionamiento B2B · Liderazgo de industria",
+    category: "Posicionamiento B2B · Internacional",
     client: "Cámara de Comercio Asia Pacífico · APCC",
     description: "Conversaciones que conectan con Asia.",
     videoId: "byTylGKp-uI",
@@ -175,11 +184,78 @@ const projects = {
   },
 } as const;
 
+
+/* ============================================================
+   STATIC PARAMS
+============================================================ */
+
 export function generateStaticParams() {
   return Object.keys(projects).map((slug) => ({
     slug,
   }));
 }
+
+
+/* ============================================================
+   METADATA DINÁMICA
+============================================================ */
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const project =
+    projects[params.slug as keyof typeof projects];
+
+  if (!project) {
+    return {
+      title: "Proyecto no encontrado",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  return {
+    title: project.title,
+
+    description: `${project.description} ${project.category}. Proyecto desarrollado y producido por Dekaelo Media.`,
+
+    alternates: {
+      canonical: `/proyectos/${params.slug}`,
+    },
+
+    openGraph: {
+      type: "website",
+      title: `${project.title} | Dekaelo Media`,
+      description: project.description,
+      url: `/proyectos/${params.slug}`,
+
+      images: [
+        {
+          url: project.hero,
+          width: 1920,
+          height: 1080,
+          alt: `${project.title} — Dekaelo Media`,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Dekaelo Media`,
+      description: project.description,
+      images: [project.hero],
+    },
+  };
+}
+
+
+/* ============================================================
+   PAGE
+============================================================ */
 
 export default function ProjectPage({
   params,
@@ -188,27 +264,33 @@ export default function ProjectPage({
 }) {
   const { slug } = params;
 
-  const project = projects[slug as keyof typeof projects];
+  const project =
+    projects[slug as keyof typeof projects];
 
   if (!project) {
     notFound();
   }
 
+
   return (
     <main className="min-h-screen bg-[#050505] text-white">
+
 
       {/* =====================================================
           HEADER
       ====================================================== */}
 
       <header className="fixed left-0 top-0 z-50 w-full bg-gradient-to-b from-black/80 to-transparent px-5 py-5 md:px-10 md:py-7">
+
         <Link
           href="/"
           className="text-[10px] uppercase tracking-[0.25em] text-white/70 transition hover:text-white"
         >
           Dekaelo Media
         </Link>
+
       </header>
+
 
       {/* =====================================================
           HERO
@@ -226,7 +308,6 @@ export default function ProjectPage({
             Todos los proyectos
           </Link>
 
-          {/* CATEGORY + CLIENT */}
 
           <div className="mt-16 flex flex-col gap-3 md:flex-row md:items-center md:gap-8">
 
@@ -242,11 +323,11 @@ export default function ProjectPage({
 
           </div>
 
-          {/* TITLE */}
 
           <h1 className="mt-5 max-w-6xl text-[clamp(3rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
             {project.title}
           </h1>
+
 
           <p className="mt-7 max-w-2xl text-lg text-white/45 md:text-xl">
             {project.subtitle}
@@ -254,7 +335,6 @@ export default function ProjectPage({
 
         </div>
 
-        {/* HERO IMAGE */}
 
         <div className="relative mt-14 aspect-[16/9] w-full overflow-hidden">
 
@@ -270,6 +350,7 @@ export default function ProjectPage({
         </div>
 
       </section>
+
 
       {/* =====================================================
           PROJECT INTRO
@@ -292,6 +373,7 @@ export default function ProjectPage({
 
           </div>
 
+
           <div className="md:col-span-7 md:col-start-6">
 
             <p className="text-3xl leading-tight tracking-[-0.03em] text-white/80 md:text-5xl">
@@ -303,6 +385,7 @@ export default function ProjectPage({
         </div>
 
       </section>
+
 
       {/* =====================================================
           VIDEO
@@ -330,6 +413,7 @@ export default function ProjectPage({
 
         </div>
 
+
         <div className="relative aspect-video w-full overflow-hidden bg-black">
 
           <iframe
@@ -345,19 +429,14 @@ export default function ProjectPage({
 
       </section>
 
+
       {/* =====================================================
           STATS
       ====================================================== */}
 
       <section className="border-y border-white/10 px-5 py-12 md:px-10 md:py-16">
 
-        <div
-          className={`grid gap-x-8 gap-y-10 ${
-            project.stats.length > 3
-              ? "grid-cols-2 md:grid-cols-3"
-              : "grid-cols-2 md:grid-cols-3"
-          }`}
-        >
+        <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3">
 
           {project.stats.map(([number, label]) => (
 
@@ -378,6 +457,7 @@ export default function ProjectPage({
         </div>
 
       </section>
+
 
       {/* =====================================================
           FUTBOL Y PARRILLA — RANKING
@@ -407,6 +487,7 @@ export default function ProjectPage({
 
             </div>
 
+
             <div className="md:col-span-7 md:col-start-6">
 
               <div className="border-t border-white/20">
@@ -420,6 +501,7 @@ export default function ProjectPage({
                   <span>Posición canal</span>
 
                 </div>
+
 
                 {project.ranking.map(
                   ([episode, views, position]) => (
@@ -450,6 +532,7 @@ export default function ProjectPage({
 
       )}
 
+
       {/* =====================================================
           CASE STUDY
       ====================================================== */}
@@ -476,6 +559,7 @@ export default function ProjectPage({
 
         </div>
 
+
         <div className="grid gap-y-20 md:grid-cols-12 md:gap-y-28">
 
           {/* DESAFÍO */}
@@ -492,6 +576,7 @@ export default function ProjectPage({
 
           </div>
 
+
           <div className="md:col-span-7 md:col-start-6">
 
             <p className="text-xl leading-relaxed text-white/65 md:text-3xl">
@@ -499,6 +584,7 @@ export default function ProjectPage({
             </p>
 
           </div>
+
 
           {/* SOLUCIÓN */}
 
@@ -514,6 +600,7 @@ export default function ProjectPage({
 
           </div>
 
+
           <div className="md:col-span-7 md:col-start-6">
 
             <p className="text-xl leading-relaxed text-white/65 md:text-3xl">
@@ -521,6 +608,7 @@ export default function ProjectPage({
             </p>
 
           </div>
+
 
           {/* RESULTADO */}
 
@@ -536,6 +624,7 @@ export default function ProjectPage({
 
           </div>
 
+
           <div className="md:col-span-7 md:col-start-6">
 
             <p className="text-xl leading-relaxed text-white/65 md:text-3xl">
@@ -547,6 +636,7 @@ export default function ProjectPage({
         </div>
 
       </section>
+
 
       {/* =====================================================
           CAPACIDADES
@@ -567,6 +657,7 @@ export default function ProjectPage({
             </h2>
 
           </div>
+
 
           <div className="md:col-span-7 md:col-start-6">
 
@@ -604,6 +695,7 @@ export default function ProjectPage({
 
       </section>
 
+
       {/* =====================================================
           GALERÍA
       ====================================================== */}
@@ -621,6 +713,7 @@ export default function ProjectPage({
           </h2>
 
         </div>
+
 
         <div className="space-y-8 md:space-y-12">
 
@@ -651,8 +744,9 @@ export default function ProjectPage({
 
       </section>
 
+
       {/* =====================================================
-          CONTACT
+          CTA
       ====================================================== */}
 
       <section className="border-t border-white/10 px-5 py-28 md:px-10 md:py-36">
@@ -673,17 +767,19 @@ export default function ProjectPage({
 
           </div>
 
-          <a
-            href="mailto:info@dekaelomedia.com"
+
+          <Link
+            href="/contacto"
             className="group inline-flex items-center gap-3 border border-white/20 px-6 py-4 text-[10px] uppercase tracking-[0.2em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
           >
+
             Contactar
 
             <ArrowUpRight
               className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
             />
 
-          </a>
+          </Link>
 
         </div>
 
