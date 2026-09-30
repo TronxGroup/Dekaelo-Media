@@ -76,16 +76,16 @@ const capabilities = [
 ============================================================ */
 
 const clientLogos = [
-  "/logo_1.png",
   "/logo_2.png",
   "/logo_3.png",
   "/logo_4.png",
-  "/logo_10.png",
-  "/logo_11.png",
-  "/logo_12.png",
   "/logo_13.png",
-  "/logo_14.png",
+  "/logo_5.png",
+  "/logo_9.png",
+  "/logo_1.png",
+  "/logo_10.png",
   "/logo_15.png",
+  "/logo_12.png",
 ];
 
 /* ============================================================
