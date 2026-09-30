@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Nosotros - Dekaelo Media",
+  title: "Nosotros",
   description:
     "Dekaelo Media es una productora audiovisual chilena. Desde 2013 desarrollamos formatos, producimos contenido y contamos historias para empresas, marcas y audiencias.",
   alternates: {
@@ -12,12 +12,11 @@ export const metadata: Metadata = {
   },
 };
 
-
 const milestones = [
   {
     year: "2013–2015",
     title: "El comienzo",
-    text: "Iniciamos nuestro recorrido en producción audiovisual con Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Durante estos primeros años desarrollamos piezas comerciales y contenido digital para clientes como Editorial Televisa Chile, Hasbro, Agencia Pixelia —con proyectos para Quaker y Kodak—, Oximixo y Gran Logia de Chile. En esta etapa también alcanzamos más de 3.8M de visualizaciones orgánicas en YouTube.",
+    text: "Iniciamos nuestro recorrido en producción audiovisual con Yokai, largometraje seleccionado en Sitges Film Festival y Buenos Aires Rojo Sangre. Durante estos primeros años desarrollamos piezas comerciales y contenido digital para clientes como Editorial Televisa Chile, Hasbro, Agencia Pixelia —con proyectos para Quaker y Kodak—, Oximixo y Gran Logia de Chile.",
   },
   {
     year: "2016–2020",
@@ -25,46 +24,16 @@ const milestones = [
     text: "Producción y postproducción para empresas de industria, tecnología y educación. Desarrollo de contenido corporativo y postproducción para Ripley. Algunos clientes de la época fueron Grupo KGHM Chile, Trewhela's School, Acmanet, Molinera San Cristóbal, iCity Chile, Inducom, U-Payments, Tapp, Exploflex y Coesam.",
   },
   {
-    year: "2020–2021",
-    title: "Pausa",
-    text: "El 11 de marzo de 2020, con la llegada de la pandemia, se interrumpieron la actividad presencial y la producción audiovisual, dando paso a una etapa de pausa.",
-  },
-  {
-    year: "2022–2023",
-    title: "Nuevos formatos",
-    text: "Retomamos progresivamente la producción audiovisual con nuevas series de contenido para la Cámara de Comercio Asia Pacífico y el desarrollo y ejecución de formato para iGromi.",
+    year: "2020–2023",
+    title: "Retomar y desarrollar",
+    text: "Tras la interrupción de la actividad presencial provocada por la pandemia, retomamos progresivamente la producción audiovisual con nuevas series de contenido para la Cámara de Comercio Asia Pacífico y el desarrollo y ejecución de formato para iGromi.",
   },
   {
     year: "2023–2026",
-    title: "Formatos, vodcast y nuevos proyectos",
-    text: "Desarrollo y producción de nuevos formatos audiovisuales, incluyendo Fútbol y Parrilla, cuyo primer episodio alcanza 160K vistas, y producción continua del vodcast institucional de BICECORP desde 2024. En 2026 se suma Lolosaurios, formato editorial de conversación y entretenimiento producido por Dekaelo Media desde junio. Durante este período también se desarrolla y consolida Tronx Media con Reality Day, serie documental original.",
+    title: "Formatos y nuevos proyectos",
+    text: "Desarrollo y producción de nuevos formatos audiovisuales, incluyendo Fútbol y Parrilla, cuyo primer episodio alcanza 160K vistas, y producción continua del vodcast institucional de BICECORP desde 2024. En 2026 se suma Lolosaurios, formato editorial de conversación y entretenimiento producido por Dekaelo Media desde el 12 de julio.",
   },
 ];
-
-
-const capabilities = [
-  {
-    number: "01",
-    title: "Formatos",
-    text: "Vodcast, entrevistas, programas, series, conversación y contenido editorial.",
-  },
-  {
-    number: "02",
-    title: "Producción",
-    text: "Preproducción, dirección, rodaje, realización y producción audiovisual.",
-  },
-  {
-    number: "03",
-    title: "Contenido corporativo",
-    text: "Comunicación interna, institucional, capacitación, cultura y marca.",
-  },
-  {
-    number: "04",
-    title: "Postproducción",
-    text: "Edición, color, sonido, motion graphics y versiones para distintas plataformas.",
-  },
-];
-
 
 const values = [
   {
@@ -89,7 +58,6 @@ const values = [
   },
 ];
 
-
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
@@ -98,81 +66,73 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
-
 export default function QuienesSomosPage() {
   return (
     <main className="bg-[#050505] text-white selection:bg-white selection:text-black">
 
-
       {/* =====================================================
-    HERO
-====================================================== */}
+          HERO
+      ====================================================== */}
 
-<section className="relative min-h-[88vh] overflow-hidden border-b border-white/10 px-5 pb-24 pt-40 md:px-10 md:pb-36 md:pt-52">
+      <section className="relative min-h-[88vh] overflow-hidden border-b border-white/10 px-5 pb-24 pt-40 md:px-10 md:pb-36 md:pt-52">
 
-  {/* FOTO DE FONDO */}
-  <div
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-    style={{
-      backgroundImage: "url('/BG_Nosotros.jpg')",
-    }}
-  />
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/BG_Nosotros.jpg')",
+          }}
+        />
 
-  {/* OVERLAY */}
-  <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/60" />
 
-  {/* DEGRADADO INFERIOR */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/20 to-[#050505]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/20 to-[#050505]" />
 
+        <div className="relative z-10 mx-auto flex min-h-[68vh] max-w-7xl flex-col justify-between">
 
-  {/* CONTENIDO */}
-  <div className="relative z-10 mx-auto flex min-h-[68vh] max-w-7xl flex-col justify-between">
+          <div>
 
-    <div>
+            <Eyebrow>Nosotros</Eyebrow>
 
-      <Eyebrow>Nosotros</Eyebrow>
+            <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
 
-      <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
+              <div className="md:col-span-9">
 
-        <div className="md:col-span-9">
+                <h1 className="max-w-6xl text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
 
-          <h1 className="max-w-6xl text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
+                  Empezamos
+                  <br />
+                  contando historias.
+                  <br />
 
-            Empezamos
-            <br />
-            contando historias.
-            <br />
+                  <span className="text-white/45">
+                    Hoy desarrollamos formatos.
+                  </span>
 
-            <span className="text-white/45">
-              Hoy desarrollamos formatos.
-            </span>
+                </h1>
 
-          </h1>
+              </div>
+
+              <div className="md:col-span-3">
+
+                <p className="text-sm leading-relaxed text-white/65 md:text-base">
+                  Dekaelo Media es una productora audiovisual chilena que
+                  desarrolla, produce y postproduce contenido para empresas,
+                  marcas y audiencias.
+                </p>
+
+                <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-white/40">
+                  Desde 2013
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
 
         </div>
 
-
-        <div className="md:col-span-3">
-
-          <p className="text-sm leading-relaxed text-white/65 md:text-base">
-            Dekaelo Media es una productora audiovisual chilena que
-            desarrolla, produce y postproduce contenido para empresas,
-            marcas y audiencias.
-          </p>
-
-          <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-white/40">
-            Desde 2013
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+      </section>
 
 
       {/* =====================================================
@@ -204,7 +164,6 @@ export default function QuienesSomosPage() {
 
             </div>
 
-
             <div className="md:col-span-7">
 
               <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
@@ -216,7 +175,6 @@ export default function QuienesSomosPage() {
 
               </p>
 
-
               <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
 
                 Ese origen marcó nuestra manera de entender la producción
@@ -224,7 +182,6 @@ export default function QuienesSomosPage() {
                 propia.
 
               </p>
-
 
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
 
@@ -237,7 +194,6 @@ export default function QuienesSomosPage() {
             </div>
 
           </div>
-
 
           <div className="mt-20 md:mt-28">
 
@@ -257,10 +213,96 @@ export default function QuienesSomosPage() {
 
 
       {/* =====================================================
+          FUNDADOR
+      ====================================================== */}
+
+      <section className="border-y border-white/10 px-5 py-24 md:px-10 md:py-36">
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="grid gap-12 md:grid-cols-12 md:items-center">
+
+            {/* FOTO */}
+
+            <div className="md:col-span-5">
+
+              <div className="relative aspect-[4/5] overflow-hidden bg-white/5">
+
+                <Image
+                  src="/ceo.jpeg"
+                  alt="Tomás Echeverría, fundador y director general de Dekaelo Media"
+                  fill
+                  className="object-cover object-[center_38%]"
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                />
+
+              </div>
+
+            </div>
+
+            {/* TEXTO */}
+
+            <div className="md:col-span-7 md:pl-8">
+
+              <Eyebrow>Quién está detrás</Eyebrow>
+
+              <h2 className="mt-6 text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+
+                Tomás
+                <br />
+
+                <span className="text-white/35">
+                  Echeverría.
+                </span>
+
+              </h2>
+
+              <p className="mt-6 text-xs uppercase tracking-[0.2em] text-white/40">
+                Fundador y Director General
+              </p>
+
+              <div className="mt-10 max-w-2xl">
+
+                <p className="text-xl leading-relaxed text-white/65 md:text-2xl">
+
+                  Dekaelo nace de una mirada audiovisual construida desde
+                  la producción, la dirección y el desarrollo de formatos.
+
+                </p>
+
+                <p className="mt-7 text-base leading-relaxed text-white/40 md:text-lg">
+
+                  Desde 2013, Tomás Echeverría ha desarrollado proyectos
+                  audiovisuales para distintos tipos de organizaciones,
+                  combinando narrativa, producción y postproducción para
+                  convertir ideas en contenidos concretos.
+
+                </p>
+
+                <p className="mt-5 text-base leading-relaxed text-white/40 md:text-lg">
+
+                  Hoy, esa experiencia se traduce en una productora donde
+                  el trabajo creativo y la producción están cerca del
+                  proyecto desde el comienzo hasta la entrega final.
+
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
           TRAYECTORIA
       ====================================================== */}
 
-      <section className="border-y border-white/10 px-5 py-24 md:px-10 md:py-40">
+      <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-40">
 
         <div className="mx-auto max-w-7xl">
 
@@ -272,11 +314,11 @@ export default function QuienesSomosPage() {
 
               <h2 className="mt-6 text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
 
-                El trabajo
+                Una historia
                 <br />
 
                 <span className="text-white/35">
-                  habla.
+                  construida.
                 </span>
 
               </h2>
@@ -300,7 +342,6 @@ export default function QuienesSomosPage() {
                   <p className="pt-1 text-sm font-medium text-white/25">
                     {milestone.year}
                   </p>
-
 
                   <div>
 
@@ -328,95 +369,10 @@ export default function QuienesSomosPage() {
 
 
       {/* =====================================================
-          DEKAELO HOY
+          REEL
       ====================================================== */}
 
-      <section className="px-5 py-28 md:px-10 md:py-44">
-
-        <div className="mx-auto max-w-7xl">
-
-          <Eyebrow>Dekaelo hoy</Eyebrow>
-
-
-          <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
-
-            <div className="md:col-span-8">
-
-              <h2 className="text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.9] tracking-[-0.065em]">
-
-                Una productora.
-                <br />
-
-                <span className="text-white/35">
-                  Distintos mundos.
-                </span>
-
-              </h2>
-
-            </div>
-
-
-            <div className="md:col-span-4">
-
-              <p className="text-base leading-relaxed text-white/45 md:text-lg">
-
-                El formato cambia según la historia, la audiencia y el
-                objetivo. La producción mantiene el mismo estándar.
-
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div className="mt-20 grid border-t border-white/15 md:grid-cols-2">
-
-            {capabilities.map((item) => (
-
-              <div
-                key={item.number}
-                className="group border-b border-white/10 py-8 md:px-5 md:py-10"
-              >
-
-                <div className="flex items-start justify-between gap-8">
-
-                  <div>
-
-                    <span className="text-[10px] text-[#f51b24]">
-                      {item.number}
-                    </span>
-
-                    <h3 className="mt-5 text-2xl font-medium md:text-3xl">
-                      {item.title}
-                    </h3>
-
-                    <p className="mt-3 max-w-md text-sm leading-relaxed text-white/40 md:text-base">
-                      {item.text}
-                    </p>
-
-                  </div>
-
-                  <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-white/20 transition group-hover:text-[#f51b24]" />
-
-                </div>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          REEL DEKAELO
-      ====================================================== */}
-
-      <section className="border-y border-white/10 px-5 py-24 md:px-10 md:py-36">
+      <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
 
         <div className="mx-auto max-w-7xl">
 
@@ -438,7 +394,6 @@ export default function QuienesSomosPage() {
               </h2>
 
             </div>
-
 
             <div className="md:col-span-7">
 
@@ -477,10 +432,10 @@ export default function QuienesSomosPage() {
 
 
       {/* =====================================================
-          NÚMEROS
+          EXPERIENCIA
       ====================================================== */}
 
-      <section className="border-y border-white/10 bg-white/[0.02] px-5 py-24 md:px-10 md:py-36">
+      <section className="border-b border-white/10 bg-white/[0.02] px-5 py-24 md:px-10 md:py-36">
 
         <div className="mx-auto max-w-7xl">
 
@@ -490,11 +445,11 @@ export default function QuienesSomosPage() {
 
             <h2 className="mt-5 text-[clamp(2.8rem,5vw,5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
 
-              El trabajo
+              Una trayectoria
               <br />
 
               <span className="text-white/35">
-                habla por sí solo.
+                que se mide en trabajo.
               </span>
 
             </h2>
@@ -537,7 +492,7 @@ export default function QuienesSomosPage() {
               </p>
 
               <p className="mt-3 text-xs leading-relaxed text-white/35 md:text-sm">
-                vistas en un video orgánico
+                vistas en un solo video orgánico
               </p>
 
             </div>
@@ -605,7 +560,6 @@ export default function QuienesSomosPage() {
                       {value.number}
                     </span>
 
-
                     <div>
 
                       <h3 className="text-xl font-medium md:text-2xl">
@@ -634,124 +588,10 @@ export default function QuienesSomosPage() {
 
 
       {/* =====================================================
-          PROCESO
+          LO QUE VIENE
       ====================================================== */}
 
-      <section className="border-y border-white/10 px-5 py-28 md:px-10 md:py-40">
-
-        <div className="mx-auto max-w-7xl">
-
-          <Eyebrow>Cómo trabajamos</Eyebrow>
-
-
-          <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
-
-            <div className="md:col-span-8">
-
-              <h2 className="text-[clamp(3rem,6vw,6rem)] font-medium leading-[0.9] tracking-[-0.06em]">
-
-                Una idea.
-                <br />
-                Un formato.
-                <br />
-
-                <span className="text-white/35">
-                  Una producción.
-                </span>
-
-              </h2>
-
-            </div>
-
-
-            <p className="md:col-span-4 text-base leading-relaxed text-white/40 md:text-lg">
-
-              Nos involucramos desde el principio para que la idea, la
-              producción y el resultado final hablen el mismo lenguaje.
-
-            </p>
-
-          </div>
-
-
-          <div className="mt-20 grid gap-8 md:grid-cols-4">
-
-            {[
-              {
-                n: "01",
-                title: "Idea",
-                text: "Entendemos qué quieres comunicar y para quién.",
-              },
-              {
-                n: "02",
-                title: "Formato",
-                text: "Desarrollamos concepto, estructura, ritmo y dinámica.",
-              },
-              {
-                n: "03",
-                title: "Producción",
-                text: "Grabamos, dirigimos y realizamos el proyecto.",
-              },
-              {
-                n: "04",
-                title: "Postproducción",
-                text: "Editamos, trabajamos color y sonido y preparamos las entregas.",
-              },
-            ].map((step) => (
-
-              <div key={step.n}>
-
-                <p className="text-4xl font-medium text-white/10">
-                  {step.n}
-                </p>
-
-                <h3 className="mt-5 text-xl font-medium">
-                  {step.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-relaxed text-white/40">
-                  {step.text}
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-
-          <div className="mt-20 grid gap-6 md:grid-cols-2">
-
-            <Image
-              src="/qs_dekaelo_4.png"
-              alt="Producción audiovisual Dekaelo Media"
-              width={1200}
-              height={800}
-              className="h-auto w-full object-cover"
-              loading="lazy"
-            />
-
-            <Image
-              src="/qs_dekaelo_1.png"
-              alt="Rodaje Dekaelo Media"
-              width={1200}
-              height={800}
-              className="h-auto w-full object-cover"
-              loading="lazy"
-            />
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          MIRADA HACIA ADELANTE
-      ====================================================== */}
-
-      <section className="px-5 py-28 md:px-10 md:py-44">
+      <section className="border-y border-white/10 px-5 py-28 md:px-10 md:py-44">
 
         <div className="mx-auto max-w-5xl">
 
@@ -778,14 +618,12 @@ export default function QuienesSomosPage() {
 
             </p>
 
-
             <p className="mt-6 text-base leading-relaxed text-white/40 md:text-lg">
 
               Construyen canales propios, comparten conocimiento y desarrollan
               conversaciones permanentes con sus audiencias.
 
             </p>
-
 
             <p className="mt-6 text-base leading-relaxed text-white/40 md:text-lg">
 
@@ -847,8 +685,8 @@ export default function QuienesSomosPage() {
 
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
-            <Link
-              href="/contacto"
+            <a
+              href="mailto:info@dekaelomedia.com"
               className="inline-flex items-center gap-3 bg-white px-8 py-4 text-xs uppercase tracking-[0.18em] text-black transition hover:bg-white/90"
             >
 
@@ -856,7 +694,7 @@ export default function QuienesSomosPage() {
 
               <ArrowUpRight className="h-4 w-4" />
 
-            </Link>
+            </a>
 
 
             <Link
@@ -874,7 +712,7 @@ export default function QuienesSomosPage() {
 
 
           <p className="mt-6 text-xs text-white/25">
-            Respuesta el mismo día hábil. Sin compromiso.
+            Respuesta en 24 horas hábiles. Sin compromiso.
           </p>
 
         </div>
