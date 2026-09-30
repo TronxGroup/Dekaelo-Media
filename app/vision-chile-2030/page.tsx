@@ -40,51 +40,79 @@ export default function VisionChile2030Page() {
     <main className="bg-[#050505] text-white selection:bg-white selection:text-black">
 
       {/* =====================================================
-          HERO
-      ====================================================== */}
+    HERO
+====================================================== */}
 
-      <section className="relative min-h-[92vh] overflow-hidden border-b border-white/10 px-5 pt-40 md:px-10 md:pt-48">
+<section className="relative min-h-[92vh] overflow-hidden border-b border-white/10 px-5 pt-40 md:px-10 md:pt-48">
 
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute right-[-10%] top-[15%] h-[500px] w-[500px] rounded-full bg-[#f51b24]/5 blur-[140px]" />
-        </div>
+  {/* FOTO DE FONDO */}
+  <div
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: "url('/BG_Servicios_Chile.jpg')",
+    }}
+  />
 
-        <div className="relative mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-between">
+  {/* OVERLAY OSCURO */}
+  <div className="absolute inset-0 bg-black/60" />
 
-          <div>
-            <Eyebrow>Nuestra visión</Eyebrow>
+  {/* DEGRADADO INFERIOR */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/30 to-[#050505]" />
 
-            <h1 className="mt-7 max-w-7xl text-[clamp(4.5rem,13vw,13rem)] font-medium leading-[0.78] tracking-[-0.075em]">
-              Chile
-              <br />
-              <span className="text-white/30">2030</span>
-            </h1>
-          </div>
 
-          <div className="mt-20 grid gap-12 pb-16 md:grid-cols-12 md:items-end">
+  {/* CONTENIDO */}
+  <div className="relative z-10 mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-between">
 
-            <div className="md:col-span-7">
-              <p className="max-w-3xl text-[clamp(1.5rem,3vw,2.7rem)] leading-[1.05] tracking-[-0.035em] text-white/80">
-                Una década decisiva.
-              </p>
-            </div>
+    <div>
 
-            <div className="md:col-span-5">
-              <p className="max-w-lg text-sm leading-relaxed text-white/40 md:text-base">
-                Una reflexión sobre el futuro de Chile, las organizaciones y
-                la transformación de las comunicaciones durante la próxima
-                década.
-              </p>
-            </div>
+      <Eyebrow>Nuestra visión</Eyebrow>
 
-          </div>
+      <h1 className="mt-7 max-w-7xl text-[clamp(4.5rem,13vw,13rem)] font-medium leading-[0.78] tracking-[-0.075em]">
 
-          <div className="absolute bottom-8 right-0 hidden md:block">
-            <ArrowDownRight className="h-8 w-8 text-white/25" />
-          </div>
+        Chile
+        <br />
 
-        </div>
-      </section>
+        <span className="text-white/35">
+          2030
+        </span>
+
+      </h1>
+
+    </div>
+
+
+    <div className="mt-20 grid gap-12 pb-16 md:grid-cols-12 md:items-end">
+
+      <div className="md:col-span-7">
+
+        <p className="max-w-3xl text-[clamp(1.5rem,3vw,2.7rem)] leading-[1.05] tracking-[-0.035em] text-white/85">
+          Una década decisiva.
+        </p>
+
+      </div>
+
+
+      <div className="md:col-span-5">
+
+        <p className="max-w-lg text-sm leading-relaxed text-white/65 md:text-base">
+          Una reflexión sobre el futuro de Chile, las organizaciones y
+          la transformación de las comunicaciones durante la próxima
+          década.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    {/* INDICADOR */}
+    <div className="absolute bottom-8 right-0 hidden md:block">
+      <ArrowDownRight className="h-8 w-8 text-white/40" />
+    </div>
+
+  </div>
+
+</section>
 
 
       {/* =====================================================
