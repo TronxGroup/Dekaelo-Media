@@ -51,7 +51,7 @@ const projects = {
     description: "La conversación que ya no existe en televisión.",
     intro:
       "Un formato editorial de conversación y entretenimiento creado desde cero para recuperar el espíritu de la tertulia y llevarlo a una nueva audiencia digital.",
-    videoId: "lsC4ZY9w7EQ",
+    videoId: "8638BE6Uumg",
 
     challenge:
       "Crear un formato de conversación con identidad propia, capaz de conectar con una audiencia adulta interesada en humor, cultura y conversación.",
