@@ -429,7 +429,7 @@ export default function QuienesSomosPage() {
 
               <iframe
                 className="absolute inset-0 h-full w-full"
-                src="https://www.youtube.com/embed/AUUiBDv242k"
+                src="https://www.youtube.com/embed/LAaLA-spVH0"
                 title="Dekaelo Media — Reel 2026"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
