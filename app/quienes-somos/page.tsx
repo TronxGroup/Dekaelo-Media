@@ -6,9 +6,9 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Nosotros",
   description:
-    "Dekaelo Media es una productora audiovisual chilena fundada en 2023, construida sobre más de una década de experiencia en producción audiovisual para empresas, marcas e instituciones.",
+    "Dekaelo Media es una productora audiovisual chilena fundada en 2023, con más de una década de experiencia en producción, realización y postproducción.",
   alternates: {
-    canonical: "https://www.dekaelomedia.com/quienes-somos",
+    canonical: "/quienes-somos",
   },
 };
 
@@ -19,23 +19,23 @@ export const metadata: Metadata = {
 const milestones = [
   {
     year: "2013–2015",
-    title: "El comienzo",
-    text: "Tras Yokai, vinieron piezas comerciales y contenido digital para clientes como Editorial Televisa Chile, Hasbro, Agencia Pixelia —con proyectos para Quaker y Kodak—, Oximixo y Gran Logia de Chile.",
+    title: "Del cine independiente a la producción",
+    text: "La trayectoria comienza en el cine independiente y continúa con el desarrollo de piezas comerciales y contenido digital para marcas y organizaciones como Editorial Televisa Chile, Hasbro, Agencia Pixelia —con proyectos para Quaker y Kodak—, Oximixo y Gran Logia de Chile.",
   },
   {
     year: "2016–2020",
-    title: "Producción corporativa",
-    text: "Producción y postproducción para empresas de industria, tecnología y educación. Desarrollo de contenido corporativo y postproducción para Ripley. Algunos clientes de la época fueron Grupo KGHM Chile, Prodalam, Trewhela's School, Acmanet, Molinera San Cristóbal, iCity Chile, Inducom, U-Payments, Tapp, Exploflex y Coesam.",
+    title: "Producción y contenido corporativo",
+    text: "La experiencia se amplía hacia la producción y postproducción para empresas de industria, tecnología y educación, con proyectos para organizaciones como Ripley, Grupo KGHM Chile, Prodalam, Trewhela's School, Acmanet, Molinera San Cristóbal, iCity Chile, Inducom, U-Payments, Tapp, Exploflex y Coesam.",
   },
   {
     year: "2020–2022",
-    title: "Retomar y desarrollar",
-    text: "Tras la interrupción de la actividad presencial provocada por la pandemia, retomamos progresivamente la producción audiovisual con nuevas series de contenido para la Cámara de Comercio Asia Pacífico y el desarrollo y ejecución de formato para iGromi.",
+    title: "Nuevos formatos y contenidos",
+    text: "Tras la interrupción de la actividad presencial provocada por la pandemia, se retoma progresivamente la producción audiovisual con nuevas series de contenido para la Cámara de Comercio Asia Pacífico y el desarrollo y ejecución de formatos para iGromi.",
   },
   {
     year: "2023–2026",
     title: "Nace Dekaelo Media",
-    text: "En 2023 nace Dekaelo Media, enfocada en el desarrollo y la producción de formatos audiovisuales. Desde entonces ha producido Fútbol y Parrilla, cuyo primer episodio supera las 160K vistas, y desde 2024 el vodcast institucional de BICECORP. En 2026 se suma Lolosaurios, formato de conversación y entretenimiento producido desde el 12 de julio.",
+    text: "En 2023 se funda Dekaelo Media como una productora enfocada en el desarrollo, producción y postproducción de formatos audiovisuales. Desde entonces se suman proyectos como Fútbol y Parrilla, el vodcast institucional de BICECORP y Lolosaurios.",
   },
 ];
 
@@ -47,22 +47,22 @@ const values = [
   {
     number: "01",
     title: "Claridad antes que estética",
-    text: "Si no se entiende, no sirve. El mensaje define el video.",
+    text: "Si no se entiende, no sirve. El mensaje define el contenido.",
   },
   {
     number: "02",
-    title: "Alcance definido desde el inicio",
-    text: "Todo queda claro antes de comenzar. Sin ambigüedad.",
+    title: "El formato nace de la idea",
+    text: "Desarrollamos concepto, estructura, dinámica y lenguaje antes de producir.",
   },
   {
     number: "03",
-    title: "Entrega funcional",
-    text: "Cada pieza se entrega pensando en su uso real.",
+    title: "Una mirada de principio a fin",
+    text: "Desarrollo, producción y postproducción forman parte de un mismo proceso.",
   },
   {
     number: "04",
     title: "Procesos ordenados",
-    text: "Plazos claros, comunicación directa y producción organizada.",
+    text: "Alcance claro, comunicación directa, plazos definidos y producción organizada.",
   },
 ];
 
@@ -92,12 +92,16 @@ export default function QuienesSomosPage() {
       <section className="relative min-h-[88vh] overflow-hidden border-b border-white/10 px-5 pb-24 pt-40 md:px-10 md:pb-36 md:pt-52">
         {/* FOTO DE FONDO */}
 
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/BG_Nosotros.jpg')",
-          }}
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="/BG_Nosotros.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
 
         {/* OVERLAY */}
 
@@ -116,13 +120,11 @@ export default function QuienesSomosPage() {
             <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
               <div className="md:col-span-9">
                 <h1 className="max-w-6xl text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
-                  Empezamos
+                  Ideas que se
                   <br />
-                  contando historias.
+                  convierten en
                   <br />
-                  <span className="text-white/45">
-                    Hoy desarrollamos formatos.
-                  </span>
+                  <span className="text-white/45">formatos.</span>
                 </h1>
               </div>
 
@@ -143,7 +145,7 @@ export default function QuienesSomosPage() {
       </section>
 
       {/* =====================================================
-          ORIGEN
+          QUIÉNES SOMOS
       ====================================================== */}
 
       <section className="px-5 py-24 md:px-10 md:py-40">
@@ -152,14 +154,12 @@ export default function QuienesSomosPage() {
             {/* TITULO */}
 
             <div className="md:col-span-5">
-              <Eyebrow>El origen</Eyebrow>
+              <Eyebrow>Quiénes somos</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.7rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
-                Antes que una
+                Una productora
                 <br />
-                productora,
-                <br />
-                <span className="text-white/35">fuimos cine.</span>
+                <span className="text-white/35">con mirada propia.</span>
               </h2>
             </div>
 
@@ -167,23 +167,20 @@ export default function QuienesSomosPage() {
 
             <div className="md:col-span-7">
               <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
-                La historia de Dekaelo empieza antes de Dekaelo. En 2013, el
-                recorrido de su fundador comenzó con{" "}
-                <span className="text-white">Yokai</span>, largometraje
-                seleccionado en Sitges Film Festival y Buenos Aires Rojo
-                Sangre.
+                Dekaelo Media desarrolla y produce formatos audiovisuales
+                desde una idea hasta su entrega final.
               </p>
 
               <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-                Ese origen marcó nuestra manera de entender la producción
-                audiovisual: narrativa, ritmo, intención visual y una mirada
-                propia.
+                Trabajamos con empresas, marcas e instituciones que necesitan
+                comunicar, construir contenido y desarrollar nuevas formas de
+                relacionarse con sus audiencias.
               </p>
 
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-                Hoy aplicamos esa misma forma de trabajar al contenido
-                corporativo, los formatos editoriales y la producción
-                audiovisual para empresas.
+                Combinamos desarrollo creativo, producción y postproducción
+                para construir piezas y formatos con una intención clara,
+                tanto en contenido corporativo como editorial.
               </p>
             </div>
           </div>
@@ -193,7 +190,7 @@ export default function QuienesSomosPage() {
           <div className="mt-20 md:mt-28">
             <Image
               src="/qs_dekaelo_3.png"
-              alt="Rodaje Dekaelo Media"
+              alt="Producción audiovisual Dekaelo Media"
               width={1600}
               height={900}
               className="h-auto w-full object-cover"
@@ -203,10 +200,64 @@ export default function QuienesSomosPage() {
       </section>
 
       {/* =====================================================
+          ORIGEN
+      ====================================================== */}
+
+      <section className="border-y border-white/10 px-5 py-24 md:px-10 md:py-40">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-14 md:grid-cols-12 md:items-center">
+            {/* TITULO */}
+
+            <div className="md:col-span-5">
+              <Eyebrow>El origen</Eyebrow>
+
+              <h2 className="mt-6 text-[clamp(2.7rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+                Una trayectoria
+                <br />
+                que viene del
+                <br />
+                <span className="text-white/35">
+                  cine independiente.
+                </span>
+              </h2>
+            </div>
+
+            {/* TEXTO */}
+
+            <div className="md:col-span-7">
+              <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
+                Antes de Dekaelo, hubo años de producción audiovisual y una
+                experiencia que comenzó en el cine independiente.
+              </p>
+
+              <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                En 2013 se produjo{" "}
+                <span className="text-white">Yokai</span>, un largometraje
+                independiente que posteriormente fue seleccionado en Sitges
+                Film Festival y Buenos Aires Rojo Sangre.
+              </p>
+
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                Esa etapa permitió desarrollar una forma de entender la
+                producción basada en resolver, construir equipos y llevar una
+                idea desde el concepto hasta la pantalla.
+              </p>
+
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                Con el tiempo, esa experiencia se trasladó a proyectos
+                comerciales, corporativos y editoriales, hasta convertirse en
+                la base sobre la que se funda Dekaelo Media.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
           FUNDADOR
       ====================================================== */}
 
-      <section className="border-y border-white/10 px-5 py-24 md:px-10 md:py-36">
+      <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 md:grid-cols-12 md:items-center">
             {/* FOTO */}
@@ -226,7 +277,7 @@ export default function QuienesSomosPage() {
             {/* INFORMACIÓN */}
 
             <div className="md:col-span-7 md:pl-8">
-              <Eyebrow>Quién está detrás</Eyebrow>
+              <Eyebrow>Dirección</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
                 Tomás
@@ -242,30 +293,19 @@ export default function QuienesSomosPage() {
                 Más de 12 años de experiencia audiovisual
               </p>
 
-              {/* TEXTO */}
-
               <div className="mt-10 max-w-2xl">
                 <p className="text-xl leading-relaxed text-white/70 md:text-2xl">
-                  En Dekaelo, cada proyecto lo dirige personalmente Tomás.
-                  Quien define el formato es el mismo que está en el rodaje y
-                  en la sala de edición.
+                  Dekaelo mantiene una dirección cercana durante todo el
+                  proceso, desde el desarrollo del formato hasta el rodaje y
+                  la postproducción.
                 </p>
 
                 <p className="mt-7 text-base leading-relaxed text-white/40 md:text-lg">
-                  Esa cercanía permite tomar decisiones más rápido, mantener
-                  una misma mirada durante todo el proceso y trabajar
-                  directamente con quien está a cargo de la producción.
-                </p>
-
-                <p className="mt-5 text-base leading-relaxed text-white/40 md:text-lg">
-                  Tomás trabaja en producción audiovisual desde 2013. En 2023
-                  fundó Dekaelo Media para reunir esa experiencia en una
-                  productora enfocada en formatos, vodcast y contenido para
-                  empresas.
+                  La estructura permite trabajar directamente con la dirección
+                  de la productora, mantener una misma mirada durante las
+                  distintas etapas y tomar decisiones de manera ágil.
                 </p>
               </div>
-
-              {/* LINKEDIN */}
 
               <a
                 href="https://www.linkedin.com/in/tomasechebol/"
@@ -301,8 +341,8 @@ export default function QuienesSomosPage() {
               </h2>
 
               <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/40 md:text-base">
-                Antes de Dekaelo, más de una década de producción audiovisual
-                para marcas, empresas e instituciones.
+                Más de una década de producción audiovisual que hoy forma
+                parte de la experiencia de Dekaelo Media.
               </p>
             </div>
 
@@ -346,7 +386,7 @@ export default function QuienesSomosPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 md:grid-cols-12 md:items-end">
             <div className="md:col-span-5">
-              <Eyebrow>Reel</Eyebrow>
+              <Eyebrow>Reel 2026</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
                 Lo que
@@ -367,8 +407,8 @@ export default function QuienesSomosPage() {
             <div className="relative aspect-video w-full overflow-hidden bg-white/5">
               <iframe
                 className="absolute inset-0 h-full w-full"
-                src="https://www.youtube.com/embed/4jDNXBkv7vU"
-                title="Dekaelo Media — Reel"
+                src="https://www.youtube.com/embed/AUUiBDv242k"
+                title="Dekaelo Media — Reel 2026"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -384,8 +424,6 @@ export default function QuienesSomosPage() {
 
       <section className="border-b border-white/10 bg-white/[0.02] px-5 py-24 md:px-10 md:py-36">
         <div className="mx-auto max-w-7xl">
-          {/* TITULO */}
-
           <div className="mb-16">
             <Eyebrow>Experiencia</Eyebrow>
 
@@ -397,8 +435,6 @@ export default function QuienesSomosPage() {
               </span>
             </h2>
           </div>
-
-          {/* NUMEROS */}
 
           <div className="grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
             {/* 200+ */}
@@ -576,8 +612,6 @@ export default function QuienesSomosPage() {
           </p>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            {/* CONTACTO */}
-
             <Link
               href="/contacto"
               className="inline-flex items-center gap-3 bg-white px-8 py-4 text-xs uppercase tracking-[0.18em] text-black transition hover:bg-white/90"
@@ -586,8 +620,6 @@ export default function QuienesSomosPage() {
 
               <ArrowUpRight className="h-4 w-4" />
             </Link>
-
-            {/* SERVICIOS */}
 
             <Link
               href="/servicios"
