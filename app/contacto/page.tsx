@@ -39,7 +39,7 @@ export default function ContactoPage() {
         {/* Fondo del Hero */}
         <div className="absolute inset-0">
           <Image
-            src="/servicios_dekaelo.jpg"
+            src="/proyecto_2.jpg"
             alt=""
             fill
             priority
