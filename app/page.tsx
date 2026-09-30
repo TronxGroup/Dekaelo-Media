@@ -234,7 +234,7 @@ export default function Home() {
           <div className="relative aspect-video overflow-hidden bg-white/5">
             <iframe
               className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/AUUiBDv242k"
+              src="https://www.youtube.com/embed/MY0sTHMoy1s"
               title="Dekaelo Media — Reel 2026"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
