@@ -53,7 +53,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-
     googleBot: {
       index: true,
       follow: true,
@@ -68,28 +67,16 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
   viewportFit: "cover",
 };
-
-/* ============================================================
-   FOOTER
-============================================================ */
 
 function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#050505] px-5 py-16 md:px-10 md:py-24">
-
       <div className="mx-auto max-w-7xl">
-
         <div className="grid gap-12 md:grid-cols-12">
-
-          {/* ==================================================
-              MARCA
-          =================================================== */}
-
+          {/* Marca */}
           <div className="md:col-span-6">
-
             <Image
               src="/dekaelo-logo.png"
               alt="Dekaelo Media"
@@ -101,21 +88,15 @@ function Footer() {
             <p className="mt-8 max-w-md text-sm leading-relaxed text-white/50">
               Distintas voces, una misma producción.
             </p>
-
           </div>
 
-          {/* ==================================================
-              NAVEGACIÓN
-          =================================================== */}
-
+          {/* Navegación */}
           <div className="md:col-span-3">
-
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">
               Navegación
             </p>
 
             <div className="mt-5 flex flex-col gap-3 text-sm">
-
               <Link
                 href="/"
                 className="text-white/60 transition hover:text-white"
@@ -157,23 +138,16 @@ function Footer() {
               >
                 Contacto
               </Link>
-
             </div>
-
           </div>
 
-          {/* ==================================================
-              CONTACTO
-          =================================================== */}
-
+          {/* Contacto */}
           <div className="md:col-span-3">
-
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">
               Contacto
             </p>
 
             <div className="mt-5 flex flex-col gap-3 text-sm">
-
               <a
                 href="mailto:info@dekaelomedia.com"
                 className="text-white/60 transition hover:text-white"
@@ -198,42 +172,21 @@ function Footer() {
               >
                 LinkedIn
               </a>
-
             </div>
-
           </div>
-
         </div>
 
-        {/* ==================================================
-            COPYRIGHT
-        =================================================== */}
-
+        {/* Copyright */}
         <div className="mt-16 border-t border-white/10 pt-6">
-
           <div className="flex flex-col gap-3 text-[10px] uppercase tracking-[0.16em] text-white/25 md:flex-row md:items-center md:justify-between">
-
-            <p>
-              © {new Date().getFullYear()} Dekaelo Media
-            </p>
-
-            <p>
-              Tronx Group SpA
-            </p>
-
+            <p>© {new Date().getFullYear()} Dekaelo Media</p>
+            <p>Dekaelo Media SpA</p>
           </div>
-
         </div>
-
       </div>
-
     </footer>
   );
 }
-
-/* ============================================================
-   ROOT LAYOUT
-============================================================ */
 
 export default function RootLayout({
   children,
@@ -242,19 +195,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-
       <body className="bg-[#050505] text-white antialiased">
-
         <Header />
 
-        <main>{children}</main>
+        {children}
 
         <Footer />
 
-        {/* ==================================================
-            ORGANIZATION SCHEMA
-        =================================================== */}
-
+        {/* Schema.org */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -271,6 +219,15 @@ export default function RootLayout({
               description:
                 "Productora audiovisual chilena especializada en desarrollo de formatos, producción, realización y postproducción.",
 
+              foundingDate: "2013",
+
+              email: "info@dekaelomedia.com",
+
+              founder: {
+                "@type": "Person",
+                name: "Tomás Echeverría",
+              },
+
               sameAs: [
                 "https://www.instagram.com/dekaelo_media/",
                 "https://www.linkedin.com/company/dekaelo-media/",
@@ -278,9 +235,7 @@ export default function RootLayout({
             }),
           }}
         />
-
       </body>
-
     </html>
   );
 }
