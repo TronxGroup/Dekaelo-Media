@@ -105,55 +105,74 @@ export default function QuienesSomosPage() {
 
 
       {/* =====================================================
-          HERO
-      ====================================================== */}
+    HERO
+====================================================== */}
 
-      <section className="border-b border-white/10 px-5 pb-24 pt-40 md:px-10 md:pb-36 md:pt-52">
+<section className="relative min-h-[88vh] overflow-hidden border-b border-white/10 px-5 pb-24 pt-40 md:px-10 md:pb-36 md:pt-52">
 
-        <div className="mx-auto max-w-7xl">
+  {/* FOTO DE FONDO */}
+  <div
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: "url('/bg_dekaelo.png')",
+    }}
+  />
 
-          <Eyebrow>Nosotros</Eyebrow>
+  {/* OVERLAY */}
+  <div className="absolute inset-0 bg-black/60" />
 
-
-          <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
-
-            <div className="md:col-span-9">
-
-              <h1 className="max-w-6xl text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
-
-                Empezamos
-                <br />
-                contando historias.
-                <br />
-
-                <span className="text-white/35">
-                  Hoy desarrollamos formatos.
-                </span>
-
-              </h1>
-
-            </div>
+  {/* DEGRADADO INFERIOR */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/20 to-[#050505]" />
 
 
-            <div className="md:col-span-3">
+  {/* CONTENIDO */}
+  <div className="relative z-10 mx-auto flex min-h-[68vh] max-w-7xl flex-col justify-between">
 
-              <p className="text-sm leading-relaxed text-white/45 md:text-base">
-                Dekaelo Media es una productora audiovisual chilena que
-                desarrolla, produce y postproduce contenido para empresas,
-                marcas y audiencias.
-              </p>
+    <div>
 
-              <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-white/25">
-                Desde 2013
-              </p>
+      <Eyebrow>Nosotros</Eyebrow>
 
-            </div>
+      <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
 
-          </div>
+        <div className="md:col-span-9">
+
+          <h1 className="max-w-6xl text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
+
+            Empezamos
+            <br />
+            contando historias.
+            <br />
+
+            <span className="text-white/45">
+              Hoy desarrollamos formatos.
+            </span>
+
+          </h1>
 
         </div>
 
-      </section>
+
+        <div className="md:col-span-3">
+
+          <p className="text-sm leading-relaxed text-white/65 md:text-base">
+            Dekaelo Media es una productora audiovisual chilena que
+            desarrolla, produce y postproduce contenido para empresas,
+            marcas y audiencias.
+          </p>
+
+          <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-white/40">
+            Desde 2013
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
       {/* =====================================================
