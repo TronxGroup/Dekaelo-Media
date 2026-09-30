@@ -114,7 +114,7 @@ export default function QuienesSomosPage() {
   <div
     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
     style={{
-      backgroundImage: "url('/bg_dekaelo.png')",
+      backgroundImage: "url('/BG_Nosotros.jpg')",
     }}
   />
 
