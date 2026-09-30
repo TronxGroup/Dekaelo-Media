@@ -130,47 +130,69 @@ export default function ServiciosPage() {
     <main className="bg-[#050505] text-white selection:bg-white selection:text-black">
 
       {/* =====================================================
-          HERO
-      ====================================================== */}
+    HERO
+====================================================== */}
 
-      <section className="border-b border-white/10 px-5 pb-24 pt-40 md:px-10 md:pb-36 md:pt-52">
-        <div className="mx-auto max-w-7xl">
+<section className="relative min-h-[88vh] overflow-hidden border-b border-white/10 px-5 pb-24 pt-40 md:px-10 md:pb-36 md:pt-52">
 
-          <Eyebrow>Servicios</Eyebrow>
+  {/* FOTO DE FONDO */}
+  <div
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: "url('/BG_Servicios.jpg')",
+    }}
+  />
 
-          <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
+  {/* OVERLAY OSCURO */}
+  <div className="absolute inset-0 bg-black/60" />
 
-            <div className="md:col-span-9">
+  {/* DEGRADADO PARA INTEGRAR CON LA PÁGINA */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-[#050505]" />
 
-              <h1 className="max-w-6xl text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
-                Del concepto
-                <br />
-                a la producción.
-                <br />
-                <span className="text-white/35">
-                  Una misma mirada.
-                </span>
-              </h1>
 
-            </div>
+  {/* CONTENIDO */}
+  <div className="relative z-10 mx-auto flex min-h-[68vh] max-w-7xl flex-col justify-end">
 
-            <div className="md:col-span-3">
+    <Eyebrow>Servicios</Eyebrow>
 
-              <p className="text-sm leading-relaxed text-white/45 md:text-base">
-                Desarrollamos, producimos y postproducimos formatos
-                audiovisuales para empresas, marcas y audiencias.
-              </p>
+    <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
 
-              <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-white/25">
-                Dekaelo Media · Desde 2013
-              </p>
+      <div className="md:col-span-9">
 
-            </div>
+        <h1 className="max-w-6xl text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
 
-          </div>
+          Del concepto
+          <br />
+          a la producción.
+          <br />
 
-        </div>
-      </section>
+          <span className="text-white/45">
+            Una misma mirada.
+          </span>
+
+        </h1>
+
+      </div>
+
+
+      <div className="md:col-span-3">
+
+        <p className="text-sm leading-relaxed text-white/70 md:text-base">
+          Desarrollamos, producimos y postproducimos formatos
+          audiovisuales para empresas, marcas y audiencias.
+        </p>
+
+        <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-white/45">
+          Dekaelo Media · Desde 2013
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
       {/* =====================================================
