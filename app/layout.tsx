@@ -95,7 +95,7 @@ function Footer() {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-6">
             <Image
-              src="/logo-dekaelo-white.png"
+              src="/dekaelo-logo.png"
               alt="Dekaelo Media"
               width={220}
               height={60}
@@ -150,10 +150,10 @@ function Footer() {
 
             <div className="mt-5 flex flex-col gap-3 text-sm">
               <a
-                href="mailto:hola@dekaelomedia.com"
+                href="mailto:info@dekaelomedia.com"
                 className="text-white/60 transition hover:text-white"
               >
-                hola@dekaelomedia.com
+                info@dekaelomedia.com
               </a>
 
               <a
