@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Header from "@/components/Header";
 import "./globals.css";
 
@@ -178,10 +179,9 @@ function Footer() {
 
         {/* Copyright */}
         <div className="mt-16 border-t border-white/10 pt-6">
-          <div className="flex flex-col gap-3 text-[10px] uppercase tracking-[0.16em] text-white/25 md:flex-row md:items-center md:justify-between">
-            <p>© {new Date().getFullYear()} Dekaelo Media</p>
-            <p>Dekaelo Media SpA</p>
-          </div>
+          <p className="text-[10px] uppercase tracking-[0.16em] text-white/25">
+            © {new Date().getFullYear()} Dekaelo Media SpA
+          </p>
         </div>
       </div>
     </footer>
@@ -202,6 +202,8 @@ export default function RootLayout({
 
         <Footer />
 
+        <GoogleAnalytics gaId="G-96HZDP5PVP" />
+
         {/* Schema.org */}
         <script
           type="application/ld+json"
@@ -209,25 +211,17 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-
               name: "Dekaelo Media",
-
               url: siteUrl,
-
               logo: `${siteUrl}/dekaelo-logo.png`,
-
               description:
                 "Productora audiovisual chilena especializada en desarrollo de formatos, producción, realización y postproducción.",
-
               foundingDate: "2013",
-
               email: "info@dekaelomedia.com",
-
               founder: {
                 "@type": "Person",
                 name: "Tomás Echeverría",
               },
-
               sameAs: [
                 "https://www.instagram.com/dekaelo_media/",
                 "https://www.linkedin.com/company/dekaelo-media/",
