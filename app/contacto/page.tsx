@@ -188,7 +188,7 @@ function ContactForm() {
       {/* MENSAJE */}
 
       <div>
-        <Label htmlFor="mensaje">Cuéntanos tu proyecto</Label>
+        <Label htmlFor="mensaje">Cuéntanoss tu proyecto</Label>
 
         <textarea
           id="mensaje"
