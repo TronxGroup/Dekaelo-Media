@@ -224,34 +224,36 @@ export default function QuienesSomosPage() {
 
             {/* TEXTO */}
 
-<div className="md:col-span-7">
-  <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
-    Antes de Dekaelo, hubo años de producción audiovisual y una
-    experiencia que comenzó en el cine independiente.
-  </p>
+            <div className="md:col-span-7">
+              <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
+                Antes de Dekaelo, hubo años de producción audiovisual y una
+                experiencia que comenzó en el cine independiente.
+              </p>
 
-  <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-    En 2013 se produjo{" "}
-    <span className="text-white">Yokai, un largometraje
-    independiente que posteriormente fue seleccionado en{" "}
-    <span className="text-white">Sitges Film Festival</span> y{" "}
-    <span className="text-white">Buenos Aires Rojo Sangre</span>, y que
-    actualmente también está disponible en{" "}
-    <span className="text-white">Amazon Prime Video</span>.
-  </p>
+              <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                En 2013 se produjo{" "}
+                <span className="text-white">Yokai</span>, un largometraje
+                independiente que posteriormente fue seleccionado en{" "}
+                <span className="text-white">Sitges Film Festival</span> y{" "}
+                <span className="text-white">Buenos Aires Rojo Sangre</span>,
+                y que actualmente también está disponible en{" "}
+                <span className="text-white">Amazon Prime Video</span>.
+              </p>
 
-  <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-    Esa etapa permitió desarrollar una forma de entender la producción
-    basada en resolver, construir equipos y llevar una idea desde el
-    concepto hasta la pantalla.
-  </p>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                Esa etapa permitió desarrollar una forma de entender la
+                producción basada en resolver, construir equipos y llevar una
+                idea desde el concepto hasta la pantalla.
+              </p>
 
-  <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-    Con el tiempo, esa experiencia se trasladó a proyectos comerciales,
-    corporativos y editoriales, hasta convertirse en la base sobre la que
-    se funda Dekaelo Media.
-  </p>
-</div>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                Con el tiempo, esa experiencia se trasladó a proyectos
+                comerciales, corporativos y editoriales, hasta convertirse en
+                la base sobre la que se funda Dekaelo Media.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* =====================================================
@@ -315,7 +317,6 @@ export default function QuienesSomosPage() {
                 className="mt-8 inline-flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-white/45 transition hover:text-white"
               >
                 LinkedIn
-
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
@@ -480,7 +481,6 @@ export default function QuienesSomosPage() {
                 className="mt-4 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.16em] text-white/35 transition hover:text-white"
               >
                 Ver video
-
                 <ArrowUpRight className="h-3 w-3" />
               </a>
             </div>
@@ -584,7 +584,6 @@ export default function QuienesSomosPage() {
               className="mt-10 inline-flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-white/55 transition hover:text-white"
             >
               Conoce nuestra visión
-
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -618,7 +617,6 @@ export default function QuienesSomosPage() {
               className="inline-flex items-center gap-3 bg-white px-8 py-4 text-xs uppercase tracking-[0.18em] text-black transition hover:bg-white/90"
             >
               Solicitar propuesta
-
               <ArrowUpRight className="h-4 w-4" />
             </Link>
 
@@ -627,7 +625,6 @@ export default function QuienesSomosPage() {
               className="inline-flex items-center gap-3 border border-white/15 bg-white/5 px-8 py-4 text-xs uppercase tracking-[0.18em] text-white/55 transition hover:bg-white/10 hover:text-white"
             >
               Ver servicios
-
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
