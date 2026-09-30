@@ -1,10 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 
+export const metadata: Metadata = {
+  title: "Proyectos",
+  description:
+    "Conoce proyectos audiovisuales desarrollados y producidos por Dekaelo Media para empresas, marcas y organizaciones.",
+  alternates: {
+    canonical: "/proyectos",
+  },
+};
+
 const projects = [
-  ["bice", "BICE", "Contenido corporativo", "/projects/bice/hero.png"],
-  ["lolosaurios", "LOLOSAURIOS", "Entretenimiento", "/projects/lolosaurios/hero.png"],
+  [
+    "bice",
+    "BICE",
+    "Contenido corporativo",
+    "/projects/bice/hero.png",
+  ],
+  [
+    "lolosaurios",
+    "LOLOSAURIOS",
+    "Entretenimiento",
+    "/projects/lolosaurios/hero.png",
+  ],
   [
     "futbol-y-parrilla",
     "FÚTBOL Y PARRILLA",
@@ -28,8 +48,11 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-[#050505] px-5 py-24 text-white md:px-10 md:py-32">
+
       <div className="mb-16 flex items-end justify-between gap-8">
+
         <div>
+
           <Link
             href="/"
             className="text-[10px] uppercase tracking-[0.25em] text-white/40 transition hover:text-white"
@@ -44,19 +67,28 @@ export default function ProjectsPage() {
           <h1 className="mt-4 text-6xl font-medium tracking-[-0.06em] md:text-8xl">
             Proyectos
           </h1>
+
         </div>
+
       </div>
 
+
       <div className="grid grid-cols-1 gap-x-6 gap-y-16 md:grid-cols-2">
+
         {projects.map(([slug, title, category, image], index) => (
+
           <Link
             href={`/proyectos/${slug}`}
             key={slug}
             className={`group ${
-              index === projects.length - 1 ? "md:col-span-2" : ""
+              index === projects.length - 1
+                ? "md:col-span-2"
+                : ""
             }`}
           >
+
             <div className="relative aspect-[16/9] overflow-hidden bg-white/5">
+
               <Image
                 src={image}
                 alt={title}
@@ -72,12 +104,18 @@ export default function ProjectsPage() {
               <div className="absolute inset-0 bg-black/0 transition duration-500 group-hover:bg-black/25" />
 
               <div className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-black opacity-0 transition duration-300 group-hover:opacity-100">
+
                 <ArrowUpRight className="h-4 w-4" />
+
               </div>
+
             </div>
 
+
             <div className="mt-5 flex justify-between gap-6">
+
               <div>
+
                 <h2 className="text-xl font-medium tracking-[-0.025em]">
                   {title}
                 </h2>
@@ -85,15 +123,22 @@ export default function ProjectsPage() {
                 <p className="mt-1 text-xs text-white/35">
                   {category}
                 </p>
+
               </div>
+
 
               <span className="pt-1 text-[10px] text-white/20">
                 0{index + 1}
               </span>
+
             </div>
+
           </Link>
+
         ))}
+
       </div>
+
     </main>
   );
 }
