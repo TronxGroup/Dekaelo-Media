@@ -617,7 +617,7 @@ export default function ProjectPage({
           </p>
 
           <h2 className="mt-3 text-3xl font-medium tracking-[-0.03em] md:text-5xl">
-            Detrás del proyecto
+            Capturas
           </h2>
 
         </div>
