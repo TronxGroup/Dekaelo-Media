@@ -17,7 +17,7 @@ const projects = {
     description: "Conversaciones que conectan.",
     intro:
       "Nos Une es un formato de comunicación interna creado para acompañar la integración entre BICECORP y Grupo Security y acercar a sus equipos a través de conversaciones con sus principales protagonistas.",
-    videoId: "AUUiBDv242k",
+    videoId: "2r11AjLM1oM",
 
     challenge:
       "Acompañar el proceso de integración entre BICECORP y Grupo Security mediante un formato de comunicación cercano que conectara a la alta administración con sus colaboradores.",
