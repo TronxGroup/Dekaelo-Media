@@ -232,7 +232,7 @@ export default function QuienesSomosPage() {
 
   <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
     En 2013 se produjo{" "}
-    <span className="text-white">Yokai</span>, un largometraje
+    <span className="text-white">Yokai, un largometraje
     independiente que posteriormente fue seleccionado en{" "}
     <span className="text-white">Sitges Film Festival</span> y{" "}
     <span className="text-white">Buenos Aires Rojo Sangre</span>, y que
