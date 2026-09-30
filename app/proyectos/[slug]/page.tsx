@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUp, ArrowUpRight } from "lucide-react";
 
 /* ============================================================
    PROYECTOS
@@ -275,38 +275,41 @@ export default function ProjectPage({
   }
 
   return (
-    <main className="min-h-screen bg-[#050505] text-white">
-
-      {/* =====================================================
-          HEADER
-      ====================================================== */}
-
-      <header className="fixed left-0 top-0 z-50 w-full bg-gradient-to-b from-black/80 to-transparent px-5 py-5 md:px-10 md:py-7">
-
-        <Link
-          href="/"
-          className="text-[10px] uppercase tracking-[0.25em] text-white/70 transition hover:text-white"
-        >
-          Dekaelo Media
-        </Link>
-
-      </header>
-
+    <main
+      id="top"
+      className="min-h-screen bg-[#050505] text-white"
+    >
       {/* =====================================================
           HERO
       ====================================================== */}
 
-      <section className="relative pt-28 md:pt-36">
+      <section className="relative pt-36 md:pt-44">
 
         <div className="px-5 md:px-10">
 
-          <Link
-            href="/proyectos"
-            className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/40 transition hover:text-white"
-          >
-            <ArrowLeft className="h-3 w-3" />
-            Todos los proyectos
-          </Link>
+          {/* NAVEGACIÓN */}
+
+          <div className="flex items-center justify-between">
+
+            <Link
+              href="/proyectos"
+              className="group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/40 transition hover:text-white"
+            >
+              <ArrowLeft className="h-3 w-3 transition-transform group-hover:-translate-x-1" />
+              Todos los proyectos
+            </Link>
+
+            <a
+              href="#proyecto"
+              className="hidden items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/30 transition hover:text-white md:inline-flex"
+            >
+              Ver proyecto
+              <ArrowUpRight className="h-3 w-3" />
+            </a>
+
+          </div>
+
+          {/* CATEGORÍA / CLIENTE */}
 
           <div className="mt-16 flex flex-col gap-3 md:flex-row md:items-center md:gap-8">
 
@@ -322,15 +325,21 @@ export default function ProjectPage({
 
           </div>
 
+          {/* TÍTULO */}
+
           <h1 className="mt-5 max-w-6xl text-[clamp(3rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
             {project.title}
           </h1>
+
+          {/* SUBTÍTULO */}
 
           <p className="mt-7 max-w-2xl text-lg text-white/45 md:text-xl">
             {project.subtitle}
           </p>
 
         </div>
+
+        {/* HERO IMAGE */}
 
         <div className="relative mt-14 aspect-[16/9] w-full overflow-hidden">
 
@@ -351,7 +360,10 @@ export default function ProjectPage({
           PROJECT INTRO
       ====================================================== */}
 
-      <section className="px-5 py-24 md:px-10 md:py-32">
+      <section
+        id="proyecto"
+        className="scroll-mt-28 px-5 py-24 md:px-10 md:py-32"
+      >
 
         <div className="grid gap-12 md:grid-cols-12">
 
@@ -721,6 +733,27 @@ export default function ProjectPage({
       </section>
 
       {/* =====================================================
+          VOLVER ARRIBA
+      ====================================================== */}
+
+      <div className="border-t border-white/10 px-5 py-8 md:px-10">
+
+        <div className="mx-auto max-w-7xl">
+
+          <a
+            href="#top"
+            className="group inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.18em] text-white/35 transition hover:text-white"
+          >
+            Volver arriba
+
+            <ArrowUp className="h-3 w-3 transition-transform group-hover:-translate-y-1" />
+          </a>
+
+        </div>
+
+      </div>
+
+      {/* =====================================================
           CTA
       ====================================================== */}
 
@@ -748,9 +781,7 @@ export default function ProjectPage({
           >
             Contactar
 
-            <ArrowUpRight
-              className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-            />
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
 
         </div>
