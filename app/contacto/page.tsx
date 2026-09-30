@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -34,8 +35,24 @@ export default function ContactoPage() {
           HERO
       ====================================================== */}
 
-      <section className="border-b border-white/10 px-5 pb-24 pt-36 md:px-10 md:pb-32 md:pt-48">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden border-b border-white/10 px-5 pb-24 pt-36 md:px-10 md:pb-32 md:pt-48">
+        {/* Fondo del Hero */}
+        <div className="absolute inset-0">
+          <Image
+            src="/servicios_dekaelo.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+
+          {/* Overlay para mantener la legibilidad del texto */}
+          <div className="absolute inset-0 bg-black/65" />
+        </div>
+
+        {/* Contenido */}
+        <div className="relative z-10 mx-auto max-w-7xl">
           <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
             Contacto
           </p>
@@ -48,7 +65,7 @@ export default function ContactoPage() {
             <span className="text-white/35">proyecto.</span>
           </h1>
 
-          <p className="mt-10 max-w-xl text-base leading-relaxed text-white/55 md:text-lg">
+          <p className="mt-10 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
             Cuéntanos qué quieres producir. Revisamos el proyecto, definimos
             el alcance y te respondemos con una propuesta clara.
           </p>
@@ -80,7 +97,9 @@ export default function ContactoPage() {
             Respuesta en 24 horas hábiles. Sin compromiso.
           </p>
 
-          {/* ORIENTACIÓN */}
+          {/* =====================================================
+              ORIENTACIÓN
+          ====================================================== */}
 
           <div className="mt-24 grid gap-12 md:mt-32 md:grid-cols-12">
             <div className="md:col-span-5">
