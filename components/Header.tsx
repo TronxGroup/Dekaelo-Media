@@ -25,9 +25,10 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
+    <header className="fixed inset-x-0 top-0 z-50 w-full">
       <div className="relative border-b border-white/10 bg-[#050505]/80 backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-10">
+
           {/* LOGO */}
           <Link
             href="/"
@@ -36,12 +37,12 @@ export default function Header() {
             aria-label="Dekaelo Media — Inicio"
           >
             <Image
-              src="/logo-dekaelo-white.png"
+              src="/dekaelo-logo.png"
               alt="Dekaelo Media"
-              width={190}
-              height={52}
+              width={220}
+              height={80}
               priority
-              className="h-auto w-[145px] md:w-[175px]"
+              className="h-auto w-[135px] md:w-[165px]"
             />
           </Link>
 
@@ -102,6 +103,7 @@ export default function Header() {
         }`}
       >
         <div className="flex min-h-screen flex-col px-5 pb-10 pt-28">
+
           <div className="mb-10 text-[10px] uppercase tracking-[0.2em] text-white/30">
             Navegación
           </div>
@@ -110,7 +112,7 @@ export default function Header() {
             <Link
               href="/#proyectos"
               onClick={closeMenu}
-              className="border-b border-white/10 py-5 text-4xl font-medium tracking-[-0.04em] text-white transition-opacity hover:text-white/60"
+              className="border-b border-white/10 py-5 text-4xl font-medium tracking-[-0.04em] text-white transition hover:text-white/60"
             >
               Proyectos
             </Link>
@@ -118,7 +120,7 @@ export default function Header() {
             <Link
               href="/quienes-somos"
               onClick={closeMenu}
-              className="border-b border-white/10 py-5 text-4xl font-medium tracking-[-0.04em] text-white transition-opacity hover:text-white/60"
+              className="border-b border-white/10 py-5 text-4xl font-medium tracking-[-0.04em] text-white transition hover:text-white/60"
             >
               Nosotros
             </Link>
@@ -126,7 +128,7 @@ export default function Header() {
             <Link
               href="/servicios"
               onClick={closeMenu}
-              className="border-b border-white/10 py-5 text-4xl font-medium tracking-[-0.04em] text-white transition-opacity hover:text-white/60"
+              className="border-b border-white/10 py-5 text-4xl font-medium tracking-[-0.04em] text-white transition hover:text-white/60"
             >
               Servicios
             </Link>
@@ -134,7 +136,7 @@ export default function Header() {
             <Link
               href="/#contacto"
               onClick={closeMenu}
-              className="border-b border-white/10 py-5 text-4xl font-medium tracking-[-0.04em] text-white transition-opacity hover:text-white/60"
+              className="border-b border-white/10 py-5 text-4xl font-medium tracking-[-0.04em] text-white transition hover:text-white/60"
             >
               Contacto
             </Link>
@@ -144,6 +146,7 @@ export default function Header() {
             <p>DEKAELO MEDIA</p>
             <p>Distintas voces, una misma producción.</p>
           </div>
+
         </div>
       </div>
     </header>
