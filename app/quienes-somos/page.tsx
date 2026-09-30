@@ -23,7 +23,7 @@ const clients = [
   "Editorial Televisa Chile",
   "Grupo KGHM Chile",
   "Cámara de Comercio Asia Pacífico",
-  "Agencia Pixelia",
+  "iGromi",
   "Prodalam",
   "Trewhela's School",
   "Acmanet",
