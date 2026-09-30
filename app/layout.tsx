@@ -1,8 +1,12 @@
+"use client";
+
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import Image from "next/image";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const siteUrl = "https://www.dekaelomedia.com";
 
@@ -109,17 +113,48 @@ const ADS_ID = "AW-17760996045";
 ============================================================ */
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  /* ============================================================
+     BLOQUEAR SCROLL CUANDO EL MENU ESTA ABIERTO
+  ============================================================ */
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+
+  /* ============================================================
+     CERRAR MENU
+  ============================================================ */
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+
   return (
     <header className="fixed left-0 top-0 z-50 w-full">
 
       <div className="flex items-center justify-between px-5 py-5 md:px-10 md:py-7">
 
-        {/* LOGO */}
+        {/* ====================================================
+            LOGO
+        ===================================================== */}
 
         <Link
           href="/"
           aria-label="Dekaelo Media — Inicio"
-          className="relative z-50"
+          onClick={closeMenu}
+          className="relative z-[60]"
         >
           <Image
             src="/dekaelo-logo.png"
@@ -170,83 +205,110 @@ function Header() {
 
 
         {/* ====================================================
-            MOBILE MENU
+            MOBILE BUTTON
         ===================================================== */}
 
-        <details className="relative z-50 md:hidden">
+        <button
+          type="button"
+          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+          className="relative z-[60] flex h-10 w-10 items-center justify-center md:hidden"
+        >
 
-          <summary
-            aria-label="Abrir menú"
-            className="flex h-10 w-10 cursor-pointer list-none items-center justify-center"
-          >
+          {menuOpen ? (
+            <X
+              className="h-7 w-7 text-white"
+              strokeWidth={1.5}
+            />
+          ) : (
+            <Menu
+              className="h-7 w-7 text-white"
+              strokeWidth={1.5}
+            />
+          )}
 
-            <span className="flex flex-col gap-[5px]">
+        </button>
 
-              <span className="block h-px w-6 bg-white" />
-              <span className="block h-px w-6 bg-white" />
-              <span className="block h-px w-6 bg-white" />
-
-            </span>
-
-          </summary>
-
-
-          {/* MOBILE PANEL */}
-
-          <div className="fixed inset-0 top-0 z-40 min-h-screen bg-[#050505] px-5 pt-28">
-
-            <div className="flex min-h-[calc(100vh-7rem)] flex-col">
-
-              <nav className="flex flex-col">
-
-                <Link
-                  href="/#proyectos"
-                  className="border-b border-white/10 py-6 text-3xl font-medium tracking-[-0.04em]"
-                >
-                  Proyectos
-                </Link>
-
-                <Link
-                  href="/quienes-somos"
-                  className="border-b border-white/10 py-6 text-3xl font-medium tracking-[-0.04em]"
-                >
-                  Nosotros
-                </Link>
-
-                <Link
-                  href="/servicios"
-                  className="border-b border-white/10 py-6 text-3xl font-medium tracking-[-0.04em]"
-                >
-                  Servicios
-                </Link>
-
-                <Link
-                  href="/#contacto"
-                  className="border-b border-white/10 py-6 text-3xl font-medium tracking-[-0.04em]"
-                >
-                  Contacto
-                </Link>
-
-              </nav>
+      </div>
 
 
-              <div className="mt-auto pb-10">
+      {/* ====================================================
+          MOBILE MENU
+      ===================================================== */}
 
-                <p className="text-[10px] uppercase tracking-[0.25em] text-[#f51b24]">
-                  Dekaelo Media
-                </p>
+      <div
+        className={`fixed inset-0 z-50 bg-[#050505] md:hidden ${
+          menuOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
+        } transition-opacity duration-300`}
+      >
 
-                <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/35">
-                  Distintas voces, una misma producción.
-                </p>
+        <div className="flex min-h-screen flex-col px-5 pb-10 pt-28">
 
-              </div>
+          {/* ==================================================
+              MOBILE NAV
+          =================================================== */}
 
-            </div>
+          <nav className="flex flex-col">
+
+            <Link
+              href="/#proyectos"
+              onClick={closeMenu}
+              className="border-b border-white/10 py-6 text-3xl font-medium tracking-[-0.04em] transition-colors duration-200 hover:text-white/50"
+            >
+              Proyectos
+            </Link>
+
+            <Link
+              href="/quienes-somos"
+              onClick={closeMenu}
+              className="border-b border-white/10 py-6 text-3xl font-medium tracking-[-0.04em] transition-colors duration-200 hover:text-white/50"
+            >
+              Nosotros
+            </Link>
+
+            <Link
+              href="/servicios"
+              onClick={closeMenu}
+              className="border-b border-white/10 py-6 text-3xl font-medium tracking-[-0.04em] transition-colors duration-200 hover:text-white/50"
+            >
+              Servicios
+            </Link>
+
+            <Link
+              href="/#contacto"
+              onClick={closeMenu}
+              className="border-b border-white/10 py-6 text-3xl font-medium tracking-[-0.04em] transition-colors duration-200 hover:text-white/50"
+            >
+              Contacto
+            </Link>
+
+          </nav>
+
+
+          {/* ==================================================
+              MOBILE FOOTER
+          =================================================== */}
+
+          <div className="mt-auto pb-10">
+
+            <p className="text-[10px] uppercase tracking-[0.25em] text-[#f51b24]">
+              Dekaelo Media
+            </p>
+
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/35">
+              Distintas voces, una misma producción.
+            </p>
+
+            <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-white/20">
+              Desde 2013
+            </p>
 
           </div>
 
-        </details>
+        </div>
 
       </div>
 
@@ -265,7 +327,9 @@ function Footer() {
 
       <div className="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:items-end md:justify-between">
 
-        {/* LOGO */}
+        {/* ==================================================
+            LOGO
+        =================================================== */}
 
         <div>
 
@@ -284,7 +348,9 @@ function Footer() {
         </div>
 
 
-        {/* CONTACT + NAV */}
+        {/* ==================================================
+            CONTACT + NAV
+        =================================================== */}
 
         <div className="flex flex-col gap-5 md:items-end">
 
@@ -351,12 +417,12 @@ function Footer() {
       </div>
 
 
-      {/* COPYRIGHT */}
+      {/* ==================================================
+          COPYRIGHT
+      =================================================== */}
 
       <div className="mx-auto mt-12 max-w-7xl border-t border-white/10 pt-6 text-[10px] text-white/20">
-
         © {new Date().getFullYear()} Dekaelo Media
-
       </div>
 
     </footer>
@@ -378,7 +444,9 @@ export default function RootLayout({
 
       <head>
 
-        {/* PERFORMANCE */}
+        {/* ==================================================
+            PERFORMANCE
+        =================================================== */}
 
         <link
           rel="preconnect"
@@ -392,23 +460,29 @@ export default function RootLayout({
           crossOrigin=""
         />
 
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          httpEquiv="X-UA-Compatible"
+          content="IE=edge"
+        />
 
       </head>
 
 
       <body className="bg-[#050505] text-white antialiased">
 
-        {/* ====================================================
+        {/* ==================================================
             GOOGLE ANALYTICS + GOOGLE ADS
-        ===================================================== */}
+        =================================================== */}
 
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`}
           strategy="afterInteractive"
         />
 
-        <Script id="gtag-init" strategy="afterInteractive">
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+        >
           {`
             window.dataLayer = window.dataLayer || [];
 
@@ -428,30 +502,30 @@ export default function RootLayout({
         </Script>
 
 
-        {/* ====================================================
+        {/* ==================================================
             GLOBAL HEADER
-        ===================================================== */}
+        =================================================== */}
 
         <Header />
 
 
-        {/* ====================================================
+        {/* ==================================================
             PAGE CONTENT
-        ===================================================== */}
+        =================================================== */}
 
         {children}
 
 
-        {/* ====================================================
+        {/* ==================================================
             GLOBAL FOOTER
-        ===================================================== */}
+        =================================================== */}
 
         <Footer />
 
 
-        {/* ====================================================
+        {/* ==================================================
             STRUCTURED DATA
-        ===================================================== */}
+        =================================================== */}
 
         <Script
           id="schema"
