@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   },
 };
 
+
+/* ============================================================
+   TRAYECTORIA
+============================================================ */
+
 const milestones = [
   {
     year: "2013–2015",
@@ -24,7 +29,7 @@ const milestones = [
     text: "Producción y postproducción para empresas de industria, tecnología y educación. Desarrollo de contenido corporativo y postproducción para Ripley. Algunos clientes de la época fueron Grupo KGHM Chile, Trewhela's School, Acmanet, Molinera San Cristóbal, iCity Chile, Inducom, U-Payments, Tapp, Exploflex y Coesam.",
   },
   {
-    year: "2020–2023",
+    year: "2020–2022",
     title: "Retomar y desarrollar",
     text: "Tras la interrupción de la actividad presencial provocada por la pandemia, retomamos progresivamente la producción audiovisual con nuevas series de contenido para la Cámara de Comercio Asia Pacífico y el desarrollo y ejecución de formato para iGromi.",
   },
@@ -34,6 +39,11 @@ const milestones = [
     text: "Desarrollo y producción de nuevos formatos audiovisuales, incluyendo Fútbol y Parrilla, cuyo primer episodio alcanza 160K vistas, y producción continua del vodcast institucional de BICECORP desde 2024. En 2026 se suma Lolosaurios, formato editorial de conversación y entretenimiento producido por Dekaelo Media desde el 12 de julio.",
   },
 ];
+
+
+/* ============================================================
+   CRITERIO
+============================================================ */
 
 const values = [
   {
@@ -58,6 +68,11 @@ const values = [
   },
 ];
 
+
+/* ============================================================
+   EYEBROW
+============================================================ */
+
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
@@ -66,15 +81,23 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
+
+/* ============================================================
+   PAGE
+============================================================ */
+
 export default function QuienesSomosPage() {
   return (
     <main className="bg-[#050505] text-white selection:bg-white selection:text-black">
+
 
       {/* =====================================================
           HERO
       ====================================================== */}
 
       <section className="relative min-h-[88vh] overflow-hidden border-b border-white/10 px-5 pb-24 pt-40 md:px-10 md:pb-36 md:pt-52">
+
+        {/* FOTO DE FONDO */}
 
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -83,9 +106,16 @@ export default function QuienesSomosPage() {
           }}
         />
 
+        {/* OVERLAY */}
+
         <div className="absolute inset-0 bg-black/60" />
 
+        {/* DEGRADADO */}
+
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/20 to-[#050505]" />
+
+
+        {/* CONTENIDO */}
 
         <div className="relative z-10 mx-auto flex min-h-[68vh] max-w-7xl flex-col justify-between">
 
@@ -111,6 +141,7 @@ export default function QuienesSomosPage() {
                 </h1>
 
               </div>
+
 
               <div className="md:col-span-3">
 
@@ -145,6 +176,9 @@ export default function QuienesSomosPage() {
 
           <div className="grid gap-14 md:grid-cols-12 md:items-center">
 
+
+            {/* TITULO */}
+
             <div className="md:col-span-5">
 
               <Eyebrow>El origen</Eyebrow>
@@ -164,14 +198,19 @@ export default function QuienesSomosPage() {
 
             </div>
 
+
+            {/* TEXTO */}
+
             <div className="md:col-span-7">
 
               <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
 
                 En 2013 comenzamos nuestro recorrido con{" "}
-                <span className="text-white">Yokai</span>, largometraje
-                seleccionado en Sitges Film Festival y Buenos Aires Rojo
-                Sangre.
+                <span className="text-white">
+                  Yokai
+                </span>
+                , largometraje seleccionado en Sitges Film Festival y Buenos
+                Aires Rojo Sangre.
 
               </p>
 
@@ -194,6 +233,9 @@ export default function QuienesSomosPage() {
             </div>
 
           </div>
+
+
+          {/* IMAGEN */}
 
           <div className="mt-20 md:mt-28">
 
@@ -222,6 +264,7 @@ export default function QuienesSomosPage() {
 
           <div className="grid gap-12 md:grid-cols-12 md:items-center">
 
+
             {/* FOTO */}
 
             <div className="md:col-span-5">
@@ -240,11 +283,13 @@ export default function QuienesSomosPage() {
 
             </div>
 
-            {/* TEXTO */}
+
+            {/* INFORMACIÓN */}
 
             <div className="md:col-span-7 md:pl-8">
 
               <Eyebrow>Quién está detrás</Eyebrow>
+
 
               <h2 className="mt-6 text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
 
@@ -257,37 +302,64 @@ export default function QuienesSomosPage() {
 
               </h2>
 
+
               <p className="mt-6 text-xs uppercase tracking-[0.2em] text-white/40">
                 Fundador y Director General
               </p>
 
+
+              <p className="mt-3 text-xs uppercase tracking-[0.2em] text-white/25">
+                Más de 15 años de experiencia audiovisual
+              </p>
+
+
+              {/* TEXTO */}
+
               <div className="mt-10 max-w-2xl">
 
-                <p className="text-xl leading-relaxed text-white/65 md:text-2xl">
+                <p className="text-xl leading-relaxed text-white/70 md:text-2xl">
 
-                  Dekaelo nace de una mirada audiovisual construida desde
-                  la producción, la dirección y el desarrollo de formatos.
+                  En Dekaelo, cada proyecto lo dirige personalmente Tomás.
+                  Quien define el formato es el mismo que está en el rodaje
+                  y en la sala de edición.
 
                 </p>
+
 
                 <p className="mt-7 text-base leading-relaxed text-white/40 md:text-lg">
 
-                  Desde 2013, Tomás Echeverría ha desarrollado proyectos
-                  audiovisuales para distintos tipos de organizaciones,
-                  combinando narrativa, producción y postproducción para
-                  convertir ideas en contenidos concretos.
+                  Esa cercanía permite tomar decisiones más rápido, mantener
+                  una misma mirada durante todo el proceso y trabajar
+                  directamente con quien está a cargo de la producción.
 
                 </p>
 
+
                 <p className="mt-5 text-base leading-relaxed text-white/40 md:text-lg">
 
-                  Hoy, esa experiencia se traduce en una productora donde
-                  el trabajo creativo y la producción están cerca del
-                  proyecto desde el comienzo hasta la entrega final.
+                  Desde 2013, esa forma de trabajar ha acompañado proyectos
+                  para empresas, marcas y organizaciones de distintas
+                  industrias.
 
                 </p>
 
               </div>
+
+
+              {/* LINKEDIN */}
+
+              <a
+                href="https://www.linkedin.com/in/tomasechebol/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-white/45 transition hover:text-white"
+              >
+
+                LinkedIn
+
+                <ArrowUpRight className="h-4 w-4" />
+
+              </a>
 
             </div>
 
@@ -308,6 +380,9 @@ export default function QuienesSomosPage() {
 
           <div className="grid gap-10 md:grid-cols-12">
 
+
+            {/* TITULO */}
+
             <div className="md:col-span-4">
 
               <Eyebrow>Trayectoria</Eyebrow>
@@ -326,6 +401,8 @@ export default function QuienesSomosPage() {
             </div>
 
 
+            {/* TIMELINE */}
+
             <div className="md:col-span-8">
 
               {milestones.map((milestone, index) => (
@@ -342,6 +419,7 @@ export default function QuienesSomosPage() {
                   <p className="pt-1 text-sm font-medium text-white/25">
                     {milestone.year}
                   </p>
+
 
                   <div>
 
@@ -376,6 +454,7 @@ export default function QuienesSomosPage() {
 
         <div className="mx-auto max-w-7xl">
 
+
           <div className="grid gap-12 md:grid-cols-12 md:items-end">
 
             <div className="md:col-span-5">
@@ -394,6 +473,7 @@ export default function QuienesSomosPage() {
               </h2>
 
             </div>
+
 
             <div className="md:col-span-7">
 
@@ -439,6 +519,9 @@ export default function QuienesSomosPage() {
 
         <div className="mx-auto max-w-7xl">
 
+
+          {/* TITULO */}
+
           <div className="mb-16">
 
             <Eyebrow>Experiencia</Eyebrow>
@@ -457,7 +540,12 @@ export default function QuienesSomosPage() {
           </div>
 
 
+          {/* NUMEROS */}
+
           <div className="grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
+
+
+            {/* 200+ */}
 
             <div className="bg-[#050505] px-6 py-10 md:px-8 md:py-14">
 
@@ -472,6 +560,8 @@ export default function QuienesSomosPage() {
             </div>
 
 
+            {/* 60+ */}
+
             <div className="bg-[#050505] px-6 py-10 md:px-8 md:py-14">
 
               <p className="text-5xl font-medium tracking-[-0.05em] md:text-6xl">
@@ -485,6 +575,8 @@ export default function QuienesSomosPage() {
             </div>
 
 
+            {/* 3.8M */}
+
             <div className="bg-[#050505] px-6 py-10 md:px-8 md:py-14">
 
               <p className="text-5xl font-medium tracking-[-0.05em] md:text-6xl">
@@ -495,8 +587,24 @@ export default function QuienesSomosPage() {
                 vistas en un solo video orgánico
               </p>
 
+
+              <a
+                href="https://www.youtube.com/watch?v=f7BpYpTSPLk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.16em] text-white/35 transition hover:text-white"
+              >
+
+                Ver video
+
+                <ArrowUpRight className="h-3 w-3" />
+
+              </a>
+
             </div>
 
+
+            {/* 6+ */}
 
             <div className="bg-[#050505] px-6 py-10 md:px-8 md:py-14">
 
@@ -527,6 +635,9 @@ export default function QuienesSomosPage() {
 
           <div className="grid gap-14 md:grid-cols-12">
 
+
+            {/* TITULO */}
+
             <div className="md:col-span-4">
 
               <Eyebrow>Cómo pensamos</Eyebrow>
@@ -545,6 +656,8 @@ export default function QuienesSomosPage() {
             </div>
 
 
+            {/* VALORES */}
+
             <div className="md:col-span-8">
 
               <div className="border-t border-white/15">
@@ -559,6 +672,7 @@ export default function QuienesSomosPage() {
                     <span className="text-[10px] text-[#f51b24]">
                       {value.number}
                     </span>
+
 
                     <div>
 
@@ -597,6 +711,7 @@ export default function QuienesSomosPage() {
 
           <Eyebrow>Lo que viene</Eyebrow>
 
+
           <h2 className="mt-7 text-[clamp(3rem,6vw,6rem)] font-medium leading-[0.9] tracking-[-0.06em]">
 
             La comunicación
@@ -618,12 +733,14 @@ export default function QuienesSomosPage() {
 
             </p>
 
+
             <p className="mt-6 text-base leading-relaxed text-white/40 md:text-lg">
 
               Construyen canales propios, comparten conocimiento y desarrollan
               conversaciones permanentes con sus audiencias.
 
             </p>
+
 
             <p className="mt-6 text-base leading-relaxed text-white/40 md:text-lg">
 
@@ -661,6 +778,7 @@ export default function QuienesSomosPage() {
 
           <Eyebrow>Hablemos</Eyebrow>
 
+
           <h2 className="mt-7 text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.9] tracking-[-0.06em]">
 
             Una idea puede
@@ -685,8 +803,10 @@ export default function QuienesSomosPage() {
 
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
-            <a
-              href="mailto:info@dekaelomedia.com"
+            {/* CONTACTO */}
+
+            <Link
+              href="/contacto"
               className="inline-flex items-center gap-3 bg-white px-8 py-4 text-xs uppercase tracking-[0.18em] text-black transition hover:bg-white/90"
             >
 
@@ -694,8 +814,10 @@ export default function QuienesSomosPage() {
 
               <ArrowUpRight className="h-4 w-4" />
 
-            </a>
+            </Link>
 
+
+            {/* SERVICIOS */}
 
             <Link
               href="/servicios"
@@ -718,6 +840,7 @@ export default function QuienesSomosPage() {
         </div>
 
       </section>
+
 
     </main>
   );
