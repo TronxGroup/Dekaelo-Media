@@ -43,7 +43,7 @@ const projects = {
     ],
   },
 
-  lolosaurios: {
+  {
     title: "LOLOSAURIOS",
     subtitle: "La Nueva Tertulia",
     category: "Formato editorial · Entretenimiento",
@@ -57,19 +57,19 @@ const projects = {
       "Crear un formato de conversación con identidad propia, capaz de conectar con una audiencia adulta interesada en humor, cultura y conversación.",
 
     solution:
-  "Dekaelo Media creó el formato desde cero, desarrollando su estructura, ritmo, dinámica de conversación y lenguaje audiovisual. Desde su lanzamiento, el 12 de julio de 2026, está a cargo de la producción de los episodios y del contenido para YouTube e Instagram.",
+      "Dekaelo Media creó el formato desde cero, desarrollando su estructura, ritmo, dinámica de conversación y lenguaje audiovisual. Desde su lanzamiento, el 12 de julio de 2026, está a cargo de la producción de los episodios y del contenido para YouTube e Instagram.",
 
-result:
-  "En poco más de dos meses y con 10 episodios publicados, el canal de YouTube alcanzó 2.470 suscriptores, 169.708 vistas y 22.900 horas de reproducción, y la cuenta de Instagram llegó a 13.500 seguidores. Cifras a septiembre de 2026.",
+    result:
+      "En poco más de tres meses y con 14 episodios publicados, el canal de YouTube alcanzó 2.757 suscriptores, 217.426 vistas orgánicas y 29.400 horas de reproducción, y la cuenta de Instagram llegó a 16.000 seguidores. El 83% de las vistas viene de personas de 45 años o más, y casi la mitad del tiempo de reproducción ocurre en un televisor. Cifras al 22 de octubre de 2026.",
 
-stats: [
-  ["169,7K", "vistas YouTube"],
-  ["22,9K", "horas de reproducción"],
-  ["13.500", "seguidores Instagram"],
-  ["2.470", "suscriptores YouTube"],
-  ["10", "episodios publicados"],
-  ["2", "meses desde el lanzamiento"],
-],
+    stats: [
+      ["217,4K", "vistas YouTube"],
+      ["29,4K", "horas de reproducción"],
+      ["16.000", "seguidores Instagram"],
+      ["2.757", "suscriptores YouTube"],
+      ["14", "episodios publicados"],
+      ["3", "meses desde el lanzamiento"],
+    ],
 
     hero: "/projects/lolosaurios/hero.png",
 
