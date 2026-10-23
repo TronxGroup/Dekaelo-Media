@@ -43,7 +43,7 @@ const projects = {
     ],
   },
 
-  {
+  lolosaurios: {
     title: "LOLOSAURIOS",
     subtitle: "La Nueva Tertulia",
     category: "Formato editorial · Entretenimiento",
