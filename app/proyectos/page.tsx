@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = {
   title: "Proyectos | Dekaelo Media",
   description:
-    "Conoce programas, series y producciones audiovisuales creadas y desarrolladas por Dekaelo Media para YouTube, redes sociales, empresas y organizaciones.",
+    "Conoce proyectos de comunicación, programas digitales y producciones audiovisuales realizadas por Dekaelo Media para empresas, marcas y organizaciones.",
   alternates: {
     canonical: "/proyectos",
   },
@@ -21,13 +21,13 @@ const projects = [
   {
     slug: "bice",
     title: "BICE",
-    category: "Programa corporativo",
+    category: "Comunicación interna · Cultura organizacional",
     image: "/projects/bice/hero.png",
   },
   {
     slug: "lolosaurios",
     title: "LOLOSAURIOS",
-    category: "Programa de conversación · YouTube",
+    category: "Programa digital · YouTube e Instagram",
     image: "/projects/lolosaurios/hero.png",
   },
   {
@@ -39,13 +39,13 @@ const projects = [
   {
     slug: "break-industrial",
     title: "BREAK INDUSTRIAL",
-    category: "Industria · Tecnología",
+    category: "Contenido B2B · Industria y tecnología",
     image: "/projects/break-industrial/hero.png",
   },
   {
     slug: "creando-lideres-para-asia",
     title: "CREANDO LÍDERES PARA ASIA",
-    category: "Contenido institucional · Internacional",
+    category: "Comunicación institucional · Internacional",
     image: "/projects/creando-lideres-asia/hero.png",
   },
 ];
@@ -81,7 +81,7 @@ export default function ProjectsPage() {
 
         <div className="mb-20">
           <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
-            Ideas que se convierten en proyectos
+            Ideas, contenidos y resultados
           </p>
 
           <h1 className="mt-4 text-[clamp(4rem,9vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
@@ -89,10 +89,10 @@ export default function ProjectsPage() {
           </h1>
 
           <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/45 md:text-lg">
-            Programas, series y contenidos audiovisuales que hemos
-            desarrollado y producido para distintas marcas, empresas
-            y audiencias. Cada proyecto parte de una idea y toma forma
-            a través de un proceso creativo y de producción.
+            Cada proyecto responde a una necesidad distinta: comunicar,
+            conectar con una audiencia, fortalecer una marca o generar
+            nuevas oportunidades. Conoce cómo transformamos esas ideas
+            en producciones audiovisuales concretas.
           </p>
         </div>
       </div>
@@ -154,6 +154,33 @@ export default function ProjectsPage() {
         ))}
       </div>
 
+      {/* MENSAJE DE POSICIONAMIENTO */}
+
+      <section className="mx-auto mt-32 max-w-7xl border-t border-white/10 pt-16 md:mt-40">
+        <div className="grid gap-10 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
+              Nuestro aporte
+            </p>
+          </div>
+
+          <div className="md:col-span-7 md:col-start-6">
+            <h2 className="text-3xl font-medium leading-tight tracking-[-0.04em] md:text-5xl">
+              No se trata solamente de grabar.
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/45 md:text-lg">
+              Aportamos dirección creativa, identidad visual y sonora,
+              realización, edición y postproducción. También podemos
+              encargarnos de la gestión y publicación de contenidos
+              digitales. Nos involucramos en lo necesario para que cada
+              proyecto tenga una propuesta audiovisual coherente y
+              profesional.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
 
       <section className="mx-auto mt-32 max-w-7xl border-t border-white/10 pt-16 md:mt-40">
@@ -170,15 +197,15 @@ export default function ProjectsPage() {
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/40">
             No necesitas tener el formato definido ni saber cómo
-            producirlo. Cuéntanos qué tienes en mente y trabajemos
-            juntos para convertirlo en un proyecto audiovisual.
+            producirlo. Cuéntanos qué quieres comunicar o conseguir.
+            Nosotros podemos ayudarte a darle forma y llevarlo a la pantalla.
           </p>
 
           <Link
             href="/contacto"
             className="group mt-9 inline-flex items-center gap-4 border-b border-white/30 pb-3 text-sm transition hover:border-[#f51b24]"
           >
-            Conversemos sobre tu idea
+            Conversemos sobre tu proyecto
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
         </div>
