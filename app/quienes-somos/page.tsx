@@ -27,7 +27,7 @@ const clients = [
   "Prodalam",
   "Trewhela's School",
   "Acmanet",
-  "Molinera San Cristóbal",
+  "Molinera San CristóbaAl",
   "iCity Chile",
   "Inducom",
   "U-Payments",
