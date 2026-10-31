@@ -1,4 +1,5 @@
-import type { Metadata, ReactNode } from "next";
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -6,58 +7,54 @@ import { ArrowUpRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Servicios | Dekaelo Media",
   description:
-    "Producción audiovisual para YouTube, vodcasts, podcasts, series de videos y contenido para Instagram. Dirección creativa, realización, edición y postproducción.",
+    "Creamos y producimos programas para YouTube, vodcasts, series de videos y contenido audiovisual para empresas y marcas. Desde la idea hasta la entrega final.",
   alternates: {
     canonical: "/servicios",
   },
 };
-
-/* ============================================================
-   SERVICIOS
-============================================================ */
 
 const servicios = [
   {
     numero: "01",
     titulo: "Programas para YouTube",
     descripcion:
-      "Producimos programas audiovisuales de conversación, entrevistas y entretenimiento. Podemos ayudarte a desarrollar el concepto y el formato, o trabajar sobre un programa que ya tienes definido.",
-    ejemplos: "Programas de conversación · Entrevistas · Paneles · Programas digitales",
+      "Creamos y producimos programas audiovisuales. Podemos ayudarte a desarrollar el concepto y el formato desde cero o trabajar sobre una idea que ya tienes definida.",
+    ejemplos: "Programas de conversación · Entrevistas · Paneles · Series",
   },
   {
     numero: "02",
     titulo: "Series de videos",
     descripcion:
-      "Realizamos series audiovisuales para comunicar ideas, contar historias o desarrollar temas a través de distintos episodios. Nos involucramos en la dirección, producción y construcción de su identidad audiovisual.",
+      "Producimos series audiovisuales para comunicar ideas, contar historias o desarrollar temas en distintos episodios, con una identidad y una línea visual coherentes.",
     ejemplos: "Series corporativas · Documentales · Contenido editorial",
   },
   {
     numero: "03",
     titulo: "Contenido para redes sociales",
     descripcion:
-      "Producimos videos pensados para las plataformas digitales. También podemos aprovechar una producción principal para generar distintas piezas y adaptar sus contenidos a cada canal.",
+      "Producimos videos pensados para conectar con las audiencias en plataformas digitales, aprovechando cada producción para generar distintas piezas.",
     ejemplos: "Reels · Shorts · Videos verticales · Cápsulas",
   },
   {
     numero: "04",
     titulo: "Podcasts y vodcasts",
     descripcion:
-      "Realizamos programas de conversación en formato audiovisual o sonoro. Desde la identidad y dirección del proyecto hasta la grabación, edición y preparación de sus episodios.",
+      "Realizamos conversaciones en formato audiovisual o sonoro. Nos encargamos de la dirección, identidad audiovisual, grabación, edición y postproducción de los episodios.",
     ejemplos: "Vodcast corporativo · Podcast · Conversaciones · Entrevistas",
   },
   {
     numero: "05",
     titulo: "Dirección creativa e identidad audiovisual",
     descripcion:
-      "Aportamos una mirada creativa para darle personalidad y coherencia a cada proyecto. Desarrollamos o perfeccionamos su lenguaje visual y sonoro, según las necesidades del formato.",
-    ejemplos: "Dirección audiovisual · Identidad gráfica · Música · Aperturas · Gráficas",
+      "Damos forma visual y sonora a cada proyecto. Trabajamos su identidad, lenguaje audiovisual, ritmo y recursos gráficos para construir una experiencia reconocible.",
+    ejemplos: "Identidad visual · Música · Intro · Gráficas · Dirección",
   },
   {
     numero: "06",
     titulo: "Producción y postproducción",
     descripcion:
-      "Nos hacemos cargo de la realización audiovisual y del trabajo posterior para transformar las grabaciones en piezas terminadas, cuidadas y listas para publicar.",
-    ejemplos: "Grabación · Dirección · Edición · Sonido · Color · Postproducción",
+      "Nos hacemos cargo de la realización audiovisual y de todo el trabajo posterior para entregar piezas terminadas y listas para publicar.",
+    ejemplos: "Planificación · Grabación · Dirección · Edición · Sonido · Color",
   },
 ];
 
@@ -66,7 +63,6 @@ const aplicaciones = [
   "Quiero crear contenido para mi empresa",
   "Quiero producir contenido para Instagram",
   "Tengo una idea, pero no sé cómo hacerla",
-  "Ya tengo un programa y necesito producirlo",
   "Necesito una serie de videos para mi marca",
 ];
 
@@ -75,25 +71,25 @@ const etapas = [
     numero: "01",
     titulo: "Conversamos",
     descripcion:
-      "Nos cuentas qué tienes en mente, qué necesitas comunicar y qué quieres conseguir. No necesitas llegar con un proyecto definido ni saber cómo producirlo.",
+      "Nos cuentas qué tienes en mente. No necesitas llegar con un proyecto definido ni saber cómo producirlo.",
   },
   {
     numero: "02",
     titulo: "Definimos",
     descripcion:
-      "Si es necesario, trabajamos la idea, el formato y su estructura. Si ya tienes el proyecto definido, acordamos el enfoque audiovisual y el alcance de producción.",
+      "Entendemos lo que necesitas y definimos el formato, el alcance, los recursos y la forma de trabajo.",
   },
   {
     numero: "03",
     titulo: "Producimos",
     descripcion:
-      "Organizamos y realizamos la producción audiovisual, coordinando la dirección, los recursos y el equipo necesarios para cada proyecto.",
+      "Organizamos y realizamos la producción audiovisual, coordinando los recursos y el equipo necesarios.",
   },
   {
     numero: "04",
     titulo: "Entregamos",
     descripcion:
-      "Editamos, finalizamos y preparamos los contenidos en los formatos necesarios para su publicación y distribución.",
+      "Editamos, finalizamos y entregamos el contenido en los formatos necesarios para su publicación.",
   },
 ];
 
@@ -105,10 +101,6 @@ function Eyebrow({ children }: { children: ReactNode }) {
   );
 }
 
-/* ============================================================
-   PÁGINA DE SERVICIOS
-============================================================ */
-
 export default function ServiciosPage() {
   return (
     <main className="min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black">
@@ -118,6 +110,7 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="relative overflow-hidden border-b border-white/10 px-5 pb-24 pt-36 md:px-10 md:pb-32 md:pt-48">
+
         <div className="absolute inset-0">
           <Image
             src="/BG_Servicios.jpg"
@@ -132,6 +125,7 @@ export default function ServiciosPage() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl">
+
           <Eyebrow>Qué hacemos</Eyebrow>
 
           <h1 className="mt-7 max-w-6xl text-[clamp(3.5rem,8vw,8rem)] font-medium leading-[0.85] tracking-[-0.07em]">
@@ -145,7 +139,7 @@ export default function ServiciosPage() {
           <p className="mt-10 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
             Creamos y producimos programas, series de videos y contenido
             audiovisual para YouTube, Instagram y otras plataformas.
-            Desde el desarrollo de la idea hasta la entrega final.
+            Desde la idea inicial hasta la entrega final.
           </p>
 
           <Link
@@ -156,6 +150,7 @@ export default function ServiciosPage() {
 
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
+
         </div>
       </section>
 
@@ -164,7 +159,9 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
+
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12">
+
           <div className="md:col-span-5">
             <Eyebrow>De la idea a la pantalla</Eyebrow>
 
@@ -173,30 +170,30 @@ export default function ServiciosPage() {
               <br />
               saber cómo
               <br />
-              <span className="text-white/35">producirlo.</span>
+              <span className="text-white/35">
+                producirlo.
+              </span>
             </h2>
           </div>
 
           <div className="md:col-span-6 md:col-start-7">
+
             <p className="text-lg leading-relaxed text-white/65 md:text-xl">
               Puedes llegar con un programa que quieres lanzar, una serie
-              de videos que te gustaría desarrollar o simplemente una idea
+              de videos que te gustaría producir o simplemente una idea
               que todavía no sabes cómo llevar a cabo.
             </p>
 
             <p className="mt-6 text-base leading-relaxed text-white/40">
-              Podemos ayudarte a encontrar el formato y desarrollar el
-              concepto, o trabajar sobre un proyecto que ya tienes definido.
-              Aportamos dirección creativa, identidad audiovisual y
-              realización para convertirlo en una producción profesional.
+              Podemos ayudarte a desarrollar el concepto y encontrar
+              el formato, o trabajar sobre un proyecto que ya tienes
+              definido. Nos encargamos de la dirección creativa,
+              producción, edición y postproducción para convertirlo
+              en una pieza audiovisual profesional.
             </p>
 
-            <p className="mt-6 text-base leading-relaxed text-white/40">
-              Nos encargamos de las etapas que necesites, desde la
-              planificación y producción hasta la edición, postproducción
-              y entrega final.
-            </p>
           </div>
+
         </div>
       </section>
 
@@ -205,35 +202,44 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
+
         <div className="mx-auto max-w-7xl">
+
           <div className="grid gap-14 md:grid-cols-12">
 
             {/* Presentación */}
 
             <div className="md:col-span-5">
+
               <Eyebrow>Una solución completa</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
                 Tu propio
                 <br />
-                <span className="text-white/35">programa.</span>
+                <span className="text-white/35">
+                  programa.
+                </span>
               </h2>
 
               <p className="mt-8 max-w-md text-base leading-relaxed text-white/45 md:text-lg">
                 ¿Quieres lanzar un vodcast, pero no sabes por dónde
-                empezar? Te ayudamos a desarrollar y producir tu programa,
-                con los contenidos necesarios para comenzar a publicar.
+                empezar? Podemos ayudarte a darle forma y producir
+                tu programa, con todo lo necesario para comenzar
+                a publicar.
               </p>
 
               <p className="mt-6 text-xs uppercase tracking-[0.18em] text-white/30">
                 Desarrollo · Producción · Contenido digital
               </p>
+
             </div>
 
             {/* Contenido del pack */}
 
             <div className="md:col-span-7">
+
               <div className="border border-white/15 p-7 md:p-10">
+
                 <p className="text-[10px] uppercase tracking-[0.25em] text-[#f51b24]">
                   Pack lanzamiento de vodcast
                 </p>
@@ -251,6 +257,7 @@ export default function ServiciosPage() {
                 {/* Entregables */}
 
                 <div className="mt-10 grid grid-cols-2 gap-6 border-y border-white/10 py-8">
+
                   <div>
                     <p className="text-5xl font-medium tracking-[-0.06em]">
                       04
@@ -274,7 +281,7 @@ export default function ServiciosPage() {
                       01
                     </p>
                     <p className="mt-2 text-xs text-white/40">
-                      Tráiler de lanzamiento
+                      Trailer de lanzamiento
                     </p>
                   </div>
 
@@ -286,16 +293,19 @@ export default function ServiciosPage() {
                       Identidad audiovisual
                     </p>
                   </div>
+
                 </div>
 
                 {/* Qué incluye */}
 
                 <div className="mt-8">
+
                   <p className="text-sm font-medium">
                     Nos encargamos de todo:
                   </p>
 
                   <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+
                     {[
                       "Desarrollo del concepto",
                       "Nombre e identidad gráfica",
@@ -314,7 +324,9 @@ export default function ServiciosPage() {
                         {item}
                       </li>
                     ))}
+
                   </ul>
+
                 </div>
 
                 <Link
@@ -325,8 +337,10 @@ export default function ServiciosPage() {
 
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </Link>
+
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -336,8 +350,11 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
+
         <div className="mx-auto max-w-7xl">
+
           <div className="max-w-3xl">
+
             <Eyebrow>Servicios</Eyebrow>
 
             <h2 className="mt-6 text-[clamp(2.8rem,6vw,6rem)] font-medium leading-[0.92] tracking-[-0.06em]">
@@ -349,17 +366,20 @@ export default function ServiciosPage() {
 
             <p className="mt-8 max-w-xl text-base leading-relaxed text-white/45 md:text-lg">
               Podemos participar en una etapa específica o hacernos cargo
-              de todo el proyecto. Adaptamos la dirección, el equipo y la
-              producción según lo que cada idea necesita.
+              de todo el proyecto. Adaptamos el equipo y la producción
+              según lo que cada idea necesita.
             </p>
+
           </div>
 
           <div className="mt-20 border-t border-white/10">
+
             {servicios.map((servicio) => (
               <div
                 key={servicio.numero}
                 className="grid gap-5 border-b border-white/10 py-9 md:grid-cols-12 md:gap-8 md:py-12"
               >
+
                 <div className="text-xs text-white/30 md:col-span-1">
                   {servicio.numero}
                 </div>
@@ -371,6 +391,7 @@ export default function ServiciosPage() {
                 </div>
 
                 <div className="md:col-span-5">
+
                   <p className="text-sm leading-relaxed text-white/50 md:text-base">
                     {servicio.descripcion}
                   </p>
@@ -378,14 +399,18 @@ export default function ServiciosPage() {
                   <p className="mt-5 text-[10px] uppercase leading-relaxed tracking-[0.12em] text-white/30">
                     {servicio.ejemplos}
                   </p>
+
                 </div>
 
                 <div className="hidden justify-end md:col-span-2 md:flex">
                   <ArrowUpRight className="h-5 w-5 text-white/30" />
                 </div>
+
               </div>
             ))}
+
           </div>
+
         </div>
       </section>
 
@@ -394,8 +419,11 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
+
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12">
+
           <div className="md:col-span-5">
+
             <Eyebrow>¿Qué tienes en mente?</Eyebrow>
 
             <h2 className="mt-6 text-[clamp(2.5rem,5vw,5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
@@ -403,17 +431,23 @@ export default function ServiciosPage() {
               <br />
               partir desde
               <br />
-              <span className="text-white/35">cualquier idea.</span>
+              <span className="text-white/35">
+                cualquier idea.
+              </span>
             </h2>
+
           </div>
 
           <div className="md:col-span-6 md:col-start-7">
+
             <ul className="border-t border-white/10">
+
               {aplicaciones.map((item, index) => (
                 <li
                   key={item}
                   className="flex items-center justify-between gap-5 border-b border-white/10 py-6"
                 >
+
                   <span className="text-base text-white/65 md:text-lg">
                     {item}
                   </span>
@@ -421,16 +455,20 @@ export default function ServiciosPage() {
                   <span className="text-xs text-white/25">
                     0{index + 1}
                   </span>
+
                 </li>
               ))}
+
             </ul>
 
             <p className="mt-8 text-sm leading-relaxed text-white/35">
-              No importa si eres una empresa, una organización, un
-              profesional o un creador. Lo importante es tener algo que
-              quieras comunicar.
+              No importa si eres una empresa, una organización,
+              un profesional o un creador. Lo importante es tener
+              algo que quieras comunicar.
             </p>
+
           </div>
+
         </div>
       </section>
 
@@ -439,7 +477,9 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
+
         <div className="mx-auto max-w-7xl">
+
           <Eyebrow>Cómo trabajamos</Eyebrow>
 
           <h2 className="mt-6 max-w-3xl text-[clamp(2.8rem,6vw,6rem)] font-medium leading-[0.92] tracking-[-0.06em]">
@@ -447,12 +487,16 @@ export default function ServiciosPage() {
             <br />
             conversación a la
             <br />
-            <span className="text-white/35">entrega final.</span>
+            <span className="text-white/35">
+              entrega final.
+            </span>
           </h2>
 
           <div className="mt-20 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-4">
+
             {etapas.map((etapa) => (
               <div key={etapa.numero}>
+
                 <p className="text-xs text-[#f51b24]">
                   {etapa.numero}
                 </p>
@@ -464,9 +508,12 @@ export default function ServiciosPage() {
                 <p className="mt-5 text-sm leading-relaxed text-white/40">
                   {etapa.descripcion}
                 </p>
+
               </div>
             ))}
+
           </div>
+
         </div>
       </section>
 
@@ -475,8 +522,11 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
+
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12">
+
           <div className="md:col-span-5">
+
             <Eyebrow>Experiencia en producción</Eyebrow>
 
             <h2 className="mt-6 text-[clamp(2.5rem,5vw,5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
@@ -484,11 +534,15 @@ export default function ServiciosPage() {
               <br />
               implica crear
               <br />
-              <span className="text-white/35">un programa.</span>
+              <span className="text-white/35">
+                un programa.
+              </span>
             </h2>
+
           </div>
 
           <div className="md:col-span-6 md:col-start-7">
+
             <p className="text-lg leading-relaxed text-white/60">
               Hemos participado en la producción de proyectos
               audiovisuales para organizaciones y marcas, incluyendo
@@ -496,10 +550,10 @@ export default function ServiciosPage() {
             </p>
 
             <p className="mt-6 text-sm leading-relaxed text-white/40">
-              En 2024 comenzamos a trabajar en la producción de “Nos Une”,
-              un vodcast interno de BICECORP. Nuestro trabajo contempla
-              dirección y realización audiovisual, identidad visual y
-              sonora, grabación, edición y postproducción de sus episodios.
+              En 2024 participamos en la producción de “Nos Une”,
+              un vodcast interno de BICECORP. Una experiencia en la que
+              trabajamos en la identidad audiovisual, realización,
+              grabación, edición y postproducción de sus episodios.
             </p>
 
             <Link
@@ -510,7 +564,9 @@ export default function ServiciosPage() {
 
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>
+
           </div>
+
         </div>
       </section>
 
@@ -519,19 +575,24 @@ export default function ServiciosPage() {
       ====================================================== */}
 
       <section className="px-5 py-24 md:px-10 md:py-36">
+
         <div className="mx-auto max-w-7xl">
+
           <Eyebrow>Empecemos</Eyebrow>
 
           <h2 className="mt-7 max-w-5xl text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.88] tracking-[-0.07em]">
             Tienes una idea.
             <br />
-            <span className="text-white/35">Hagámosla realidad.</span>
+            <span className="text-white/35">
+              Hagámosla realidad.
+            </span>
           </h2>
 
           <div className="mt-12 flex flex-col justify-between gap-8 border-t border-white/10 pt-8 md:flex-row md:items-end">
+
             <p className="max-w-md text-base leading-relaxed text-white/45">
-              Cuéntanos qué te gustaría crear. Nosotros te ayudamos a
-              encontrar el enfoque audiovisual y hacerlo realidad.
+              Cuéntanos qué te gustaría crear. Nosotros te ayudamos
+              a encontrar el formato y hacerlo realidad.
             </p>
 
             <Link
@@ -542,9 +603,13 @@ export default function ServiciosPage() {
 
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>
+
           </div>
+
         </div>
+
       </section>
+
     </main>
   );
 }
