@@ -6,7 +6,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Nosotros",
   description:
-    "Dekaelo Media es una productora audiovisual chilena fundada en 2023, con más de una década de experiencia en producción, realización y postproducción.",
+    "Dekaelo Media es una productora audiovisual independiente. Creamos y producimos programas, series y contenido para YouTube, Instagram y plataformas digitales, desde la idea hasta la entrega final.",
   alternates: {
     canonical: "/quienes-somos",
   },
@@ -27,7 +27,7 @@ const clients = [
   "Prodalam",
   "Trewhela's School",
   "Acmanet",
-  "Molinera San CristóbaAl",
+  "Molinera San Cristóbal",
   "iCity Chile",
   "Inducom",
   "U-Payments",
@@ -44,23 +44,23 @@ const clients = [
 const values = [
   {
     number: "01",
-    title: "Claridad antes que estética",
-    text: "Si no se entiende, no sirve. El mensaje define el contenido.",
+    title: "Primero entendemos la idea",
+    text: "Escuchamos qué quieres conseguir antes de decidir cómo debería verse o producirse.",
   },
   {
     number: "02",
-    title: "El formato nace de la idea",
-    text: "Desarrollamos concepto, estructura, dinámica y lenguaje antes de producir.",
+    title: "El formato se construye contigo",
+    text: "Te ayudamos a definir concepto, estructura, dinámica, identidad y ritmo, aunque partamos desde cero.",
   },
   {
     number: "03",
-    title: "Una mirada de principio a fin",
-    text: "Desarrollo, producción y postproducción forman parte de un mismo proceso.",
+    title: "Una producción integral",
+    text: "Acompañamos el proyecto desde el desarrollo creativo hasta la entrega de las piezas finales.",
   },
   {
     number: "04",
-    title: "Procesos ordenados",
-    text: "Alcance claro, comunicación directa, plazos definidos y producción organizada.",
+    title: "Flexibilidad con método",
+    text: "Adaptamos el equipo y los recursos a cada proyecto, con comunicación directa y etapas bien coordinadas.",
   },
 ];
 
@@ -114,23 +114,19 @@ export default function QuienesSomosPage() {
 
               <div className="md:col-span-9">
                 <h1 className="max-w-6xl text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
-                  Ideas que se
+                  Tienes una idea.
                   <br />
-                  convierten en
-                  <br />
-                  <span className="text-white/45">formatos.</span>
+                  <span className="text-white/45">La hacemos realidad.</span>
                 </h1>
               </div>
 
               <div className="md:col-span-3">
                 <p className="text-sm leading-relaxed text-white/65 md:text-base">
-                  Dekaelo Media es una productora audiovisual chilena que
-                  desarrolla, produce y postproduce contenido para empresas,
-                  marcas y audiencias.
+                  Somos una productora audiovisual independiente que convierte ideas en programas, series y contenido para plataformas digitales.
                 </p>
 
                 <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-white/40">
-                  Fundada en 2023
+                  Desarrollo · Producción · Postproducción
                 </p>
               </div>
 
@@ -152,31 +148,24 @@ export default function QuienesSomosPage() {
               <Eyebrow>Quiénes somos</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.7rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
-                Una productora
+                No necesitas saber
                 <br />
-                <span className="text-white/35">
-                  con mirada propia.
-                </span>
+                <span className="text-white/35">cómo producirlo.</span>
               </h2>
             </div>
 
             <div className="md:col-span-7">
 
               <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
-                Dekaelo Media desarrolla y produce formatos audiovisuales
-                desde una idea hasta su entrega final.
+                En Dekaelo transformamos una idea en un proyecto audiovisual concreto, bien pensado y profesional.
               </p>
 
               <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-                Trabajamos con empresas, marcas e instituciones que necesitan
-                comunicar, construir contenido y desarrollar nuevas formas de
-                relacionarse con sus audiencias.
+                Puedes llegar con un programa que quieres hacer para YouTube, una serie de videos para tu empresa, contenido para Instagram o simplemente una idea que todavía no sabes cómo desarrollar.
               </p>
 
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-                Combinamos desarrollo creativo, producción y postproducción
-                para construir piezas y formatos con una intención clara,
-                tanto en contenido corporativo como editorial.
+                Desarrollamos el concepto, definimos el formato, la estructura, el ritmo y la identidad visual. Después planificamos, grabamos, editamos y preparamos las piezas para cada plataforma. No necesitas tener todas las respuestas antes de empezar: trabajamos contigo para encontrarlas.
               </p>
 
             </div>
@@ -251,79 +240,41 @@ export default function QuienesSomosPage() {
 </section>
 
       {/* =====================================================
-          DIRECCIÓN
+          FORMA DE TRABAJO
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
         <div className="mx-auto max-w-7xl">
-
           <div className="grid gap-12 md:grid-cols-12 md:items-center">
-
-            {/* FOTO */}
-
             <div className="md:col-span-5">
-              <div className="relative aspect-[4/5] overflow-hidden bg-white/5">
-                <Image
-                  src="/ceo.jpeg"
-                  alt="Tomás Echeverría, fundador y director general de Dekaelo Media"
-                  fill
-                  className="object-cover object-[center_38%]"
-                  sizes="(max-width: 768px) 100vw, 42vw"
-                />
-              </div>
-            </div>
-
-            {/* INFORMACIÓN */}
-
-            <div className="md:col-span-7 md:pl-8">
-
-              <Eyebrow>Dirección</Eyebrow>
-
+              <Eyebrow>Una forma de trabajar cercana</Eyebrow>
               <h2 className="mt-6 text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
-                Tomás
+                Una misma
                 <br />
-                <span className="text-white/35">
-                  Echeverría.
-                </span>
+                <span className="text-white/35">mirada de principio a fin.</span>
               </h2>
-
-              <p className="mt-6 text-xs uppercase tracking-[0.2em] text-white/40">
-                Fundador y Director General
+            </div>
+            <div className="md:col-span-7">
+              <p className="text-xl leading-relaxed text-white/70 md:text-2xl">
+                Trabajamos directamente contigo. Escuchamos lo que tienes en mente y te ayudamos a encontrar la mejor manera de hacerlo realidad.
               </p>
-
-              <p className="mt-3 text-xs uppercase tracking-[0.2em] text-white/25">
-                Más de 12 años de experiencia audiovisual
+              <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                Mantenemos una dirección creativa y de producción coherente durante todo el proceso. Así evitamos que tu idea se pierda entre distintos proveedores, decisiones desconectadas o etapas sin coordinación.
               </p>
-
-              <div className="mt-10 max-w-2xl">
-
-                <p className="text-xl leading-relaxed text-white/70 md:text-2xl">
-                  Dekaelo mantiene una dirección cercana durante todo el
-                  proceso, desde el desarrollo del formato hasta el rodaje y
-                  la postproducción.
-                </p>
-
-                <p className="mt-7 text-base leading-relaxed text-white/40 md:text-lg">
-                  La estructura permite trabajar directamente con la dirección
-                  de la productora, mantener una misma mirada durante las
-                  distintas etapas y tomar decisiones de manera ágil.
-                </p>
-
-              </div>
-
-              <a
-                href="https://www.linkedin.com/in/tomasechebol/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-white/45 transition hover:text-white"
-              >
-                LinkedIn
-                <ArrowUpRight className="h-4 w-4" />
-              </a>
-
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                Armamos el equipo y los recursos que cada proyecto necesita. Una estructura flexible nos permite adaptarnos a distintas escalas, sin cargar la producción con estructuras innecesarias.
+              </p>
             </div>
           </div>
-
+          <div className="mt-16">
+            <Image
+              src="/qs_dekaelo_3.png"
+              alt="Equipo trabajando en una producción audiovisual de Dekaelo Media"
+              width={1600}
+              height={900}
+              className="h-auto w-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
