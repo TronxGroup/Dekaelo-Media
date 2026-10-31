@@ -1,8 +1,5 @@
 
 
-
-    
-  
                 un canal, pero todavía no sabes cómo debería funcionar.
                 <br />
                 <br />
