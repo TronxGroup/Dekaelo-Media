@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: {
     absolute: "Dekaelo Media | Productora Audiovisual y Contenido Digital",
   },
   description:
-    "Creamos y producimos programas para YouTube, series de videos, podcasts, vodcasts y contenido para Instagram. Desarrollamos tu idea desde cero y nos encargamos de todo el proceso audiovisual.",
+    "Creamos y producimos programas para YouTube, series de videos, podcasts, vodcasts y contenido para Instagram. Te ayudamos a desarrollar tu idea y nos encargamos de su realización audiovisual.",
   alternates: {
     canonical: "/",
   },
@@ -29,28 +29,28 @@ const projects = [
   {
     slug: "lolosaurios",
     title: "LOLOSAURIOS",
-    category: "Formato editorial · Entretenimiento",
+    category: "Programa digital · YouTube",
     client: "José Luis Larraín",
     image: "/projects/lolosaurios/hero.png",
   },
   {
     slug: "futbol-y-parrilla",
     title: "FÚTBOL Y PARRILLA",
-    category: "Formato editorial · Deporte",
+    category: "Deporte · Entretenimiento",
     client: "Ian Mac-Niven",
     image: "/projects/futbol-y-parrilla/hero.png",
   },
   {
     slug: "break-industrial",
     title: "BREAK INDUSTRIAL",
-    category: "Posicionamiento B2B · Industria",
+    category: "Contenido B2B · Industria",
     client: "iGromi",
     image: "/projects/break-industrial/hero.png",
   },
   {
     slug: "creando-lideres-para-asia",
     title: "CREANDO LÍDERES PARA ASIA",
-    category: "Posicionamiento B2B · Internacional",
+    category: "Comunicación institucional · Internacional",
     client: "Cámara de Comercio Asia Pacífico · APCC",
     image: "/projects/creando-lideres-asia/hero.png",
   },
@@ -65,7 +65,7 @@ const capabilities = [
   "Series de videos para empresas y marcas",
   "Contenido para Instagram y redes sociales",
   "Podcasts y vodcasts",
-  "Desarrollo creativo y producción integral",
+  "Dirección creativa y producción audiovisual",
 ];
 
 /* ============================================================
@@ -167,9 +167,7 @@ export default function Home() {
               <h2 className="max-w-6xl text-[clamp(2.7rem,6.5vw,6.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
                 No necesitas
                 <br />
-                <span className="text-white/35">
-                  saber cómo hacerlo.
-                </span>
+                <span className="text-white/35">saber cómo hacerlo.</span>
               </h2>
 
               <p className="mt-12 max-w-2xl text-lg leading-relaxed text-white/60 md:text-xl">
@@ -180,10 +178,10 @@ export default function Home() {
               </p>
 
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/35 md:text-lg">
-                No necesitas llegar con un programa diseñado, un guion o una
-                estrategia. Desarrollamos el concepto, encontramos el formato,
-                creamos su identidad y nos encargamos de todo el proceso:
-                estructura, ritmo, producción y postproducción.
+                Podemos ayudarte a desarrollar el concepto y encontrar el
+                formato adecuado, o trabajar sobre una idea que ya tienes
+                definida. Creamos su identidad audiovisual y nos encargamos
+                de la dirección, producción, realización y postproducción.
               </p>
 
               <Link
@@ -196,6 +194,97 @@ export default function Home() {
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          PACK LANZAMIENTO VODCAST
+      ====================================================== */}
+
+      <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-14 md:grid-cols-12">
+            <div className="md:col-span-5">
+              <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
+                Una forma de empezar
+              </p>
+
+              <h2 className="mt-5 text-[clamp(2.8rem,5.5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+                Tu propio
+                <br />
+                <span className="text-white/35">vodcast.</span>
+              </h2>
+
+              <p className="mt-8 max-w-md text-base leading-relaxed text-white/50 md:text-lg">
+                Si quieres lanzar un programa de conversación, entrevistas o
+                contenidos para YouTube, podemos ayudarte a ponerlo en marcha
+                con una producción audiovisual profesional.
+              </p>
+
+              <Link
+                href="/contacto"
+                className="group mt-10 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
+              >
+                Hablemos de tu proyecto
+
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition group-hover:border-[#f51b24] group-hover:bg-[#f51b24]">
+                  <ArrowUpRight className="h-4 w-4" />
+                </span>
+              </Link>
+            </div>
+
+            <div className="md:col-span-6 md:col-start-7">
+              <div className="border-t border-white/20 pt-7">
+                <div className="flex items-start justify-between gap-6">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-[#f51b24]">
+                      Pack de lanzamiento
+                    </p>
+
+                    <h3 className="mt-4 text-2xl font-medium tracking-[-0.03em] md:text-3xl">
+                      Vodcast
+                    </h3>
+                  </div>
+
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-white/30">
+                    01
+                  </span>
+                </div>
+
+                <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/45">
+                  Una producción pensada para comenzar tu programa con
+                  episodios completos y piezas breves que permiten ampliar
+                  su presencia en plataformas digitales.
+                </p>
+
+                <div className="mt-10 space-y-0">
+                  {[
+                    "4 episodios de vodcast",
+                    "12 reels para redes sociales",
+                    "1 tráiler promocional",
+                    "Identidad gráfica y audiovisual",
+                    "Producción, edición y postproducción",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-4 border-b border-white/10 py-5"
+                    >
+                      <Check className="h-4 w-4 shrink-0 text-[#f51b24]" />
+
+                      <span className="text-sm text-white/70 md:text-base">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <p className="mt-8 text-xs leading-relaxed text-white/30">
+                  Cada proyecto se adapta a sus necesidades, formato,
+                  locación y requerimientos de producción.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -327,8 +416,9 @@ export default function Home() {
           </div>
 
           <p className="max-w-md text-sm leading-relaxed text-white/40">
-            Formatos creados y producidos para comunicación corporativa,
-            entretenimiento, deporte, tecnología y contenido original.
+            Proyectos y producciones audiovisuales para comunicación
+            corporativa, entretenimiento, deporte, tecnología y contenido
+            digital.
           </p>
         </div>
 
@@ -383,6 +473,17 @@ export default function Home() {
             </Link>
           ))}
         </div>
+
+        <div className="mt-12 flex justify-end">
+          <Link
+            href="/proyectos"
+            className="group inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/50 transition hover:text-white"
+          >
+            Ver todos los proyectos
+
+            <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </Link>
+        </div>
       </section>
 
       {/* =====================================================
@@ -414,13 +515,14 @@ export default function Home() {
                 comunicar lo que haces.
                 <br />
                 <br />
-                En Dekaelo te ayudamos a darle forma. Desarrollamos el concepto,
-                definimos la estructura, construimos la dinámica y encontramos
-                el lenguaje audiovisual que le dará identidad al proyecto.
+                Si necesitas desarrollar el proyecto, podemos ayudarte a definir
+                el concepto, la estructura y su lenguaje audiovisual. Si ya
+                tienes el formato, nos sumamos para darle una identidad y
+                convertirlo en una producción profesional.
                 <br />
                 <br />
-                Después lo llevamos a producción y nos encargamos de la
-                postproducción y entrega final.
+                Nos encargamos de la dirección audiovisual, la producción,
+                la edición y la postproducción hasta la entrega final.
               </p>
 
               <p className="mt-8 text-base leading-relaxed text-white/35 md:text-lg">
@@ -453,8 +555,8 @@ export default function Home() {
             </h2>
 
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/40">
-              Desarrollamos proyectos audiovisuales a la medida de cada idea,
-              persona, empresa y plataforma.
+              Desarrollamos y producimos proyectos audiovisuales a la medida
+              de cada idea, persona, empresa y plataforma.
             </p>
 
             <Link
