@@ -23,6 +23,8 @@ type Project = {
   challenge: string;
   solution: string;
   result: string;
+  valueTitle: string;
+  valueDescription: string;
   stats: [string, string][];
   ranking?: [string, string, string][];
   hero: string;
@@ -39,24 +41,29 @@ const projects: Record<string, Project> = {
     subtitle: "Nos une el nuevo BICE",
     category: "Comunicación interna · Cultura",
     client: "BICECORP",
-    description: "Conversaciones que conectan.",
+    description: "Conversaciones que conectan a toda una organización.",
     intro:
-      "Nos Une es un formato de comunicación interna creado para acompañar la integración entre BICECORP y Grupo Security y acercar a sus equipos a través de conversaciones con sus principales protagonistas.",
+      "Nos Une es una serie audiovisual de comunicación interna que acompaña la integración entre BICECORP y Grupo Security, acercando a sus equipos a través de conversaciones con sus principales protagonistas.",
+
     videoId: "2r11AjLM1oM",
 
     challenge:
-      "Acompañar el proceso de integración entre BICECORP y Grupo Security mediante un formato de comunicación cercano que conectara a la alta administración con sus colaboradores.",
+      "Acompañar el proceso de integración entre BICECORP y Grupo Security mediante un contenido cercano, capaz de conectar a la alta administración con una comunidad de más de 6.000 colaboradores.",
 
     solution:
-      "Dekaelo Media desarrolló el formato Nos Une, definiendo su estructura, ritmo y dinámica audiovisual. Desde 2024, está a cargo de su producción audiovisual, incluyendo entrevistas, registro y postproducción.",
+      "Dekaelo Media estuvo a cargo de la dirección creativa y realización audiovisual de la serie. Desarrolló su identidad visual y sonora, la música, las piezas de apertura y cierre, el tratamiento de imagen y color, y el lenguaje de edición. También realizó las grabaciones y la postproducción de los episodios.",
 
     result:
-      "Una serie activa que continúa desarrollándose y que ha acompañado la comunicación interna de BICE durante 2024, 2025 y 2026.",
+      "Una serie audiovisual con identidad propia y continuidad de producción durante 2024, 2025 y 2026, concebida como un canal de comunicación interna para una organización de más de 6.000 colaboradores.",
+
+    valueTitle: "Comunicación interna a escala.",
+    valueDescription:
+      "Un espacio audiovisual que permite acercar a los equipos a sus líderes, transmitir mensajes institucionales y acompañar procesos importantes de transformación organizacional.",
 
     stats: [
+      ["6.000+", "colaboradores"],
       ["14+", "episodios producidos"],
       ["2024–2026", "producción continua"],
-      ["ACTIVA", "serie vigente"],
     ],
 
     hero: "/projects/bice/hero.png",
@@ -71,22 +78,26 @@ const projects: Record<string, Project> = {
   lolosaurios: {
     title: "LOLOSAURIOS",
     subtitle: "La Nueva Tertulia",
-    category: "Formato editorial · Entretenimiento",
+    category: "Entretenimiento · YouTube · Instagram",
     client: "José Luis Larraín",
-    description: "La conversación que ya no existe en televisión.",
+    description: "Una idea que se convirtió en un programa y una comunidad digital.",
     intro:
-      "Un programa de conversación y entretenimiento creado desde cero para recuperar el espíritu de la tertulia y llevarlo a una nueva audiencia digital.",
+      "Lolosaurios es un programa de conversación y entretenimiento que recupera el espíritu de la tertulia: cuatro participantes, distintas miradas y conversaciones sobre cultura, actualidad y experiencias de vida.",
 
     videoId: "8638BE6Uumg",
 
     challenge:
-      "Crear un programa de conversación con identidad propia, capaz de conectar con una audiencia adulta interesada en humor, cultura y actualidad.",
+      "El punto de partida fue una idea sencilla: reunir a cuatro personas para conversar semanalmente. El desafío era convertir esa premisa en un programa con identidad propia y construir una presencia digital capaz de conectar con una audiencia adulta.",
 
     solution:
-      "Dekaelo Media desarrolló el concepto y el formato desde cero: estructura, dinámica de conversación, ritmo, identidad y lenguaje audiovisual. También asumió la producción de los episodios y el desarrollo de contenido para YouTube e Instagram.",
+      "Dekaelo Media desarrolló toda la identidad audiovisual del programa: identidad gráfica, música original, intro, cortinas y cierre, tratamiento de imagen y color, dirección audiovisual, montaje y ritmo narrativo. También asumió la edición y postproducción de los episodios, además de la gestión de los canales de YouTube e Instagram, incluyendo adaptación, preparación y publicación de contenidos.",
 
     result:
-      "En poco más de tres meses y con 14 episodios publicados, el canal de YouTube alcanzó 2.757 suscriptores, 217.426 vistas orgánicas y 29.400 horas de reproducción. La cuenta de Instagram llegó a 16.000 seguidores. El 83% de las vistas provino de personas de 45 años o más, y casi la mitad del tiempo de reproducción ocurrió en televisores. Cifras al 22 de octubre de 2026.",
+      "En poco más de tres meses, el proyecto alcanzó 217.426 visualizaciones orgánicas en YouTube, 29.400 horas de reproducción y 16.000 seguidores en Instagram. El canal llegó a 2.757 suscriptores con 14 episodios publicados. Cifras al 22 de octubre de 2026.",
+
+    valueTitle: "De una idea a una presencia digital.",
+    valueDescription:
+      "El proyecto muestra cómo una idea puede transformarse en un programa reconocible, con identidad audiovisual consistente, publicaciones periódicas y una comunidad que encuentra en YouTube e Instagram nuevos espacios para seguir la conversación.",
 
     stats: [
       ["217,4K", "vistas en YouTube"],
@@ -109,7 +120,7 @@ const projects: Record<string, Project> = {
   "futbol-y-parrilla": {
     title: "FÚTBOL Y PARRILLA",
     subtitle: "Fútbol, historias y buena parrilla.",
-    category: "Formato editorial · Deporte",
+    category: "Deporte · Entretenimiento",
     client: "Ian Mac-Niven",
     description: "Historias, fútbol y conversación alrededor de la mesa.",
     intro:
@@ -118,13 +129,17 @@ const projects: Record<string, Project> = {
     videoId: "PLSfbZU_asQ",
 
     challenge:
-      "Desarrollar un formato de conversación sobre fútbol chileno, capaz de convocar a referentes históricos del deporte y construir una audiencia digital.",
+      "Llevar una propuesta de conversación sobre fútbol chileno a una producción audiovisual atractiva, con referentes históricos del deporte y una puesta en escena adecuada para plataformas digitales.",
 
     solution:
-      "Dekaelo Media desarrolló el formato, definiendo su estructura, ritmo, dinámica de conversación y lenguaje audiovisual. Además, estuvo a cargo de la producción de los primeros cuatro episodios, incluyendo registro, realización y postproducción.",
+      "Dekaelo Media estuvo a cargo de la dirección y realización audiovisual de los primeros cuatro episodios. El trabajo incluyó el registro, la dirección de las grabaciones, el tratamiento visual, el montaje, el ritmo narrativo y la postproducción.",
 
     result:
-      "Los primeros cuatro episodios alcanzaron aproximadamente 318 mil vistas en conjunto dentro de una serie de 43 capítulos.",
+      "Los primeros cuatro episodios producidos por Dekaelo alcanzaron aproximadamente 318 mil visualizaciones en conjunto, dentro de una serie de 43 capítulos.",
+
+    valueTitle: "Contenido que encuentra a su audiencia.",
+    valueDescription:
+      "Una producción audiovisual pensada para llevar las historias y conversaciones del deporte a una audiencia digital, con una puesta en escena y un tratamiento editorial propios.",
 
     stats: [
       ["4", "episodios producidos por Dekaelo"],
@@ -151,27 +166,31 @@ const projects: Record<string, Project> = {
   "break-industrial": {
     title: "BREAK INDUSTRIAL",
     subtitle: "Tecnología · Innovación · Industria",
-    category: "Formato editorial · Industria",
+    category: "Contenido B2B · Industria",
     client: "iGromi",
-    description: "Conversaciones sobre innovación y transformación industrial.",
+    description: "Conversaciones que abren oportunidades en la industria.",
     intro:
-      "Un espacio de conversación dedicado a innovación, tecnología e industria, desarrollado para generar contenido especializado y abrir conversaciones sobre los cambios del sector.",
+      "Un espacio de conversación dedicado a innovación, tecnología e industria, que reúne a invitados relevantes para abordar los cambios y desafíos del sector.",
 
     videoId: "2G7oKXKjPl8",
 
     challenge:
-      "Crear un espacio de conversación que conectara innovación, industria y emprendimiento.",
+      "Generar conversaciones con representantes de la industria, la innovación y el emprendimiento, creando un espacio para compartir conocimientos y acercar a distintos actores del sector.",
 
     solution:
-      "Dekaelo Media desarrolló el formato Break Industrial, definiendo su concepto, estructura, ritmo y dinámica de conversación. También estuvo a cargo de la producción audiovisual y postproducción de la serie.",
+      "Dekaelo Media estuvo a cargo de la dirección creativa y realización audiovisual de la serie. Desarrolló la identidad visual y sonora, la música y los elementos gráficos, además de dirigir las grabaciones y realizar el montaje, tratamiento de imagen y sonido y postproducción de los ocho episodios.",
 
     result:
-      "Ocho episodios producidos para generar contenido especializado y conversaciones sobre innovación, tecnología e industria.",
+      "Ocho episodios producidos. El cliente valoró especialmente las relaciones comerciales que pudo desarrollar a partir de las conversaciones y los vínculos establecidos con los invitados del programa.",
+
+    valueTitle: "El contenido también puede generar negocios.",
+    valueDescription:
+      "En proyectos B2B, una conversación bien planteada puede ser mucho más que una pieza de comunicación: puede convertirse en una oportunidad para acercarse a potenciales clientes, conocer actores relevantes y construir relaciones comerciales dentro de una industria.",
 
     stats: [
       ["8", "episodios producidos"],
       ["B2B", "contenido especializado"],
-      ["INDUSTRIA", "innovación y tecnología"],
+      ["RELACIONES", "vínculos comerciales"],
     ],
 
     hero: "/projects/break-industrial/hero.png",
@@ -190,18 +209,22 @@ const projects: Record<string, Project> = {
     client: "Cámara de Comercio Asia Pacífico · APCC",
     description: "Conversaciones que conectan con Asia.",
     intro:
-      "Una serie de conversación internacional desarrollada para conectar a empresarios, diplomáticos y líderes con las oportunidades comerciales entre Chile y Asia.",
+      "Una serie de entrevistas y conversaciones con empresarios, diplomáticos y líderes internacionales, enfocada en las oportunidades comerciales y las relaciones entre Chile y Asia.",
 
     videoId: "byTylGKp-uI",
 
     challenge:
-      "Posicionar digitalmente a la Cámara de Comercio Asia Pacífico como referente en las relaciones comerciales entre Chile y Asia.",
+      "Dar visibilidad a las actividades y conversaciones de la Cámara de Comercio Asia Pacífico, fortaleciendo su presencia digital y acercando sus contenidos a empresarios y líderes interesados en las relaciones comerciales entre Chile y Asia.",
 
     solution:
-      "Dekaelo Media desarrolló el formato de la serie, definiendo su concepto, estructura, ritmo y lenguaje audiovisual. La producción se desarrolló durante quince meses, con entrevistas a empresarios, diplomáticos y líderes internacionales.",
+      "Dekaelo Media estuvo a cargo de la dirección y realización audiovisual de la serie durante quince meses. El trabajo incluyó la dirección de las grabaciones, el tratamiento visual y sonoro, el montaje y la postproducción de las entrevistas a empresarios, diplomáticos y líderes internacionales.",
 
     result:
-      "24 episodios producidos, más de 15 meses de continuidad editorial y más de 50 nuevos socios incorporados durante el período de emisión.",
+      "24 episodios producidos, más de 15 meses de continuidad y más de 50 nuevos socios incorporados durante el período de emisión.",
+
+    valueTitle: "Visibilidad y continuidad institucional.",
+    valueDescription:
+      "Una serie audiovisual que permitió dar espacio a las voces de distintos líderes, mantener una presencia comunicacional sostenida y acompañar los objetivos de vinculación de la Cámara.",
 
     stats: [
       ["24", "episodios producidos"],
@@ -252,12 +275,10 @@ export async function generateMetadata({
 
   return {
     title: `${project.title} | Proyectos Dekaelo Media`,
-    description: `${project.description} ${project.category}. Conoce cómo desarrollamos y producimos este proyecto audiovisual.`,
-
+    description: `${project.description} ${project.category}. Conoce el trabajo de dirección creativa y producción audiovisual de Dekaelo Media.`,
     alternates: {
       canonical: `/proyectos/${params.slug}`,
     },
-
     openGraph: {
       type: "website",
       title: `${project.title} | Dekaelo Media`,
@@ -272,7 +293,6 @@ export async function generateMetadata({
         },
       ],
     },
-
     twitter: {
       card: "summary_large_image",
       title: `${project.title} | Dekaelo Media`,
@@ -297,22 +317,29 @@ export default function ProjectPage({
     notFound();
   }
 
+  const capabilities = [
+    "Dirección creativa y audiovisual",
+    "Identidad visual y sonora",
+    "Música y diseño sonoro",
+    "Dirección de grabación",
+    "Producción audiovisual",
+    "Edición y montaje",
+    "Postproducción de imagen y sonido",
+    "Gestión de canales y contenidos digitales",
+  ];
+
   return (
     <main
       id="top"
       className="min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black"
     >
-
       {/* =====================================================
           HERO
       ====================================================== */}
 
       <section className="relative pt-36 md:pt-44">
-
         <div className="px-5 md:px-10">
-
           <div className="flex items-center justify-between">
-
             <Link
               href="/proyectos"
               className="group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/40 transition hover:text-white"
@@ -328,11 +355,9 @@ export default function ProjectPage({
               Conocer el proyecto
               <ArrowUpRight className="h-3 w-3" />
             </a>
-
           </div>
 
           <div className="mt-16 flex flex-col gap-3 md:flex-row md:items-center md:gap-8">
-
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
               {project.category}
             </p>
@@ -342,7 +367,6 @@ export default function ProjectPage({
             <p className="text-[10px] uppercase tracking-[0.3em] text-white/40">
               Cliente · {project.client}
             </p>
-
           </div>
 
           <h1 className="mt-5 max-w-6xl text-[clamp(3rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
@@ -352,11 +376,9 @@ export default function ProjectPage({
           <p className="mt-7 max-w-2xl text-lg text-white/45 md:text-xl">
             {project.subtitle}
           </p>
-
         </div>
 
         <div className="relative mt-14 aspect-[16/9] w-full overflow-hidden">
-
           <Image
             src={project.hero}
             alt={project.title}
@@ -365,9 +387,7 @@ export default function ProjectPage({
             sizes="100vw"
             className="object-cover"
           />
-
         </div>
-
       </section>
 
       {/* =====================================================
@@ -378,11 +398,8 @@ export default function ProjectPage({
         id="proyecto"
         className="scroll-mt-28 border-b border-white/10 px-5 py-24 md:px-10 md:py-32"
       >
-
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12">
-
           <div className="md:col-span-4">
-
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
               El proyecto
             </p>
@@ -390,19 +407,14 @@ export default function ProjectPage({
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-white/40">
               {project.intro}
             </p>
-
           </div>
 
           <div className="md:col-span-7 md:col-start-6">
-
             <p className="text-3xl leading-tight tracking-[-0.03em] text-white/80 md:text-5xl">
               {project.description}
             </p>
-
           </div>
-
         </div>
-
       </section>
 
       {/* =====================================================
@@ -410,13 +422,9 @@ export default function ProjectPage({
       ====================================================== */}
 
       <section className="px-5 py-24 md:px-10 md:py-32">
-
         <div className="mx-auto max-w-7xl">
-
           <div className="mb-8 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-
             <div>
-
               <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
                 Una muestra del proyecto
               </p>
@@ -424,17 +432,14 @@ export default function ProjectPage({
               <h2 className="mt-3 text-2xl font-medium md:text-3xl">
                 Así se ve y se escucha.
               </h2>
-
             </div>
 
             <p className="text-xs text-white/30">
               Video publicado en YouTube
             </p>
-
           </div>
 
           <div className="relative aspect-video w-full overflow-hidden bg-black">
-
             <iframe
               src={`https://www.youtube.com/embed/${project.videoId}`}
               title={`${project.title} — Dekaelo Media`}
@@ -443,11 +448,8 @@ export default function ProjectPage({
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
-
           </div>
-
         </div>
-
       </section>
 
       {/* =====================================================
@@ -455,13 +457,13 @@ export default function ProjectPage({
       ====================================================== */}
 
       <section className="border-y border-white/10 px-5 py-12 md:px-10 md:py-16">
-
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3">
-
+        <div
+          className={`mx-auto grid max-w-7xl grid-cols-2 gap-x-8 gap-y-10 ${
+            project.stats.length > 3 ? "md:grid-cols-3" : "md:grid-cols-3"
+          }`}
+        >
           {project.stats.map(([number, label]) => (
-
             <div key={`${number}-${label}`}>
-
               <div className="text-3xl font-medium tracking-[-0.04em] md:text-5xl">
                 {number}
               </div>
@@ -469,13 +471,9 @@ export default function ProjectPage({
               <div className="mt-2 max-w-[200px] text-[10px] uppercase leading-relaxed tracking-[0.2em] text-white/35">
                 {label}
               </div>
-
             </div>
-
           ))}
-
         </div>
-
       </section>
 
       {/* =====================================================
@@ -483,13 +481,9 @@ export default function ProjectPage({
       ====================================================== */}
 
       {project.ranking && (
-
         <section className="border-b border-white/10 px-5 py-20 md:px-10 md:py-28">
-
           <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12">
-
             <div className="md:col-span-4">
-
               <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
                 Audiencia
               </p>
@@ -499,16 +493,14 @@ export default function ProjectPage({
               </h2>
 
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/40">
-                Dekaelo Media desarrolló el formato y produjo los primeros
-                cuatro episodios dentro de una serie de 43 capítulos.
+                Dekaelo Media estuvo a cargo de la realización audiovisual
+                de los primeros cuatro episodios dentro de una serie de
+                43 capítulos.
               </p>
-
             </div>
 
             <div className="md:col-span-7 md:col-start-6">
-
               <div className="border-t border-white/20">
-
                 <div className="grid grid-cols-3 border-b border-white/10 py-4 text-[10px] uppercase tracking-[0.2em] text-white/35">
                   <span>Ep.</span>
                   <span>Vistas</span>
@@ -516,7 +508,6 @@ export default function ProjectPage({
                 </div>
 
                 {project.ranking.map(([episode, views, position]) => (
-
                   <div
                     key={episode}
                     className="grid grid-cols-3 border-b border-white/10 py-5 text-sm"
@@ -525,17 +516,11 @@ export default function ProjectPage({
                     <span>{views}</span>
                     <span>{position}</span>
                   </div>
-
                 ))}
-
               </div>
-
             </div>
-
           </div>
-
         </section>
-
       )}
 
       {/* =====================================================
@@ -543,113 +528,119 @@ export default function ProjectPage({
       ====================================================== */}
 
       <section className="px-5 py-24 md:px-10 md:py-36">
-
         <div className="mx-auto max-w-7xl">
-
           <div className="mb-20 max-w-3xl md:mb-28">
-
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
-              Cómo lo hicimos
+              El trabajo de Dekaelo
             </p>
 
             <h2 className="mt-5 text-4xl font-medium tracking-[-0.04em] md:text-6xl">
               De la idea
               <br />
-              a la producción.
+              al resultado.
             </h2>
 
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/45 md:text-xl">
-              Cada proyecto comienza con una necesidad distinta. Nuestro
-              trabajo consiste en entenderla, encontrar el formato adecuado
-              y convertirlo en una producción audiovisual concreta.
+              Cada proyecto tiene un punto de partida distinto. A partir
+              de la idea y los objetivos del cliente, aportamos dirección
+              creativa, criterio audiovisual y experiencia de producción
+              para convertirlo en un contenido con identidad propia.
             </p>
-
           </div>
 
           <div className="grid gap-y-20 md:grid-cols-12 md:gap-y-28">
-
             {/* DESAFÍO */}
 
             <div className="md:col-span-4">
-
               <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
                 01
               </p>
 
               <h3 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
-                Qué había que crear
+                El desafío
               </h3>
-
             </div>
 
             <div className="md:col-span-7 md:col-start-6">
-
               <p className="text-xl leading-relaxed text-white/65 md:text-3xl">
                 {project.challenge}
               </p>
-
             </div>
 
-            {/* DESARROLLO Y PRODUCCIÓN */}
+            {/* TRABAJO */}
 
             <div className="md:col-span-4">
-
               <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
                 02
               </p>
 
               <h3 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
-                Qué desarrollamos
+                Qué hicimos
               </h3>
-
             </div>
 
             <div className="md:col-span-7 md:col-start-6">
-
               <p className="text-xl leading-relaxed text-white/65 md:text-3xl">
                 {project.solution}
               </p>
-
             </div>
 
             {/* RESULTADO */}
 
             <div className="md:col-span-4">
-
               <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
                 03
               </p>
 
               <h3 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
-                Qué conseguimos
+                El resultado
               </h3>
-
             </div>
 
             <div className="md:col-span-7 md:col-start-6">
-
               <p className="text-xl leading-relaxed text-white/65 md:text-3xl">
                 {project.result}
               </p>
-
             </div>
+          </div>
+        </div>
+      </section>
 
+      {/* =====================================================
+          VALOR PARA EL CLIENTE
+      ====================================================== */}
+
+      <section className="border-y border-white/10 bg-[#0a0a0a] px-5 py-24 md:px-10 md:py-32">
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
+              Más allá de la producción
+            </p>
+
+            <h2 className="mt-5 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
+              El valor del proyecto
+            </h2>
           </div>
 
-        </div>
+          <div className="md:col-span-7 md:col-start-6">
+            <h3 className="text-3xl font-medium leading-tight tracking-[-0.04em] text-white/90 md:text-5xl">
+              {project.valueTitle}
+            </h3>
 
+            <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/45 md:text-lg">
+              {project.valueDescription}
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* =====================================================
           CAPACIDADES
       ====================================================== */}
 
-      <section className="border-y border-white/10 px-5 py-20 md:px-10 md:py-28">
-
+      <section className="border-b border-white/10 px-5 py-20 md:px-10 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12">
-
           <div className="md:col-span-4">
-
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
               Dekaelo Media
             </p>
@@ -659,46 +650,28 @@ export default function ProjectPage({
             </h2>
 
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/40">
-              Podemos desarrollar un proyecto desde cero o incorporarnos
-              en las etapas que necesites.
+              Nos involucramos en las etapas creativas y técnicas necesarias
+              para darle identidad, calidad y continuidad a cada producción.
             </p>
-
           </div>
 
           <div className="md:col-span-7 md:col-start-6">
-
             <div className="grid border-t border-white/10 md:grid-cols-2">
-
-              {[
-                "Desarrollo de ideas y formatos",
-                "Concepto y estructura",
-                "Identidad audiovisual",
-                "Dirección",
-                "Producción y grabación",
-                "Edición y postproducción",
-              ].map((item, index) => (
-
+              {capabilities.map((item, index) => (
                 <div
                   key={item}
                   className="border-b border-white/10 py-5 text-sm text-white/65 md:pr-8"
                 >
-
                   <span className="mr-4 text-[10px] text-[#f51b24]">
-                    0{index + 1}
+                    {String(index + 1).padStart(2, "0")}
                   </span>
 
                   {item}
-
                 </div>
-
               ))}
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
       {/* =====================================================
@@ -706,11 +679,8 @@ export default function ProjectPage({
       ====================================================== */}
 
       <section className="px-5 py-24 md:px-10 md:py-36">
-
         <div className="mx-auto max-w-7xl">
-
           <div className="mb-10">
-
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
               Detrás del proyecto
             </p>
@@ -718,22 +688,16 @@ export default function ProjectPage({
             <h2 className="mt-3 text-3xl font-medium tracking-[-0.03em] md:text-5xl">
               Imágenes de la producción.
             </h2>
-
           </div>
 
           <div className="space-y-8 md:space-y-12">
-
             {project.images.map((image, index) => (
-
               <div
                 key={image}
                 className={`relative aspect-[16/9] overflow-hidden ${
                   index === 1 ? "md:ml-[16%]" : ""
-                } ${
-                  index === 2 ? "md:mr-[16%]" : ""
-                }`}
+                } ${index === 2 ? "md:mr-[16%]" : ""}`}
               >
-
                 <Image
                   src={image}
                   alt={`${project.title} — fotografía ${index + 1}`}
@@ -741,15 +705,10 @@ export default function ProjectPage({
                   sizes="(max-width: 768px) 100vw, 84vw"
                   className="object-cover"
                 />
-
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
 
       {/* =====================================================
@@ -757,20 +716,15 @@ export default function ProjectPage({
       ====================================================== */}
 
       <div className="border-t border-white/10 px-5 py-8 md:px-10">
-
         <div className="mx-auto max-w-7xl">
-
           <a
             href="#top"
             className="group inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.18em] text-white/35 transition hover:text-white"
           >
             Volver arriba
-
             <ArrowUp className="h-3 w-3 transition-transform group-hover:-translate-y-1" />
           </a>
-
         </div>
-
       </div>
 
       {/* =====================================================
@@ -778,11 +732,8 @@ export default function ProjectPage({
       ====================================================== */}
 
       <section className="border-t border-white/10 px-5 py-28 md:px-10 md:py-36">
-
         <div className="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:items-end md:justify-between">
-
           <div>
-
             <p className="mb-5 text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
               ¿Tienes una idea?
             </p>
@@ -796,10 +747,10 @@ export default function ProjectPage({
             </h2>
 
             <p className="mt-8 max-w-xl text-base leading-relaxed text-white/45 md:text-lg">
-              Cuéntanos qué te gustaría crear. Podemos ayudarte a desarrollar
-              el concepto, encontrar el formato y producirlo de principio a fin.
+              Cuéntanos qué te gustaría conseguir. Podemos ayudarte a
+              darle forma audiovisual a tu idea, producir los contenidos
+              y acompañarte hasta su publicación.
             </p>
-
           </div>
 
           <Link
@@ -810,11 +761,8 @@ export default function ProjectPage({
 
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
-
         </div>
-
       </section>
-
     </main>
   );
 }
