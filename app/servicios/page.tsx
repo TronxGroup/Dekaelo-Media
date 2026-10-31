@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Servicios",
+  title: "Servicios | Dekaelo Media",
   description:
-    "Dekaelo Media desarrolla, produce y postproduce formatos audiovisuales, contenido corporativo y proyectos editoriales para empresas, marcas y audiencias.",
+    "Creamos y producimos programas para YouTube, series de videos, podcasts, vodcasts y contenido para Instagram. Desarrollamos tu idea desde cero y nos encargamos de todo el proceso audiovisual.",
   alternates: {
     canonical: "/servicios",
   },
@@ -19,91 +19,86 @@ export const metadata: Metadata = {
 const services = [
   {
     number: "01",
-    title: "Desarrollo de formatos",
+    title: "Programas para YouTube",
     intro:
-      "Convertimos una idea en un formato audiovisual con identidad, estructura y posibilidades reales de producción.",
+      "¿Quieres tener tu propio programa, pero no sabes cómo desarrollarlo? Creamos el formato desde cero y lo convertimos en una producción audiovisual lista para llegar a su audiencia.",
     items: [
-      "Vodcast",
       "Programas de conversación",
       "Entrevistas",
-      "Series",
-      "Contenido editorial",
-      "Formatos para YouTube y plataformas digitales",
+      "Paneles y debates",
+      "Programas temáticos",
+      "Entretenimiento",
+      "Series y formatos originales",
     ],
   },
-
   {
     number: "02",
-    title: "Concepto y estructura",
+    title: "Series de videos",
     intro:
-      "Definimos qué contar, cómo contarlo y qué necesita cada proyecto para funcionar.",
+      "Desarrollamos series audiovisuales para personas, empresas y marcas que quieren comunicar de manera constante, construir una identidad y conectar con sus audiencias.",
     items: [
-      "Concepto creativo",
-      "Estructura de episodios",
-      "Línea editorial",
-      "Guion y pauta",
-      "Diseño de secciones",
+      "Series corporativas",
+      "Contenido educativo",
+      "Historias de marca",
+      "Videos institucionales",
+      "Cápsulas audiovisuales",
+      "Contenido editorial",
+    ],
+  },
+  {
+    number: "03",
+    title: "Contenido para redes sociales",
+    intro:
+      "Creamos contenido pensado para el lenguaje y las características de cada plataforma. Desde la idea hasta las piezas finales listas para publicar.",
+    items: [
+      "Reels",
+      "Videos verticales",
+      "Entrevistas breves",
+      "Cápsulas de contenido",
+      "Videos promocionales",
+      "Adaptaciones multiplataforma",
+    ],
+  },
+  {
+    number: "04",
+    title: "Podcasts y vodcasts",
+    intro:
+      "Diseñamos y producimos espacios de conversación en audio y video. Definimos su identidad, dinámica, conducción y estructura para crear un formato con personalidad propia.",
+    items: [
+      "Podcasts corporativos",
+      "Vodcast",
+      "Entrevistas",
+      "Conversaciones",
+      "Programas periódicos",
       "Identidad audiovisual",
     ],
   },
-
-  {
-    number: "03",
-    title: "Dirección audiovisual",
-    intro:
-      "Llevamos el concepto a una propuesta visual y narrativa coherente con el proyecto.",
-    items: [
-      "Dirección",
-      "Lenguaje visual",
-      "Dirección de entrevistas",
-      "Dirección de cámaras",
-      "Puesta en escena",
-      "Criterio narrativo",
-    ],
-  },
-
-  {
-    number: "04",
-    title: "Producción",
-    intro:
-      "Organizamos y ejecutamos cada etapa necesaria para llevar el proyecto desde la planificación hasta el rodaje.",
-    items: [
-      "Preproducción",
-      "Planificación de rodaje",
-      "Coordinación técnica",
-      "Locaciones",
-      "Equipamiento",
-      "Producción en terreno",
-    ],
-  },
-
   {
     number: "05",
-    title: "Realización",
+    title: "Desarrollo creativo",
     intro:
-      "Nos hacemos cargo de la ejecución audiovisual para que cada jornada de producción llegue preparada y ordenada.",
+      "No necesitas llegar con un proyecto resuelto. Te ayudamos a transformar una idea inicial en un concepto audiovisual concreto, con una propuesta creativa y posibilidades reales de producción.",
     items: [
-      "Rodaje multicámara",
-      "Operación de cámaras",
-      "Iluminación",
-      "Captura de audio",
-      "Dirección técnica en set",
-      "Registro audiovisual",
+      "Concepto creativo",
+      "Nombre y branding",
+      "Creación de logotipo",
+      "Identidad gráfica",
+      "Estructura y secciones",
+      "Pauta y guion",
     ],
   },
-
   {
     number: "06",
-    title: "Postproducción",
+    title: "Producción y postproducción",
     intro:
-      "Construimos la pieza final a partir del material registrado, cuidando narrativa, imagen, sonido y versiones.",
+      "Nos encargamos de llevar el proyecto a la pantalla. Organizamos las grabaciones y desarrollamos todo el trabajo de edición y postproducción hasta entregar las piezas terminadas.",
     items: [
+      "Preproducción",
+      "Dirección audiovisual",
+      "Rodaje multicámara",
       "Edición",
-      "Corrección de color",
-      "Diseño sonoro",
-      "Motion graphics",
-      "Subtítulos",
-      "Versiones para plataformas",
+      "Color y sonido",
+      "Motion graphics y subtítulos",
     ],
   },
 ];
@@ -114,24 +109,55 @@ const services = [
 
 const applications = [
   {
-    title: "Vodcast corporativo",
+    title: "Quiero tener un programa en YouTube",
     text:
-      "Formatos de conversación y contenido audiovisual para comunicación interna, cultura y posicionamiento.",
+      "Tienes una idea para un programa de entrevistas, conversación, actualidad o entretenimiento. Desarrollamos el formato, creamos su identidad y producimos los episodios.",
   },
   {
-    title: "Contenido institucional",
+    title: "Quiero crear contenido para mi empresa",
     text:
-      "Piezas audiovisuales para comunicar proyectos, equipos, productos, servicios y cultura empresarial.",
+      "Necesitas comunicar lo que haces, compartir conocimientos, mostrar a tu equipo o desarrollar una serie audiovisual para tus clientes y colaboradores.",
   },
   {
-    title: "Formatos editoriales",
+    title: "Quiero producir contenido para Instagram",
     text:
-      "Programas y series pensados para construir una audiencia alrededor de una temática, marca o proyecto.",
+      "Buscas generar videos y reels con una identidad propia, una línea de contenido coherente y calidad audiovisual profesional.",
   },
   {
-    title: "Contenido B2B",
+    title: "Tengo una idea, pero no sé cómo hacerla",
     text:
-      "Producciones audiovisuales para empresas de industria, tecnología, servicios y mercados especializados.",
+      "No tienes que llegar con el formato, el guion ni la producción resueltos. Conversamos contigo, desarrollamos una propuesta y nos encargamos de hacerla realidad.",
+  },
+];
+
+/* ============================================================
+   PROCESO
+============================================================ */
+
+const steps = [
+  {
+    number: "01",
+    title: "Conversamos",
+    text:
+      "Nos cuentas tu idea, qué quieres conseguir y a quién quieres llegar.",
+  },
+  {
+    number: "02",
+    title: "Desarrollamos",
+    text:
+      "Creamos el concepto, definimos el formato, la identidad, la estructura y el estilo.",
+  },
+  {
+    number: "03",
+    title: "Producimos",
+    text:
+      "Organizamos y realizamos las grabaciones con los recursos adecuados para el proyecto.",
+  },
+  {
+    number: "04",
+    title: "Entregamos",
+    text:
+      "Editamos, trabajamos imagen y sonido y preparamos las piezas finales para cada plataforma.",
   },
 ];
 
@@ -161,10 +187,7 @@ export default function ServiciosPage() {
 
       <section className="relative min-h-[88vh] overflow-hidden border-b border-white/10 px-5 pb-24 pt-40 md:px-10 md:pb-36 md:pt-52">
 
-        {/* FOTO DE FONDO */}
-
         <div className="absolute inset-0">
-
           <Image
             src="/BG_Servicios.jpg"
             alt=""
@@ -173,38 +196,28 @@ export default function ServiciosPage() {
             sizes="100vw"
             className="object-cover"
           />
-
         </div>
-
-        {/* OVERLAY OSCURO */}
 
         <div className="absolute inset-0 bg-black/60" />
 
-        {/* DEGRADADO */}
-
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-[#050505]" />
-
-        {/* CONTENIDO */}
 
         <div className="relative z-10 mx-auto flex min-h-[68vh] max-w-7xl flex-col justify-end">
 
-          <Eyebrow>Servicios</Eyebrow>
+          <Eyebrow>Qué hacemos</Eyebrow>
 
           <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
 
             <div className="md:col-span-9">
 
               <h1 className="max-w-6xl text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
-
-                Del concepto
+                Tienes una idea.
                 <br />
-                a la producción.
+                Nosotros la
                 <br />
-
                 <span className="text-white/45">
-                  Una misma mirada.
+                  hacemos realidad.
                 </span>
-
               </h1>
 
             </div>
@@ -212,12 +225,12 @@ export default function ServiciosPage() {
             <div className="md:col-span-3">
 
               <p className="text-sm leading-relaxed text-white/70 md:text-base">
-                Desarrollamos, producimos y postproducimos formatos
-                audiovisuales para empresas, marcas y audiencias.
+                Creamos y producimos programas, series y contenido audiovisual
+                para YouTube, Instagram y otras plataformas digitales.
               </p>
 
               <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-white/45">
-                Dekaelo Media · Desde 2013
+                Desarrollo · Producción · Postproducción
               </p>
 
             </div>
@@ -248,25 +261,27 @@ export default function ServiciosPage() {
 
               <h2 className="max-w-5xl text-[clamp(2.7rem,6vw,6rem)] font-medium leading-[0.92] tracking-[-0.06em]">
 
-                Una producción
+                No necesitas
                 <br />
 
                 <span className="text-white/35">
-                  de principio a fin.
+                  saber cómo producirlo.
                 </span>
 
               </h2>
 
-              <p className="mt-12 max-w-3xl text-lg leading-relaxed text-white/50 md:text-xl">
-                No trabajamos únicamente sobre la pieza final. Nos
-                involucramos desde la definición del formato y la
-                estructura hasta la producción, realización y
-                postproducción.
+              <p className="mt-12 max-w-3xl text-lg leading-relaxed text-white/60 md:text-xl">
+                Muchas buenas ideas nunca llegan a realizarse porque no
+                sabemos cómo convertirlas en un proyecto audiovisual.
+                No sabes qué formato utilizar, cómo debería ser el programa,
+                qué necesitas para grabarlo o cómo llevarlo a las plataformas.
               </p>
 
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/35 md:text-lg">
-                Esto permite mantener una misma dirección creativa y
-                audiovisual durante todo el proceso.
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                En Dekaelo nos encargamos de resolver ese proceso contigo.
+                No necesitas llegar con un programa diseñado ni una
+                estrategia definida. Partimos desde tu idea y desarrollamos
+                todo lo necesario para convertirla en contenido profesional.
               </p>
 
             </div>
@@ -287,11 +302,21 @@ export default function ServiciosPage() {
 
           <div className="mb-20 max-w-3xl">
 
-            <Eyebrow>Capacidades</Eyebrow>
+            <Eyebrow>Lo que podemos hacer</Eyebrow>
 
             <h2 className="mt-5 text-[clamp(2.8rem,6vw,6rem)] font-medium leading-[0.92] tracking-[-0.06em]">
-              Lo que hacemos.
+              Un proyecto.
+              <br />
+              <span className="text-white/35">
+                Todo lo necesario.
+              </span>
             </h2>
+
+            <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+              Podemos desarrollar un proyecto desde cero o integrarnos a
+              una idea que ya está en marcha. Adaptamos el trabajo a las
+              necesidades y objetivos de cada producción.
+            </p>
 
           </div>
 
@@ -365,20 +390,24 @@ export default function ServiciosPage() {
 
             <div className="md:col-span-5">
 
-              <Eyebrow>Aplicaciones</Eyebrow>
+              <Eyebrow>¿Qué tienes en mente?</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.7rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
 
-                Diferentes
-                <br />
-                proyectos.
+                Cada idea
                 <br />
 
                 <span className="text-white/35">
-                  Una misma producción.
+                  tiene su formato.
                 </span>
 
               </h2>
+
+              <p className="mt-8 max-w-md text-base leading-relaxed text-white/40 md:text-lg">
+                Trabajamos con personas, emprendedores, marcas y empresas.
+                No importa si quieres lanzar un programa o producir una
+                serie de videos: podemos ayudarte a encontrar el camino.
+              </p>
 
             </div>
 
@@ -401,7 +430,7 @@ export default function ServiciosPage() {
 
                     </div>
 
-                    <div className="md:col-span-4">
+                    <div className="md:col-span-5">
 
                       <h3 className="text-xl font-medium tracking-[-0.02em]">
                         {application.title}
@@ -409,7 +438,7 @@ export default function ServiciosPage() {
 
                     </div>
 
-                    <div className="md:col-span-7">
+                    <div className="md:col-span-6">
 
                       <p className="text-sm leading-relaxed text-white/40 md:text-base">
                         {application.text}
@@ -443,17 +472,15 @@ export default function ServiciosPage() {
 
             <div className="md:col-span-7">
 
-              <Eyebrow>Proceso</Eyebrow>
+              <Eyebrow>De la idea a la pantalla</Eyebrow>
 
               <h2 className="mt-5 text-[clamp(2.8rem,6vw,6rem)] font-medium leading-[0.92] tracking-[-0.06em]">
 
-                Una idea.
-                <br />
-                Un proceso.
+                Nosotros nos
                 <br />
 
                 <span className="text-white/35">
-                  Una producción.
+                  encargamos.
                 </span>
 
               </h2>
@@ -463,9 +490,9 @@ export default function ServiciosPage() {
             <div className="md:col-span-5">
 
               <p className="text-base leading-relaxed text-white/40 md:text-lg">
-                Cada proyecto tiene necesidades distintas. El proceso se
-                adapta al formato, pero mantenemos una estructura clara
-                para llegar desde la idea hasta la pieza terminada.
+                Cada proyecto tiene necesidades distintas. Adaptamos
+                el proceso a la idea, pero mantenemos una dirección
+                creativa y audiovisual durante todas sus etapas.
               </p>
 
             </div>
@@ -474,28 +501,7 @@ export default function ServiciosPage() {
 
           <div className="grid border-y border-white/10 md:grid-cols-4">
 
-            {[
-              {
-                number: "01",
-                title: "Definición",
-                text: "Objetivo, audiencia, formato y alcance.",
-              },
-              {
-                number: "02",
-                title: "Desarrollo",
-                text: "Concepto, estructura, pauta y planificación.",
-              },
-              {
-                number: "03",
-                title: "Producción",
-                text: "Rodaje, realización y ejecución audiovisual.",
-              },
-              {
-                number: "04",
-                title: "Postproducción",
-                text: "Edición, sonido, color y entregas finales.",
-              },
-            ].map((step) => (
+            {steps.map((step) => (
 
               <div
                 key={step.number}
@@ -539,9 +545,9 @@ export default function ServiciosPage() {
               <Eyebrow>Experiencia</Eyebrow>
 
               <h2 className="mt-5 text-3xl font-medium tracking-[-0.04em] md:text-5xl">
-                Producción
+                Proyectos reales.
                 <br />
-                continua.
+                Producción continua.
               </h2>
 
             </div>
@@ -635,10 +641,16 @@ export default function ServiciosPage() {
                 <br />
 
                 <span className="text-white/35">
-                  Hagámosla producción.
+                  Cuéntanosla.
                 </span>
 
               </h2>
+
+              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                No necesitas saber cómo producirla ni tener todo resuelto.
+                Hablemos de lo que tienes en mente y encontremos juntos
+                la mejor manera de hacerlo realidad.
+              </p>
 
             </div>
 
