@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Nosotros",
+  title: "Nosotros | Dekaelo Media",
   description:
-    "Dekaelo Media es una productora audiovisual independiente. Creamos y producimos programas, series y contenido para YouTube, Instagram y plataformas digitales, desde la idea hasta la entrega final.",
+    "Somos Dekaelo Media, una productora audiovisual independiente. Damos forma y producimos programas, series y contenido para YouTube, Instagram y plataformas digitales.",
   alternates: {
     canonical: "/quienes-somos",
   },
@@ -38,29 +39,29 @@ const clients = [
 ];
 
 /* ============================================================
-   CRITERIO
+   CRITERIO DE TRABAJO
 ============================================================ */
 
 const values = [
   {
     number: "01",
-    title: "Primero entendemos la idea",
-    text: "Escuchamos qué quieres conseguir antes de decidir cómo debería verse o producirse.",
+    title: "Primero entendemos lo que necesitas",
+    text: "Escuchamos tu idea, tus objetivos y lo que quieres comunicar. No necesitas llegar con un proyecto completamente definido.",
   },
   {
     number: "02",
-    title: "El formato se construye contigo",
-    text: "Te ayudamos a definir concepto, estructura, dinámica, identidad y ritmo, aunque partamos desde cero.",
+    title: "Aportamos una mirada audiovisual",
+    text: "Trabajamos la dirección, identidad visual y sonora, ritmo y lenguaje de cada producción. Si necesitas desarrollar el concepto, también podemos hacerlo.",
   },
   {
     number: "03",
-    title: "Una producción integral",
-    text: "Acompañamos el proyecto desde el desarrollo creativo hasta la entrega de las piezas finales.",
+    title: "Cuidamos todo el proceso",
+    text: "Coordinamos la producción, grabación, edición y postproducción para mantener una línea coherente desde el inicio hasta la entrega.",
   },
   {
     number: "04",
-    title: "Flexibilidad con método",
-    text: "Adaptamos el equipo y los recursos a cada proyecto, con comunicación directa y etapas bien coordinadas.",
+    title: "Nos adaptamos a cada proyecto",
+    text: "Armamos equipos y recursos según las necesidades de cada producción, sin estructuras innecesarias ni procesos más complejos de lo que se necesita.",
   },
 ];
 
@@ -68,7 +69,7 @@ const values = [
    EYEBROW
 ============================================================ */
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
+function Eyebrow({ children }: { children: ReactNode }) {
   return (
     <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
       {children}
@@ -106,6 +107,7 @@ export default function QuienesSomosPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/20 to-[#050505]" />
 
         <div className="relative z-10 mx-auto flex min-h-[68vh] max-w-7xl flex-col justify-between">
+
           <div>
 
             <Eyebrow>Nosotros</Eyebrow>
@@ -113,25 +115,35 @@ export default function QuienesSomosPage() {
             <div className="mt-6 grid gap-12 md:grid-cols-12 md:items-end">
 
               <div className="md:col-span-9">
+
                 <h1 className="max-w-6xl text-[clamp(3.2rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]">
                   Tienes una idea.
                   <br />
-                  <span className="text-white/45">La hacemos realidad.</span>
+                  <span className="text-white/45">
+                    La hacemos realidad.
+                  </span>
                 </h1>
+
               </div>
 
               <div className="md:col-span-3">
+
                 <p className="text-sm leading-relaxed text-white/65 md:text-base">
-                  Somos una productora audiovisual independiente que convierte ideas en programas, series y contenido para plataformas digitales.
+                  Somos una productora audiovisual independiente.
+                  Creamos y producimos programas, series y contenido
+                  para plataformas digitales.
                 </p>
 
                 <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-white/40">
-                  Desarrollo · Producción · Postproducción
+                  Dirección creativa · Producción · Postproducción
                 </p>
+
               </div>
 
             </div>
+
           </div>
+
         </div>
       </section>
 
@@ -140,38 +152,58 @@ export default function QuienesSomosPage() {
       ====================================================== */}
 
       <section className="px-5 py-24 md:px-10 md:py-40">
+
         <div className="mx-auto max-w-7xl">
 
           <div className="grid gap-14 md:grid-cols-12 md:items-center">
 
             <div className="md:col-span-5">
+
               <Eyebrow>Quiénes somos</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.7rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
                 No necesitas saber
                 <br />
-                <span className="text-white/35">cómo producirlo.</span>
+                <span className="text-white/35">
+                  cómo producirlo.
+                </span>
               </h2>
+
             </div>
 
             <div className="md:col-span-7">
 
               <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
-                En Dekaelo transformamos una idea en un proyecto audiovisual concreto, bien pensado y profesional.
+                En Dekaelo convertimos ideas en producciones
+                audiovisuales profesionales.
               </p>
 
               <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-                Puedes llegar con un programa que quieres hacer para YouTube, una serie de videos para tu empresa, contenido para Instagram o simplemente una idea que todavía no sabes cómo desarrollar.
+                Puedes llegar con un programa que quieres hacer para
+                YouTube, una serie de videos para tu empresa, contenido
+                para Instagram o simplemente una idea que todavía no
+                sabes cómo desarrollar.
               </p>
 
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-                Desarrollamos el concepto, definimos el formato, la estructura, el ritmo y la identidad visual. Después planificamos, grabamos, editamos y preparamos las piezas para cada plataforma. No necesitas tener todas las respuestas antes de empezar: trabajamos contigo para encontrarlas.
+                Nos involucramos en la dirección creativa y audiovisual,
+                la identidad visual y sonora, la realización, edición y
+                postproducción. Si necesitas desarrollar el proyecto
+                desde el comienzo, también podemos ayudarte a encontrar
+                el concepto y el formato adecuado.
+              </p>
+
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                No necesitas tener todas las respuestas antes de empezar.
+                Nosotros sabemos cómo llevar una idea a la pantalla.
               </p>
 
             </div>
+
           </div>
 
           <div className="mt-20 md:mt-28">
+
             <Image
               src="/qs_dekaelo_3.png"
               alt="Producción audiovisual Dekaelo Media"
@@ -179,102 +211,135 @@ export default function QuienesSomosPage() {
               height={900}
               className="h-auto w-full object-cover"
             />
+
           </div>
 
         </div>
       </section>
 
       {/* =====================================================
-    ORIGEN
-====================================================== */}
+          ORIGEN
+      ====================================================== */}
 
-<section className="border-y border-white/10 px-5 py-24 md:px-10 md:py-40">
-  <div className="mx-auto max-w-7xl">
+      <section className="border-y border-white/10 px-5 py-24 md:px-10 md:py-40">
 
-    <div className="grid gap-14 md:grid-cols-12 md:items-center">
+        <div className="mx-auto max-w-7xl">
 
-      <div className="md:col-span-5">
-        <Eyebrow>El origen</Eyebrow>
+          <div className="grid gap-14 md:grid-cols-12 md:items-center">
 
-        <h2 className="mt-6 text-[clamp(2.7rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
-          Una trayectoria
-          <br />
-          que viene del
-          <br />
-          <span className="text-white/35">
-            cine independiente.
-          </span>
-        </h2>
-      </div>
+            <div className="md:col-span-5">
 
-      <div className="md:col-span-7">
+              <Eyebrow>El origen</Eyebrow>
 
-        <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
-          Antes de Dekaelo, hubo años de producción audiovisual y una
-          experiencia que comenzó en el cine independiente.
-        </p>
+              <h2 className="mt-6 text-[clamp(2.7rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+                Una trayectoria
+                <br />
+                que viene del
+                <br />
+                <span className="text-white/35">
+                  cine independiente.
+                </span>
+              </h2>
 
-        <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-          En 2013 se produjo Yokai, un largometraje independiente
-          realizado con recursos mínimos, que fue seleccionado en Sitges
-          Film Festival y Buenos Aires Rojo Sangre y hoy está disponible
-          en Amazon Prime Video.
-        </p>
+            </div>
 
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-          Esa etapa permitió desarrollar una forma de entender la
-          producción basada en resolver, construir equipos y llevar una
-          idea desde el concepto hasta la pantalla.
-        </p>
+            <div className="md:col-span-7">
 
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-          Con el tiempo, esa experiencia se trasladó a proyectos
-          comerciales, corporativos y editoriales, hasta convertirse en
-          la base sobre la que se funda Dekaelo Media.
-        </p>
+              <p className="text-xl leading-relaxed text-white/60 md:text-2xl">
+                Antes de Dekaelo, hubo años de producción audiovisual
+                y una experiencia que comenzó en el cine independiente.
+              </p>
 
-      </div>
-    </div>
+              <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                En 2013 se produjo Yokai, un largometraje independiente
+                realizado con recursos mínimos, que fue seleccionado
+                en Sitges Film Festival y Buenos Aires Rojo Sangre y
+                hoy está disponible en Amazon Prime Video.
+              </p>
 
-  </div>
-</section>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                Esa experiencia permitió desarrollar una forma de
+                entender la producción basada en resolver, construir
+                equipos y llevar una idea desde el concepto hasta
+                la pantalla.
+              </p>
+
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                Con el tiempo, ese aprendizaje se trasladó a proyectos
+                comerciales, corporativos y editoriales, hasta convertirse
+                en la base de Dekaelo Media.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
 
       {/* =====================================================
           FORMA DE TRABAJO
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
+
         <div className="mx-auto max-w-7xl">
+
           <div className="grid gap-12 md:grid-cols-12 md:items-center">
+
             <div className="md:col-span-5">
+
               <Eyebrow>Una forma de trabajar cercana</Eyebrow>
+
               <h2 className="mt-6 text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
                 Una misma
                 <br />
-                <span className="text-white/35">mirada de principio a fin.</span>
+                <span className="text-white/35">
+                  mirada de principio a fin.
+                </span>
               </h2>
+
             </div>
+
             <div className="md:col-span-7">
+
               <p className="text-xl leading-relaxed text-white/70 md:text-2xl">
-                Trabajamos directamente contigo. Escuchamos lo que tienes en mente y te ayudamos a encontrar la mejor manera de hacerlo realidad.
+                Trabajamos directamente contigo. Escuchamos lo que tienes
+                en mente y aportamos nuestra experiencia para hacerlo
+                realidad.
               </p>
+
               <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-                Mantenemos una dirección creativa y de producción coherente durante todo el proceso. Así evitamos que tu idea se pierda entre distintos proveedores, decisiones desconectadas o etapas sin coordinación.
+                Cada proyecto necesita algo distinto. A veces el cliente
+                llega con una idea y un formato definido; otras veces
+                necesita ayuda para construirlo. En ambos casos, nuestra
+                tarea es aportar una mirada audiovisual y llevar la
+                producción adelante.
               </p>
+
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-                Armamos el equipo y los recursos que cada proyecto necesita. Una estructura flexible nos permite adaptarnos a distintas escalas, sin cargar la producción con estructuras innecesarias.
+                Mantenemos una dirección creativa y de producción
+                coherente durante todo el proceso. Armamos el equipo
+                y los recursos necesarios para cada proyecto, con
+                comunicación directa y una estructura flexible.
               </p>
+
             </div>
+
           </div>
+
           <div className="mt-16">
+
             <Image
               src="/BG_Nosotros.jpg"
-              alt="Equipo trabajando en una producción audiovisual de Dekaelo Media"
+              alt="Producción audiovisual de Dekaelo Media"
               width={1600}
               height={900}
               className="h-auto w-full object-cover"
             />
+
           </div>
+
         </div>
       </section>
 
@@ -283,11 +348,10 @@ export default function QuienesSomosPage() {
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
+
         <div className="mx-auto max-w-7xl">
 
           <div className="grid gap-14 md:grid-cols-12 md:items-start">
-
-            {/* TITULO */}
 
             <div className="md:col-span-5">
 
@@ -302,13 +366,11 @@ export default function QuienesSomosPage() {
               </h2>
 
               <p className="mt-7 max-w-md text-base leading-relaxed text-white/40 md:text-lg">
-                Más de una década de experiencia audiovisual que hoy forma
-                parte de la base de Dekaelo Media.
+                Más de una década de experiencia audiovisual que hoy
+                forma parte de la base de Dekaelo Media.
               </p>
 
             </div>
-
-            {/* CLIENTES */}
 
             <div className="md:col-span-7">
 
@@ -319,9 +381,11 @@ export default function QuienesSomosPage() {
                     key={client}
                     className="border-b border-white/10 px-5 py-6 md:px-6 md:py-8"
                   >
+
                     <p className="text-sm font-medium text-white/55 md:text-base">
                       {client}
                     </p>
+
                   </div>
                 ))}
 
@@ -339,11 +403,13 @@ export default function QuienesSomosPage() {
       ====================================================== */}
 
       <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-36">
+
         <div className="mx-auto max-w-7xl">
 
           <div className="grid gap-12 md:grid-cols-12 md:items-end">
 
             <div className="md:col-span-5">
+
               <Eyebrow>Reel 2026</Eyebrow>
 
               <h2 className="mt-6 text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
@@ -353,18 +419,22 @@ export default function QuienesSomosPage() {
                   hacemos.
                 </span>
               </h2>
+
             </div>
 
             <div className="md:col-span-7">
+
               <p className="max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
-                Una selección de proyectos, producciones y formatos
-                desarrollados por Dekaelo Media.
+                Una selección de proyectos, producciones y trabajos
+                audiovisuales realizados por Dekaelo Media.
               </p>
+
             </div>
 
           </div>
 
           <div className="mt-16 md:mt-20">
+
             <div className="relative aspect-video w-full overflow-hidden bg-white/5">
 
               <iframe
@@ -377,6 +447,7 @@ export default function QuienesSomosPage() {
               />
 
             </div>
+
           </div>
 
         </div>
@@ -387,6 +458,7 @@ export default function QuienesSomosPage() {
       ====================================================== */}
 
       <section className="border-b border-white/10 bg-white/[0.02] px-5 py-24 md:px-10 md:py-36">
+
         <div className="mx-auto max-w-7xl">
 
           <div className="mb-16">
@@ -408,6 +480,7 @@ export default function QuienesSomosPage() {
             {/* 200+ */}
 
             <div className="bg-[#050505] px-6 py-10 md:px-8 md:py-14">
+
               <p className="text-5xl font-medium tracking-[-0.05em] md:text-6xl">
                 200+
               </p>
@@ -415,11 +488,13 @@ export default function QuienesSomosPage() {
               <p className="mt-3 text-xs leading-relaxed text-white/35 md:text-sm">
                 piezas producidas
               </p>
+
             </div>
 
             {/* 60+ */}
 
             <div className="bg-[#050505] px-6 py-10 md:px-8 md:py-14">
+
               <p className="text-5xl font-medium tracking-[-0.05em] md:text-6xl">
                 60+
               </p>
@@ -427,6 +502,7 @@ export default function QuienesSomosPage() {
               <p className="mt-3 text-xs leading-relaxed text-white/35 md:text-sm">
                 episodios de vodcast
               </p>
+
             </div>
 
             {/* 3.8M */}
@@ -468,6 +544,7 @@ export default function QuienesSomosPage() {
             </div>
 
           </div>
+
         </div>
       </section>
 
@@ -476,11 +553,10 @@ export default function QuienesSomosPage() {
       ====================================================== */}
 
       <section className="px-5 py-28 md:px-10 md:py-44">
+
         <div className="mx-auto max-w-7xl">
 
           <div className="grid gap-14 md:grid-cols-12">
-
-            {/* TITULO */}
 
             <div className="md:col-span-4">
 
@@ -495,8 +571,6 @@ export default function QuienesSomosPage() {
               </h2>
 
             </div>
-
-            {/* VALORES */}
 
             <div className="md:col-span-8">
 
@@ -530,6 +604,7 @@ export default function QuienesSomosPage() {
               </div>
 
             </div>
+
           </div>
 
         </div>
@@ -540,6 +615,7 @@ export default function QuienesSomosPage() {
       ====================================================== */}
 
       <section className="border-y border-white/10 px-5 py-28 md:px-10 md:py-44">
+
         <div className="mx-auto max-w-5xl">
 
           <Eyebrow>Lo que viene</Eyebrow>
@@ -555,13 +631,13 @@ export default function QuienesSomosPage() {
           <div className="mt-12 max-w-3xl">
 
             <p className="text-xl leading-relaxed text-white/55 md:text-2xl">
-              Las organizaciones ya no solamente comunican cuando tienen algo
-              que anunciar.
+              Las organizaciones ya no solamente comunican cuando tienen
+              algo que anunciar.
             </p>
 
             <p className="mt-6 text-base leading-relaxed text-white/40 md:text-lg">
-              Construyen canales propios, comparten conocimiento y desarrollan
-              conversaciones permanentes con sus audiencias.
+              Construyen canales propios, comparten conocimiento y
+              desarrollan conversaciones permanentes con sus audiencias.
             </p>
 
             <p className="mt-6 text-base leading-relaxed text-white/40 md:text-lg">
@@ -578,6 +654,7 @@ export default function QuienesSomosPage() {
             </Link>
 
           </div>
+
         </div>
       </section>
 
@@ -586,6 +663,7 @@ export default function QuienesSomosPage() {
       ====================================================== */}
 
       <section className="border-t border-white/10 px-5 py-32 md:px-10 md:py-44">
+
         <div className="mx-auto max-w-5xl text-center">
 
           <Eyebrow>Hablemos</Eyebrow>
@@ -601,8 +679,8 @@ export default function QuienesSomosPage() {
           </h2>
 
           <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-white/40 md:text-lg">
-            Cuéntanos qué quieres producir. Podemos ayudarte a convertirlo en
-            una propuesta audiovisual.
+            Cuéntanos qué quieres producir. Podemos ayudarte a encontrar
+            la mejor manera de llevarlo a la pantalla.
           </p>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
