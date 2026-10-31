@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contacto | Dekaelo Media",
   description:
-    "¿Tienes una idea para un programa, una serie de videos o contenido para tus redes? Conversemos y hagámosla realidad.",
+    "Conversemos sobre tu próximo programa, serie de videos o proyecto audiovisual. En Dekaelo Media transformamos ideas en producciones profesionales.",
   alternates: {
     canonical: "/contacto",
   },
@@ -14,29 +14,25 @@ export const metadata: Metadata = {
 const EMAIL = "info@dekaelomedia.com";
 
 const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent(
-  "Quiero desarrollar un proyecto audiovisual"
+  "Conversemos sobre un proyecto audiovisual"
 )}&body=${encodeURIComponent(
-  "Hola, quiero conversar sobre un proyecto audiovisual.\n\nMi nombre o empresa:\nQué me gustaría producir:\nDónde se publicará:\nFecha tentativa:\nReferencias o ideas que tengo:\n\nGracias."
+  "Hola, quiero conversar sobre un proyecto audiovisual.\n\nMi nombre o empresa:\nQué me gustaría crear:\nDónde me gustaría publicar el contenido:\nFecha tentativa:\nReferencias o ideas que tengo:\n\nGracias."
 )}`;
 
 const orientacion = [
   "Qué te gustaría crear o comunicar",
-  "Si tienes una idea o un proyecto ya definido",
+  "Si tienes una idea inicial o un proyecto ya definido",
   "Dónde te gustaría publicar el contenido",
-  "Si tienes alguna fecha tentativa",
-  "Referencias, ejemplos o cualquier idea que quieras compartir",
+  "Si tienes alguna fecha en mente",
+  "Referencias, ejemplos o cualquier cosa que nos ayude a entender tu idea",
 ];
 
 export default function ContactoPage() {
   return (
     <main className="min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black">
-
-      {/* =====================================================
-          HERO
-      ====================================================== */}
+      {/* HERO */}
 
       <section className="relative overflow-hidden border-b border-white/10 px-5 pb-24 pt-36 md:px-10 md:pb-32 md:pt-48">
-
         <div className="absolute inset-0">
           <Image
             src="/BG_Contacto.jpg"
@@ -51,7 +47,6 @@ export default function ContactoPage() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl">
-
           <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
             Contacto
           </p>
@@ -61,36 +56,27 @@ export default function ContactoPage() {
             <br />
             de tu
             <br />
-            <span className="text-white/35">
-              proyecto.
-            </span>
+            <span className="text-white/35">proyecto.</span>
           </h1>
 
           <p className="mt-10 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
             ¿Tienes una idea para un programa, una serie de videos o
-            contenido para tus redes? Cuéntanos qué tienes en mente.
-            No necesitas tenerlo todo definido: podemos ayudarte a
-            desarrollar la idea y convertirla en una producción audiovisual.
+            contenido para tus redes? Nos gustaría conocerla.
+            No necesitas tenerlo todo definido: podemos ayudarte a darle
+            forma y convertirla en una producción audiovisual.
           </p>
-
         </div>
       </section>
 
-      {/* =====================================================
-          CORREO
-      ====================================================== */}
+      {/* CORREO */}
 
       <section className="px-5 py-24 md:px-10 md:py-36">
-
         <div className="mx-auto max-w-7xl">
-
           <a
             href={MAILTO}
             className="group block border-b border-white/15 pb-10 transition hover:border-[#f51b24] focus-visible:border-[#f51b24] focus-visible:outline-none md:pb-14"
           >
-
             <span className="flex items-end justify-between gap-6">
-
               <span className="break-all text-[clamp(2rem,6.5vw,6.5rem)] font-medium leading-[0.95] tracking-[-0.055em] transition group-hover:text-white/80">
                 {EMAIL}
               </span>
@@ -101,49 +87,38 @@ export default function ContactoPage() {
                   strokeWidth={1.5}
                 />
               </span>
-
             </span>
-
           </a>
 
           <p className="mt-6 text-sm text-white/40">
-            Respuesta en 24 horas hábiles. Sin compromiso.
+            Respondemos dentro de 24 horas hábiles. Sin compromiso.
           </p>
 
-          {/* =====================================================
-              ORIENTACIÓN
-          ====================================================== */}
+          {/* ORIENTACIÓN */}
 
           <div className="mt-24 grid gap-12 md:mt-32 md:grid-cols-12">
-
             <div className="md:col-span-5">
-
               <h2 className="text-[clamp(2rem,3.5vw,3.5rem)] font-medium leading-[0.95] tracking-[-0.05em]">
                 No necesitas
                 <br />
                 tenerlo todo
                 <br />
-                <span className="text-white/35">
-                  resuelto.
-                </span>
+                <span className="text-white/35">resuelto.</span>
               </h2>
 
               <p className="mt-8 max-w-sm text-sm leading-relaxed text-white/40 md:text-base">
-                Podemos partir desde una idea, una necesidad o simplemente
-                algo que te gustaría hacer. Nosotros te ayudamos a encontrar
-                el formato y desarrollar el proyecto.
+                Puedes llegar con una idea, una necesidad o simplemente
+                con las ganas de hacer algo distinto. Nosotros te
+                ayudamos a encontrar la mejor manera de llevarlo a cabo.
               </p>
-
             </div>
 
             <div className="md:col-span-6 md:col-start-7">
-
               <p className="mb-6 text-[10px] uppercase tracking-[0.25em] text-[#f51b24]">
                 Para comenzar la conversación
               </p>
 
               <ul className="border-t border-white/10">
-
                 {orientacion.map((item) => (
                   <li
                     key={item}
@@ -152,32 +127,22 @@ export default function ContactoPage() {
                     {item}
                   </li>
                 ))}
-
               </ul>
 
               <p className="mt-8 max-w-md text-sm leading-relaxed text-white/35">
-                No importa si quieres lanzar un programa en YouTube,
-                producir una serie de videos para tu empresa o crear
-                contenido para Instagram. Conversemos sobre lo que
-                tienes en mente.
+                Puede ser un programa para YouTube, una serie de videos
+                para tu empresa, un vodcast o contenido para Instagram.
+                Cuéntanos qué tienes en mente y veamos cómo hacerlo realidad.
               </p>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
-      {/* =====================================================
-          CIERRE
-      ====================================================== */}
+      {/* CIERRE */}
 
       <section className="border-t border-white/10 px-5 py-20 md:px-10 md:py-28">
-
         <div className="mx-auto max-w-7xl">
-
           <p className="text-[10px] uppercase tracking-[0.25em] text-white/35">
             Dekaelo Media
           </p>
@@ -198,11 +163,8 @@ export default function ContactoPage() {
 
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
-
         </div>
-
       </section>
-
     </main>
   );
 }
