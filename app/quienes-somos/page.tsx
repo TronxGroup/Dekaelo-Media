@@ -268,7 +268,7 @@ export default function QuienesSomosPage() {
           </div>
           <div className="mt-16">
             <Image
-              src="/qs_dekaelo_3.png"
+              src="/BG_Nosotros.jpg"
               alt="Equipo trabajando en una producción audiovisual de Dekaelo Media"
               width={1600}
               height={900}
