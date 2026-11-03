@@ -4,9 +4,18 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
   ArrowLeft,
+  ArrowRight,
   ArrowUp,
   ArrowUpRight,
+  MessageCircle,
 } from "lucide-react";
+
+/* ============================================================
+   CONFIGURACIÓN — EDITAR AQUÍ
+============================================================ */
+
+// WhatsApp: número en formato internacional, sin "+" ni espacios.
+const WHATSAPP_NUMBER = "569XXXXXXXX";
 
 /* ============================================================
    TIPOS
@@ -26,6 +35,7 @@ type Project = {
   valueTitle: string;
   valueDescription: string;
   stats: [string, string][];
+  capabilities: string[];
   ranking?: [string, string, string][];
   hero: string;
   images: string[];
@@ -51,7 +61,7 @@ const projects: Record<string, Project> = {
       "Acompañar el proceso de integración entre BICECORP y Grupo Security mediante un contenido cercano, capaz de conectar a la alta administración con una comunidad de más de 6.000 colaboradores.",
 
     solution:
-      "Dekaelo Media estuvo a cargo de la dirección creativa y realización audiovisual de la serie. Desarrolló su identidad visual y sonora, la música, las piezas de apertura y cierre, el tratamiento de imagen y color, y el lenguaje de edición. También realizó las grabaciones y la postproducción de los episodios.",
+      "Dekaelo Media estuvo a cargo de la dirección creativa y realización audiovisual de la serie. Desarrolló su identidad visual y sonora, la selección musical, las piezas de apertura y cierre, el tratamiento de imagen y color, y el lenguaje de edición. También realizó las grabaciones y la postproducción de los episodios.",
 
     result:
       "Una serie audiovisual con identidad propia y continuidad de producción durante 2024, 2025 y 2026, concebida como un canal de comunicación interna para una organización de más de 6.000 colaboradores.",
@@ -66,6 +76,17 @@ const projects: Record<string, Project> = {
       ["2024–2026", "producción continua"],
     ],
 
+    capabilities: [
+      "Dirección creativa y audiovisual",
+      "Identidad visual y sonora",
+      "Selección musical y diseño sonoro",
+      "Piezas de apertura y cierre",
+      "Dirección de grabación",
+      "Tratamiento de imagen y color",
+      "Edición y montaje",
+      "Postproducción",
+    ],
+
     hero: "/projects/bice/hero.png",
 
     images: [
@@ -78,7 +99,7 @@ const projects: Record<string, Project> = {
   lolosaurios: {
     title: "LOLOSAURIOS",
     subtitle: "La Nueva Tertulia",
-    category: "Entretenimiento · YouTube · Instagram",
+    category: "Programa digital · YouTube",
     client: "José Luis Larraín",
     description: "Una idea que se convirtió en un programa y una comunidad digital.",
     intro:
@@ -90,7 +111,7 @@ const projects: Record<string, Project> = {
       "El punto de partida fue una idea sencilla: reunir a cuatro personas para conversar semanalmente. El desafío era convertir esa premisa en un programa con identidad propia y construir una presencia digital capaz de conectar con una audiencia adulta.",
 
     solution:
-      "Dekaelo Media desarrolló toda la identidad audiovisual del programa: identidad gráfica, música original, intro, cortinas y cierre, tratamiento de imagen y color, dirección audiovisual, montaje y ritmo narrativo. También asumió la edición y postproducción de los episodios, además de la gestión de los canales de YouTube e Instagram, incluyendo adaptación, preparación y publicación de contenidos.",
+      "Dekaelo Media desarrolló toda la identidad audiovisual del programa: identidad gráfica, selección musical, intro, cortinas y cierre, tratamiento de imagen y color, dirección audiovisual, montaje y ritmo narrativo. También asumió la edición y postproducción de los episodios, además de la gestión de los canales de YouTube e Instagram, incluyendo adaptación, preparación y publicación de contenidos.",
 
     result:
       "En poco más de tres meses, el proyecto alcanzó 217.426 visualizaciones orgánicas en YouTube, 29.400 horas de reproducción y 16.000 seguidores en Instagram. El canal llegó a 2.757 suscriptores con 14 episodios publicados. Cifras al 22 de octubre de 2026.",
@@ -106,6 +127,17 @@ const projects: Record<string, Project> = {
       ["2.757", "suscriptores en YouTube"],
       ["14", "episodios publicados"],
       ["3", "meses desde el lanzamiento"],
+    ],
+
+    capabilities: [
+      "Dirección audiovisual",
+      "Identidad gráfica y audiovisual",
+      "Selección musical, intro, cortinas y cierre",
+      "Tratamiento de imagen y color",
+      "Edición, montaje y ritmo narrativo",
+      "Postproducción",
+      "Gestión de canales de YouTube e Instagram",
+      "Adaptación y publicación de contenidos",
     ],
 
     hero: "/projects/lolosaurios/hero.png",
@@ -147,6 +179,15 @@ const projects: Record<string, Project> = {
       ["~318K", "vistas en los primeros cuatro"],
     ],
 
+    capabilities: [
+      "Dirección audiovisual",
+      "Dirección de grabación",
+      "Tratamiento visual",
+      "Edición y montaje",
+      "Ritmo narrativo",
+      "Postproducción",
+    ],
+
     ranking: [
       ["1", "162.460", "1°"],
       ["2", "53.170", "6°"],
@@ -178,10 +219,10 @@ const projects: Record<string, Project> = {
       "Generar conversaciones con representantes de la industria, la innovación y el emprendimiento, creando un espacio para compartir conocimientos y acercar a distintos actores del sector.",
 
     solution:
-      "Dekaelo Media estuvo a cargo de la dirección creativa y realización audiovisual de la serie. Desarrolló la identidad visual y sonora, la música y los elementos gráficos, además de dirigir las grabaciones y realizar el montaje, tratamiento de imagen y sonido y postproducción de los ocho episodios.",
+      "Dekaelo Media estuvo a cargo de la dirección creativa y realización audiovisual de la serie. Desarrolló la identidad visual y sonora, la selección musical y los elementos gráficos, además de dirigir las grabaciones y realizar el montaje, tratamiento de imagen y sonido y postproducción de los ocho episodios.",
 
     result:
-      "Ocho episodios producidos. El cliente valoró especialmente las relaciones comerciales que pudo desarrollar a partir de las conversaciones y los vínculos establecidos con los invitados del programa.",
+      "Ocho episodios producidos y más de 16 empresas invitadas. El cliente valoró especialmente las relaciones comerciales que pudo desarrollar a partir de las conversaciones y los vínculos establecidos con los invitados del programa.",
 
     valueTitle: "El contenido también puede generar negocios.",
     valueDescription:
@@ -189,8 +230,17 @@ const projects: Record<string, Project> = {
 
     stats: [
       ["8", "episodios producidos"],
-      ["B2B", "contenido especializado"],
-      ["RELACIONES", "vínculos comerciales"],
+      ["16+", "empresas invitadas"],
+    ],
+
+    capabilities: [
+      "Dirección creativa y audiovisual",
+      "Identidad visual y sonora",
+      "Selección musical y elementos gráficos",
+      "Dirección de grabación",
+      "Edición y montaje",
+      "Tratamiento de imagen y sonido",
+      "Postproducción",
     ],
 
     hero: "/projects/break-industrial/hero.png",
@@ -205,7 +255,7 @@ const projects: Record<string, Project> = {
   "creando-lideres-para-asia": {
     title: "CREANDO LÍDERES PARA ASIA",
     subtitle: "Visión global · Liderazgo · Impacto regional",
-    category: "Serie audiovisual · Internacional",
+    category: "Comunicación institucional · Internacional",
     client: "Cámara de Comercio Asia Pacífico · APCC",
     description: "Conversaciones que conectan con Asia.",
     intro:
@@ -230,6 +280,14 @@ const projects: Record<string, Project> = {
       ["24", "episodios producidos"],
       ["+15", "meses de continuidad"],
       ["+50", "nuevos socios"],
+    ],
+
+    capabilities: [
+      "Dirección audiovisual",
+      "Dirección de grabación",
+      "Tratamiento visual y sonoro",
+      "Edición y montaje",
+      "Postproducción",
     ],
 
     hero: "/projects/creando-lideres-asia/hero.png",
@@ -317,16 +375,16 @@ export default function ProjectPage({
     notFound();
   }
 
-  const capabilities = [
-    "Dirección creativa y audiovisual",
-    "Identidad visual y sonora",
-    "Música y diseño sonoro",
-    "Dirección de grabación",
-    "Producción audiovisual",
-    "Edición y montaje",
-    "Postproducción de imagen y sonido",
-    "Gestión de canales y contenidos digitales",
-  ];
+  const capabilities = project.capabilities;
+
+  // Siguiente proyecto (vuelve al primero al llegar al final).
+  const slugs = Object.keys(projects);
+  const nextSlug = slugs[(slugs.indexOf(params.slug) + 1) % slugs.length];
+  const nextProject = projects[nextSlug];
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    `Hola, vi el proyecto ${project.title} en el sitio de Dekaelo Media y quiero conversar sobre algo similar.`,
+  )}`;
 
   return (
     <main
@@ -381,7 +439,7 @@ export default function ProjectPage({
         <div className="relative mt-14 aspect-[16/9] w-full overflow-hidden">
           <Image
             src={project.hero}
-            alt={project.title}
+            alt={`${project.title} — ${project.category}, producción de Dekaelo Media para ${project.client}`}
             fill
             priority
             sizes="100vw"
@@ -459,7 +517,7 @@ export default function ProjectPage({
       <section className="border-y border-white/10 px-5 py-12 md:px-10 md:py-16">
         <div
           className={`mx-auto grid max-w-7xl grid-cols-2 gap-x-8 gap-y-10 ${
-            project.stats.length > 3 ? "md:grid-cols-3" : "md:grid-cols-3"
+            project.stats.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"
           }`}
         >
           {project.stats.map(([number, label]) => (
@@ -712,6 +770,95 @@ export default function ProjectPage({
       </section>
 
       {/* =====================================================
+          SIGUIENTE PROYECTO
+      ====================================================== */}
+
+      <section className="border-t border-white/10">
+        <Link
+          href={`/proyectos/${nextSlug}`}
+          className="group relative block overflow-hidden px-5 py-20 md:px-10 md:py-28"
+        >
+          <Image
+            src={nextProject.hero}
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover opacity-20 transition duration-700 group-hover:scale-[1.03] group-hover:opacity-35"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/70 to-transparent" />
+
+          <div className="relative mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
+                Siguiente proyecto
+              </p>
+
+              <h2 className="mt-5 text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[0.9] tracking-[-0.06em]">
+                {nextProject.title}
+              </h2>
+
+              <p className="mt-4 text-[10px] uppercase tracking-[0.2em] text-white/40">
+                {nextProject.category} · Cliente · {nextProject.client}
+              </p>
+            </div>
+
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/25 transition group-hover:border-[#f51b24] group-hover:bg-[#f51b24]">
+              <ArrowRight className="h-5 w-5" />
+            </span>
+          </div>
+        </Link>
+      </section>
+
+      {/* =====================================================
+          CTA FINAL
+      ====================================================== */}
+
+      <section className="border-t border-white/10 px-5 py-28 md:px-10 md:py-36">
+        <div className="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="mb-5 text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
+              Hablemos
+            </p>
+
+            <h2 className="max-w-4xl text-[clamp(3rem,7vw,6rem)] font-medium leading-[0.88] tracking-[-0.06em]">
+              ¿Quieres un
+              <br />
+              <span className="text-white/35">
+                proyecto así?
+              </span>
+            </h2>
+
+            <p className="mt-8 max-w-xl text-base leading-relaxed text-white/45 md:text-lg">
+              Cuéntanos qué te gustaría conseguir. Podemos ayudarte a
+              darle forma audiovisual a tu idea, producir los contenidos
+              y acompañarte hasta su publicación.
+            </p>
+          </div>
+
+          <div className="flex shrink-0 flex-col gap-3">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-between gap-8 border border-[#f51b24] bg-[#f51b24] px-6 py-5 text-[10px] uppercase tracking-[0.2em] transition hover:bg-transparent"
+            >
+              Escríbenos por WhatsApp
+              <MessageCircle className="h-4 w-4" />
+            </a>
+
+            <Link
+              href="/contacto"
+              className="group inline-flex items-center justify-between gap-8 border border-white/20 px-6 py-5 text-[10px] uppercase tracking-[0.2em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
+            >
+              Cuéntanos tu idea
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
           VOLVER ARRIBA
       ====================================================== */}
 
@@ -726,43 +873,6 @@ export default function ProjectPage({
           </a>
         </div>
       </div>
-
-      {/* =====================================================
-          CTA FINAL
-      ====================================================== */}
-
-      <section className="border-t border-white/10 px-5 py-28 md:px-10 md:py-36">
-        <div className="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="mb-5 text-[10px] uppercase tracking-[0.3em] text-[#f51b24]">
-              ¿Tienes una idea?
-            </p>
-
-            <h2 className="max-w-4xl text-[clamp(3rem,7vw,6rem)] font-medium leading-[0.88] tracking-[-0.06em]">
-              Nosotros la hacemos
-              <br />
-              <span className="text-white/35">
-                realidad.
-              </span>
-            </h2>
-
-            <p className="mt-8 max-w-xl text-base leading-relaxed text-white/45 md:text-lg">
-              Cuéntanos qué te gustaría conseguir. Podemos ayudarte a
-              darle forma audiovisual a tu idea, producir los contenidos
-              y acompañarte hasta su publicación.
-            </p>
-          </div>
-
-          <Link
-            href="/contacto"
-            className="group inline-flex shrink-0 items-center justify-between gap-8 border border-white/20 px-6 py-5 text-[10px] uppercase tracking-[0.2em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
-          >
-            Cuéntanos tu idea
-
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }
