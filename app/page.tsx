@@ -332,7 +332,7 @@ export default function Home() {
             </p>
 
             <a
-              href="https://youtu.be/AUUiBDv242k"
+              href="https://youtu.be/MY0sTHMoy1s"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/50 transition hover:text-white"
