@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
+
+// WhatsApp: número en formato internacional, sin "+" ni espacios.
+const WHATSAPP_NUMBER = "569XXXXXXXX";
+const whatsappUrl = (mensaje: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
 
 export const metadata: Metadata = {
   title: "Servicios | Dekaelo Media",
@@ -20,6 +25,7 @@ const servicios = [
     descripcion:
       "Creamos y producimos programas audiovisuales. Podemos ayudarte a desarrollar el concepto y el formato desde cero o trabajar sobre una idea que ya tienes definida.",
     ejemplos: "Programas de conversación · Entrevistas · Paneles · Series",
+    proyecto: { slug: "lolosaurios", nombre: "Lolosaurios" },
   },
   {
     numero: "02",
@@ -27,6 +33,10 @@ const servicios = [
     descripcion:
       "Producimos series audiovisuales para comunicar ideas, contar historias o desarrollar temas en distintos episodios, con una identidad y una línea visual coherentes.",
     ejemplos: "Series corporativas · Documentales · Contenido editorial",
+    proyecto: {
+      slug: "creando-lideres-para-asia",
+      nombre: "Creando Líderes para Asia",
+    },
   },
   {
     numero: "03",
@@ -34,6 +44,7 @@ const servicios = [
     descripcion:
       "Producimos videos pensados para conectar con las audiencias en plataformas digitales, aprovechando cada producción para generar distintas piezas.",
     ejemplos: "Reels · Shorts · Videos verticales · Cápsulas",
+    proyecto: { slug: "lolosaurios", nombre: "Lolosaurios" },
   },
   {
     numero: "04",
@@ -41,13 +52,16 @@ const servicios = [
     descripcion:
       "Realizamos conversaciones en formato audiovisual o sonoro. Nos encargamos de la dirección, identidad audiovisual, grabación, edición y postproducción de los episodios.",
     ejemplos: "Vodcast corporativo · Podcast · Conversaciones · Entrevistas",
+    proyecto: { slug: "bice", nombre: "BICE · Nos Une" },
   },
   {
     numero: "05",
     titulo: "Dirección creativa e identidad audiovisual",
     descripcion:
       "Damos forma visual y sonora a cada proyecto. Trabajamos su identidad, lenguaje audiovisual, ritmo y recursos gráficos para construir una experiencia reconocible.",
-    ejemplos: "Identidad visual · Música · Intro · Gráficas · Dirección",
+    ejemplos:
+      "Identidad visual · Selección musical · Intro · Gráficas · Dirección",
+    proyecto: { slug: "break-industrial", nombre: "Break Industrial" },
   },
   {
     numero: "06",
@@ -55,6 +69,7 @@ const servicios = [
     descripcion:
       "Nos hacemos cargo de la realización audiovisual y de todo el trabajo posterior para entregar piezas terminadas y listas para publicar.",
     ejemplos: "Planificación · Grabación · Dirección · Edición · Sonido · Color",
+    proyecto: { slug: "futbol-y-parrilla", nombre: "Fútbol y Parrilla" },
   },
 ];
 
@@ -129,10 +144,10 @@ export default function ServiciosPage() {
           <Eyebrow>Qué hacemos</Eyebrow>
 
           <h1 className="mt-7 max-w-6xl text-[clamp(3.5rem,8vw,8rem)] font-medium leading-[0.85] tracking-[-0.07em]">
-            Tienes una idea.
+            Programas, series
             <br />
             <span className="text-white/35">
-              Nosotros la hacemos realidad.
+              y vodcasts.
             </span>
           </h1>
 
@@ -281,7 +296,7 @@ export default function ServiciosPage() {
                       01
                     </p>
                     <p className="mt-2 text-xs text-white/40">
-                      Trailer de lanzamiento
+                      Tráiler de lanzamiento
                     </p>
                   </div>
 
@@ -329,14 +344,28 @@ export default function ServiciosPage() {
 
                 </div>
 
-                <Link
-                  href="/contacto"
-                  className="group mt-10 inline-flex w-full items-center justify-between border border-white/20 px-6 py-5 text-xs uppercase tracking-[0.16em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
-                >
-                  Quiero crear mi programa
+                <div className="mt-10 grid gap-3 sm:grid-cols-2">
+                  <a
+                    href={whatsappUrl(
+                      "Hola, me interesa el Pack lanzamiento de vodcast de Dekaelo Media.",
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-between border border-[#f51b24] bg-[#f51b24] px-6 py-5 text-xs uppercase tracking-[0.16em] transition hover:bg-transparent"
+                  >
+                    Cotizar por WhatsApp
+                    <MessageCircle className="h-4 w-4" />
+                  </a>
 
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </Link>
+                  <Link
+                    href="/contacto"
+                    className="group inline-flex items-center justify-between border border-white/20 px-6 py-5 text-xs uppercase tracking-[0.16em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
+                  >
+                    Quiero crear mi programa
+
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </Link>
+                </div>
 
               </div>
             </div>
@@ -402,8 +431,20 @@ export default function ServiciosPage() {
 
                 </div>
 
-                <div className="hidden justify-end md:col-span-2 md:flex">
-                  <ArrowUpRight className="h-5 w-5 text-white/30" />
+                <div className="md:col-span-2 md:flex md:justify-end">
+                  <Link
+                    href={`/proyectos/${servicio.proyecto.slug}`}
+                    className="group inline-flex items-start gap-2 text-[10px] uppercase leading-relaxed tracking-[0.14em] text-white/35 transition hover:text-white md:text-right"
+                  >
+                    <span>
+                      Ver ejemplo
+                      <br />
+                      <span className="text-white/20 group-hover:text-white/60">
+                        {servicio.proyecto.nombre}
+                      </span>
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </Link>
                 </div>
 
               </div>
@@ -544,17 +585,34 @@ export default function ServiciosPage() {
           <div className="md:col-span-6 md:col-start-7">
 
             <p className="text-lg leading-relaxed text-white/60">
-              Hemos participado en la producción de proyectos
-              audiovisuales para organizaciones y marcas, incluyendo
-              programas de conversación y vodcasts corporativos.
+              Hemos creado y producido programas de conversación,
+              vodcasts corporativos y series para organizaciones,
+              marcas y creadores.
             </p>
 
             <p className="mt-6 text-sm leading-relaxed text-white/40">
-              En 2024 participamos en la producción de “Nos Une”,
-              un vodcast interno de BICECORP. Una experiencia en la que
-              trabajamos en la identidad audiovisual, realización,
-              grabación, edición y postproducción de sus episodios.
+              Desde 2024 estamos a cargo de la dirección creativa y la
+              realización de “Nos Une”, el vodcast interno de BICECORP
+              para más de 6.000 colaboradores: identidad audiovisual,
+              grabación, edición y postproducción de cada episodio.
             </p>
+
+            <div className="mt-10 grid grid-cols-3 gap-6 border-y border-white/10 py-8">
+              {[
+                ["14+", "episodios de Nos Une"],
+                ["217K", "vistas de Lolosaurios en 3 meses"],
+                ["24", "episodios para la Cámara Asia Pacífico"],
+              ].map(([numero, texto]) => (
+                <div key={texto}>
+                  <p className="text-2xl font-medium tracking-[-0.04em] md:text-4xl">
+                    {numero}
+                  </p>
+                  <p className="mt-2 text-[10px] uppercase leading-relaxed tracking-[0.12em] text-white/35">
+                    {texto}
+                  </p>
+                </div>
+              ))}
+            </div>
 
             <Link
               href="/proyectos/bice"
@@ -581,10 +639,10 @@ export default function ServiciosPage() {
           <Eyebrow>Empecemos</Eyebrow>
 
           <h2 className="mt-7 max-w-5xl text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.88] tracking-[-0.07em]">
-            Tienes una idea.
+            ¿Qué te gustaría
             <br />
             <span className="text-white/35">
-              Hagámosla realidad.
+              producir?
             </span>
           </h2>
 
@@ -595,14 +653,28 @@ export default function ServiciosPage() {
               a encontrar el formato y hacerlo realidad.
             </p>
 
-            <Link
-              href="/contacto"
-              className="group inline-flex items-center justify-between gap-12 border border-white/25 px-7 py-5 text-xs uppercase tracking-[0.16em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
-            >
-              Hablemos de tu proyecto
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <a
+                href={whatsappUrl(
+                  "Hola, vi los servicios de Dekaelo Media y quiero conversar sobre un proyecto.",
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-between gap-12 border border-[#f51b24] bg-[#f51b24] px-7 py-5 text-xs uppercase tracking-[0.16em] transition hover:bg-transparent"
+              >
+                Escríbenos por WhatsApp
+                <MessageCircle className="h-4 w-4" />
+              </a>
 
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </Link>
+              <Link
+                href="/contacto"
+                className="group inline-flex items-center justify-between gap-12 border border-white/25 px-7 py-5 text-xs uppercase tracking-[0.16em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
+              >
+                Hablemos de tu proyecto
+
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Link>
+            </div>
 
           </div>
 
