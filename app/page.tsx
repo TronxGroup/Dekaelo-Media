@@ -24,8 +24,6 @@ export const metadata: Metadata = {
 ============================================================ */
 
 // Reel: un solo ID para el video incrustado y para el botón "Ver en YouTube".
-// Revisa cuál es el reel vigente (antes había dos IDs distintos:
-// MY0sTHMoy1s en el iframe y AUUiBDv242k en el enlace).
 const REEL_YOUTUBE_ID = "MY0sTHMoy1s";
 
 // WhatsApp: número en formato internacional, sin "+" ni espacios.
@@ -35,7 +33,6 @@ const WHATSAPP_MESSAGE =
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE,
 )}`;
-
 
 /* ============================================================
    PROYECTOS
@@ -85,9 +82,9 @@ const projects = [
 
 const milestones = [
   { value: "2013", label: "Produciendo contenido audiovisual" },
-  { value: "Sitges", label: "Selección oficial con el largometraje Yokai" },
-  { value: "Prime Video", label: "Yokai disponible en Amazon Prime Video" },
+  { value: "+10 años", label: "De experiencia en dirección y producción" },
   { value: "5+", label: "Programas y series para marcas e instituciones" },
+  { value: "360°", label: "De la idea a la postproducción, en un solo equipo" },
 ];
 
 /* ============================================================
@@ -177,10 +174,9 @@ export default function Home() {
               </h1>
 
               <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/65 md:text-xl">
-                Del cine independiente a los vodcasts corporativos. Creamos y
-                producimos programas, series y contenido para YouTube,
-                Instagram y plataformas digitales, desde la idea inicial hasta
-                la entrega final.
+                Creamos y producimos programas, series y contenido audiovisual
+                para YouTube, Instagram y plataformas digitales. Desde la idea
+                inicial hasta la entrega final.
               </p>
             </div>
 
@@ -275,20 +271,20 @@ export default function Home() {
               </p>
 
               <h2 className="mt-4 text-4xl font-medium leading-[0.95] tracking-[-0.05em] md:text-5xl">
-                Del cine independiente
+                Más de una década
                 <br />
-                <span className="text-white/35">al contenido digital.</span>
+                <span className="text-white/35">produciendo contenido.</span>
               </h2>
             </div>
 
             <div className="md:col-span-6 md:col-start-7">
               <p className="max-w-xl text-base leading-relaxed text-white/45 md:text-lg">
-                Dekaelo nace de más de una década produciendo con recursos
-                acotados y estándares altos. Empezamos con Yokai, un
-                largometraje independiente seleccionado en Sitges y Buenos
-                Aires Rojo Sangre, hoy disponible en Amazon Prime Video. Esa
-                misma forma de trabajar es la que llevamos a cada programa,
-                vodcast y serie que producimos.
+                Dekaelo nace de más de diez años produciendo de forma
+                independiente: cine, series, formatos digitales y contenido
+                para empresas e instituciones. Esa experiencia es la que
+                llevamos a cada programa, vodcast y serie que producimos,
+                con estándares altos y un equipo que acompaña el proyecto de
+                principio a fin.
               </p>
             </div>
           </div>
@@ -404,16 +400,9 @@ export default function Home() {
                   ))}
                 </div>
 
-                {VODCAST_PACK_PRICE && (
-                  <p className="mt-8 text-xl font-medium tracking-[-0.02em] md:text-2xl">
-                    {VODCAST_PACK_PRICE}
-                  </p>
-                )}
-
-                <p className="mt-4 text-xs leading-relaxed text-white/30">
-                  Valor referencial. Cada proyecto se adapta a sus
-                  necesidades, formato, locación y requerimientos de
-                  producción.
+                <p className="mt-8 text-xs leading-relaxed text-white/30">
+                  Cada proyecto se adapta a sus necesidades, formato,
+                  locación y requerimientos de producción.
                 </p>
               </div>
             </div>
