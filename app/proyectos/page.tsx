@@ -6,7 +6,14 @@ import {
   ArrowUp,
   ArrowUpRight,
   ArrowLeft,
+  MessageCircle,
 } from "lucide-react";
+
+// WhatsApp: número en formato internacional, sin "+" ni espacios.
+const WHATSAPP_NUMBER = "569XXXXXXXX";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  "Hola, vi los proyectos de Dekaelo Media y quiero conversar sobre una idea.",
+)}`;
 
 export const metadata: Metadata = {
   title: "Proyectos | Dekaelo Media",
@@ -17,35 +24,47 @@ export const metadata: Metadata = {
   },
 };
 
+// Categorías iguales a las del home y de cada página de proyecto.
+// "highlight" muestra la cifra más fuerte de cada caso en su tarjeta.
 const projects = [
   {
     slug: "bice",
     title: "BICE",
-    category: "Comunicación interna · Cultura organizacional",
+    category: "Comunicación interna · Cultura",
+    client: "BICECORP",
+    highlight: ["6.000+", "colaboradores"],
     image: "/projects/bice/hero.png",
   },
   {
     slug: "lolosaurios",
     title: "LOLOSAURIOS",
-    category: "Programa digital · YouTube e Instagram",
+    category: "Programa digital · YouTube",
+    client: "José Luis Larraín",
+    highlight: ["217K", "vistas en 3 meses"],
     image: "/projects/lolosaurios/hero.png",
   },
   {
     slug: "futbol-y-parrilla",
     title: "FÚTBOL Y PARRILLA",
     category: "Deporte · Entretenimiento",
+    client: "Ian Mac-Niven",
+    highlight: ["~318K", "vistas en 4 episodios"],
     image: "/projects/futbol-y-parrilla/hero.png",
   },
   {
     slug: "break-industrial",
     title: "BREAK INDUSTRIAL",
-    category: "Contenido B2B · Industria y tecnología",
+    category: "Contenido B2B · Industria",
+    client: "iGromi",
+    highlight: ["16+", "empresas invitadas"],
     image: "/projects/break-industrial/hero.png",
   },
   {
     slug: "creando-lideres-para-asia",
     title: "CREANDO LÍDERES PARA ASIA",
     category: "Comunicación institucional · Internacional",
+    client: "Cámara de Comercio Asia Pacífico · APCC",
+    highlight: ["24", "episodios en 15 meses"],
     image: "/projects/creando-lideres-asia/hero.png",
   },
 ];
@@ -116,7 +135,7 @@ export default function ProjectsPage() {
             <div className="relative aspect-[16/9] overflow-hidden bg-white/5">
               <Image
                 src={project.image}
-                alt={`${project.title} — Dekaelo Media`}
+                alt={`${project.title} — ${project.category}, producción de Dekaelo Media para ${project.client}`}
                 fill
                 sizes={
                   index === projects.length - 1
@@ -144,11 +163,20 @@ export default function ProjectsPage() {
                 <p className="mt-2 text-xs uppercase tracking-[0.12em] text-white/35">
                   {project.category}
                 </p>
+
+                <p className="mt-2 text-[10px] uppercase tracking-[0.16em] text-white/20">
+                  Cliente · {project.client}
+                </p>
               </div>
 
-              <span className="pt-1 text-[10px] text-white/20">
-                0{index + 1}
-              </span>
+              <div className="shrink-0 text-right">
+                <p className="text-xl font-medium tracking-[-0.03em] md:text-2xl">
+                  {project.highlight[0]}
+                </p>
+                <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-white/35">
+                  {project.highlight[1]}
+                </p>
+              </div>
             </div>
           </Link>
         ))}
@@ -171,7 +199,7 @@ export default function ProjectsPage() {
 
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/45 md:text-lg">
               Aportamos dirección creativa, identidad visual y sonora,
-              realización, edición y postproducción. También podemos
+              selección musical, realización, edición y postproducción. También podemos
               encargarnos de la gestión y publicación de contenidos
               digitales. Nos involucramos en lo necesario para que cada
               proyecto tenga una propuesta audiovisual coherente y
@@ -190,9 +218,9 @@ export default function ProjectsPage() {
           </p>
 
           <h2 className="mt-5 text-4xl font-medium leading-[1.05] tracking-[-0.05em] md:text-6xl">
-            ¿Tienes una idea?
+            ¿Qué quieres
             <br />
-            Nosotros la hacemos realidad.
+            <span className="text-white/35">comunicar?</span>
           </h2>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/40">
@@ -201,13 +229,25 @@ export default function ProjectsPage() {
             Nosotros podemos ayudarte a darle forma y llevarlo a la pantalla.
           </p>
 
-          <Link
-            href="/contacto"
-            className="group mt-9 inline-flex items-center gap-4 border-b border-white/30 pb-3 text-sm transition hover:border-[#f51b24]"
-          >
-            Conversemos sobre tu proyecto
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </Link>
+          <div className="mt-9 flex flex-wrap items-center gap-8">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 border border-[#f51b24] bg-[#f51b24] px-6 py-4 text-[10px] uppercase tracking-[0.2em] transition hover:bg-transparent"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Escríbenos por WhatsApp
+            </a>
+
+            <Link
+              href="/contacto"
+              className="group inline-flex items-center gap-4 border-b border-white/30 pb-3 text-sm transition hover:border-[#f51b24]"
+            >
+              Conversemos sobre tu proyecto
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </Link>
+          </div>
         </div>
       </section>
 
