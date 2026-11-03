@@ -1,18 +1,43 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowDownRight, ArrowUpRight, Check } from "lucide-react";
+import {
+  ArrowDownRight,
+  ArrowUpRight,
+  Check,
+  MessageCircle,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: {
     absolute: "Dekaelo Media | Productora Audiovisual y Contenido Digital",
   },
   description:
-    "Creamos y producimos programas para YouTube, series de videos, podcasts, vodcasts y contenido para Instagram. Te ayudamos a desarrollar tu idea y nos encargamos de su realización audiovisual.",
+    "Productora audiovisual independiente en Santiago de Chile. Creamos y producimos vodcasts, programas para YouTube, series de videos y contenido para redes sociales, desde la idea hasta la entrega final.",
   alternates: {
     canonical: "/",
   },
 };
+
+/* ============================================================
+   CONFIGURACIÓN — EDITAR AQUÍ
+============================================================ */
+
+// Reel: un solo ID para el video incrustado y para el botón "Ver en YouTube".
+// Revisa cuál es el reel vigente (antes había dos IDs distintos:
+// MY0sTHMoy1s en el iframe y AUUiBDv242k en el enlace).
+const REEL_YOUTUBE_ID = "AUUiBDv242k";
+
+// WhatsApp: número en formato internacional, sin "+" ni espacios.
+const WHATSAPP_NUMBER = "569XXXXXXXX";
+const WHATSAPP_MESSAGE =
+  "Hola, vi el sitio de Dekaelo Media y quiero conversar sobre un proyecto.";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  WHATSAPP_MESSAGE,
+)}`;
+
+// Precio referencial del pack de vodcast. Deja null para ocultarlo.
+const VODCAST_PACK_PRICE: string | null = "Desde $X.XXX.XXX + IVA";
 
 /* ============================================================
    PROYECTOS
@@ -57,6 +82,17 @@ const projects = [
 ];
 
 /* ============================================================
+   TRAYECTORIA
+============================================================ */
+
+const milestones = [
+  { value: "2013", label: "Produciendo contenido audiovisual" },
+  { value: "Sitges", label: "Selección oficial con el largometraje Yokai" },
+  { value: "Prime Video", label: "Yokai disponible en Amazon Prime Video" },
+  { value: "5+", label: "Programas y series para marcas e instituciones" },
+];
+
+/* ============================================================
    SERVICIOS
 ============================================================ */
 
@@ -70,19 +106,35 @@ const capabilities = [
 
 /* ============================================================
    CLIENTES
+   Completa "name" con el nombre real de cada cliente:
+   mejora el posicionamiento en Google y la accesibilidad.
 ============================================================ */
 
 const clientLogos = [
-  "/logo_2.png",
-  "/logo_3.png",
-  "/logo_4.png",
-  "/logo_13.png",
-  "/logo_5.png",
-  "/logo_9.png",
-  "/logo_1.png",
-  "/logo_10.png",
-  "/logo_15.png",
-  "/logo_12.png",
+  { src: "/logo_2.png", name: "" },
+  { src: "/logo_3.png", name: "" },
+  { src: "/logo_4.png", name: "" },
+  { src: "/logo_13.png", name: "" },
+  { src: "/logo_5.png", name: "" },
+  { src: "/logo_9.png", name: "" },
+  { src: "/logo_1.png", name: "" },
+  { src: "/logo_10.png", name: "" },
+  { src: "/logo_15.png", name: "" },
+  { src: "/logo_12.png", name: "" },
+];
+
+/* ============================================================
+   TESTIMONIOS
+   La sección solo aparece cuando hay al menos un testimonio.
+   Usa frases reales de clientes, con su autorización.
+============================================================ */
+
+const testimonials: { quote: string; author: string; role: string }[] = [
+  // {
+  //   quote: "Frase real del cliente.",
+  //   author: "Nombre Apellido",
+  //   role: "Cargo · Empresa",
+  // },
 ];
 
 /* ============================================================
@@ -115,7 +167,7 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
             <div>
               <p className="mb-5 text-[10px] uppercase tracking-[0.32em] text-white/65">
-                Productora audiovisual independiente
+                Productora audiovisual independiente · Desde 2013
               </p>
 
               <h1 className="max-w-6xl text-[clamp(2.8rem,7.5vw,7.5rem)] font-medium leading-[0.88] tracking-[-0.06em]">
@@ -127,22 +179,35 @@ export default function Home() {
               </h1>
 
               <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/65 md:text-xl">
-                Creamos y producimos programas, series y contenido audiovisual
-                para YouTube, Instagram y plataformas digitales. Desde la idea
-                inicial hasta la entrega final.
+                Del cine independiente a los vodcasts corporativos. Creamos y
+                producimos programas, series y contenido para YouTube,
+                Instagram y plataformas digitales, desde la idea inicial hasta
+                la entrega final.
               </p>
             </div>
 
-            <a
-              href="#proyectos"
-              className="group flex shrink-0 items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/75"
-            >
-              Explorar proyectos
+            <div className="flex shrink-0 flex-col items-start gap-5 md:items-end">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 border border-white/25 bg-black/30 px-6 py-3.5 text-[10px] uppercase tracking-[0.2em] text-white backdrop-blur-sm transition hover:border-[#f51b24] hover:bg-[#f51b24]"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Escríbenos por WhatsApp
+              </a>
 
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 transition group-hover:border-[#f51b24] group-hover:bg-[#f51b24]">
-                <ArrowDownRight className="h-4 w-4" />
-              </span>
-            </a>
+              <a
+                href="#proyectos"
+                className="group flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/75"
+              >
+                Explorar proyectos
+
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 transition group-hover:border-[#f51b24] group-hover:bg-[#f51b24]">
+                  <ArrowDownRight className="h-4 w-4" />
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -200,6 +265,55 @@ export default function Home() {
       </section>
 
       {/* =====================================================
+          TRAYECTORIA
+      ====================================================== */}
+
+      <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 md:grid-cols-12 md:items-end">
+            <div className="md:col-span-5">
+              <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
+                Trayectoria
+              </p>
+
+              <h2 className="mt-4 text-4xl font-medium leading-[0.95] tracking-[-0.05em] md:text-5xl">
+                Del cine independiente
+                <br />
+                <span className="text-white/35">al contenido digital.</span>
+              </h2>
+            </div>
+
+            <div className="md:col-span-6 md:col-start-7">
+              <p className="max-w-xl text-base leading-relaxed text-white/45 md:text-lg">
+                Dekaelo nace de más de una década produciendo con recursos
+                acotados y estándares altos. Empezamos con Yokai, un
+                largometraje independiente seleccionado en Sitges y Buenos
+                Aires Rojo Sangre, hoy disponible en Amazon Prime Video. Esa
+                misma forma de trabajar es la que llevamos a cada programa,
+                vodcast y serie que producimos.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-16 grid grid-cols-2 border-l border-t border-white/10 md:grid-cols-4">
+            {milestones.map((item) => (
+              <div
+                key={item.value}
+                className="border-b border-r border-white/10 px-6 py-8 md:px-8 md:py-10"
+              >
+                <p className="text-2xl font-medium tracking-[-0.03em] md:text-4xl">
+                  {item.value}
+                </p>
+                <p className="mt-3 text-xs leading-relaxed text-white/40 md:text-sm">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
           PACK LANZAMIENTO VODCAST
       ====================================================== */}
 
@@ -223,16 +337,28 @@ export default function Home() {
                 con una producción audiovisual profesional.
               </p>
 
-              <Link
-                href="/contacto"
-                className="group mt-10 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
-              >
-                Hablemos de tu proyecto
+              <div className="mt-10 flex flex-wrap items-center gap-6">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 border border-white/20 px-6 py-3.5 text-[10px] uppercase tracking-[0.2em] text-white/80 transition hover:border-[#f51b24] hover:bg-[#f51b24] hover:text-white"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Cotizar por WhatsApp
+                </a>
 
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition group-hover:border-[#f51b24] group-hover:bg-[#f51b24]">
-                  <ArrowUpRight className="h-4 w-4" />
-                </span>
-              </Link>
+                <Link
+                  href="/contacto"
+                  className="group inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/60 transition hover:text-white"
+                >
+                  Hablemos de tu proyecto
+
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition group-hover:border-[#f51b24] group-hover:bg-[#f51b24]">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </div>
             </div>
 
             <div className="md:col-span-6 md:col-start-7">
@@ -280,9 +406,16 @@ export default function Home() {
                   ))}
                 </div>
 
-                <p className="mt-8 text-xs leading-relaxed text-white/30">
-                  Cada proyecto se adapta a sus necesidades, formato,
-                  locación y requerimientos de producción.
+                {VODCAST_PACK_PRICE && (
+                  <p className="mt-8 text-xl font-medium tracking-[-0.02em] md:text-2xl">
+                    {VODCAST_PACK_PRICE}
+                  </p>
+                )}
+
+                <p className="mt-4 text-xs leading-relaxed text-white/30">
+                  Valor referencial. Cada proyecto se adapta a sus
+                  necesidades, formato, locación y requerimientos de
+                  producción.
                 </p>
               </div>
             </div>
@@ -318,7 +451,7 @@ export default function Home() {
           <div className="relative aspect-video overflow-hidden bg-white/5">
             <iframe
               className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/MY0sTHMoy1s"
+              src={`https://www.youtube.com/embed/${REEL_YOUTUBE_ID}`}
               title="Dekaelo Media — Reel 2026"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -332,7 +465,7 @@ export default function Home() {
             </p>
 
             <a
-              href="https://youtu.be/MY0sTHMoy1s"
+              href={`https://youtu.be/${REEL_YOUTUBE_ID}`}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/50 transition hover:text-white"
@@ -380,12 +513,16 @@ export default function Home() {
           <div className="mt-20 grid grid-cols-2 border-l border-t border-white/10 sm:grid-cols-3 md:grid-cols-5">
             {clientLogos.map((logo, index) => (
               <div
-                key={logo}
+                key={logo.src}
                 className="flex h-28 items-center justify-center border-b border-r border-white/10 px-8 py-6 md:h-32"
               >
                 <Image
-                  src={logo}
-                  alt={`Cliente Dekaelo Media ${index + 1}`}
+                  src={logo.src}
+                  alt={
+                    logo.name
+                      ? `Logo de ${logo.name}, cliente de Dekaelo Media`
+                      : `Cliente Dekaelo Media ${index + 1}`
+                  }
                   width={180}
                   height={80}
                   className="max-h-12 w-auto max-w-[150px] object-contain opacity-60 transition duration-300 hover:opacity-100 md:max-h-14 md:max-w-[170px]"
@@ -395,6 +532,36 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* =====================================================
+          TESTIMONIOS (solo si hay contenido)
+      ====================================================== */}
+
+      {testimonials.length > 0 && (
+        <section className="border-b border-white/10 px-5 py-24 md:px-10 md:py-32">
+          <div className="mx-auto max-w-7xl">
+            <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
+              Lo que dicen
+            </p>
+
+            <div className="mt-12 grid gap-12 md:grid-cols-2">
+              {testimonials.map((t) => (
+                <figure key={t.author} className="border-t border-white/15 pt-8">
+                  <blockquote className="text-xl leading-relaxed text-white/80 md:text-2xl">
+                    “{t.quote}”
+                  </blockquote>
+                  <figcaption className="mt-6">
+                    <p className="text-sm text-white">{t.author}</p>
+                    <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-white/35">
+                      {t.role}
+                    </p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* =====================================================
           PROYECTOS
@@ -434,7 +601,7 @@ export default function Home() {
               <div className="relative aspect-[16/9] overflow-hidden bg-white/5">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} — ${project.category}, producción de Dekaelo Media para ${project.client}`}
                   fill
                   sizes={
                     index === projects.length - 1
@@ -620,14 +787,26 @@ export default function Home() {
             en un proyecto audiovisual profesional.
           </p>
 
-          <Link
-            href="/contacto"
-            className="group mt-12 inline-flex items-center gap-4 border border-white/20 px-7 py-4 text-xs uppercase tracking-[0.18em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
-          >
-            Cuéntanos tu idea
+          <div className="mt-12 flex flex-wrap items-center gap-4">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-4 border border-[#f51b24] bg-[#f51b24] px-7 py-4 text-xs uppercase tracking-[0.18em] transition hover:bg-transparent"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Escríbenos por WhatsApp
+            </a>
 
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </Link>
+            <Link
+              href="/contacto"
+              className="group inline-flex items-center gap-4 border border-white/20 px-7 py-4 text-xs uppercase tracking-[0.18em] transition hover:border-[#f51b24] hover:bg-[#f51b24]"
+            >
+              Cuéntanos tu idea
+
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </Link>
+          </div>
 
           <p className="mt-5 text-[10px] uppercase tracking-[0.18em] text-white/25">
             Desde una primera conversación hasta una producción completa.
