@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 // Reel: un solo ID para el video incrustado y para el botón "Ver en YouTube".
 // Revisa cuál es el reel vigente (antes había dos IDs distintos:
 // MY0sTHMoy1s en el iframe y AUUiBDv242k en el enlace).
-const REEL_YOUTUBE_ID = "AUUiBDv242k";
+const REEL_YOUTUBE_ID = "MY0sTHMoy1s";
 
 // WhatsApp: número en formato internacional, sin "+" ni espacios.
 const WHATSAPP_NUMBER = "569XXXXXXXX";
@@ -36,8 +36,6 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
   WHATSAPP_MESSAGE,
 )}`;
 
-// Precio referencial del pack de vodcast. Deja null para ocultarlo.
-const VODCAST_PACK_PRICE: string | null = "Desde $X.XXX.XXX + IVA";
 
 /* ============================================================
    PROYECTOS
