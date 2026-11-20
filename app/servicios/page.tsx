@@ -263,6 +263,45 @@ export default function ServiciosPage() {
       </section>
 
       {/* =====================================================
+          REEL DE PRODUCCIONES
+      ====================================================== */}
+
+      <section className="border-b border-white/10 px-5 py-20 md:px-10 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-5">
+            <Eyebrow>Una muestra de nuestro trabajo</Eyebrow>
+            <h2 className="mt-6 text-[clamp(2.5rem,5vw,5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+              Historias y proyectos
+              <span className="text-white/35"> en movimiento.</span>
+            </h2>
+          </div>
+          <div className="md:col-span-6 md:col-start-7">
+            <p className="text-base leading-relaxed text-white/55 md:text-lg">
+              Una selección de vodcasts, programas y proyectos audiovisuales
+              realizados por Dekaelo Media para marcas, empresas e instituciones.
+            </p>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-7xl">
+          <div className="relative aspect-video overflow-hidden border border-white/10 bg-black">
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src="https://www.youtube-nocookie.com/embed/LAaLA-spVH0?rel=0"
+              title="Reel de producciones de Dekaelo Media"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+          <p className="mt-4 text-[10px] uppercase tracking-[0.18em] text-white/30">
+            Dekaelo Media · Programas · Vodcasts · Producciones audiovisuales
+          </p>
+        </div>
+      </section>
+
+      {/* =====================================================
           PACKS PARA EMPRESAS — OFERTA FIN DE AÑO
       ====================================================== */}
 
