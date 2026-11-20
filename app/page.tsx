@@ -369,7 +369,7 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-white/40 md:text-right">
-              Una selección de proyectos, formatos y producciones de Dekaelo Media.
+              Una muestra de nuestros vodcasts, programas y proyectos audiovisuales. Producciones como Nos Une, Lolosaurios, Creando Líderes para Asia, Breaking Industrial y Fútbol y Parrilla reflejan nuestra experiencia creando contenidos para marcas, empresas e instituciones.
             </p>
           </div>
           <div className="relative aspect-video overflow-hidden bg-white/5">
