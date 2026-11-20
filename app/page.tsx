@@ -391,52 +391,75 @@ export default function Home() {
       </section>
 
       {/* PROYECTOS */}
-      <section id="proyectos" className="border-b border-white/10 px-5 py-20 md:px-10 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">Nuestro trabajo</p>
-              <h2 className="mt-4 text-5xl font-medium tracking-[-0.05em] md:text-7xl">Proyectos</h2>
+<section id="proyectos" className="border-b border-white/10 px-5 py-20 md:px-10 md:py-28">
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p className="text-[10px] uppercase tracking-[0.32em] text-[#f51b24]">
+          Nuestro trabajo
+        </p>
+        <h2 className="mt-4 text-5xl font-medium tracking-[-0.05em] md:text-7xl">
+          Proyectos
+        </h2>
+      </div>
+      <p className="max-w-md text-sm leading-relaxed text-white/40">
+        Producciones para comunicación corporativa, entretenimiento,
+        deporte, industria y contenido digital.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2">
+      {projects.map((project, index) => (
+        <Link
+          key={project.slug}
+          href={`/proyectos/${project.slug}`}
+          className="group"
+        >
+          <div className="relative aspect-[16/9] overflow-hidden bg-white/5">
+            <Image
+              src={project.image}
+              alt={`${project.title} — ${project.category}, producción de Dekaelo Media para ${project.client}`}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover transition duration-700 ease-out group-hover:scale-[1.035]"
+            />
+            <div className="absolute inset-0 bg-black/0 transition duration-500 group-hover:bg-black/25" />
+            <div className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-black opacity-0 transition duration-300 group-hover:opacity-100">
+              <ArrowUpRight className="h-4 w-4" />
             </div>
-            <p className="max-w-md text-sm leading-relaxed text-white/40">
-              Producciones para comunicación corporativa, entretenimiento,
-              deporte, industria y contenido digital.
-            </p>
           </div>
-          <div className="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2">
-            {projects.map((project, index) => (
-              <Link key={project.slug} href={`/proyectos/${project.slug}`} className={`group ${index === projects.length - 1 ? "md:col-span-2" : ""}`}>
-                <div className="relative aspect-[16/9] overflow-hidden bg-white/5">
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} — ${project.category}, producción de Dekaelo Media para ${project.client}`}
-                    fill
-                    sizes={index === projects.length - 1 ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
-                    className="object-cover transition duration-700 ease-out group-hover:scale-[1.035]"
-                  />
-                  <div className="absolute inset-0 bg-black/0 transition duration-500 group-hover:bg-black/25" />
-                  <div className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-black opacity-0 transition duration-300 group-hover:opacity-100">
-                    <ArrowUpRight className="h-4 w-4" />
-                  </div>
-                </div>
-                <div className="mt-4 flex items-start justify-between gap-6">
-                  <div>
-                    <h3 className="text-xl font-medium tracking-[-0.025em]">{project.title}</h3>
-                    <p className="mt-1 text-xs text-white/35">{project.category}</p>
-                    <p className="mt-2 text-[10px] uppercase tracking-[0.16em] text-white/20">Cliente · {project.client}</p>
-                  </div>
-                  <span className="pt-1 text-[10px] text-white/20">0{index + 1}</span>
-                </div>
-              </Link>
-            ))}
+
+          <div className="mt-4 flex items-start justify-between gap-6">
+            <div>
+              <h3 className="text-xl font-medium tracking-[-0.025em]">
+                {project.title}
+              </h3>
+              <p className="mt-1 text-xs text-white/35">
+                {project.category}
+              </p>
+              <p className="mt-2 text-[10px] uppercase tracking-[0.16em] text-white/20">
+                Cliente · {project.client}
+              </p>
+            </div>
+            <span className="pt-1 text-[10px] text-white/20">
+              0{index + 1}
+            </span>
           </div>
-          <div className="mt-10 flex justify-end">
-            <Link href="/proyectos" className="inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/50 transition hover:text-white">
-              Ver todos los proyectos <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+        </Link>
+      ))}
+    </div>
+
+    <div className="mt-10 flex justify-end">
+      <Link
+        href="/proyectos"
+        className="inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/50 transition hover:text-white"
+      >
+        Ver todos los proyectos
+        <ArrowUpRight className="h-4 w-4" />
+      </Link>
+    </div>
+  </div>
+</section>
 
       {/* CLIENTES */}
       <section className="border-b border-white/10 px-5 py-20 md:px-10 md:py-24">
