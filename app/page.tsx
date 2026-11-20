@@ -36,7 +36,7 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
 const milestones = [
   { value: "2013", label: "Produciendo contenido audiovisual" },
   { value: "+10 años", label: "De experiencia en dirección y producción" },
-  { value: "5+", label: "Programas y series para marcas e instituciones" },
+  { value: "70+ episodios realizados", label: "Programas, vodcasts y series audiovisuales para marcas e instituciones." },
   { value: "360°", label: "De la idea a la postproducción" },
 ];
 
