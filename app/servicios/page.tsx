@@ -5,14 +5,14 @@ import Link from "next/link";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 
 // WhatsApp: número en formato internacional, sin "+" ni espacios.
-const WHATSAPP_NUMBER = "569XXXXXXXX";
+const WHATSAPP_NUMBER = "56954100680";
 const whatsappUrl = (mensaje: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
 
 export const metadata: Metadata = {
   title: "Servicios | Dekaelo Media",
   description:
-    "Creamos y producimos programas para YouTube, vodcasts, series de videos y contenido audiovisual para empresas y marcas. Desde la idea hasta la entrega final.",
+    "Producción audiovisual para empresas y marcas: videos corporativos, contenido para redes, programas, series y vodcasts. Desde la idea hasta la entrega final.",
   alternates: {
     canonical: "/servicios",
   },
@@ -70,6 +70,56 @@ const servicios = [
       "Nos hacemos cargo de la realización audiovisual y de todo el trabajo posterior para entregar piezas terminadas y listas para publicar.",
     ejemplos: "Planificación · Grabación · Dirección · Edición · Sonido · Color",
     proyecto: { slug: "futbol-y-parrilla", nombre: "Fútbol y Parrilla" },
+  },
+];
+
+// PACKS AUDIOVISUALES — CAMPAÑA FIN DE AÑO 2026
+const packs = [
+  {
+    name: "Esencial",
+    price: "$449.000",
+    description:
+      "Una producción profesional para mostrar tu empresa, producto o servicio con una imagen cuidada.",
+    duration: "Hasta 2 horas de grabación",
+    items: [
+      "1 video corporativo o comercial de hasta 60 segundos",
+      "3 videos verticales de hasta 30 segundos",
+      "10 fotografías profesionales editadas",
+      "Edición, montaje y corrección de color",
+      "Entrega digital de las piezas finales",
+    ],
+  },
+  {
+    name: "Empresa",
+    price: "$599.000",
+    featured: true,
+    description:
+      "Una producción más completa para comunicar lo que hace tu empresa y generar contenido para distintos canales.",
+    duration: "Hasta 3 horas de grabación",
+    items: [
+      "1 video corporativo o comercial de hasta 90 segundos",
+      "5 videos verticales de hasta 45 segundos",
+      "15 fotografías profesionales editadas",
+      "1 entrevista o testimonio breve",
+      "Edición, subtítulos y corrección de color",
+      "Entrega digital de las piezas finales",
+    ],
+  },
+  {
+    name: "Premium",
+    price: "$799.000",
+    description:
+      "Una producción de mayor alcance para mostrar tu empresa, equipo, instalaciones y servicios.",
+    duration: "Hasta 4 horas de grabación",
+    items: [
+      "1 video corporativo o comercial de hasta 2 minutos",
+      "6 videos verticales de hasta 60 segundos",
+      "25 fotografías profesionales editadas",
+      "Hasta 2 entrevistas o testimonios",
+      "Tomas aéreas con dron, sujetas a permisos y condiciones",
+      "Edición, subtítulos y corrección de color",
+      "Entrega digital de las piezas finales",
+    ],
   },
 ];
 
@@ -144,17 +194,17 @@ export default function ServiciosPage() {
           <Eyebrow>Qué hacemos</Eyebrow>
 
           <h1 className="mt-7 max-w-6xl text-[clamp(3.5rem,8vw,8rem)] font-medium leading-[0.85] tracking-[-0.07em]">
-            Programas, series
+            Producción
             <br />
             <span className="text-white/35">
-              y vodcasts.
+              audiovisual.
             </span>
           </h1>
 
           <p className="mt-10 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-            Creamos y producimos programas, series de videos y contenido
-            audiovisual para YouTube, Instagram y otras plataformas.
-            Desde la idea inicial hasta la entrega final.
+            Creamos programas, vodcasts, series y contenido audiovisual para
+            empresas, marcas e instituciones. Desarrollamos cada proyecto
+            desde la idea inicial hasta la entrega final.
           </p>
 
           <Link
@@ -213,6 +263,100 @@ export default function ServiciosPage() {
       </section>
 
       {/* =====================================================
+          PACKS PARA EMPRESAS — OFERTA FIN DE AÑO
+      ====================================================== */}
+
+      <section id="packs" className="border-b border-white/10 bg-[#0b0b0b] px-5 py-24 md:px-10 md:py-36">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 md:grid-cols-12 md:items-end">
+            <div className="md:col-span-7">
+              <Eyebrow>Campaña especial · Fin de año 2026</Eyebrow>
+              <h2 className="mt-6 max-w-4xl text-[clamp(2.8rem,6vw,6rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+                Tu empresa tiene mucho que mostrar.
+                <span className="text-white/35"> Hagámoslo bien.</span>
+              </h2>
+            </div>
+            <div className="md:col-span-5">
+              <p className="text-base leading-relaxed text-white/55 md:text-lg">
+                Producción audiovisual profesional para empresas que quieren
+                comunicar mejor sus productos, servicios y equipos. Elige el
+                alcance que necesitas y reserva tu fecha durante nuestra
+                campaña de fin de año.
+              </p>
+              <p className="mt-5 text-[10px] uppercase tracking-[0.18em] text-white/35">
+                Reservas hasta el 31 de diciembre de 2026 · Cupos sujetos a disponibilidad
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-16 grid gap-4 lg:grid-cols-3">
+            {packs.map((pack) => (
+              <article
+                key={pack.name}
+                className={`relative flex h-full flex-col border p-7 md:p-8 ${
+                  pack.featured
+                    ? "border-[#f51b24] bg-[#111111]"
+                    : "border-white/15 bg-transparent"
+                }`}
+              >
+                {pack.featured && (
+                  <p className="mb-5 text-[9px] uppercase tracking-[0.22em] text-[#f51b24]">
+                    Recomendado
+                  </p>
+                )}
+                <p className="text-[10px] uppercase tracking-[0.22em] text-white/40">
+                  Pack audiovisual
+                </p>
+                <h3 className="mt-3 text-3xl font-medium tracking-[-0.05em]">
+                  {pack.name}
+                </h3>
+                <p className="mt-4 min-h-[72px] text-sm leading-relaxed text-white/45">
+                  {pack.description}
+                </p>
+                <div className="mt-7 border-y border-white/10 py-6">
+                  <p className="text-4xl font-medium tracking-[-0.06em] md:text-5xl">
+                    {pack.price}
+                  </p>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.16em] text-white/35">
+                    + IVA · {pack.duration}
+                  </p>
+                </div>
+                <ul className="mt-7 flex-1 space-y-4">
+                  {pack.items.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm leading-relaxed text-white/65">
+                      <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#f51b24]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={whatsappUrl(`Hola, me interesa el Pack ${pack.name} de Dekaelo Media. Quisiera conocer disponibilidad y condiciones de la oferta de fin de año.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-9 inline-flex items-center justify-between gap-4 px-5 py-4 text-[10px] uppercase tracking-[0.16em] transition ${
+                    pack.featured
+                      ? "border border-[#f51b24] bg-[#f51b24] hover:bg-transparent"
+                      : "border border-white/25 hover:border-[#f51b24] hover:bg-[#f51b24]"
+                  }`}
+                >
+                  Cotizar este pack
+                  <MessageCircle className="h-4 w-4" />
+                </a>
+              </article>
+            ))}
+          </div>
+
+          <p className="mx-auto mt-8 max-w-4xl text-center text-[10px] leading-relaxed text-white/30">
+            Valores netos más IVA. Oferta válida para reservas realizadas hasta el 31 de diciembre de 2026,
+            sujetas a disponibilidad y coordinación previa. Valores consideran una locación y una jornada
+            de grabación dentro de los tiempos indicados. Requerimientos adicionales, traslados fuera de
+            Santiago, arriendo de locaciones, talentos, locución y servicios no descritos se cotizan por separado.
+            Tomas con dron sujetas a normativa, permisos, clima y condiciones del lugar.
+          </p>
+        </div>
+      </section>
+
+      {/* =====================================================
           PACK LANZAMIENTO DE VODCAST
       ====================================================== */}
 
@@ -237,10 +381,10 @@ export default function ServiciosPage() {
               </h2>
 
               <p className="mt-8 max-w-md text-base leading-relaxed text-white/45 md:text-lg">
-                ¿Quieres lanzar un vodcast, pero no sabes por dónde
-                empezar? Podemos ayudarte a darle forma y producir
-                tu programa, con todo lo necesario para comenzar
-                a publicar.
+                ¿Quieres lanzar un vodcast propio para tu empresa, marca u organización?
+                Te ayudamos a desarrollar el formato y producir una primera
+                temporada con identidad audiovisual y contenido derivado
+                para distintas plataformas.
               </p>
 
               <p className="mt-6 text-xs uppercase tracking-[0.18em] text-white/30">
@@ -649,8 +793,8 @@ export default function ServiciosPage() {
           <div className="mt-12 flex flex-col justify-between gap-8 border-t border-white/10 pt-8 md:flex-row md:items-end">
 
             <p className="max-w-md text-base leading-relaxed text-white/45">
-              Cuéntanos qué te gustaría crear. Nosotros te ayudamos
-              a encontrar el formato y hacerlo realidad.
+              Puedes elegir uno de nuestros packs para empresas o conversar
+              con nosotros sobre un programa, vodcast o proyecto a medida.
             </p>
 
             <div className="flex flex-col gap-3 sm:flex-row">
