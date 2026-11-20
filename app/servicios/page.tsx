@@ -25,7 +25,6 @@ const servicios = [
     descripcion:
       "Creamos y producimos programas audiovisuales. Podemos ayudarte a desarrollar el concepto y el formato desde cero o trabajar sobre una idea que ya tienes definida.",
     ejemplos: "Programas de conversación · Entrevistas · Paneles · Series",
-    proyecto: { slug: "lolosaurios", nombre: "Lolosaurios" },
   },
   {
     numero: "02",
@@ -33,10 +32,6 @@ const servicios = [
     descripcion:
       "Producimos series audiovisuales para comunicar ideas, contar historias o desarrollar temas en distintos episodios, con una identidad y una línea visual coherentes.",
     ejemplos: "Series corporativas · Documentales · Contenido editorial",
-    proyecto: {
-      slug: "creando-lideres-para-asia",
-      nombre: "Creando Líderes para Asia",
-    },
   },
   {
     numero: "03",
@@ -44,7 +39,6 @@ const servicios = [
     descripcion:
       "Producimos videos pensados para conectar con las audiencias en plataformas digitales, aprovechando cada producción para generar distintas piezas.",
     ejemplos: "Reels · Shorts · Videos verticales · Cápsulas",
-    proyecto: { slug: "lolosaurios", nombre: "Lolosaurios" },
   },
   {
     numero: "04",
@@ -52,7 +46,6 @@ const servicios = [
     descripcion:
       "Realizamos conversaciones en formato audiovisual o sonoro. Nos encargamos de la dirección, identidad audiovisual, grabación, edición y postproducción de los episodios.",
     ejemplos: "Vodcast corporativo · Podcast · Conversaciones · Entrevistas",
-    proyecto: { slug: "bice", nombre: "BICE · Nos Une" },
   },
   {
     numero: "05",
@@ -61,7 +54,6 @@ const servicios = [
       "Damos forma visual y sonora a cada proyecto. Trabajamos su identidad, lenguaje audiovisual, ritmo y recursos gráficos para construir una experiencia reconocible.",
     ejemplos:
       "Identidad visual · Selección musical · Intro · Gráficas · Dirección",
-    proyecto: { slug: "break-industrial", nombre: "Break Industrial" },
   },
   {
     numero: "06",
@@ -69,7 +61,6 @@ const servicios = [
     descripcion:
       "Nos hacemos cargo de la realización audiovisual y de todo el trabajo posterior para entregar piezas terminadas y listas para publicar.",
     ejemplos: "Planificación · Grabación · Dirección · Edición · Sonido · Color",
-    proyecto: { slug: "futbol-y-parrilla", nombre: "Fútbol y Parrilla" },
   },
 ];
 
@@ -602,7 +593,7 @@ export default function ServiciosPage() {
                   </h3>
                 </div>
 
-                <div className="md:col-span-5">
+                <div className="md:col-span-7">
 
                   <p className="text-sm leading-relaxed text-white/50 md:text-base">
                     {servicio.descripcion}
@@ -612,22 +603,6 @@ export default function ServiciosPage() {
                     {servicio.ejemplos}
                   </p>
 
-                </div>
-
-                <div className="md:col-span-2 md:flex md:justify-end">
-                  <Link
-                    href={`/proyectos/${servicio.proyecto.slug}`}
-                    className="group inline-flex items-start gap-2 text-[10px] uppercase leading-relaxed tracking-[0.14em] text-white/35 transition hover:text-white md:text-right"
-                  >
-                    <span>
-                      Ver ejemplo
-                      <br />
-                      <span className="text-white/20 group-hover:text-white/60">
-                        {servicio.proyecto.nombre}
-                      </span>
-                    </span>
-                    <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  </Link>
                 </div>
 
               </div>
