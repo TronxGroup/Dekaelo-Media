@@ -177,7 +177,7 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
             <div>
               <p className="mb-5 text-[10px] uppercase tracking-[0.32em] text-white/65">
-                Productora audiovisual independiente · Desde 2013
+                Productora boutique de contenido audiovisual · Desde 2013
               </p>
               <h1 className="max-w-6xl text-[clamp(2.8rem,7.5vw,7.5rem)] font-medium leading-[0.88] tracking-[-0.06em]">
                 Tienes una idea.
